@@ -634,6 +634,20 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 // database in each site environment (Dev, Stage, or Prod). To use this
 // settings.php for development on your local workstation, set $db_url
 // (Drupal 5 or 6) or $databases (Drupal 7 or 8) as described in comments above.
-if (file_exists('/var/www/site-php')) {
+if (file_exists('/var/www/site-php/arpansa/arpansa-settings.inc')) {
   require('/var/www/site-php/arpansa/arpansa-settings.inc');
+}
+
+/**
+ * Load local development override configuration, if available.
+ *
+ * Use settings.local.php to override variables on secondary (staging,
+ * development, etc) installations of this site. Typically used to disable
+ * caching, JavaScript/CSS compression, re-routing of outgoing emails, and
+ * other things that should not happen on development and testing sites.
+ *
+ * Keep this code block at the end of this file to take full effect.
+ */
+if (file_exists(dirname(DRUPAL_ROOT) . '/local/settings.local.php')) {
+  include dirname(DRUPAL_ROOT) . '/local/settings.local.php';
 }
