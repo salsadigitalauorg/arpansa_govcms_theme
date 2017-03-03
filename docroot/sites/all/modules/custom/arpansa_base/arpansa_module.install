@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * arpansa_base.install
+ *
+ * Installation and update functions. This module has to be enabled manually.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function arpansa_base_install() {
+  module_enable(array('salsa_helpers'));
+  for ($version = 7000; $version <= 7100; $version++) {
+    $hook_update = 'arpansa_base_update_' . $version;
+    if (function_exists($hook_update)) {
+      $hook_update();
+    }
+    else {
+      break;
+    }
+  }
+}

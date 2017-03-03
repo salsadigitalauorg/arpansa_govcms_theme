@@ -1,0 +1,533 @@
+<?php
+
+/**
+ * @file
+ * Helper functions that are used in code.
+ */
+
+/**
+ * Helper to print messages within install functions and update hooks.
+ *
+ * @param string|array $messages
+ *   String message or array of messages.
+ * @param string $prefix
+ *   Prefix to be used for messages when called through CLI. Defaults to '-- '.
+ * @param int $indent
+ *   Indent for messages. Defaults to 2.
+ * @param string $type
+ *   The 'type' of status (e.g. 'warning').
+ *   Only applicable to drupal_set_message().
+ */
+function salsa_helpers_print($messages, $prefix = '-- ', $indent = 2, $type = 'status') {
+  $messages = is_array($messages) ? $messages : array($messages);
+  foreach ($messages as $message) {
+    if (function_exists('drush_print')) {
+      drush_print(((string) $prefix) . html_entity_decode($message), $indent);
+    }
+    else {
+      drupal_set_message($message, $type);
+    }
+  }
+}
+
+/**
+ * Reverts all components of a feature.
+ *
+ * @param string $module
+ *   Module name to revert.
+ * @param string $component
+ *   Optional component name to revert. All module component are reverted if
+ *   component is not specified.
+ * @param bool $verbose
+ *   Flag to print verbose messages.
+ *
+ * @return bool
+ *   TRUE if component was successfully reverted, FALSE otherwise.
+ */
+function salsa_helpers_features_revert($module, $component = NULL, $verbose = TRUE) {
+  module_load_include('inc', 'features', 'features.export');
+  features_include();
+  if (($feature = feature_load($module, TRUE)) && module_exists($module)) {
+    $components = array();
+    if (is_null($component)) {
+      // Forcefully revert all components of a feature.
+      foreach (array_keys($feature->info['features']) as $component) {
+        if (features_hook($component, 'features_revert')) {
+          $components[] = $component;
+        }
+      }
+    }
+    else {
+      // Use the $component argument of this function.
+      $components[] = $component;
+    }
+    foreach ($components as $component) {
+      features_revert(array($module => array($component)));
+    }
+
+    if ($verbose) {
+      salsa_helpers_print(t('Reverted "!module" feature components !components.', array(
+        '!module' => $module,
+        '!components' => implode(', ', $components),
+      )));
+    }
+
+    return TRUE;
+  }
+  else {
+    if ($verbose) {
+      salsa_helpers_print(t('Unable to revert "!module" feature.', array('!module' => $module)));
+    }
+
+    return FALSE;
+  }
+}
+
+/**
+ * Enables a module and does some error checking.
+ */
+function salsa_helpers_enable_module($module, $enable_dependencies = TRUE) {
+  if (module_exists($module)) {
+    salsa_helpers_print($module . ' already exists - Aborting!');
+
+    return TRUE;
+  }
+  $ret = module_enable(array($module), $enable_dependencies);
+  if ($ret) {
+    // Double check that the installed.
+    if (salsa_helpers_check_module_enabled($module)) {
+      salsa_helpers_print('Successfully enabled ' . $module);
+
+      return TRUE;
+    }
+  }
+
+  throw new DrupalUpdateException('Could not enable module ' . $module);
+}
+
+/**
+ * Disables a module and does some error checking.
+ */
+function _salsa_helpers_disable_module($module, $disable_dependents = TRUE) {
+  if (!module_exists($module)) {
+    salsa_helpers_print($module . ' does not exist - Aborting!');
+
+    return TRUE;
+  }
+  module_disable(array($module), $disable_dependents);
+  if (!salsa_helpers_check_module_enabled($module)) {
+    salsa_helpers_print('Disabled module ' . $module);
+
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Uninstalls a module and does some error checking.
+ */
+function salsa_helpers_uninstall_module($module, $disable_dependents = TRUE) {
+  _salsa_helpers_disable_module($module, $disable_dependents);
+  drupal_uninstall_modules(array($module), TRUE);
+
+  // @todo: Add check that the module has been uninstalled.
+  salsa_helpers_print('Uninstalled module ' . $module);
+
+  return TRUE;
+}
+
+/**
+ * Checks whether module is enabled.
+ *
+ * @return bool
+ *   TRUE if module is enabled, FALSE otherwise.
+ */
+function salsa_helpers_check_module_enabled($module) {
+  $q = db_select('system');
+  $q->fields('system', array('name', 'status'))
+    ->condition('name', $module, '=');
+  $rs = $q->execute();
+
+  return (bool) $rs->fetch()->status;
+}
+
+/**
+ * Helper to get information into watchdog.
+ *
+ * This helper should be used in every custom try-catch.
+ */
+function salsa_helpers_watchdog_log(Exception $e) {
+  $func = 'undefined custom function';
+  $module = 'custom';
+  $callers = debug_backtrace();
+  if (isset($callers[1]['function'])) {
+    $func = $callers[1]['function'];
+    $matched_modules = array();
+    foreach (module_list() as $module_name) {
+      if (strpos($func, $module_name) === 0) {
+        // Since there cannot be 2 modules with the same name, array key will
+        // be unique.
+        $matched_modules[strlen($module_name)] = $module_name;
+      }
+    }
+
+    if (!empty($matched_modules)) {
+      // Sort matched modules by key and get the longest one.
+      ksort($matched_modules);
+      $module = end($matched_modules);
+    }
+  }
+
+  // Make sure that exception was actually thrown.
+  if (is_object($e)) {
+    $message = $e->getMessage();
+  }
+  else {
+    $message = t('Improper use of @self function. See @func() !trace', array(
+      '@self' => __FUNCTION__,
+      '@func' => $func,
+      '!trace' => $e->getTraceAsString(),
+    ));
+  }
+  watchdog($module, $message, NULL, WATCHDOG_ERROR);
+}
+
+/**
+ * Forcefully removes module name from the system table.
+ *
+ * This function could be used when a module gets renamed, or it's code
+ * removed so that normal module disable and module uninstall not possible.
+ *
+ * @param string $module
+ *   Module name.
+ */
+function salsa_helpers_force_remove_module_record($module) {
+  $q = db_delete('system');
+  $q->condition('name', $module, '=');
+  $q->execute();
+}
+
+/**
+ * Helpers for detecting one of the date is in today or future.
+ *
+ * @param array $date_field
+ *   The raw value from date field.
+ *
+ * @return bool
+ *   True if one of the dates is today/future date.
+ */
+function salsa_helpers_is_today_or_future_dates($date_field) {
+  // Get yesterday date without time.
+  $timezone = date_default_timezone_get();
+  $timezone = new DateTimeZone($timezone);
+  $yesterday = new DateTime('yesterday', $timezone);
+  $yesterday->setTime(0, 0, 0);
+
+  foreach ($date_field as $date) {
+    // Decide which date should be used.
+    $date_field = $date['value'];
+    if (!empty($date['value2'])) {
+      $date_field = $date['value2'];
+    }
+
+    $date_field_obj = new DateTime($date_field, $timezone);
+    $date_field_obj->setTime(0, 0, 0);
+
+    // If one of the date is today or future, return TRUE.
+    if ($date_field_obj > $yesterday) {
+      return TRUE;
+    }
+  }
+
+  return FALSE;
+}
+
+/**
+ * Creates and saves a bean to the database.
+ *
+ * Content for the bean should be passed in the form of a callback function.
+ *
+ * @param string $label
+ *   Label for the bean.
+ * @param string $title
+ *   Title for the bean.
+ * @param string $description
+ *   Description for the bean.
+ * @param string $delta
+ *   Delta for the bean.
+ * @param callable $content_callback
+ *   Callback function which will return the content for the bean.
+ * @param string $body_format
+ *   Machine name of input format for body field.
+ */
+function salsa_helpers_create_bean($label, $title, $description, $delta, callable $content_callback, $body_format = 'rich_text') {
+  $bean = bean_create(array('type' => 'basic_content'));
+  $bean->label = $label;
+  $bean->title = $title;
+  $bean->description = $description;
+  $bean->delta = $delta;
+  $bean->field_bean_body = array(
+    'und' => array(
+      array(
+        'value' => $content_callback(),
+        'format' => $body_format,
+      ),
+    ),
+  );
+  $bean->save();
+  _block_rehash();
+}
+
+/**
+ * Helper function: Create date format/type.
+ */
+function salsa_helpers_create_date_format_type($date_format, $date_type, $date_title) {
+  // Create the new date format.
+  db_insert('date_formats')
+    ->fields(array(
+      'format' => $date_format,
+      'type' => 'custom',
+      'locked' => 0,
+    ))
+    ->execute();
+
+  // Create the new date type.
+  db_insert('date_format_type')
+    ->fields(array(
+      'type' => $date_type,
+      'title' => $date_title,
+      'locked' => 0,
+    ))
+    ->execute();
+
+  // Finally attach the two together.
+  variable_set('date_format_' . $date_type, $date_format);
+}
+
+/**
+ * Add a block to a region with the specified weight.
+ *
+ * @param string $block_name
+ *   Name of the block to place.
+ * @param string $module
+ *   Module from which block originates.
+ * @param string $region
+ *   Region to place block in.
+ * @param int $weight
+ *   Weight of the block.
+ * @param string $theme
+ *   Theme to place in.
+ * @param string $pages
+ *   Optional argument to specify what pages block should appear on.
+ * @param int $visibility
+ *   Optional argument to specify the visibility setting for $pages.
+ * @param string $title
+ *   Optional block title.
+ */
+function salsa_helpers_add_block_to_region($block_name, $module, $region, $weight, $theme, $pages = '', $visibility = 0, $title = '') {
+  db_merge('block')
+    ->fields(array(
+      'module' => $module,
+      'delta' => $block_name,
+      'theme' => $theme,
+      'region' => $region,
+      'status' => 1,
+      'weight' => $weight,
+      'pages' => $pages,
+      'visibility' => $visibility,
+      'title' => $title,
+    ))
+    ->condition('module', $module)
+    ->condition('delta', $block_name)
+    ->condition('theme', $theme)
+    ->execute();
+}
+
+/**
+ * Create a taxonomy term for the specified vocabulary.
+ *
+ * @param string $name
+ *   Name of the taxonomy term.
+ * @param string $description
+ *   Description for the term.
+ * @param string $taxonomy_machine_name
+ *   ID of the vocabulary to add to.
+ * @param int $parent
+ *   (optional) The ID of the parent taxonomy term.
+ *
+ * @return int
+ *   The ID of the newly created taxonomy term.
+ */
+function salsa_helpers_create_taxonomy_term($name, $description, $taxonomy_machine_name, $parent = 0) {
+  $vid = taxonomy_vocabulary_machine_name_load($taxonomy_machine_name)->vid;
+  $term = new stdClass();
+  $term->name = $name;
+  $term->description = $description;
+  $term->vid = $vid;
+  $term->parent = $parent;
+  taxonomy_term_save($term);
+  return $term->tid;
+}
+
+/**
+ * Deletes the menu item with the specified menu name and path.
+ *
+ * @param string $path
+ *   Path of the menu item.
+ * @param string $menu_name
+ *   Name of the menu to delete from.
+ */
+function salsa_helpers_delete_menu_item($path, $menu_name) {
+  $mlids = db_select('menu_links', 'ml')
+    ->condition('ml.link_path', $path)
+    ->condition('ml.menu_name', $menu_name)
+    ->fields('ml', array('mlid'))
+    ->execute()
+    ->fetchAll();
+
+  foreach ($mlids as $value) {
+    menu_link_delete($value->mlid);
+  }
+}
+
+/**
+ * Ensure a taxonomy vocabulary to exist.
+ *
+ * @param string $machine_name
+ *   Machine name of the vocabulary.
+ * @param string $name
+ *   Name of the vocabulary.
+ *
+ * @return object
+ *   The loaded taxonomy vocabulary.
+ */
+function salsa_helpers_ensure_vocabulary($machine_name, $name) {
+  if (!($vocabulary = taxonomy_vocabulary_machine_name_load($machine_name))) {
+    $vocabulary = new stdClass();
+    $vocabulary->name = $name;
+    $vocabulary->machine_name = $machine_name;
+    taxonomy_vocabulary_save($vocabulary);
+  }
+
+  return $vocabulary;
+}
+
+/**
+ * Create a taxonomy hierarchy.
+ *
+ * @param string $vocabulary_id
+ *   The vid of the vocabulary.
+ * @param array $terms_data
+ *   The hierarchy data array with the following structure:
+ *   - [term_name, term_name, ...].
+ *   - [term_name => ['#description' => term_desc], ...].
+ *   - [term_name => [child_term, child_term], ...].
+ *   - [term_name => ['#description' => term_desc, [children]], ...].
+ * @param int $parent_term_id
+ *   The parent term to attach the hierarchy to.
+ */
+function salsa_helpers_create_taxonomy_hierarchy($vocabulary_id, array $terms_data, $parent_term_id = NULL) {
+  $weight = 0;
+  foreach ($terms_data as $key => $term_data) {
+    $term = new stdClass();
+    $term->vid = $vocabulary_id;
+    $term->name = is_array($term_data) ? $key : $term_data;
+    $term->parent = $parent_term_id ? [$parent_term_id] : NULL;
+    if (is_array($term_data) && !empty($term_data['#description'])) {
+      $term->description = $term_data['#description'];
+      unset($term_data['#description']);
+    }
+    $term->weight = $weight++;
+    taxonomy_term_save($term);
+
+    if ($term && is_array($term_data) && count($term_data)) {
+      salsa_helpers_create_taxonomy_hierarchy($vocabulary_id, $term_data, $term->tid);
+    }
+  }
+}
+
+/**
+ * Disable views.
+ *
+ * @param string[] $view_machine_names
+ *   Array of view machine name.
+ */
+function salsa_helpers_disable_views($view_machine_names) {
+  $views_status = variable_get('views_defaults', array());
+  foreach ($view_machine_names as $view_machine_name) {
+    $views_status[$view_machine_name] = TRUE;
+  }
+  variable_set('views_defaults', $views_status);
+
+  module_load_include('module', 'views');
+  views_invalidate_cache();
+}
+
+/**
+ * Disable Display Suite layout for a view mode of an entity bundle.
+ *
+ * @param string $entity_type
+ *   Entity type.
+ * @param string $bundle
+ *   Bundle name.
+ * @param string $view_mode
+ *   Machine name of the view mode.
+ *
+ * @see ds_disable_layout_field_settings_form_submit()
+ */
+function salsa_helpers_disable_ds_layout($entity_type, $bundle, $view_mode) {
+  if (module_exists('ctools') && module_exists('ds')) {
+    $export_id = implode('|', [$entity_type, $bundle, $view_mode]);
+
+    ctools_include('export');
+    ctools_export_crud_disable('ds_layout_settings', $export_id);
+    ctools_export_crud_disable('ds_field_settings', $export_id);
+    // Clear the ds_fields cache.
+    cache_clear_all('ds_fields:', 'cache', TRUE);
+    cache_clear_all('ds_field_settings', 'cache');
+    // Clear entity info cache.
+    cache_clear_all('entity_info', 'cache', TRUE);
+  }
+}
+
+/**
+ * Create a menu link.
+ *
+ * @param array $items
+ *   An array of items.
+ *   Each item should be in a format as expected by menu_link_save().
+ *   Children items can be included as a multidimensional array.
+ *   The weight of the item will automatically be determined by the order in the array if not explicitly set.
+ * @param string $menu_name
+ *   The name of the menu. Recommended if not present in the $items array.
+ */
+function salsa_helpers_create_menu_link($items, $menu_name = NULL) {
+  foreach ($items as $weight => $item) {
+    $children = array();
+    if (!empty($item['children'])) {
+      $children = $item['children'];
+      unset($item['children']);
+    }
+
+    // If no weight is set; determine it from the order in the array.
+    if (empty($item['weight'])) {
+      $item['weight'] = $weight;
+    }
+    // If no menu is set; set it to the value of $menu_name.
+    if (empty($item['menu_name'])) {
+      $item['menu_name'] = $menu_name;
+    }
+
+    // Create the link.
+    $plid = menu_link_save($item);
+
+    if (!empty($children)) {
+      foreach ($children as &$child) {
+        // Ensure the child is relevant to the parent.
+        $child['plid'] = $plid;
+      }
+      salsa_helpers_create_menu_link($children, $item['menu_name']);  
+    }
+  }
+}
