@@ -5,6 +5,9 @@
  * Contain Drush utility commands.
  */
 
+/**
+ * Implements hook_drush_command().
+ */
 function salsa_helpers_drush_command() {
   $items['field-data'] = array(
     'description' => dt('Dump Field data'),
@@ -13,7 +16,7 @@ function salsa_helpers_drush_command() {
       'name' => dt('Field machine name.'),
     ),
     'options' => array(
-      'full' => dt('Dump full field data, default is FALSE.')
+      'full' => dt('Dump full field data, default is FALSE.'),
     ),
   );
 
@@ -26,7 +29,7 @@ function salsa_helpers_drush_command() {
       'bundle' => dt('Entity bundle'),
     ),
     'options' => array(
-      'full' => dt('Dump full field instance, default is FALSE.')
+      'full' => dt('Dump full field instance, default is FALSE.'),
     ),
   );
 
