@@ -33,6 +33,16 @@ function salsa_helpers_drush_command() {
     ),
   );
 
+  $items['hook-update'] = array(
+    'description' => dt('Invoke a hook update.'),
+    'aliases' => array('hu'),
+    'arguments' => array(
+      'module' => dt('Module name.'),
+      'number' => dt('Hook update number.'),
+    ),
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_SITE,
+  );
+
   return $items;
 }
 
@@ -97,3 +107,25 @@ function drush_salsa_helpers_field_instance($name, $entity, $bundle) {
     ]), 'error');
   }
 }
+
+/**
+ * Invoke a hook update.
+ *
+ * @param string $module
+ *   Module name.
+ * @param int $number
+ *   Hook update number.
+ */
+function drush_salsa_helpers_hook_update($module, $number) {
+  drush_include_engine('drupal', 'update');
+  module_load_install($module);
+  $context = [];
+  drush_update_do_one($module, $number, [], $context);
+  if (!empty($context['results']['#abort'][0])) {
+    drush_log(dt('Error: !function', ['!function' => $context['results']['#abort'][0]]), 'error');
+  }
+  else {
+    drush_log($context['message'], 'ok');
+  }
+}
+

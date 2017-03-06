@@ -107,3 +107,12 @@ function arpansa_base_update_7003() {
   salsa_helpers_enable_module('arpansa_entity');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Create Landing Page content type [ARPANSA-21].
+ */
+function arpansa_base_update_7004() {
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_enable_module('arpansa_entity');
+  salsa_helpers_features_revert('arpansa_entity');
+}
