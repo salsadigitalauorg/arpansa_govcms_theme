@@ -55,7 +55,9 @@ function drush_salsa_helpers_field_data($name) {
       unset($field['locked']);
       unset($field['deleted']);
     }
-    drush_print(var_export($field, TRUE));
+    $export = var_export($field, TRUE);
+    $export = str_replace('array (', 'array(', $export);
+    drush_print($export);
   }
   else {
     drush_log(dt('Field !name does not exist.', ['!name' => $name]), 'error');
@@ -80,7 +82,9 @@ function drush_salsa_helpers_field_instance($name, $entity, $bundle) {
       unset($instance['id']);
       unset($instance['deleted']);
     }
-    drush_print(var_export($instance, TRUE));
+    $export = var_export($instance, TRUE);
+    $export = str_replace('array (', 'array(', $export);
+    drush_print($export);
   }
   else {
     drush_log(dt('Field !name does not exist in !entity::!bundle.', [
