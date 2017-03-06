@@ -33,7 +33,7 @@ function arpansa_base_update_7000() {
 }
 
 /**
- * Lock default govCMS features [TEQ-95].
+ * Lock default govCMS features.
  */
 function arpansa_base_update_7001() {
   $govCMSFeatures = array(
@@ -78,4 +78,32 @@ function arpansa_base_update_7001() {
       }
     }
   }
+}
+
+/**
+ * Create Page Type terms [ARPANSA-18].
+ */
+function arpansa_base_update_7002() {
+  module_enable(['salsa_helpers']);
+  cache_clear_all();
+
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_enable_module('arpansa_taxonomy');
+  salsa_helpers_features_revert('arpansa_taxonomy');
+
+  $page_type = salsa_helpers_ensure_vocabulary('page_type', 'Page Type');
+  salsa_helpers_create_taxonomy_hierarchy($page_type->vid, [
+    'Fact Sheet',
+    'Literature Survey',
+    'Careers',
+  ]);
+}
+
+/**
+ * Update Standard Page content type [ARPANSA-3].
+ */
+function arpansa_base_update_7003() {
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_enable_module('arpansa_entity');
+  salsa_helpers_features_revert('arpansa_entity');
 }

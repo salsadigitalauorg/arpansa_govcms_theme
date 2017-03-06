@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ARPANSA Taxonomy feature.
+ */
+
+include_once 'arpansa_taxonomy.features.inc';

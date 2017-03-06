@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ARPANSA Entity feature.
+ */
+
+include_once 'arpansa_entity.features.inc';
