@@ -99,7 +99,6 @@ function arpansa_base_update_7002() {
   ]);
 }
 
-
 /**
  * Update Standard Page content type [ARPANSA-3].
  */
@@ -123,7 +122,7 @@ function arpansa_base_update_7004() {
  */
 function arpansa_base_update_7005() {
   module_enable(['salsa_helpers']);
-  // Unlock the govcms_common_fields feature
+  // Unlock the govcms_common_fields feature.
   $govCMSFeatures = array(
     'govcms_basic_page',
     'govcms_common_fields',
@@ -132,7 +131,7 @@ function arpansa_base_update_7005() {
 
   salsa_helpers_lock_features($govCMSFeatures, TRUE);
 
-  // Delete the field_date on page
+  // Delete the field_date on page.
   $field = field_info_instance('node', 'field_date', 'page');
   if (!empty($field)) {
     field_delete_instance($field, TRUE);
@@ -260,7 +259,7 @@ function arpansa_base_update_7007() {
  */
 function arpansa_base_update_7008() {
   module_enable(['salsa_helpers']);
-  // Unlock the govcms_common_fields feature
+  // Unlock the govcms_common_fields feature.
   $govCMSFeatures = array(
     'govcms_basic_page',
   );
@@ -273,4 +272,3 @@ function arpansa_base_update_7008() {
 
   salsa_helpers_lock_features($govCMSFeatures);
 }
-
