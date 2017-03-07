@@ -124,7 +124,10 @@ function arpansa_base_update_7005() {
   salsa_helpers_lock_features($govCMSFeatures, TRUE);
 
   // Delete the field_date on page
-  field_delete_instance('node-page-field_date', TRUE);
+  $field = field_info_instance('node', 'field_date', 'page');
+  if (!empty($field)) {
+    field_delete_instance($field, TRUE);
+  }
 
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_enable_module('arpansa_entity');
