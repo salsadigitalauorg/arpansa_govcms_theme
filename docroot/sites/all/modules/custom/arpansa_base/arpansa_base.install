@@ -148,3 +148,50 @@ function arpansa_base_update_7005() {
 
   salsa_helpers_lock_features($govCMSFeatures);
 }
+
+/**
+ * Update Landing page content type and create the menu block [ARPANSA-21].
+ */
+function arpansa_base_update_7006() {
+  db_insert('block')
+    ->fields(array(
+      'module' => 'menu_block',
+      'delta' => 'landing_page_children_listing',
+      'theme' => 'arpansa_theme',
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '<none>',
+      'cache' => -1,
+    ))->execute();
+
+  variable_set('menu_block_landing_page_children_listing_admin_title', 'Landing Page Children Listing');
+  variable_set('menu_block_landing_page_children_listing_depth', '1');
+  variable_set('menu_block_landing_page_children_listing_depth_relative', 1);
+  variable_set('menu_block_landing_page_children_listing_expanded', 0);
+  variable_set('menu_block_landing_page_children_listing_follow', 'child');
+  variable_set('menu_block_landing_page_children_listing_level', '1');
+  variable_set('menu_block_landing_page_children_listing_parent', 'main-menu:0');
+  variable_set('menu_block_landing_page_children_listing_sort', 0);
+  variable_set('menu_block_landing_page_children_listing_title_link', 0);
+  $menu_blocks = variable_get('menu_block_ids', array());
+  $menu_blocks[] = 'landing_page_children_listing';
+  variable_set('menu_block_ids', $menu_blocks);
+
+  db_insert('block_node_type')
+    ->fields(array(
+      'module' => 'menu_block',
+      'delta' => 'landing_page_children_listing',
+      'type' => 'landing_page',
+    ))->execute();
+
+  db_update('block')
+    ->expression('region', '-1')
+    ->condition('module', 'menu_block')
+    ->condition('delta', 'govcms_menu_block-sidebar')
+    ->execute();
+}
+
