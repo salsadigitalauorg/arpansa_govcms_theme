@@ -62,7 +62,7 @@ function govcms_news_views_default_views() {
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Content: Date (field_news_date) */
+  /* Sort criterion: Content: Date of Publication (field_news_date) */
   $handler->display->display_options['sorts']['field_news_date_value']['id'] = 'field_news_date_value';
   $handler->display->display_options['sorts']['field_news_date_value']['table'] = 'field_data_field_news_date';
   $handler->display->display_options['sorts']['field_news_date_value']['field'] = 'field_news_date_value';
@@ -115,7 +115,7 @@ function govcms_news_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<a href="dsdf">View more news</a>';
   $handler->display->display_options['footer']['area']['format'] = 'rich_text';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Date of Publication */
   $handler->display->display_options['fields']['field_news_date']['id'] = 'field_news_date';
   $handler->display->display_options['fields']['field_news_date']['table'] = 'field_data_field_news_date';
   $handler->display->display_options['fields']['field_news_date']['field'] = 'field_news_date';
@@ -129,7 +129,7 @@ function govcms_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Date */
+  /* Field: Content: Date of Publication */
   $handler->display->display_options['fields']['field_news_date_1']['id'] = 'field_news_date_1';
   $handler->display->display_options['fields']['field_news_date_1']['table'] = 'field_data_field_news_date';
   $handler->display->display_options['fields']['field_news_date_1']['field'] = 'field_news_date';
@@ -168,7 +168,7 @@ function govcms_news_views_default_views() {
     'trim_length' => '150',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date (field_news_date) */
+  /* Sort criterion: Content: Date of Publication (field_news_date) */
   $handler->display->display_options['sorts']['field_news_date_value']['id'] = 'field_news_date_value';
   $handler->display->display_options['sorts']['field_news_date_value']['table'] = 'field_data_field_news_date';
   $handler->display->display_options['sorts']['field_news_date_value']['field'] = 'field_news_date_value';
@@ -226,7 +226,7 @@ function govcms_news_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Date of Publication */
   $handler->display->display_options['fields']['field_news_date']['id'] = 'field_news_date';
   $handler->display->display_options['fields']['field_news_date']['table'] = 'field_data_field_news_date';
   $handler->display->display_options['fields']['field_news_date']['field'] = 'field_news_date';
@@ -296,7 +296,7 @@ function govcms_news_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Date of Publication */
   $handler->display->display_options['fields']['field_news_date']['id'] = 'field_news_date';
   $handler->display->display_options['fields']['field_news_date']['table'] = 'field_data_field_news_date';
   $handler->display->display_options['fields']['field_news_date']['field'] = 'field_news_date';
