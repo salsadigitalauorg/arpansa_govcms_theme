@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * arpansa_migration.module
+ */
+
+/**
+ * Implements hook_migrate_api().
+ */
+function arpansa_migration_migrate_api() {
+  $api = [
+    'api' => 2,
+    'groups' => [
+      'arpansa_content' => [
+        'title' => t('Legacy content'),
+      ],
+      'arpansa_file' => [
+        'title' => t('Legacy files'),
+      ],
+    ],
+    'migrations' => [
+      'File' => [
+        'class_name' => 'ArpansaMigrationFile',
+        'group_name' => 'arpansa_file',
+      ],
+      'FileMetadata' => [
+        'class_name' => 'ArpansaMigrationFileMetadata',
+        'group_name' => 'arpansa_file',
+      ],
+      'Page' => [
+        'class_name' => 'ArpansaMigrationPage',
+        'group_name' => 'arpansa_content',
+      ],
+    ],
+  ];
+
+  return $api;
+}
