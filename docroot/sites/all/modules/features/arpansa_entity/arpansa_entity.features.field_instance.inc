@@ -60,7 +60,83 @@ function arpansa_entity_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 32,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-news_article-field_image'.
+  $field_instances['node-news_article-field_image'] = array(
+    'bundle' => 'news_article',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 3,
     ),
   );
 
@@ -113,7 +189,7 @@ function arpansa_entity_field_default_field_instances() {
         'flatten_sort' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 34,
+      'weight' => 1,
     ),
   );
 
@@ -168,7 +244,7 @@ function arpansa_entity_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 36,
+      'weight' => 7,
     ),
   );
 
@@ -213,7 +289,7 @@ function arpansa_entity_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 37,
+      'weight' => 5,
     ),
   );
 
@@ -268,7 +344,7 @@ function arpansa_entity_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 41,
+      'weight' => 2,
     ),
   );
 
@@ -309,7 +385,7 @@ function arpansa_entity_field_default_field_instances() {
         'flatten_sort' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 33,
+      'weight' => 1,
     ),
   );
 
@@ -364,7 +440,7 @@ function arpansa_entity_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 36,
+      'weight' => 4,
     ),
   );
 
@@ -407,7 +483,7 @@ function arpansa_entity_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 38,
+      'weight' => 10,
     ),
   );
 
@@ -450,7 +526,7 @@ function arpansa_entity_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 39,
+      'weight' => 11,
     ),
   );
 
@@ -490,7 +566,7 @@ function arpansa_entity_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 35,
+      'weight' => 7,
     ),
   );
 
@@ -500,6 +576,7 @@ function arpansa_entity_field_default_field_instances() {
   t('Authored By');
   t('Date of Publication');
   t('Hide social links');
+  t('Image');
   t('Page Type');
   t('Reviewed Date');
   t('Show Related Content');
