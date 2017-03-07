@@ -118,7 +118,6 @@ function arpansa_base_update_7004() {
   salsa_helpers_features_revert('arpansa_entity');
 }
 
-
 /**
  * Update News content type [ARPANSA-7].
  */
@@ -255,3 +254,23 @@ function arpansa_base_update_7007() {
   }
   $query->execute();
 }
+
+/**
+ * Adding the teaser view mode to standard pages [ARPANSA-21].
+ */
+function arpansa_base_update_7008() {
+  module_enable(['salsa_helpers']);
+  // Unlock the govcms_common_fields feature
+  $govCMSFeatures = array(
+    'govcms_basic_page',
+  );
+
+  salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('govcms_basic_page');
+
+  salsa_helpers_lock_features($govCMSFeatures);
+}
+

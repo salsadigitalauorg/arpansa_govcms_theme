@@ -45,10 +45,10 @@ features[variable][] = scheduler_unpublish_enable_page
 features[variable][] = scheduler_unpublish_moderation_state_page
 features[variable][] = scheduler_unpublish_required_page
 features[variable][] = scheduler_unpublish_revision_page
+features[variable][] = xmlsitemap_settings_node_page
 
 ; Information added by Drupal.org packaging script on 2016-11-22
 version = "7.x-2.10"
 core = "7.x"
 project = "govcms"
 datestamp = "1479789121"
-
