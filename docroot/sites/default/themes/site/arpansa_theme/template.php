@@ -223,3 +223,20 @@ function arpansa_theme_preprocess_search_result(&$variables) {
   // Remove the author / date from the result display (404 page).
   $variables['info'] = '';
 }
+
+/**
+ * Implements template_preprocess_block().
+ */
+function arpansa_theme_preprocess_block(&$variables) {
+  if ($variables['block_html_id'] == 'block-menu-block-landing-page-children-listing') {
+    $child_content = array();
+    foreach ($variables['elements']['#content'] as $key => $content) {
+      if (is_numeric($key)) {
+        if ($node = node_load(str_replace('node/', '', $content['#href']))) {
+          $child_content[] = node_view($node, 'teaser');
+        }
+      }
+    }
+    $variables['children_contents'] = $child_content;
+  }
+}

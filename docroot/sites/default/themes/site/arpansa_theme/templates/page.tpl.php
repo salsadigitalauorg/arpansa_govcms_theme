@@ -36,7 +36,7 @@
           <?php
             $logo_alt = theme_get_setting('govcms_ui_kit_header_logo_alt');
             $logo_alt = !empty($logo_alt) ? $logo_alt : variable_get('site_name', 'Home');
-            $logo_img = theme_image(array(
+            $logo_img = theme('image', array(
               'path' => $logo,
               'alt' => $logo_alt,
               'attributes' => array('class' => array('header__logo-image')),
@@ -125,7 +125,7 @@
       <?php print $sidebar_second; ?>
     </aside>
   <?php endif; ?>
-  
+
   <div id="footer">
     <?php print render($page['footer']); ?>
   </div>

@@ -92,7 +92,7 @@
         <?php endif; ?>
         <?php print render($title_suffix); ?>
         <?php
-          // We hide the comments and links now so that we can render them later.
+          // We hide the comments & links now so that we can render them later.
           hide($content['comments']);
           hide($content['links']);
           print render($content);

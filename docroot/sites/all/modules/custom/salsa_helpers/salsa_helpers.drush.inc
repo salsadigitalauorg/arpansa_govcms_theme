@@ -128,4 +128,3 @@ function drush_salsa_helpers_hook_update($module, $number) {
     drush_log($context['message'], 'ok');
   }
 }
-

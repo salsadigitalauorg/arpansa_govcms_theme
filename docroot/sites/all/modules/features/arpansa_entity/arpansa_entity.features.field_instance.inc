@@ -34,10 +34,10 @@ function arpansa_entity_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 600,
+          'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -56,7 +56,80 @@ function arpansa_entity_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 41,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-landing_page-field_image'.
+  $field_instances['node-landing_page-field_image'] = array(
+    'bundle' => 'landing_page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
     ),
   );
 
@@ -113,6 +186,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 6,
     ),
   );
+
   // Exported field_instance: 'node-news_article-field_image'.
   $field_instances['node-news_article-field_image'] = array(
     'bundle' => 'news_article',
@@ -188,6 +262,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 3,
     ),
   );
+
   // Exported field_instance: 'node-news_article-field_page_type'.
   $field_instances['node-news_article-field_page_type'] = array(
     'bundle' => 'news_article',
@@ -240,6 +315,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 1,
     ),
   );
+
   // Exported field_instance: 'node-news_article-field_social_links'.
   $field_instances['node-news_article-field_social_links'] = array(
     'bundle' => 'news_article',
@@ -294,6 +370,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 7,
     ),
   );
+
   // Exported field_instance: 'node-page-field_authored_by'.
   $field_instances['node-page-field_authored_by'] = array(
     'bundle' => 'page',
@@ -313,6 +390,12 @@ function arpansa_entity_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -338,6 +421,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 5,
     ),
   );
+
   // Exported field_instance: 'node-page-field_news_date'.
   $field_instances['node-page-field_news_date'] = array(
     'bundle' => 'page',
@@ -363,6 +447,12 @@ function arpansa_entity_field_default_field_instances() {
         ),
         'type' => 'date_default',
         'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -392,6 +482,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 2,
     ),
   );
+
   // Exported field_instance: 'node-page-field_page_type'.
   $field_instances['node-page-field_page_type'] = array(
     'bundle' => 'page',
@@ -412,11 +503,17 @@ function arpansa_entity_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 4,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_page_type',
     'label' => 'Page Type',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -432,6 +529,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 1,
     ),
   );
+
   // Exported field_instance: 'node-page-field_reviewed_date'.
   $field_instances['node-page-field_reviewed_date'] = array(
     'bundle' => 'page',
@@ -457,6 +555,12 @@ function arpansa_entity_field_default_field_instances() {
         ),
         'type' => 'date_default',
         'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -486,6 +590,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 4,
     ),
   );
+
   // Exported field_instance: 'node-page-field_show_related_content'.
   $field_instances['node-page-field_show_related_content'] = array(
     'bundle' => 'page',
@@ -510,6 +615,12 @@ function arpansa_entity_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 8,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_show_related_content',
@@ -528,6 +639,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 10,
     ),
   );
+
   // Exported field_instance: 'node-page-field_social_links'.
   $field_instances['node-page-field_social_links'] = array(
     'bundle' => 'page',
@@ -552,6 +664,12 @@ function arpansa_entity_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 9,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_social_links',
@@ -570,6 +688,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 11,
     ),
   );
+
   // Exported field_instance: 'node-page-field_tags'.
   $field_instances['node-page-field_tags'] = array(
     'bundle' => 'page',
@@ -590,6 +709,12 @@ function arpansa_entity_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 5,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tags',
@@ -609,6 +734,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 7,
     ),
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Attachments');

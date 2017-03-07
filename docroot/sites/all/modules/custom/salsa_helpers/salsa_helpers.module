@@ -534,9 +534,9 @@ function salsa_helpers_create_menu_link($items, $menu_name = NULL) {
 }
 
 /**
- * Lock or unlock features based on a passed in array
+ * Lock or unlock features based on a passed in array.
  *
- * @param $features
+ * @param array $features
  *    The list of features.
  * @param bool $unlock
  *    Set to TRUE to unlock instead of locak the features.
@@ -557,4 +557,3 @@ function salsa_helpers_lock_features($features, $unlock = FALSE) {
     }
   }
 }
-
