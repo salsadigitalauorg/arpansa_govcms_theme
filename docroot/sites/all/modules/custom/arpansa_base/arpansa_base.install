@@ -195,3 +195,63 @@ function arpansa_base_update_7006() {
     ->execute();
 }
 
+/**
+ * Update Landing page content type and create the menu block [ARPANSA-21].
+ */
+function arpansa_base_update_7007() {
+  db_insert('block')
+    ->fields(array(
+      'module' => 'menu_block',
+      'delta' => 'left_nav',
+      'theme' => 'arpansa_theme',
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'sidebar_first',
+      'custom' => 0,
+      'visibility' => 0,
+      'pages' => '',
+      'title' => '<none>',
+      'cache' => -1,
+    ))->execute();
+
+  variable_set('menu_block_left_nav_admin_title', 'Secondary Navigation Menu');
+  variable_set('menu_block_left_nav_depth', '3');
+  variable_set('menu_block_left_nav_depth_relative', 1);
+  variable_set('menu_block_left_nav_expanded', 1);
+  variable_set('menu_block_left_nav_follow', 'active');
+  variable_set('menu_block_left_nav_level', '1');
+  variable_set('menu_block_left_nav_parent', 'main-menu:0');
+  variable_set('menu_block_left_nav_sort', 0);
+  variable_set('menu_block_left_nav_title_link', 0);
+  $menu_blocks = variable_get('menu_block_ids', array());
+  $menu_blocks[] = 'left_nav';
+  variable_set('menu_block_ids', $menu_blocks);
+
+  $values = array(
+    array(
+      'module' => 'menu_block',
+      'delta' => 'left_nav',
+      'type' => 'event',
+    ),
+    array(
+      'module' => 'menu_block',
+      'delta' => 'left_nav',
+      'type' => 'news_article',
+    ),
+    array(
+      'module' => 'menu_block',
+      'delta' => 'left_nav',
+      'type' => 'page',
+    ),
+    array(
+      'module' => 'menu_block',
+      'delta' => 'left_nav',
+      'type' => 'webform',
+    ),
+  );
+  $query = db_insert('block_node_type')->fields(array('module', 'delta', 'type'));
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+}
