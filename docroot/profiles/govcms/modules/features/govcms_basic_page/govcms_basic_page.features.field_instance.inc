@@ -10,7 +10,7 @@
 function govcms_basic_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -79,11 +79,11 @@ The <em>body</em> field is used for the main article content.
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-page-field_file'
+  // Exported field_instance: 'node-page-field_file'.
   $field_instances['node-page-field_file'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -146,11 +146,11 @@ The <em>body</em> field is used for the main article content.
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 3,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'node-page-field_image'
+  // Exported field_instance: 'node-page-field_image'.
   $field_instances['node-page-field_image'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -219,7 +219,7 @@ The <em>body</em> field is used for the main article content.
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 2,
+      'weight' => 6,
     ),
   );
 
