@@ -113,6 +113,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 6,
     ),
   );
+
   // Exported field_instance: 'node-news_article-field_image'.
   $field_instances['node-news_article-field_image'] = array(
     'bundle' => 'news_article',
@@ -188,6 +189,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 3,
     ),
   );
+
   // Exported field_instance: 'node-news_article-field_page_type'.
   $field_instances['node-news_article-field_page_type'] = array(
     'bundle' => 'news_article',
@@ -240,6 +242,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 1,
     ),
   );
+
   // Exported field_instance: 'node-news_article-field_social_links'.
   $field_instances['node-news_article-field_social_links'] = array(
     'bundle' => 'news_article',
@@ -294,6 +297,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 7,
     ),
   );
+
   // Exported field_instance: 'node-page-field_authored_by'.
   $field_instances['node-page-field_authored_by'] = array(
     'bundle' => 'page',
@@ -338,6 +342,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 5,
     ),
   );
+
   // Exported field_instance: 'node-page-field_news_date'.
   $field_instances['node-page-field_news_date'] = array(
     'bundle' => 'page',
@@ -392,6 +397,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 2,
     ),
   );
+
   // Exported field_instance: 'node-page-field_page_type'.
   $field_instances['node-page-field_page_type'] = array(
     'bundle' => 'page',
@@ -432,6 +438,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 1,
     ),
   );
+
   // Exported field_instance: 'node-page-field_reviewed_date'.
   $field_instances['node-page-field_reviewed_date'] = array(
     'bundle' => 'page',
@@ -486,6 +493,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 4,
     ),
   );
+
   // Exported field_instance: 'node-page-field_show_related_content'.
   $field_instances['node-page-field_show_related_content'] = array(
     'bundle' => 'page',
@@ -528,6 +536,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 10,
     ),
   );
+
   // Exported field_instance: 'node-page-field_social_links'.
   $field_instances['node-page-field_social_links'] = array(
     'bundle' => 'page',
@@ -570,6 +579,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 11,
     ),
   );
+
   // Exported field_instance: 'node-page-field_tags'.
   $field_instances['node-page-field_tags'] = array(
     'bundle' => 'page',
@@ -609,6 +619,7 @@ function arpansa_entity_field_default_field_instances() {
       'weight' => 7,
     ),
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Attachments');
