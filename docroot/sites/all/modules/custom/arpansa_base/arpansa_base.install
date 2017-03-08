@@ -383,3 +383,12 @@ function arpansa_base_update_7012() {
 
   salsa_helpers_lock_features($govCMSFeatures);
 }
+
+/**
+ * Adding the Literature Survey Content Type - [ARPANSA-67]
+ */
+function arpansa_base_update_7013() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}

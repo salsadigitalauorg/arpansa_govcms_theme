@@ -1080,6 +1080,19 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'bypass redirection'.
+  $permissions['bypass redirection'] = array(
+    'name' => 'bypass redirection',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_redirection',
+  );
+
   // Exported permission: 'bypass rules access'.
   $permissions['bypass rules access'] = array(
     'name' => 'bypass rules access',
@@ -1239,6 +1252,19 @@ function arpansa_entity_user_default_permissions() {
   // Exported permission: 'create landing_page content'.
   $permissions['create landing_page content'] = array(
     'name' => 'create landing_page content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create literature_survey content'.
+  $permissions['create literature_survey content'] = array(
+    'name' => 'create literature_survey content',
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
@@ -1468,6 +1494,19 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any literature_survey content'.
+  $permissions['delete any literature_survey content'] = array(
+    'name' => 'delete any literature_survey content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any media_release content'.
   $permissions['delete any media_release content'] = array(
     'name' => 'delete any media_release content',
@@ -1628,6 +1667,19 @@ function arpansa_entity_user_default_permissions() {
   // Exported permission: 'delete own landing_page content'.
   $permissions['delete own landing_page content'] = array(
     'name' => 'delete own landing_page content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own literature_survey content'.
+  $permissions['delete own literature_survey content'] = array(
+    'name' => 'delete own literature_survey content',
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
@@ -1958,6 +2010,19 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any literature_survey content'.
+  $permissions['edit any literature_survey content'] = array(
+    'name' => 'edit any literature_survey content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any media_release content'.
   $permissions['edit any media_release content'] = array(
     'name' => 'edit any media_release content',
@@ -2182,6 +2247,19 @@ function arpansa_entity_user_default_permissions() {
   // Exported permission: 'edit own landing_page content'.
   $permissions['edit own landing_page content'] = array(
     'name' => 'edit own landing_page content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own literature_survey content'.
+  $permissions['edit own literature_survey content'] = array(
+    'name' => 'edit own literature_survey content',
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
@@ -2740,6 +2818,15 @@ function arpansa_entity_user_default_permissions() {
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished literature_survey content'.
+  $permissions['view any unpublished literature_survey content'] = array(
+    'name' => 'view any unpublished literature_survey content',
+    'roles' => array(
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'view_unpublished',
