@@ -10,6 +10,53 @@
 function arpansa_entity_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-footer_teaser-field_literature_survey_date'.
+  $field_instances['node-footer_teaser-field_literature_survey_date'] = array(
+    'bundle' => 'footer_teaser',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This is an optional field to direct a promotion to a specific date for a Literature Survey.',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_literature_survey_date',
+    'label' => 'Literature Survey Date',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'flatten_options' => 0,
+        'flatten_sort' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-landing_page-body'.
   $field_instances['node-landing_page-body'] = array(
     'bundle' => 'landing_page',
@@ -741,10 +788,12 @@ function arpansa_entity_field_default_field_instances() {
   t('Date of Publication');
   t('Hide social links');
   t('Image');
+  t('Literature Survey Date');
   t('Page Type');
   t('Reviewed Date');
   t('Show Related Content');
   t('Tags');
+  t('This is an optional field to direct a promotion to a specific date for a Literature Survey.');
 
   return $field_instances;
 }
