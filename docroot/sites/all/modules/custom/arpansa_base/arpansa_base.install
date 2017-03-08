@@ -343,3 +343,24 @@ function arpansa_base_update_7011() {
     salsa_helpers_create_taxonomy_term($term, '', 'literature_survey_date');
   }
 }
+
+/**
+ * Altering the front page, promotions view and content type [ARPANSA-57].
+ */
+function arpansa_base_update_7012() {
+  module_enable(['salsa_helpers']);
+  // Unlock the govcms_common_fields feature.
+  $govCMSFeatures = array(
+    'govcms_front',
+    'govcms_promotion',
+  );
+
+  salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('govcms_front');
+  salsa_helpers_features_revert('govcms_promotion');
+
+  salsa_helpers_lock_features($govCMSFeatures);
+}
