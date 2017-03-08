@@ -247,7 +247,11 @@ function arpansa_base_update_7007() {
       'type' => 'webform',
     ),
   );
-  $query = db_insert('block_node_type')->fields(array('module', 'delta', 'type'));
+  $query = db_insert('block_node_type')->fields(array(
+    'module',
+    'delta',
+    'type',
+  ));
   foreach ($values as $record) {
     $query->values($record);
   }
@@ -282,7 +286,7 @@ function arpansa_base_update_7009() {
 }
 
 /**
- * Create the initial terms for the Literature Survey Date vocabulary [ARPANSA-40].
+ * Create terms for the Literature Survey Date vocabulary [ARPANSA-40].
  */
 function arpansa_base_update_7011() {
   module_load_include('module', 'salsa_helpers');
@@ -338,5 +342,4 @@ function arpansa_base_update_7011() {
   foreach ($terms as $term) {
     salsa_helpers_create_taxonomy_term($term, '', 'literature_survey_date');
   }
-
 }
