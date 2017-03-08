@@ -37,10 +37,11 @@ abstract class ArpansaMigrationBase extends Migration {
    *   Option value.
    */
   protected static function getEnvOption($option, $default = NULL) {
+    $value = variable_get('arpansa_migration_' . str_replace('-', '_', $option), $default);
     if (drupal_is_cli() && function_exists('drush_get_option')) {
-      return drush_get_option($option, $default);
+      $value = drush_get_option($option, $value);
     }
-    return variable_get('arpansa_migration_' . str_replace('-', '_', $option), $default);
+    return $value;
   }
 
 }
