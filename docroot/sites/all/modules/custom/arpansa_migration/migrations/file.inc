@@ -41,11 +41,12 @@ class ArpansaMigrationFile extends ArpansaMigrationBase {
     ], ArpansaMigrationFileDestination::getKeySchema());
 
     $this->addFieldMapping('uid')->defaultValue(1);
-    $this->addFieldMapping('value', 'source_uri');
+    $this->addFieldMapping('source_dir')->defaultValue($this->sourceDir);
+    $this->addFieldMapping('value', 'path');
     $this->addFieldMapping('status')->defaultValue(FILE_STATUS_PERMANENT);
     $this->addFieldMapping('type', 'type');
     $this->addFieldMapping('destination_file', 'destination_file');
-    $this->addFieldMapping('file_replace', MigrateFile::FILE_EXISTS_REUSE);
+    $this->addFieldMapping('file_replace')->defaultValue(MigrateFile::FILE_EXISTS_REUSE);
   }
 
   /**
@@ -66,9 +67,42 @@ class ArpansaMigrationFile extends ArpansaMigrationBase {
    * {@inheritdoc}
    */
   public function prepareRow($row) {
-    $row->destination_file = 'legacy/' . $row->path;
+    $row->destination_file = 'legacy' . $row->path;
 
     return TRUE;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function complete($file, $row) {
+    // Create redirect from legacy path.
+    try {
+      if (!empty($row->path)) {
+        // Skips if the legacy path is already in use.
+        if ($row->path != drupal_get_normal_path($row->path)) {
+          $this->saveMessage(t('Skip creating redirect for !path', ['!path' => $row->path]), self::MESSAGE_INFORMATIONAL);
+          return;
+        }
+        $path = ltrim($row->path, '/');
+        $url = parse_url(file_create_url($file->uri));
+        if ($redirect = redirect_load_by_source($path)) {
+          $redirect->redirect = $url['path'];
+          redirect_save($redirect);
+        }
+        else {
+          $redirect = new stdClass();
+          redirect_object_prepare($redirect);
+          $redirect->status_code = 301;
+          $redirect->source = $path;
+          $redirect->redirect = $url['path'];
+          redirect_save($redirect);
+        }
+      }
+    }
+    catch (PDOException $e) {
+      $this->displayMessage('Could not create ' . $row->path . ' redirect for file ' . $file->fid);
+    }
   }
 
 }
