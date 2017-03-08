@@ -272,3 +272,11 @@ function arpansa_base_update_7008() {
 
   salsa_helpers_lock_features($govCMSFeatures);
 }
+
+/**
+ * Revert ARPANSA Entity to apply permission settings [ARPANSA-3].
+ */
+function arpansa_base_update_7009() {
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
