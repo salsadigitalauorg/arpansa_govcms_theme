@@ -26,6 +26,14 @@ function arpansa_entity_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'literature_survey' => array(
+      'name' => t('Literature Survey'),
+      'base' => 'node_content',
+      'description' => t('Published literature includes articles in peer-reviewed journals, scientific-body reports, fact sheets, conference proceedings etc.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   drupal_alter('node_info', $items);
   return $items;
