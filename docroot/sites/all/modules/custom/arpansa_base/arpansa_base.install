@@ -405,7 +405,7 @@ function arpansa_base_update_7014() {
 
   $taxonomy_machine_name = 'literature_survey_date';
 
-  $vocabulary = taxonomy_vocabulary_machine_name_load('my_custom_vocabulary');
+  $vocabulary = taxonomy_vocabulary_machine_name_load($taxonomy_machine_name);
   foreach (taxonomy_get_tree($vocabulary->vid) as $term) {
     taxonomy_term_delete($term->tid);
   }
@@ -459,9 +459,7 @@ function arpansa_base_update_7014() {
 
   $vid = taxonomy_vocabulary_machine_name_load($taxonomy_machine_name)->vid;
 
-  foreach ($terms as $term) {
-    salsa_helpers_create_taxonomy_hierarchy($vid, $term);
-  }
+  salsa_helpers_create_taxonomy_hierarchy($vid, $terms);
 }
 
 /**
