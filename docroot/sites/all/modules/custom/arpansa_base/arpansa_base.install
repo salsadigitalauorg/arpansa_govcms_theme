@@ -280,3 +280,22 @@ function arpansa_base_update_7009() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Updating the view modes on the News Article Content Type, [ARPANSA-7].
+ */
+function arpansa_base_update_7010() {
+  module_enable(['salsa_helpers']);
+  // Unlock the govcms_common_fields feature.
+  $govCMSFeatures = array(
+    'govcms_news',
+  );
+
+  salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('govcms_news');
+
+  salsa_helpers_lock_features($govCMSFeatures);
+}
