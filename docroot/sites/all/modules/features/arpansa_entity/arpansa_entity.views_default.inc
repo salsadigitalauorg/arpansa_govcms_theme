@@ -40,6 +40,13 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'compact';
   $handler->display->display_options['row_options']['links'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no results for this search.';
+  $handler->display->display_options['empty']['area']['format'] = 'rich_text';
   /* Relationship: Content: Literature Survey Date (field_literature_survey_date) */
   $handler->display->display_options['relationships']['field_literature_survey_date_tid']['id'] = 'field_literature_survey_date_tid';
   $handler->display->display_options['relationships']['field_literature_survey_date_tid']['table'] = 'field_data_field_literature_survey_date';
@@ -182,8 +189,8 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['filters']['field_commentary_value']['operator'] = 'empty';
 
   /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'lit_survey_block');
-  $handler->display->display_options['block_description'] = 'Views: Literature Surveys';
+  $handler = $view->new_display('block', 'Block', 'lit_survey');
+  $handler->display->display_options['block_description'] = 'View: Literature Surveys';
 
   /* Display: Attachment */
   $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
