@@ -738,7 +738,7 @@ function arpansa_entity_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => '',
-      'file_extensions' => 'txt',
+      'file_extensions' => 'txt pdf doc docx rtf odf',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),

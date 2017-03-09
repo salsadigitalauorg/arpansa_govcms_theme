@@ -246,13 +246,15 @@ function govcms_promotion_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
+        'autocomplete_path' => 'taxonomy/autocomplete',
         'flatten_options' => 0,
         'flatten_sort' => 1,
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 2,
     ),
   );
