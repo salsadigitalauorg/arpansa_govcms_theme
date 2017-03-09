@@ -243,7 +243,7 @@ The <em>body</em> field is used for the main article content.',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
         'autocomplete_path' => 'taxonomy/autocomplete',
@@ -251,7 +251,7 @@ The <em>body</em> field is used for the main article content.',
         'flatten_sort' => 1,
         'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 4,
     ),
   );
