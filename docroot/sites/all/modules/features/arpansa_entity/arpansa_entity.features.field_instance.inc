@@ -34,7 +34,7 @@ function arpansa_entity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -188,10 +188,11 @@ function arpansa_entity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'compact' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -220,13 +221,25 @@ function arpansa_entity_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'required_summary' => array(
+        0 => 0,
+      ),
+      'show_summary' => array(
+        0 => 0,
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -245,10 +258,11 @@ function arpansa_entity_field_default_field_instances() {
     'description' => 'This original Author of the content, this person may not be an editor of this website. ',
     'display' => array(
       'compact' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
@@ -303,10 +317,11 @@ function arpansa_entity_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'compact' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 6,
       ),
       'default' => array(
         'label' => 'above',
@@ -363,7 +378,7 @@ function arpansa_entity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'above',
@@ -444,10 +459,11 @@ function arpansa_entity_field_default_field_instances() {
     'description' => 'The link to the original article. ',
     'display' => array(
       'compact' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'link_default',
+        'weight' => 5,
       ),
       'default' => array(
         'label' => 'above',
@@ -478,7 +494,7 @@ function arpansa_entity_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_link_to',
     'label' => 'Link to',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
@@ -525,7 +541,7 @@ function arpansa_entity_field_default_field_instances() {
     'description' => 'The date this Literature Survey belongs to, this is used to filter Literature Survey\'s on the Literature Survey list page.',
     'display' => array(
       'compact' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
@@ -579,10 +595,11 @@ function arpansa_entity_field_default_field_instances() {
     'description' => 'The name and date this article was published on, eg <em>Radiat Prot Dosimetry 2017</em>.',
     'display' => array(
       'compact' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'above',
@@ -640,7 +657,7 @@ function arpansa_entity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'default' => array(
         'label' => 'above',
@@ -721,7 +738,7 @@ function arpansa_entity_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => '',
-      'file_extensions' => 'txt',
+      'file_extensions' => 'txt pdf doc docx rtf odf',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
