@@ -392,3 +392,92 @@ function arpansa_base_update_7013() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Recreate terms for the Literature Survey Date vocabulary [ARPANSA-40].
+ */
+function arpansa_base_update_7014() {
+
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('arpansa_taxonomy');
+
+  $taxonomy_machine_name = 'literature_survey_date';
+
+  $vocabulary = taxonomy_vocabulary_machine_name_load($taxonomy_machine_name);
+  foreach (taxonomy_get_tree($vocabulary->vid) as $term) {
+    taxonomy_term_delete($term->tid);
+  }
+
+  $terms = array(
+    'Jan 2014',
+    'Feb 2014',
+    'Mar 2014',
+    'Apr 2014',
+    'May 2014',
+    'Jun 2014',
+    'Jul 2014',
+    'Aug 2014',
+    'Sep 2014',
+    'Oct 2014',
+    'Nov 2014',
+    'Dec 2014',
+    'Jan 2015',
+    'Feb 2016',
+    'Mar 2016',
+    'Apr 2016',
+    'May 2015',
+    'Jun 2015',
+    'Jul 2015',
+    'Aug 2015',
+    'Sep 2015',
+    'Oct 2015',
+    'Nov 2015',
+    'Dec 2015',
+    'Jan 2016',
+    'Feb 2016',
+    'Mar 2016',
+    'Apr 2016',
+    'May 2016',
+    'Jun 2016',
+    'Jul 2016',
+    'Aug 2016',
+    'Sep 2016',
+    'Oct 2016',
+    'Nov 2016',
+    'Dec 2016',
+    'Jan 2017',
+    'Feb 2017',
+    'Mar 2017',
+    'Apr 2017',
+    'May 2017',
+    'Jun 2017',
+    'Jul 2017',
+    'Aug 2017',
+  );
+
+  $vid = taxonomy_vocabulary_machine_name_load($taxonomy_machine_name)->vid;
+
+  salsa_helpers_create_taxonomy_hierarchy($vid, $terms);
+}
+
+/**
+ * Altering the front page, promotions view and content type [ARPANSA-68].
+ */
+function arpansa_base_update_7015() {
+  module_enable(['salsa_helpers']);
+  // Unlock the govcms features.
+  $govCMSFeatures = array(
+    'govcms_promotion',
+  );
+
+  salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('govcms_promotion');
+
+  salsa_helpers_lock_features($govCMSFeatures);
+}
+
