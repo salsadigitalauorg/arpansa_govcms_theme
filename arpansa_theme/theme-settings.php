@@ -37,11 +37,4 @@ function arpansa_theme_form_system_theme_settings_alter(&$form, $form_state) {
     '#default_value' => theme_get_setting('govcms_ui_kit_footer_copyright'),
     '#description'   => t("Text to display beside the sub menu links. Defaults to <em>&copy; [current year]. [Site Name]. All rights reserved.</em>"),
   );
-
-  $form['govcms_ui_kit_options']['govcms_ui_kit_override_image_styles'] = array(
-    '#type'          => 'checkbox',
-    '#title'         => t('Override image styles'),
-    '#default_value' => theme_get_setting('govcms_ui_kit_override_image_styles'),
-    '#description'   => t("Enable this to override any user-defined image styles with govCMS UI Kit default styles. Disabling this is recommend if modifying site."),
-  );
 }
