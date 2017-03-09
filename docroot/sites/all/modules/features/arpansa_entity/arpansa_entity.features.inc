@@ -14,6 +14,53 @@ function arpansa_entity_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function arpansa_entity_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: govcms_ui_kit_banner.
+  $styles['govcms_ui_kit_banner'] = array(
+    'label' => 'govCMS UI Kit Banner',
+    'effects' => array(
+      2 => array(
+        'name' => 'focal_point_scale_and_crop',
+        'data' => array(
+          'width' => 1650,
+          'height' => 440,
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  // Exported image style: govcms_ui_kit_thumbnail.
+  $styles['govcms_ui_kit_thumbnail'] = array(
+    'label' => 'govCMS UI Kit Thumbnail',
+    'effects' => array(
+      3 => array(
+        'name' => 'focal_point_scale_and_crop',
+        'data' => array(
+          'width' => 370,
+          'height' => 275,
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function arpansa_entity_node_info() {

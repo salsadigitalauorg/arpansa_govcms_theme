@@ -190,7 +190,7 @@ function govcms_slideshow_field_default_field_instances() {
         'module' => 'image_link_formatter',
         'settings' => array(
           'image_link' => 'field_read_more',
-          'image_style' => 'feature_article',
+          'image_style' => 'govcms_ui_kit_banner',
         ),
         'type' => 'image_link_formatter',
         'weight' => 0,

@@ -98,7 +98,7 @@ function govcms_promotion_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'blog_teaser_thumbnail',
+          'image_style' => 'govcms_ui_kit_thumbnail',
         ),
         'type' => 'image',
         'weight' => 0,
