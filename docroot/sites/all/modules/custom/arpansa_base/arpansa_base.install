@@ -522,3 +522,117 @@ function arpansa_base_update_7017() {
 
   salsa_helpers_lock_features($govCMSFeatures);
 }
+
+/**
+ * Creating the intiial Tags terms [ARPANSA-39].
+ */
+function arpansa_base_update_7025() {
+
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  $taxonomy_machine_name = 'literature_survey_date';
+
+  $terms = array(
+    'Australian Clinical Dosimetry Service',
+    'Agendas',
+    'Annual report',
+    'ANSTO',
+    'Australian Radiation Incident Register',
+    'Brochure',
+    'Calibration',
+    'Careers',
+    'Code',
+    'Consultations',
+    'Cordless phones',
+    'Corporate Plan',
+    'Cosmic radiation',
+    'CT imaging',
+    'Disclosure',
+    'Draft',
+    'Electomagnetic hypersensitivity',
+    'Electricity',
+    'Electromagnetic energy',
+    'Emergency',
+    'Extremely Low Frequency Magnetic Fields',
+    'Factsheet',
+    'Flying',
+    'Form',
+    'Freedom of information',
+    'Fukushima',
+    'Fundamentals',
+    'Guide',
+    'Inspection',
+    'Intense Pulse Light',
+    'International collaboration',
+    'Ionising radiation',
+    'Lasers',
+    'Legislation',
+    'Licensing',
+    'Manual',
+    'Maralinga',
+    'Medical Radiation',
+    'Microwave radiation',
+    'Minutes',
+    'Mobile phone base stations',
+    'Mobile phones',
+    'Monitoring',
+    'MOU',
+    'National Broadband Network',
+    'National collaboration',
+    'Newsletter',
+    'Nuclear Safety Committee',
+    'Occupational exposure',
+    'Organisations chart',
+    'Permits',
+    'Plan',
+    'Policy',
+    'Poster',
+    'Power lines',
+    'Presentation',
+    'PRMS',
+    'Product warning',
+    'Publication',
+    'Quarterly report',
+    'Radiation Health and Safety Advisory Council',
+    'Radiation Health Committee',
+    'Radiation Health Series',
+    'Radiation Protection Series',
+    'Radioactive waste',
+    'Radioanalytical services',
+    'Radiofrequency electromagnetic fields',
+    'Radon',
+    'Recommendations',
+    'Regulation',
+    'Regulatory guide',
+    'Report',
+    'Research',
+    'Safety',
+    'Safety guide',
+    'Services',
+    'Smart meters',
+    'Solaria',
+    'Standard',
+    'Statement',
+    'Strategic directions',
+    'Strategy',
+    'Sun',
+    'Sun bed',
+    'Sun protection',
+    'Sun protection',
+    'Tanning bed',
+    'Technical reports',
+    'Terms of reference',
+    'Transport',
+    'Ultraviolet radiation',
+    'User manual',
+    'UV radiation',
+    'Wi-Fi',
+    'X-rays',
+  );
+
+  $vid = taxonomy_vocabulary_machine_name_load($taxonomy_machine_name)->vid;
+
+  salsa_helpers_create_taxonomy_hierarchy($vid, $terms);
+}
+
