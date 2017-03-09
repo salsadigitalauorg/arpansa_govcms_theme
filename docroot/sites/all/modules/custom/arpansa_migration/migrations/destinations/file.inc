@@ -2,7 +2,7 @@
 
 /**
  * @file
- * file.destination.inc
+ * file.inc
  */
 
 /**

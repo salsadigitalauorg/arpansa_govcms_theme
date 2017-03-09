@@ -24,21 +24,21 @@ class ArpansaMigrationCSV extends MigrateSourceCSV {
    * {@inheritdoc}
    */
   public function getNextRow() {
-    do {
-      $row = parent::getNextRow();
-
-      // Give the active migration a chance to validate a CSV row.
-      if (method_exists($this->activeMigration, 'validateRow')) {
+    // Give the current migration a chance to validate the CSV row.
+    if (method_exists($this->activeMigration, 'validateRow')) {
+      do {
+        $row = parent::getNextRow();
         if ($this->activeMigration->validateRow($row)) {
           return $row;
         }
         // If a row is invalid, it is skipped entirely without a mapping.
         $row = NULL;
-      }
+      } while ($this->csvHandle && !$row);
 
       return $row;
     }
-    while (!$row);
+
+    return parent::getNextRow();
   }
 
   /**

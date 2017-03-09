@@ -2,7 +2,7 @@
 
 /**
  * @file
- * file.source.inc
+ * file.inc
  */
 
 /**

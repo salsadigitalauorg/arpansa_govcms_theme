@@ -9,6 +9,7 @@
  * Class ArpansaMigrationBase.
  */
 abstract class ArpansaMigrationBase extends Migration {
+
   /**
    * {@inheritdoc}
    */
