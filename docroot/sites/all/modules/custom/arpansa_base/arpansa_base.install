@@ -522,3 +522,12 @@ function arpansa_base_update_7017() {
 
   salsa_helpers_lock_features($govCMSFeatures);
 }
+
+/**
+ * Updating document and image file entities [ARPANSA-95].
+ */
+function arpansa_base_update_7018() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
