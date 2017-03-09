@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function arpansa_entity_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -58,6 +61,13 @@ function arpansa_entity_image_default_styles() {
   );
 
   return $styles;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function arpansa_entity_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**

@@ -13,13 +13,19 @@ function arpansa_theme_html_head_alter(&$head_elements) {
   $head_elements['viewport'] = array(
     '#type' => 'html_tag',
     '#tag' => 'meta',
-    '#attributes' => array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'),
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1'
+    ),
   );
   // IE Latest Browser.
   $head_elements['ie_view'] = array(
     '#type' => 'html_tag',
     '#tag' => 'meta',
-    '#attributes' => array('http-equiv' => 'x-ua-compatible', 'content' => 'ie=edge'),
+    '#attributes' => array(
+      'http-equiv' => 'x-ua-compatible',
+      'content' => 'ie=edge'
+    ),
   );
 }
 
@@ -34,7 +40,10 @@ function arpansa_theme_js_alter(&$javascript) {
  * Implements hook_preprocess_html().
  */
 function arpansa_theme_preprocess_html(&$variables) {
-  drupal_add_js("(function(h) {h.className = h.className.replace('no-js', '') })(document.documentElement);", array('type' => 'inline', 'scope' => 'header'));
+  drupal_add_js("(function(h) {h.className = h.className.replace('no-js', '') })(document.documentElement);", array(
+    'type' => 'inline',
+    'scope' => 'header'
+  ));
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
   // Drupal forms.js does not support new jQuery. Migrate library needed.
   drupal_add_js(drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-migrate-1.2.1.min.js');
@@ -51,6 +60,32 @@ function arpansa_theme_preprocess_field(&$variables) {
       if ($variables['items'][0]['#field']['settings']['title'] === 'none') {
         $variables['items'][0]['#element']['title'] = t('Read !title', array('!title' => $variables['element']['#object']->title));
       }
+    }
+  }
+  // Rewrite the Promotions links to include the query string for Lit Surveys
+  if ($variables['element']['#bundle'] === 'footer_teaser' && $variables['element']['#view_mode'] == 'teaser') {
+    $path = 'node/' . $variables['element']['#object']->field_reference['und'][0]['target_id'];
+    if (isset($variables['element']['#object']->field_literature_survey_date[LANGUAGE_NONE])) {
+      $query = array(
+        'field_literature_survey_date_tid' => $variables['element']['#object']->field_literature_survey_date[LANGUAGE_NONE][0]['tid'],
+      );
+    }
+    if ($variables['element']['#field_name'] === 'field_image') {
+      $variables['items'][0]['#path']['path'] = $path;
+      if (isset($variables['items'][0]['#path']) && !empty($query)) {
+        $variables['items'][0]['#path']['options']['query'] = $query;
+      }
+    }
+    elseif ($variables['element']['#field_name'] === 'title') {
+      $pattern = "/(?<=href=(\"|'))[^\"']+(?=(\"|'))/";
+      if (!empty($query)) {
+        $path = url($path, array('query' => $query));
+      }
+      else {
+        $path = url($path);
+      }
+      $markup = preg_replace($pattern, $path, $variables['items'][0]['#markup']);
+      $variables['items'][0]['#markup'] = $markup;
     }
   }
 }
