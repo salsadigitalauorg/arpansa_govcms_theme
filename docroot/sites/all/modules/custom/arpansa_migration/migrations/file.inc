@@ -22,15 +22,15 @@ class ArpansaMigrationFile extends ArpansaMigrationBase {
   public function __construct(array $arguments = array()) {
     parent::__construct($arguments);
 
-    $this->sourceDir = self::getEnvOption('source-dir');
+    $this->sourceDir = $this->getEnvOption('source-dir');
 
-    module_load_include('inc', 'arpansa_migration', '/migrations/file.source');
+    module_load_include('inc', 'arpansa_migration', '/migrations/sources/file');
     $this->source = new MigrateSourceList(
       new MigrateListFiles([$this->sourceDir], $this->sourceDir, '/(.*\.*$)/i', [], NULL, FALSE),
       new ArpansaMigrationFileItem($this->sourceDir, FALSE)
     );
 
-    module_load_include('inc', 'arpansa_migration', '/migrations/file.destination');
+    module_load_include('inc', 'arpansa_migration', '/migrations/destinations/file');
     $this->destination = new ArpansaMigrationFileDestination('file', 'MigrateFileUri');
 
     $this->map = new MigrateSQLMap($this->machineName, [

@@ -28,8 +28,8 @@ abstract class ArpansaMigrationBase extends Migration {
    * @return mixed
    *   Option value.
    */
-  protected static function getEnvOption($option, $default = NULL) {
-    $value = variable_get('arpansa_migration_' . str_replace('-', '_', $option), $default);
+  protected function getEnvOption($option, $default = NULL) {
+    $value = variable_get('arpansa_migration_' . strtolower($this->machineName) . '_' . str_replace('-', '_', $option), $default);
     if (drupal_is_cli() && function_exists('drush_get_option')) {
       $value = drush_get_option($option, $value);
     }
