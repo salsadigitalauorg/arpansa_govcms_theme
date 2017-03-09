@@ -17,6 +17,13 @@ function arpansa_entity_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function arpansa_entity_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function arpansa_entity_image_default_styles() {
@@ -61,13 +68,6 @@ function arpansa_entity_image_default_styles() {
   );
 
   return $styles;
-}
-
-/**
- * Implements hook_views_api().
- */
-function arpansa_entity_views_api($module = NULL, $api = NULL) {
-  return array("api" => "3.0");
 }
 
 /**
