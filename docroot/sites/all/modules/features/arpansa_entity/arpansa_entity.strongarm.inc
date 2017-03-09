@@ -194,6 +194,55 @@ function arpansa_entity_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'govcms_social_links_email';
+  $strongarm->value = 'contact';
+  $export['govcms_social_links_email'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'govcms_social_links_facebook';
+  $strongarm->value = 'https://www.facebook.com/ARPANSAGovernment/';
+  $export['govcms_social_links_facebook'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'govcms_social_links_flickr';
+  $strongarm->value = '';
+  $export['govcms_social_links_flickr'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'govcms_social_links_rss';
+  $strongarm->value = '';
+  $export['govcms_social_links_rss'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'govcms_social_links_twitter';
+  $strongarm->value = 'https://twitter.com/ARPANSANews';
+  $export['govcms_social_links_twitter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'govcms_social_links_vimeo';
+  $strongarm->value = '';
+  $export['govcms_social_links_vimeo'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'govcms_social_links_youtube';
+  $strongarm->value = 'https://www.youtube.com/channel/UCetQtHNSkKlALp5s3g-QHcA';
+  $export['govcms_social_links_youtube'] = $strongarm;
+
   $strongarm->name = 'menu_options_landing_page';
   $strongarm->value = array(
     0 => 'main-menu',
