@@ -1800,6 +1800,18 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in file_tags'.
+  $permissions['delete terms in file_tags'] = array(
+    'name' => 'delete terms in file_tags',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in tags'.
   $permissions['delete terms in tags'] = array(
     'name' => 'delete terms in tags',
@@ -2368,6 +2380,18 @@ function arpansa_entity_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'webform',
+  );
+
+  // Exported permission: 'edit terms in file_tags'.
+  $permissions['edit terms in file_tags'] = array(
+    'name' => 'edit terms in file_tags',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in tags'.

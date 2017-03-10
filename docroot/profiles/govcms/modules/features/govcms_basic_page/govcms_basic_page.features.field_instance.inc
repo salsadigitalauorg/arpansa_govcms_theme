@@ -188,8 +188,8 @@ The <em>body</em> field is used for the main article content.
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => 'article_page_620x349',
+          'image_link' => 'content',
+          'image_style' => 'govcms_ui_kit_thumbnail',
         ),
         'type' => 'image',
         'weight' => 0,
