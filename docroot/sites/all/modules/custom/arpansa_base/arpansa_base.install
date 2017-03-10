@@ -524,6 +524,15 @@ function arpansa_base_update_7017() {
 }
 
 /**
+ * Updating document and image file entities [ARPANSA-95].
+ */
+function arpansa_base_update_7018() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
  * Updating the webform content type [ARPANSA-16].
  */
 function arpansa_base_update_7019() {
