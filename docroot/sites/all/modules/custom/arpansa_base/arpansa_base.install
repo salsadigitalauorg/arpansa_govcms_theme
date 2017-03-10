@@ -540,3 +540,59 @@ function arpansa_base_update_7019() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Updating the webform content type [ARPANSA-16].
+ */
+function arpansa_base_update_7020() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
+ * Adding menu items for the Top Header menu - [ARPANSA-43]
+ */
+function arpansa_base_update_7021() {
+  $items = array(
+    array(
+      'link_path' => '<front>',
+      'link_title' => 'Have your Say',
+      'menu_name' => 'menu-top-header-menu',
+      'weight' => 0,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+    array(
+      'link_path' => '<front>',
+      'link_title' => 'News',
+      'menu_name' => 'menu-top-header-menu',
+      'weight' => 1,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+    array(
+      'link_path' => '<front>',
+      'link_title' => 'Contact Us',
+      'menu_name' => 'menu-top-header-menu',
+      'weight' => 2,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+    array(
+      'link_path' => 'user/logout',
+      'link_title' => 'Logout',
+      'menu_name' => 'menu-top-header-menu',
+      'weight' => 3,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+  );
+  foreach($items as $item) {
+    menu_link_save($item);
+  }
+}
