@@ -807,3 +807,22 @@ function arpansa_base_update_7025() {
 
   salsa_helpers_create_taxonomy_hierarchy($vid, $terms);
 }
+
+/**
+ * Updating the text formats and WYSIWYG filters[ARPANSA-24].
+ */
+function arpansa_base_update_7026() {
+  module_enable(['salsa_helpers']);
+  // Unlock the govcms features.
+  $govCMSFeatures = array(
+    'govcms_editing',
+  );
+
+  salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('govcms_editing');
+
+  salsa_helpers_lock_features($govCMSFeatures);
+}
