@@ -826,3 +826,14 @@ function arpansa_base_update_7026() {
 
   salsa_helpers_lock_features($govCMSFeatures);
 }
+
+/**
+ * Updating the Literature Survey block attachment settings [ARPANSA-68].
+ */
+function arpansa_base_update_7027() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  salsa_helpers_features_revert('arpansa_entity');
+
+}
