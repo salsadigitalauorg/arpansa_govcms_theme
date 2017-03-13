@@ -606,3 +606,12 @@ function arpansa_base_update_7022() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Adding social media links [ARPANSA-44].
+ */
+function arpansa_base_update_7023() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
