@@ -193,8 +193,9 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['block_description'] = 'View: Literature Surveys';
 
   /* Display: Attachment */
-  $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler = $view->new_display('attachment', 'Attachment', 'att_comment');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -281,7 +282,7 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['filters']['field_commentary_value']['field'] = 'field_commentary_value';
   $handler->display->display_options['filters']['field_commentary_value']['operator'] = 'not empty';
   $handler->display->display_options['displays'] = array(
-    'lit_survey_block' => 'lit_survey_block',
+    'lit_survey' => 'lit_survey',
     'default' => 0,
   );
   $handler->display->display_options['inherit_exposed_filters'] = TRUE;
