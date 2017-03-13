@@ -18,6 +18,20 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   protected $sourceCSV;
 
   /**
+   * Last migrated page.
+   *
+   * @var object
+   */
+  protected $lastPage;
+
+  /**
+   * Last migrate menu item.
+   *
+   * @var object
+   */
+  protected $lastMenuItem;
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(array $arguments = array()) {
@@ -81,6 +95,10 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
    * Implements validateRow().
    */
   public function validateRow($row) {
+    if (empty($row->source)) {
+      return FALSE;
+    }
+
     // Skips homepage.
     $url = ArpansaMigrationHelper::sanitizeArpansaSourceUri($row->source);
     if (empty($url)) {
@@ -104,6 +122,16 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
 
     $row->alias = ArpansaMigrationHelper::sanitizeArpansaSourceUri($row->alias);
 
+    // Map content type.
+    switch ($row->type) {
+      case 'news':
+        $row->type = 'news_article';
+        break;
+      case 'consultation':
+        $row->type = 'news_article';
+        break;
+    }
+
     // Scrape content.
     if (!$this->scrapeArpansaContent($row)) {
       return FALSE;
@@ -115,6 +143,8 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       $ia_title = $row->{'ia_title' . $ia_title_level};
       if (!empty($ia_title)) {
         $ia_title_parts = explode(' - ', $ia_title);
+        // Remove "ARPANSA" from IA title.
+        array_shift($ia_title_parts);
         for ($i = 1; $i < $ia_title_level; $i++) {
           if ($ia_title_parts && count($ia_title_parts)) {
             array_shift($ia_title_parts);
@@ -136,9 +166,22 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   }
 
   /**
+   * Implements prepare().
+   */
+  public function prepare($node, $row) {
+    if (empty($row->alias)) {
+      $node->path['pathauto'] = TRUE;
+    }
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function complete($node, $row) {
+    $this->lastPage = $node;
+
+    $this->remapIA($node, $row);
+
     // Create redirect from legacy path.
     try {
       if (!empty($row->source)) {
@@ -165,6 +208,37 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     catch (PDOException $e) {
       $this->displayMessage('Could not create ' . $row->source . ' redirect for file ' . $node->nid);
     }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function postImport() {
+    parent::postImport();
+    menu_rebuild();
+  }
+
+  /**
+   * Implements createStub().
+   */
+  protected function createStub($migration, $source_key = NULL) {
+    migrate_instrument_start('ArpansaMigrationPage::createStub');
+    $source = reset($source_key);
+    $node = new stdClass();
+    $node->title = $source;
+    $node->type = $this->destination->getBundle();
+    $node->language = LANGUAGE_NONE;
+    node_object_prepare($node);
+    $node->uid = 1;
+    $node->status = NODE_NOT_PUBLISHED;
+    $node->revision = FALSE;
+    node_save($node);
+    migrate_instrument_stop('ArpansaMigrationPage::createStub');
+    if (isset($node->nid)) {
+      return array($node->nid);
+    }
+
+    return FALSE;
   }
 
   /**
@@ -197,8 +271,9 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
         $content->removeChild($content_title);
 
         // Remove Top of Page anchor.
-        $top_anchor = $xpath->query("./a[@class='linkTop']", $content)->item(0);
-        $content->removeChild($top_anchor);
+        foreach ($xpath->query("./a[@class='linkTop']", $content) as $top_anchor) {
+          $content->removeChild($top_anchor);
+        }
       }
       // It's a landing page.
       elseif ($content = $xpath->query("//div[@class='center-box']")->item(0)) {
@@ -242,7 +317,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     /** @var DOMElement $image */
     foreach ($images as $image) {
       $src = $image->getAttribute('src');
-      $src = $this->remapRelativeUri($src, $row->source);
+      $src = ArpansaMigrationHelper::remapRelativeUri($src, $row->source);
 
       // Search for migrated file.
       /** @var ArpansaMigrationFile $fileMigration */
@@ -293,57 +368,58 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       if (!empty($url['scheme'])) {
         continue;
       }
-      $href = $this->remapRelativeUri($url['path'], $row->source);
+      $href = ArpansaMigrationHelper::remapRelativeUri($url['path'], $row->source);
 
-      // Search for migrated file/page.
-      /** @var ArpansaMigrationFile $fileMigration */
-      $fileMigration = Migration::getInstance('File');
-      if ($destids = $fileMigration->getMap()->lookupDestinationID(['sourceid1' => $href])) {
-        if (!empty($destids['destid1'])) {
-          $fid = $destids['destid1'];
-
-          $link_text = $anchor->nodeValue;
-          // Check for nested media token.
-          if (preg_match("/\[\[\{(.*)\}\]\]/siU", $link_text)) {
-            $href = url('file/' . $fid);
-            if (!empty($url['query'])) {
-              $href .= '?' . $url['query'];
-            }
-            if (!empty($url['fragment'])) {
-              $href .= '#' . $url['fragment'];
-            }
-            $anchor->setAttribute('href', $href);
-            continue;
+      $extension = pathinfo($href, PATHINFO_EXTENSION);
+      // Search for migrated page.
+      if (empty($extension) || in_array(strtolower($extension), ['cfm', 'htm', 'html'])) {
+        $href = strtolower($href);
+        if ($destination = $this->handleSourceMigration(['Page'], [$href])) {
+          $nid = is_array($destination) ? reset($destination) : $destination;
+          $href = '/node/' . $nid;
+          if (!empty($url['query'])) {
+            $href .= '?' . $url['query'];
           }
-
-          // No nested, so we can build a media token to replace this link.
-          $attributes = [];
-          foreach (['id', 'title', 'class', 'target'] as $attribute_name) {
-            if ($attribute = $anchor->getAttribute($attribute_name)) {
-              $attributes[$attribute_name] = ArpansaMigrationHelper::sanitizeText($attribute);
-            }
+          if (!empty($url['fragment'])) {
+            $href .= '#' . $url['fragment'];
           }
-
-          $media_token = ArpansaMigrationHelper::buildMediaJson($fid, $attributes, $link_text, 'default');
-          $media_token_node = $content->ownerDocument->createTextNode($media_token);
-          $anchor->parentNode->replaceChild($media_token_node, $anchor);
+          $anchor->setAttribute('href', $href);
           continue;
         }
       }
+      // Search for migrated file.
       else {
-        /** @var ArpansaMigrationPage $pageMigration */
-        $pageMigration = Migration::getInstance('Page');
-        if ($destids = $pageMigration->getMap()->lookupDestinationID(['sourceid1' => $href])) {
+        /** @var ArpansaMigrationFile $fileMigration */
+        $fileMigration = Migration::getInstance('File');
+        if ($destids = $fileMigration->getMap()->lookupDestinationID(['sourceid1' => $href])) {
           if (!empty($destids['destid1'])) {
-            $nid = $destids['destid1'];
-            $href = url('node/' . $nid);
-            if (!empty($url['query'])) {
-              $href .= '?' . $url['query'];
+            $fid = $destids['destid1'];
+
+            $link_text = $anchor->nodeValue;
+            // Check for nested media token.
+            if (preg_match("/\[\[\{(.*)\}\]\]/siU", $link_text)) {
+              $href = '/file/' . $fid;
+              if (!empty($url['query'])) {
+                $href .= '?' . $url['query'];
+              }
+              if (!empty($url['fragment'])) {
+                $href .= '#' . $url['fragment'];
+              }
+              $anchor->setAttribute('href', $href);
+              continue;
             }
-            if (!empty($url['fragment'])) {
-              $href .= '#' . $url['fragment'];
+
+            // No nested, so we can build a media token to replace this link.
+            $attributes = [];
+            foreach (['id', 'title', 'class', 'target'] as $attribute_name) {
+              if ($attribute = $anchor->getAttribute($attribute_name)) {
+                $attributes[$attribute_name] = ArpansaMigrationHelper::sanitizeText($attribute);
+              }
             }
-            $anchor->setAttribute('href', $href);
+
+            $media_token = ArpansaMigrationHelper::buildMediaJson($fid, $attributes, $link_text, 'default');
+            $media_token_node = $content->ownerDocument->createTextNode($media_token);
+            $anchor->parentNode->replaceChild($media_token_node, $anchor);
             continue;
           }
         }
@@ -355,34 +431,64 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   }
 
   /**
-   * Convert relative URI to absolute.
+   * Assign the migrated page to main menu.
    *
-   * @param string $uri
-   *   Relative URI, eg. ../../images/abc.jpg
-   * @param string $context_uri
-   *   Current context, eg. /aboutus/collaboration/index.cfm
-   *
-   * @return string
-   *   Remapped URI, eg. /images/abc.jpg
+   * @param object $node
+   *   Node object.
+   * @param object $row
+   *   Row object.
    */
-  protected function remapRelativeUri($uri, $context_uri) {
-    // Absolute URI, return as is.
-    if (strpos($uri, '/') === 0 || strpos($uri, '://') !== FALSE) {
-      return $uri;
-    }
-
-    $context_dir = dirname($context_uri);
-    while (strpos($uri, '../') === 0) {
-      $context_dir = dirname($context_dir);
-      $uri = substr_replace($uri, '', 0, strlen('../'));
-    }
-    if ($context_dir != '/') {
-      $uri = $context_dir . '/' . $uri;
+  protected function remapIA($node, $row) {
+    if ($menu = menu_link_get_preferred('node/' . $node->nid, 'main-menu')) {
+      $menu['link_title'] = $row->ia_title;
+      $menu['description'] = $node->title;
     }
     else {
-      $uri = $context_dir . $uri;
+      $menu = [
+        'enabled' => TRUE,
+        'link_title' => $row->ia_title,
+        'link_path' => 'node/' . $node->nid,
+        'description' => $node->title,
+        'plid' => 0,
+        'menu_name' => 'main-menu',
+        'expanded' => 1,
+      ];
     }
 
-    return $uri;
+    if (empty($row->alias)) {
+      if (!empty($this->lastMenuItem)) {
+        $menu['plid'] = $this->lastMenuItem['plid'];
+      }
+    }
+    else {
+      // Try to find a parent menu item.
+      $parent_path = dirname($row->source);
+      if (!empty($parent_path) && $parent_path != '/') {
+        if ($destination = $this->handleSourceMigration('Page', [$parent_path])) {
+          $parent_nid = is_array($destination) ? reset($destination) : $destination;
+          if ($parent_menu = menu_link_get_preferred('node/' . $parent_nid, 'main-menu')) {
+            $menu['plid'] = $parent_menu['mlid'];
+          }
+          else {
+            // Create one for its parent.
+            $parent_menu = [
+              'enabled' => TRUE,
+              'link_title' => $parent_path,
+              'link_path' => 'node/' . $parent_nid,
+              'plid' => 0,
+              'menu_name' => 'main-menu',
+              'expanded' => 1,
+            ];
+            if ($plid = menu_link_save($parent_menu)) {
+              $menu['plid'] = $plid;
+            }
+          }
+        }
+      }
+    }
+
+    if ($mlid = menu_link_save($menu)) {
+      $this->lastMenuItem = $menu;
+    }
   }
 }

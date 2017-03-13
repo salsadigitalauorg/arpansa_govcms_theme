@@ -171,4 +171,36 @@ class ArpansaMigrationHelper {
     return $source_uri;
   }
 
+  /**
+   * Convert relative URI to absolute.
+   *
+   * @param string $uri
+   *   Relative URI, eg. ../../images/abc.jpg
+   * @param string $context_uri
+   *   Current context, eg. /aboutus/collaboration/index.cfm
+   *
+   * @return string
+   *   Remapped URI, eg. /images/abc.jpg
+   */
+  public static function remapRelativeUri($uri, $context_uri) {
+    // Absolute URI, return as is.
+    if (strpos($uri, '/') === 0 || strpos($uri, '://') !== FALSE) {
+      return $uri;
+    }
+
+    $context_dir = dirname($context_uri);
+    while (strpos($uri, '../') === 0) {
+      $context_dir = dirname($context_dir);
+      $uri = substr_replace($uri, '', 0, strlen('../'));
+    }
+    if ($context_dir != '/') {
+      $uri = $context_dir . '/' . $uri;
+    }
+    else {
+      $uri = $context_dir . $uri;
+    }
+
+    return $uri;
+  }
+
 }
