@@ -615,3 +615,82 @@ function arpansa_base_update_7023() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Adding menu items for the Fooer Sub menu - [ARPANSA-13]
+ */
+function arpansa_base_update_7024() {
+  module_enable(['salsa_helpers', 'arpansa_blocks']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_blocks');
+  salsa_helpers_features_revert('arpansa_entity');
+  // Remove the OOTB links
+  $footer_sub_menu = 'menu-footer-sub-menu';
+  $menus = menu_tree($footer_sub_menu);
+  foreach($menus as $mlid => $menu) {
+    if(is_numeric($mlid)) {
+      menu_link_delete($mlid);
+    }
+  }
+  // Add the new ones, all going to home at this stage,
+  // they'll need to manually update them.
+  $items = array(
+    array(
+      'link_path' => '<front>',
+      'link_title' => 'Copyright',
+      'menu_name' => $footer_sub_menu,
+      'weight' => 0,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+    array(
+      'link_path' => '<front>',
+      'link_title' => 'Security',
+      'menu_name' => $footer_sub_menu,
+      'weight' => 1,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+    array(
+      'link_path' => '<front>',
+      'link_title' => 'Disclaimer',
+      'menu_name' => $footer_sub_menu,
+      'weight' => 2,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+    array(
+      'link_path' => '<front>',
+      'link_title' => 'Privacy',
+      'menu_name' => $footer_sub_menu,
+      'weight' => 3,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+    array(
+      'link_path' => '<front>',
+      'link_title' => 'Accessibility',
+      'menu_name' => $footer_sub_menu,
+      'weight' => 3,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+    array(
+      'link_path' => '<front>',
+      'link_title' => 'Feedback',
+      'menu_name' => $footer_sub_menu,
+      'weight' => 3,
+      'language' => LANGUAGE_NONE,
+      'plid' => 0,
+      'module' => 'menu',
+    ),
+  );
+  foreach($items as $item) {
+    menu_link_save($item);
+  }
+}
