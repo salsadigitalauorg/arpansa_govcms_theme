@@ -696,14 +696,14 @@ function arpansa_base_update_7024() {
 }
 
 /**
- * Creating the intiial Tags terms [ARPANSA-39].
+ * Creating the initial Tags terms [ARPANSA-39].
  */
 function arpansa_base_update_7025() {
 
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
 
-  $taxonomy_machine_name = 'literature_survey_date';
+  $taxonomy_machine_name = 'tags';
 
   $terms = array(
     'Australian Clinical Dosimetry Service',
