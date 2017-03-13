@@ -16,7 +16,7 @@ function govcms_editing_filter_default_formats() {
     'name' => 'iFrame',
     'cache' => 1,
     'status' => 1,
-    'weight' => 0,
+    'weight' => -9,
     'filters' => array(
       'filter_html' => array(
         'weight' => -10,
@@ -142,7 +142,7 @@ function govcms_editing_filter_default_formats() {
     'name' => 'Rich text',
     'cache' => 1,
     'status' => 1,
-    'weight' => 0,
+    'weight' => -10,
     'filters' => array(
       'wysiwyg' => array(
         'weight' => -50,

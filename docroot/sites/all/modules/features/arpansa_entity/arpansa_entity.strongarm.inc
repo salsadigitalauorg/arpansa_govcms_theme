@@ -14,7 +14,7 @@ function arpansa_entity_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_webform';
-  $strongarm->value = 'edit-scheduler';
+  $strongarm->value = 'edit-submission';
   $export['additional_settings__active_tab_webform'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -148,9 +148,6 @@ function arpansa_entity_strongarm() {
   );
   $export['crumbs_weights'] = $strongarm;
 
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -381,20 +378,6 @@ function arpansa_entity_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'honeypot_protect_all_forms';
-  $strongarm->value = 1;
-  $export['honeypot_protect_all_forms'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'honeypot_time_limit';
-  $strongarm->value = '0';
-  $export['honeypot_time_limit'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'govcms_social_links_email';
   $strongarm->value = 'contact';
   $export['govcms_social_links_email'] = $strongarm;
@@ -444,6 +427,20 @@ function arpansa_entity_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'honeypot_protect_all_forms';
+  $strongarm->value = 1;
+  $export['honeypot_protect_all_forms'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'honeypot_time_limit';
+  $strongarm->value = '0';
+  $export['honeypot_time_limit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_landing_page';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -480,6 +477,13 @@ function arpansa_entity_strongarm() {
   $strongarm->name = 'menu_parent_literature_survey';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_literature_survey'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_webform';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_webform'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -712,13 +716,6 @@ function arpansa_entity_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'webform_clear_default_time';
-  $strongarm->value = '604800';
-  $export['webform_clear_default_time'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'toc_filter_smooth_scroll';
   $strongarm->value = 1;
   $export['toc_filter_smooth_scroll'] = $strongarm;
@@ -733,16 +730,23 @@ function arpansa_entity_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'webform_node_webform';
-  $strongarm->value = 1;
-  $export['webform_node_webform'] = $strongarm;
+  $strongarm->name = 'toc_filter_ul_default_title';
+  $strongarm->value = 'on this page';
+  $export['toc_filter_ul_default_title'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'toc_filter_ul_default_title';
-  $strongarm->value = 'on this page';
-  $export['toc_filter_ul_default_title'] = $strongarm;
+  $strongarm->name = 'webform_clear_default_time';
+  $strongarm->value = '604800';
+  $export['webform_clear_default_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webform_node_webform';
+  $strongarm->value = 1;
+  $export['webform_node_webform'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
