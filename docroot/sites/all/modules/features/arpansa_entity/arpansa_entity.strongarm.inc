@@ -118,6 +118,39 @@ function arpansa_entity_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_original_theme_breadcrumb';
+  $strongarm->value = array(
+    'govcms_zen' => 'zen_breadcrumb',
+    'govcms_barton' => 'zen_breadcrumb',
+    'shiny' => 'shiny_breadcrumb',
+    'arpansa_admin' => 'shiny_breadcrumb',
+    'arpansa_theme' => 'arpansa_theme_breadcrumb',
+    'seven' => 'theme_breadcrumb',
+  );
+  $export['crumbs_original_theme_breadcrumb'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_show_current_page';
+  $strongarm->value = 1;
+  $export['crumbs_show_current_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'crumbs_weights';
+  $strongarm->value = array(
+    'crumbs.home_title' => 1,
+    'menu.hierarchy.*' => 2,
+    '*' => 3,
+    'path' => FALSE,
+  );
+  $export['crumbs_weights'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;

@@ -596,3 +596,13 @@ function arpansa_base_update_7021() {
     menu_link_save($item);
   }
 }
+
+
+/**
+ * Updating document and image file entities [ARPANSA-95].
+ */
+function arpansa_base_update_7022() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
