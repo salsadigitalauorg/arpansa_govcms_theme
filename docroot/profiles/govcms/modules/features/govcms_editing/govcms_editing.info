@@ -1,7 +1,8 @@
 name = Editing
 core = 7.x
 package = govCMS core
-project = govcms_editing
+version = 7.x-2.10
+project = govcms
 dependencies[] = ctools
 dependencies[] = defaultconfig
 dependencies[] = features
@@ -18,7 +19,7 @@ dependencies[] = toc_filter
 dependencies[] = video_filter
 dependencies[] = wysiwyg
 dependencies[] = wysiwyg_filter
-datestamp = 1384120168
+datestamp = 1479789121
 features[ctools][] = linkit:linkit_profiles:1
 features[ctools][] = strongarm:strongarm:1
 features[defaultconfig][] = strongarm:pathologic_local_paths
@@ -30,10 +31,3 @@ features[linkit_profiles][] = wysiwyg
 features[variable][] = media__wysiwyg_browser_plugins
 features[wysiwyg][] = iframe
 features[wysiwyg][] = rich_text
-
-; Information added by Drupal.org packaging script on 2016-11-22
-version = "7.x-2.10"
-core = "7.x"
-project = "govcms"
-datestamp = "1479789121"
-
