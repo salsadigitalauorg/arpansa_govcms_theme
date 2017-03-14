@@ -75,6 +75,9 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     $this->addFieldMapping('sticky')->defaultValue(0);
     $this->addFieldMapping('revision')->defaultValue(FALSE);
     $this->addFieldMapping('pathauto')->defaultValue(FALSE);
+    $this->addFieldMapping('field_tags', 'tags');
+    $this->addFieldMapping('field_tags:create_term')->defaultValue(TRUE);
+    $this->addFieldMapping('field_tags:ignore_case')->defaultValue(TRUE);
   }
 
   /**
@@ -88,7 +91,34 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       throw new MigrateException(t('The source CSV file !source_csv does not exist.', ['!source_csv' => $this->sourceCSV]));
     }
 
+    $this->sanitizeIdList();
+
     parent::preImport();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function preRollback() {
+    $this->sanitizeIdList();
+    parent::preRollback();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function prepareKey($source_key, $row) {
+    if (!empty($row->source)) {
+      $row->origin = $row->source;
+      if (strpos($row->source, 'index.cfm') !== FALSE) {
+        $row->is_index = TRUE;
+        $row->source = str_replace('index.cfm', '/', $row->source);
+      }
+      $row->source = rtrim($row->source, '/');
+    }
+    $key = parent::prepareKey($source_key, $row);
+
+    return $key;
   }
 
   /**
@@ -121,14 +151,25 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     $row->source_url = 'http://www.arpansa.gov.au/' . $url;
 
     $row->alias = ArpansaMigrationHelper::sanitizeArpansaSourceUri($row->alias);
+    if ($row->alias && empty($row->migrate_map_sourceid1)) {
+      if ($path = drupal_lookup_path('source', $row->alias)) {
+        if ($node = menu_get_object('node', 1, $path)) {
+          $row->migrate_map_sourceid1 = $node->nid;
+        }
+      }
+    }
 
     // Map content type.
     switch ($row->type) {
       case 'news':
         $row->type = 'news_article';
         break;
+      case 'page':
+      case 'landing_page':
       case 'consultation':
-        $row->type = 'news_article';
+        break;
+      default:
+        $row->type = 'page';
         break;
     }
 
@@ -144,11 +185,8 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       if (!empty($ia_title)) {
         $ia_title_parts = explode(' - ', $ia_title);
         // Remove "ARPANSA" from IA title.
-        array_shift($ia_title_parts);
-        for ($i = 1; $i < $ia_title_level; $i++) {
-          if ($ia_title_parts && count($ia_title_parts)) {
-            array_shift($ia_title_parts);
-          }
+        if ($ia_title_parts[0] == 'ARPANSA') {
+          unset($ia_title_parts[0]);
         }
         if ($ia_title_parts && count($ia_title_parts)) {
           $ia_title = implode(' - ', $ia_title_parts);
@@ -161,6 +199,11 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
         break;
       }
     }
+    foreach ([1, 2, 3, 4] as $index) {
+      if (!empty($row->{'tag' . $index})) {
+        $row->tags[] = $row->{'tag' . $index};
+      }
+    }
 
     return TRUE;
   }
@@ -171,6 +214,10 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   public function prepare($node, $row) {
     if (empty($row->alias)) {
       $node->path['pathauto'] = TRUE;
+    }
+
+    if ($node->type =='consultation') {
+      $node->field_consultation_summary = $node->body;
     }
   }
 
@@ -208,6 +255,33 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     catch (PDOException $e) {
       $this->displayMessage('Could not create ' . $row->source . ' redirect for file ' . $node->nid);
     }
+
+    // Create another redirect if the page is index.cfm.
+    if (!empty($row->is_index)) {
+      try {
+        // Skips if the legacy path is already in use.
+        if ($row->origin != drupal_get_normal_path($row->origin)) {
+          $this->saveMessage(t('Skip creating redirect for !path', ['!path' => $row->origin]), self::MESSAGE_INFORMATIONAL);
+          return;
+        }
+        $path = trim($row->origin, '/');
+        if ($redirect = redirect_load_by_source($path)) {
+          $redirect->redirect = 'node/' . $node->nid;
+          redirect_save($redirect);
+        }
+        else {
+          $redirect = new stdClass();
+          redirect_object_prepare($redirect);
+          $redirect->status_code = 301;
+          $redirect->source = $path;
+          $redirect->redirect = 'node/' . $node->nid;
+          redirect_save($redirect);
+        }
+      }
+      catch (PDOException $e) {
+        $this->displayMessage('Could not create ' . $row->origin . ' redirect for file ' . $node->nid);
+      }
+    }
   }
 
   /**
@@ -226,12 +300,13 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     $source = reset($source_key);
     $node = new stdClass();
     $node->title = $source;
-    $node->type = $this->destination->getBundle();
+    $node->type = 'landing_page';
     $node->language = LANGUAGE_NONE;
     node_object_prepare($node);
     $node->uid = 1;
-    $node->status = NODE_NOT_PUBLISHED;
+    $node->status = NODE_PUBLISHED;
     $node->revision = FALSE;
+    $node->body[LANGUAGE_NONE][0] = ['value' => '', 'format' => 'rich_text'];
     node_save($node);
     migrate_instrument_stop('ArpansaMigrationPage::createStub');
     if (isset($node->nid)) {
@@ -251,7 +326,9 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
    *   FALSE upon failure.
    */
   protected function scrapeArpansaContent($row) {
-    if ($html = file_get_contents($row->source_url)) {
+    $result = drupal_http_request($row->source_url);
+    if (empty($result->error) && in_array($result->code, [200, 304])) {
+      $html = $result->data;
       $dom = new DOMDocument();
       $dom->preserveWhiteSpace = FALSE;
       @$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'),
@@ -295,7 +372,23 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
           }
         }
 
+        // Prevent malformed media token.
+        $row->body = str_replace(
+          ['[[[{', '}]]]'],
+          ['[<wbr>[[{', '}]]<wbr>]'],
+          $row->body
+        );
+
         return TRUE;
+      }
+      else {
+        $this->queueMessage(t('No content extracted from @url', ['@url' => $row->source_url]));
+      }
+    }
+    else {
+      $this->queueMessage(t('Could not scrape content from @url', ['@url' => $row->source_url]));
+      if (!empty($result->error)) {
+        $this->queueMessage($result->error);
       }
     }
 
@@ -368,12 +461,18 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       if (!empty($url['scheme'])) {
         continue;
       }
+      if (empty($url['path'])) {
+        $url['path'] == '/';
+      }
       $href = ArpansaMigrationHelper::remapRelativeUri($url['path'], $row->source);
 
       $extension = pathinfo($href, PATHINFO_EXTENSION);
       // Search for migrated page.
       if (empty($extension) || in_array(strtolower($extension), ['cfm', 'htm', 'html'])) {
-        $href = strtolower($href);
+        if (strpos($href, 'index.cfm') !== FALSE) {
+          $href = str_replace('index.cfm', '/', $href);
+        }
+        $href = rtrim(strtolower($href), '/');
         if ($destination = $this->handleSourceMigration(['Page'], [$href])) {
           $nid = is_array($destination) ? reset($destination) : $destination;
           $href = '/node/' . $nid;
@@ -462,33 +561,75 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     }
     else {
       // Try to find a parent menu item.
-      $parent_path = dirname($row->source);
-      if (!empty($parent_path) && $parent_path != '/') {
-        if ($destination = $this->handleSourceMigration('Page', [$parent_path])) {
-          $parent_nid = is_array($destination) ? reset($destination) : $destination;
-          if ($parent_menu = menu_link_get_preferred('node/' . $parent_nid, 'main-menu')) {
-            $menu['plid'] = $parent_menu['mlid'];
+      $parent_path = dirname($row->alias);
+      $parent_path = preg_replace('/\/+/i', '/', trim($parent_path, '/'));
+      $trail = explode('/', $parent_path);
+      if (count($trail)) {
+        $plid = 0;
+        for ($i = 0; $i < count($trail); $i++) {
+          $parent_trail = array_slice($trail, 0, $i + 1);
+          $parent_trail = '/' . implode('/', $parent_trail);
+          // Check if there is a node with this alias.
+          if ($parent_node_path = drupal_lookup_path('source', $parent_trail)) {
+            if ($parent_node = menu_get_object('node', 1, $parent_node_path)) {
+              if ($parent_menu = menu_link_get_preferred('node/' . $parent_node->nid, 'main-menu')) {
+                $plid = $parent_menu['mlid'];
+              }
+              else {
+                // Create one for its parent.
+                $parent_menu = [
+                  'enabled' => TRUE,
+                  'link_title' => $parent_trail,
+                  'link_path' => 'node/' . $parent_node->nid,
+                  'plid' => $plid,
+                  'menu_name' => 'main-menu',
+                  'expanded' => 1,
+                ];
+                $plid = menu_link_save($parent_menu);
+              }
+            }
           }
+          // Create a new stub node.
           else {
+            $nids = $this->createStub($this, [$parent_trail]);
+            $parent_nid = reset($nids);
             // Create one for its parent.
             $parent_menu = [
               'enabled' => TRUE,
-              'link_title' => $parent_path,
+              'link_title' => $parent_trail,
               'link_path' => 'node/' . $parent_nid,
-              'plid' => 0,
+              'plid' => $plid,
               'menu_name' => 'main-menu',
               'expanded' => 1,
             ];
-            if ($plid = menu_link_save($parent_menu)) {
-              $menu['plid'] = $plid;
-            }
+            $plid = menu_link_save($parent_menu);
           }
         }
+
+        $menu['plid'] = $plid;
       }
     }
 
     if ($mlid = menu_link_save($menu)) {
       $this->lastMenuItem = $menu;
+    }
+  }
+
+  /**
+   * Sanitise idList.
+   */
+  protected function sanitizeIdList() {
+    $idlist = $this->getOption('idlist');
+    if ($idlist) {
+      $idlist = explode(',', $idlist);
+      foreach ($idlist as &$id) {
+        if (strpos($id, 'index.cfm') !== FALSE) {
+          $id = str_replace('index.cfm', '/', $id);
+        }
+        $id = rtrim($id, '/');
+      }
+      $idlist = implode(',', $idlist);
+      $this->options['idlist'] = $idlist;
     }
   }
 }

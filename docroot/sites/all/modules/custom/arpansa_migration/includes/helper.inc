@@ -134,7 +134,7 @@ class ArpansaMigrationHelper {
    */
   public static function buildMediaJson($fid, $attributes = array(), $link_text = NULL, $view_mode = 'default') {
     $media_token = new stdClass();
-    $media_token->fid = $fid;
+    $media_token->fid = intval($fid);
     $media_token->view_mode = $view_mode ?: 'default';
     $media_token->type = 'media';
     $media_token->link_text = $link_text;
@@ -177,7 +177,7 @@ class ArpansaMigrationHelper {
    * @param string $uri
    *   Relative URI, eg. ../../images/abc.jpg
    * @param string $context_uri
-   *   Current context, eg. /aboutus/collaboration/index.cfm
+   *   Current context, eg. /aboutus/collaboration/
    *
    * @return string
    *   Remapped URI, eg. /images/abc.jpg
@@ -188,10 +188,25 @@ class ArpansaMigrationHelper {
       return $uri;
     }
 
-    $context_dir = dirname($context_uri);
-    while (strpos($uri, '../') === 0) {
-      $context_dir = dirname($context_dir);
-      $uri = substr_replace($uri, '', 0, strlen('../'));
+    if (strpos($uri, 'index.cfm') !== FALSE) {
+      $uri = str_replace('index.cfm', '/', $uri);
+    }
+    $uri = preg_replace('/\/+/i', '/', $uri);
+
+    if (pathinfo($context_uri, PATHINFO_EXTENSION)) {
+      $context_dir = dirname($context_uri);
+    }
+    else {
+      $context_dir = $context_uri;
+    }
+    while (strpos($uri, '../') === 0 || strpos($uri, './') === 0) {
+      if (strpos($uri, '../') === 0) {
+        $context_dir = dirname($context_dir);
+        $uri = substr_replace($uri, '', 0, strlen('../'));
+      }
+      else {
+        $uri = substr_replace($uri, '', 0, strlen('./'));
+      }
     }
     if ($context_dir != '/') {
       $uri = $context_dir . '/' . $uri;
