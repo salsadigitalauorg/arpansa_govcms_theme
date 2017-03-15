@@ -143,7 +143,8 @@ function arpansa_entity_strongarm() {
   $strongarm->value = array(
     'crumbs.home_title' => 1,
     'menu.hierarchy.*' => 2,
-    '*' => 3,
+    'menu.link_title.*' => 3,
+    '*' => 4,
     'path' => FALSE,
   );
   $export['crumbs_weights'] = $strongarm;
