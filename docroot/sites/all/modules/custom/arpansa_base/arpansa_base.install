@@ -866,3 +866,24 @@ function arpansa_base_update_7029() {
   salsa_helpers_features_revert('arpansa_entity');
 
 }
+
+/**
+ * Add new bean with delta `about-us` for Homepage Introduction block [ARPANSA-63].
+ */
+function arpansa_base_update_7031() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  $description = 'This is the homepage introduction block, used to present the ARPANSA mission statement.';
+
+  salsa_helpers_create_bean(
+    'Homepage Introduction',
+    '',
+    $description,
+    'about-us',
+    function() use ($description) {
+      return $description;
+    }
+  );
+
+}
