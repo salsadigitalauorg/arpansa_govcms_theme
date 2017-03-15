@@ -151,10 +151,14 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     $row->source_url = 'http://www.arpansa.gov.au/' . $url;
 
     $row->alias = ArpansaMigrationHelper::sanitizeArpansaSourceUri($row->alias);
-    if ($row->alias && empty($row->migrate_map_sourceid1)) {
-      if ($path = drupal_lookup_path('source', $row->alias)) {
-        if ($node = menu_get_object('node', 1, $path)) {
-          $row->migrate_map_sourceid1 = $node->nid;
+    if ($row->alias && empty($row->migrate_map_destid1)) {
+      if ($nid = $this->findNodeWithAlias($row->alias, FALSE)) {
+        $row->migrate_map_destid1 = $nid;
+        if ($mapping = $this->map->getRowByDestination([$nid])) {
+          if ($mapping['sourceid1'] != $row->source) {
+            // Delete this stub mapping.
+            $this->map->delete([$mapping['sourceid1']]);
+          }
         }
       }
     }
@@ -561,54 +565,39 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     }
     else {
       // Try to find a parent menu item.
-      $parent_path = dirname($row->alias);
-      $parent_path = preg_replace('/\/+/i', '/', trim($parent_path, '/'));
+      $parent_path = preg_replace('/\/+/i', '/', trim($row->alias, '/'));
       $trail = explode('/', $parent_path);
-      if (count($trail)) {
+      if (count($trail) > 1) {
         $plid = 0;
-        for ($i = 0; $i < count($trail); $i++) {
-          $parent_trail = array_slice($trail, 0, $i + 1);
-          $parent_trail = '/' . implode('/', $parent_trail);
-          // Check if there is a node with this alias.
-          if ($parent_node_path = drupal_lookup_path('source', $parent_trail)) {
-            if ($parent_node = menu_get_object('node', 1, $parent_node_path)) {
-              if ($parent_menu = menu_link_get_preferred('node/' . $parent_node->nid, 'main-menu')) {
-                $plid = $parent_menu['mlid'];
-              }
-              else {
-                // Create one for its parent.
-                $parent_menu = [
-                  'enabled' => TRUE,
-                  'link_title' => $parent_trail,
-                  'link_path' => 'node/' . $parent_node->nid,
-                  'plid' => $plid,
-                  'menu_name' => 'main-menu',
-                  'expanded' => 1,
-                ];
-                $plid = menu_link_save($parent_menu);
-              }
-            }
+        foreach ($trail as $index => $trail_item) {
+          if ($index + 1 == count($trail)) {
+            break;
           }
-          // Create a new stub node.
-          else {
-            $nids = $this->createStub($this, [$parent_trail]);
-            $parent_nid = reset($nids);
-            // Create one for its parent.
-            $parent_menu = [
-              'enabled' => TRUE,
-              'link_title' => $parent_trail,
-              'link_path' => 'node/' . $parent_nid,
-              'plid' => $plid,
-              'menu_name' => 'main-menu',
-              'expanded' => 1,
-            ];
-            $plid = menu_link_save($parent_menu);
+          $parent_trail = array_slice($trail, 0, $index + 1);
+          $parent_trail = '/' . implode('/', $parent_trail);
+          if ($parent_nid = $this->findNodeWithAlias($parent_trail)) {
+            if ($parent_menu = menu_link_get_preferred('node/' . $parent_nid, 'main-menu')) {
+              $plid = $parent_menu['mlid'];
+            }
+            else {
+              // Create one for its parent.
+              $parent_menu = [
+                'enabled' => TRUE,
+                'link_title' => $parent_trail,
+                'link_path' => 'node/' . $parent_nid,
+                'plid' => $plid,
+                'menu_name' => 'main-menu',
+                'expanded' => 1,
+              ];
+              $plid = menu_link_save($parent_menu);
+            }
           }
         }
 
         $menu['plid'] = $plid;
       }
     }
+
 
     if ($mlid = menu_link_save($menu)) {
       $this->lastMenuItem = $menu;
@@ -631,5 +620,45 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       $idlist = implode(',', $idlist);
       $this->options['idlist'] = $idlist;
     }
+  }
+
+  /**
+   * Find migrated node with alias.
+   *
+   * @param string $alias
+   *   Path alias.
+   * @param bool $createStub
+   *   Whethere to create a new stub if not found.
+   *
+   * @return int|FALSE
+   *   Node ID of the stub.
+   */
+  protected function findNodeWithAlias($alias, $createStub = TRUE) {
+    if ($path = drupal_lookup_path('source', $alias)) {
+      if ($node = menu_get_object('node', 1, $path)) {
+        return $node->nid;
+      }
+    }
+    else {
+      $query = new EntityFieldQuery();
+      $result = $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'landing_page')
+        ->propertyCondition('title', $alias)
+        ->execute();
+      if (!empty($result['node']) && count($result['node'])) {
+        $node = reset($result['node']);
+        return $node->nid;
+      }
+    }
+
+    if ($createStub) {
+      if ($nids = $this->createStub($this, [$alias])) {
+        $this->queueMessage(t('Create stub for alias @alias', ['@alias' => $alias]), self::MESSAGE_INFORMATIONAL);
+        $this->map->saveIDMapping((object) ['source' => $alias], $nids);
+        return reset($nids);
+      }
+    }
+
+    return FALSE;
   }
 }
