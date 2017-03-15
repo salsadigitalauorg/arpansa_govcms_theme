@@ -102,10 +102,10 @@ function arpansa_blocks_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'footer',
+        'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -26,
+        'weight' => -31,
       ),
     ),
     'title' => '',
@@ -182,8 +182,8 @@ function arpansa_blocks_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
-        'region' => 'footer',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'arpansa_theme',
         'weight' => -30,
       ),

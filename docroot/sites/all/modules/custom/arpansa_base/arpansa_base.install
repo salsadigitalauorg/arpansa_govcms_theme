@@ -902,3 +902,13 @@ function arpansa_base_update_7032() {
 
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Add Footer menu block [ARPANSA-13].
+ */
+function arpansa_base_update_7033() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  salsa_helpers_features_revert('arpansa_blocks');
+}
