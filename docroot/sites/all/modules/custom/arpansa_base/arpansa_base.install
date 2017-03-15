@@ -864,7 +864,16 @@ function arpansa_base_update_7029() {
   module_load_include('module', 'salsa_helpers');
 
   salsa_helpers_features_revert('arpansa_entity');
+}
 
+/**
+ * Bugfixes to Top Navigation menu source [ARPANSA-43].
+ */
+function arpansa_base_update_7030() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  salsa_helpers_features_revert('arpansa_entity');
 }
 
 /**
