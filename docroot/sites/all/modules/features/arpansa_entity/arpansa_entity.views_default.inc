@@ -201,6 +201,12 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   $handler->display->display_options['sorts']['weight']['relationship'] = 'field_literature_survey_date_tid';
+  $handler->display->display_options['sorts']['weight']['order'] = 'DESC';
+  /* Sort criterion: Content: Commentary by ARPANSA (field_commentary:format) */
+  $handler->display->display_options['sorts']['field_commentary_format']['id'] = 'field_commentary_format';
+  $handler->display->display_options['sorts']['field_commentary_format']['table'] = 'field_data_field_commentary';
+  $handler->display->display_options['sorts']['field_commentary_format']['field'] = 'field_commentary_format';
+  $handler->display->display_options['sorts']['field_commentary_format']['order'] = 'DESC';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -288,11 +294,6 @@ function arpansa_entity_views_default_views() {
   );
   $handler->display->display_options['filters']['field_tags_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
-  /* Filter criterion: Content: Commentary by ARPANSA (field_commentary) */
-  $handler->display->display_options['filters']['field_commentary_value']['id'] = 'field_commentary_value';
-  $handler->display->display_options['filters']['field_commentary_value']['table'] = 'field_data_field_commentary';
-  $handler->display->display_options['filters']['field_commentary_value']['field'] = 'field_commentary_value';
-  $handler->display->display_options['filters']['field_commentary_value']['operator'] = 'empty';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'lit_survey');
@@ -300,6 +301,7 @@ function arpansa_entity_views_default_views() {
 
   /* Display: Attachment */
   $handler = $view->new_display('attachment', 'Attachment', 'att_comment');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
