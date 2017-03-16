@@ -102,6 +102,11 @@ function arpansa_theme_preprocess_node(&$variables) {
     if ($has_thumb || $has_image || $has_featured_image) {
       $variables['classes_array'][] = 'has-thumbnail';
     }
+
+    if ($variables['type'] === 'career') {
+      $variables['title'] = null;
+      $variables['content']['field_position_number'][0]['#markup'] = '<a href="' . $variables['node_url'] . '">' . $variables['content']['field_position_number'][0]['#markup'] . '</a>';
+    }
   }
 
   if ($variables['type'] === 'webform') {
