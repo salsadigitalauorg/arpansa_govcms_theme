@@ -43,7 +43,7 @@ function arpansa_entity_default_fe_block_settings() {
     'delta' => 'careers-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'node/57',
+    'pages' => 'careers',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
