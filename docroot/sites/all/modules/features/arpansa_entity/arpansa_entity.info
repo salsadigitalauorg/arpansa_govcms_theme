@@ -512,5 +512,6 @@ features[variable][] = workbench_moderation_default_state_webform
 features[variable][] = xmlsitemap_settings_node_landing_page
 features[variable][] = xmlsitemap_settings_node_literature_survey
 features[variable][] = xmlsitemap_settings_node_webform
+features[views_view][] = homepage_what_s_new
 features[views_view][] = literature_surveys
 project path = sites/all/modules/features
