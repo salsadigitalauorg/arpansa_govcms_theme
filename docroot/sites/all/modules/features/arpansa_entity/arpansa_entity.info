@@ -1,7 +1,7 @@
 name = ARPANSA Entity
 core = 7.x
 package = ARPANSA
-version = 7.x-1.16
+version = 7.x-1.17
 dependencies[] = arpansa_taxonomy
 dependencies[] = bean
 dependencies[] = block
@@ -140,6 +140,7 @@ features[field_instance][] = node-page-field_reviewed_date
 features[field_instance][] = node-page-field_show_related_content
 features[field_instance][] = node-page-field_social_links
 features[field_instance][] = node-page-field_tags
+features[field_instance][] = node-webform-body
 features[field_instance][] = node-webform-field_image
 features[file_display][] = image__full__file_field_field_redirection
 features[file_display][] = image__full__file_field_file_default

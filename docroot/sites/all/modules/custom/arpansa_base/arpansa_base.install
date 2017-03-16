@@ -385,7 +385,7 @@ function arpansa_base_update_7012() {
 }
 
 /**
- * Adding the Literature Survey Content Type - [ARPANSA-67]
+ * Adding the Literature Survey Content Type - [ARPANSA-67].
  */
 function arpansa_base_update_7013() {
   module_enable(['salsa_helpers']);
@@ -397,7 +397,6 @@ function arpansa_base_update_7013() {
  * Recreate terms for the Literature Survey Date vocabulary [ARPANSA-40].
  */
 function arpansa_base_update_7014() {
-
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
@@ -551,7 +550,7 @@ function arpansa_base_update_7020() {
 }
 
 /**
- * Adding menu items for the Top Header menu - [ARPANSA-43]
+ * Adding menu items for the Top Header menu - [ARPANSA-43].
  */
 function arpansa_base_update_7021() {
   $items = array(
@@ -592,11 +591,10 @@ function arpansa_base_update_7021() {
       'module' => 'menu',
     ),
   );
-  foreach($items as $item) {
+  foreach ($items as $item) {
     menu_link_save($item);
   }
 }
-
 
 /**
  * Updating document and image file entities [ARPANSA-95].
@@ -617,18 +615,18 @@ function arpansa_base_update_7023() {
 }
 
 /**
- * Adding menu items for the Fooer Sub menu - [ARPANSA-13]
+ * Adding menu items for the Footer Sub menu - [ARPANSA-13].
  */
 function arpansa_base_update_7024() {
   module_enable(['salsa_helpers', 'arpansa_blocks']);
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_blocks');
   salsa_helpers_features_revert('arpansa_entity');
-  // Remove the OOTB links
+  // Remove the OOTB links.
   $footer_sub_menu = 'menu-footer-sub-menu';
   $menus = menu_tree($footer_sub_menu);
-  foreach($menus as $mlid => $menu) {
-    if(is_numeric($mlid)) {
+  foreach ($menus as $mlid => $menu) {
+    if (is_numeric($mlid)) {
       menu_link_delete($mlid);
     }
   }
@@ -690,7 +688,7 @@ function arpansa_base_update_7024() {
       'module' => 'menu',
     ),
   );
-  foreach($items as $item) {
+  foreach ($items as $item) {
     menu_link_save($item);
   }
 }
@@ -699,7 +697,6 @@ function arpansa_base_update_7024() {
  * Creating the initial Tags terms [ARPANSA-39].
  */
 function arpansa_base_update_7025() {
-
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
 
@@ -877,7 +874,7 @@ function arpansa_base_update_7030() {
 }
 
 /**
- * Add new bean with delta `about-us` for Homepage Introduction block [ARPANSA-63].
+ * Add new bean with delta `about-us` for Homepage Intro block [ARPANSA-63].
  */
 function arpansa_base_update_7031() {
   module_enable(['salsa_helpers']);
@@ -890,11 +887,30 @@ function arpansa_base_update_7031() {
     '',
     $description,
     'about-us',
-    function() use ($description) {
+    function () use ($description) {
       return $description;
     }
   );
+}
 
+/**
+ * Add Body field to Webform content type [ARPANSA-16].
+ */
+function arpansa_base_update_7032() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
+ * Add Footer menu block [ARPANSA-13].
+ */
+function arpansa_base_update_7033() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  salsa_helpers_features_revert('arpansa_blocks');
 }
 
 /**
