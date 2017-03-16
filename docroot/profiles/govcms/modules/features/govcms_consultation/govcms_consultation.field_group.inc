@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function govcms_consultation_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -21,7 +21,7 @@ function govcms_consultation_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Consultation tabs',
-    'weight' => '1',
+    'weight' => '4',
     'children' => array(
       0 => 'group_issue',
       1 => 'group_outcomes',
@@ -35,7 +35,7 @@ function govcms_consultation_field_group_info() {
       ),
     ),
   );
-  $export['group_consultation_htabs|node|consultation|default'] = $field_group;
+  $field_groups['group_consultation_htabs|node|consultation|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -52,8 +52,8 @@ function govcms_consultation_field_group_info() {
     'children' => array(
       0 => 'group_discussion_settings',
       1 => 'group_formal_submissions',
-      2 => 'group_twitter',
-      3 => 'group_outcomes',
+      2 => 'group_outcomes',
+      3 => 'group_twitter',
       4 => 'group_updates',
     ),
     'format_type' => 'tabs',
@@ -64,7 +64,7 @@ function govcms_consultation_field_group_info() {
       ),
     ),
   );
-  $export['group_consultation_vtabs|node|consultation|form'] = $field_group;
+  $field_groups['group_consultation_vtabs|node|consultation|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -93,7 +93,7 @@ function govcms_consultation_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_discussion_settings|node|consultation|form'] = $field_group;
+  $field_groups['group_discussion_settings|node|consultation|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -106,7 +106,7 @@ function govcms_consultation_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Participate',
-    'weight' => '2',
+    'weight' => '5',
     'children' => array(
       0 => 'field_formal_submission_cta_1',
       1 => 'field_formal_submission_cta_2',
@@ -128,7 +128,7 @@ function govcms_consultation_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_formal_submissions|node|consultation|default'] = $field_group;
+  $field_groups['group_formal_submissions|node|consultation|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -161,7 +161,7 @@ function govcms_consultation_field_group_info() {
       ),
     ),
   );
-  $export['group_formal_submissions|node|consultation|form'] = $field_group;
+  $field_groups['group_formal_submissions|node|consultation|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -191,7 +191,7 @@ function govcms_consultation_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_issue|node|consultation|default'] = $field_group;
+  $field_groups['group_issue|node|consultation|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -220,7 +220,7 @@ function govcms_consultation_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_issue|node|consultation|form'] = $field_group;
+  $field_groups['group_issue|node|consultation|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -248,7 +248,7 @@ function govcms_consultation_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_outcomes|node|consultation|default'] = $field_group;
+  $field_groups['group_outcomes|node|consultation|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -275,7 +275,7 @@ function govcms_consultation_field_group_info() {
       ),
     ),
   );
-  $export['group_outcomes|node|consultation|form'] = $field_group;
+  $field_groups['group_outcomes|node|consultation|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -303,7 +303,7 @@ function govcms_consultation_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_twitter|node|consultation|form'] = $field_group;
+  $field_groups['group_twitter|node|consultation|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -330,7 +330,7 @@ function govcms_consultation_field_group_info() {
       ),
     ),
   );
-  $export['group_updates|node|consultation|default'] = $field_group;
+  $field_groups['group_updates|node|consultation|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -357,7 +357,20 @@ function govcms_consultation_field_group_info() {
       ),
     ),
   );
-  $export['group_updates|node|consultation|form'] = $field_group;
+  $field_groups['group_updates|node|consultation|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Consultation tabs');
+  t('Formal Submissions');
+  t('Informal discussion');
+  t('Outcomes');
+  t('Participate');
+  t('The Issue');
+  t('The issue');
+  t('Twitter discussion');
+  t('Updates and Milestones');
+  t('Updates/Milestones');
+
+  return $field_groups;
 }
