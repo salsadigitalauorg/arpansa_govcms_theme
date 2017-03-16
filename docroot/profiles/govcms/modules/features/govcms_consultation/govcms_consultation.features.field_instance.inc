@@ -10,7 +10,57 @@
 function govcms_consultation_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-consultation-field_consultation_date'
+  // Exported field_instance: 'node-consultation-field_authored_by'.
+  $field_instances['node-consultation-field_authored_by'] = array(
+    'bundle' => 'consultation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_authored_by',
+    'label' => 'Authored By',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 50,
+    ),
+  );
+
+  // Exported field_instance: 'node-consultation-field_consultation_date'.
   $field_instances['node-consultation-field_consultation_date'] = array(
     'bundle' => 'consultation',
     'deleted' => 0,
@@ -31,9 +81,10 @@ function govcms_consultation_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 7,
+        'weight' => 3,
       ),
       'rss_feed' => array(
         'label' => 'inline',
@@ -50,6 +101,7 @@ function govcms_consultation_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -58,7 +110,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 36,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -89,7 +141,7 @@ function govcms_consultation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-consultation-field_consultation_issue_text'
+  // Exported field_instance: 'node-consultation-field_consultation_issue_text'.
   $field_instances['node-consultation-field_consultation_issue_text'] = array(
     'bundle' => 'consultation',
     'default_value' => NULL,
@@ -107,7 +159,7 @@ function govcms_consultation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 4,
       ),
       'rss_feed' => array(
         'label' => 'hidden',
@@ -125,7 +177,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 29,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -153,7 +205,7 @@ function govcms_consultation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-consultation-field_consultation_summary'
+  // Exported field_instance: 'node-consultation-field_consultation_summary'.
   $field_instances['node-consultation-field_consultation_summary'] = array(
     'bundle' => 'consultation',
     'default_value' => NULL,
@@ -190,9 +242,11 @@ function govcms_consultation_field_default_field_instances() {
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_plain',
-        'weight' => 0,
+        'settings' => array(
+          'trim_length' => 200,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -219,7 +273,8 @@ function govcms_consultation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-consultation-field_discussion_forum_heading'
+  // Exported field_instance:
+  // 'node-consultation-field_discussion_forum_heading'.
   $field_instances['node-consultation-field_discussion_forum_heading'] = array(
     'bundle' => 'consultation',
     'default_value' => NULL,
@@ -237,7 +292,7 @@ function govcms_consultation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -255,7 +310,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 28,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -279,7 +334,7 @@ function govcms_consultation_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-consultation-field_discussion_forum_intro'
+  // Exported field_instance: 'node-consultation-field_discussion_forum_intro'.
   $field_instances['node-consultation-field_discussion_forum_intro'] = array(
     'bundle' => 'consultation',
     'default_value' => NULL,
@@ -297,7 +352,7 @@ function govcms_consultation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -315,7 +370,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 27,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -339,7 +394,7 @@ function govcms_consultation_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-consultation-field_enable_late_submissions'
+  // Exported field_instance: 'node-consultation-field_enable_late_submissions'.
   $field_instances['node-consultation-field_enable_late_submissions'] = array(
     'bundle' => 'consultation',
     'default_value' => array(
@@ -360,7 +415,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 23,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -378,7 +433,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 26,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -401,7 +456,7 @@ function govcms_consultation_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-consultation-field_file_uploads_enabled'
+  // Exported field_instance: 'node-consultation-field_file_uploads_enabled'.
   $field_instances['node-consultation-field_file_uploads_enabled'] = array(
     'bundle' => 'consultation',
     'default_value' => array(
@@ -422,7 +477,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 25,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -440,7 +495,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 30,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -463,7 +518,7 @@ function govcms_consultation_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-consultation-field_formal_submission_cta_1'
+  // Exported field_instance: 'node-consultation-field_formal_submission_cta_1'.
   $field_instances['node-consultation-field_formal_submission_cta_1'] = array(
     'bundle' => 'consultation',
     'default_value' => array(
@@ -504,7 +559,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 31,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -532,7 +587,7 @@ function govcms_consultation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-consultation-field_formal_submission_cta_2'
+  // Exported field_instance: 'node-consultation-field_formal_submission_cta_2'.
   $field_instances['node-consultation-field_formal_submission_cta_2'] = array(
     'bundle' => 'consultation',
     'default_value' => array(
@@ -573,7 +628,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 35,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -598,7 +653,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-consultation-field_formal_submission_enabled'
+  // 'node-consultation-field_formal_submission_enabled'.
   $field_instances['node-consultation-field_formal_submission_enabled'] = array(
     'bundle' => 'consultation',
     'default_value' => array(
@@ -619,7 +674,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 22,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -637,7 +692,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 34,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -659,7 +714,8 @@ function govcms_consultation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-consultation-field_formal_submission_notify'
+  // Exported field_instance:
+  // 'node-consultation-field_formal_submission_notify'.
   $field_instances['node-consultation-field_formal_submission_notify'] = array(
     'bundle' => 'consultation',
     'default_value' => array(
@@ -680,7 +736,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 21,
       ),
       'rss_feed' => array(
         'label' => 'hidden',
@@ -698,7 +754,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 33,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -722,7 +778,77 @@ function govcms_consultation_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-consultation-field_issue_documentation'
+  // Exported field_instance: 'node-consultation-field_image'.
+  $field_instances['node-consultation-field_image'] = array(
+    'bundle' => 'consultation',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'govcms_ui_kit_thumbnail',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Feature Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 42,
+    ),
+  );
+
+  // Exported field_instance: 'node-consultation-field_issue_documentation'.
   $field_instances['node-consultation-field_issue_documentation'] = array(
     'bundle' => 'consultation',
     'default_value' => NULL,
@@ -742,7 +868,7 @@ function govcms_consultation_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 9,
+        'weight' => 5,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -760,7 +886,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 32,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -838,7 +964,76 @@ function govcms_consultation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-consultation-field_outcomes_text'
+  // Exported field_instance: 'node-consultation-field_news_date'.
+  $field_instances['node-consultation-field_news_date'] = array(
+    'bundle' => 'consultation',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_date',
+    'label' => 'Date of Publication',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/Y - g:i:sa',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 52,
+    ),
+  );
+
+  // Exported field_instance: 'node-consultation-field_outcomes_text'.
   $field_instances['node-consultation-field_outcomes_text'] = array(
     'bundle' => 'consultation',
     'default_value' => NULL,
@@ -874,7 +1069,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -902,7 +1097,107 @@ function govcms_consultation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-consultation-field_short_comments_enabled'
+  // Exported field_instance: 'node-consultation-field_page_type'.
+  $field_instances['node-consultation-field_page_type'] = array(
+    'bundle' => 'consultation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_page_type',
+    'label' => 'Page Type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+        'flatten_options' => 0,
+        'flatten_sort' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 44,
+    ),
+  );
+
+  // Exported field_instance: 'node-consultation-field_reviewed_date'.
+  $field_instances['node-consultation-field_reviewed_date'] = array(
+    'bundle' => 'consultation',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_reviewed_date',
+    'label' => 'Reviewed Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/Y - g:i:sa',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 48,
+    ),
+  );
+
+  // Exported field_instance: 'node-consultation-field_short_comments_enabled'.
   $field_instances['node-consultation-field_short_comments_enabled'] = array(
     'bundle' => 'consultation',
     'default_value' => array(
@@ -923,7 +1218,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 24,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -941,7 +1236,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -964,7 +1259,149 @@ function govcms_consultation_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-consultation-field_twitter_discussion'
+  // Exported field_instance: 'node-consultation-field_show_related_content'.
+  $field_instances['node-consultation-field_show_related_content'] = array(
+    'bundle' => 'consultation',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_show_related_content',
+    'label' => 'Show Related Content',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 54,
+    ),
+  );
+
+  // Exported field_instance: 'node-consultation-field_social_links'.
+  $field_instances['node-consultation-field_social_links'] = array(
+    'bundle' => 'consultation',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_social_links',
+    'label' => 'Hide social links',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 56,
+    ),
+  );
+
+  // Exported field_instance: 'node-consultation-field_tags'.
+  $field_instances['node-consultation-field_tags'] = array(
+    'bundle' => 'consultation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 46,
+    ),
+  );
+
+  // Exported field_instance: 'node-consultation-field_twitter_discussion'.
   $field_instances['node-consultation-field_twitter_discussion'] = array(
     'bundle' => 'consultation',
     'default_value' => NULL,
@@ -984,7 +1421,7 @@ function govcms_consultation_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -1002,7 +1439,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1038,7 +1475,7 @@ function govcms_consultation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-consultation-field_updates'
+  // Exported field_instance: 'node-consultation-field_updates'.
   $field_instances['node-consultation-field_updates'] = array(
     'bundle' => 'consultation',
     'default_value' => NULL,
@@ -1076,7 +1513,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -1114,7 +1551,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-issue_documentation-field_description'
+  // 'paragraphs_item-issue_documentation-field_description'.
   $field_instances['paragraphs_item-issue_documentation-field_description'] = array(
     'bundle' => 'issue_documentation',
     'default_value' => NULL,
@@ -1160,7 +1597,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-issue_documentation-field_file_pdf'
+  // 'paragraphs_item-issue_documentation-field_file_pdf'.
   $field_instances['paragraphs_item-issue_documentation-field_file_pdf'] = array(
     'bundle' => 'issue_documentation',
     'deleted' => 0,
@@ -1223,7 +1660,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-issue_documentation-field_file_title'
+  // 'paragraphs_item-issue_documentation-field_file_title'.
   $field_instances['paragraphs_item-issue_documentation-field_file_title'] = array(
     'bundle' => 'issue_documentation',
     'default_value' => NULL,
@@ -1269,7 +1706,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-issue_documentation-field_file_word'
+  // 'paragraphs_item-issue_documentation-field_file_word'.
   $field_instances['paragraphs_item-issue_documentation-field_file_word'] = array(
     'bundle' => 'issue_documentation',
     'deleted' => 0,
@@ -1332,7 +1769,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-issue_documentation-field_submission_date'
+  // 'paragraphs_item-issue_documentation-field_submission_date'.
   $field_instances['paragraphs_item-issue_documentation-field_submission_date'] = array(
     'bundle' => 'issue_documentation',
     'deleted' => 0,
@@ -1347,6 +1784,7 @@ function govcms_consultation_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1386,7 +1824,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-twitter_stream-field_pbundle_title'
+  // 'paragraphs_item-twitter_stream-field_pbundle_title'.
   $field_instances['paragraphs_item-twitter_stream-field_pbundle_title'] = array(
     'bundle' => 'twitter_stream',
     'default_value' => array(
@@ -1437,7 +1875,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-twitter_stream-field_twitter_widget_id'
+  // 'paragraphs_item-twitter_stream-field_twitter_widget_id'.
   $field_instances['paragraphs_item-twitter_stream-field_twitter_widget_id'] = array(
     'bundle' => 'twitter_stream',
     'default_value' => NULL,
@@ -1484,7 +1922,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-update_milestone-field_pbundle_destination'
+  // 'paragraphs_item-update_milestone-field_pbundle_destination'.
   $field_instances['paragraphs_item-update_milestone-field_pbundle_destination'] = array(
     'bundle' => 'update_milestone',
     'default_value' => NULL,
@@ -1560,7 +1998,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-update_milestone-field_update_date'
+  // 'paragraphs_item-update_milestone-field_update_date'.
   $field_instances['paragraphs_item-update_milestone-field_update_date'] = array(
     'bundle' => 'update_milestone',
     'deleted' => 0,
@@ -1575,6 +2013,7 @@ function govcms_consultation_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1594,6 +2033,7 @@ function govcms_consultation_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1607,6 +2047,7 @@ function govcms_consultation_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1640,7 +2081,7 @@ function govcms_consultation_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-update_milestone-field_update_type_term'
+  // 'paragraphs_item-update_milestone-field_update_type_term'.
   $field_instances['paragraphs_item-update_milestone-field_update_type_term'] = array(
     'bundle' => 'update_milestone',
     'default_value' => array(
@@ -1699,7 +2140,7 @@ function govcms_consultation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-update_type-field_pbundle_image'
+  // Exported field_instance: 'taxonomy_term-update_type-field_pbundle_image'.
   $field_instances['taxonomy_term-update_type-field_pbundle_image'] = array(
     'bundle' => 'update_type',
     'deleted' => 0,
@@ -1764,11 +2205,14 @@ function govcms_consultation_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A consultation summary will display at the top of a consultation page, as well as wherever content is promoted.');
+  t('Authored By');
   t('Consultation summary');
+  t('Date of Publication');
   t('Date of document submission');
   t('Discussion Forum heading');
   t('Discussion Forum introduction');
   t('Enable late submissions');
+  t('Feature Image');
   t('File (PDF)');
   t('File (Word)');
   t('File attachments enabled');
@@ -1779,15 +2223,20 @@ function govcms_consultation_field_default_field_instances() {
   t('Formal submission enabled');
   t('Formal submission introduction');
   t('Have Your Say outro');
+  t('Hide social links');
   t('Icon');
   t('If you wish to link this update to more verbose information please supply a URL.');
   t('Issue documentation');
   t('Issue text');
   t('Outcomes text');
+  t('Page Type');
   t('Please provide an outro for the Have Your Say section. This content will display below the \'Have Your Say\' button.');
+  t('Reviewed Date');
   t('Short comments enabled');
+  t('Show Related Content');
   t('Start/End Date');
   t('Submission date');
+  t('Tags');
   t('The date this update/milestone occurred on.');
   t('The email address to notify of a new formal submission');
   t('The starting and end date of a consultation.  This will be used to display progress bars, as well as determining if a Consultation is in \'pre-launch\' vs \'active\' states.');
