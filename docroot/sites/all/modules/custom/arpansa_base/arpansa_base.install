@@ -933,3 +933,14 @@ function arpansa_base_update_7034() {
   salsa_helpers_lock_features($govCMSFeatures);
 
 }
+
+/**
+ * Changes to Homepage What's New view [ARPANSA-46].
+ */
+function arpansa_base_update_7035() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  salsa_helpers_features_revert('arpansa_entity');
+
+}
