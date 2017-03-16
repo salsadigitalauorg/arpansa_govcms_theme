@@ -310,7 +310,7 @@ function arpansa_entity_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'file_directory' => 'careers',
-      'file_extensions' => 'txt doc docx pdf',
+      'file_extensions' => 'doc docx rtf pdf',
       'max_filesize' => '5 MB',
       'user_register_form' => FALSE,
     ),
