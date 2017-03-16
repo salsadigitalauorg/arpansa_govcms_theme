@@ -946,7 +946,7 @@ function arpansa_base_update_7035() {
 /**
  * Changes to Homepage What's New view [ARPANSA-46].
  */
-function arpansa_base_update_7035() {
+function arpansa_base_update_7036() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
 
