@@ -1034,6 +1034,8 @@ function arpansa_base_update_7041() {
   $node->uid = 1;
   node_save($node);
 
+  workbench_moderation_moderate($node, workbench_moderation_state_published());
+
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
 
