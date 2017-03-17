@@ -992,3 +992,18 @@ function arpansa_base_update_7038() {
   salsa_helpers_enable_module('arpansa_search');
   salsa_helpers_features_revert('arpansa_search');
 }
+
+/**
+ * Site search facets [ARPANSA-26].
+ */
+function arpansa_base_update_7039() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_search');
+
+  if ($default_node_index = search_api_index_load('default_node_index')) {
+    $default_node_index->reindex();
+  }
+
+  salsa_helpers_features_revert('arpansa_search');
+}

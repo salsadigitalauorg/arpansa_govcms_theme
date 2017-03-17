@@ -23,6 +23,7 @@ function arpansa_search_default_search_api_index() {
         "file" : { "type" : "integer", "entity_type" : "file" },
         "file:field_document_title" : { "type" : "text", "boost" : "5.0" },
         "file:field_file_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "file:mime" : { "type" : "string", "boost" : "0.5" },
         "file:name" : { "type" : "text" },
         "node" : { "type" : "integer", "entity_type" : "node" },
         "node:author" : { "type" : "integer", "entity_type" : "user" },
@@ -31,6 +32,7 @@ function arpansa_search_default_search_api_index() {
         "node:comment_count" : { "type" : "integer" },
         "node:created" : { "type" : "date" },
         "node:field_consultation_issue_text:value" : { "type" : "text" },
+        "node:field_news_date" : { "type" : "date" },
         "node:field_page_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "node:field_subtitle" : { "type" : "text", "boost" : "2.0" },
         "node:field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -120,14 +122,14 @@ function arpansa_search_default_search_api_index() {
           }
         },
         "search_api_highlighting" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "35",
           "settings" : {
             "prefix" : "\\u003Cstrong\\u003E",
             "suffix" : "\\u003C\\/strong\\u003E",
             "excerpt" : 1,
             "excerpt_length" : "256",
-            "exclude_fields" : [],
+            "exclude_fields" : { "file:name" : "file:name" },
             "highlight" : "always"
           }
         }

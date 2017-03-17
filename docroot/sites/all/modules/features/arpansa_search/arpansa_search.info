@@ -1,12 +1,16 @@
 name = ARPANSA Search
 core = 7.x
 package = ARPANSA
-version = 7.x-1.0
+version = 7.x-1.1
 dependencies[] = entity
+dependencies[] = facetapi
 dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = search_api
 dependencies[] = search_api_page
+features[fe_block_settings][] = facetapi-TT4kRhy7ZZSdHZ05fmUoffihxyvKPxlT
+features[fe_block_settings][] = facetapi-e1vziaDdlbhFZQEviU3C14vhjRBDGLsB
+features[fe_block_settings][] = facetapi-scWlDoEFH97LuLJzfVAXs3b1iBv5zxfi
 features[fe_block_settings][] = search_api_page-content_search
 features[features_api][] = api:2
 features[search_api_index][] = site_search_index
