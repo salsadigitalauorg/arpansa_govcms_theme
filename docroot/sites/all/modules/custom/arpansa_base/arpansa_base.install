@@ -1023,7 +1023,7 @@ function arpansa_base_update_7041() {
   $node = new stdClass();
   $node->type = 'page';
   $node->title = 'Careers';
-  $node->language = 'none';
+  $node->language = LANGUAGE_NONE;
   node_object_prepare($node);
   $node->path['alias'] = 'careers';
   $node->path['pathauto'] = 0;
@@ -1031,6 +1031,7 @@ function arpansa_base_update_7041() {
   $node->promoted = 0;
   $node->published = 1;
   $node->revision = 0;
+  $node->uid = 1;
   node_save($node);
 
   module_enable(['salsa_helpers']);
