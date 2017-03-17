@@ -94,11 +94,16 @@ function arpansa_entity_views_default_views() {
   <a href="#">View more</a>
 </div>';
   $handler->display->display_options['footer']['area']['format'] = 'rich_text';
-  /* Sort criterion: Content: Date of Publication (field_date) */
-  $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
-  $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
-  $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
-  $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
+  /* Sort criterion: Content: Date of Publication (field_news_date) */
+  $handler->display->display_options['sorts']['field_news_date_value']['id'] = 'field_news_date_value';
+  $handler->display->display_options['sorts']['field_news_date_value']['table'] = 'field_data_field_news_date';
+  $handler->display->display_options['sorts']['field_news_date_value']['field'] = 'field_news_date_value';
+  $handler->display->display_options['sorts']['field_news_date_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -217,11 +222,6 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['sorts']['field_commentary_format']['table'] = 'field_data_field_commentary';
   $handler->display->display_options['sorts']['field_commentary_format']['field'] = 'field_commentary_format';
   $handler->display->display_options['sorts']['field_commentary_format']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -308,102 +308,6 @@ function arpansa_entity_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'lit_survey');
   $handler->display->display_options['block_description'] = 'View: Literature Surveys';
-
-  /* Display: Attachment */
-  $handler = $view->new_display('attachment', 'Attachment', 'att_comment');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'literature_survey' => 'literature_survey',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    16 => 0,
-    21 => 0,
-    26 => 0,
-    31 => 0,
-    11 => 0,
-  );
-  /* Filter criterion: Content: Literature Survey Date (field_literature_survey_date) */
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['id'] = 'field_literature_survey_date_tid';
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['table'] = 'field_data_field_literature_survey_date';
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['field'] = 'field_literature_survey_date_tid';
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['expose']['operator_id'] = 'field_literature_survey_date_tid_op';
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['expose']['label'] = 'Literature Survey Date';
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['expose']['operator'] = 'field_literature_survey_date_tid_op';
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['expose']['identifier'] = 'field_literature_survey_date_tid';
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    16 => 0,
-    21 => 0,
-    26 => 0,
-    31 => 0,
-    11 => 0,
-  );
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_literature_survey_date_tid']['vocabulary'] = 'literature_survey_date';
-  /* Filter criterion: Content: Tags (field_tags) */
-  $handler->display->display_options['filters']['field_tags_tid']['id'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['filters']['field_tags_tid']['field'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_tags_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator_id'] = 'field_tags_tid_op';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['label'] = 'Tags';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['operator'] = 'field_tags_tid_op';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['identifier'] = 'field_tags_tid';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    16 => 0,
-    21 => 0,
-    26 => 0,
-    31 => 0,
-    11 => 0,
-  );
-  $handler->display->display_options['filters']['field_tags_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_tags_tid']['vocabulary'] = 'tags';
-  /* Filter criterion: Content: Commentary by ARPANSA (field_commentary) */
-  $handler->display->display_options['filters']['field_commentary_value']['id'] = 'field_commentary_value';
-  $handler->display->display_options['filters']['field_commentary_value']['table'] = 'field_data_field_commentary';
-  $handler->display->display_options['filters']['field_commentary_value']['field'] = 'field_commentary_value';
-  $handler->display->display_options['filters']['field_commentary_value']['operator'] = 'not empty';
-  $handler->display->display_options['displays'] = array(
-    'lit_survey' => 'lit_survey',
-    'default' => 0,
-  );
-  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
   $export['literature_surveys'] = $view;
 
   return $export;
