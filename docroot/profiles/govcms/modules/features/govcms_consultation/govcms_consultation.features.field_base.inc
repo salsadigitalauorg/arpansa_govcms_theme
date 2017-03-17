@@ -10,7 +10,7 @@
 function govcms_consultation_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_approver_email'
+  // Exported field_base: 'field_approver_email'.
   $field_bases['field_approver_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -33,7 +33,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_coloured_icon'
+  // Exported field_base: 'field_coloured_icon'.
   $field_bases['field_coloured_icon'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -55,7 +55,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_consultation_date'
+  // Exported field_base: 'field_consultation_date'.
   $field_bases['field_consultation_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -84,7 +84,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_consultation_issue_text'
+  // Exported field_base: 'field_consultation_issue_text'.
   $field_bases['field_consultation_issue_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -103,7 +103,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_consultation_summary'
+  // Exported field_base: 'field_consultation_summary'.
   $field_bases['field_consultation_summary'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -122,7 +122,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_discussion_forum_heading'
+  // Exported field_base: 'field_discussion_forum_heading'.
   $field_bases['field_discussion_forum_heading'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -145,7 +145,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_discussion_forum_intro'
+  // Exported field_base: 'field_discussion_forum_intro'.
   $field_bases['field_discussion_forum_intro'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -164,7 +164,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_enable_late_submissions'
+  // Exported field_base: 'field_enable_late_submissions'.
   $field_bases['field_enable_late_submissions'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -189,7 +189,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_file_pdf'
+  // Exported field_base: 'field_file_pdf'.
   $field_bases['field_file_pdf'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -212,7 +212,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_file_title'
+  // Exported field_base: 'field_file_title'.
   $field_bases['field_file_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -235,7 +235,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_file_uploads_enabled'
+  // Exported field_base: 'field_file_uploads_enabled'.
   $field_bases['field_file_uploads_enabled'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -260,7 +260,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_file_word'
+  // Exported field_base: 'field_file_word'.
   $field_bases['field_file_word'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -283,7 +283,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_formal_submission_cta_1'
+  // Exported field_base: 'field_formal_submission_cta_1'.
   $field_bases['field_formal_submission_cta_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -302,7 +302,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_formal_submission_cta_2'
+  // Exported field_base: 'field_formal_submission_cta_2'.
   $field_bases['field_formal_submission_cta_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -321,7 +321,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_formal_submission_enabled'
+  // Exported field_base: 'field_formal_submission_enabled'.
   $field_bases['field_formal_submission_enabled'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -346,7 +346,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_formal_submission_notify'
+  // Exported field_base: 'field_formal_submission_notify'.
   $field_bases['field_formal_submission_notify'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -369,7 +369,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_icon'
+  // Exported field_base: 'field_icon'.
   $field_bases['field_icon'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -391,7 +391,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_issue_documentation'
+  // Exported field_base: 'field_issue_documentation'.
   $field_bases['field_issue_documentation'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -406,7 +406,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'paragraphs',
   );
 
-  // Exported field_base: 'field_outcomes_text'
+  // Exported field_base: 'field_outcomes_text'.
   $field_bases['field_outcomes_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -425,7 +425,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_pbundle_destination'
+  // Exported field_base: 'field_pbundle_destination'.
   $field_bases['field_pbundle_destination'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -454,7 +454,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_pbundle_image'
+  // Exported field_base: 'field_pbundle_image'.
   $field_bases['field_pbundle_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -476,7 +476,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_pbundle_text'
+  // Exported field_base: 'field_pbundle_text'.
   $field_bases['field_pbundle_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -495,7 +495,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_pbundle_title'
+  // Exported field_base: 'field_pbundle_title'.
   $field_bases['field_pbundle_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -518,7 +518,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_publisher_email'
+  // Exported field_base: 'field_publisher_email'.
   $field_bases['field_publisher_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -541,7 +541,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_short_comments_enabled'
+  // Exported field_base: 'field_short_comments_enabled'.
   $field_bases['field_short_comments_enabled'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -566,7 +566,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_submission_date'
+  // Exported field_base: 'field_submission_date'.
   $field_bases['field_submission_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -595,7 +595,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_twitter_discussion'
+  // Exported field_base: 'field_twitter_discussion'.
   $field_bases['field_twitter_discussion'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -610,7 +610,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'paragraphs',
   );
 
-  // Exported field_base: 'field_twitter_widget_id'
+  // Exported field_base: 'field_twitter_widget_id'.
   $field_bases['field_twitter_widget_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -633,7 +633,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_update_date'
+  // Exported field_base: 'field_update_date'.
   $field_bases['field_update_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -662,7 +662,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_update_type_term'
+  // Exported field_base: 'field_update_type_term'.
   $field_bases['field_update_type_term'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -688,7 +688,7 @@ function govcms_consultation_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_updates'
+  // Exported field_base: 'field_updates'.
   $field_bases['field_updates'] = array(
     'active' => 1,
     'cardinality' => -1,

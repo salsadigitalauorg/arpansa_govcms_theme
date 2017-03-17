@@ -24,6 +24,8 @@ function govcms_consultation_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0',
+  'field_image' => array(),
+  'body' => array(),
   'metatags' => array(
     'und' => array(
       'AGLSTERMS.act' => array(
@@ -280,9 +282,6 @@ function govcms_consultation_uuid_features_default_content() {
       ),
     ),
   ),
-  'path' => array(
-    'pathauto' => 0,
-  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -337,6 +336,9 @@ function govcms_consultation_uuid_features_default_content() {
       'datatype' => 'xsd:dateTime',
       'callback' => 'date_iso8601',
     ),
+  ),
+  'path' => array(
+    'pathauto' => 0,
   ),
   'webform' => array(
     'nid' => 1,
@@ -990,8 +992,8 @@ Submitted values are:
   'comment_count' => 0,
   'machine_name' => 'hys_formal_submission',
   'pathauto_perform_alias' => FALSE,
-  'date' => '2015-03-05 10:41:29 +1000',
-  'user_uuid' => '287e832e-cf32-467d-9199-0de4dfc20091',
+  'date' => '2015-03-05 11:41:29 +1100',
+  'user_uuid' => '3bc5d448-1f52-4f8c-9f33-c64c7701aa99',
 );
   return $nodes;
 }

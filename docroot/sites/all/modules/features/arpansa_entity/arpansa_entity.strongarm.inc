@@ -203,20 +203,49 @@ function arpansa_entity_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_file__document';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'preview' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'filename' => array(
-          'weight' => '0',
-        ),
-        'preview' => array(
           'weight' => '1',
         ),
+        'preview' => array(
+          'weight' => '2',
+        ),
         'redirect' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'file' => array(
+          'default' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_file__document'] = $strongarm;

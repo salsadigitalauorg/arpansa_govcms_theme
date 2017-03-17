@@ -117,15 +117,6 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'contextual',
   );
 
-  // Exported permission: 'access default_search search_api_page'.
-  $permissions['access default_search search_api_page'] = array(
-    'name' => 'access default_search search_api_page',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'search_api_page',
-  );
-
   // Exported permission: 'access draggableviews'.
   $permissions['access draggableviews'] = array(
     'name' => 'access draggableviews',

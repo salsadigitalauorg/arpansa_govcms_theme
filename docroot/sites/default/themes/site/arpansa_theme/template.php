@@ -187,3 +187,58 @@ function arpansa_theme_preprocess_block(&$variables) {
     $variables['children_contents'] = $child_content;
   }
 }
+
+/**
+ * Implements theme_facetapi_link_inactive().
+ *
+ * @see theme_facetapi_link_inactive()
+ */
+function arpansa_theme_facetapi_link_inactive($variables) {
+  $text = &$variables['text'];
+  if (strpos($text, '/') !== FALSE) {
+    $text = _arpansa_theme_get_file_type($text);
+  }
+
+  return theme_facetapi_link_inactive($variables);
+}
+
+/**
+ * Implements theme_facetapi_link_active().
+ *
+ * @see theme_facetapi_link_active()
+ */
+function arpansa_theme_facetapi_link_active($variables) {
+  $text = &$variables['text'];
+  if (strpos($text, '/') !== FALSE) {
+    $text = _arpansa_theme_get_file_type($text);
+  }
+
+  return theme_facetapi_link_active($variables);
+}
+
+/**
+ * Get file extension from MIME type.
+ *
+ * @param string $mime_type
+ *   File MIME type.
+ *
+ * @return string
+ *   Extension.
+ */
+function _arpansa_theme_get_file_type($mime_type) {
+  include_once DRUPAL_ROOT . '/includes/file.mimetypes.inc';
+  $mapping = file_mimetype_mapping();
+  if ($index = array_search($mime_type, $mapping['mimetypes'])) {
+    if ($extension = array_search($index, $mapping['extensions'])) {
+      return strtoupper($extension);
+    }
+
+    $text = explode('/', $mime_type);
+    if (count($text) > 1) {
+      array_shift($text);
+      return implode('/', $text);
+    }
+  }
+
+  return $mime_type;
+}

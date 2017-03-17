@@ -10,11 +10,6 @@
 function govcms_consultation_views_default_views() {
   $export = array();
 
-  $nids = entity_get_id_by_uuid('node', array('1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'), FALSE);
-  if (!isset($nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'])) {
-    return $export;
-  }
-
   $view = new view();
   $view->name = 'consultations_admin';
   $view->description = '';
@@ -107,7 +102,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['relationships']['data']['field'] = 'data';
   $handler->display->display_options['relationships']['data']['ui_name'] = 'Submission Data (Name)';
   $handler->display->display_options['relationships']['data']['label'] = 'Submission Data (Name)';
-  $handler->display->display_options['relationships']['data']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['relationships']['data']['webform_nid'] = '1';
   $handler->display->display_options['relationships']['data']['webform_cid'] = '1';
   /* Relationship: Submission Data (Approved) */
   $handler->display->display_options['relationships']['data_2']['id'] = 'data_2';
@@ -115,7 +110,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['relationships']['data_2']['field'] = 'data';
   $handler->display->display_options['relationships']['data_2']['ui_name'] = 'Submission Data (Approved)';
   $handler->display->display_options['relationships']['data_2']['label'] = 'Submission Data (Approved)';
-  $handler->display->display_options['relationships']['data_2']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['relationships']['data_2']['webform_nid'] = '1';
   $handler->display->display_options['relationships']['data_2']['webform_cid'] = '14';
   /* Relationship: Submission Data (Private) */
   $handler->display->display_options['relationships']['data_3']['id'] = 'data_3';
@@ -123,14 +118,14 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['relationships']['data_3']['field'] = 'data';
   $handler->display->display_options['relationships']['data_3']['ui_name'] = 'Submission Data (Private)';
   $handler->display->display_options['relationships']['data_3']['label'] = 'Submission Data (Private)';
-  $handler->display->display_options['relationships']['data_3']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['relationships']['data_3']['webform_nid'] = '1';
   $handler->display->display_options['relationships']['data_3']['webform_cid'] = '25';
   /* Relationship: Submission Data (Consultation id) */
   $handler->display->display_options['relationships']['data_1']['id'] = 'data_1';
   $handler->display->display_options['relationships']['data_1']['table'] = 'webform_submissions';
   $handler->display->display_options['relationships']['data_1']['field'] = 'data';
   $handler->display->display_options['relationships']['data_1']['ui_name'] = 'Submission Data (Consultation id)';
-  $handler->display->display_options['relationships']['data_1']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['relationships']['data_1']['webform_nid'] = '1';
   $handler->display->display_options['relationships']['data_1']['webform_cid'] = '16';
   /* Field: Webform submissions: Sid */
   $handler->display->display_options['fields']['sid']['id'] = 'sid';
@@ -143,14 +138,14 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value']['table'] = 'webform_submissions';
   $handler->display->display_options['fields']['value']['field'] = 'value';
   $handler->display->display_options['fields']['value']['label'] = '';
-  $handler->display->display_options['fields']['value']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value']['webform_cid'] = '1';
   /* Field: Webform submission data: Value */
   $handler->display->display_options['fields']['value_4']['id'] = 'value_4';
   $handler->display->display_options['fields']['value_4']['table'] = 'webform_submissions';
   $handler->display->display_options['fields']['value_4']['field'] = 'value';
   $handler->display->display_options['fields']['value_4']['label'] = '';
-  $handler->display->display_options['fields']['value_4']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_4']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_4']['webform_cid'] = '2';
   /* Field: Webform submissions: Submitted */
   $handler->display->display_options['fields']['submitted']['id'] = 'submitted';
@@ -163,14 +158,14 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value_1']['table'] = 'webform_submissions';
   $handler->display->display_options['fields']['value_1']['field'] = 'value';
   $handler->display->display_options['fields']['value_1']['label'] = '';
-  $handler->display->display_options['fields']['value_1']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_1']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_1']['webform_cid'] = '14';
   /* Field: Webform submission data: Value */
   $handler->display->display_options['fields']['value_5']['id'] = 'value_5';
   $handler->display->display_options['fields']['value_5']['table'] = 'webform_submissions';
   $handler->display->display_options['fields']['value_5']['field'] = 'value';
   $handler->display->display_options['fields']['value_5']['label'] = '';
-  $handler->display->display_options['fields']['value_5']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_5']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_5']['webform_cid'] = '24';
   /* Field: Webform submission data: Value */
   $handler->display->display_options['fields']['value_2']['id'] = 'value_2';
@@ -180,7 +175,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value_2']['alter']['text'] = 'Yes';
   $handler->display->display_options['fields']['value_2']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['value_2']['custom_label'] = 'custom';
-  $handler->display->display_options['fields']['value_2']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_2']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_2']['webform_cid'] = '25';
   /* Field: Webform submission data: Value */
   $handler->display->display_options['fields']['value_3']['id'] = 'value_3';
@@ -188,7 +183,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value_3']['field'] = 'value';
   $handler->display->display_options['fields']['value_3']['label'] = 'Consultation';
   $handler->display->display_options['fields']['value_3']['custom_label'] = 'custom';
-  $handler->display->display_options['fields']['value_3']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_3']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_3']['webform_cid'] = '16';
   /* Field: Webform submissions: Edit link */
   $handler->display->display_options['fields']['edit_submission']['id'] = 'edit_submission';
@@ -201,7 +196,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['filters']['nid']['table'] = 'webform';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
   $handler->display->display_options['filters']['nid']['relationship'] = 'nid';
-  $handler->display->display_options['filters']['nid']['value']['value'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['filters']['nid']['value']['value'] = '1';
   $handler->display->display_options['filters']['nid']['group'] = 1;
   /* Filter criterion: Webform submission data: Data field */
   $handler->display->display_options['filters']['data']['id'] = 'data';
@@ -340,7 +335,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['relationships']['data']['ui_name'] = 'Submission Data (Parent Consultation)';
   $handler->display->display_options['relationships']['data']['label'] = 'Submission Data (Parent Consultation)';
   $handler->display->display_options['relationships']['data']['required'] = TRUE;
-  $handler->display->display_options['relationships']['data']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['relationships']['data']['webform_nid'] = '1';
   $handler->display->display_options['relationships']['data']['webform_cid'] = '16';
   /* Relationship: Submission Data (Approved for display) */
   $handler->display->display_options['relationships']['data_1']['id'] = 'data_1';
@@ -349,7 +344,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['relationships']['data_1']['ui_name'] = 'Submission Data (Approved for display)';
   $handler->display->display_options['relationships']['data_1']['label'] = 'Submission Data (Approved for display)';
   $handler->display->display_options['relationships']['data_1']['required'] = TRUE;
-  $handler->display->display_options['relationships']['data_1']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['relationships']['data_1']['webform_nid'] = '1';
   $handler->display->display_options['relationships']['data_1']['webform_cid'] = '14';
   /* Relationship: Submission Data (Private) */
   $handler->display->display_options['relationships']['data_2']['id'] = 'data_2';
@@ -357,7 +352,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['relationships']['data_2']['field'] = 'data';
   $handler->display->display_options['relationships']['data_2']['ui_name'] = 'Submission Data (Private)';
   $handler->display->display_options['relationships']['data_2']['label'] = 'Submission Data (Private)';
-  $handler->display->display_options['relationships']['data_2']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['relationships']['data_2']['webform_nid'] = '1';
   $handler->display->display_options['relationships']['data_2']['webform_cid'] = '25';
   /* Relationship: Submission Data (Submission Title) */
   $handler->display->display_options['relationships']['data_3']['id'] = 'data_3';
@@ -366,7 +361,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['relationships']['data_3']['ui_name'] = 'Submission Data (Submission Title)';
   $handler->display->display_options['relationships']['data_3']['label'] = 'Submission Data (Submission Name)';
   $handler->display->display_options['relationships']['data_3']['required'] = TRUE;
-  $handler->display->display_options['relationships']['data_3']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['relationships']['data_3']['webform_nid'] = '1';
   $handler->display->display_options['relationships']['data_3']['webform_cid'] = '1';
   /* Field: Webform submission data: Name */
   $handler->display->display_options['fields']['value_2']['id'] = 'value_2';
@@ -379,7 +374,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['value_2']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['value_2']['custom_label'] = 'none';
-  $handler->display->display_options['fields']['value_2']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_2']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_2']['webform_cid'] = '1';
   /* Field: Webform submission data: Short comment */
   $handler->display->display_options['fields']['value_5']['id'] = 'value_5';
@@ -390,7 +385,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value_5']['element_type'] = 'p';
   $handler->display->display_options['fields']['value_5']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['value_5']['custom_label'] = 'none';
-  $handler->display->display_options['fields']['value_5']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_5']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_5']['webform_cid'] = '34';
   /* Field: Webform submission data: File (excluded) */
   $handler->display->display_options['fields']['value']['id'] = 'value';
@@ -404,7 +399,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value']['element_class'] = 'file';
   $handler->display->display_options['fields']['value']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['value']['custom_label'] = 'none';
-  $handler->display->display_options['fields']['value']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value']['webform_cid'] = '11';
   /* Field: Webform submission data: Additional file 1 (excluded) */
   $handler->display->display_options['fields']['value_4']['id'] = 'value_4';
@@ -417,7 +412,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value_4']['element_class'] = 'file';
   $handler->display->display_options['fields']['value_4']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['value_4']['custom_label'] = 'none';
-  $handler->display->display_options['fields']['value_4']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_4']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_4']['webform_cid'] = '18';
   /* Field: Webform submission data: Additional file 2 (excluded) */
   $handler->display->display_options['fields']['value_1']['id'] = 'value_1';
@@ -430,7 +425,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value_1']['element_class'] = 'file';
   $handler->display->display_options['fields']['value_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['value_1']['custom_label'] = 'none';
-  $handler->display->display_options['fields']['value_1']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_1']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_1']['webform_cid'] = '30';
   /* Field: Webform submission data: Additional file 3 (excluded) */
   $handler->display->display_options['fields']['value_3']['id'] = 'value_3';
@@ -443,7 +438,7 @@ function govcms_consultation_views_default_views() {
   $handler->display->display_options['fields']['value_3']['element_class'] = 'file';
   $handler->display->display_options['fields']['value_3']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['value_3']['custom_label'] = 'none';
-  $handler->display->display_options['fields']['value_3']['webform_nid'] = $nids['1bc43c5f-fc01-4ac4-bcc8-2b50660f3ae0'];
+  $handler->display->display_options['fields']['value_3']['webform_nid'] = '1';
   $handler->display->display_options['fields']['value_3']['webform_cid'] = '31';
   /* Field: Global: File set */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';

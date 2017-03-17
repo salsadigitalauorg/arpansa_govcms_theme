@@ -10,6 +10,58 @@
 function arpansa_entity_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'file-document-field_document_title'.
+  $field_instances['file-document-field_document_title'] = array(
+    'bundle' => 'document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_document_title',
+    'label' => 'Title',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'file-document-field_file_tags'.
   $field_instances['file-document-field_file_tags'] = array(
     'bundle' => 'document',
@@ -22,7 +74,7 @@ function arpansa_entity_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'preview' => array(
         'label' => 'above',
@@ -53,7 +105,7 @@ function arpansa_entity_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -2257,6 +2309,7 @@ function arpansa_entity_field_default_field_instances() {
   t('These tags will be available in search to make file searches filterable.');
   t('This is an optional field to direct a promotion to a specific date for a Literature Survey.');
   t('This original Author of the content, this person may not be an editor of this website. ');
+  t('Title');
 
   return $field_instances;
 }

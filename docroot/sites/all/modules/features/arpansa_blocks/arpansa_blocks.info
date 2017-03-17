@@ -30,7 +30,6 @@ features[fe_block_settings][] = menu_block-govcms_menu_block-main-menu
 features[fe_block_settings][] = menu_block-govcms_menu_block-sidebar
 features[fe_block_settings][] = menu_block-landing_page_children_listing
 features[fe_block_settings][] = search-form
-features[fe_block_settings][] = search_api_page-default_search
 features[fe_block_settings][] = service_links-service_links
 features[fe_block_settings][] = superfish-1
 features[fe_block_settings][] = system-help

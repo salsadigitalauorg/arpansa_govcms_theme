@@ -993,9 +993,32 @@ function arpansa_base_update_7038() {
 }
 
 /**
- * Configure Careers Landing Page [ARPANSA-85].
+ * Site search facets [ARPANSA-26].
  */
 function arpansa_base_update_7039() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_search');
+
+  if ($default_node_index = search_api_index_load('default_node_index')) {
+    $default_node_index->reindex();
+  }
+}
+
+/**
+ * Add Title to documents [ARPANSA-95].
+ */
+function arpansa_base_update_7040() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('arpansa_blocks');
+}
+
+/**
+ * Configure Careers Landing Page [ARPANSA-85].
+ */
+function arpansa_base_update_7041() {
   //  Create a Careers page for assigning the careers view block to
   $node = new stdClass();
   $node->type = 'page';
