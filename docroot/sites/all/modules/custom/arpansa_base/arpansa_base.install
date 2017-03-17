@@ -1041,3 +1041,12 @@ function arpansa_base_update_7041() {
 
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Revert Entity feature [ARPANSA-46] [ARPANSA-68].
+ */
+function arpansa_base_update_7042() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
