@@ -30,7 +30,7 @@ function arpansa_entity_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => 0,
+        'weight' => -33,
       ),
     ),
     'title' => '<none>',

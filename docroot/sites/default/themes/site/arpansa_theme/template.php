@@ -186,7 +186,7 @@ function arpansa_theme_preprocess_block(&$variables) {
 /**
  * Implements theme_facetapi_link_inactive().
  *
- * @see theme_facetapi_link_inactive($variables)
+ * @see theme_facetapi_link_inactive()
  */
 function arpansa_theme_facetapi_link_inactive($variables) {
   $text = &$variables['text'];
@@ -200,7 +200,7 @@ function arpansa_theme_facetapi_link_inactive($variables) {
 /**
  * Implements theme_facetapi_link_active().
  *
- * @see theme_facetapi_link_active($variables)
+ * @see theme_facetapi_link_active()
  */
 function arpansa_theme_facetapi_link_active($variables) {
   $text = &$variables['text'];

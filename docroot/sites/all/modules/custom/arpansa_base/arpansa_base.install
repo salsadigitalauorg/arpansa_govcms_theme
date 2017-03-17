@@ -1004,6 +1004,14 @@ function arpansa_base_update_7039() {
   if ($default_node_index = search_api_index_load('default_node_index')) {
     $default_node_index->reindex();
   }
+}
 
-  salsa_helpers_features_revert('arpansa_search');
+/**
+ * Add Title to documents [ARPANSA-95].
+ */
+function arpansa_base_update_7040() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('arpansa_blocks');
 }
