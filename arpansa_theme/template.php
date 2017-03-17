@@ -227,12 +227,12 @@ function _arpansa_theme_get_file_type($mime_type) {
     if ($extension = array_search($index, $mapping['extensions'])) {
       return strtoupper($extension);
     }
-  }
 
-  $text = explode('/', $mime_type);
-  if (count($text) > 1) {
-    array_shift($text);
-    return implode('/', $text);
+    $text = explode('/', $mime_type);
+    if (count($text) > 1) {
+      array_shift($text);
+      return implode('/', $text);
+    }
   }
 
   return $mime_type;
