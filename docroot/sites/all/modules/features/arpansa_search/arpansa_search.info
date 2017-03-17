@@ -7,6 +7,7 @@ dependencies[] = facetapi
 dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = search_api
+dependencies[] = search_api_facetapi
 dependencies[] = search_api_page
 features[fe_block_settings][] = facetapi-TT4kRhy7ZZSdHZ05fmUoffihxyvKPxlT
 features[fe_block_settings][] = facetapi-e1vziaDdlbhFZQEviU3C14vhjRBDGLsB
