@@ -972,7 +972,6 @@ function arpansa_base_update_7037() {
   salsa_helpers_lock_features($govCMSFeatures);
 }
 
-
 /**
  * Site search [ARPANSA-23].
  */
@@ -1014,4 +1013,29 @@ function arpansa_base_update_7040() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
   salsa_helpers_features_revert('arpansa_blocks');
+}
+
+/**
+ * Configure Careers Landing Page [ARPANSA-85].
+ */
+function arpansa_base_update_7041() {
+  //  Create a Careers page for assigning the careers view block to
+  $node = new stdClass();
+  $node->type = 'page';
+  $node->title = 'Careers';
+  $node->language = LANGUAGE_NONE;
+  node_object_prepare($node);
+  $node->path['alias'] = 'careers';
+  $node->path['pathauto'] = 0;
+  $node->sticky = 0;
+  $node->promoted = 0;
+  $node->published = 1;
+  $node->revision = 0;
+  $node->uid = 1;
+  node_save($node);
+
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  salsa_helpers_features_revert('arpansa_entity');
 }
