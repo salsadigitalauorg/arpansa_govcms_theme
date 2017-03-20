@@ -109,6 +109,13 @@ function arpansa_theme_preprocess_node(&$variables) {
     }
   }
 
+  if ($variables['view_mode'] === 'full') {
+    $hide_social_links = isset($variables['field_social_links'][0]['value']) ? $variables['field_social_links'][0]['value'] : null;
+    if (!is_null($hide_social_links) && (int)$hide_social_links == 1) {
+      $variables['content']['service_links'] = null;
+    }
+  }
+
   if ($variables['type'] === 'webform') {
     // Hide submitted date on webforms.
     $variables['display_submitted'] = FALSE;
