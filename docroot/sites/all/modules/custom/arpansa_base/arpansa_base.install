@@ -1076,5 +1076,10 @@ function arpansa_base_update_7043() {
   module_load_include('module', 'salsa_helpers');
 
   salsa_helpers_features_revert('arpansa_search');
+
+  if ($what_s_new_index = search_api_index_load('what_s_new_index')) {
+    $what_s_new_index->reindex();
+  }
+
   salsa_helpers_features_revert('arpansa_entity');
 }
