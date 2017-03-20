@@ -184,7 +184,7 @@ function govcms_share_links_strongarm() {
     'facebook' => 1,
     'myspace' => 0,
     'google' => 0,
-    'google_plus' => 0,
+    'google_plus' => 1,
     'yahoo' => 0,
     'linkedin' => 1,
     'technorati' => 0,
@@ -197,6 +197,7 @@ function govcms_share_links_strongarm() {
     'identica' => 0,
     'newskicks' => 0,
     'diigo' => 0,
+    'viadeo' => 0,
     'email' => 1,
   );
   $export['service_links_show'] = $strongarm;
@@ -220,19 +221,19 @@ function govcms_share_links_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_weight';
   $strongarm->value = array(
-    'delicious' => '-94',
-    'digg' => '-93',
+    'delicious' => '-93',
+    'digg' => '-92',
     'stumbleupon' => '-78',
     'twitter' => '-99',
     'pingthis' => '-81',
     'reddit' => '-80',
     'slashdot' => '-79',
     'newsvine' => '-82',
-    'furl' => '-91',
+    'furl' => '-90',
     'facebook' => '-100',
     'myspace' => '-84',
-    'google' => '-90',
-    'google_plus' => '-89',
+    'google' => '-89',
+    'google_plus' => '-97',
     'yahoo' => '-75',
     'linkedin' => '-98',
     'technorati' => '-76',
@@ -240,12 +241,13 @@ function govcms_share_links_strongarm() {
     'icerocket' => '-88',
     'misterwong' => '-86',
     'mixx' => '-85',
-    'box' => '-95',
-    'blinklist' => '-96',
+    'box' => '-94',
+    'blinklist' => '-95',
     'identica' => '-87',
     'newskicks' => '-83',
-    'diigo' => '-92',
-    'email' => '-97',
+    'diigo' => '-91',
+    'viadeo' => '-74',
+    'email' => '-96',
   );
   $export['service_links_weight'] = $strongarm;
 
