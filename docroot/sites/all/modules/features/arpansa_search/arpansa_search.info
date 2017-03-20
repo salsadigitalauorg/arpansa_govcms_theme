@@ -43,6 +43,7 @@ features[fe_block_settings][] = facetapi-scWlDoEFH97LuLJzfVAXs3b1iBv5zxfi
 features[fe_block_settings][] = search_api_page-content_search
 features[features_api][] = api:2
 features[search_api_index][] = site_search_index
+features[search_api_index][] = what_s_new_index
 features[search_api_page][] = content_search
 features[variable][] = facetapi:block_cache:search_api@site_search_index
 features[variable][] = search_api_facets_search_ids
