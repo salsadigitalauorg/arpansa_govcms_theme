@@ -36,10 +36,9 @@ function govcms_share_links_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_category_vocs';
   $strongarm->value = array(
-    3 => 0,
-    2 => 0,
-    5 => 0,
-    4 => 0,
+    21 => 0,
+    11 => 0,
+    16 => 0,
     1 => 0,
     6 => 0,
   );
@@ -81,16 +80,11 @@ function govcms_share_links_strongarm() {
     'full' => 0,
     'teaser' => 0,
     'rss' => 0,
-    'blog_teaser' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'compact' => 0,
     'token' => 0,
-    'feature' => 0,
     'revision' => 0,
-    'front_page' => 0,
-    'common_topics' => 0,
-    'landing_page' => 0,
-    'topics_landing' => 0,
-    'search_page' => 0,
-    'listing' => 0,
   );
   $export['service_links_link_view_modes'] = $strongarm;
 
@@ -106,17 +100,19 @@ function govcms_share_links_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_node_types';
   $strongarm->value = array(
-    'event' => 'event',
-    'file_manager_file' => 'file_manager_file',
-    'media_release' => 'media_release',
+    'consultation' => 'consultation',
     'news_article' => 'news_article',
-    'footer_teaser' => 'footer_teaser',
-    'publication' => 'publication',
     'page' => 'page',
-    'webform' => 'webform',
     'blog_article' => 0,
+    'career' => 0,
+    'event' => 0,
     'landing_page' => 0,
+    'literature_survey' => 0,
+    'media_release' => 0,
+    'footer_teaser' => 0,
+    'publication' => 0,
     'slide' => 0,
+    'webform' => 0,
   );
   $export['service_links_node_types'] = $strongarm;
 
@@ -125,19 +121,14 @@ function govcms_share_links_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_node_view_modes';
   $strongarm->value = array(
-    'full' => 0,
+    'full' => 'full',
     'teaser' => 0,
     'rss' => 0,
-    'blog_teaser' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'compact' => 0,
     'token' => 0,
-    'feature' => 0,
     'revision' => 0,
-    'front_page' => 0,
-    'common_topics' => 0,
-    'landing_page' => 0,
-    'topics_landing' => 0,
-    'search_page' => 0,
-    'listing' => 0,
   );
   $export['service_links_node_view_modes'] = $strongarm;
 
