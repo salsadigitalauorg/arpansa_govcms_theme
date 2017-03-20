@@ -138,7 +138,7 @@ class ArpansaMigrationHelper {
     $media_token->view_mode = $view_mode ?: 'default';
     $media_token->type = 'media';
     $media_token->link_text = $link_text;
-    //$media_token->attributes = array();
+    $media_token->attributes = array();
     if (count($attributes)) {
       $media_token->attributes = (object) $attributes;
     }
