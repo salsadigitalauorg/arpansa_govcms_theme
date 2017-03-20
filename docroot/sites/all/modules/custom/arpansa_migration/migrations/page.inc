@@ -25,19 +25,12 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   protected $lastPage;
 
   /**
-   * Last migrate menu item.
-   *
-   * @var object
-   */
-  protected $lastMenuItem;
-
-  /**
    * {@inheritdoc}
    */
   public function __construct(array $arguments = array()) {
     parent::__construct($arguments);
 
-    $this->sourceCSV = $this->getEnvOption('csv');
+    $this->sourceCSV = $this->getEnvOption('source-csv');
 
     $csvColumns = [
       ['a', 'Reference ID'],
@@ -151,17 +144,6 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     $row->source_url = 'http://www.arpansa.gov.au/' . $url;
 
     $row->alias = ArpansaMigrationHelper::sanitizeArpansaSourceUri($row->alias);
-    if ($row->alias && empty($row->migrate_map_destid1)) {
-      if ($nid = $this->findNodeWithAlias($row->alias, FALSE)) {
-        $row->migrate_map_destid1 = $nid;
-        if ($mapping = $this->map->getRowByDestination([$nid])) {
-          if ($mapping['sourceid1'] != $row->source) {
-            // Delete this stub mapping.
-            $this->map->delete([$mapping['sourceid1']]);
-          }
-        }
-      }
-    }
 
     // Map content type.
     switch ($row->type) {
@@ -182,30 +164,9 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       return FALSE;
     }
 
-    // Detect IA Title.
-    $row->ia_title = $row->title;
-    foreach ([1, 2, 3, 4] as $ia_title_level) {
-      $ia_title = $row->{'ia_title' . $ia_title_level};
-      if (!empty($ia_title)) {
-        $ia_title_parts = explode(' - ', $ia_title);
-        // Remove "ARPANSA" from IA title.
-        if ($ia_title_parts[0] == 'ARPANSA') {
-          unset($ia_title_parts[0]);
-        }
-        if ($ia_title_parts && count($ia_title_parts)) {
-          $ia_title = implode(' - ', $ia_title_parts);
-        }
-
-        if ($ia_title) {
-          $row->ia_title = $ia_title;
-        }
-
-        break;
-      }
-    }
     foreach ([1, 2, 3, 4] as $index) {
       if (!empty($row->{'tag' . $index})) {
-        $row->tags[] = $row->{'tag' . $index};
+        $row->tags[] = ucfirst($row->{'tag' . $index});
       }
     }
 
@@ -219,6 +180,9 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     if (empty($row->alias)) {
       $node->path['pathauto'] = TRUE;
     }
+    else {
+      $node->path['alias'] = $row->alias;
+    }
 
     if ($node->type =='consultation') {
       $node->field_consultation_summary = $node->body;
@@ -230,8 +194,6 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
    */
   public function complete($node, $row) {
     $this->lastPage = $node;
-
-    $this->remapIA($node, $row);
 
     // Create redirect from legacy path.
     try {
@@ -289,14 +251,6 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   }
 
   /**
-   * {@inheritdoc}
-   */
-  public function postImport() {
-    parent::postImport();
-    menu_rebuild();
-  }
-
-  /**
    * Implements createStub().
    */
   protected function createStub($migration, $source_key = NULL) {
@@ -311,6 +265,10 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     $node->status = NODE_PUBLISHED;
     $node->revision = FALSE;
     $node->body[LANGUAGE_NONE][0] = ['value' => '', 'format' => 'rich_text'];
+    $node->path = [
+      'pathauto' => FALSE,
+      'alias' => NULL,
+    ];
     node_save($node);
     migrate_instrument_stop('ArpansaMigrationPage::createStub');
     if (isset($node->nid)) {
@@ -348,6 +306,11 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
         // Extract title from the first H3.
         $title_node = $xpath->query("./h3", $content_title)->item(0);
         $row->title = $title_node->nodeValue;
+        if ($row->title == '404 Error') {
+          $this->queueMessage(t('Error 404 returned for page @url', ['@url' => $row->source_url]));
+          return FALSE;
+        }
+
         // Remove title from body.
         $content->removeChild($content_title);
 
@@ -466,7 +429,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
         continue;
       }
       if (empty($url['path'])) {
-        $url['path'] == '/';
+        $url['path'] = '/';
       }
       $href = ArpansaMigrationHelper::remapRelativeUri($url['path'], $row->source);
 
@@ -475,6 +438,9 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       if (empty($extension) || in_array(strtolower($extension), ['cfm', 'htm', 'html'])) {
         if (strpos($href, 'index.cfm') !== FALSE) {
           $href = str_replace('index.cfm', '/', $href);
+        }
+        if (strpos($href, 'index.htm') !== FALSE) {
+          $href = str_replace('index.htm', '/', $href);
         }
         $href = rtrim(strtolower($href), '/');
         if ($destination = $this->handleSourceMigration(['Page'], [$href])) {
@@ -534,77 +500,6 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   }
 
   /**
-   * Assign the migrated page to main menu.
-   *
-   * @param object $node
-   *   Node object.
-   * @param object $row
-   *   Row object.
-   */
-  protected function remapIA($node, $row) {
-    if ($menu = menu_link_get_preferred('node/' . $node->nid, 'main-menu')) {
-      $menu['link_title'] = $row->ia_title;
-      $menu['description'] = $node->title;
-    }
-    else {
-      $menu = [
-        'enabled' => TRUE,
-        'link_title' => $row->ia_title,
-        'link_path' => 'node/' . $node->nid,
-        'description' => $node->title,
-        'plid' => 0,
-        'menu_name' => 'main-menu',
-        'expanded' => 1,
-      ];
-    }
-
-    if (empty($row->alias)) {
-      if (!empty($this->lastMenuItem)) {
-        $menu['plid'] = $this->lastMenuItem['plid'];
-      }
-    }
-    else {
-      // Try to find a parent menu item.
-      $parent_path = preg_replace('/\/+/i', '/', trim($row->alias, '/'));
-      $trail = explode('/', $parent_path);
-      if (count($trail) > 1) {
-        $plid = 0;
-        foreach ($trail as $index => $trail_item) {
-          if ($index + 1 == count($trail)) {
-            break;
-          }
-          $parent_trail = array_slice($trail, 0, $index + 1);
-          $parent_trail = '/' . implode('/', $parent_trail);
-          if ($parent_nid = $this->findNodeWithAlias($parent_trail)) {
-            if ($parent_menu = menu_link_get_preferred('node/' . $parent_nid, 'main-menu')) {
-              $plid = $parent_menu['mlid'];
-            }
-            else {
-              // Create one for its parent.
-              $parent_menu = [
-                'enabled' => TRUE,
-                'link_title' => $parent_trail,
-                'link_path' => 'node/' . $parent_nid,
-                'plid' => $plid,
-                'menu_name' => 'main-menu',
-                'expanded' => 1,
-              ];
-              $plid = menu_link_save($parent_menu);
-            }
-          }
-        }
-
-        $menu['plid'] = $plid;
-      }
-    }
-
-
-    if ($mlid = menu_link_save($menu)) {
-      $this->lastMenuItem = $menu;
-    }
-  }
-
-  /**
    * Sanitise idList.
    */
   protected function sanitizeIdList() {
@@ -620,45 +515,5 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       $idlist = implode(',', $idlist);
       $this->options['idlist'] = $idlist;
     }
-  }
-
-  /**
-   * Find migrated node with alias.
-   *
-   * @param string $alias
-   *   Path alias.
-   * @param bool $createStub
-   *   Whethere to create a new stub if not found.
-   *
-   * @return int|FALSE
-   *   Node ID of the stub.
-   */
-  protected function findNodeWithAlias($alias, $createStub = TRUE) {
-    if ($path = drupal_lookup_path('source', $alias)) {
-      if ($node = menu_get_object('node', 1, $path)) {
-        return $node->nid;
-      }
-    }
-    else {
-      $query = new EntityFieldQuery();
-      $result = $query->entityCondition('entity_type', 'node')
-        ->entityCondition('bundle', 'landing_page')
-        ->propertyCondition('title', $alias)
-        ->execute();
-      if (!empty($result['node']) && count($result['node'])) {
-        $node = reset($result['node']);
-        return $node->nid;
-      }
-    }
-
-    if ($createStub) {
-      if ($nids = $this->createStub($this, [$alias])) {
-        $this->queueMessage(t('Create stub for alias @alias', ['@alias' => $alias]), self::MESSAGE_INFORMATIONAL);
-        $this->map->saveIDMapping((object) ['source' => $alias], $nids);
-        return reset($nids);
-      }
-    }
-
-    return FALSE;
   }
 }

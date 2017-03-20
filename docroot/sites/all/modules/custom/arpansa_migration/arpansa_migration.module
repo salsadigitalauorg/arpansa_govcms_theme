@@ -27,10 +27,16 @@ function arpansa_migration_migrate_api() {
       'FileMetadata' => [
         'class_name' => 'ArpansaMigrationFileMetadata',
         'group_name' => 'arpansa_file',
+        'dependencies' => ['File'],
       ],
       'Page' => [
         'class_name' => 'ArpansaMigrationPage',
         'group_name' => 'arpansa_content',
+      ],
+      'IA' => [
+        'class_name' => 'ArpansaMigrationIA',
+        'group_name' => 'arpansa_content',
+        'dependencies' => ['Page'],
       ],
     ],
   ];

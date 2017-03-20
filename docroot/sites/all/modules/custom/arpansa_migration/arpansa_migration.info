@@ -10,4 +10,5 @@ dependencies[] = migrate_ui
 files[] = migrations/base.inc
 files[] = migrations/file.inc
 files[] = migrations/file.metadata.inc
+files[] = migrations/ia.inc
 files[] = migrations/page.inc

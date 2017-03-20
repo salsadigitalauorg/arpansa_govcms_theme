@@ -75,6 +75,15 @@ class ArpansaMigrationFile extends ArpansaMigrationBase {
   /**
    * {@inheritdoc}
    */
+  public function prepare($file, $row) {
+    $file->field_document_title[LANGUAGE_NONE][0] = [
+      'value' => preg_replace('/[^\da-z]/i', ' ', $row->filename),
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function complete($file, $row) {
     // Create redirect from legacy path.
     try {
