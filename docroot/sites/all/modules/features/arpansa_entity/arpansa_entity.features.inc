@@ -78,6 +78,14 @@ function arpansa_entity_image_default_styles() {
  */
 function arpansa_entity_node_info() {
   $items = array(
+    'career' => array(
+      'name' => t('Career'),
+      'base' => 'node_content',
+      'description' => t('Use <em>Careers</em> to present careers details professionally to site visitors per the theme.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'landing_page' => array(
       'name' => t('Landing Page'),
       'base' => 'node_content',

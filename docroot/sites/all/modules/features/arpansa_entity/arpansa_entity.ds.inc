@@ -83,7 +83,7 @@ function arpansa_entity_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -98,7 +98,7 @@ function arpansa_entity_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -274,12 +274,14 @@ function arpansa_entity_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_image',
-        1 => 'title',
-        2 => 'body',
+        1 => 'field_news_date',
+        2 => 'title',
+        3 => 'body',
       ),
     ),
     'fields' => array(
       'field_image' => 'ds_content',
+      'field_news_date' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
     ),
@@ -306,12 +308,14 @@ function arpansa_entity_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_image',
-        1 => 'title',
-        2 => 'body',
+        1 => 'field_news_date',
+        2 => 'title',
+        3 => 'body',
       ),
     ),
     'fields' => array(
       'field_image' => 'ds_content',
+      'field_news_date' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
     ),

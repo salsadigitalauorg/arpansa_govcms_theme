@@ -1,7 +1,7 @@
 name = ARPANSA Blocks
 core = 7.x
 package = ARPANSA
-version = 7.x-1.0
+version = 7.x-1.1
 dependencies[] = crumbs
 dependencies[] = fe_block
 dependencies[] = features
@@ -30,7 +30,6 @@ features[fe_block_settings][] = menu_block-govcms_menu_block-main-menu
 features[fe_block_settings][] = menu_block-govcms_menu_block-sidebar
 features[fe_block_settings][] = menu_block-landing_page_children_listing
 features[fe_block_settings][] = search-form
-features[fe_block_settings][] = search_api_page-default_search
 features[fe_block_settings][] = service_links-service_links
 features[fe_block_settings][] = superfish-1
 features[fe_block_settings][] = system-help

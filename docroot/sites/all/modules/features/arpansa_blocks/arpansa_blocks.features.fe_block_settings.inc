@@ -85,7 +85,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'header',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => 0,
+        'weight' => -31,
       ),
     ),
     'title' => '',
@@ -102,10 +102,10 @@ function arpansa_blocks_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'footer',
+        'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -26,
+        'weight' => -31,
       ),
     ),
     'title' => '',
@@ -182,8 +182,8 @@ function arpansa_blocks_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
-        'region' => 'footer',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'arpansa_theme',
         'weight' => -30,
       ),
@@ -271,26 +271,6 @@ function arpansa_blocks_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['search_api_page-default_search'] = array(
-    'cache' => 5,
-    'custom' => 0,
-    'delta' => 'default_search',
-    'module' => 'search_api_page',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'arpansa_theme' => array(
-        'region' => 'header',
-        'status' => 1,
-        'theme' => 'arpansa_theme',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '<none>',
     'visibility' => 0,
   );
 
