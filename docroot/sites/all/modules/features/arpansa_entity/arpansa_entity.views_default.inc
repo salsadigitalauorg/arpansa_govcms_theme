@@ -310,5 +310,64 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['block_description'] = 'View: Literature Surveys';
   $export['literature_surveys'] = $view;
 
+  $view = new view();
+  $view->name = 'what_s_new_search_api';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_what_s_new_index';
+  $view->human_name = 'What\'s New Search API';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'What\'s New';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  /* Field: Indexed Content: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_what_s_new_index';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Sort criterion: Indexed Content: Date of Publication */
+  $handler->display->display_options['sorts']['field_news_date']['id'] = 'field_news_date';
+  $handler->display->display_options['sorts']['field_news_date']['table'] = 'search_api_index_what_s_new_index';
+  $handler->display->display_options['sorts']['field_news_date']['field'] = 'field_news_date';
+  $handler->display->display_options['sorts']['field_news_date']['order'] = 'DESC';
+  /* Filter criterion: Indexed Content: Date of Publication */
+  $handler->display->display_options['filters']['field_news_date']['id'] = 'field_news_date';
+  $handler->display->display_options['filters']['field_news_date']['table'] = 'search_api_index_what_s_new_index';
+  $handler->display->display_options['filters']['field_news_date']['field'] = 'field_news_date';
+  $handler->display->display_options['filters']['field_news_date']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_news_date']['expose']['operator_id'] = 'field_news_date_op';
+  $handler->display->display_options['filters']['field_news_date']['expose']['label'] = 'Date of Publication';
+  $handler->display->display_options['filters']['field_news_date']['expose']['operator'] = 'field_news_date_op';
+  $handler->display->display_options['filters']['field_news_date']['expose']['identifier'] = 'field_news_date';
+  $handler->display->display_options['filters']['field_news_date']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    16 => 0,
+    11 => 0,
+    21 => 0,
+    26 => 0,
+    31 => 0,
+    36 => 0,
+  );
+  $handler->display->display_options['filters']['field_news_date']['widget_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_news_date']['date_popup_format'] = 'd/m/Y';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $export['what_s_new_search_api'] = $view;
+
   return $export;
 }
