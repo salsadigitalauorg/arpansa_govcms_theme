@@ -559,5 +559,6 @@ features[variable][] = xmlsitemap_settings_node_webform
 features[views_view][] = careers
 features[views_view][] = homepage_what_s_new
 features[views_view][] = literature_surveys
+features[views_view][] = related_content
 features[views_view][] = what_s_new_search_api
 project path = sites/all/modules/features
