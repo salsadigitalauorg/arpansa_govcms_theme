@@ -7726,6 +7726,11 @@ table td, table th {
   background-image: url(../images/svg/magnifying_glass_hover.svg);
 }
 
+#block-views-slideshow-block {
+  background-image: url(../images/png/bg-gradient.png);
+  background-repeat: repeat-y;
+}
+
 .mobile-expand-search {
   overflow: hidden;
   text-indent: 101%;
@@ -8651,6 +8656,8 @@ a[rel~='external']::after {
 
 .region-footer {
   background-color: #268126;
+  background-image: url(../images/png/bg-gradient.png);
+  background-repeat: repeat-y;
 }
 
 .region-footer .block-menu > h2, .region-footer .block-menu > .display, .region-footer .block-menu-block > h2, .region-footer .block-menu-block > .display {
@@ -11082,7 +11089,7 @@ body.not-front #content .view .pager {
 }
 
 #block-menu-menu-footer-sub-menu {
-  border-top: 1px solid #1a5a1a;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 768px) {
@@ -11113,7 +11120,7 @@ body.not-front #content .view .pager {
 }
 
 #block-menu-menu-footer-sub-menu .content ul.menu > li {
-  margin-bottom: 0.9375rem;
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -11130,6 +11137,7 @@ body.not-front #content .view .pager {
 }
 
 #block-menu-menu-footer-sub-menu .content ul.menu > li a {
+  border: none;
   font-weight: 400;
 }
 
@@ -11142,7 +11150,8 @@ body.not-front #content .view .pager {
 }
 
 #block-govcms-social-links-services {
-  background-color: #1e671e;
+  background-color: #FAFAFA;
+  border: none;
 }
 
 #block-govcms-social-links-services .inner-wrapper {
