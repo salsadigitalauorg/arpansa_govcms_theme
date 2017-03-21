@@ -1086,9 +1086,9 @@ function arpansa_base_update_7043() {
 }
 
 /**
- * Update Consultation content type [ARPANSA-27].
+ * Social sharing: Configure [ARPANSA-36].
  */
-function arpansa_base_update_7044() {
+function arpansa_base_update_7045() {
     module_enable(['salsa_helpers']);
 
     // Unlock the govcms features.
