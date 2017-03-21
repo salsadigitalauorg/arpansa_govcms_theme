@@ -5,7 +5,7 @@
   .header__secondary-menu {
     display: none;
     @include breakpoint(tablet) {
-      @include link-colours($primary_1, $secondary_3, $neutral_1);
+      @include link-colours($secondary_1, $secondary_1, $neutral_1);
       display: block;
       text-align: right;
     }
