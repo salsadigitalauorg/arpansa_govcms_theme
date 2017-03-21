@@ -1084,3 +1084,22 @@ function arpansa_base_update_7043() {
 
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Update Consultation content type [ARPANSA-27].
+ */
+function arpansa_base_update_7044() {
+    module_enable(['salsa_helpers']);
+
+    // Unlock the govcms features.
+    $govCMSFeatures = array(
+        'govcms_share_links',
+    );
+    salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+    module_load_include('module', 'salsa_helpers');
+    salsa_helpers_features_revert('govcms_share_links');
+
+    // Relock them to avoid accidental revert.
+    salsa_helpers_lock_features($govCMSFeatures);
+}
