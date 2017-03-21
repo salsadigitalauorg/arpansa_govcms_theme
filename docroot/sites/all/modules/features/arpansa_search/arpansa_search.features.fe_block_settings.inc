@@ -25,7 +25,7 @@ function arpansa_search_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => 0,
+        'weight' => -30,
       ),
     ),
     'title' => 'Document type',
@@ -45,7 +45,7 @@ function arpansa_search_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => 0,
+        'weight' => -32,
       ),
     ),
     'title' => 'Date published',
@@ -65,10 +65,30 @@ function arpansa_search_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -32,
+        'weight' => -33,
       ),
     ),
     'title' => 'Tags',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-zOlIfcfdv66nYAHevQ1CMhTWOVaJEXN0'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'zOlIfcfdv66nYAHevQ1CMhTWOVaJEXN0',
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'arpansa_theme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'arpansa_theme',
+        'weight' => -31,
+      ),
+    ),
+    'title' => 'File Tags',
     'visibility' => 0,
   );
 
