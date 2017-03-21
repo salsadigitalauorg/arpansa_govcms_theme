@@ -3,6 +3,8 @@
 // =========================================================
 .region-footer {
   background-color: $primary_1;
+  background-image: url(../images/png/bg-gradient.png);
+  background-repeat: repeat-y;
   .block-menu, .block-menu-block {
     &>h2 {
       @include visually-hidden;
