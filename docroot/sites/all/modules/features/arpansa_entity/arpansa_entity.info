@@ -49,6 +49,7 @@ dependencies[] = media_wysiwyg
 dependencies[] = menu
 dependencies[] = menu_block
 dependencies[] = metatag
+dependencies[] = metatag_opengraph
 dependencies[] = module_filter
 dependencies[] = module_permissions
 dependencies[] = node
