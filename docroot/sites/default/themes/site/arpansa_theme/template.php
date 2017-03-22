@@ -109,6 +109,18 @@ function arpansa_theme_preprocess_node(&$variables) {
     }
   }
 
+  if ($variables['view_mode'] === 'full') {
+    $show_related_content = !empty($variables['field_show_related_content'][0]['value']) ? (int)$variables['field_show_related_content'][0]['value'] : 0;
+    if ($show_related_content === 1) {
+      $block = block_load('views', 'related_content-block');
+      $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+      $variables['content']['field_show_related_content'][0]['#markup'] = $output;
+    }
+    else {
+      $variables['content']['field_show_related_content'] = null;
+    }
+  }
+
   if ($variables['type'] === 'webform') {
     // Hide submitted date on webforms.
     $variables['display_submitted'] = FALSE;
