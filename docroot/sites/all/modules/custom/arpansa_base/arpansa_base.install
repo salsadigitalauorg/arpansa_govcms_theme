@@ -1108,9 +1108,8 @@ function arpansa_base_update_7044() {
  * Related Content configure [ARPANSA-58].
  */
 function arpansa_base_update_7046() {
-    module_enable(['salsa_helpers']);
-    module_load_include('module', 'salsa_helpers');
-    salsa_helpers_features_revert('arpansa_entity');
-    salsa_helpers_features_revert('arpansa_blocks');
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('arpansa_blocks');
 }
-
