@@ -1,5 +1,6 @@
 #block-govcms-social-links-services {
-  background-color: $primary_2;
+  background-color: $neutral_5;
+  border: none;
   .inner-wrapper {
     @include center-column($desktop_column);
     display: flex;

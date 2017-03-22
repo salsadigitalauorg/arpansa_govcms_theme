@@ -1,12 +1,15 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
 // GOV.AU UI-Kit.
 @import '../../vendor/gov-au-ui-kit/assets/sass/variables';
 @import '../../vendor/gov-au-ui-kit/assets/sass/utils';
 @import '../../vendor/gov-au-ui-kit/assets/sass/vendor';
 @import '../../vendor/gov-au-ui-kit/assets/sass/components';
+// BASE
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/typography';
 // govCMS UI Kit.
-@import 'variables';
-@import 'mixins';
 @import 'page/header';
 @import 'page/navigation';
 @import 'page/layout';

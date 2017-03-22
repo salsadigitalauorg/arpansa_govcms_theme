@@ -1,0 +1,311 @@
+// Global typography styles
+body {
+  font-family: $type-brand-primary;
+  color: $color-brand-black;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 400;
+  padding: 15px 0 10px 0;
+  color: $color-brand-black;
+  font-family: $type-brand-primary;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 0.6em;
+}
+
+h1, h2, h3, h6 {
+  font-weight: 700;
+}
+
+h4, h5 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+//Glossary headings
+h6.field-content {
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 16px; // padding:10px 0;
+  padding: 5px 0 10px 0;
+  line-height: 1.4; //down from 1.5
+  color: #222;
+  font-family: $type-brand-primary;
+  &:empty {
+    display: none;
+  }
+}
+
+ul {}
+
+ul li {
+  line-height: 1.7;
+  text-align: left;
+  list-style: none;
+  color: #222;
+}
+
+article {
+  ul li {
+    list-style: inherit;
+  }
+}
+
+// ul styles for content areas
+%ul-styles {
+  margin: 0;
+  padding: 0;
+  clear: both;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  li {
+    padding-bottom: 10px;
+    line-height: 1.45; //list-style: disc;
+    font-size: 16px;
+  }
+}
+
+ol {
+  margin-left: 30px;
+}
+
+ol li {
+  font-size: em(16);
+  padding: 5px 0;
+  line-height: 1.5;
+  text-align: left; //list-style: decimal;
+  color: #222;
+}
+
+dl dt {
+  font-weight: bold;
+  font-style: italic;
+}
+
+dl dd {
+  font-size: em(16);
+  padding: 5px 10px;
+  line-height: 1.5;
+  text-align: left; //list-style: decimal;
+}
+
+a {
+  transition: color .300s, background .300s, border .300s;
+  color: $color-link-primary;
+  text-decoration: underline;
+  &:focus, &:hover {
+    color: $color-link-visited;
+    text-decoration: none;
+  }
+}
+
+blockquote {
+  padding: 8px 0px 8px 0px;
+  margin: 0;
+  min-height: 40px;
+  text-transform: uppercase;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: bold;
+  border: 0;
+  margin-bottom: 15px;
+  p {
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.2;
+    padding-left: 0px;
+    color: $primary_1;
+  }
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+cite {
+  font-weight: bold;
+}
+
+pre {
+  background: #222;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 14px;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+  color: #FFF;
+}
+
+code, kbd, tt, var {
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  background: #222;
+  color: #fff;
+  padding: 5px;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted #e5e5e5;
+  cursor: help;
+}
+
+mark, ins {
+  background: #e5e5e5;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+tr {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+th {
+  padding: 5px;
+  text-align: left;
+}
+
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+textarea, button, select {
+  text-transform: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+
+// hide select button in IE
+select::-ms-expand {
+  display: none;
+}
+
+// hide button in FF
+select {
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+}
+
+::-webkit-input-placeholder {
+  color: $color-brand-black;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $color-brand-black;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $color-brand-black;
+}
+
+:-ms-input-placeholder {
+  color: $color-brand-black;
+}
+
+
+/* Foundation v2.1.4 http://foundation.zurb.com */
+
+
+/* Artfully masterminded by ZURB  */
+
+table th {
+  font-weight: bold;
+}
+
+table td, table th {
+  padding: 9px 10px;
+  text-align: left;
+}
+
+
+/* Mobile */
+
+@media only screen and (max-width: 767px) {
+  table.responsive {
+    margin-bottom: 0;
+  }
+  .pinned {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    width: 35%;
+    overflow: hidden;
+    overflow-x: scroll;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+  }
+  .pinned table {
+    border-right: none;
+    border-left: none;
+    width: 100%;
+  }
+  .pinned table th, .pinned table td {
+    white-space: nowrap;
+  }
+  .pinned td:last-child {
+    border-bottom: 0;
+  }
+  div.table-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-right: 1px solid #ccc;
+  }
+  div.table-wrapper div.scrollable table {
+    margin-left: 35%;
+  }
+  div.table-wrapper div.scrollable {
+    overflow: scroll;
+    overflow-y: hidden;
+  }
+  table.responsive td, table.responsive th {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td {
+    display: none;
+  }
+}
