@@ -5,10 +5,9 @@
 @import '../../vendor/gov-au-ui-kit/assets/sass/vendor';
 @import '../../vendor/gov-au-ui-kit/assets/sass/components';
 // BASE
-@import 'base/reset';
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/typography';
+@import 'variables';
+@import 'mixins';
+@import 'typography';
 // govCMS UI Kit.
 @import 'page/header';
 @import 'page/navigation';
