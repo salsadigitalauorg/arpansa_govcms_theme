@@ -43,6 +43,24 @@ form.webform-client-form {
     .description {
       font-size: rem(14px);
     }
+    [type='text'], [type='number'], [type='tel'], [type='email'], [type='password'] {
+      border-color: $grey_1;
+      background-color: $grey_2;
+      border-radius: 4px;
+      outline: inherit;
+      &:focus {
+        background-color: white;
+        border-color: $blue_1;
+        box-shadow: 0 0 5px $blue_1;
+      }
+      &:invalid {
+        border-color: $red_1;
+        background-color: white;
+        &:focus {
+          box-shadow: 0 0 5px $red_1;
+        }
+      }
+    }
   } // =========================================================
   // SELECTORS - CHECKBOX, SELECT, RADIO, LIST
   // =========================================================
