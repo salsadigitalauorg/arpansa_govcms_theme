@@ -1019,7 +1019,7 @@ function arpansa_base_update_7040() {
  * Configure Careers Landing Page [ARPANSA-85].
  */
 function arpansa_base_update_7041() {
-  //  Create a Careers page for assigning the careers view block to
+  // Create a Careers page for assigning the careers view block to.
   $node = new stdClass();
   $node->type = 'page';
   $node->title = 'Careers';
@@ -1055,7 +1055,7 @@ function arpansa_base_update_7042() {
  * What's New Landing Page [ARPANSA-80].
  */
 function arpansa_base_update_7043() {
-  //  Create a Careers page for assigning the careers view block to
+  // Create a Careers page for assigning the careers view block to.
   $node = new stdClass();
   $node->type = 'page';
   $node->title = "What's New";
@@ -1174,4 +1174,14 @@ function arpansa_base_update_7049() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
+ * Related Content configure [ARPANSA-58].
+ */
+function arpansa_base_update_7050() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+  salsa_helpers_features_revert('arpansa_blocks');
 }
