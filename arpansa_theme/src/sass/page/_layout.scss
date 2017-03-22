@@ -52,6 +52,7 @@ html {
   }
   .content {
     @include link-colours($primary_1, $secondary_3, $neutral_1);
+    color: $neutral_1;
   }
 }
 

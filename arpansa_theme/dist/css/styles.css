@@ -6874,6 +6874,85 @@ article h1:first-of-type, article .hero .site-title:first-of-type, .hero article
   border: none;
 }
 
+h1, .hero .site-title,
+.hero-sml .site-title,
+.hero-med .site-title {
+  color: #268126;
+  font-size: 4em;
+}
+
+h2, .display {
+  color: #268126;
+  font-size: 2.25em;
+}
+
+h3 {
+  color: #268126;
+  font-size: 2.25em;
+}
+
+h4 {
+  color: #268126;
+  font-size: 1.5em;
+}
+
+h5 {
+  color: #268126;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+h6 {
+  color: #268126;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+#content .region button,
+#content .region .button,
+#content .region [role='button'],
+#content .region [type='submit'],
+#content .region [type='reset'],
+#content .region [type='button'] {
+  background-color: #4E1A74;
+  color: white;
+  border-color: #268126;
+}
+
+#content .region button:hover, #content .region button:focus,
+#content .region .button:hover,
+#content .region .button:focus,
+#content .region [role='button']:hover,
+#content .region [role='button']:focus,
+#content .region [type='submit']:hover,
+#content .region [type='submit']:focus,
+#content .region [type='reset']:hover,
+#content .region [type='reset']:focus,
+#content .region [type='button']:hover,
+#content .region [type='button']:focus {
+  background-color: #268126;
+  color: white;
+}
+
+#content .region button:active,
+#content .region .button:active,
+#content .region [role='button']:active,
+#content .region [type='submit']:active,
+#content .region [type='reset']:active,
+#content .region [type='button']:active {
+  background-color: #268126;
+}
+
+#content .region [type='submit'] {
+  border: none;
+  border-radius: 4px;
+  font-weight: 400;
+}
+
+#content .region [type='submit']:hover, #content .region [type='submit']:focus {
+  box-shadow: 0 5px 10px #444449;
+}
+
 .header__inner {
   max-width: 73.125rem;
   margin-left: auto;
@@ -7652,6 +7731,7 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
 
   Style guide: Link styles.3 Placeholder links
   */
+  color: #444449;
 }
 
 .content-body .content a {
@@ -8461,6 +8541,28 @@ form.webform-client-form .form-item input {
 
 form.webform-client-form .form-item .description {
   font-size: 0.875rem;
+}
+
+form.webform-client-form .form-item [type='text'], form.webform-client-form .form-item [type='number'], form.webform-client-form .form-item [type='tel'], form.webform-client-form .form-item [type='email'], form.webform-client-form .form-item [type='password'] {
+  border-color: #D3D3D3;
+  background-color: #F9F9F9;
+  border-radius: 4px;
+  outline: inherit;
+}
+
+form.webform-client-form .form-item [type='text']:focus, form.webform-client-form .form-item [type='number']:focus, form.webform-client-form .form-item [type='tel']:focus, form.webform-client-form .form-item [type='email']:focus, form.webform-client-form .form-item [type='password']:focus {
+  background-color: white;
+  border-color: #2980BA;
+  box-shadow: 0 0 5px #2980BA;
+}
+
+form.webform-client-form .form-item [type='text']:invalid, form.webform-client-form .form-item [type='number']:invalid, form.webform-client-form .form-item [type='tel']:invalid, form.webform-client-form .form-item [type='email']:invalid, form.webform-client-form .form-item [type='password']:invalid {
+  border-color: #E74C3C;
+  background-color: white;
+}
+
+form.webform-client-form .form-item [type='text']:invalid:focus, form.webform-client-form .form-item [type='number']:invalid:focus, form.webform-client-form .form-item [type='tel']:invalid:focus, form.webform-client-form .form-item [type='email']:invalid:focus, form.webform-client-form .form-item [type='password']:invalid:focus {
+  box-shadow: 0 0 5px #E74C3C;
 }
 
 form.webform-client-form .webform-component-checkboxes .form-item {
