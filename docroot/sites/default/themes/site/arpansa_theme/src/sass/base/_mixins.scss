@@ -128,12 +128,12 @@
 @mixin listing-component-heading() {
   font-size: rem(24px);
   line-height: 1.5em;
-  @include link-colours($secondary_1, $secondary_3, $neutral_1);
+  @include link-colours($secondary_1, $secondary_1, $neutral_1);
 }
 
 @mixin listing-component-subtext() {
   font-size: rem(14px);
-  color: $neutral_2;
+  color: $neutral_1;
   text-transform: uppercase;
   margin-top: $default_padding;
   margin-bottom: $default_padding;
@@ -186,8 +186,9 @@
 @mixin search-text-field() {
   margin: 0;
   height: rem(52px);
-  background-color: $neutral_4;
-  border: 1px solid $neutral_3;
+  background-color: white;
+  border: 1px solid $neutral_2;
+  border-right: 0;
   z-index: 1;
   position: relative;
 }
@@ -200,8 +201,8 @@
   width: rem(52px);
   height: rem(52px);
   box-sizing: border-box;
-  background-color: $neutral_4;
-  border: 1px solid $neutral_3;
+  background-color: white;
+  border: 1px solid $neutral_2;
   border-left: 0;
   border-radius: 0;
   background-repeat: no-repeat;
@@ -231,16 +232,14 @@
     @include breakpoint($breakpoint) {
       @include omega();
     }
-  }
-  // Two Columns (50 50)
+  } // Two Columns (50 50)
   &.panel-2col, &.panel-2col-bricks, &.panel-2col-stacked {
     .panel-col-first, .panel-col-last {
       @include breakpoint($breakpoint) {
         @include span-columns(6 of 12);
       }
     }
-  }
-  // Three Columns (25 50 25)
+  } // Three Columns (25 50 25)
   &.panel-3col, &.panel-3col-stacked {
     .panel-col-first, .panel-col-last {
       @include breakpoint($breakpoint) {
@@ -252,8 +251,7 @@
         @include span-columns(6 of 12);
       }
     }
-  }
-  // Three Columns (33 33 33)
+  } // Three Columns (33 33 33)
   &.panel-3col-33, &.panel-3col-33-stacked {
     .panel-col-first, .panel-col-last, .panel-col {
       @include breakpoint($breakpoint) {

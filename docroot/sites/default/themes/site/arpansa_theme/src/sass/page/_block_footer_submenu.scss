@@ -1,5 +1,5 @@
 #block-menu-menu-footer-sub-menu {
-  border-top: 1px solid darken($primary_1, 10%);
+  background-color: rgba(0, 0, 0, 0.4);
   .content {
     @include breakpoint(tablet) {
       padding-top: rem(38px);
@@ -16,7 +16,7 @@
         display: block;
       }
       &>li {
-        margin-bottom: rem(15px);
+        margin-bottom: 0;
         @include breakpoint(tablet) {
           display: inline-block;
           margin-left: rem(15px);
@@ -25,6 +25,7 @@
           margin-left: rem(30px);
         }
         a {
+          border: none;
           font-weight: 400;
         }
       }

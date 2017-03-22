@@ -5,9 +5,13 @@
   .header__secondary-menu {
     display: none;
     @include breakpoint(tablet) {
-      @include link-colours($primary_1, $secondary_3, $neutral_1);
+      @include link-colours($secondary_1, white, $neutral_1);
       display: block;
       text-align: right;
+    }
+    a {
+      border-color: $secondary_1;
+      outline: inherit;
     }
     ul.links {
       li {
@@ -159,6 +163,10 @@
       }
     }
   }
+}
+
+#block-views-slideshow-block {
+  background-image: linear-gradient(-90deg, #298829 0%, #4E1A74 93%);
 }
 
 // =========================================================

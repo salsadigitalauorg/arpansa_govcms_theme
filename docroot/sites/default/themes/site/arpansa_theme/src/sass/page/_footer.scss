@@ -3,6 +3,8 @@
 // =========================================================
 .region-footer {
   background-color: $primary_1;
+  background-image: linear-gradient(-90deg, #298829 0%, #4E1A74 93%);
+  background-repeat: repeat-y;
   .block-menu, .block-menu-block {
     &>h2 {
       @include visually-hidden;
@@ -15,8 +17,7 @@
       @include breakpoint(tablet) {
         padding-top: rem(64px);
         padding-bottom: rem(64px);
-      }
-      // First level of nav should be horizontal.
+      } // First level of nav should be horizontal.
       &>ul.menu, &>.menu-block-wrapper>ul.menu {
         @include breakpoint(tablet) {
           display: table;
