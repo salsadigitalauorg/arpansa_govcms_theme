@@ -1849,7 +1849,7 @@ function arpansa_entity_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2020,10 +2020,11 @@ function arpansa_entity_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
+        'type' => 'list_default',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2072,7 +2073,7 @@ function arpansa_entity_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
