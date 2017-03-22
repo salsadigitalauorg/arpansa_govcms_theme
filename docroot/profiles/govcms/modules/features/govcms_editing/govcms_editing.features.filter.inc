@@ -10,25 +10,16 @@
 function govcms_editing_filter_default_formats() {
   $formats = array();
 
-  // Exported format: iFrame.
+  // Exported format: Full HTML with iFrame.
   $formats['iframe'] = array(
     'format' => 'iframe',
-    'name' => 'iFrame',
+    'name' => 'Full HTML with iFrame',
     'cache' => 1,
     'status' => 1,
     'weight' => -9,
     'filters' => array(
-      'filter_html' => array(
-        'weight' => -10,
-        'status' => 1,
-        'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <u> <hr> <s> <strike> <sub> <sup> <iframe> <h2> <h3> <h4> <h5> <h6> <p> <table> <tr> <thead> <tbody> <td> <th>',
-          'filter_html_help' => 1,
-          'filter_html_nofollow' => 0,
-        ),
-      ),
       'video_filter' => array(
-        'weight' => -1,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(
           'video_filter_width' => 400,
@@ -37,6 +28,7 @@ function govcms_editing_filter_default_formats() {
           'video_filter_related' => 1,
           'video_filter_html5' => 1,
           'video_filter_codecs' => array(
+            'vimeo' => 'vimeo',
             'whatchado' => 'whatchado',
             'youtube' => 'youtube',
             'youtube_playlist' => 'youtube_playlist',
@@ -71,7 +63,6 @@ function govcms_editing_filter_default_formats() {
             'twitch' => 0,
             'ustream' => 0,
             'vbox' => 0,
-            'vimeo' => 0,
             'vine' => 0,
             'wistia' => 0,
             'youku' => 0,
@@ -79,20 +70,35 @@ function govcms_editing_filter_default_formats() {
           'video_filter_multiple_sources' => 1,
         ),
       ),
-      'filter_autop' => array(
-        'weight' => 0,
+      'media_filter' => array(
+        'weight' => -46,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_url' => array(
-        'weight' => 0,
+        'weight' => -45,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
+      'filter_autop' => array(
+        'weight' => -44,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'toc_filter' => array(
+        'weight' => -43,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'filter_htmlcorrector' => array(
+        'weight' => -41,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'spamspan' => array(
-        'weight' => 0,
+        'weight' => -40,
         'status' => 1,
         'settings' => array(
           'spamspan_at' => ' [at] ',
@@ -105,23 +111,8 @@ function govcms_editing_filter_default_formats() {
           'spamspan_form_default_displaytext' => 'contact form',
         ),
       ),
-      'toc_filter' => array(
-        'weight' => 0,
-        'status' => 1,
-        'settings' => array(),
-      ),
-      'media_filter' => array(
-        'weight' => 2,
-        'status' => 1,
-        'settings' => array(),
-      ),
-      'filter_htmlcorrector' => array(
-        'weight' => 10,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'pathologic' => array(
-        'weight' => 50,
+        'weight' => -39,
         'status' => 1,
         'settings' => array(
           'settings_source' => 'global',
@@ -145,7 +136,7 @@ function govcms_editing_filter_default_formats() {
     'weight' => -10,
     'filters' => array(
       'wysiwyg' => array(
-        'weight' => -50,
+        'weight' => -49,
         'status' => 1,
         'settings' => array(
           'valid_elements' => 'a[href|rel|target<_blank|title|class|name|id],
@@ -389,7 +380,7 @@ video',
         ),
       ),
       'video_filter' => array(
-        'weight' => 0,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(
           'video_filter_width' => 400,
@@ -440,35 +431,35 @@ video',
           'video_filter_multiple_sources' => 1,
         ),
       ),
+      'media_filter' => array(
+        'weight' => -45,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'filter_url' => array(
-        'weight' => 1,
+        'weight' => -44,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
       'filter_autop' => array(
-        'weight' => 2,
-        'status' => 1,
-        'settings' => array(),
-      ),
-      'media_filter' => array(
-        'weight' => 3,
+        'weight' => -43,
         'status' => 1,
         'settings' => array(),
       ),
       'toc_filter' => array(
-        'weight' => 4,
+        'weight' => -42,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => 5,
+        'weight' => -41,
         'status' => 1,
         'settings' => array(),
       ),
       'spamspan' => array(
-        'weight' => 49,
+        'weight' => -40,
         'status' => 1,
         'settings' => array(
           'spamspan_at' => ' [at] ',
@@ -482,7 +473,7 @@ video',
         ),
       ),
       'pathologic' => array(
-        'weight' => 50,
+        'weight' => -39,
         'status' => 1,
         'settings' => array(
           'settings_source' => 'global',
