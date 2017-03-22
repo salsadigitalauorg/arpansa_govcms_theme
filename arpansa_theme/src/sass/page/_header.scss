@@ -5,9 +5,13 @@
   .header__secondary-menu {
     display: none;
     @include breakpoint(tablet) {
-      @include link-colours($secondary_1, $secondary_1, $neutral_1);
+      @include link-colours($secondary_1, white, $neutral_1);
       display: block;
       text-align: right;
+    }
+    a {
+      border-color: $secondary_1;
+      outline: inherit;
     }
     ul.links {
       li {
@@ -162,8 +166,7 @@
 }
 
 #block-views-slideshow-block {
-  background-image: url(../images/png/bg-gradient.png);
-  background-repeat: repeat-y;
+  background-image: linear-gradient(-90deg, #298829 0%, #4E1A74 93%);
 }
 
 // =========================================================

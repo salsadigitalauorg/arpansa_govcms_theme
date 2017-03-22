@@ -7426,13 +7426,13 @@ table td, table th {
     color: #4E1A74;
     text-decoration: none;
     outline: none;
-    border-bottom: solid 1px #4E1A74;
+    border-bottom: solid 1px white;
     transition-timing-function: ease-in-out;
     transition-duration: 0.1s;
     transition-property: background-color, border-color, color;
   }
   .header__inner .header__secondary-menu a:hover, .header__inner .header__secondary-menu a:focus {
-    background-color: #4E1A74;
+    background-color: white;
     color: #444449;
   }
   .header__inner .header__secondary-menu a[rel~='external'] {
@@ -7476,6 +7476,11 @@ table td, table th {
   .header__inner .header__secondary-menu span.placeholder-link:hover {
     cursor: not-allowed;
   }
+}
+
+.header__inner .header__secondary-menu a {
+  border-color: #4E1A74;
+  outline: inherit;
 }
 
 .header__inner .header__secondary-menu ul.links li {
@@ -7727,8 +7732,7 @@ table td, table th {
 }
 
 #block-views-slideshow-block {
-  background-image: url(../images/png/bg-gradient.png);
-  background-repeat: repeat-y;
+  background-image: linear-gradient(-90deg, #298829 0%, #4E1A74 93%);
 }
 
 .mobile-expand-search {
@@ -8656,7 +8660,7 @@ a[rel~='external']::after {
 
 .region-footer {
   background-color: #268126;
-  background-image: url(../images/png/bg-gradient.png);
+  background-image: linear-gradient(-90deg, #298829 0%, #4E1A74 93%);
   background-repeat: repeat-y;
 }
 
