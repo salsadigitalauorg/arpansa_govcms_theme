@@ -1,0 +1,45 @@
+h1 {
+  color: $primary_1;
+  font-size: em(64px);
+}
+
+h2 {
+  color: $primary_1;
+  font-size: em(36px);
+}
+
+h3 {
+  color: $primary_1;
+  font-size: em(36px);
+}
+
+h4 {
+  color: $primary_1;
+  font-size: em(24px);
+}
+
+h5 {
+  color: $primary_1;
+  font-size: em(16px);
+  font-weight: 600;
+}
+
+h6 {
+  color: $primary_1;
+  font-size: em(16px);
+  font-weight: 700;
+}
+
+#content {
+  .region {
+    @include button-colours($secondary_1, $primary_1, $primary_1, white, white);
+    [type='submit'] {
+      border: none;
+      border-radius: 4px;
+      font-weight: 400;
+      &:hover, &:focus {
+        box-shadow: 0 5px 10px $neutral_1;
+      }
+    }
+  }
+}
