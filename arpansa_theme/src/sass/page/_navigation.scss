@@ -1,4 +1,36 @@
 // =========================================================
+// SKIP LINK
+// =========================================================
+.skip-to {
+  color: #313131;
+  position: relative;
+  z-index: 200;
+  a {
+    border: 0;
+    height: 1px;
+    line-height: 1em;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    border-radius: 1px;
+    text-decoration: none;
+    &:focus, &:active {
+      background-color: $secondary_1;
+      color: white;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      width: auto;
+      top: 10px;
+      left: 10px;
+      padding: 0.4em 0.8em;
+    }
+  }
+}
+
+// =========================================================
 // TOP NAVIGATION
 // =========================================================
 .region-navigation {
@@ -115,6 +147,7 @@
     display: none;
   }
   &.menu-open {
+    background-color: $primary_1;
     display: block;
     @include breakpoint(tablet) {
       display: none;
@@ -138,7 +171,7 @@
         text-decoration: none;
         padding-top: $default_padding / 2;
         padding-bottom: $default_padding / 2;
-        color: $neutral_1;
+        color: white;
         &:hover, &:focus {
           color: white;
           background-color: $secondary_1;
@@ -147,7 +180,7 @@
       &.active {
         a {
           color: white;
-          background-color: $main_menu_active;
+          background-color: $secondary_1;
           &:hover, &:focus {
             color: white;
             background-color: $secondary_1;
