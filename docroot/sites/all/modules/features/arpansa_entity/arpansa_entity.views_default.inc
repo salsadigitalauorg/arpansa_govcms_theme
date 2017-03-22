@@ -416,27 +416,6 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['sorts']['field_news_date']['table'] = 'search_api_index_what_s_new_index';
   $handler->display->display_options['sorts']['field_news_date']['field'] = 'field_news_date';
   $handler->display->display_options['sorts']['field_news_date']['order'] = 'DESC';
-  /* Filter criterion: Indexed Content: Date of Publication */
-  $handler->display->display_options['filters']['field_news_date']['id'] = 'field_news_date';
-  $handler->display->display_options['filters']['field_news_date']['table'] = 'search_api_index_what_s_new_index';
-  $handler->display->display_options['filters']['field_news_date']['field'] = 'field_news_date';
-  $handler->display->display_options['filters']['field_news_date']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_news_date']['expose']['operator_id'] = 'field_news_date_op';
-  $handler->display->display_options['filters']['field_news_date']['expose']['label'] = 'Date of Publication';
-  $handler->display->display_options['filters']['field_news_date']['expose']['operator'] = 'field_news_date_op';
-  $handler->display->display_options['filters']['field_news_date']['expose']['identifier'] = 'field_news_date';
-  $handler->display->display_options['filters']['field_news_date']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    16 => 0,
-    11 => 0,
-    21 => 0,
-    26 => 0,
-    31 => 0,
-    36 => 0,
-  );
-  $handler->display->display_options['filters']['field_news_date']['widget_type'] = 'date_popup';
-  $handler->display->display_options['filters']['field_news_date']['date_popup_format'] = 'd/m/Y';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
