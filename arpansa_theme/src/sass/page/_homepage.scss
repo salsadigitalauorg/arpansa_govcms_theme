@@ -21,14 +21,12 @@
       @include center-column($desktop_column);
     }
   }
-  #panels-ipe-display-panel-context-page-front-page-page-front-page-panel-context {
-    .panel-display {
-      @include center-column(100%);
-      padding-left: 0;
-      padding-right: 0;
-      .pane-content, .pane-title {
-        @include center-column($desktop_column);
-      }
+  .panel-display {
+    @include center-column(100%);
+    padding-left: 0;
+    padding-right: 0;
+    .pane-content, .pane-title {
+      @include center-column($desktop_column);
     }
   }
 }
