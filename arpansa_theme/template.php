@@ -118,14 +118,16 @@ function arpansa_theme_preprocess_node(&$variables) {
     }
     else {
       $block = block_load('service_links', 'service_links');
-      $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+      $block_content = _block_get_renderable_array(_block_render_blocks(array($block)));
+      $output = drupal_render($block_content);
       $variables['content']['field_social_links'][0]['#markup'] = $output;
     }
 
     $show_related_content = !empty($variables['field_show_related_content'][0]['value']) ? (int) $variables['field_show_related_content'][0]['value'] : 0;
     if ($show_related_content === 1) {
       $block = block_load('views', 'related_content-block');
-      $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+      $block_content = _block_get_renderable_array(_block_render_blocks(array($block)));
+      $output = drupal_render($block_content);
       $variables['content']['field_show_related_content'][0]['#markup'] = $output;
     }
     else {
