@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 /*
 Colours
 
@@ -6878,32 +6879,38 @@ h1, .hero .site-title,
 .hero-sml .site-title,
 .hero-med .site-title {
   color: #268126;
+  font-family: "Source Sans Pro", sans-serif, Arial;
   font-size: 4em;
 }
 
 h2, .display {
   color: #268126;
+  font-family: "Source Sans Pro", sans-serif, Arial;
   font-size: 2.25em;
 }
 
 h3 {
   color: #268126;
+  font-family: "Source Sans Pro", sans-serif, Arial;
   font-size: 2.25em;
 }
 
 h4 {
   color: #268126;
+  font-family: "Source Sans Pro", sans-serif, Arial;
   font-size: 1.5em;
 }
 
 h5 {
   color: #268126;
+  font-family: "Source Sans Pro", sans-serif, Arial;
   font-size: 1em;
   font-weight: 600;
 }
 
 h6 {
   color: #268126;
+  font-family: "Source Sans Pro", sans-serif, Arial;
   font-size: 1em;
   font-weight: 700;
 }
@@ -7362,6 +7369,7 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
 .mobile-expand-search:hover, .mobile-expand-search:focus {
   background-image: url(../images/svg/mobile_search_open_hover.svg);
+  box-shadow: none;
 }
 
 .mobile-expand-search.search-open {
@@ -7370,6 +7378,7 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
 .mobile-expand-search.search-open:hover, .mobile-expand-search.search-open:focus {
   background-image: url(../images/svg/mobile_search_close_hover.svg);
+  box-shadow: none;
 }
 
 .mobile-expand-menu {
@@ -7393,6 +7402,7 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
 .mobile-expand-menu:hover, .mobile-expand-menu:focus {
   background-image: url(../images/svg/mobile_menu_open_hover.svg);
+  box-shadow: none;
 }
 
 .mobile-expand-menu.menu-open {
@@ -7401,6 +7411,7 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
 .mobile-expand-menu.menu-open:hover, .mobile-expand-menu.menu-open:focus {
   background-image: url(../images/svg/mobile_search_close_hover.svg);
+  box-shadow: none;
 }
 
 .skip-to {
@@ -7458,12 +7469,6 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
   display: table;
   width: 100%;
   position: relative;
-}
-
-@media (min-width: 1200px) {
-  .region-navigation .block-superfish ul.sf-menu {
-    table-layout: fixed;
-  }
 }
 
 html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-processed) > li > ul {
@@ -7533,12 +7538,11 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
   padding-right: 1.875rem;
   padding-top: 0.9375rem;
   padding-bottom: 0.875rem;
-  border-bottom: 1px solid transparent;
+  border: none;
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > ul li a:hover, .region-navigation .block-superfish ul.sf-menu > li > ul li a:focus {
-  background-color: #268126;
-  border-bottom-color: white;
+  background-color: #1C661C;
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > ul li.active-trail > a {
@@ -7546,7 +7550,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > ul li.active-trail > a:hover, .region-navigation .block-superfish ul.sf-menu > li > ul li.active-trail > a:focus {
-  background-color: #268126;
+  background-color: #1C661C;
 }
 
 .mobile-nav {
@@ -7601,7 +7605,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 
 .mobile-nav ul.links li a:hover, .mobile-nav ul.links li a:focus {
   color: white;
-  background-color: #4E1A74;
+  background-color: #1C661C;
 }
 
 .mobile-nav ul.links li.active a {
@@ -8078,6 +8082,10 @@ a[rel~='external']::after {
   }
 }
 
+.region-footer .block-menu .content > ul.menu, .region-footer .block-menu .content > .menu-block-wrapper > ul.menu, .region-footer .block-menu-block .content > ul.menu, .region-footer .block-menu-block .content > .menu-block-wrapper > ul.menu {
+  font-family: "Open Sans", sans-serif;
+}
+
 @media (min-width: 768px) {
   .region-footer .block-menu .content > ul.menu, .region-footer .block-menu .content > .menu-block-wrapper > ul.menu, .region-footer .block-menu-block .content > ul.menu, .region-footer .block-menu-block .content > .menu-block-wrapper > ul.menu {
     display: table;
@@ -8089,8 +8097,9 @@ a[rel~='external']::after {
 
 @media (min-width: 768px) {
   .region-footer .block-menu .content > ul.menu > li, .region-footer .block-menu .content > .menu-block-wrapper > ul.menu > li, .region-footer .block-menu-block .content > ul.menu > li, .region-footer .block-menu-block .content > .menu-block-wrapper > ul.menu > li {
-    display: table-cell;
-    margin-bottom: 0;
+    display: inline-block;
+    min-width: 250px;
+    margin-right: 50px;
     margin-bottom: 1.375rem;
   }
 }
@@ -8159,7 +8168,6 @@ a[rel~='external']::after {
   Style guide: Link styles.3 Placeholder links
   */
   margin-left: 0;
-  margin-right: 0;
   margin-bottom: 1.375rem;
   padding: 0;
   list-style: none;
@@ -8230,7 +8238,12 @@ a[rel~='external']::after {
   cursor: not-allowed;
 }
 
+.region-footer .block-menu .content ul.menu > li.last, .region-footer .block-menu-block .content ul.menu > li.last {
+  margin-bottom: 0;
+}
+
 .region-footer .block-menu .content ul.menu > li > a, .region-footer .block-menu-block .content ul.menu > li > a {
+  border: none;
   font-weight: 600;
 }
 
@@ -8248,8 +8261,12 @@ a[rel~='external']::after {
   .region-footer .block-menu .content ul.menu > li > ul, .region-footer .block-menu-block .content ul.menu > li > ul {
     display: block;
     padding-left: 0;
-    margin-top: 2.1875rem;
+    margin-top: 1.25rem;
   }
+}
+
+.region-footer .block-menu .content ul.menu > li > ul li, .region-footer .block-menu-block .content ul.menu > li > ul li {
+  line-height: 1.375em;
 }
 
 .region-footer .block-menu .content ul.menu > li > ul li a, .region-footer .block-menu-block .content ul.menu > li > ul li a {
@@ -10635,6 +10652,8 @@ body.not-front #content .view .pager {
 
 #block-menu-menu-footer-sub-menu .content ul.menu > li {
   margin-bottom: 0;
+  min-width: inherit;
+  margin-right: 0;
 }
 
 @media (min-width: 768px) {
@@ -10653,6 +10672,10 @@ body.not-front #content .view .pager {
 #block-menu-menu-footer-sub-menu .content ul.menu > li a {
   border: none;
   font-weight: 400;
+}
+
+#block-menu-menu-footer-sub-menu .content .footer-copyright {
+  font-family: "Source Sans Pro", sans-serif, Arial;
 }
 
 @media (min-width: 768px) {

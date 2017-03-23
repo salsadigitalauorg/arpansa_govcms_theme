@@ -45,9 +45,8 @@
       display: table;
       width: 100%;
       position: relative;
-      @include breakpoint(desktop) {
-        table-layout: fixed;
-      } // If JS is enabled - hide sub nav menus until superfish finishes loading.
+      @include breakpoint(desktop) {}
+      // If JS is enabled - hide sub nav menus until superfish finishes loading.
       &:not(.superfish-processed) {
         &>li>ul {
           html:not(.no-js) & {
@@ -117,17 +116,16 @@
               padding-right: rem(30px);
               padding-top: rem(15px);
               padding-bottom: rem((15px - 1px));
-              border-bottom: 1px solid transparent;
+              border: none;
               &:hover, &:focus {
-                background-color: $main_menu_hover;
-                border-bottom-color: white;
+                background-color: $main_menu_hover_2;
               }
             }
             &.active-trail {
               &>a {
                 background-color: $main_menu_active;
                 &:hover, &:focus {
-                  background-color: $main_menu_hover;
+                  background-color: $main_menu_hover_2;
                 }
               }
             }
@@ -174,7 +172,7 @@
         color: white;
         &:hover, &:focus {
           color: white;
-          background-color: $secondary_1;
+          background-color: $main_menu_hover_2;
         }
       }
       &.active {
