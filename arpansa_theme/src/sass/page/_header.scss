@@ -189,11 +189,13 @@
   margin-right: $mobile_expand_search_width;
   &:hover, &:focus {
     background-image: url(../images/svg/mobile_search_open_hover.svg);
+    box-shadow: none;
   }
   &.search-open {
     background-image: url(../images/svg/mobile_search_close.svg);
     &:hover, &:focus {
       background-image: url(../images/svg/mobile_search_close_hover.svg);
+      box-shadow: none;
     }
   }
 }
@@ -215,11 +217,13 @@
   top: rem(30px);
   &:hover, &:focus {
     background-image: url(../images/svg/mobile_menu_open_hover.svg);
+    box-shadow: none;
   }
   &.menu-open {
     background-image: url(../images/svg/mobile_search_close.svg);
     &:hover, &:focus {
       background-image: url(../images/svg/mobile_search_close_hover.svg);
+      box-shadow: none;
     }
   }
 }

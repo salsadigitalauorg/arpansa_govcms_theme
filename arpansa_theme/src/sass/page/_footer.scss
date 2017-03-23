@@ -19,6 +19,7 @@
         padding-bottom: rem(64px);
       } // First level of nav should be horizontal.
       &>ul.menu, &>.menu-block-wrapper>ul.menu {
+        font-family: $type-menu-footer;
         @include breakpoint(tablet) {
           display: table;
           width: 100%;
@@ -27,8 +28,9 @@
         }
         &>li {
           @include breakpoint(tablet) {
-            display: table-cell;
-            margin-bottom: 0;
+            display: inline-block;
+            min-width: 250px;
+            margin-right: 50px;
             margin-bottom: $default_padding;
           }
         }
@@ -39,12 +41,15 @@
         &>li {
           @include link-colours(white, $neutral_4, $neutral_1);
           margin-left: 0;
-          margin-right: 0;
           margin-bottom: $default_padding;
           padding: 0;
           list-style: none;
           margin-bottom: rem(15px);
+          &.last {
+            margin-bottom: 0;
+          }
           &>a {
+            border: none;
             font-weight: 600;
             @include breakpoint(tablet) {
               font-weight: 700;
@@ -55,9 +60,10 @@
             @include breakpoint(tablet) {
               display: block;
               padding-left: 0;
-              margin-top: rem(35px);
+              margin-top: rem(20px);
             }
             li {
+              line-height: em(22px);
               a {
                 font-weight: 400;
               }
