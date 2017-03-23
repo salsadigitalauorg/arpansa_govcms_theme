@@ -1,8 +1,40 @@
 // =========================================================
+// SKIP LINK
+// =========================================================
+.skip-to {
+  color: #313131;
+  position: relative;
+  z-index: 200;
+  a {
+    border: 0;
+    height: 1px;
+    line-height: 1em;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    border-radius: 1px;
+    text-decoration: none;
+    &:focus, &:active {
+      background-color: $secondary_1;
+      color: white;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      width: auto;
+      top: 10px;
+      left: 10px;
+      padding: 0.4em 0.8em;
+    }
+  }
+}
+
+// =========================================================
 // TOP NAVIGATION
 // =========================================================
 .region-navigation {
-  background-color: $primary_1;
+  background-color: $secondary_1;
   .block-superfish {
     @include center-column($desktop_column);
     display: none;
@@ -13,9 +45,7 @@
       display: table;
       width: 100%;
       position: relative;
-      @include breakpoint(desktop) {
-        table-layout: fixed;
-      }
+      @include breakpoint(desktop) {}
       // If JS is enabled - hide sub nav menus until superfish finishes loading.
       &:not(.superfish-processed) {
         &>li>ul {
@@ -62,10 +92,8 @@
           text-align: center;
           text-decoration: none;
           font-weight: 600;
-          border-bottom: 4px solid transparent;
           &:hover, &:focus {
             background-color: $main_menu_hover;
-            border-bottom-color: white;
           }
         }
         &>ul {
@@ -88,17 +116,16 @@
               padding-right: rem(30px);
               padding-top: rem(15px);
               padding-bottom: rem((15px - 1px));
-              border-bottom: 1px solid transparent;
+              border: none;
               &:hover, &:focus {
-                background-color: $main_menu_hover;
-                border-bottom-color: white;
+                background-color: $main_menu_hover_2;
               }
             }
             &.active-trail {
               &>a {
                 background-color: $main_menu_active;
                 &:hover, &:focus {
-                  background-color: $main_menu_hover;
+                  background-color: $main_menu_hover_2;
                 }
               }
             }
@@ -118,6 +145,7 @@
     display: none;
   }
   &.menu-open {
+    background-color: $primary_1;
     display: block;
     @include breakpoint(tablet) {
       display: none;
@@ -141,16 +169,16 @@
         text-decoration: none;
         padding-top: $default_padding / 2;
         padding-bottom: $default_padding / 2;
-        color: $neutral_1;
+        color: white;
         &:hover, &:focus {
           color: white;
-          background-color: $secondary_1;
+          background-color: $main_menu_hover_2;
         }
       }
       &.active {
         a {
           color: white;
-          background-color: $main_menu_active;
+          background-color: $secondary_1;
           &:hover, &:focus {
             color: white;
             background-color: $secondary_1;
