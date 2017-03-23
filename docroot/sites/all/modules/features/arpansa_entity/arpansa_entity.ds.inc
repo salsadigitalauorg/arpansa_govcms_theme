@@ -87,6 +87,11 @@ function arpansa_entity_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'read_more_link' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
   );
   $export['node|news_article|teaser'] = $ds_fieldsetting;
 
@@ -99,6 +104,11 @@ function arpansa_entity_ds_field_settings_info() {
   $ds_fieldsetting->settings = array(
     'title' => array(
       'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'read_more_link' => array(
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -277,6 +287,7 @@ function arpansa_entity_ds_layout_settings_info() {
         1 => 'field_news_date',
         2 => 'title',
         3 => 'body',
+        4 => 'read_more_link',
       ),
     ),
     'fields' => array(
@@ -284,6 +295,7 @@ function arpansa_entity_ds_layout_settings_info() {
       'field_news_date' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
+      'read_more_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -311,6 +323,7 @@ function arpansa_entity_ds_layout_settings_info() {
         1 => 'field_news_date',
         2 => 'title',
         3 => 'body',
+        4 => 'read_more_link',
       ),
     ),
     'fields' => array(
@@ -318,6 +331,7 @@ function arpansa_entity_ds_layout_settings_info() {
       'field_news_date' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
+      'read_more_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
