@@ -4,16 +4,22 @@
     @include breakpoint(tablet) {
       padding-top: rem(38px);
       padding-bottom: rem(38px);
-      display: flex;
+      display: block;
       justify-content: space-between;
       align-content: center;
+      @include breakpoint(desktop) {
+        display: flex;
+      }
     }
     ul.menu {
+      margin-bottom: rem(15px);
       @include breakpoint(tablet) {
         order: 2;
         text-align: right;
+        margin: 0;
         width: auto;
         display: block;
+        align-self: flex-end;
       }
       &>li {
         margin-bottom: 0;
