@@ -290,7 +290,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'weight' => -14,
       ),
     ),
-    'title' => '',
+    'title' => 'Share this:',
     'visibility' => 0,
   );
 
