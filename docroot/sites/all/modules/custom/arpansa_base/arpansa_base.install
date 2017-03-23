@@ -1263,7 +1263,7 @@ function arpansa_base_update_7053() {
 /**
  * Update permissions [ARPANSA-28].
  */
-function arpansa_base_update_7051() {
+function arpansa_base_update_7055() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
