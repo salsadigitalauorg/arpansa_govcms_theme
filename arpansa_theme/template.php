@@ -62,7 +62,7 @@ function arpansa_theme_preprocess_field(&$variables) {
       }
     }
   }
-  // Rewrite the Promotions links to include the query string for Lit Surveys
+  // Rewrite the Promotions links to include the query string for Lit Surveys.
   if ($variables['element']['#bundle'] === 'footer_teaser' && $variables['element']['#view_mode'] == 'teaser') {
     $path = 'node/' . $variables['element']['#object']->field_reference['und'][0]['target_id'];
     if (isset($variables['element']['#object']->field_literature_survey_date[LANGUAGE_NONE])) {
@@ -104,8 +104,34 @@ function arpansa_theme_preprocess_node(&$variables) {
     }
 
     if ($variables['type'] === 'career') {
-      $variables['title'] = null;
+      $variables['title'] = NULL;
       $variables['content']['field_position_number'][0]['#markup'] = '<a href="' . $variables['node_url'] . '">' . $variables['content']['field_position_number'][0]['#markup'] . '</a>';
+    }
+  }
+
+  if ($variables['view_mode'] === 'full') {
+    // Remove "Hide Social Links" field if checked, or replace with rendered block content.
+    $hide_social_links = !empty($variables['node']->field_social_links[LANGUAGE_NONE][0]['value']) ? (int) $variables['node']->field_social_links[LANGUAGE_NONE][0]['value'] : 0;
+    $content_types = array('consultation', 'news_article', 'page');
+    if ($hide_social_links === 1 || !in_array($variables['type'], $content_types)) {
+      $variables['content']['field_social_links'] = NULL;
+    }
+    else {
+      $block = block_load('service_links', 'service_links');
+      $block_content = _block_get_renderable_array(_block_render_blocks(array($block)));
+      $output = drupal_render($block_content);
+      $variables['content']['field_social_links'][0]['#markup'] = $output;
+    }
+
+    $show_related_content = !empty($variables['field_show_related_content'][0]['value']) ? (int) $variables['field_show_related_content'][0]['value'] : 0;
+    if ($show_related_content === 1) {
+      $block = block_load('views', 'related_content-block');
+      $block_content = _block_get_renderable_array(_block_render_blocks(array($block)));
+      $output = drupal_render($block_content);
+      $variables['content']['field_show_related_content'][0]['#markup'] = $output;
+    }
+    else {
+      $variables['content']['field_show_related_content'] = NULL;
     }
   }
 
