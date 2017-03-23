@@ -128,12 +128,18 @@
 @mixin listing-component-heading() {
   font-size: rem(24px);
   line-height: 1.5em;
-  @include link-colours($secondary_1, $secondary_1, $neutral_1);
+  @include link-colours($primary_1, transparent, $neutral_1);
+  a {
+    border-bottom: 0;
+    &:hover, &:focus {
+      border-bottom: 1px solid $neutral_1;
+    }
+  }
 }
 
 @mixin listing-component-subtext() {
   font-size: rem(14px);
-  color: $neutral_1;
+  color: $grey_4;
   text-transform: uppercase;
   margin-top: $default_padding;
   margin-bottom: $default_padding;
@@ -259,4 +265,11 @@
       }
     }
   }
+}
+
+@mixin right-arrow-button() {
+  background-image: url(../images/svg/white_right_arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 85% center;
+  padding-right: rem(40px);
 }

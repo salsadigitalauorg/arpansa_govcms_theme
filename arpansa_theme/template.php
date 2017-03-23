@@ -113,6 +113,14 @@ function arpansa_theme_preprocess_node(&$variables) {
     // Hide submitted date on webforms.
     $variables['display_submitted'] = FALSE;
   }
+
+  if ($variables['view_mode'] === 'teaser') {
+    if ($variables['type'] == 'news_article' || $variables['type'] == 'consultation' || $variables['type'] == 'page') {
+      $variables['date'] = date('d F Y', $variables['created']);
+      $variables['content']['links']['node']['#links']['node-readmore']['attributes']['class'][] = 'button';
+    }
+    $variables['theme_hook_suggestions'][] = $variables['theme_hook_suggestions'][0] . '__teaser';
+  }
 }
 
 /**
