@@ -311,6 +311,79 @@ function arpansa_entity_views_default_views() {
   $export['literature_surveys'] = $view;
 
   $view = new view();
+  $view->name = 'related_content';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Related Content';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Related Content';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['anyall'] = '+';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['limit'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['vocabularies'] = array(
+    'tags' => 'tags',
+  );
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = TRUE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['not'] = TRUE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $export['related_content'] = $view;
+
+  $view = new view();
   $view->name = 'what_s_new_search_api';
   $view->description = '';
   $view->tag = 'default';
@@ -343,27 +416,6 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['sorts']['field_news_date']['table'] = 'search_api_index_what_s_new_index';
   $handler->display->display_options['sorts']['field_news_date']['field'] = 'field_news_date';
   $handler->display->display_options['sorts']['field_news_date']['order'] = 'DESC';
-  /* Filter criterion: Indexed Content: Date of Publication */
-  $handler->display->display_options['filters']['field_news_date']['id'] = 'field_news_date';
-  $handler->display->display_options['filters']['field_news_date']['table'] = 'search_api_index_what_s_new_index';
-  $handler->display->display_options['filters']['field_news_date']['field'] = 'field_news_date';
-  $handler->display->display_options['filters']['field_news_date']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_news_date']['expose']['operator_id'] = 'field_news_date_op';
-  $handler->display->display_options['filters']['field_news_date']['expose']['label'] = 'Date of Publication';
-  $handler->display->display_options['filters']['field_news_date']['expose']['operator'] = 'field_news_date_op';
-  $handler->display->display_options['filters']['field_news_date']['expose']['identifier'] = 'field_news_date';
-  $handler->display->display_options['filters']['field_news_date']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    16 => 0,
-    11 => 0,
-    21 => 0,
-    26 => 0,
-    31 => 0,
-    36 => 0,
-  );
-  $handler->display->display_options['filters']['field_news_date']['widget_type'] = 'date_popup';
-  $handler->display->display_options['filters']['field_news_date']['date_popup_format'] = 'd/m/Y';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

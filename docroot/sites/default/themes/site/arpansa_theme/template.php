@@ -62,7 +62,7 @@ function arpansa_theme_preprocess_field(&$variables) {
       }
     }
   }
-  // Rewrite the Promotions links to include the query string for Lit Surveys
+  // Rewrite the Promotions links to include the query string for Lit Surveys.
   if ($variables['element']['#bundle'] === 'footer_teaser' && $variables['element']['#view_mode'] == 'teaser') {
     $path = 'node/' . $variables['element']['#object']->field_reference['und'][0]['target_id'];
     if (isset($variables['element']['#object']->field_literature_survey_date[LANGUAGE_NONE])) {
@@ -120,6 +120,16 @@ function arpansa_theme_preprocess_node(&$variables) {
       $block = block_load('service_links', 'service_links');
       $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
       $variables['content']['field_social_links'][0]['#markup'] = $output;
+    }
+
+    $show_related_content = !empty($variables['field_show_related_content'][0]['value']) ? (int) $variables['field_show_related_content'][0]['value'] : 0;
+    if ($show_related_content === 1) {
+      $block = block_load('views', 'related_content-block');
+      $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+      $variables['content']['field_show_related_content'][0]['#markup'] = $output;
+    }
+    else {
+      $variables['content']['field_show_related_content'] = NULL;
     }
   }
 
