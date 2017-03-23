@@ -121,7 +121,7 @@ function govcms_share_links_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_node_view_modes';
   $strongarm->value = array(
-    'full' => 'full',
+    'full' => 0,
     'teaser' => 0,
     'rss' => 0,
     'search_index' => 0,
