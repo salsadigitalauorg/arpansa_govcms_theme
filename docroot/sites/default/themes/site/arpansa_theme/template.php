@@ -104,15 +104,21 @@ function arpansa_theme_preprocess_node(&$variables) {
     }
 
     if ($variables['type'] === 'career') {
-      $variables['title'] = null;
+      $variables['title'] = NULL;
       $variables['content']['field_position_number'][0]['#markup'] = '<a href="' . $variables['node_url'] . '">' . $variables['content']['field_position_number'][0]['#markup'] . '</a>';
     }
   }
 
   if ($variables['view_mode'] === 'full') {
-    $hide_social_links = isset($variables['field_social_links'][0]['value']) ? $variables['field_social_links'][0]['value'] : null;
-    if (!is_null($hide_social_links) && (int)$hide_social_links == 1) {
-      $variables['content']['service_links'] = null;
+    // Remove "Hide Social Links" field if checked, or replace with rendered block content.
+    $hide_social_links = !empty($variables['field_social_links'][0]['value']) ? (int) $variables['field_social_links'][0]['value'] : 0;
+    if ($hide_social_links === 1) {
+      $variables['content']['service_links'] = NULL;
+    }
+    else {
+      $block = block_load('service_links', 'service_links');
+      $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+      $variables['content']['field_social_links'][0]['#markup'] = $output;
     }
   }
 
