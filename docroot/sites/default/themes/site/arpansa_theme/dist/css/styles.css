@@ -8583,25 +8583,25 @@ form.webform-client-form .form-item .description {
   font-size: 0.875rem;
 }
 
-form.webform-client-form .form-item [type='text'], form.webform-client-form .form-item [type='number'], form.webform-client-form .form-item [type='tel'], form.webform-client-form .form-item [type='email'], form.webform-client-form .form-item [type='password'] {
+form.webform-client-form .form-item [type='text'], form.webform-client-form .form-item [type='number'], form.webform-client-form .form-item [type='tel'], form.webform-client-form .form-item [type='email'], form.webform-client-form .form-item [type='password'], form.webform-client-form .form-item textarea {
   border-color: #D3D3D3;
   background-color: #F9F9F9;
   border-radius: 4px;
   outline: inherit;
 }
 
-form.webform-client-form .form-item [type='text']:focus, form.webform-client-form .form-item [type='number']:focus, form.webform-client-form .form-item [type='tel']:focus, form.webform-client-form .form-item [type='email']:focus, form.webform-client-form .form-item [type='password']:focus {
+form.webform-client-form .form-item [type='text']:focus, form.webform-client-form .form-item [type='number']:focus, form.webform-client-form .form-item [type='tel']:focus, form.webform-client-form .form-item [type='email']:focus, form.webform-client-form .form-item [type='password']:focus, form.webform-client-form .form-item textarea:focus {
   background-color: white;
   border-color: #2980BA;
   box-shadow: 0 0 5px #2980BA;
 }
 
-form.webform-client-form .form-item [type='text']:invalid, form.webform-client-form .form-item [type='number']:invalid, form.webform-client-form .form-item [type='tel']:invalid, form.webform-client-form .form-item [type='email']:invalid, form.webform-client-form .form-item [type='password']:invalid {
+form.webform-client-form .form-item [type='text']:invalid, form.webform-client-form .form-item [type='number']:invalid, form.webform-client-form .form-item [type='tel']:invalid, form.webform-client-form .form-item [type='email']:invalid, form.webform-client-form .form-item [type='password']:invalid, form.webform-client-form .form-item textarea:invalid {
   border-color: #E74C3C;
   background-color: white;
 }
 
-form.webform-client-form .form-item [type='text']:invalid:focus, form.webform-client-form .form-item [type='number']:invalid:focus, form.webform-client-form .form-item [type='tel']:invalid:focus, form.webform-client-form .form-item [type='email']:invalid:focus, form.webform-client-form .form-item [type='password']:invalid:focus {
+form.webform-client-form .form-item [type='text']:invalid:focus, form.webform-client-form .form-item [type='number']:invalid:focus, form.webform-client-form .form-item [type='tel']:invalid:focus, form.webform-client-form .form-item [type='email']:invalid:focus, form.webform-client-form .form-item [type='password']:invalid:focus, form.webform-client-form .form-item textarea:invalid:focus {
   box-shadow: 0 0 5px #E74C3C;
 }
 
