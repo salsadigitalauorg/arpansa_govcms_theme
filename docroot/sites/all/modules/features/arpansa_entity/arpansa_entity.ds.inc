@@ -87,7 +87,7 @@ function arpansa_entity_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'read_more_link' => array(
+    'node_link' => array(
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
@@ -103,11 +103,11 @@ function arpansa_entity_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'read_more_link' => array(
+    'node_link' => array(
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
@@ -284,18 +284,18 @@ function arpansa_entity_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_image',
-        1 => 'field_news_date',
+        1 => 'body',
         2 => 'title',
-        3 => 'body',
-        4 => 'read_more_link',
+        3 => 'field_news_date',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_image' => 'ds_content',
-      'field_news_date' => 'ds_content',
-      'title' => 'ds_content',
       'body' => 'ds_content',
-      'read_more_link' => 'ds_content',
+      'title' => 'ds_content',
+      'field_news_date' => 'ds_content',
+      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -321,17 +321,17 @@ function arpansa_entity_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_image',
         1 => 'field_news_date',
-        2 => 'title',
-        3 => 'body',
-        4 => 'read_more_link',
+        2 => 'body',
+        3 => 'title',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_image' => 'ds_content',
       'field_news_date' => 'ds_content',
-      'title' => 'ds_content',
       'body' => 'ds_content',
-      'read_more_link' => 'ds_content',
+      'title' => 'ds_content',
+      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
