@@ -20,14 +20,23 @@ function govcms_editing_default_linkit_profiles() {
   $linkit_profile->data = array(
     'text_formats' => array(
       'rich_text' => 'rich_text',
+      'iframe' => 'iframe',
       'plain_text' => 0,
     ),
     'search_plugins' => array(
-      'entity:bean' => array(
+      'entity:search_api_index' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'entity:comment' => array(
+      'entity:search_api_page' => array(
+        'enabled' => 0,
+        'weight' => '-10',
+      ),
+      'entity:search_api_server' => array(
+        'enabled' => 0,
+        'weight' => '-10',
+      ),
+      'entity:file' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
@@ -39,11 +48,15 @@ function govcms_editing_default_linkit_profiles() {
         'enabled' => 1,
         'weight' => '-10',
       ),
+      'entity:bean' => array(
+        'enabled' => 0,
+        'weight' => '-10',
+      ),
       'entity:taxonomy_term' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'entity:file' => array(
+      'entity:comment' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
@@ -64,7 +77,11 @@ function govcms_editing_default_linkit_profiles() {
       'result_description' => '',
       'bundles' => array(
         'comment_node_blog_article' => 0,
+        'comment_node_career' => 0,
+        'comment_node_consultation' => 0,
         'comment_node_event' => 0,
+        'comment_node_landing_page' => 0,
+        'comment_node_literature_survey' => 0,
         'comment_node_media_release' => 0,
         'comment_node_news_article' => 0,
         'comment_node_footer_teaser' => 0,
@@ -85,11 +102,24 @@ function govcms_editing_default_linkit_profiles() {
         'publication' => 'publication',
         'page' => 'page',
         'webform' => 'webform',
+        'career' => 0,
+        'consultation' => 0,
+        'landing_page' => 0,
+        'literature_survey' => 0,
         'footer_teaser' => 0,
         'slide' => 0,
       ),
       'group_by_bundle' => 0,
       'include_unpublished' => 1,
+    ),
+    'entity:search_api_server' => array(
+      'result_description' => '',
+    ),
+    'entity:search_api_index' => array(
+      'result_description' => '',
+    ),
+    'entity:search_api_page' => array(
+      'result_description' => '',
     ),
     'entity:file' => array(
       'result_description' => '',
@@ -102,6 +132,7 @@ function govcms_editing_default_linkit_profiles() {
       'group_by_bundle' => 0,
       'show_scheme' => 0,
       'group_by_scheme' => 0,
+      'url_type' => 'entity',
       'image_extra_info' => array(
         'thumbnail' => 'thumbnail',
         'dimensions' => 'dimensions',
@@ -109,6 +140,14 @@ function govcms_editing_default_linkit_profiles() {
     ),
     'entity:taxonomy_term' => array(
       'result_description' => '',
+      'bundles' => array(
+        'tags' => 0,
+        'update_type' => 0,
+        'literature_survey_date' => 0,
+        'page_type' => 0,
+        'file_tags' => 0,
+      ),
+      'group_by_bundle' => 0,
     ),
     'entity:user' => array(
       'result_description' => '',
@@ -117,11 +156,12 @@ function govcms_editing_default_linkit_profiles() {
       'result_description' => '',
       'bundles' => array(
         'main-menu' => 'main-menu',
-        'features' => 0,
+        'menu-footer-menu' => 0,
         'menu-footer-sub-menu' => 0,
         'management' => 0,
         'navigation' => 0,
         'menu-quick-links' => 0,
+        'menu-top-header-menu' => 0,
         'user-menu' => 0,
       ),
       'group_by_bundle' => 0,
