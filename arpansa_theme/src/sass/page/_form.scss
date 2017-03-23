@@ -43,7 +43,7 @@ form.webform-client-form {
     .description {
       font-size: rem(14px);
     }
-    [type='text'], [type='number'], [type='tel'], [type='email'], [type='password'] {
+    [type='text'], [type='number'], [type='tel'], [type='email'], [type='password'], textarea {
       border-color: $grey_1;
       background-color: $grey_2;
       border-radius: 4px;
