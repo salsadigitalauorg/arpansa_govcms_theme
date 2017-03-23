@@ -58,6 +58,16 @@ function govcms_consultation_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'node_link' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Learn more',
+        'wrapper' => '',
+        'class' => '',
+      ),
+    ),
   );
   $export['node|consultation|teaser'] = $ds_fieldsetting;
 

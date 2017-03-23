@@ -91,6 +91,11 @@ function arpansa_entity_ds_field_settings_info() {
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Learn more',
+        'wrapper' => '',
+        'class' => '',
+      ),
     ),
   );
   $export['node|news_article|teaser'] = $ds_fieldsetting;
@@ -103,7 +108,7 @@ function arpansa_entity_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '3',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -111,6 +116,11 @@ function arpansa_entity_ds_field_settings_info() {
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Learn more',
+        'wrapper' => '',
+        'class' => '',
+      ),
     ),
   );
   $export['node|page|teaser'] = $ds_fieldsetting;
@@ -284,17 +294,17 @@ function arpansa_entity_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_image',
-        1 => 'body',
+        1 => 'field_news_date',
         2 => 'title',
-        3 => 'field_news_date',
+        3 => 'body',
         4 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_image' => 'ds_content',
-      'body' => 'ds_content',
-      'title' => 'ds_content',
       'field_news_date' => 'ds_content',
+      'title' => 'ds_content',
+      'body' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -321,16 +331,16 @@ function arpansa_entity_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_image',
         1 => 'field_news_date',
-        2 => 'body',
-        3 => 'title',
+        2 => 'title',
+        3 => 'body',
         4 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_image' => 'ds_content',
       'field_news_date' => 'ds_content',
-      'body' => 'ds_content',
       'title' => 'ds_content',
+      'body' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
