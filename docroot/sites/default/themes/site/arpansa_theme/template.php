@@ -111,9 +111,10 @@ function arpansa_theme_preprocess_node(&$variables) {
 
   if ($variables['view_mode'] === 'full') {
     // Remove "Hide Social Links" field if checked, or replace with rendered block content.
-    $hide_social_links = !empty($variables['field_social_links'][0]['value']) ? (int) $variables['field_social_links'][0]['value'] : 0;
-    if ($hide_social_links === 1) {
-      $variables['content']['service_links'] = NULL;
+    $hide_social_links = !empty($variables['node']->field_social_links[LANGUAGE_NONE][0]['value']) ? (int) $variables['node']->field_social_links[LANGUAGE_NONE][0]['value'] : 0;
+    $content_types = array('consultation', 'news_article', 'page');
+    if ($hide_social_links === 1 || !in_array($variables['type'], $content_types)) {
+      $variables['content']['field_social_links'] = NULL;
     }
     else {
       $block = block_load('service_links', 'service_links');
