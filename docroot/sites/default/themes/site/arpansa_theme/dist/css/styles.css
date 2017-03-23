@@ -7122,8 +7122,15 @@ h6 {
 }
 
 .header__inner .logo-and-search .logo-wrapper a {
-  display: inline-block;
+  margin-right: 0;
+  display: none;
   vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+  .header__inner .logo-and-search .logo-wrapper a {
+    display: inline-block;
+  }
 }
 
 .header__inner .logo-and-search .logo-wrapper a img {
@@ -7144,20 +7151,21 @@ h6 {
   line-height: 1em;
   color: #268126;
   font-weight: 400;
+  visibility: hidden;
 }
 
 @media (min-width: 768px) {
   .header__inner .logo-and-search .logo-wrapper .header-title {
     margin-left: 1.375rem;
     padding-left: 0;
-    display: inline-block;
+    display: none;
     vertical-align: middle;
     font-size: 1.875rem;
   }
 }
 
-.header__inner .header__logo {
-  margin-right: 0;
+.header__inner .logo-aus-container {
+  margin-right: 25px;
 }
 
 .header__inner .header__logo.no-title {
@@ -7168,7 +7176,7 @@ h6 {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .header__inner .block-govcms-text-resize {
     display: block;
     margin-right: 1.375rem;
@@ -7387,7 +7395,7 @@ h6 {
   position: absolute;
   z-index: 1;
   right: 1.25rem;
-  top: 1rem;
+  top: 1.875rem;
 }
 
 .mobile-expand-menu:hover, .mobile-expand-menu:focus {
@@ -7400,6 +7408,37 @@ h6 {
 
 .mobile-expand-menu.menu-open:hover, .mobile-expand-menu.menu-open:focus {
   background-image: url(../images/svg/mobile_search_close_hover.svg);
+}
+
+.skip-to {
+  color: #313131;
+  position: relative;
+  z-index: 200;
+}
+
+.skip-to a {
+  border: 0;
+  height: 1px;
+  line-height: 1em;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  border-radius: 1px;
+  text-decoration: none;
+}
+
+.skip-to a:focus, .skip-to a:active {
+  background-color: #4E1A74;
+  color: white;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  width: auto;
+  top: 10px;
+  left: 10px;
+  padding: 0.4em 0.8em;
 }
 
 .region-navigation {
@@ -7532,6 +7571,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 }
 
 .mobile-nav.menu-open {
+  background-color: #268126;
   display: block;
 }
 
@@ -7563,7 +7603,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
   text-decoration: none;
   padding-top: 0.6875rem;
   padding-bottom: 0.6875rem;
-  color: #444449;
+  color: white;
 }
 
 .mobile-nav ul.links li a:hover, .mobile-nav ul.links li a:focus {
@@ -7573,7 +7613,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 
 .mobile-nav ul.links li.active a {
   color: white;
-  background-color: #268126;
+  background-color: #4E1A74;
 }
 
 .mobile-nav ul.links li.active a:hover, .mobile-nav ul.links li.active a:focus {
