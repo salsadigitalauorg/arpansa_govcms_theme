@@ -121,6 +121,11 @@ function arpansa_theme_preprocess_node(&$variables) {
     }
     $variables['theme_hook_suggestions'][] = $variables['theme_hook_suggestions'][0] . '__teaser';
   }
+  elseif ($variables['view_mode'] === 'full') {
+    if ($variables['type'] == 'slide') {
+      $variables['content']['field_read_more'][0]['#element']['attributes']['class'] = 'button';
+    }
+  }
 }
 
 /**

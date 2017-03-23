@@ -141,81 +141,58 @@
     }
     .field {
       @include link-colours(white, $neutral_4, $neutral_1);
+      @include standard_purple_button;
     }
   }
   .banner-description-panel {
     @include breakpoint(tablet) {
       position: relative;
       box-sizing: border-box;
-      background-color: #0B3B46;
-      padding: rem(45px);
-      padding-top: rem(85px);
-      max-width: rem(524px);
+      background-color: rgba(black, 0.8);
+      padding: rem(100px);
+      padding-top: rem(45px);
+      max-width: rem(570px);
       min-height: rem(444px);
       color: white;
     }
   }
-  .slider-controls {
+  button.slider-button {
+    color: $secondary_3;
+    border: 0;
+    margin: 0;
+    display: inline;
+    width: rem(47px);
+    height: rem(47px);
+    overflow: hidden;
+    padding: 0;
+    vertical-align: top;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
     position: absolute;
-    top: 0;
-    padding-top: rem(34px);
-    padding-left: rem(37px);
-    button {
-      color: $secondary_3;
-      border: 0;
-      margin: 0;
-      display: inline;
-      width: rem(36px);
-      height: rem(36px);
-      overflow: hidden;
-      padding: 0;
-      vertical-align: top;
-      background-color: transparent;
-      background-repeat: no-repeat;
-      background-position: center;
-      border-bottom: 1px solid transparent;
-      &:hover, &:focus {
-        color: white;
-        border-bottom-color: white;
-      }
-      &.active {
-        color: white;
-      }
-      &.slider-prev {
-        @include hide-text;
-        background-image: url(../images/svg/slider-prev.svg);
-        &:hover, &:focus {
-          background-image: url(../images/svg/slider-prev-hover.svg);
-        }
-      }
-      &.slider-next {
-        @include hide-text;
-        background-image: url(../images/svg/slider-next.svg);
-        &:hover, &:focus {
-          background-image: url(../images/svg/slider-next-hover.svg);
-        }
-      }
-      &.slider-play {
-        @include hide-text;
-        background-image: url(../images/svg/slider-pause.svg);
-        &:hover, &:focus {
-          background-image: url(../images/svg/slider-pause-hover.svg);
-        }
-        &.paused {
-          background-image: url(../images/svg/slider-play.svg);
-          &:hover, &:focus {
-            background-image: url(../images/svg/slider-play-hover.svg);
-          }
-        }
-      }
+    top: 50%;
+    display: none;
+    @include breakpoint(tablet) {
+      display: block;
     }
-    ul {
-      padding: 0;
-      margin: 0;
-      display: inline;
-      li {
-        display: inline;
-      }
+    &:hover, &:focus {
+      color: white;
+      border-bottom-color: white;
+      box-shadow: none;
+    }
+    &.active {
+      color: white;
+    }
+    &.slider-prev {
+      @include hide-text;
+      background-image: url(../images/svg/slider-prev.svg);
+      margin-left: rem(12px);
+    }
+    &.slider-next {
+      @include hide-text;
+      background-image: url(../images/svg/slider-next.svg);
     }
   }
 }

@@ -177,5 +177,5 @@ a[rel~='external']::after {
 }
 
 #content {
-  @include button-colours($secondary_1, $secondary_2, $color-link-secondary, white, white);
+  @include standard_purple_button;
 }
