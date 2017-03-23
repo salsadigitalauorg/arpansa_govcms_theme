@@ -32,6 +32,9 @@
     <?php endif; ?>
     <div class="logo-and-search">
       <div class="logo-wrapper">
+        <div class="logo-aus-container">
+          <img src="/<?php print(drupal_get_path('theme',$GLOBALS['theme'])) ?>/logo-ausgov.png" alt="Australian Government">
+        </div>
         <?php if ($logo): ?>
           <?php
             $logo_alt = theme_get_setting('govcms_ui_kit_header_logo_alt');
@@ -42,9 +45,6 @@
               'attributes' => array('class' => array('header__logo-image')),
             ));
             $logo_class = array('header__logo');
-            if (empty(theme_get_setting('govcms_ui_kit_header_title'))) {
-              $logo_class[] = 'no-title';
-            }
 
             print l($logo_img, $front_page, array(
               'html' => TRUE,

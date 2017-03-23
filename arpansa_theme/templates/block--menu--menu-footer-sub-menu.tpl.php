@@ -58,7 +58,8 @@
       <?php if (theme_get_setting('govcms_ui_kit_footer_copyright')): ?>
         <?php print decode_entities(theme_get_setting('govcms_ui_kit_footer_copyright')); ?>
       <?php else: ?>
-        &copy; <?php print date('Y'); ?>. <?php print variable_get('site_name', 'Home'); ?>. All rights reserved.
+        <div><?php print variable_get('site_name', 'Home'); ?></div>
+        &copy; <?php print date('Y'); ?>. All rights reserved.
       <?php endif; ?>
       </div>
   </div>
