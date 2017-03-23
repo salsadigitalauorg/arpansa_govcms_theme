@@ -290,7 +290,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'weight' => -14,
       ),
     ),
-    'title' => '',
+    'title' => 'Share this:',
     'visibility' => 0,
   );
 
@@ -451,7 +451,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'arpansa_theme',
-        'weight' => -27,
+        'weight' => 0,
       ),
     ),
     'title' => '',

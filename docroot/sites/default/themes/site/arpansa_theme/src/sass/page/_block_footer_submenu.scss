@@ -1,22 +1,30 @@
 #block-menu-menu-footer-sub-menu {
-  border-top: 1px solid darken($primary_1, 10%);
+  background-color: rgba(0, 0, 0, 0.4);
   .content {
     @include breakpoint(tablet) {
       padding-top: rem(38px);
       padding-bottom: rem(38px);
-      display: flex;
+      display: block;
       justify-content: space-between;
       align-content: center;
+      @include breakpoint(desktop) {
+        display: flex;
+      }
     }
     ul.menu {
+      margin-bottom: rem(15px);
       @include breakpoint(tablet) {
         order: 2;
         text-align: right;
+        margin: 0;
         width: auto;
         display: block;
+        align-self: flex-end;
       }
       &>li {
-        margin-bottom: rem(15px);
+        margin-bottom: 0;
+        min-width: inherit;
+        margin-right: 0;
         @include breakpoint(tablet) {
           display: inline-block;
           margin-left: rem(15px);
@@ -25,11 +33,13 @@
           margin-left: rem(30px);
         }
         a {
+          border: none;
           font-weight: 400;
         }
       }
     }
     .footer-copyright {
+      font-family: $type-heading-primary;
       @include breakpoint(tablet) {
         order: 1;
       }
