@@ -94,6 +94,7 @@ function arpansa_theme_preprocess_field(&$variables) {
  * Implements hook_preprocess_node().
  */
 function arpansa_theme_preprocess_node(&$variables) {
+  $whats_new_content_types = array('consultation', 'news_article', 'page');
   if ($variables['view_mode'] === 'teaser' || $variables['view_mode'] === 'compact') {
     // Apply thumbnail class to node teaser view if image exists.
     $has_thumb = !empty($variables['content']['field_thumbnail']);
@@ -112,8 +113,7 @@ function arpansa_theme_preprocess_node(&$variables) {
   if ($variables['view_mode'] === 'full') {
     // Remove "Hide Social Links" field if checked, or replace with rendered block content.
     $hide_social_links = !empty($variables['node']->field_social_links[LANGUAGE_NONE][0]['value']) ? (int) $variables['node']->field_social_links[LANGUAGE_NONE][0]['value'] : 0;
-    $content_types = array('consultation', 'news_article', 'page');
-    if ($hide_social_links === 1 || !in_array($variables['type'], $content_types)) {
+    if ($hide_social_links === 1 || !in_array($variables['type'], $whats_new_content_types)) {
       $variables['content']['field_social_links'] = NULL;
     }
     else {
