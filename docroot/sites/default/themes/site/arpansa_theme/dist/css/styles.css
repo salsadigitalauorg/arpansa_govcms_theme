@@ -10836,9 +10836,7 @@ body.not-front #content .view .pager {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   box-sizing: content-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
@@ -10847,15 +10845,37 @@ body.not-front #content .view .pager {
   padding-bottom: 2.375rem;
 }
 
+@media (min-width: 768px) {
+  #block-govcms-social-links-services .inner-wrapper {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 #block-govcms-social-links-services .inner-wrapper h2, #block-govcms-social-links-services .inner-wrapper .display {
   margin: 0;
   margin-right: 0.625rem;
-  display: inline;
+  margin-bottom: 0.625rem;
+  display: block;
   font-size: 1rem;
 }
 
+@media (min-width: 768px) {
+  #block-govcms-social-links-services .inner-wrapper h2, #block-govcms-social-links-services .inner-wrapper .display {
+    display: inline;
+    margin-bottom: 0;
+  }
+}
+
 #block-govcms-social-links-services .inner-wrapper .content {
-  display: inline;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  #block-govcms-social-links-services .inner-wrapper .content {
+    display: inline;
+  }
 }
 
 #block-govcms-social-links-services .inner-wrapper .content a {
