@@ -8700,7 +8700,7 @@ ul.tabs.primary {
   box-sizing: content-box;
 }
 
-.front #panels-ipe-display-panel-context-page-front-page-page-front-page-panel-context .panel-display {
+.front .panel-display {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -8711,7 +8711,7 @@ ul.tabs.primary {
   padding-right: 0;
 }
 
-.front #panels-ipe-display-panel-context-page-front-page-page-front-page-panel-context .panel-display .pane-content, .front #panels-ipe-display-panel-context-page-front-page-page-front-page-panel-context .panel-display .pane-title {
+.front .panel-display .pane-content, .front .panel-display .pane-title {
   max-width: 73.125rem;
   margin-left: auto;
   margin-right: auto;
