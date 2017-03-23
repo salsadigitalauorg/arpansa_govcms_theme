@@ -2423,12 +2423,25 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'moderate content from archived to draft'.
+  $permissions['moderate content from archived to draft'] = array(
+    'name' => 'moderate content from archived to draft',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
   // Exported permission: 'moderate content from draft to needs_review'.
   $permissions['moderate content from draft to needs_review'] = array(
     'name' => 'moderate content from draft to needs_review',
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
@@ -2441,6 +2454,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
@@ -2452,6 +2466,19 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'moderate content from needs_review to published',
     'roles' => array(
       'Content approver' => 'Content approver',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from published to archived'.
+  $permissions['moderate content from published to archived'] = array(
+    'name' => 'moderate content from published to archived',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
