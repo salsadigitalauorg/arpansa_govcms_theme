@@ -52,20 +52,7 @@ html {
   }
   .content {
     color: $neutral_1;
-    @include link-colours($color-link-primary, transparent, $color-link-secondary);
-    a {
-      border: none;
-      text-decoration: underline;
-      &:hover, &:focus {
-        background-color: transparent;
-      }
-      &:visited {
-        color: $neutral_6;
-      }
-      &.button {
-        text-decoration: none;
-      }
-    }
+    @include standard_content_link;
   }
 }
 

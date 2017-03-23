@@ -4,14 +4,10 @@
   padding-bottom: $default_padding;
   .header__secondary-menu {
     display: none;
+    @include standard_content_link;
     @include breakpoint(tablet) {
-      @include link-colours($secondary_1, white, $neutral_1);
       display: block;
       text-align: right;
-    }
-    a {
-      border-color: $secondary_1;
-      outline: inherit;
     }
     ul.links {
       li {

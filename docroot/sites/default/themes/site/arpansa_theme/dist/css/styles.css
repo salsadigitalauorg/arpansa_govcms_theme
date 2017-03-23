@@ -6935,12 +6935,8 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
 .header__inner .header__secondary-menu {
   display: none;
-}
-
-@media (min-width: 768px) {
-  .header__inner .header__secondary-menu {
-    color: #4E1A74;
-    /*
+  color: #4E1A74;
+  /*
   See more link
 
   Use see more links at the end of [lists](section-list-styles.html),
@@ -6966,7 +6962,7 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
   Style guide: Link styles.2 See more link
   */
-    /*
+  /*
   Placeholder links (prototyping)
 
   Use placeholder links (greyed out links) to show actions that users can't currently take.
@@ -6996,68 +6992,96 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
   Style guide: Link styles.3 Placeholder links
   */
-    display: block;
-    text-align: right;
-  }
-  .header__inner .header__secondary-menu a {
-    color: #4E1A74;
-    text-decoration: none;
-    outline: none;
-    border-bottom: solid 1px white;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.1s;
-    transition-property: background-color, border-color, color;
-  }
-  .header__inner .header__secondary-menu a:hover, .header__inner .header__secondary-menu a:focus {
-    background-color: white;
-    color: #444449;
-  }
-  .header__inner .header__secondary-menu a[rel~='external'] {
-    display: inline;
-    position: relative;
-    margin-right: 1.6em;
-  }
-  .header__inner .header__secondary-menu a[rel~='external']:hover {
-    border-color: transparent;
-  }
-  .header__inner .header__secondary-menu a[rel~='external']::after {
-    background-size: 0.9em auto;
-  }
-  .header__inner .header__secondary-menu .see-more {
-    display: inline-block;
-    position: relative;
-    margin-right: 1.6em;
-    font-weight: 700;
-    color: #18788d;
-  }
-  .header__inner .header__secondary-menu .see-more::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -1.2em;
-    display: block;
-    width: 1.2em;
-    height: 1.2em;
-    background-repeat: no-repeat;
-    background-position: right 0.4em;
-    background-size: 0.64em auto;
-  }
-  .header__inner .header__secondary-menu .see-more:hover, .header__inner .header__secondary-menu .see-more:focus {
-    color: #444449;
-  }
-  .header__inner .header__secondary-menu span.placeholder-link {
-    color: rgba(78, 26, 116, 0.7);
-    border-bottom: none;
-    cursor: not-allowed;
-  }
-  .header__inner .header__secondary-menu span.placeholder-link:hover {
-    cursor: not-allowed;
-  }
 }
 
 .header__inner .header__secondary-menu a {
+  color: #4E1A74;
+  text-decoration: none;
+  outline: none;
+  border-bottom: solid 1px transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  transition-property: background-color, border-color, color;
+}
+
+.header__inner .header__secondary-menu a:hover, .header__inner .header__secondary-menu a:focus {
+  background-color: transparent;
+  color: #298829;
+}
+
+.header__inner .header__secondary-menu a[rel~='external'] {
+  display: inline;
+  position: relative;
+  margin-right: 1.6em;
+}
+
+.header__inner .header__secondary-menu a[rel~='external']:hover {
+  border-color: transparent;
+}
+
+.header__inner .header__secondary-menu a[rel~='external']::after {
+  background-size: 0.9em auto;
+}
+
+.header__inner .header__secondary-menu .see-more {
+  display: inline-block;
+  position: relative;
+  margin-right: 1.6em;
+  font-weight: 700;
+  color: #18788d;
+}
+
+.header__inner .header__secondary-menu .see-more::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1.2em;
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  background-repeat: no-repeat;
+  background-position: right 0.4em;
+  background-size: 0.64em auto;
+}
+
+.header__inner .header__secondary-menu .see-more:hover, .header__inner .header__secondary-menu .see-more:focus {
+  color: #298829;
+}
+
+.header__inner .header__secondary-menu span.placeholder-link {
+  color: rgba(78, 26, 116, 0.7);
+  border-bottom: none;
+  cursor: not-allowed;
+}
+
+.header__inner .header__secondary-menu span.placeholder-link:hover {
+  cursor: not-allowed;
+}
+
+.header__inner .header__secondary-menu a {
+  border: none;
+  text-decoration: underline;
   border-color: #4E1A74;
   outline: inherit;
+}
+
+.header__inner .header__secondary-menu a:hover, .header__inner .header__secondary-menu a:focus {
+  background-color: transparent;
+}
+
+.header__inner .header__secondary-menu a:visited {
+  color: #3B3B3B;
+}
+
+.header__inner .header__secondary-menu a.button {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .header__inner .header__secondary-menu {
+    display: block;
+    text-align: right;
+  }
 }
 
 .header__inner .header__secondary-menu ul.links li {
@@ -7810,6 +7834,8 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
 .content-body .content a {
   border: none;
   text-decoration: underline;
+  border-color: #4E1A74;
+  outline: inherit;
 }
 
 .content-body .content a:hover, .content-body .content a:focus {
