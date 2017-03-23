@@ -7369,6 +7369,7 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
 .mobile-expand-search:hover, .mobile-expand-search:focus {
   background-image: url(../images/svg/mobile_search_open_hover.svg);
+  box-shadow: none;
 }
 
 .mobile-expand-search.search-open {
@@ -7377,6 +7378,7 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
 .mobile-expand-search.search-open:hover, .mobile-expand-search.search-open:focus {
   background-image: url(../images/svg/mobile_search_close_hover.svg);
+  box-shadow: none;
 }
 
 .mobile-expand-menu {
@@ -7400,6 +7402,7 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
 .mobile-expand-menu:hover, .mobile-expand-menu:focus {
   background-image: url(../images/svg/mobile_menu_open_hover.svg);
+  box-shadow: none;
 }
 
 .mobile-expand-menu.menu-open {
@@ -7408,6 +7411,7 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
 
 .mobile-expand-menu.menu-open:hover, .mobile-expand-menu.menu-open:focus {
   background-image: url(../images/svg/mobile_search_close_hover.svg);
+  box-shadow: none;
 }
 
 .skip-to {
@@ -7465,12 +7469,6 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
   display: table;
   width: 100%;
   position: relative;
-}
-
-@media (min-width: 1200px) {
-  .region-navigation .block-superfish ul.sf-menu {
-    table-layout: fixed;
-  }
 }
 
 html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-processed) > li > ul {
@@ -7540,12 +7538,11 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
   padding-right: 1.875rem;
   padding-top: 0.9375rem;
   padding-bottom: 0.875rem;
-  border-bottom: 1px solid transparent;
+  border: none;
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > ul li a:hover, .region-navigation .block-superfish ul.sf-menu > li > ul li a:focus {
-  background-color: #268126;
-  border-bottom-color: white;
+  background-color: #1C661C;
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > ul li.active-trail > a {
@@ -7553,7 +7550,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > ul li.active-trail > a:hover, .region-navigation .block-superfish ul.sf-menu > li > ul li.active-trail > a:focus {
-  background-color: #268126;
+  background-color: #1C661C;
 }
 
 .mobile-nav {
@@ -7608,7 +7605,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 
 .mobile-nav ul.links li a:hover, .mobile-nav ul.links li a:focus {
   color: white;
-  background-color: #4E1A74;
+  background-color: #1C661C;
 }
 
 .mobile-nav ul.links li.active a {
