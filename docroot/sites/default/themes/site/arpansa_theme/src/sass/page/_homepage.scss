@@ -21,6 +21,16 @@
       @include center-column($desktop_column);
     }
   }
+  #panels-ipe-display-panel-context-page-front-page-page-front-page-panel-context {
+    .panel-display {
+      @include center-column(100%);
+      padding-left: 0;
+      padding-right: 0;
+      .pane-content, .pane-title {
+        @include center-column($desktop_column);
+      }
+    }
+  }
 }
 
 // =========================================================
@@ -215,7 +225,7 @@
 // =========================================================
 // HOMEPAGE BLOGS AND NEWS LISTSING
 // =========================================================
-.view-home-page-blog-articles, .view-latest-news {
+.view-home-page-blog-articles, .view-latest-news, .view-homepage-what-s-new {
   .view-content {
     @include breakpoint(tablet) {
       @include outer-container(100%);
@@ -245,12 +255,18 @@
       .node {
         @include listing-component-wrapper;
         &.has-thumbnail {
-          padding-top: $listing_component_image_height;
           .field-type-image {
             @include listing-component-image;
           }
-          h2 {
-            margin-top: rem(30px);
+          padding: rem(30px);
+          @include breakpoint(tablet) {
+            padding-top: $listing_component_image_height;
+          }
+        }
+        .node-readmore {
+          padding: 0;
+          a {
+            @include right-arrow-button;
           }
         }
       }
@@ -264,6 +280,26 @@
       .field-name-body {
         @include listing-component-body;
       }
+      .field-name-field-image {
+        display: none;
+        @include breakpoint(tablet) {
+          display: block;
+        }
+      }
     }
+  }
+}
+
+.pane-homepage-what-s-new {
+  background-color: $grey_3;
+  padding-top: rem(25px);
+  padding-bottom: rem(30px);
+  @include breakpoint(tablet) {
+    padding-top: rem(30px);
+    padding-bottom: rem(50px);
+  }
+  @include breakpoint(desktop) {
+    padding-top: rem(50px);
+    padding-bottom: rem(75px);
   }
 }

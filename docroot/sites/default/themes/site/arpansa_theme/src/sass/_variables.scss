@@ -14,7 +14,7 @@ $primary_1: #268126; // green
 $primary_2: darken($primary_1, 6.5%); // #193748;
 $primary_3: darken($primary_1, 5%); // #1b3c4e original:(#143D52);
 $secondary_1: #4E1A74; // purple
-$secondary_2: #F4F4F4;
+$secondary_2: #421661;
 $secondary_3: $light-aqua; // #5BCBE3
 $box_purple_border_1: #E1CBE4;
 $box_purple_background_1: #FEF8FF;
@@ -23,6 +23,7 @@ $neutral_2: #F4F4F4;
 $neutral_3: $light-grey; // #BEBEBE
 $neutral_4: $non-white; // #F0F3F5
 $neutral_5: #FAFAFA;
+$neutral_6: #3B3B3B;
 $main_menu_hover: $primary_1;
 $main_menu_active: $primary_1;
 $color-brand-black: #333333;
@@ -31,7 +32,10 @@ $color-link-secondary: #298829; // green
 $color-link-visited: #313131; // dark grey
 $grey_1: #D3D3D3;
 $grey_2: #F9F9F9;
+$grey_3: #F5F5F5;
+$grey_4: #ABABAB;
 $red_1: #E74C3C;
 $blue_1: #2980BA;
+$border-radius: 4px;
 //FONT
 $type-brand-primary: 'Source Sans Pro', sans-serif, Arial;

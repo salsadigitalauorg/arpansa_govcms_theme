@@ -29,17 +29,3 @@ h6 {
   font-size: em(16px);
   font-weight: 700;
 }
-
-#content {
-  .region {
-    @include button-colours($secondary_1, $primary_1, $primary_1, white, white);
-    [type='submit'] {
-      border: none;
-      border-radius: 4px;
-      font-weight: 400;
-      &:hover, &:focus {
-        box-shadow: 0 5px 10px $neutral_1;
-      }
-    }
-  }
-}
