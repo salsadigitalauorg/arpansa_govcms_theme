@@ -31,24 +31,13 @@
     var slides_len = $slider.find('li.views-row').length;
 
     // Generate page elements.
-    var html = '<div class="slider-controls">';
-    html += '<button class="slider-prev" title="Previous slide">Previous Slide</button>';
-    html += '<ul class="slider-pagination">';
-    for (var i = 0; i < slides_len; i++) {
-      var num = (i + 1);
-      html += '<li><button class="slider-dot" data-slide="' + i + '" aria-label="Slide ' + num + '" title="View slide ' + num + '">' + num + '</button></li>';
-    }
-    html += '</ul>';
-    html += '<button class="slider-next" title="Next slide">Next Slide</button>';
-    html += '<button class="slider-play paused" title="Play slideshow">Play</button>';
-    html += '</div>';
+    var html = '<button class="slider-prev slider-button" title="Previous slide">Previous Slide</button>';
+    html += '<button class="slider-next slider-button" title="Next slide">Next Slide</button>';
     $slider.after(html);
 
     // Apply listeners.
     $('.slider-prev').bind('click', previous_button_click);
     $('.slider-next').bind('click', next_button_click);
-    $('.slider-dot').bind('click', dot_button_click);
-    $('.slider-play').bind('click', play_button_click);
     update_dots_custom_controls();
     position_custom_controls();
   }
@@ -71,8 +60,10 @@
     var base_scale = parseInt($('html').css('font-size'));
     var scale_perc = base_scale / 16;
     var left = ($(window).width() * 0.5) - ((desktop_column * 0.5) * scale_perc);
+    var left_ex = (left < 20) ? '530px' : ((left + 510) / base_scale) + 'rem';
     left = (left < 20) ? '20px' : (left / base_scale) + 'rem';
-    $('.slider-controls').css('left', left);
+    $('.slider-prev').css('left', left);
+    $('.slider-next').css('left', left_ex);
   }
 
   function previous_button_click(e) {
@@ -132,7 +123,6 @@
         if ($slider.children().length > 1) {
           $slider.owlCarousel(banner_settings).removeClass('mobile');
           owl = $slider.data('owlCarousel');
-          owl.stop();
           create_custom_controls();
           $(window).unbind('resize', slider_responsive).bind('resize', slider_responsive);
           slider_responsive();
