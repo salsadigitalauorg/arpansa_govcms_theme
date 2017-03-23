@@ -102,6 +102,7 @@ features[ds_field_settings][] = node|literature_survey|teaser
 features[ds_field_settings][] = node|news_article|teaser
 features[ds_field_settings][] = node|page|teaser
 features[ds_field_settings][] = node|webform|teaser
+features[ds_layout_settings][] = node|consultation|teaser
 features[ds_layout_settings][] = node|footer_teaser|teaser
 features[ds_layout_settings][] = node|landing_page|teaser
 features[ds_layout_settings][] = node|literature_survey|compact

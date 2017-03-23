@@ -151,6 +151,42 @@ function arpansa_entity_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|consultation|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'consultation';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_image',
+        1 => 'field_news_date',
+        2 => 'title',
+        3 => 'field_consultation_summary',
+        4 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'ds_content',
+      'field_news_date' => 'ds_content',
+      'title' => 'ds_content',
+      'field_consultation_summary' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|consultation|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|footer_teaser|teaser';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'footer_teaser';
