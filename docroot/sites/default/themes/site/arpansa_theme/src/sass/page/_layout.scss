@@ -51,8 +51,8 @@ html {
     margin-bottom: $default_padding;
   }
   .content {
-    @include link-colours($primary_1, $secondary_3, $neutral_1);
     color: $neutral_1;
+    @include standard_content_link;
   }
 }
 
@@ -83,9 +83,6 @@ html {
         max-width: $desktop_content_column;
       }
     }
-    .panel-display {
-      @include panel-display-layouts(desktop);
-    }
   }
   &.no-sidebar {
     .page-node & {
@@ -109,36 +106,26 @@ html {
         }
       }
     }
-    .panel-display {
-      @include panel-display-layouts(tablet); // All Columns - Over 2 panels columns to use full column.
-      @include center-column($desktop_column); // One Column (100)
-      &.panel-1col, &.panel-1col-stacked {
-        @include center-column($desktop_content_column);
-      } // Two Columns (50 50)
-      &.panel-2col, &.panel-2col-bricks, &.panel-2col-stacked {
-        @include center-column($desktop_content_column);
-      }
+  }
+  #site-map {
+    @include center-column($desktop_content_column);
+  }
+  .search-api-page-results {
+    @include center-column($desktop_content_column);
+  }
+  .page-contact & {
+    .block-system {
+      @include center-column($form_width);
     }
-    #site-map {
+  }
+  .page-search404 & {
+    .block-system {
       @include center-column($desktop_content_column);
     }
-    .search-api-page-results {
+  }
+  .page-node-done & {
+    .block-system {
       @include center-column($desktop_content_column);
-    }
-    .page-contact & {
-      .block-system {
-        @include center-column($form_width);
-      }
-    }
-    .page-search404 & {
-      .block-system {
-        @include center-column($desktop_content_column);
-      }
-    }
-    .page-node-done & {
-      .block-system {
-        @include center-column($desktop_content_column);
-      }
     }
   }
 }
@@ -164,10 +151,6 @@ html {
 // =========================================================
 // MISC ELEMENT STYLING
 // =========================================================
-.more-link {
-  @include link-colours($primary_1, $secondary_3, $neutral_1);
-}
-
 ul, ol, dl, p, dt, dd {
   // Global override for 16px font-size on tablet.
   @include breakpoint(tablet) {
@@ -194,5 +177,5 @@ a[rel~='external']::after {
 }
 
 #content {
-  @include button-colours($secondary_1, #10505F, #0C3C47, white);
+  @include button-colours($secondary_1, $secondary_2, $color-link-secondary, white, white);
 }
