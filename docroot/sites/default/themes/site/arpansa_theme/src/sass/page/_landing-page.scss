@@ -24,11 +24,10 @@
       margin-top: 0;
     }
     .field-name-node-link {
-      @include standard_purple_button;
-    }
-    a {
-      @include right-arrow-button;
-      @include purple_button;
+      a {
+        @include right-arrow-button;
+        @include purple_button;
+      }
     }
   }
 }
