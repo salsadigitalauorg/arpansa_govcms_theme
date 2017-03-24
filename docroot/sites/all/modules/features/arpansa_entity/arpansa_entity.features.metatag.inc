@@ -95,6 +95,7 @@ function arpansa_entity_metatag_export_default() {
   // Exported Metatag config instance: node.
   $config['node'] = array(
     'instance' => 'node',
+    'disabled' => FALSE,
     'config' => array(
       'AGLSTERMS.act' => array(
         'item' => array(
