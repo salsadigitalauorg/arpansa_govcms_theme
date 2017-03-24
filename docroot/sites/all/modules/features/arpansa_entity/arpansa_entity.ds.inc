@@ -87,6 +87,16 @@ function arpansa_entity_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'node_link' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Learn more',
+        'wrapper' => '',
+        'class' => '',
+      ),
+    ),
   );
   $export['node|news_article|teaser'] = $ds_fieldsetting;
 
@@ -101,6 +111,16 @@ function arpansa_entity_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'node_link' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Learn more',
+        'wrapper' => '',
+        'class' => '',
+      ),
     ),
   );
   $export['node|page|teaser'] = $ds_fieldsetting;
@@ -128,6 +148,42 @@ function arpansa_entity_ds_field_settings_info() {
  */
 function arpansa_entity_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|consultation|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'consultation';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_image',
+        1 => 'field_news_date',
+        2 => 'title',
+        3 => 'field_consultation_summary',
+        4 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'ds_content',
+      'field_news_date' => 'ds_content',
+      'title' => 'ds_content',
+      'field_consultation_summary' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|consultation|teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -277,6 +333,7 @@ function arpansa_entity_ds_layout_settings_info() {
         1 => 'field_news_date',
         2 => 'title',
         3 => 'body',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
@@ -284,6 +341,7 @@ function arpansa_entity_ds_layout_settings_info() {
       'field_news_date' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
+      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -311,6 +369,7 @@ function arpansa_entity_ds_layout_settings_info() {
         1 => 'field_news_date',
         2 => 'title',
         3 => 'body',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
@@ -318,6 +377,7 @@ function arpansa_entity_ds_layout_settings_info() {
       'field_news_date' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
+      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
