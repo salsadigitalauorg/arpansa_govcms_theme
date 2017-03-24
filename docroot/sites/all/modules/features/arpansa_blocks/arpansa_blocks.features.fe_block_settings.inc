@@ -247,7 +247,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => 0,
+        'weight' => -31,
       ),
     ),
     'title' => '<none>',
@@ -284,13 +284,13 @@ function arpansa_blocks_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'arpansa_theme',
         'weight' => -14,
       ),
     ),
-    'title' => '',
+    'title' => 'Share this:',
     'visibility' => 0,
   );
 
@@ -327,7 +327,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -14,
+        'weight' => -34,
       ),
     ),
     'title' => '',
@@ -347,7 +347,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -12,
+        'weight' => -32,
       ),
     ),
     'title' => '',
@@ -434,6 +434,30 @@ function arpansa_blocks_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['views-related_content-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'related_content-block',
+    'module' => 'views',
+    'node_types' => array(
+      0 => 'consultation',
+      1 => 'news_article',
+      2 => 'page',
+    ),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'arpansa_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'arpansa_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['workbench-block'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -447,7 +471,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -14,
+        'weight' => -33,
       ),
     ),
     'title' => '',

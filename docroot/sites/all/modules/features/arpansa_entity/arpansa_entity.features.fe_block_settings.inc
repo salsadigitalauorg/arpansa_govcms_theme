@@ -50,7 +50,7 @@ function arpansa_entity_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => 0,
+        'weight' => -30,
       ),
     ),
     'title' => '',
@@ -90,10 +90,30 @@ function arpansa_entity_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => 0,
+        'weight' => -29,
       ),
     ),
     'title' => '<none>',
+    'visibility' => 1,
+  );
+
+  $export['views-what_s_new-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'what_s_new-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'whats-new',
+    'roles' => array(),
+    'themes' => array(
+      'arpansa_theme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'arpansa_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
     'visibility' => 1,
   );
 
@@ -107,10 +127,10 @@ function arpansa_entity_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'arpansa_theme',
-        'weight' => 0,
+        'weight' => -28,
       ),
     ),
     'title' => '',

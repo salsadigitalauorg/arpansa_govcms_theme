@@ -2,12 +2,13 @@ name = govCMS Share Links
 description = Service links configuration for govCMS
 core = 7.x
 package = govCMS
-version = 7.x-1.0
-project = govcms_share_links
+version = 7.x-2.10
+project = govcms
 dependencies[] = ctools
 dependencies[] = general_services
 dependencies[] = service_links
 dependencies[] = strongarm
+datestamp = 1479789121
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[user_permission][] = access service links
@@ -36,10 +37,3 @@ features[variable][] = service_links_weight
 features[variable][] = service_links_weight_in_node
 features_exclude[dependencies][features] = features
 project path = profiles/govcms/modules/features
-
-; Information added by Drupal.org packaging script on 2016-11-22
-version = "7.x-2.10"
-core = "7.x"
-project = "govcms"
-datestamp = "1479789121"
-
