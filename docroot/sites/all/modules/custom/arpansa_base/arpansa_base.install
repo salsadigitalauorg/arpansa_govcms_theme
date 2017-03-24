@@ -1304,3 +1304,12 @@ function arpansa_base_update_7057() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Update theme settings for secondary logo [ARPANSA-103].
+ */
+function arpansa_base_update_7058() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}

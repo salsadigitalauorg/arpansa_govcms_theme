@@ -589,6 +589,7 @@ features[variable][] = pathauto_taxonomy_term_tags_pattern
 features[variable][] = pathauto_transliterate
 features[variable][] = pathauto_user_pattern
 features[variable][] = pathologic_local_paths
+features[variable][] = theme_arpansa_theme_settings
 features[variable][] = toc_filter_faq_default_title
 features[variable][] = toc_filter_header_tag
 features[variable][] = toc_filter_ol_default_title
