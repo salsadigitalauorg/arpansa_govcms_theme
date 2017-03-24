@@ -33,30 +33,48 @@
     <div class="logo-and-search">
       <div class="logo-wrapper">
         <div class="logo-aus-container">
-          <img src="/<?php print(drupal_get_path('theme',$GLOBALS['theme'])) ?>/logo-ausgov.png" alt="Australian Government">
+          <?php if ($logo): ?>
+            <?php
+              $logo_alt = theme_get_setting('govcms_ui_kit_header_logo_alt');
+              $logo_alt = !empty($logo_alt) ? $logo_alt : variable_get('site_name', 'Home');
+              print theme('image', array(
+                'path' => $logo,
+                'alt' => $logo_alt,
+              ));
+            ?>
+          <?php endif; ?>
         </div>
-        <?php if ($logo): ?>
-          <?php
-            $logo_alt = theme_get_setting('govcms_ui_kit_header_logo_alt');
-            $logo_alt = !empty($logo_alt) ? $logo_alt : variable_get('site_name', 'Home');
-            $logo_img = theme('image', array(
-              'path' => $logo,
-              'alt' => $logo_alt,
+        <?php
+        $toggle_secondary_logo = theme_get_setting('toggle_secondary_logo');
+
+        if ($toggle_secondary_logo) {
+          $secondary_logo_alt = theme_get_setting('secondary_logo_alt');
+          $secondary_logo_alt = !empty($secondary_logo_alt) ? $secondary_logo_alt : variable_get('site_name', 'Home');
+          $secondary_logo_path = theme_get_setting('secondary_logo_path');
+          $secondary_logo_upload = theme_get_setting('secondary_logo_upload');
+          if (!empty($secondary_logo_upload)) {
+
+          }
+          elseif (!empty($secondary_logo_path)) {
+            $secondary_logo_img = theme('image', array(
+              'path' => $secondary_logo_path,
+              'alt' => $secondary_logo_alt,
               'attributes' => array('class' => array('header__logo-image')),
             ));
-            $logo_class = array('header__logo');
+            $secondary_logo_class = array('header__logo');
 
-            print l($logo_img, $front_page, array(
+            print l($secondary_logo_img, $front_page, array(
               'html' => TRUE,
               'attributes' => array(
-                'id' => 'logo',
-                'title' => t('Back to Homepage'),
+                'id' => 'secondary-logo',
+                'title' => $secondary_logo_alt,
                 'rel' => 'home',
-                'class' => $logo_class,
+                'class' => $secondary_logo_class,
               ),
             ));
-          ?>
-        <?php endif; ?>
+          }
+        }
+        ?>
         <?php if (theme_get_setting('govcms_ui_kit_header_title')): ?>
           <div class="header-title"><?php print decode_entities(theme_get_setting('govcms_ui_kit_header_title')); ?></div>
         <?php endif; ?>
@@ -80,7 +98,7 @@
 
   <?php
     // Render the sidebars to see if there's anything in them.
-    $sidebar_first  = render($page['sidebar_first']);
+    $sidebar_first = render($page['sidebar_first']);
     $sidebar_second = render($page['sidebar_second']);
   ?>
 
