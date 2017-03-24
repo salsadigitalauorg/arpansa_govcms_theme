@@ -60,6 +60,73 @@
 }
 
 // =========================================================
+// PANEL PROMO
+// =========================================================
+.panel-promo {
+  .view-content {
+    @include breakpoint(tablet) {
+      @include outer-container(100%);
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .views-row {
+      @include breakpoint(tablet) {
+        @include span-columns(4 of 12);
+      }
+      &:nth-child(2n) {
+        @include breakpoint(tablet) {
+          margin-right: flex-gutter(12);
+        }
+      }
+      &:nth-child(3n) {
+        @include breakpoint(tablet) {
+          @include omega();
+        }
+      }
+      .node {
+        @include listing-component-wrapper;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        @include breakpoint(tablet) {
+          margin-bottom: em(35px);
+          padding-top: em(35px);
+        }
+        &.has-thumbnail {
+          .field-type-image {
+            @include listing-component-image;
+          }
+          @include breakpoint(tablet) {
+            padding-top: $listing_component_image_height;
+          }
+        }
+      }
+      h2 {
+        @include listing-component-heading;
+        margin-top: 10px;
+      }
+      .field-type-datetime, .submitted {
+        @include listing-component-subtext;
+      }
+      .field-name-body {
+        @include listing-component-body;
+      }
+      .field-name-field-image {
+        display: none;
+        @include breakpoint(tablet) {
+          display: block;
+        }
+      }
+      a.readmore {
+        @include right-arrow-button;
+        line-height: em(28px);
+      }
+    }
+  }
+}
+
+// =========================================================
 // SLIDER
 // =========================================================
 #block-views-slideshow-block {
