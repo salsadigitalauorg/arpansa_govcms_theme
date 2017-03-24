@@ -28,26 +28,36 @@
     .pane-content, .pane-title {
       @include center-column($desktop_column);
     }
+    .pane-bean-panels {
+      background-color: $neutral_5;
+      margin-bottom: 30px;
+      @include breakpoint(tablet) {
+        margin-bottom: 90px;
+      }
+    }
   }
 }
 
 // =========================================================
 // INTRODUCTION BEAN
 // =========================================================
-.bean-basic-content {
-  background-color: $neutral_4;
+.panels-ipe-sort-container .bean-basic-content, .pane-bean-panels .bean-basic-content {
   &>.content {
     @include center-column($desktop_column);
     @include link-colours($primary_1, $secondary_3, $neutral_1);
     padding-top: $default_padding;
     padding-bottom: $default_padding;
-    color: $neutral_1;
+    color: $secondary_1;
+    font-size: em(24px);
+    line-height: em(33px);
+    font-family: $type-heading-primary;
     @include breakpoint(tablet) {
       padding-top: $default_padding * 2;
       padding-bottom: rem(50px);
     }
     @include breakpoint(desktop) {
       text-align: center;
+      padding: 50px 80px;
     }
     p {
       margin-bottom: 0;

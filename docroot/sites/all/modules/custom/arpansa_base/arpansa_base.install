@@ -881,15 +881,16 @@ function arpansa_base_update_7031() {
   module_load_include('module', 'salsa_helpers');
 
   $description = 'This is the homepage introduction block, used to present the ARPANSA mission statement.';
+  $content = <<<CONTENT
+<p>The Australian Radiation Protection and Nuclear Safety Agency is the Australian Government&#39;s primary authority on radiation protection and nuclear safety. ARPANSA&nbsp;protects the people and the environment form the harmful effects of radiation through regulation of Commonwealth entities that use radiation, research and services.</p>
+CONTENT;
 
   salsa_helpers_create_bean(
     'Homepage Introduction',
     '',
     $description,
     'about-us',
-    function () use ($description) {
-      return $description;
-    }
+    $content
   );
 }
 
