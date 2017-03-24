@@ -62,6 +62,9 @@
   }
   .logo-aus-container {
     margin-right: 25px;
+    img {
+      max-height: rem(50px);
+    }
   }
   .header__logo {
     &.no-title {
@@ -214,7 +217,7 @@
   position: absolute;
   z-index: 1;
   right: $mobile_column_padding;
-  top: rem(30px);
+  top: rem(16px);
   &:hover, &:focus {
     background-image: url(../images/svg/mobile_menu_open_hover.svg);
     box-shadow: none;
