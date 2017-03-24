@@ -1,0 +1,16 @@
+name = ARPANSA Review Content
+core = 7.x
+package = ARPANSA
+version = 7.x-1.0
+dependencies[] = features
+dependencies[] = rules
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[rules_config][] = rules_content_review
+features[views_view][] = admin_content_review
+features_exclude[dependencies][ctools] = ctools
+features_exclude[dependencies][entity] = entity
+project path = sites/all/modules/features
