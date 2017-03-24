@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 /*
 Colours
 
@@ -7479,6 +7479,10 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
   background-color: #268126;
 }
 
+.region-navigation .block-superfish ul.sf-menu li.sfHover > a.menuparent:after {
+  background-image: url(../images/svg/nav_down_arrow_white.svg);
+}
+
 .region-navigation .block-superfish ul.sf-menu > li {
   display: table-cell;
   float: none;
@@ -7514,8 +7518,32 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
   font-weight: 600;
 }
 
+@media (min-width: 1200px) {
+  .region-navigation .block-superfish ul.sf-menu > li > a {
+    display: block;
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+    width: auto;
+    max-width: 215px;
+  }
+}
+
 .region-navigation .block-superfish ul.sf-menu > li > a:hover, .region-navigation .block-superfish ul.sf-menu > li > a:focus {
   background-color: #268126;
+}
+
+@media (min-width: 1200px) {
+  .region-navigation .block-superfish ul.sf-menu > li.first > a {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .region-navigation .block-superfish ul.sf-menu > li.last > a {
+    margin-right: 0;
+  }
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > ul {
@@ -7524,18 +7552,31 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
   margin: 0;
 }
 
+@media (min-width: 1200px) {
+  .region-navigation .block-superfish ul.sf-menu > li > ul {
+    margin-left: 0.625rem;
+  }
+}
+
 .region-navigation .block-superfish ul.sf-menu > li > ul li.menuparent > a {
   background-image: url(../images/svg/nav_right_arrow.svg);
   background-repeat: no-repeat;
   background-position: right 1.375rem center;
 }
 
+@media (min-width: 1200px) {
+  .region-navigation .block-superfish ul.sf-menu > li > ul li.menuparent > a {
+    background-position: right 2.25rem center;
+    padding-right: 2.5rem;
+  }
+}
+
 .region-navigation .block-superfish ul.sf-menu > li > ul li a {
   background-color: #268126;
   color: white;
   text-decoration: none;
-  padding-left: 1.875rem;
-  padding-right: 1.875rem;
+  padding-left: 2.0625rem;
+  padding-right: 2.0625rem;
   padding-top: 0.9375rem;
   padding-bottom: 0.875rem;
   border: none;
@@ -7543,6 +7584,12 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 
 .region-navigation .block-superfish ul.sf-menu > li > ul li a:hover, .region-navigation .block-superfish ul.sf-menu > li > ul li a:focus {
   background-color: #1C661C;
+}
+
+@media (min-width: 1200px) {
+  .region-navigation .block-superfish ul.sf-menu > li > ul li a {
+    min-width: 11.625rem;
+  }
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > ul li.active-trail > a {
