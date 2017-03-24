@@ -1163,7 +1163,7 @@ button,
 [role='button'],
 [type='submit'],
 [type='reset'],
-[type='button'], .nav-toggle, #block-menu-block-landing-page-children-listing .node-teaser a {
+[type='button'], .nav-toggle, #block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link a {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
@@ -1186,7 +1186,7 @@ button,
   [role='button'],
   [type='submit'],
   [type='reset'],
-  [type='button'], .nav-toggle, #block-menu-block-landing-page-children-listing .node-teaser a {
+  [type='button'], .nav-toggle, #block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link a {
     height: 2.8em;
     padding: 0.5em 1.2em;
   }
@@ -10016,42 +10016,7 @@ ul.tabs.primary {
   margin-top: 0;
 }
 
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link button,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link .button,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [role='button'],
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='submit'],
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='reset'],
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='button'] {
-  background-color: #4E1A74;
-  color: white;
-  border-color: #421661;
-}
-
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link button:hover, #block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link button:focus,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link .button:hover,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link .button:focus,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [role='button']:hover,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [role='button']:focus,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='submit']:hover,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='submit']:focus,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='reset']:hover,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='reset']:focus,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='button']:hover,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='button']:focus {
-  background-color: #421661;
-  color: white;
-}
-
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link button:active,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link .button:active,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [role='button']:active,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='submit']:active,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='reset']:active,
-#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link [type='button']:active {
-  background-color: #298829;
-}
-
-#block-menu-block-landing-page-children-listing .node-teaser a {
+#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link a {
   background-image: url(../images/svg/white_right_arrow.svg);
   background-repeat: no-repeat;
   background-position: 85% center;
@@ -10066,11 +10031,11 @@ ul.tabs.primary {
   text-decoration: none;
 }
 
-#block-menu-block-landing-page-children-listing .node-teaser a:hover, #block-menu-block-landing-page-children-listing .node-teaser a:focus {
+#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link a:hover, #block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link a:focus {
   box-shadow: 0 5px 10px #444449;
 }
 
-#block-menu-block-landing-page-children-listing .node-teaser a:active {
+#block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link a:active {
   box-shadow: none;
 }
 
