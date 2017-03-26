@@ -57,10 +57,10 @@ function arpansa_entity_default_fe_block_settings() {
     'visibility' => 1,
   );
 
-  $export['views-fact_sheets-block'] = array(
+  $export['views-fact_sheets_filterable-block'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'fact_sheets-block',
+    'delta' => 'fact_sheets_filterable-block',
     'module' => 'views',
     'node_types' => array(),
     'pages' => 'fact-sheets',
