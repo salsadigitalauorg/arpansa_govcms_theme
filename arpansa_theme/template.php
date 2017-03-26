@@ -189,7 +189,7 @@ function arpansa_theme_form_alter(&$form, &$form_state, $form_id) {
     $form['basic']['keys']['#title'] = t('Type search term here');
   }
   // ARPANSA-78: Only show tags already assigned Fact Sheets on the Fact Sheets view.
-  if ($form_id === 'views_exposed_form' && strpos($form['#action'], 'fact-sheet') !== FALSE) {
+  if ($form_id === 'views_exposed_form' && strpos($form['#id'], 'fact-sheets') !== FALSE) {
     // Use "Raw SQL Query" mode because it's faster than the Drupal dynamic query.
     $fact_sheet_tags = get_fact_sheet_assigned_tags();
 
