@@ -33,6 +33,8 @@
 // =========================================================
 // TOP NAVIGATION
 // =========================================================
+$menu_margin: rem(10px);
+$menu_padding: rem(30px);
 .region-navigation {
   background-color: $secondary_1;
   .block-superfish {
@@ -44,9 +46,7 @@
     ul.sf-menu {
       display: table;
       width: 100%;
-      position: relative;
-      @include breakpoint(desktop) {}
-      // If JS is enabled - hide sub nav menus until superfish finishes loading.
+      position: relative; // If JS is enabled - hide sub nav menus until superfish finishes loading.
       &:not(.superfish-processed) {
         &>li>ul {
           html:not(.no-js) & {
@@ -57,22 +57,29 @@
       li.sfHover {
         &>a {
           background-color: $main_menu_hover;
+          &.menuparent {
+            &:after {
+              background-image: url(../images/svg/nav_down_arrow_white.svg);
+            }
+          }
         }
       }
       &>li {
         display: table-cell;
         float: none;
         &.menuparent {
-          &>a:after {
-            content: '';
-            display: inline-block;
-            background-image: url(../images/svg/nav_down_arrow.svg);
-            background-position: center;
-            background-repeat: no-repeat;
-            width: rem(11px);
-            height: rem(7px);
-            margin-left: rem(5px);
-            vertical-align: middle;
+          &>a {
+            &:after {
+              content: '';
+              display: inline-block;
+              background-image: url(../images/svg/nav_down_arrow.svg);
+              background-position: center;
+              background-repeat: no-repeat;
+              width: rem(11px);
+              height: rem(7px);
+              margin-left: rem(5px);
+              vertical-align: middle;
+            }
           }
         }
         &.active-trail {
@@ -92,33 +99,66 @@
           text-align: center;
           text-decoration: none;
           font-weight: 600;
+          @include breakpoint(desktop) {
+            display: block;
+            margin-left: $menu_margin;
+            margin-right: $menu_margin;
+            padding-left: $menu_padding;
+            padding-right: $menu_padding;
+            width: auto;
+            max-width: 215px;
+          }
           &:hover, &:focus {
             background-color: $main_menu_hover;
+          }
+        }
+        &.first {
+          &>a {
+            @include breakpoint(desktop) {
+              margin-left: 0;
+            }
+          }
+        }
+        &.last {
+          &>a {
+            @include breakpoint(desktop) {
+              margin-right: 0;
+            }
           }
         }
         &>ul {
           top: 100%;
           padding: 0;
           margin: 0;
+          @include breakpoint(desktop) {
+            margin-left: $menu_margin;
+          }
           li {
             &.menuparent {
               &>a {
                 background-image: url(../images/svg/nav_right_arrow.svg);
                 background-repeat: no-repeat;
                 background-position: right rem(22px) center;
+                @include breakpoint(desktop) {
+                  background-position: right ($menu_padding + rem(6px)) center;
+                  padding-right: rem(40px);
+                }
               }
             }
             a {
               background-color: $primary_1;
               color: white;
               text-decoration: none;
-              padding-left: rem(30px);
-              padding-right: rem(30px);
+              padding-left: $menu_padding + rem(3px);
+              padding-right: $menu_padding + rem(3px);
               padding-top: rem(15px);
               padding-bottom: rem((15px - 1px));
               border: none;
               &:hover, &:focus {
                 background-color: $main_menu_hover_2;
+              }
+              @include breakpoint(desktop) {
+                min-width: rem(186px);
               }
             }
             &.active-trail {
