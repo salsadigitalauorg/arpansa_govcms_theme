@@ -1056,7 +1056,7 @@ function arpansa_base_update_7042() {
  * What's New Landing Page [ARPANSA-80].
  */
 function arpansa_base_update_7043() {
-  // Create a Careers page for assigning the careers view block to.
+  // Create a What's New page for assigning the what's new view block to.
   $node = new stdClass();
   $node->type = 'page';
   $node->title = "What's New";
@@ -1325,9 +1325,55 @@ function arpansa_base_update_7059() {
 }
 
 /**
- * Disable out of scope content types and their respective views and blocks [ARPANSA-34].
+ * Fact Sheets view: Configure [ARPANSA-78].
  */
 function arpansa_base_update_7060() {
+  // Create a Fact Sheets page for assigning the fact sheets view block to.
+  $node = new stdClass();
+  $node->type = 'page';
+  $node->title = "Fact Sheets";
+  $node->language = LANGUAGE_NONE;
+  node_object_prepare($node);
+  $node->path['alias'] = 'fact-sheets';
+  $node->path['pathauto'] = 0;
+  $node->sticky = 0;
+  $node->promoted = 0;
+  $node->published = 1;
+  $node->revision = 0;
+  $node->uid = 1;
+  $node->field_show_related_content[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_social_links[LANGUAGE_NONE][0]['value'] = 1;
+  node_save($node);
+
+  workbench_moderation_moderate($node, workbench_moderation_state_published());
+
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
+ * Force to revert Fact Sheets block settings [ARPANSA-78].
+ */
+function arpansa_base_update_7061() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity', 'fe_block_settings');
+}
+
+/**
+ * Modify left nav block title [ARPANSA-15].
+ */
+function arpansa_base_update_7062() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_enable_module('arpansa_entity');
+}
+
+/**
+ * Disable out of scope content types and their respective views and blocks [ARPANSA-34].
+ */
+function arpansa_base_update_7063() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
 

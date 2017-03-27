@@ -33,7 +33,7 @@ function arpansa_entity_default_fe_block_settings() {
         'weight' => -34,
       ),
     ),
-    'title' => '<none>',
+    'title' => 'In this section',
     'visibility' => 0,
   );
 
@@ -51,6 +51,26 @@ function arpansa_entity_default_fe_block_settings() {
         'status' => 1,
         'theme' => 'arpansa_theme',
         'weight' => -30,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
+  $export['views-fact_sheets_filterable-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'fact_sheets_filterable-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'fact-sheets',
+    'roles' => array(),
+    'themes' => array(
+      'arpansa_theme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'arpansa_theme',
+        'weight' => 0,
       ),
     ),
     'title' => '',
@@ -76,7 +96,6 @@ function arpansa_entity_default_fe_block_settings() {
     'title' => '',
     'visibility' => 0,
   );
-
   $export['views-home_page_blog_articles-block_1'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -96,7 +115,6 @@ function arpansa_entity_default_fe_block_settings() {
     'title' => '',
     'visibility' => 0,
   );
-
   $export['views-latest_news-block'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -116,7 +134,6 @@ function arpansa_entity_default_fe_block_settings() {
     'title' => '',
     'visibility' => 0,
   );
-
   $export['views-latest_news-block_1'] = array(
     'cache' => -1,
     'custom' => 0,
