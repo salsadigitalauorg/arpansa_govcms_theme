@@ -1326,7 +1326,7 @@ function arpansa_base_update_7059() {
 
 
 /**
- * Modify left nav block title [ARPANSA-41].
+ * Modify left nav block title [ARPANSA-15].
  */
 function arpansa_base_update_7060() {
   module_enable(['salsa_helpers']);
