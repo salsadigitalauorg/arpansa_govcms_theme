@@ -1192,7 +1192,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'create blog_article content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1221,7 +1220,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'create event content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1285,7 +1283,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'create media_release content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1322,7 +1319,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'create publication content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1415,7 +1411,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'delete any blog_article content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1454,7 +1449,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'delete any event content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1527,7 +1521,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'delete any media_release content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1564,7 +1557,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'delete any publication content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1621,7 +1613,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'delete own blog_article content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1660,7 +1651,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'delete own event content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1720,7 +1710,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'delete own media_release content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1757,7 +1746,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'delete own publication content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1963,7 +1951,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'edit any blog_article content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2002,7 +1989,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'edit any event content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2075,7 +2061,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'edit any media_release content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2112,7 +2097,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'edit any publication content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2221,7 +2205,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'edit own blog_article content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2272,7 +2255,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'edit own event content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2332,7 +2314,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'edit own media_release content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2369,7 +2350,6 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'edit own publication content',
     'roles' => array(
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
