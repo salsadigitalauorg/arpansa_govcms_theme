@@ -57,6 +57,46 @@ function arpansa_entity_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['views-home_page_blog_articles-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'home_page_blog_articles-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'arpansa_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'arpansa_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-home_page_blog_articles-block_1'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'home_page_blog_articles-block_1',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'arpansa_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'arpansa_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-literature_surveys-lit_survey'] = array(
     'cache' => -1,
     'custom' => 0,
