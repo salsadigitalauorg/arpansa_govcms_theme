@@ -1201,7 +1201,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create career content'] = array(
     'name' => 'create career content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -1210,7 +1214,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create consultation content'] = array(
     'name' => 'create consultation content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -1420,7 +1428,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any career content'] = array(
     'name' => 'delete any career content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -1429,7 +1441,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any consultation content'] = array(
     'name' => 'delete any consultation content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -1622,7 +1638,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own career content'] = array(
     'name' => 'delete own career content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -1631,7 +1651,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own consultation content'] = array(
     'name' => 'delete own consultation content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -1960,7 +1984,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any career content'] = array(
     'name' => 'edit any career content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -1969,7 +1997,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any consultation content'] = array(
     'name' => 'edit any consultation content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -2214,7 +2246,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own career content'] = array(
     'name' => 'edit own career content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -2235,7 +2271,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own consultation content'] = array(
     'name' => 'edit own consultation content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -2853,7 +2893,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished career content'] = array(
     'name' => 'view any unpublished career content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'view_unpublished',
   );
@@ -2862,7 +2906,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished consultation content'] = array(
     'name' => 'view any unpublished consultation content',
     'roles' => array(
+      'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'view_unpublished',
   );
