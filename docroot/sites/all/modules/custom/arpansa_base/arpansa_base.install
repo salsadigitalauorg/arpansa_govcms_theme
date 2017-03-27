@@ -1351,3 +1351,12 @@ function arpansa_base_update_7060() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Force to revert Fact Sheets block settings [ARPANSA-78].
+ */
+function arpansa_base_update_7061() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity', 'fe_block_settings');
+}
