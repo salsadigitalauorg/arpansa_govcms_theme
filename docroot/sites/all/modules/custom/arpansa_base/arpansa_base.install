@@ -1056,7 +1056,7 @@ function arpansa_base_update_7042() {
  * What's New Landing Page [ARPANSA-80].
  */
 function arpansa_base_update_7043() {
-  //  Create a What's New page for assigning the what's new view block to
+  // Create a What's New page for assigning the what's new view block to.
   $node = new stdClass();
   $node->type = 'page';
   $node->title = "What's New";
@@ -1315,10 +1315,20 @@ function arpansa_base_update_7058() {
 }
 
 /**
- * Fact Sheets view: Configure [ARPANSA-78].
+ * Add Content Review workbench tab and reminder rule [ARPANSA-66].
  */
 function arpansa_base_update_7059() {
-  //  Create a Fact Sheets page for assigning the fact sheets view block to
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_enable_module('arpansa_review_content');
+  salsa_helpers_features_revert('arpansa_review_content');
+}
+
+/**
+ * Fact Sheets view: Configure [ARPANSA-78].
+ */
+function arpansa_base_update_7060() {
+  // Create a Fact Sheets page for assigning the fact sheets view block to.
   $node = new stdClass();
   $node->type = 'page';
   $node->title = "Fact Sheets";
