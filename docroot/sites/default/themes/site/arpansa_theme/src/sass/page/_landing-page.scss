@@ -1,0 +1,33 @@
+// =========================================================
+// LANDING PAGE
+// =========================================================
+.page-node .content-body-inner.no-sidebar .region-content {
+  .node.node-landing-page {
+    >.content {
+      @include outer-container(100%);
+      @include center-column($desktop_column);
+    }
+  }
+}
+
+#block-menu-block-landing-page-children-listing {
+  @include outer-container(100%);
+  @include center-column($desktop_column);
+  .node-teaser {
+    @include breakpoint(tablet) {
+      @include span-columns(6 of 12);
+    }
+    img {
+      width: 100%;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .field-name-node-link {
+      a {
+        @include right-arrow-button;
+        @include purple_button;
+      }
+    }
+  }
+}
