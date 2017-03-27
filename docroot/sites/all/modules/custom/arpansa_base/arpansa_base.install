@@ -1341,6 +1341,8 @@ function arpansa_base_update_7060() {
   $node->published = 1;
   $node->revision = 0;
   $node->uid = 1;
+  $node->field_show_related_content[LANGUAGE_NONE][0]['value'] = 0;
+  $node->field_social_links[LANGUAGE_NONE][0]['value'] = 1;
   node_save($node);
 
   workbench_moderation_moderate($node, workbench_moderation_state_published());
