@@ -1383,6 +1383,7 @@ function arpansa_base_update_7063() {
     'govcms_events',
     'govcms_media_releases',
     'govcms_publications',
+    'govcms_front',
   );
   salsa_helpers_lock_features($govCMSFeatures, TRUE);
 
