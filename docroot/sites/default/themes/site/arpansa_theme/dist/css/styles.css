@@ -6915,6 +6915,16 @@ h6 {
   font-weight: 700;
 }
 
+.show-on-mobile {
+  display: "block";
+}
+
+@media (min-width: 768px) {
+  .show-on-mobile {
+    display: none;
+  }
+}
+
 button, .button, [role='button'], [type='submit'], [type='reset'], [type='button'] {
   border-radius: 4px;
   border: none;

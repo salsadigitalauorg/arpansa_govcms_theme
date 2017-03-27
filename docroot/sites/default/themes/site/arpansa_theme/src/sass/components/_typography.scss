@@ -35,3 +35,7 @@ h6 {
   font-size: em(16px);
   font-weight: 700;
 }
+
+.show-on-mobile {
+  @include show_on_mobile();
+}

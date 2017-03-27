@@ -296,3 +296,10 @@
 @mixin standard_purple_button() {
   @include button-colours($secondary_1, $secondary_2, $color-link-secondary, white, white);
 }
+
+@mixin show_on_mobile($display:'block') {
+  display: $display;
+  @include breakpoint(tablet) {
+    display: none;
+  }
+}
