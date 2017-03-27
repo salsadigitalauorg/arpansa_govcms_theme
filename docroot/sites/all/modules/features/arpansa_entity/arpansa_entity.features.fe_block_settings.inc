@@ -57,6 +57,26 @@ function arpansa_entity_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['views-fact_sheets_filterable-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'fact_sheets_filterable-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'fact-sheets',
+    'roles' => array(),
+    'themes' => array(
+      'arpansa_theme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'arpansa_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
   $export['views-literature_surveys-lit_survey'] = array(
     'cache' => -1,
     'custom' => 0,
