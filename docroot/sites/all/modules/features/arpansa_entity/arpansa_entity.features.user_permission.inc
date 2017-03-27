@@ -1191,8 +1191,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create blog_article content'] = array(
     'name' => 'create blog_article content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1222,8 +1220,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create event content'] = array(
     'name' => 'create event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1288,8 +1284,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create media_release content'] = array(
     'name' => 'create media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1327,8 +1321,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create publication content'] = array(
     'name' => 'create publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1422,8 +1414,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any blog_article content'] = array(
     'name' => 'delete any blog_article content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1463,8 +1453,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any event content'] = array(
     'name' => 'delete any event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1538,8 +1526,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any media_release content'] = array(
     'name' => 'delete any media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1577,8 +1563,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any publication content'] = array(
     'name' => 'delete any publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1636,8 +1620,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own blog_article content'] = array(
     'name' => 'delete own blog_article content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1677,8 +1659,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1739,8 +1719,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own media_release content'] = array(
     'name' => 'delete own media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1778,8 +1756,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own publication content'] = array(
     'name' => 'delete own publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -1986,8 +1962,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any blog_article content'] = array(
     'name' => 'edit any blog_article content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2027,8 +2001,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any event content'] = array(
     'name' => 'edit any event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2102,8 +2074,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any media_release content'] = array(
     'name' => 'edit any media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2141,8 +2111,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any publication content'] = array(
     'name' => 'edit any publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2252,8 +2220,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own blog_article content'] = array(
     'name' => 'edit own blog_article content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2305,8 +2271,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own event content'] = array(
     'name' => 'edit own event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2367,8 +2331,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own media_release content'] = array(
     'name' => 'edit own media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2406,8 +2368,6 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own publication content'] = array(
     'name' => 'edit own publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
