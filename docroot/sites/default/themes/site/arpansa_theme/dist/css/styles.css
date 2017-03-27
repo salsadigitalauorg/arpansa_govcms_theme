@@ -10395,11 +10395,15 @@ body.not-front #content .view .pager {
   }
 }
 
-#block-menu-block-govcms-menu-block-sidebar {
+#block-menu-block-left-nav {
   margin-bottom: 1.375rem;
 }
 
-#block-menu-block-govcms-menu-block-sidebar h2 button, #block-menu-block-govcms-menu-block-sidebar .display button {
+#block-menu-block-left-nav h2, #block-menu-block-left-nav .display {
+  margin-bottom: 1.4375rem;
+}
+
+#block-menu-block-left-nav h2 button, #block-menu-block-left-nav .display button {
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
@@ -10413,14 +10417,16 @@ body.not-front #content .view .pager {
   text-align: left;
   background-color: #F4F4F4;
   color: #444449;
+  border-radius: 0;
 }
 
-#block-menu-block-govcms-menu-block-sidebar h2 button:hover, #block-menu-block-govcms-menu-block-sidebar .display button:hover, #block-menu-block-govcms-menu-block-sidebar h2 button:focus, #block-menu-block-govcms-menu-block-sidebar .display button:focus {
+#block-menu-block-left-nav h2 button:hover, #block-menu-block-left-nav .display button:hover, #block-menu-block-left-nav h2 button:focus, #block-menu-block-left-nav .display button:focus {
   color: #444449;
   background-color: #bbbbbb;
+  box-shadow: none;
 }
 
-#block-menu-block-govcms-menu-block-sidebar h2 button:after, #block-menu-block-govcms-menu-block-sidebar .display button:after {
+#block-menu-block-left-nav h2 button:after, #block-menu-block-left-nav .display button:after {
   content: '';
   display: inline-block;
   position: absolute;
@@ -10435,87 +10441,61 @@ body.not-front #content .view .pager {
           transform: rotate(0deg);
 }
 
-#block-menu-block-govcms-menu-block-sidebar h2 button.showing:after, #block-menu-block-govcms-menu-block-sidebar .display button.showing:after {
+#block-menu-block-left-nav h2 button.showing:after, #block-menu-block-left-nav .display button.showing:after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-#block-menu-block-govcms-menu-block-sidebar .content {
+#block-menu-block-left-nav .content {
   display: none;
+  border-left: 5px solid #268126;
 }
 
 @media (min-width: 1024px) {
-  #block-menu-block-govcms-menu-block-sidebar .content {
+  #block-menu-block-left-nav .content {
     display: block;
   }
 }
 
-#block-menu-block-govcms-menu-block-sidebar .content.showing {
+#block-menu-block-left-nav .content.showing {
   display: block;
   background-color: #FAFAFA;
   padding: 1.625rem 0.9375rem;
 }
 
-#block-menu-block-govcms-menu-block-sidebar .menu-block-wrapper > ul {
-  border-bottom: 1px solid #bbbbbb;
-}
-
-#block-menu-block-govcms-menu-block-sidebar .menu-block-wrapper > ul > li > a {
-  font-weight: 600;
-  padding-left: 0.8em;
-}
-
-#block-menu-block-govcms-menu-block-sidebar .menu-block-wrapper > ul > li > ul > li > a {
-  padding-left: 1.6em;
-}
-
-#block-menu-block-govcms-menu-block-sidebar .menu-block-wrapper > ul > li > ul > li > ul > li > a {
-  padding-left: 2.4em;
-}
-
-#block-menu-block-govcms-menu-block-sidebar ul.menu {
+#block-menu-block-left-nav ul.menu {
   margin: 0;
   padding: 0;
 }
 
-#block-menu-block-govcms-menu-block-sidebar ul.menu.menu-closed {
+#block-menu-block-left-nav ul.menu.menu-closed {
   display: none;
 }
 
-#block-menu-block-govcms-menu-block-sidebar ul.menu li {
+#block-menu-block-left-nav ul.menu li {
   position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
-  border-bottom: 1px solid #bbbbbb;
 }
 
-#block-menu-block-govcms-menu-block-sidebar ul.menu li:first-child {
-  border-top: 1px solid #bbbbbb;
-}
-
-#block-menu-block-govcms-menu-block-sidebar ul.menu li:last-child {
-  border-bottom: 0;
-}
-
-#block-menu-block-govcms-menu-block-sidebar ul.menu li a {
-  color: #444449;
+#block-menu-block-left-nav ul.menu li a {
+  color: #4E1A74;
   width: 100%;
   display: inline-block;
   box-sizing: border-box;
   padding-top: 0.8125rem;
   padding-bottom: 0.8125rem;
   padding-right: 2.1875rem;
-  border-left: 4px solid transparent;
   border-bottom: 0;
+  text-decoration: none;
 }
 
-#block-menu-block-govcms-menu-block-sidebar ul.menu li a:hover, #block-menu-block-govcms-menu-block-sidebar ul.menu li a:focus {
-  border-left-color: #268126;
+#block-menu-block-left-nav ul.menu li a:hover, #block-menu-block-left-nav ul.menu li a:focus {
   background-color: #def4f9;
 }
 
-#block-menu-block-govcms-menu-block-sidebar ul.menu li button.sidebar-toggle-menu {
+#block-menu-block-left-nav ul.menu li button.sidebar-toggle-menu {
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
@@ -10537,16 +10517,45 @@ body.not-front #content .view .pager {
   position: absolute;
   right: 0;
   top: 0;
+  border-radius: 0;
 }
 
-#block-menu-block-govcms-menu-block-sidebar ul.menu li button.sidebar-toggle-menu:hover, #block-menu-block-govcms-menu-block-sidebar ul.menu li button.sidebar-toggle-menu:focus {
+#block-menu-block-left-nav ul.menu li button.sidebar-toggle-menu:hover, #block-menu-block-left-nav ul.menu li button.sidebar-toggle-menu:focus {
   background-image: url(../images/svg/sidebar-arrow-down-hover.svg);
   background-color: #def4f9;
+  box-shadow: none;
 }
 
-#block-menu-block-govcms-menu-block-sidebar ul.menu li button.sidebar-toggle-menu.menu-closed {
+#block-menu-block-left-nav ul.menu li button.sidebar-toggle-menu.menu-closed {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
+}
+
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > a {
+  color: #333333;
+  font-weight: 600;
+  padding-left: 1.5625rem;
+}
+
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul {
+  border-top: 2px solid #444449;
+}
+
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li {
+  background-color: #F5F5F5;
+}
+
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > a {
+  padding-left: 2.8125rem;
+}
+
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > ul {
+  background-color: white;
+  border-top: 2px solid #E6E6E6;
+}
+
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > ul > li > a {
+  padding-left: 2.8125rem;
 }
 
 #block-views-related-content-block {
