@@ -210,36 +210,42 @@ function arpansa_theme_form_alter(&$form, &$form_state, $form_id) {
  */
 function get_fact_sheet_assigned_tags($raw_query = FALSE) {
   $tags = array();
-  // "Raw" db_query(...) mode seems faster than dynamic Drupal query builder.
-  if ($raw_query === TRUE) {
-    $fact_sheet_tags = db_query("
-      SELECT DISTINCT ttd.tid, ttd.name
-      FROM taxonomy_term_data ttd
-      JOIN taxonomy_index ti ON ti.tid = ttd.tid
-      JOIN node n ON n.nid = ti.nid AND n.type = 'page' AND n.`status` = 1
-      JOIN field_data_field_page_type pt ON pt.entity_id = n.nid
-      JOIN taxonomy_term_data ttd_2 ON ttd_2.tid = pt.field_page_type_tid AND ttd_2.name = 'Fact Sheet'
-      WHERE ttd.vid = 1
-      ORDER BY ttd.`name`
-    ");
-  }
-  else {
-    $query = db_select('taxonomy_term_data', 'ttd')
-      ->distinct()
-      ->fields('ttd', array('tid', 'name'))
-      ->condition('ttd.vid', 1, '=')
-      ->orderBy('ttd.`name`');
-    $query->join('taxonomy_index', 'ti', 'ti.tid = ttd.tid');
-    $query->join('node', 'n', "n.nid = ti.nid AND n.type = 'page' AND n.`status` = 1");
-    $query->join('field_data_field_page_type', 'pt', 'pt.entity_id = n.nid');
-    $query->join('taxonomy_term_data', 'ttd_2', "ttd_2.tid = pt.field_page_type_tid AND ttd_2.name = 'Fact Sheet'");
 
-    $fact_sheet_tags = $query->execute();
-  }
+  // Obtain vocabulary ID (vid) via its machine name.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('tags');
 
-  if (count($fact_sheet_tags)) {
-    foreach ($fact_sheet_tags as $tag) {
-      $tags[$tag->tid] = $tag->name;
+  if (!empty($vocabulary->vid)) {
+    // "Raw" db_query(...) mode seems faster than dynamic Drupal query builder.
+    if ($raw_query === TRUE) {
+      $fact_sheet_tags = db_query("
+        SELECT DISTINCT ttd.tid, ttd.name
+        FROM taxonomy_term_data ttd
+        JOIN taxonomy_index ti ON ti.tid = ttd.tid
+        JOIN node n ON n.nid = ti.nid AND n.type = 'page' AND n.`status` = 1
+        JOIN field_data_field_page_type pt ON pt.entity_id = n.nid AND pt.revision_id = n.vid
+        JOIN taxonomy_term_data ttd_2 ON ttd_2.tid = pt.field_page_type_tid AND ttd_2.name = 'Fact Sheet'
+        WHERE ttd.vid = " . (int) $vocabulary->vid . "
+        ORDER BY ttd.`name`
+      ");
+    }
+    else {
+      $query = db_select('taxonomy_term_data', 'ttd')
+        ->distinct()
+        ->fields('ttd', array('tid', 'name'))
+        ->condition('ttd.vid', (int) $vocabulary->vid, '=')
+        ->orderBy('ttd.`name`');
+      $query->join('taxonomy_index', 'ti', 'ti.tid = ttd.tid');
+      $query->join('node', 'n', "n.nid = ti.nid AND n.type = 'page' AND n.`status` = 1");
+      $query->join('field_data_field_page_type', 'pt', 'pt.entity_id = n.nid AND pt.revision_id = n.vid');
+      $query->join('taxonomy_term_data', 'ttd_2', "ttd_2.tid = pt.field_page_type_tid AND ttd_2.name = 'Fact Sheet'");
+
+      $fact_sheet_tags = $query->execute();
+    }
+
+    if (count($fact_sheet_tags)) {
+      foreach ($fact_sheet_tags as $tag) {
+        $tags[$tag->tid] = $tag->name;
+      }
     }
   }
 
