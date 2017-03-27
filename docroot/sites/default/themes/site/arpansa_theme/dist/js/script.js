@@ -203,8 +203,8 @@ var desktop_column = 1170;
   }
 
   function add_toggle_buttons() {
-    // Only add buttons to first level of menu items.
-    $widget.find('.menu-block-wrapper > ul > li').each(function(idx) {
+    // Only add buttons to first and second level of menu items.
+    $widget.find('.menu-block-wrapper > ul > li, .menu-block-wrapper > ul > li > ul > li').each(function(idx) {
       var $list_item = $(this);
       var $sub_menu = $list_item.children('ul.menu');
       if ($sub_menu.length > 0) {
@@ -263,7 +263,6 @@ var desktop_column = 1170;
     if (w < large_tablet_breakpoint && is_menu_desktop) {
       // Disable menu toggles.
       is_menu_desktop = false;
-      remove_toggle_buttons();
       enable_mobile_accordion();
     }
     // Desktop (Toggles).
@@ -276,11 +275,16 @@ var desktop_column = 1170;
 
   Drupal.behaviors.govcms_ui_kit_sidebar = {
     attach: function(context, settings) {
-      $widget = $('#block-menu-block-govcms-menu-block-sidebar', context);
+      $widget = $('#block-menu-block-left-nav', context);
       if ($widget.length > 0) {
         add_toggle_buttons();
         $(window).unbind('resize', side_menu_responsive).bind('resize', side_menu_responsive);
         side_menu_responsive();
+
+        if (is_menu_desktop) {
+          // Collapse all menu items on desktop.
+          $('.menu-block-wrapper .sidebar-toggle-menu').click();
+        }
       }
     }
   };

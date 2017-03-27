@@ -1323,3 +1323,14 @@ function arpansa_base_update_7059() {
   salsa_helpers_enable_module('arpansa_review_content');
   salsa_helpers_features_revert('arpansa_review_content');
 }
+
+
+/**
+ * Modify left nav block title [ARPANSA-41].
+ */
+function arpansa_base_update_7060() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_enable_module('arpansa_entity');
+  salsa_helpers_features_revert('arpansa_entity');
+}

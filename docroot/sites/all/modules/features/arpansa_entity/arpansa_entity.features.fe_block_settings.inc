@@ -33,7 +33,7 @@ function arpansa_entity_default_fe_block_settings() {
         'weight' => -34,
       ),
     ),
-    'title' => '<none>',
+    'title' => 'In this section',
     'visibility' => 0,
   );
 
