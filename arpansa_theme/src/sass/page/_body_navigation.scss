@@ -1,0 +1,31 @@
+// =========================================================
+// PAGE RELATED CONTENT
+// =========================================================
+#block-views-related-content-block {
+  border-radius: 4px;
+  border: 2px solid $box_purple_border_1;
+  background-color: $box_purple_background_1;
+  padding: 25px;
+  h2 {
+    color: $primary_1;
+    font-weight: 600;
+    font-size: em(16px);
+    margin: 0 0 20px;
+  }
+  .content {
+    margin-left: 15px;
+    .view-content {
+      .views-row {
+        background: transparent url(../images/svg/chevron-right-green.svg) 0 8px no-repeat;
+        margin-right: 0;
+        margin-bottom: 5px;
+        padding-left: 15px;
+        min-width: 100%;
+        @include link-colours($secondary_1, $primary_1, white);
+        a {
+          font-size: em(14px);
+        }
+      }
+    }
+  }
+}
