@@ -205,11 +205,13 @@ $menu_padding: rem(30px);
         display: block;
         font-weight: 600;
         font-size: rem(18);
-        text-transform: uppercase;
         text-decoration: none;
         padding-top: $default_padding / 2;
         padding-bottom: $default_padding / 2;
         color: white;
+        background-image: url(../images/svg/white_right_arrow.svg);
+        background-repeat: no-repeat;
+        background-position: right rem(30px) center;
         &:hover, &:focus {
           color: white;
           background-color: $main_menu_hover_2;
@@ -219,10 +221,16 @@ $menu_padding: rem(30px);
         a {
           color: white;
           background-color: $secondary_1;
+          background-image: none;
           &:hover, &:focus {
             color: white;
             background-color: $secondary_1;
           }
+        }
+      }
+      &.first {
+        a {
+          background-image: none;
         }
       }
     }
