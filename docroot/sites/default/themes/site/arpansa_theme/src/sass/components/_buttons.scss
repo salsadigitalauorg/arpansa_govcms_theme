@@ -9,3 +9,21 @@ button, .button, [role='button'], [type='submit'], [type='reset'], [type='button
     box-shadow: none;
   }
 }
+
+@mixin purple_button() {
+  @extend %base-button;
+  background-color: $secondary_1;
+  border-radius: $border-radius;
+  border: none;
+  font-weight: 400;
+  height: em(30px);
+  line-height: em(30px);
+  color: white;
+  text-decoration: none;
+  &:hover, &:focus {
+    box-shadow: 0 5px 10px $neutral_1;
+  }
+  &:active {
+    box-shadow: none;
+  }
+}
