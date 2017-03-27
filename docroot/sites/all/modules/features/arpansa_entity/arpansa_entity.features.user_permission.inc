@@ -2846,6 +2846,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2895,6 +2896,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2908,6 +2910,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2921,6 +2924,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2943,6 +2947,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished footer_teaser content'] = array(
     'name' => 'view any unpublished footer_teaser content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -2955,6 +2960,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'authenticated user' => 'authenticated user',
     ),
@@ -2965,6 +2971,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished literature_survey content'] = array(
     'name' => 'view any unpublished literature_survey content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'view_unpublished',
@@ -2984,6 +2991,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished news_article content'] = array(
     'name' => 'view any unpublished news_article content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -2994,6 +3002,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished page content'] = array(
     'name' => 'view any unpublished page content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -3014,6 +3023,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished slide content'] = array(
     'name' => 'view any unpublished slide content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -3024,6 +3034,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished webform content'] = array(
     'name' => 'view any unpublished webform content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -3122,6 +3133,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -3159,6 +3171,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
