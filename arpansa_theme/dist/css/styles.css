@@ -7651,11 +7651,13 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
   display: block;
   font-weight: 600;
   font-size: 1.125rem;
-  text-transform: uppercase;
   text-decoration: none;
   padding-top: 0.6875rem;
   padding-bottom: 0.6875rem;
   color: white;
+  background-image: url(../images/svg/white_right_arrow.svg);
+  background-repeat: no-repeat;
+  background-position: right 1.875rem center;
 }
 
 .mobile-nav ul.links li a:hover, .mobile-nav ul.links li a:focus {
@@ -7666,11 +7668,16 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 .mobile-nav ul.links li.active a {
   color: white;
   background-color: #4E1A74;
+  background-image: none;
 }
 
 .mobile-nav ul.links li.active a:hover, .mobile-nav ul.links li.active a:focus {
   color: white;
   background-color: #4E1A74;
+}
+
+.mobile-nav ul.links li.first a {
+  background-image: none;
 }
 
 html.large-fonts {
