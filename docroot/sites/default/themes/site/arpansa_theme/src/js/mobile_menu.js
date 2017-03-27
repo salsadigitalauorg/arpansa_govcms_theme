@@ -50,6 +50,11 @@
         $button.unbind('click', toggle_menu).bind('click', toggle_menu);
         $(window).unbind('resize', menu_bar_resize).bind('resize', menu_bar_resize);
         menu_bar_resize();
+
+        // Copy top header menu to main menu and hide on desktop.
+        var top_header = $('#secondary-menu li', context);
+        top_header.removeClass('first').removeClass('last').addClass('show-on-mobile');
+        $('#mobile-nav ul', context).append(top_header);
       }
     }
   };
