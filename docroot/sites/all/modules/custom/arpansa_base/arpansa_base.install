@@ -1313,3 +1313,13 @@ function arpansa_base_update_7058() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Add Content Review workbench tab and reminder rule [ARPANSA-66].
+ */
+function arpansa_base_update_7059() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_enable_module('arpansa_review_content');
+  salsa_helpers_features_revert('arpansa_review_content');
+}
