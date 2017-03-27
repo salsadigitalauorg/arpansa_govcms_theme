@@ -152,7 +152,7 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['filters']['field_tags_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_tags_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_tags_tid']['expose']['operator_id'] = 'field_tags_tid_op';
-  $handler->display->display_options['filters']['field_tags_tid']['expose']['label'] = 'Tags (field_tags)';
+  $handler->display->display_options['filters']['field_tags_tid']['expose']['label'] = 'Tags';
   $handler->display->display_options['filters']['field_tags_tid']['expose']['operator'] = 'field_tags_tid_op';
   $handler->display->display_options['filters']['field_tags_tid']['expose']['identifier'] = 'field_tags_tid';
   $handler->display->display_options['filters']['field_tags_tid']['expose']['remember_roles'] = array(
