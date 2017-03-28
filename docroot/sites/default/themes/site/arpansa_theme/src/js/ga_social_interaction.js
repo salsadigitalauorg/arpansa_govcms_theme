@@ -1,6 +1,6 @@
 /**
  * @file
- * ga_social_intercation.js
+ * ga_social_interaction.js
  *
  * Custom script to track Social interactions with GA.
  */
@@ -20,6 +20,9 @@
         }
         else if ($(this).hasClass('service-links-google-plus')) {
           $service = 'Google Plus';
+        }
+        else if ($(this).hasClass('service-links-email')) {
+          $service = 'Email';
         }
         if ($service != '') {
           ga('send', 'social', $service, 'share', $(document).attr('location').href);
