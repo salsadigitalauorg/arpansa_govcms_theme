@@ -721,6 +721,8 @@ function arpansa_entity_views_default_views() {
   /* Display: RSS */
   $handler = $view->new_display('feed', 'RSS', 'feed_whats_new');
   $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
   $handler->display->display_options['row_plugin'] = 'rss_fields';
