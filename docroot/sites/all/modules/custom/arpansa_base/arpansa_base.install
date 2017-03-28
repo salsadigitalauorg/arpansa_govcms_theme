@@ -1425,3 +1425,12 @@ function arpansa_base_update_7065() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Configure GA [ARPANSA-32].
+ */
+function arpansa_base_update_7066() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
