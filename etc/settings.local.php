@@ -30,6 +30,8 @@ $conf['preprocess_js'] = FALSE;
 $conf['advagg_enabled'] = FALSE;
 $conf['securepages_enable'] = FALSE;
 
+$conf['googleanalytics_account'] = 'UA-96320824-1';
+
 $conf['stage_file_proxy_origin'] = 'http://arpansavm9ajsxwbj.devcloud.acquia-sites.com/';
 $conf['file_private_path'] = 'sites/default/files';
 $conf['file_temporary_path'] = '/tmp';
