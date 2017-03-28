@@ -1387,6 +1387,17 @@ function arpansa_base_update_7063() {
   );
   salsa_helpers_lock_features($govCMSFeatures, TRUE);
 
+  if (!user_role_load_by_name('Preview user')) {
+    if ($previewRole = user_role_load_by_name("")) {
+      $previewRole->name = 'Preview user';
+    }
+    else {
+      $previewRole = new stdClass();
+      $previewRole->name = 'Preview user';
+    }
+    user_role_save($previewRole);
+  }
+
   foreach ($govCMSFeatures as $govCMSFeature) {
     salsa_helpers_features_revert($govCMSFeature);
   }
