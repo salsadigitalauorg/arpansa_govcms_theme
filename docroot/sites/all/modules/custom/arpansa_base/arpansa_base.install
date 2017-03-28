@@ -1411,7 +1411,7 @@ function arpansa_base_update_7063() {
 /**
  * Remove and re-add Date of Publication sort criteria [ARPANSA-80].
  */
-function arpansa_base_update_7063() {
+function arpansa_base_update_7064() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
