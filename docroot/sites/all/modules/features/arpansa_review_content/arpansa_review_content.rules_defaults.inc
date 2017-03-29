@@ -28,8 +28,8 @@ function arpansa_review_content_default_rules_configuration() {
             "DO" : [
               { "mail" : {
                   "to" : "website@arpansa.gov.au",
-                  "subject" : "The page \\u0022[list-item:title]\\u0022 needs to be reviewed",
-                  "message" : "The below page is due to be reviewed.\\r\\n\\r\\nTitle: [list-item:title]\\r\\nAuthored by: [list-item:field-authored-by]\\r\\nURL: [list-item:url]",
+                  "subject" : "Website page review - [list-item:title]",
+                  "message" : "A website page is due for review.\\r\\n\\r\\nTitle: [list-item:title]\\r\\nURL: [list-item:url]\\r\\nReviewed Date: [list-item:field-reviewed-date]\\r\\nAuthored by: [list-item:field-authored-by]",
                   "language" : [ "" ]
                 }
               }
