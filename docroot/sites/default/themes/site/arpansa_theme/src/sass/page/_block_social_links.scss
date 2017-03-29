@@ -16,7 +16,8 @@
       margin-right: rem(10px);
       margin-bottom: rem(10px);
       display: block;
-      font-size: rem(16px);
+      font-size: rem(24px);
+      font-weight: 400;
       @include breakpoint(tablet) {
         display: inline;
         margin-bottom: 0;
