@@ -57,14 +57,9 @@ function govcms_consultation_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'node_link' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Learn more',
-        'wrapper' => '',
+        'link' => '1',
+        'wrapper' => 'h2',
         'class' => '',
       ),
     ),
