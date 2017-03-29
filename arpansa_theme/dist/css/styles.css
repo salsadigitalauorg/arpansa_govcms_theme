@@ -10108,6 +10108,10 @@ ul.tabs.primary {
   box-shadow: none;
 }
 
+.node.node-news-article .field-type-taxonomy-term-reference {
+  display: none;
+}
+
 body.not-front #content .no-sidebar .view {
   max-width: 73.125rem;
   margin-left: auto;
