@@ -1457,3 +1457,21 @@ function arpansa_base_update_7067() {
 
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Configure career's display [ARPANSA-55].
+ */
+function arpansa_base_update_7068() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
+ * Update content review reminder email [ARPANSA-66].
+ */
+function arpansa_base_update_7069() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
