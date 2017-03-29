@@ -11307,7 +11307,8 @@ body.not-front #content .view .pager {
   margin-right: 0.625rem;
   margin-bottom: 0.625rem;
   display: block;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 @media (min-width: 768px) {
