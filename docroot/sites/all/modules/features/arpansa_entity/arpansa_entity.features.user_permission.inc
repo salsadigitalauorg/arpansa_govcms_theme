@@ -154,6 +154,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
     'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'media',
@@ -581,6 +586,8 @@ function arpansa_entity_user_default_permissions() {
   $permissions['administer media browser'] = array(
     'name' => 'administer media browser',
     'roles' => array(
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'media',
