@@ -51,6 +51,7 @@
     font-size: em(24px);
     line-height: em(33px);
     font-family: $type-heading-primary;
+    text-align: center;
     @include breakpoint(tablet) {
       padding-top: $default_padding * 2;
       padding-bottom: rem(50px);

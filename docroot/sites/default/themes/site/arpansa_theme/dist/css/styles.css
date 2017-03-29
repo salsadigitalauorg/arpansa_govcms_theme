@@ -8916,6 +8916,7 @@ ul.tabs.primary {
   font-size: 1.5em;
   line-height: 2.0625em;
   font-family: "Source Sans Pro", sans-serif, Arial;
+  text-align: center;
 }
 
 .panels-ipe-sort-container .bean-basic-content > .content a, .pane-bean-panels .bean-basic-content > .content a {
