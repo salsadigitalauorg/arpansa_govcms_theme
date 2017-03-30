@@ -101,9 +101,8 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
-      $content['field_image']['#label_display']='hidden';
+      hide($content['field_image']);
 
-      print render ($content['field_image']);
       print render ($content['body']);
     ?>
   </div>
