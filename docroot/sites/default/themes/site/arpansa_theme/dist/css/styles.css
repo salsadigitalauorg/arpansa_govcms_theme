@@ -259,7 +259,7 @@ Usage:
 main > article .see-more::after, footer[role='contentinfo'] .see-more::after, .list-horizontal .tags .see-more::after, .list-vertical .tags .see-more::after, .list-vertical--thirds .tags .see-more::after, .list-vertical--fourths .tags .see-more::after, .list-small .tags .see-more::after, .list-highlighted .tags .see-more::after, .primary-nav ul .see-more::after,
 .local-nav ul .see-more::after, [class^='breadcrumbs'] .see-more::after, [class^='breadcrumbs'][class$='--inverted'] .see-more::after, .skip-to .see-more::after, [class^='controls'] .see-more::after, .govau--header .see-more::after, .prerelease-govau--header .see-more::after, .hero .see-more::after,
 .hero-sml .see-more::after,
-.hero-med .see-more::after, .header__inner .header__secondary-menu a .see-more::after, .content-body .content a .see-more::after, .region-footer .block-menu .content ul.menu > li .see-more::after, .region-footer .block-menu-block .content ul.menu > li .see-more::after, .panels-ipe-sort-container .bean-basic-content > .content .see-more::after, .pane-bean-panels .bean-basic-content > .content .see-more::after, .panel-promo .view-content .views-row h2 .see-more::after, .panel-promo .view-content .views-row .display .see-more::after, #block-views-slideshow-block .banner-description-holder h3 .see-more::after, #block-views-slideshow-block .banner-description-holder .field .see-more::after, .view-home-page-blog-articles .view-content .views-row h2 .see-more::after, .view-home-page-blog-articles .view-content .views-row .display .see-more::after, .view-latest-news .view-content .views-row h2 .see-more::after, .view-latest-news .view-content .views-row .display .see-more::after, .view-homepage-what-s-new .view-content .views-row h2 .see-more::after, .view-homepage-what-s-new .view-content .views-row .display .see-more::after, body.not-front #content .view .view-content .views-row h2 .see-more::after, body.not-front #content .view .view-content .views-row .display .see-more::after, #block-views-related-content-block .content .view-content .views-row .see-more::after, #block-menu-menu-quick-links ul.menu li .see-more::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 .see-more::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display .see-more::after {
+.hero-med .see-more::after, .header__inner .header__secondary-menu .see-more::after, .content-body .content .see-more::after, .region-footer .block-menu .content ul.menu > li .see-more::after, .region-footer .block-menu-block .content ul.menu > li .see-more::after, .panels-ipe-sort-container .bean-basic-content > .content .see-more::after, .pane-bean-panels .bean-basic-content > .content .see-more::after, .panel-promo .view-content .views-row h2 .see-more::after, .panel-promo .view-content .views-row .display .see-more::after, #block-views-slideshow-block .banner-description-holder h3 .see-more::after, #block-views-slideshow-block .banner-description-holder .field .see-more::after, .view-home-page-blog-articles .view-content .views-row h2 .see-more::after, .view-home-page-blog-articles .view-content .views-row .display .see-more::after, .view-latest-news .view-content .views-row h2 .see-more::after, .view-latest-news .view-content .views-row .display .see-more::after, .view-homepage-what-s-new .view-content .views-row h2 .see-more::after, .view-homepage-what-s-new .view-content .views-row .display .see-more::after, body.not-front #content .view .view-content .views-row h2 .see-more::after, body.not-front #content .view .view-content .views-row .display .see-more::after, #block-views-related-content-block .content .view-content .views-row .see-more::after, #block-menu-menu-quick-links ul.menu li .see-more::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 .see-more::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display .see-more::after {
   background-image: url("../latest/img/icons/arrow-right--aqua.svg");
 }
 
@@ -279,7 +279,7 @@ summary::before, .accordion--controls summary::before, .nav-toggle::before {
 main > article a[rel~='external']::after, footer[role='contentinfo'] a[rel~='external']::after, .list-horizontal .tags a[rel~='external']::after, .list-vertical .tags a[rel~='external']::after, .list-vertical--thirds .tags a[rel~='external']::after, .list-vertical--fourths .tags a[rel~='external']::after, .list-small .tags a[rel~='external']::after, .list-highlighted .tags a[rel~='external']::after, .primary-nav ul a[rel~='external']::after,
 .local-nav ul a[rel~='external']::after, [class^='breadcrumbs'] a[rel~='external']::after, [class^='breadcrumbs'][class$='--inverted'] a[rel~='external']::after, .skip-to a[rel~='external']::after, [class^='controls'] a[rel~='external']::after, .govau--header a[rel~='external']::after, .prerelease-govau--header a[rel~='external']::after, .hero a[rel~='external']::after,
 .hero-sml a[rel~='external']::after,
-.hero-med a[rel~='external']::after, .header__inner .header__secondary-menu a a[rel~='external']::after, .content-body .content a a[rel~='external']::after, .region-footer .block-menu .content ul.menu > li a[rel~='external']::after, .region-footer .block-menu-block .content ul.menu > li a[rel~='external']::after, .panels-ipe-sort-container .bean-basic-content > .content a[rel~='external']::after, .pane-bean-panels .bean-basic-content > .content a[rel~='external']::after, .panel-promo .view-content .views-row h2 a[rel~='external']::after, .panel-promo .view-content .views-row .display a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder h3 a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder .field a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row h2 a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row .display a[rel~='external']::after, .view-latest-news .view-content .views-row h2 a[rel~='external']::after, .view-latest-news .view-content .views-row .display a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row h2 a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row .display a[rel~='external']::after, body.not-front #content .view .view-content .views-row h2 a[rel~='external']::after, body.not-front #content .view .view-content .views-row .display a[rel~='external']::after, #block-views-related-content-block .content .view-content .views-row a[rel~='external']::after, #block-menu-menu-quick-links ul.menu li a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a[rel~='external']::after {
+.hero-med a[rel~='external']::after, .header__inner .header__secondary-menu a[rel~='external']::after, .content-body .content a[rel~='external']::after, .region-footer .block-menu .content ul.menu > li a[rel~='external']::after, .region-footer .block-menu-block .content ul.menu > li a[rel~='external']::after, .panels-ipe-sort-container .bean-basic-content > .content a[rel~='external']::after, .pane-bean-panels .bean-basic-content > .content a[rel~='external']::after, .panel-promo .view-content .views-row h2 a[rel~='external']::after, .panel-promo .view-content .views-row .display a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder h3 a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder .field a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row h2 a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row .display a[rel~='external']::after, .view-latest-news .view-content .views-row h2 a[rel~='external']::after, .view-latest-news .view-content .views-row .display a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row h2 a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row .display a[rel~='external']::after, body.not-front #content .view .view-content .views-row h2 a[rel~='external']::after, body.not-front #content .view .view-content .views-row .display a[rel~='external']::after, #block-views-related-content-block .content .view-content .views-row a[rel~='external']::after, #block-menu-menu-quick-links ul.menu li a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a[rel~='external']::after {
   background-image: url("../latest/img/icons/external-link--aqua.svg");
 }
 
@@ -2078,7 +2078,7 @@ Style guide: Link styles.1 Hover links
 main > article a[rel~='external']::after, footer[role='contentinfo'] a[rel~='external']::after, .list-horizontal .tags a[rel~='external']::after, .list-vertical .tags a[rel~='external']::after, .list-vertical--thirds .tags a[rel~='external']::after, .list-vertical--fourths .tags a[rel~='external']::after, .list-small .tags a[rel~='external']::after, .list-highlighted .tags a[rel~='external']::after, .primary-nav ul a[rel~='external']::after,
 .local-nav ul a[rel~='external']::after, [class^='breadcrumbs'] a[rel~='external']::after, [class^='breadcrumbs'][class$='--inverted'] a[rel~='external']::after, .skip-to a[rel~='external']::after, [class^='controls'] a[rel~='external']::after, .govau--header a[rel~='external']::after, .prerelease-govau--header a[rel~='external']::after, .hero a[rel~='external']::after,
 .hero-sml a[rel~='external']::after,
-.hero-med a[rel~='external']::after, .header__inner .header__secondary-menu a a[rel~='external']::after, .content-body .content a a[rel~='external']::after, .region-footer .block-menu .content ul.menu > li a[rel~='external']::after, .region-footer .block-menu-block .content ul.menu > li a[rel~='external']::after, .panels-ipe-sort-container .bean-basic-content > .content a[rel~='external']::after, .pane-bean-panels .bean-basic-content > .content a[rel~='external']::after, .panel-promo .view-content .views-row h2 a[rel~='external']::after, .panel-promo .view-content .views-row .display a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder h3 a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder .field a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row h2 a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row .display a[rel~='external']::after, .view-latest-news .view-content .views-row h2 a[rel~='external']::after, .view-latest-news .view-content .views-row .display a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row h2 a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row .display a[rel~='external']::after, body.not-front #content .view .view-content .views-row h2 a[rel~='external']::after, body.not-front #content .view .view-content .views-row .display a[rel~='external']::after, #block-views-related-content-block .content .view-content .views-row a[rel~='external']::after, #block-menu-menu-quick-links ul.menu li a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a[rel~='external']::after {
+.hero-med a[rel~='external']::after, .header__inner .header__secondary-menu a[rel~='external']::after, .content-body .content a[rel~='external']::after, .region-footer .block-menu .content ul.menu > li a[rel~='external']::after, .region-footer .block-menu-block .content ul.menu > li a[rel~='external']::after, .panels-ipe-sort-container .bean-basic-content > .content a[rel~='external']::after, .pane-bean-panels .bean-basic-content > .content a[rel~='external']::after, .panel-promo .view-content .views-row h2 a[rel~='external']::after, .panel-promo .view-content .views-row .display a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder h3 a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder .field a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row h2 a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row .display a[rel~='external']::after, .view-latest-news .view-content .views-row h2 a[rel~='external']::after, .view-latest-news .view-content .views-row .display a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row h2 a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row .display a[rel~='external']::after, body.not-front #content .view .view-content .views-row h2 a[rel~='external']::after, body.not-front #content .view .view-content .views-row .display a[rel~='external']::after, #block-views-related-content-block .content .view-content .views-row a[rel~='external']::after, #block-menu-menu-quick-links ul.menu li a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a[rel~='external']::after {
   content: '';
   position: absolute;
   display: inline;
@@ -6956,9 +6956,6 @@ img {
 
 .header__inner .header__secondary-menu {
   display: none;
-}
-
-.header__inner .header__secondary-menu a {
   color: #4E1A74;
   /*
   See more link
@@ -7016,13 +7013,9 @@ img {
 
   Style guide: Link styles.3 Placeholder links
   */
-  border: none;
-  text-decoration: underline;
-  border-color: #4E1A74;
-  outline: inherit;
 }
 
-.header__inner .header__secondary-menu a a {
+.header__inner .header__secondary-menu a {
   color: #4E1A74;
   text-decoration: none;
   outline: none;
@@ -7032,26 +7025,26 @@ img {
   transition-property: background-color, border-color, color;
 }
 
-.header__inner .header__secondary-menu a a:hover, .header__inner .header__secondary-menu a a:focus {
+.header__inner .header__secondary-menu a:hover, .header__inner .header__secondary-menu a:focus {
   background-color: transparent;
   color: #298829;
 }
 
-.header__inner .header__secondary-menu a a[rel~='external'] {
+.header__inner .header__secondary-menu a[rel~='external'] {
   display: inline;
   position: relative;
   margin-right: 1.6em;
 }
 
-.header__inner .header__secondary-menu a a[rel~='external']:hover {
+.header__inner .header__secondary-menu a[rel~='external']:hover {
   border-color: transparent;
 }
 
-.header__inner .header__secondary-menu a a[rel~='external']::after {
+.header__inner .header__secondary-menu a[rel~='external']::after {
   background-size: 0.9em auto;
 }
 
-.header__inner .header__secondary-menu a .see-more {
+.header__inner .header__secondary-menu .see-more {
   display: inline-block;
   position: relative;
   margin-right: 1.6em;
@@ -7059,7 +7052,7 @@ img {
   color: #18788d;
 }
 
-.header__inner .header__secondary-menu a .see-more::after {
+.header__inner .header__secondary-menu .see-more::after {
   content: '';
   position: absolute;
   top: 0;
@@ -7072,18 +7065,25 @@ img {
   background-size: 0.64em auto;
 }
 
-.header__inner .header__secondary-menu a .see-more:hover, .header__inner .header__secondary-menu a .see-more:focus {
+.header__inner .header__secondary-menu .see-more:hover, .header__inner .header__secondary-menu .see-more:focus {
   color: #298829;
 }
 
-.header__inner .header__secondary-menu a span.placeholder-link {
+.header__inner .header__secondary-menu span.placeholder-link {
   color: rgba(78, 26, 116, 0.7);
   border-bottom: none;
   cursor: not-allowed;
 }
 
-.header__inner .header__secondary-menu a span.placeholder-link:hover {
+.header__inner .header__secondary-menu span.placeholder-link:hover {
   cursor: not-allowed;
+}
+
+.header__inner .header__secondary-menu a {
+  border: none;
+  text-decoration: underline;
+  border-color: #4E1A74;
+  outline: inherit;
 }
 
 .header__inner .header__secondary-menu a:hover, .header__inner .header__secondary-menu a:focus {
@@ -7783,10 +7783,6 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
 }
 
 .content-body .content {
-  color: #444449;
-}
-
-.content-body .content a {
   color: #4E1A74;
   /*
   See more link
@@ -7844,13 +7840,10 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
 
   Style guide: Link styles.3 Placeholder links
   */
-  border: none;
-  text-decoration: underline;
-  border-color: #4E1A74;
-  outline: inherit;
+  color: #444449;
 }
 
-.content-body .content a a {
+.content-body .content a {
   color: #4E1A74;
   text-decoration: none;
   outline: none;
@@ -7860,26 +7853,26 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
   transition-property: background-color, border-color, color;
 }
 
-.content-body .content a a:hover, .content-body .content a a:focus {
+.content-body .content a:hover, .content-body .content a:focus {
   background-color: transparent;
   color: #298829;
 }
 
-.content-body .content a a[rel~='external'] {
+.content-body .content a[rel~='external'] {
   display: inline;
   position: relative;
   margin-right: 1.6em;
 }
 
-.content-body .content a a[rel~='external']:hover {
+.content-body .content a[rel~='external']:hover {
   border-color: transparent;
 }
 
-.content-body .content a a[rel~='external']::after {
+.content-body .content a[rel~='external']::after {
   background-size: 0.9em auto;
 }
 
-.content-body .content a .see-more {
+.content-body .content .see-more {
   display: inline-block;
   position: relative;
   margin-right: 1.6em;
@@ -7887,7 +7880,7 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
   color: #18788d;
 }
 
-.content-body .content a .see-more::after {
+.content-body .content .see-more::after {
   content: '';
   position: absolute;
   top: 0;
@@ -7900,18 +7893,25 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
   background-size: 0.64em auto;
 }
 
-.content-body .content a .see-more:hover, .content-body .content a .see-more:focus {
+.content-body .content .see-more:hover, .content-body .content .see-more:focus {
   color: #298829;
 }
 
-.content-body .content a span.placeholder-link {
+.content-body .content span.placeholder-link {
   color: rgba(78, 26, 116, 0.7);
   border-bottom: none;
   cursor: not-allowed;
 }
 
-.content-body .content a span.placeholder-link:hover {
+.content-body .content span.placeholder-link:hover {
   cursor: not-allowed;
+}
+
+.content-body .content a {
+  border: none;
+  text-decoration: underline;
+  border-color: #4E1A74;
+  outline: inherit;
 }
 
 .content-body .content a:hover, .content-body .content a:focus {
@@ -9284,6 +9284,12 @@ ul.tabs.primary {
   line-height: 1.75em;
 }
 
+@media (min-width: 768px) {
+  .panel-promo .view-content .views-row a.readmore {
+    display: none;
+  }
+}
+
 #block-views-slideshow-block > h2, #block-views-slideshow-block > .display {
   border: 0;
   clip: rect(0 0 0 0);
@@ -10152,6 +10158,10 @@ ul.tabs.primary {
 
 #block-menu-block-landing-page-children-listing .node-teaser .field-name-node-link a:active {
   box-shadow: none;
+}
+
+.node.node-news-article .field-type-taxonomy-term-reference {
+  display: none;
 }
 
 .page-node .content-body-inner.no-sidebar .region-content .node.node-career > .content {
