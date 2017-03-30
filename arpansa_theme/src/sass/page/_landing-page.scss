@@ -21,13 +21,24 @@
       width: 100%;
     }
     h2 {
+      @include listing-component-heading;
+      @include link-colours($primary_1, $secondary_3, $neutral_1);
       margin-top: 0;
+      a {
+        border: none;
+      }
     }
     .field-name-node-link {
       a {
         @include right-arrow-button;
         @include purple_button;
       }
+    }
+    .field-type-datetime {
+      display: none;
+    }
+    &:nth-child(2n) {
+      margin-right: 0;
     }
   }
 }
