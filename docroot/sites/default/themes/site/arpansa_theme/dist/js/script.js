@@ -320,11 +320,7 @@ var desktop_column = 1170;
         add_toggle_buttons();
         $(window).unbind('resize', side_menu_responsive).bind('resize', side_menu_responsive);
         side_menu_responsive();
-
-        if (is_menu_desktop) {
-          // Collapse all menu items on desktop.
-          $('.menu-block-wrapper .sidebar-toggle-menu').click();
-        }
+        $('.menu-block-wrapper .sidebar-toggle-menu').click();
       }
     }
   };
