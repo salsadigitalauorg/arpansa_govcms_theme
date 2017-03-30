@@ -1,7 +1,7 @@
 // =========================================================
 // GENERAL FOOTER MENUS
 // =========================================================
-.region-footer {
+#footer {
   background-color: $primary_1;
   background-image: linear-gradient(90deg, #298829 0%, #4E1A74 93%);
   background-repeat: repeat-y;
@@ -71,6 +71,80 @@
             ul {
               padding-left: $default_padding;
               margin-top: $default_padding;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.region-bottom-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  .region-bottom {
+    @include center-column($desktop_column);
+    display: block;
+    align-items: center;
+    color: white;
+    padding-top: rem(38px);
+    padding-bottom: rem(38px);
+    @include breakpoint(desktop) {
+      display: flex;
+    }
+    /* Block copyright */
+    #block-block-1 {
+      font-family: $type-heading-primary;
+      order: 2;
+      @include breakpoint(tablet) {
+        order: 1;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    #block-menu-menu-footer-sub-menu {
+      margin-bottom: 15px;
+      @include breakpoint(tablet) {
+        flex: 1;
+        order: 2;
+        align-self: flex-end;
+        margin-bottom: 0;
+        text-align: right;
+      }
+      h2, .footer-copyright {
+        display: none;
+      }
+      .content {
+        padding: 0;
+        @include breakpoint(tablet) {
+          padding-top: 0;
+          padding-bottom: 0;
+          display: block;
+          justify-content: space-between;
+          align-content: center;
+        }
+        ul.menu {
+          margin-bottom: rem(15px);
+          @include breakpoint(tablet) {
+            text-align: right;
+            margin: 0;
+            width: auto;
+            display: block;
+          }
+          &>li {
+            margin-bottom: 0;
+            min-width: inherit;
+            margin-right: 0;
+            @include breakpoint(tablet) {
+              display: inline-block;
+              margin-left: rem(15px);
+            }
+            @include breakpoint(desktop) {
+              margin-left: rem(30px);
+            }
+            a {
+              border: none;
+              font-weight: 400;
             }
           }
         }
