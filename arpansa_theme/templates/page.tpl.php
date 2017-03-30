@@ -120,7 +120,7 @@
         <?php if ($action_links): ?>
           <ul class="action-links"><?php print render($action_links); ?></ul>
         <?php endif; ?>
-        <div class="content-body-inner<?php print $sidebar_first ? ' has-sidebar' : ' no-sidebar'; ?>">
+        <div class="content-body-inner<?php print $sidebar_first ? ' has-sidebar' : ' no-sidebar'; ?> clearfix">
           <?php print render($page['content']); ?>
           <?php print $feed_icons; ?>
           <?php if ($sidebar_first): ?>
@@ -141,6 +141,8 @@
 
   <div id="footer">
     <?php print render($page['footer']); ?>
+    <div class="region-bottom-container">
+      <?php print render($page['bottom']); ?>
+    </div>
   </div>
 </div>
-<?php print render($page['bottom']); ?>
