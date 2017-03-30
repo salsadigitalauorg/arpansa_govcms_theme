@@ -50,8 +50,8 @@ html {
     margin-bottom: $default_padding;
   }
   .content {
-    color: $neutral_1;
     @include standard_content_link;
+    color: $neutral_1;
   }
 }
 
@@ -61,6 +61,9 @@ html {
   flex-wrap: wrap;
   @include breakpoint(large_tablet) {
     flex-wrap: nowrap;
+  }
+  html.no-flexbox & {
+    display: block;
   }
 }
 
@@ -72,6 +75,9 @@ html {
     min-width: rem(330px);
     padding-right: rem(60px);
   }
+  html.no-flexbox & {
+    float: left;
+  }
 }
 
 .content-body-inner {
@@ -80,6 +86,9 @@ html {
       width: 100%;
       @include breakpoint(large_tablet) {
         max-width: $desktop_content_column;
+      }
+      html.no-flexbox & {
+        float: right;
       }
     }
   }
