@@ -6880,39 +6880,116 @@ h1, .hero .site-title,
 .hero-med .site-title {
   color: #268126;
   font-family: "Source Sans Pro", sans-serif, Arial;
-  font-size: 4em;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 2.0625rem;
+}
+
+@media (min-width: 768px) {
+  h1, .hero .site-title,
+  .hero-sml .site-title,
+  .hero-med .site-title {
+    font-size: 3rem;
+    line-height: 3.4375rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1, .hero .site-title,
+  .hero-sml .site-title,
+  .hero-med .site-title {
+    font-size: 4rem;
+    line-height: 4.125rem;
+  }
 }
 
 h2, .display {
   color: #268126;
   font-family: "Source Sans Pro", sans-serif, Arial;
-  font-size: 2.25em;
+  font-size: 1.25rem;
+  line-height: 1.375rem;
+  font-weight: normal;
+}
+
+@media (min-width: 768px) {
+  h2, .display {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
 }
 
 h3 {
   color: #268126;
   font-family: "Source Sans Pro", sans-serif, Arial;
-  font-size: 2.25em;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  font-weight: normal;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 2.25rem;
+    line-height: 2.0625rem;
+  }
 }
 
 h4 {
   color: #268126;
   font-family: "Source Sans Pro", sans-serif, Arial;
-  font-size: 1.5em;
-}
-
-h5 {
-  color: #268126;
-  font-family: "Source Sans Pro", sans-serif, Arial;
-  font-size: 1em;
+  font-size: 1rem;
+  line-height: 1.375rem;
   font-weight: 600;
 }
 
-h6 {
-  color: #268126;
+@media (min-width: 768px) {
+  h4 {
+    font-size: 1.125rem;
+    font-weight: 400;
+  }
+}
+
+@media (min-width: 1200px) {
+  h4 {
+    font-size: 1.5rem;
+    line-height: 2.0625rem;
+  }
+}
+
+h5 {
+  color: black;
   font-family: "Source Sans Pro", sans-serif, Arial;
-  font-size: 1em;
+  font-size: 1rem;
+  line-height: 1.375rem;
   font-weight: 700;
+}
+
+@media (min-width: 1200px) {
+  h5 {
+    font-size: 1.5rem;
+    line-height: 2.0625rem;
+    color: #268126;
+    font-weight: 600;
+  }
+}
+
+h6 {
+  color: #444449;
+  font-family: "Source Sans Pro", sans-serif, Arial;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 700;
+}
+
+@media (min-width: 1200px) {
+  h6 {
+    font-size: 1rem;
+  }
 }
 
 .show-on-mobile {
@@ -7730,7 +7807,7 @@ html.large-fonts {
 }
 
 body.not-front #content .content-header {
-  background-color: #4E1A74;
+  display: none;
   padding-top: 1.1875rem;
   padding-bottom: 1.5625rem;
   margin-bottom: 1.5625rem;
@@ -7738,10 +7815,9 @@ body.not-front #content .content-header {
 
 @media (min-width: 768px) {
   body.not-front #content .content-header {
-    height: 14.6875rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    margin-bottom: 5rem;
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+    display: block;
   }
 }
 
@@ -7974,6 +8050,19 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
   }
 }
 
+.content-body-inner.no-sidebar h1, .content-body-inner.no-sidebar .hero .site-title, .hero .content-body-inner.no-sidebar .site-title, .content-body-inner.no-sidebar
+.hero-sml .site-title,
+.hero-sml .content-body-inner.no-sidebar .site-title, .content-body-inner.no-sidebar
+.hero-med .site-title,
+.hero-med .content-body-inner.no-sidebar .site-title {
+  max-width: 73.125rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: content-box;
+}
+
 .page-node .content-body-inner.no-sidebar .region-content .node > .submitted {
   max-width: 48.75rem;
   margin-left: auto;
@@ -7998,6 +8087,25 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
 
 .page-node .content-body-inner.no-sidebar .region-content .node-webform > .content {
   max-width: 33.75rem;
+}
+
+.content-body-inner h1, .content-body-inner .hero .site-title, .hero .content-body-inner .site-title, .content-body-inner
+.hero-sml .site-title,
+.hero-sml .content-body-inner .site-title, .content-body-inner
+.hero-med .site-title,
+.hero-med .content-body-inner .site-title {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 1200px) {
+  .content-body-inner h1, .content-body-inner .hero .site-title, .hero .content-body-inner .site-title, .content-body-inner
+  .hero-sml .site-title,
+  .hero-sml .content-body-inner .site-title, .content-body-inner
+  .hero-med .site-title,
+  .hero-med .content-body-inner .site-title {
+    margin-bottom: 2.625rem;
+  }
 }
 
 .content-body-inner #site-map {
@@ -8758,20 +8866,24 @@ ul.tabs.primary {
 
 .content-header .breadcrumbs--inverted ul li {
   font-size: 1rem;
-  height: 1.875rem;
+  line-height: 1.375rem;
+  height: 1.375rem;
+  color: #298829;
+  font-weight: 400;
 }
 
 .content-header .breadcrumbs--inverted ul li a {
   white-space: nowrap;
+  color: #4E1A74;
+}
+
+.content-header .breadcrumbs--inverted ul li a:hover, .content-header .breadcrumbs--inverted ul li a:focus {
+  color: #298829;
 }
 
 .content-header .breadcrumbs--inverted ul li:not(:last-child) {
-  background-image: url("../../vendor/gov-au-ui-kit/assets/img/icons/arrow-right--white.svg");
+  background-image: url(../images/svg/breadcrumb-arrow-right.svg);
   background-position: right top 7px;
-}
-
-.content-header .breadcrumbs--inverted ul li:last-child {
-  font-weight: 600;
 }
 
 .front .page__title {
@@ -9434,6 +9546,7 @@ ul.tabs.primary {
   */
   margin-top: 0;
   font-weight: 400;
+  line-height: 23px;
 }
 
 #block-views-slideshow-block .banner-description-holder h3 a {
@@ -9505,6 +9618,7 @@ ul.tabs.primary {
     margin-bottom: 1.3125rem;
     font-size: 3rem;
     font-weight: 300;
+    line-height: 3.4375rem;
   }
 }
 

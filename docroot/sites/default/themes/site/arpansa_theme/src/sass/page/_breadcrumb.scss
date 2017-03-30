@@ -7,17 +7,21 @@
       padding-bottom: 0;
       li {
         font-size: rem(16px);
-        height: rem(30px);
+        line-height: rem(22px);
+        height: rem(22px);
+        color: $color-link-secondary;
+        font-weight: 400;
         a {
           white-space: nowrap;
+          color: $secondary_1;
+          &:hover, &:focus {
+            color: $color-link-secondary;
+          }
         }
         &:not(:last-child) {
           // Override previously defined icon with new path.
-          background-image: ui-kit-icon("arrow-right--white.svg");
+          background-image: url(../images/svg/breadcrumb-arrow-right.svg);
           background-position: right top 7px;
-        }
-        &:last-child {
-          font-weight: 600;
         }
       }
     }
