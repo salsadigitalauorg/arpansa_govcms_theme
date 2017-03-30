@@ -86,14 +86,9 @@ function arpansa_entity_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'node_link' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Learn more',
-        'wrapper' => '',
+        'link' => '1',
+        'wrapper' => 'h2',
         'class' => '',
       ),
     ),
@@ -111,14 +106,9 @@ function arpansa_entity_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'node_link' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Learn more',
-        'wrapper' => '',
+        'link' => '1',
+        'wrapper' => 'h2',
         'class' => '',
       ),
     ),
@@ -163,7 +153,6 @@ function arpansa_entity_ds_layout_settings_info() {
         1 => 'field_news_date',
         2 => 'title',
         3 => 'field_consultation_summary',
-        4 => 'node_link',
       ),
     ),
     'fields' => array(
@@ -171,7 +160,6 @@ function arpansa_entity_ds_layout_settings_info() {
       'field_news_date' => 'ds_content',
       'title' => 'ds_content',
       'field_consultation_summary' => 'ds_content',
-      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -333,7 +321,6 @@ function arpansa_entity_ds_layout_settings_info() {
         1 => 'field_news_date',
         2 => 'title',
         3 => 'body',
-        4 => 'node_link',
       ),
     ),
     'fields' => array(
@@ -341,7 +328,6 @@ function arpansa_entity_ds_layout_settings_info() {
       'field_news_date' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
-      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -369,7 +355,6 @@ function arpansa_entity_ds_layout_settings_info() {
         1 => 'field_news_date',
         2 => 'title',
         3 => 'body',
-        4 => 'node_link',
       ),
     ),
     'fields' => array(
@@ -377,7 +362,6 @@ function arpansa_entity_ds_layout_settings_info() {
       'field_news_date' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
-      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
