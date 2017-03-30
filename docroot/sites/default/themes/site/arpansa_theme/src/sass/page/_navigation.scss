@@ -33,8 +33,6 @@
 // =========================================================
 // TOP NAVIGATION
 // =========================================================
-$menu_margin: rem(10px);
-$menu_padding: rem(30px);
 .region-navigation {
   background-color: $secondary_1;
   .block-superfish {
@@ -44,9 +42,20 @@ $menu_padding: rem(30px);
       display: block;
     }
     ul.sf-menu {
-      display: table;
       width: 100%;
-      position: relative; // If JS is enabled - hide sub nav menus until superfish finishes loading.
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      html.no-flexbox & {
+        display: table;
+      }
+      @include breakpoint(desktop) {
+        html.no-flexbox & {
+          table-layout: fixed;
+        }
+      } // If JS is enabled - hide sub nav menus until superfish finishes loading.
       &:not(.superfish-processed) {
         &>li>ul {
           html:not(.no-js) & {
@@ -65,8 +74,15 @@ $menu_padding: rem(30px);
         }
       }
       &>li {
-        display: table-cell;
+        position: relative;
+        vertical-align: top;
         float: none;
+        display: inline-block;
+        width: 100%;
+        html.no-flexbox & {
+          display: table-cell;
+          width: auto;
+        }
         &.menuparent {
           &>a {
             &:after {
@@ -88,10 +104,11 @@ $menu_padding: rem(30px);
           }
         }
         &>a {
+          position: static;
           display: inline-block;
           padding-top: $default_padding;
           padding-bottom: rem(($default_padding_px - 4px));
-          box-sizing: content-box;
+          box-sizing: border-box;
           width: 100%;
           height: 100%;
           color: white;
@@ -99,66 +116,45 @@ $menu_padding: rem(30px);
           text-align: center;
           text-decoration: none;
           font-weight: 600;
-          @include breakpoint(desktop) {
-            display: block;
-            margin-left: $menu_margin;
-            margin-right: $menu_margin;
-            padding-left: $menu_padding;
-            padding-right: $menu_padding;
-            width: auto;
-            max-width: 215px;
-          }
           &:hover, &:focus {
             background-color: $main_menu_hover;
           }
-        }
-        &.first {
-          &>a {
-            @include breakpoint(desktop) {
-              margin-left: 0;
-            }
-          }
-        }
-        &.last {
-          &>a {
-            @include breakpoint(desktop) {
-              margin-right: 0;
-            }
+          &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: auto;
+            border-bottom: 4px solid transparent;
           }
         }
         &>ul {
           top: 100%;
           padding: 0;
           margin: 0;
-          @include breakpoint(desktop) {
-            margin-left: $menu_margin;
-          }
           li {
             &.menuparent {
               &>a {
                 background-image: url(../images/svg/nav_right_arrow.svg);
                 background-repeat: no-repeat;
                 background-position: right rem(22px) center;
-                @include breakpoint(desktop) {
-                  background-position: right ($menu_padding + rem(6px)) center;
-                  padding-right: rem(40px);
-                }
               }
             }
             a {
               background-color: $primary_1;
               color: white;
               text-decoration: none;
-              padding-left: $menu_padding + rem(3px);
-              padding-right: $menu_padding + rem(3px);
+              padding-left: rem(30px);
+              padding-right: rem(30px);
               padding-top: rem(15px);
               padding-bottom: rem((15px - 1px));
               border: none;
               &:hover, &:focus {
                 background-color: $main_menu_hover_2;
-              }
-              @include breakpoint(desktop) {
-                min-width: rem(186px);
               }
             }
             &.active-trail {
