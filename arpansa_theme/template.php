@@ -361,3 +361,12 @@ function arpansa_theme_preprocess_views_view_row_rss(&$variables) {
     }
   }
 }
+
+/**
+ * Implements template_preprocess_region().
+ */
+function arpansa_theme_preprocess_region(&$variables) {
+  if ($variables['region'] == 'content') {
+    $variables['page_title'] = drupal_get_title();
+  }
+}
