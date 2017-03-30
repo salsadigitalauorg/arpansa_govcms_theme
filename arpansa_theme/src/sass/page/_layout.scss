@@ -51,8 +51,8 @@ html {
     margin-bottom: $default_padding;
   }
   .content {
-    color: $neutral_1;
     @include standard_content_link;
+    color: $neutral_1;
   }
 }
 
