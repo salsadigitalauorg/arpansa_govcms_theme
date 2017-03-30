@@ -10142,6 +10142,10 @@ ul.tabs.primary {
   box-shadow: none;
 }
 
+.node.node-news-article .field-type-taxonomy-term-reference {
+  display: none;
+}
+
 .page-node .content-body-inner.no-sidebar .region-content .node.node-career > .content {
   max-width: 100%;
   margin-left: auto;
