@@ -125,7 +125,7 @@
         <?php if ($action_links): ?>
           <ul class="action-links"><?php print render($action_links); ?></ul>
         <?php endif; ?>
-        <div class="content-body-inner<?php print $sidebar_first ? ' has-sidebar' : ' no-sidebar'; ?>">
+        <div class="content-body-inner<?php print $sidebar_first ? ' has-sidebar' : ' no-sidebar'; ?> clearfix">
           <?php print render($page['content']); ?>
           <?php print $feed_icons; ?>
           <?php if ($sidebar_first): ?>
