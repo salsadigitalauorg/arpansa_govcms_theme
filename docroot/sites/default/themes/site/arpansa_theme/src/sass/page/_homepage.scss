@@ -230,50 +230,76 @@
       position: relative;
       box-sizing: border-box;
       background-color: rgba(black, 0.8);
-      padding: rem(100px);
-      padding-top: rem(45px);
-      max-width: rem(570px);
+      padding: rem(45px);
+      padding-top: rem(85px);
+      max-width: rem(524px);
       min-height: rem(444px);
       color: white;
     }
   }
-  button.slider-button {
-    color: $secondary_3;
-    border: 0;
-    margin: 0;
-    display: inline;
-    width: rem(47px);
-    height: rem(47px);
-    overflow: hidden;
-    padding: 0;
-    vertical-align: top;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-bottom: 1px solid transparent;
-    border-radius: 0;
+  .slider-controls {
     position: absolute;
-    top: 50%;
-    display: none;
-    @include breakpoint(tablet) {
-      display: block;
-    }
-    &:hover, &:focus {
+    top: 0;
+    padding-top: rem(34px);
+    padding-left: rem(37px);
+    button {
       color: white;
-      border-bottom-color: white;
+      border: 0;
+      margin: 0;
+      display: inline;
+      width: rem(36px);
+      height: rem(36px);
+      overflow: hidden;
+      padding: 0;
+      vertical-align: top;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-bottom: 1px solid transparent;
+      border-radius: 0;
       box-shadow: none;
+      &:hover, &:focus {
+        color: $color-link-secondary;
+        border-bottom-color: $color-link-secondary;
+      }
+      &.active {
+        color: $color-link-secondary;
+      }
+      &.slider-prev {
+        @include hide-text;
+        background-image: url(../images/svg/slider-prev.svg);
+        &:hover, &:focus {
+          background-image: url(../images/svg/slider-prev-hover.svg);
+        }
+      }
+      &.slider-next {
+        @include hide-text;
+        background-image: url(../images/svg/slider-next.svg);
+        &:hover, &:focus {
+          background-image: url(../images/svg/slider-next-hover.svg);
+        }
+      }
+      &.slider-play {
+        @include hide-text;
+        background-image: url(../images/svg/slider-pause.svg);
+        &:hover, &:focus {
+          background-image: url(../images/svg/slider-pause-hover.svg);
+        }
+        &.paused {
+          background-image: url(../images/svg/slider-play.svg);
+          &:hover, &:focus {
+            background-image: url(../images/svg/slider-play-hover.svg);
+          }
+        }
+      }
     }
-    &.active {
-      color: white;
-    }
-    &.slider-prev {
-      @include hide-text;
-      background-image: url(../images/svg/slider-prev.svg);
-      margin-left: rem(12px);
-    }
-    &.slider-next {
-      @include hide-text;
-      background-image: url(../images/svg/slider-next.svg);
+    ul {
+      padding: 0;
+      margin: 0;
+      display: inline;
+      li {
+        display: inline;
+      }
     }
   }
 }
