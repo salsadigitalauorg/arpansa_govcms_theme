@@ -7949,6 +7949,10 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
   }
 }
 
+html.no-flexbox .content-body-inner.has-sidebar {
+  display: block;
+}
+
 .sidebar-first {
   -webkit-order: -1;
       -ms-flex-order: -1;
@@ -7964,6 +7968,10 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
   }
 }
 
+html.no-flexbox .sidebar-first {
+  float: left;
+}
+
 .content-body-inner.has-sidebar .region-content {
   width: 100%;
 }
@@ -7972,6 +7980,10 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
   .content-body-inner.has-sidebar .region-content {
     max-width: 48.75rem;
   }
+}
+
+html.no-flexbox .content-body-inner.has-sidebar .region-content {
+  float: right;
 }
 
 .page-node .content-body-inner.no-sidebar .region-content .node > .submitted {
