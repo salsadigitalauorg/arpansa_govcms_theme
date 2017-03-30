@@ -275,8 +275,8 @@
 }
 
 @mixin standard_content_link() {
+  @include link-colours($color-link-primary, transparent, $color-link-secondary);
   a {
-    @include link-colours($color-link-primary, transparent, $color-link-secondary);
     border: none;
     text-decoration: underline;
     border-color: $secondary_1;
