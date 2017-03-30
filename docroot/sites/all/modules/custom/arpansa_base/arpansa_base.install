@@ -1475,3 +1475,12 @@ function arpansa_base_update_7069() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Update standard page display [ARPANSA-50].
+ */
+function arpansa_base_update_7070() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
