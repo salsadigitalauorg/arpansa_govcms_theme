@@ -146,6 +146,8 @@
 
   <div id="footer">
     <?php print render($page['footer']); ?>
+    <div class="region-bottom-container">
+      <?php print render($page['bottom']); ?>
+    </div>
   </div>
 </div>
-<?php print render($page['bottom']); ?>
