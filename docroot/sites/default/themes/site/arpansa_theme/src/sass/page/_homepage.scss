@@ -132,6 +132,9 @@
       a.readmore {
         @include right-arrow-button;
         line-height: em(28px);
+        @include breakpoint(tablet) {
+          display: none;
+        }
       }
     }
   }
