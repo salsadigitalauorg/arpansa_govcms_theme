@@ -1504,3 +1504,12 @@ function arpansa_base_update_7071() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Update footer bottom display [ARPANSA-14].
+ */
+function arpansa_base_update_7072() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_blocks');
+}
