@@ -101,6 +101,9 @@
         &.active-trail {
           &>a {
             background-color: $main_menu_active;
+            &:hover, &:focus {
+              background-color: $main_menu_hover_2;
+            }
           }
         }
         &>a {
@@ -117,7 +120,7 @@
           text-decoration: none;
           font-weight: 600;
           &:hover, &:focus {
-            background-color: $main_menu_hover;
+            background-color: $main_menu_hover_2;
           }
           &:before {
             content: '';
