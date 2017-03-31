@@ -27,7 +27,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -415,7 +415,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 25,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -477,7 +477,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 27,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -674,7 +674,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 24,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -736,7 +736,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 23,
       ),
       'rss_feed' => array(
         'label' => 'hidden',
@@ -794,7 +794,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1160,7 +1160,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1218,7 +1218,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 26,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -1278,9 +1278,10 @@ function govcms_consultation_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 29,
+        'type' => 'list_default',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1326,9 +1327,10 @@ function govcms_consultation_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 30,
+        'type' => 'list_default',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',

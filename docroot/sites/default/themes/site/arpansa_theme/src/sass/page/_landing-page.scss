@@ -31,7 +31,6 @@
     .field-name-node-link {
       a {
         @include right-arrow-button;
-        @include purple_button;
       }
     }
     .field-type-datetime {
@@ -39,6 +38,33 @@
     }
     &:nth-child(2n) {
       margin-right: 0;
+    }
+  }
+}
+
+// =========================================================
+// WHATS NEW LANDING PAGE
+// =========================================================
+body.not-front #content .view.view-what-s-new {
+  .view-content .views-row .node.has-thumbnail {
+    padding-top: 0;
+    margin-bottom: 0;
+    @include breakpoint(tablet) {
+      padding-top: $listing_component_image_height;
+    }
+  }
+}
+
+.page-node .region-content {
+  .view-what-s-new {
+    h2 {
+      margin-top: 0;
+    }
+    .field-name-field-image {
+      display: none;
+      @include breakpoint(tablet) {
+        display: block;
+      }
     }
   }
 }
