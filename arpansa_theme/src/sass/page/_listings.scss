@@ -49,12 +49,13 @@ body.not-front #content {
             padding-top: $listing_component_image_height;
             .field-type-image {
               @include listing-component-image;
+              margin-top: 0;
               .field-item:nth-child(n + 2) {
                 display: none;
               }
             }
             h2 {
-              margin-top: rem(30px);
+              margin-top: $default_padding;
             }
           }
           &>.links {
