@@ -33,7 +33,7 @@ function arpansa_theme_html_head_alter(&$head_elements) {
  * Implements hook_js_alter().
  */
 function arpansa_theme_js_alter(&$javascript) {
-  $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-3.1.1.min.js';
+  $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-2.2.4.min.js';
 }
 
 /**

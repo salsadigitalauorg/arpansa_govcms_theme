@@ -1,0 +1,66 @@
+// =========================================================
+// SURVEY LANDING PAGE
+// =========================================================
+#content .view-literature-surveys {
+  .view-filters {
+    .views-exposed-widget {
+      display: block;
+      float: none;
+      margin-top: 0;
+      padding-bottom: 0;
+      @include breakpoint(tablet) {
+        display: table-cell;
+        width: 33%;
+        vertical-align: bottom;
+      }
+      &.views-submit-button {
+        display: block;
+        float: none;
+        clear: both;
+      }
+    }
+    input[type="text"] {
+      border: 1px solid $neutral_1;
+      border-radius: 2px;
+      height: 42px;
+      margin-bottom: 16px;
+    }
+    select {
+      display: none;
+    }
+    .SumoSelect {
+      margin-right: 0;
+      width: 100%;
+      >.CaptionCont {
+        border-color: $neutral_1;
+        >span.placeholder {
+          font-style: normal;
+        }
+      }
+      label {
+        font-weight: normal;
+      }
+    }
+    input[type="submit"] {
+      margin-top: 0;
+    }
+  }
+  .view-content {
+    .field-name-title, .field-name-field-link-to {
+      .field-label {
+        display: none;
+      }
+    }
+    .field-label {
+      display: block;
+      float: none;
+    }
+    .field-name-field-authored-by, .field-name-field-published-in {
+      h3 {
+        margin: 0;
+        font-size: em(18px);
+        line-height: inherit;
+      }
+    }
+  }
+}
