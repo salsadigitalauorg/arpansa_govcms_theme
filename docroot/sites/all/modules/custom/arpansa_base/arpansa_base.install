@@ -1371,7 +1371,9 @@ function arpansa_base_update_7062() {
 }
 
 /**
- * Disable out of scope content types and their respective views and blocks [ARPANSA-34].
+ * Disable out of scope content types [ARPANSA-34].
+ *
+ * Also disable their respective views and blocks.
  */
 function arpansa_base_update_7063() {
   module_enable(['salsa_helpers']);
@@ -1505,11 +1507,19 @@ function arpansa_base_update_7071() {
   salsa_helpers_features_revert('arpansa_entity');
 }
 
+/**
+ * Update footer bottom display [ARPANSA-14].
+ */
+function arpansa_base_update_7072() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_blocks');
+}
 
 /**
  * Update consultation display [ARPANSA-38].
  */
-function arpansa_base_update_7072() {
+function arpansa_base_update_7073() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
 
