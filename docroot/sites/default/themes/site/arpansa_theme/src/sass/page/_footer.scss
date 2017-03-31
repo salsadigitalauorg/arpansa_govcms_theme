@@ -31,7 +31,7 @@
             display: inline-block;
             min-width: 250px;
             margin-right: 50px;
-            margin-bottom: $default_padding;
+            margin-bottom: em(15px);
           }
         }
       }
@@ -124,7 +124,7 @@
           align-content: center;
         }
         ul.menu {
-          margin-bottom: rem(15px);
+          margin-bottom: rem(25px);
           @include breakpoint(tablet) {
             text-align: right;
             margin: 0;
@@ -132,12 +132,13 @@
             display: block;
           }
           &>li {
-            margin-bottom: 0;
+            margin-bottom: em(15px);
             min-width: inherit;
             margin-right: 0;
             @include breakpoint(tablet) {
               display: inline-block;
               margin-left: rem(15px);
+              margin-bottom: 0;
             }
             @include breakpoint(desktop) {
               margin-left: rem(30px);
