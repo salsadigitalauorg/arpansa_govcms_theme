@@ -4,8 +4,8 @@
   padding-bottom: $default_padding;
   .header__secondary-menu {
     display: none;
+    @include standard_content_link;
     @include breakpoint(tablet) {
-      @include link-colours($primary_1, $secondary_3, $neutral_1);
       display: block;
       text-align: right;
     }
@@ -28,8 +28,12 @@
       display: flex;
       align-items: center;
       a {
-        display: inline-block;
+        margin-right: 0;
+        display: none;
         vertical-align: middle;
+        @include breakpoint(tablet) {
+          display: inline-block;
+        }
         img {
           float: left;
           max-height: rem(50px);
@@ -45,25 +49,31 @@
         line-height: 1em;
         color: $primary_1;
         font-weight: 400;
+        visibility: hidden;
         @include breakpoint(tablet) {
           margin-left: $default_padding;
           padding-left: 0;
-          display: inline-block;
+          display: none;
           vertical-align: middle;
           font-size: rem(30px);
         }
       }
     }
   }
+  .logo-aus-container {
+    margin-right: 25px;
+    img {
+      max-height: rem(50px);
+    }
+  }
   .header__logo {
-    margin-right: 0;
     &.no-title {
       margin-right: auto;
     }
   }
   .block-govcms-text-resize {
     display: none;
-    @include breakpoint(tablet) {
+    @include breakpoint(desktop) {
       display: block;
       margin-right: $default_padding;
     }
@@ -161,6 +171,10 @@
   }
 }
 
+#block-views-slideshow-block {
+  background-image: linear-gradient(90deg, #298829 0%, #4E1A74 93%);
+}
+
 // =========================================================
 // MOBILE SEARCH / MENU BUTTONS
 // =========================================================
@@ -178,11 +192,13 @@
   margin-right: $mobile_expand_search_width;
   &:hover, &:focus {
     background-image: url(../images/svg/mobile_search_open_hover.svg);
+    box-shadow: none;
   }
   &.search-open {
     background-image: url(../images/svg/mobile_search_close.svg);
     &:hover, &:focus {
       background-image: url(../images/svg/mobile_search_close_hover.svg);
+      box-shadow: none;
     }
   }
 }
@@ -204,11 +220,13 @@
   top: rem(16px);
   &:hover, &:focus {
     background-image: url(../images/svg/mobile_menu_open_hover.svg);
+    box-shadow: none;
   }
   &.menu-open {
     background-image: url(../images/svg/mobile_search_close.svg);
     &:hover, &:focus {
       background-image: url(../images/svg/mobile_search_close_hover.svg);
+      box-shadow: none;
     }
   }
 }

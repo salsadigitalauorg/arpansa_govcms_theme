@@ -1,0 +1,70 @@
+// =========================================================
+// LANDING PAGE
+// =========================================================
+.page-node .content-body-inner.no-sidebar .region-content {
+  .node.node-landing-page {
+    >.content {
+      @include outer-container(100%);
+      @include center-column($desktop_column);
+    }
+  }
+}
+
+#block-menu-block-landing-page-children-listing {
+  @include outer-container(100%);
+  @include center-column($desktop_column);
+  .node-teaser {
+    @include breakpoint(tablet) {
+      @include span-columns(6 of 12);
+    }
+    img {
+      width: 100%;
+    }
+    h2 {
+      @include listing-component-heading;
+      @include link-colours($primary_1, $secondary_3, $neutral_1);
+      margin-top: 0;
+      a {
+        border: none;
+      }
+    }
+    .field-name-node-link {
+      a {
+        @include right-arrow-button;
+      }
+    }
+    .field-type-datetime {
+      display: none;
+    }
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}
+
+// =========================================================
+// WHATS NEW LANDING PAGE
+// =========================================================
+body.not-front #content .view.view-what-s-new {
+  .view-content .views-row .node.has-thumbnail {
+    padding-top: 0;
+    margin-bottom: 0;
+    @include breakpoint(tablet) {
+      padding-top: $listing_component_image_height;
+    }
+  }
+}
+
+.page-node .region-content {
+  .view-what-s-new {
+    h2 {
+      margin-top: 0;
+    }
+    .field-name-field-image {
+      display: none;
+      @include breakpoint(tablet) {
+        display: block;
+      }
+    }
+  }
+}

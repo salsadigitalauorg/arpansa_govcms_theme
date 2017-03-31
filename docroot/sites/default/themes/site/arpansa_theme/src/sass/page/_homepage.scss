@@ -21,25 +21,44 @@
       @include center-column($desktop_column);
     }
   }
+  .panel-display {
+    @include center-column(100%);
+    padding-left: 0;
+    padding-right: 0;
+    .pane-content, .pane-title {
+      @include center-column($desktop_column);
+    }
+    .pane-bean-panels {
+      background-color: $neutral_5;
+      margin-bottom: 30px;
+      @include breakpoint(tablet) {
+        margin-bottom: 90px;
+      }
+    }
+  }
 }
 
 // =========================================================
 // INTRODUCTION BEAN
 // =========================================================
-.bean-basic-content {
-  background-color: $neutral_4;
+.panels-ipe-sort-container .bean-basic-content, .pane-bean-panels .bean-basic-content {
   &>.content {
     @include center-column($desktop_column);
     @include link-colours($primary_1, $secondary_3, $neutral_1);
     padding-top: $default_padding;
     padding-bottom: $default_padding;
-    color: $neutral_1;
+    color: $secondary_1;
+    font-size: em(24px);
+    line-height: em(33px);
+    font-family: $type-heading-primary;
+    text-align: center;
     @include breakpoint(tablet) {
       padding-top: $default_padding * 2;
       padding-bottom: rem(50px);
     }
     @include breakpoint(desktop) {
       text-align: center;
+      padding: 50px 80px;
     }
     p {
       margin-bottom: 0;
@@ -49,6 +68,76 @@
 
 .pane-title {
   @include large-title;
+}
+
+// =========================================================
+// PANEL PROMO
+// =========================================================
+.panel-promo {
+  .view-content {
+    @include breakpoint(tablet) {
+      @include outer-container(100%);
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .views-row {
+      @include breakpoint(tablet) {
+        @include span-columns(4 of 12);
+      }
+      &:nth-child(2n) {
+        @include breakpoint(tablet) {
+          margin-right: flex-gutter(12);
+        }
+      }
+      &:nth-child(3n) {
+        @include breakpoint(tablet) {
+          @include omega();
+        }
+      }
+      .node {
+        @include listing-component-wrapper;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        @include breakpoint(tablet) {
+          margin-bottom: em(35px);
+          padding-top: em(35px);
+        }
+        &.has-thumbnail {
+          .field-type-image {
+            @include listing-component-image;
+          }
+          @include breakpoint(tablet) {
+            padding-top: $listing_component_image_height;
+          }
+        }
+      }
+      h2 {
+        @include listing-component-heading;
+        margin-top: 10px;
+      }
+      .field-type-datetime, .submitted {
+        @include listing-component-subtext;
+      }
+      .field-name-body {
+        @include listing-component-body;
+      }
+      .field-name-field-image {
+        display: none;
+        @include breakpoint(tablet) {
+          display: block;
+        }
+      }
+      a.readmore {
+        @include right-arrow-button;
+        line-height: em(28px);
+        @include breakpoint(tablet) {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 // =========================================================
@@ -113,7 +202,7 @@
   .banner-description-holder {
     color: white;
     padding: rem(30px) $default_padding;
-    background-color: $primary_1;
+    background-color: $secondary_1;
     @include breakpoint(tablet) {
       @include center-column($desktop_column);
       background-color: transparent;
@@ -125,21 +214,27 @@
       @include link-colours(white, $neutral_4, $neutral_1);
       margin-top: 0;
       font-weight: 400;
+      line-height: 23px;
       @include breakpoint(tablet) {
         margin-bottom: rem(21px);
         font-size: rem(48px);
         font-weight: 300;
+        line-height: rem(55px);
       }
     }
     .field {
       @include link-colours(white, $neutral_4, $neutral_1);
+      @include standard_white_button;
+      @include breakpoint(tablet) {
+        @include standard_purple_button;
+      }
     }
   }
   .banner-description-panel {
     @include breakpoint(tablet) {
       position: relative;
       box-sizing: border-box;
-      background-color: #0B3B46;
+      background-color: rgba(black, 0.8);
       padding: rem(45px);
       padding-top: rem(85px);
       max-width: rem(524px);
@@ -153,7 +248,7 @@
     padding-top: rem(34px);
     padding-left: rem(37px);
     button {
-      color: $secondary_3;
+      color: white;
       border: 0;
       margin: 0;
       display: inline;
@@ -166,12 +261,14 @@
       background-repeat: no-repeat;
       background-position: center;
       border-bottom: 1px solid transparent;
+      border-radius: 0;
+      box-shadow: none;
       &:hover, &:focus {
-        color: white;
-        border-bottom-color: white;
+        color: $color-link-secondary;
+        border-bottom-color: $color-link-secondary;
       }
       &.active {
-        color: white;
+        color: $color-link-secondary;
       }
       &.slider-prev {
         @include hide-text;
@@ -215,7 +312,7 @@
 // =========================================================
 // HOMEPAGE BLOGS AND NEWS LISTSING
 // =========================================================
-.view-home-page-blog-articles, .view-latest-news {
+.view-home-page-blog-articles, .view-latest-news, .view-homepage-what-s-new {
   .view-content {
     @include breakpoint(tablet) {
       @include outer-container(100%);
@@ -245,12 +342,18 @@
       .node {
         @include listing-component-wrapper;
         &.has-thumbnail {
-          padding-top: $listing_component_image_height;
           .field-type-image {
             @include listing-component-image;
           }
-          h2 {
-            margin-top: rem(30px);
+          padding: rem(30px);
+          @include breakpoint(tablet) {
+            padding-top: $listing_component_image_height;
+          }
+        }
+        .node-readmore {
+          padding: 0;
+          a {
+            @include right-arrow-button;
           }
         }
       }
@@ -264,6 +367,26 @@
       .field-name-body {
         @include listing-component-body;
       }
+      .field-name-field-image {
+        display: none;
+        @include breakpoint(tablet) {
+          display: block;
+        }
+      }
     }
+  }
+}
+
+.pane-homepage-what-s-new {
+  background-color: $grey_3;
+  padding-top: rem(25px);
+  padding-bottom: rem(30px);
+  @include breakpoint(tablet) {
+    padding-top: rem(30px);
+    padding-bottom: rem(50px);
+  }
+  @include breakpoint(desktop) {
+    padding-top: rem(50px);
+    padding-bottom: rem(75px);
   }
 }

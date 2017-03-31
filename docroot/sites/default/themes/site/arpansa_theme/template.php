@@ -62,7 +62,7 @@ function arpansa_theme_preprocess_field(&$variables) {
       }
     }
   }
-  // Rewrite the Promotions links to include the query string for Lit Surveys
+  // Rewrite the Promotions links to include the query string for Lit Surveys.
   if ($variables['element']['#bundle'] === 'footer_teaser' && $variables['element']['#view_mode'] == 'teaser') {
     $path = 'node/' . $variables['element']['#object']->field_reference['und'][0]['target_id'];
     if (isset($variables['element']['#object']->field_literature_survey_date[LANGUAGE_NONE])) {
@@ -94,6 +94,7 @@ function arpansa_theme_preprocess_field(&$variables) {
  * Implements hook_preprocess_node().
  */
 function arpansa_theme_preprocess_node(&$variables) {
+  $whats_new_content_types = array('consultation', 'news_article', 'page');
   if ($variables['view_mode'] === 'teaser' || $variables['view_mode'] === 'compact') {
     // Apply thumbnail class to node teaser view if image exists.
     $has_thumb = !empty($variables['content']['field_thumbnail']);
@@ -104,14 +105,52 @@ function arpansa_theme_preprocess_node(&$variables) {
     }
 
     if ($variables['type'] === 'career') {
-      $variables['title'] = null;
+      $variables['title'] = NULL;
       $variables['content']['field_position_number'][0]['#markup'] = '<a href="' . $variables['node_url'] . '">' . $variables['content']['field_position_number'][0]['#markup'] . '</a>';
+    }
+  }
+
+  if ($variables['view_mode'] === 'full') {
+    // Remove "Hide Social Links" field if checked, or replace with rendered block content.
+    $hide_social_links = !empty($variables['node']->field_social_links[LANGUAGE_NONE][0]['value']) ? (int) $variables['node']->field_social_links[LANGUAGE_NONE][0]['value'] : 0;
+    if ($hide_social_links === 1 || !in_array($variables['type'], $whats_new_content_types)) {
+      $variables['content']['field_social_links'] = NULL;
+    }
+    else {
+      $block = block_load('service_links', 'service_links');
+      $block_content = _block_get_renderable_array(_block_render_blocks(array($block)));
+      $output = drupal_render($block_content);
+      $variables['content']['field_social_links'][0]['#markup'] = $output;
+    }
+
+    $show_related_content = !empty($variables['field_show_related_content'][0]['value']) ? (int) $variables['field_show_related_content'][0]['value'] : 0;
+    if ($show_related_content === 1) {
+      $block = block_load('views', 'related_content-block');
+      $block_content = _block_get_renderable_array(_block_render_blocks(array($block)));
+      $output = drupal_render($block_content);
+      $variables['content']['field_show_related_content'][0]['#markup'] = $output;
+    }
+    else {
+      $variables['content']['field_show_related_content'] = NULL;
     }
   }
 
   if ($variables['type'] === 'webform') {
     // Hide submitted date on webforms.
     $variables['display_submitted'] = FALSE;
+  }
+
+  if ($variables['view_mode'] === 'teaser') {
+    if ($variables['type'] == 'news_article' || $variables['type'] == 'consultation' || $variables['type'] == 'page') {
+      $variables['date'] = date('d F Y', $variables['created']);
+      $variables['content']['links']['node']['#links']['node-readmore']['attributes']['class'][] = 'button';
+    }
+    $variables['theme_hook_suggestions'][] = $variables['theme_hook_suggestions'][0] . '__teaser';
+  }
+  elseif ($variables['view_mode'] === 'full') {
+    if ($variables['type'] == 'slide') {
+      $variables['content']['field_read_more'][0]['#element']['attributes']['class'] = 'button';
+    }
   }
 }
 
@@ -149,6 +188,68 @@ function arpansa_theme_form_alter(&$form, &$form_state, $form_id) {
     // Search form on page not found (404 page).
     $form['basic']['keys']['#title'] = t('Type search term here');
   }
+  // ARPANSA-78: Only show tags already assigned Fact Sheets on the Fact Sheets view.
+  if ($form_id === 'views_exposed_form' && strpos($form['#id'], 'fact-sheets') !== FALSE) {
+    // Use "Raw SQL Query" mode because it's faster than the Drupal dynamic query.
+    $fact_sheet_tags = get_fact_sheet_assigned_tags();
+
+    if (count($fact_sheet_tags)) {
+      $form['field_tags_tid']['#options'] = array('All' => '- Any -') + $fact_sheet_tags;
+    }
+  }
+}
+
+/**
+ * Helper function to extract distinct set of tags already assigned to Fact Sheet content items.
+ *
+ * @param bool $raw_query
+ *   Boolean to indicate which query method to use.
+ *
+ * @return array
+ *   An array of tag IDs => tag Names.
+ */
+function get_fact_sheet_assigned_tags($raw_query = FALSE) {
+  $tags = array();
+
+  // Obtain vocabulary ID (vid) via its machine name.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('tags');
+
+  if (!empty($vocabulary->vid)) {
+    // "Raw" db_query(...) mode seems faster than dynamic Drupal query builder.
+    if ($raw_query === TRUE) {
+      $fact_sheet_tags = db_query("
+        SELECT DISTINCT ttd.tid, ttd.name
+        FROM taxonomy_term_data ttd
+        JOIN taxonomy_index ti ON ti.tid = ttd.tid
+        JOIN node n ON n.nid = ti.nid AND n.type = 'page' AND n.`status` = 1
+        JOIN field_data_field_page_type pt ON pt.entity_id = n.nid AND pt.revision_id = n.vid
+        JOIN taxonomy_term_data ttd_2 ON ttd_2.tid = pt.field_page_type_tid AND ttd_2.name = 'Fact Sheet'
+        WHERE ttd.vid = " . (int) $vocabulary->vid . "
+        ORDER BY ttd.`name`
+      ");
+    }
+    else {
+      $query = db_select('taxonomy_term_data', 'ttd')
+        ->distinct()
+        ->fields('ttd', array('tid', 'name'))
+        ->condition('ttd.vid', (int) $vocabulary->vid, '=')
+        ->orderBy('ttd.`name`');
+      $query->join('taxonomy_index', 'ti', 'ti.tid = ttd.tid');
+      $query->join('node', 'n', "n.nid = ti.nid AND n.type = 'page' AND n.`status` = 1");
+      $query->join('field_data_field_page_type', 'pt', 'pt.entity_id = n.nid AND pt.revision_id = n.vid');
+      $query->join('taxonomy_term_data', 'ttd_2', "ttd_2.tid = pt.field_page_type_tid AND ttd_2.name = 'Fact Sheet'");
+
+      $fact_sheet_tags = $query->execute();
+    }
+
+    if (count($fact_sheet_tags)) {
+      foreach ($fact_sheet_tags as $tag) {
+        $tags[$tag->tid] = $tag->name;
+      }
+    }
+  }
+
+  return $tags;
 }
 
 /**
@@ -241,4 +342,31 @@ function _arpansa_theme_get_file_type($mime_type) {
   }
 
   return $mime_type;
+}
+
+/**
+ * Implements template_preprocess_views_view_row_rss().
+ *
+ * @see template_preprocess_views_view_row_rss()
+ */
+function arpansa_theme_preprocess_views_view_row_rss(&$variables) {
+  $view = $variables['view'];
+  $row = $variables['row'];
+  if ($view->name == 'what_s_new' && $view->current_display == 'feed_whats_new') {
+    // Use Consultation Summary for RSS row description [ARPANSA-79].
+    $current_result = $view->result[$variables['id'] - 1];
+    if (!empty($current_result->field_field_consultation_summary[0]['rendered']['#markup'])) {
+      $row->description = strip_tags($current_result->field_field_consultation_summary[0]['rendered']['#markup']);
+      $variables['description'] = $row->description;
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_region().
+ */
+function arpansa_theme_preprocess_region(&$variables) {
+  if ($variables['region'] == 'content') {
+    $variables['page_title'] = drupal_get_title();
+  }
 }

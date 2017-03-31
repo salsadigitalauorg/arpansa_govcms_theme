@@ -638,6 +638,12 @@ if (file_exists('/var/www/site-php/arpansa/arpansa-settings.inc')) {
   require('/var/www/site-php/arpansa/arpansa-settings.inc');
 }
 
+if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+  if ($_ENV['AH_SITE_ENVIRONMENT'] != 'prod') {
+    $conf['googleanalytics_account'] = 'UA-96320824-1';
+  }
+}
+
 /**
  * Load local development override configuration, if available.
  *

@@ -48,7 +48,7 @@
     $('.slider-prev').bind('click', previous_button_click);
     $('.slider-next').bind('click', next_button_click);
     $('.slider-dot').bind('click', dot_button_click);
-    $('.slider-play').bind('click', play_button_click);
+    $('.slider-play').bind('click', play_button_click).click();
     update_dots_custom_controls();
     position_custom_controls();
   }

@@ -154,6 +154,11 @@ function arpansa_entity_user_default_permissions() {
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
     'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'media',
@@ -581,6 +586,8 @@ function arpansa_entity_user_default_permissions() {
   $permissions['administer media browser'] = array(
     'name' => 'administer media browser',
     'roles' => array(
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'media',
@@ -1191,6 +1198,29 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create blog_article content'] = array(
     'name' => 'create blog_article content',
     'roles' => array(
+      'Site builder' => 'Site builder',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create career content'.
+  $permissions['create career content'] = array(
+    'name' => 'create career content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create consultation content'.
+  $permissions['create consultation content'] = array(
+    'name' => 'create consultation content',
+    'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
@@ -1204,10 +1234,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create event content'] = array(
     'name' => 'create event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1270,10 +1297,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create media_release content'] = array(
     'name' => 'create media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1309,10 +1333,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['create publication content'] = array(
     'name' => 'create publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1404,6 +1425,29 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any blog_article content'] = array(
     'name' => 'delete any blog_article content',
     'roles' => array(
+      'Site builder' => 'Site builder',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any career content'.
+  $permissions['delete any career content'] = array(
+    'name' => 'delete any career content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any consultation content'.
+  $permissions['delete any consultation content'] = array(
+    'name' => 'delete any consultation content',
+    'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
@@ -1427,10 +1471,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any event content'] = array(
     'name' => 'delete any event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1502,10 +1543,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any media_release content'] = array(
     'name' => 'delete any media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1541,10 +1579,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete any publication content'] = array(
     'name' => 'delete any publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1600,6 +1635,29 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own blog_article content'] = array(
     'name' => 'delete own blog_article content',
     'roles' => array(
+      'Site builder' => 'Site builder',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own career content'.
+  $permissions['delete own career content'] = array(
+    'name' => 'delete own career content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own consultation content'.
+  $permissions['delete own consultation content'] = array(
+    'name' => 'delete own consultation content',
+    'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
@@ -1623,10 +1681,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own event content'] = array(
     'name' => 'delete own event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1685,10 +1740,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own media_release content'] = array(
     'name' => 'delete own media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1724,10 +1776,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['delete own publication content'] = array(
     'name' => 'delete own publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1932,6 +1981,29 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any blog_article content'] = array(
     'name' => 'edit any blog_article content',
     'roles' => array(
+      'Site builder' => 'Site builder',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any career content'.
+  $permissions['edit any career content'] = array(
+    'name' => 'edit any career content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any consultation content'.
+  $permissions['edit any consultation content'] = array(
+    'name' => 'edit any consultation content',
+    'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
@@ -1955,10 +2027,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any event content'] = array(
     'name' => 'edit any event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2030,10 +2099,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any media_release content'] = array(
     'name' => 'edit any media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2069,10 +2135,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit any publication content'] = array(
     'name' => 'edit any publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2180,6 +2243,16 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own blog_article content'] = array(
     'name' => 'edit own blog_article content',
     'roles' => array(
+      'Site builder' => 'Site builder',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own career content'.
+  $permissions['edit own career content'] = array(
+    'name' => 'edit own career content',
+    'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
@@ -2201,6 +2274,19 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'comment',
   );
 
+  // Exported permission: 'edit own consultation content'.
+  $permissions['edit own consultation content'] = array(
+    'name' => 'edit own consultation content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit own document files'.
   $permissions['edit own document files'] = array(
     'name' => 'edit own document files',
@@ -2215,10 +2301,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own event content'] = array(
     'name' => 'edit own event content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2277,10 +2360,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own media_release content'] = array(
     'name' => 'edit own media_release content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2316,10 +2396,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['edit own publication content'] = array(
     'name' => 'edit own publication content',
     'roles' => array(
-      'Content approver' => 'Content approver',
-      'Content editor' => 'Content editor',
       'Site builder' => 'Site builder',
-      'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -2423,12 +2500,25 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'moderate content from archived to draft'.
+  $permissions['moderate content from archived to draft'] = array(
+    'name' => 'moderate content from archived to draft',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
   // Exported permission: 'moderate content from draft to needs_review'.
   $permissions['moderate content from draft to needs_review'] = array(
     'name' => 'moderate content from draft to needs_review',
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
@@ -2441,6 +2531,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
@@ -2452,6 +2543,19 @@ function arpansa_entity_user_default_permissions() {
     'name' => 'moderate content from needs_review to published',
     'roles' => array(
       'Content approver' => 'Content approver',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'moderate content from published to archived'.
+  $permissions['moderate content from published to archived'] = array(
+    'name' => 'moderate content from published to archived',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
     ),
@@ -2749,6 +2853,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2792,12 +2897,41 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'view_unpublished',
   );
 
+  // Exported permission: 'view any unpublished career content'.
+  $permissions['view any unpublished career content'] = array(
+    'name' => 'view any unpublished career content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: 'view any unpublished consultation content'.
+  $permissions['view any unpublished consultation content'] = array(
+    'name' => 'view any unpublished consultation content',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'view_unpublished',
+  );
+
   // Exported permission: 'view any unpublished content'.
   $permissions['view any unpublished content'] = array(
     'name' => 'view any unpublished content',
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -2820,6 +2954,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished footer_teaser content'] = array(
     'name' => 'view any unpublished footer_teaser content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -2832,6 +2967,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'authenticated user' => 'authenticated user',
     ),
@@ -2842,6 +2978,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished literature_survey content'] = array(
     'name' => 'view any unpublished literature_survey content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'view_unpublished',
@@ -2861,6 +2998,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished news_article content'] = array(
     'name' => 'view any unpublished news_article content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -2871,6 +3009,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished page content'] = array(
     'name' => 'view any unpublished page content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -2891,6 +3030,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished slide content'] = array(
     'name' => 'view any unpublished slide content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -2901,6 +3041,7 @@ function arpansa_entity_user_default_permissions() {
   $permissions['view any unpublished webform content'] = array(
     'name' => 'view any unpublished webform content',
     'roles' => array(
+      'Preview user' => 'Preview user',
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
@@ -2999,6 +3140,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',
@@ -3036,6 +3178,7 @@ function arpansa_entity_user_default_permissions() {
     'roles' => array(
       'Content approver' => 'Content approver',
       'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
       'Site builder' => 'Site builder',
       'Site editor' => 'Site editor',
       'administrator' => 'administrator',

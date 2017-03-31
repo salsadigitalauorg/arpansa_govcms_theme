@@ -43,8 +43,25 @@ form.webform-client-form {
     .description {
       font-size: rem(14px);
     }
-  }
-  // =========================================================
+    [type='text'], [type='number'], [type='tel'], [type='email'], [type='password'], textarea {
+      border-color: $grey_1;
+      background-color: $grey_2;
+      border-radius: 4px;
+      outline: inherit;
+      &:focus {
+        background-color: white;
+        border-color: $blue_1;
+        box-shadow: 0 0 5px $blue_1;
+      }
+      &:invalid {
+        border-color: $red_1;
+        background-color: white;
+        &:focus {
+          box-shadow: 0 0 5px $red_1;
+        }
+      }
+    }
+  } // =========================================================
   // SELECTORS - CHECKBOX, SELECT, RADIO, LIST
   // =========================================================
   .webform-component-checkboxes {
@@ -64,8 +81,7 @@ form.webform-client-form {
       width: 100%;
       height: auto;
     }
-  }
-  // =========================================================
+  } // =========================================================
   // DATE & TIME
   // =========================================================
   .webform-component-date {
@@ -129,8 +145,7 @@ form.webform-client-form {
         display: inline;
       }
     }
-  }
-  // =========================================================
+  } // =========================================================
   // GRID
   // =========================================================
   .webform-component-grid {
@@ -142,8 +157,7 @@ form.webform-client-form {
     }
     table.sticky-header {
       background-color: white;
-      z-index: 1;
-      // Values below taken directly from `vendor/gov-au-ui-kit/assets/sass/components/_tables.scss`
+      z-index: 1; // Values below taken directly from `vendor/gov-au-ui-kit/assets/sass/components/_tables.scss`
       th {
         border-bottom: solid 1px $light-grey;
         padding: $tiny-spacing;
@@ -185,8 +199,7 @@ form.webform-client-form {
         }
       }
     }
-  }
-  // =========================================================
+  } // =========================================================
   // FILE
   // =========================================================
   .webform-component-file {
@@ -213,8 +226,7 @@ form.webform-client-form {
         }
       }
     }
-  }
-  // =========================================================
+  } // =========================================================
   // FIELDSET
   // =========================================================
   .webform-component-fieldset {
@@ -226,8 +238,7 @@ form.webform-client-form {
     .form-item {
       margin-top: 0;
     }
-  }
-  // =========================================================
+  } // =========================================================
   // PROGRESS BAR
   // =========================================================
   .webform-previous {

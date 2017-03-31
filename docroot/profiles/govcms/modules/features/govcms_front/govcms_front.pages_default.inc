@@ -127,40 +127,6 @@ function govcms_front_default_page_manager_pages() {
   $display->content['new-d796ee66-a849-4c89-bf7a-c8984107266b'] = $pane;
   $display->panels['middle'][1] = 'new-d796ee66-a849-4c89-bf7a-c8984107266b';
   $pane = new stdClass();
-  $pane->pid = 'new-0597f166-20f3-4190-a3c4-8a27fa0fff5e';
-  $pane->panel = 'middle';
-  $pane->type = 'views';
-  $pane->subtype = 'latest_news';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '5',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'block_1',
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '0597f166-20f3-4190-a3c4-8a27fa0fff5e';
-  $display->content['new-0597f166-20f3-4190-a3c4-8a27fa0fff5e'] = $pane;
-  $display->panels['middle'][2] = 'new-0597f166-20f3-4190-a3c4-8a27fa0fff5e';
-  $pane = new stdClass();
   $pane->pid = 'new-8cc0befe-9bd0-4b34-b5e2-737fca161c71';
   $pane->panel = 'middle';
   $pane->type = 'views';
@@ -190,11 +156,11 @@ function govcms_front_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '8cc0befe-9bd0-4b34-b5e2-737fca161c71';
   $display->content['new-8cc0befe-9bd0-4b34-b5e2-737fca161c71'] = $pane;
-  $display->panels['middle'][3] = 'new-8cc0befe-9bd0-4b34-b5e2-737fca161c71';
+  $display->panels['middle'][2] = 'new-8cc0befe-9bd0-4b34-b5e2-737fca161c71';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -14,15 +14,14 @@ html {
   @include button-colours($secondary_1, darken($secondary_1, 20%), #fff, darken($secondary_1, 40%), darken($secondary_1, 40%));
   body.not-front & {
     .content-header {
-      background-color: $secondary_1;
+      display: none;
       padding-top: rem(19px);
       padding-bottom: rem(25px);
       margin-bottom: rem(25px);
       @include breakpoint(tablet) {
-        height: rem(235px);
-        padding-top: rem(40px);
-        padding-bottom: rem(40px);
-        margin-bottom: rem(80px);
+        padding-top: rem(50px);
+        padding-bottom: rem(50px);
+        display: block;
       }
       .content-header-inner {
         @include center-column($desktop_column);
@@ -51,7 +50,8 @@ html {
     margin-bottom: $default_padding;
   }
   .content {
-    @include link-colours($primary_1, $secondary_3, $neutral_1);
+    @include standard_content_link;
+    color: $neutral_1;
   }
 }
 
@@ -61,6 +61,9 @@ html {
   flex-wrap: wrap;
   @include breakpoint(large_tablet) {
     flex-wrap: nowrap;
+  }
+  html.no-flexbox & {
+    display: block;
   }
 }
 
@@ -72,6 +75,9 @@ html {
     min-width: rem(330px);
     padding-right: rem(60px);
   }
+  html.no-flexbox & {
+    float: left;
+  }
 }
 
 .content-body-inner {
@@ -81,12 +87,15 @@ html {
       @include breakpoint(large_tablet) {
         max-width: $desktop_content_column;
       }
-    }
-    .panel-display {
-      @include panel-display-layouts(desktop);
+      html.no-flexbox & {
+        float: right;
+      }
     }
   }
   &.no-sidebar {
+    h1 {
+      @include center-column($desktop_column);
+    }
     .page-node & {
       .region-content {
         // Node Pages
@@ -97,8 +106,7 @@ html {
           &>.content {
             @include center-column($desktop_content_column);
           }
-        }
-        // Node Webforms
+        } // Node Webforms
         .node-webform {
           &>.submitted {
             max-width: $form_width;
@@ -109,39 +117,33 @@ html {
         }
       }
     }
-    .panel-display {
-      @include panel-display-layouts(tablet);
-      // All Columns - Over 2 panels columns to use full column.
-      @include center-column($desktop_column);
-      // One Column (100)
-      &.panel-1col, &.panel-1col-stacked {
-        @include center-column($desktop_content_column);
-      }
-      // Two Columns (50 50)
-      &.panel-2col, &.panel-2col-bricks, &.panel-2col-stacked {
-        @include center-column($desktop_content_column);
-      }
+  }
+  h1 {
+    margin-top: 0;
+    margin-bottom: rem(20px);
+    @include breakpoint(desktop) {
+      margin-bottom: rem(42px);
     }
-    #site-map {
+  }
+  #site-map {
+    @include center-column($desktop_content_column);
+  }
+  .search-api-page-results {
+    @include center-column($desktop_content_column);
+  }
+  .page-contact & {
+    .block-system {
+      @include center-column($form_width);
+    }
+  }
+  .page-search404 & {
+    .block-system {
       @include center-column($desktop_content_column);
     }
-    .search-api-page-results {
+  }
+  .page-node-done & {
+    .block-system {
       @include center-column($desktop_content_column);
-    }
-    .page-contact & {
-      .block-system {
-        @include center-column($form_width);
-      }
-    }
-    .page-search404 & {
-      .block-system {
-        @include center-column($desktop_content_column);
-      }
-    }
-    .page-node-done & {
-      .block-system {
-        @include center-column($desktop_content_column);
-      }
     }
   }
 }
@@ -167,10 +169,6 @@ html {
 // =========================================================
 // MISC ELEMENT STYLING
 // =========================================================
-.more-link {
-  @include link-colours($primary_1, $secondary_3, $neutral_1);
-}
-
 ul, ol, dl, p, dt, dd {
   // Global override for 16px font-size on tablet.
   @include breakpoint(tablet) {
@@ -197,5 +195,5 @@ a[rel~='external']::after {
 }
 
 #content {
-  @include button-colours($secondary_1, #10505F, #0C3C47, white);
+  @include standard_purple_button;
 }
