@@ -166,7 +166,6 @@ class ArpansaMigrationIA extends ArpansaMigrationPage {
    * {@inheritdoc}
    */
   public function postImport() {
-    parent::postImport();
     menu_rebuild();
   }
 

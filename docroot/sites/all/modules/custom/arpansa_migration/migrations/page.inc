@@ -25,6 +25,13 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   protected $lastPage;
 
   /**
+   * Stub count.
+   *
+   * @var int
+   */
+  protected $stubCount = 0;
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(array $arguments = array()) {
@@ -251,14 +258,77 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  protected function postImport() {
+    if ($this->stubCount) {
+      for ($try = 0; $try < 10; $try++) {
+        drush_print('Try:' .$try);
+        $mappingRows = $this->map->getRowsNeedingUpdate($this->stubCount);
+        if (!$mappingRows || !count($mappingRows)) {
+          break;
+        }
+        foreach ($mappingRows as $mappingRow) {
+          if (empty($mappingRow->destid1)) {
+            continue;
+          }
+          $this->currentFauxSourceKey = ['source' => $mappingRow->sourceid1];
+          // Wipe all messages of the current row.
+          $this->map->delete($this->currentSourceKey(), TRUE);
+          // Prepare a faux row.
+          $row = new stdClass();
+          $row->source = $mappingRow->sourceid1;
+          $row->alias = '';
+          $this->prepareKey([
+            'source' => [
+              'type' => 'varchar',
+              'length' => 255,
+            ],
+          ], $row);
+          $node = node_load($mappingRow->destid1);
+          $row->type = $node->type;
+          // Stimulate import process.
+          if (!$this->prepareRow($row)) {
+            // Cannot scrape this page, ignore it.
+            $this->map->saveIDMapping((object) ['source' => $mappingRow->sourceid1], [$mappingRow->destid1], MigrateMap::STATUS_IGNORED);
+            continue;
+          }
+          $node->title = $row->title;
+          $node->body[LANGUAGE_NONE][0]['value'] = ArpansaMigrationHelper::sanitizeText($row->body);
+          $node->body[LANGUAGE_NONE][0]['format'] = 'rich_text';
+          $this->prepare($node, $row);
+          $node->revision = FALSE;
+          node_save($node);
+          $this->complete($node, $row);
+          // Update this mapping as IMPORTED.
+          $this->map->saveIDMapping((object) ['source' => $mappingRow->sourceid1], [$mappingRow->destid1], MigrateMap::STATUS_IMPORTED);
+          unset($this->currentFauxSourceKey);
+        }
+      }
+    }
+  }
+
+  /**
    * Implements createStub().
    */
   protected function createStub($migration, $source_key = NULL) {
     migrate_instrument_start('ArpansaMigrationPage::createStub');
     $source = reset($source_key);
+
+    $ignoredSources = [
+      '/uvindex',
+      '/archive',
+      '/news/mediareleases/archive',
+    ];
+    foreach ($ignoredSources as $ignoredSource) {
+      if (strpos($source, $ignoredSource) === 0) {
+        return FALSE;
+      }
+    }
+
     $node = new stdClass();
     $node->title = $source;
-    $node->type = pathinfo($source_key, PATHINFO_EXTENSION) ? 'page' : 'landing_page';
+    $node->type = pathinfo($source, PATHINFO_EXTENSION) ? 'page' : 'landing_page';
     $node->language = LANGUAGE_NONE;
     node_object_prepare($node);
     $node->uid = 1;
@@ -272,6 +342,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     node_save($node);
     migrate_instrument_stop('ArpansaMigrationPage::createStub');
     if (isset($node->nid)) {
+      $this->stubCount++;
       return array($node->nid);
     }
 
@@ -343,7 +414,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
         // Prevent malformed media token.
         $row->body = str_replace(
           ['[[[{', '}]]]'],
-          ['[<wbr>[[{', '}]]<wbr>]'],
+          ['&#91;[[{', '}]]&#93;'],
           $row->body
         );
 
@@ -566,4 +637,13 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     }
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function currentSourceKey() {
+    if (!empty($this->currentFauxSourceKey)) {
+      return $this->currentFauxSourceKey;
+    }
+    return $this->source->getCurrentKey();
+  }
 }
