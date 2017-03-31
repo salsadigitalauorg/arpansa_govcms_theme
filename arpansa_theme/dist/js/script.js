@@ -597,6 +597,9 @@ var desktop_column = 1170;
         component_grid_resize();
         $(window).bind('resize', component_grid_resize);
       }
+
+      // Sumoselect all select
+      $('.form-select', context).SumoSelect();
     }
   };
 
