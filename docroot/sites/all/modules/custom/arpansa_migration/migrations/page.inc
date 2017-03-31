@@ -258,7 +258,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     $source = reset($source_key);
     $node = new stdClass();
     $node->title = $source;
-    $node->type = 'landing_page';
+    $node->type = pathinfo($source_key, PATHINFO_EXTENSION) ? 'page' : 'landing_page';
     $node->language = LANGUAGE_NONE;
     node_object_prepare($node);
     $node->uid = 1;
@@ -330,6 +330,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       if ($content) {
         $this->remapImages($row, $content, $xpath);
         $this->remapLinks($row, $content, $xpath);
+        $this->sanitizeContent($row, $content, $xpath);
 
         // Scrape remaining children into body.
         $row->body = '';
@@ -377,6 +378,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     /** @var DOMElement $image */
     foreach ($images as $image) {
       $src = $image->getAttribute('src');
+      $src = ArpansaMigrationHelper::sanitizeArpansaSourceUri($src);
       $src = ArpansaMigrationHelper::remapRelativeUri($src, $row->source);
 
       // Search for migrated file.
@@ -431,7 +433,8 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       if (empty($url['path'])) {
         $url['path'] = '/';
       }
-      $href = ArpansaMigrationHelper::remapRelativeUri($url['path'], $row->source);
+      $path = ArpansaMigrationHelper::sanitizeArpansaSourceUri($url['path']);
+      $href = ArpansaMigrationHelper::remapRelativeUri($path, $row->source);
 
       $extension = pathinfo($href, PATHINFO_EXTENSION);
       // Search for migrated page.
@@ -500,6 +503,52 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   }
 
   /**
+   * Sanitize content.
+   *
+   * @param object $row
+   *   Current row.
+   * @param \DOMElement $content
+   *   Body Content.
+   * @param \DOMXPath $xpath
+   *   XPath.
+   */
+  protected function sanitizeContent($row, DOMElement $content, DOMXPath $xpath) {
+    // Strip out <script> tags.
+    $scripts = $xpath->query('//script', $content);
+    /** @var DOMElement $script */
+    foreach ($scripts as $script) {
+      $script->parentNode->removeChild($script);
+    }
+
+    // Strip out unwanted attributes.
+    $unwantedAttributes = [
+      'style',
+      'onblur', 'onchange', 'onfocus', 'oninput', 'onselect',
+      'onreset', 'onsubmit',
+      'onkeydown', 'onkeyup', 'onkeypress',
+      'onclick', 'ondbclick',
+      'onmousedown', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup',
+    ];
+    foreach ($unwantedAttributes as $attribute) {
+      $elements = $xpath->query('//*[@' . $attribute . ']', $content);
+      /** @var DOMElement $element */
+      foreach ($elements as $element) {
+        $element->removeAttribute($attribute);
+      }
+    }
+
+    // Remove href: javascript from anchors.
+    $anchors = $xpath->query('//a', $content);
+    /** @var DOMElement $anchor */
+    foreach ($anchors as $anchor) {
+      $href = $anchor->getAttribute('href');
+      if (strpos($href, 'javascript:') !== FALSE) {
+        $anchor->setAttribute('href', '');
+      }
+    }
+  }
+
+  /**
    * Sanitise idList.
    */
   protected function sanitizeIdList() {
@@ -516,4 +565,5 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       $this->options['idlist'] = $idlist;
     }
   }
+
 }

@@ -165,6 +165,7 @@ class ArpansaMigrationHelper {
     ), '', $source_uri);
     $source_uri = trim($source_uri, '/');
     $source_uri = trim($source_uri);
+    $source_uri = preg_replace('/\/+/', '/', $source_uri);
     if ($urlencode) {
       $source_uri = urldecode($source_uri);
     }
