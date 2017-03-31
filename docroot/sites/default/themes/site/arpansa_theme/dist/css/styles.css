@@ -7627,6 +7627,10 @@ html.no-flexbox .region-navigation .block-superfish ul.sf-menu > li {
   background-color: #268126;
 }
 
+.region-navigation .block-superfish ul.sf-menu > li.active-trail > a:hover, .region-navigation .block-superfish ul.sf-menu > li.active-trail > a:focus {
+  background-color: #1C661C;
+}
+
 .region-navigation .block-superfish ul.sf-menu > li > a {
   position: static;
   display: inline-block;
@@ -7643,7 +7647,7 @@ html.no-flexbox .region-navigation .block-superfish ul.sf-menu > li {
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > a:hover, .region-navigation .block-superfish ul.sf-menu > li > a:focus {
-  background-color: #268126;
+  background-color: #1C661C;
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > a:before {
