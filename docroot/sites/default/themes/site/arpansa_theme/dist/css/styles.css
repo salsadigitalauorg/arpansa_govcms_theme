@@ -10851,7 +10851,7 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
   display: block;
 }
 
-#content .view-literature-surveys .view-filters .views-exposed-widget {
+body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget {
   display: block;
   float: none;
   margin-top: 0;
@@ -10859,64 +10859,82 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
 }
 
 @media (min-width: 768px) {
-  #content .view-literature-surveys .view-filters .views-exposed-widget {
+  body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget {
     display: table-cell;
     width: 33%;
     vertical-align: bottom;
   }
 }
 
-#content .view-literature-surveys .view-filters .views-exposed-widget.views-submit-button {
+body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget.views-submit-button {
   display: block;
   float: none;
   clear: both;
 }
 
-#content .view-literature-surveys .view-filters input[type="text"] {
+body.not-front #content .view.view-literature-surveys .view-filters input[type="text"] {
   border: 1px solid #444449;
   border-radius: 2px;
   height: 42px;
   margin-bottom: 16px;
 }
 
-#content .view-literature-surveys .view-filters select {
+body.not-front #content .view.view-literature-surveys .view-filters select {
   display: none;
 }
 
-#content .view-literature-surveys .view-filters .SumoSelect {
+body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect {
   margin-right: 0;
   width: 100%;
 }
 
-#content .view-literature-surveys .view-filters .SumoSelect > .CaptionCont {
+body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect > .CaptionCont {
   border-color: #444449;
 }
 
-#content .view-literature-surveys .view-filters .SumoSelect > .CaptionCont > span.placeholder {
+body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect > .CaptionCont > span.placeholder {
   font-style: normal;
 }
 
-#content .view-literature-surveys .view-filters .SumoSelect label {
+body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect label {
   font-weight: normal;
 }
 
-#content .view-literature-surveys .view-filters input[type="submit"] {
+body.not-front #content .view.view-literature-surveys .view-filters input[type="submit"] {
   margin-top: 0;
 }
 
-#content .view-literature-surveys .view-content .field-name-title .field-label, #content .view-literature-surveys .view-content .field-name-field-link-to .field-label {
+body.not-front #content .view.view-literature-surveys .view-content .views-row {
+  width: 100%;
+  margin-right: 0;
+}
+
+body.not-front #content .view.view-literature-surveys .view-content .views-row .node {
+  margin-bottom: 1.25em;
+  padding-bottom: 0;
+}
+
+body.not-front #content .view.view-literature-surveys .view-content .field-name-title .field-label, body.not-front #content .view.view-literature-surveys .view-content .field-name-field-link-to .field-label {
   display: none;
 }
 
-#content .view-literature-surveys .view-content .field-label {
+body.not-front #content .view.view-literature-surveys .view-content .field-name-title h2, body.not-front #content .view.view-literature-surveys .view-content .field-name-title .display, body.not-front #content .view.view-literature-surveys .view-content .field-name-field-link-to h2, body.not-front #content .view.view-literature-surveys .view-content .field-name-field-link-to .display {
+  margin-bottom: 0.625em;
+}
+
+body.not-front #content .view.view-literature-surveys .view-content .field-label {
   display: block;
   float: none;
 }
 
-#content .view-literature-surveys .view-content .field-name-field-authored-by h3, #content .view-literature-surveys .view-content .field-name-field-published-in h3 {
+body.not-front #content .view.view-literature-surveys .view-content .field-name-field-authored-by h3, body.not-front #content .view.view-literature-surveys .view-content .field-name-field-published-in h3 {
   margin: 0;
   font-size: 1.125em;
   line-height: inherit;
+}
+
+body.not-front #content .view.view-literature-surveys .view-content .field:last-child {
+  margin-bottom: 0;
 }
 
 .page-node .content-body-inner.no-sidebar .region-content .node.node-literature-survey > .content {
