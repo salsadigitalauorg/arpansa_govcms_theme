@@ -80,6 +80,7 @@ class ArpansaMigrationFileMetadata extends ArpansaMigrationBase {
    * {@inheritdoc}
    */
   public function prepareRow($row) {
+    $row->path = urldecode($row->path);
     if ($destids = $this->fileMigration->map->lookupDestinationID(['sourceid1' => $row->path])) {
       if (!empty($destids['destid1'])) {
         $fid = $destids['destid1'];
