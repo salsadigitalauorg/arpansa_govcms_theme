@@ -7441,6 +7441,45 @@ img {
   background-image: url(../images/svg/magnifying_glass_hover.svg);
 }
 
+.no-flexbox .header__inner .logo-and-search .logo-wrapper {
+  display: inline-block;
+}
+
+.no-flexbox .header__inner .logo-and-search .logo-wrapper .logo-aus-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.no-flexbox .header__inner .logo-and-search .logo-wrapper .header__logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.no-flexbox .header__inner .logo-and-search .region-header {
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  width: 500px;
+}
+
+.no-flexbox .header__inner .logo-and-search .region-header #block-govcms-text-resize-text-resize {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.no-flexbox .header__inner .logo-and-search .region-header .block-search-api-page {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.no-flexbox .header__inner .logo-and-search .region-header .block-search-api-page .search-form-widget .form-item {
+  display: table-cell;
+}
+
+.no-flexbox .header__inner .logo-and-search .region-header .block-search-api-page .search-form-widget input[type="submit"] {
+  display: table-cell;
+}
+
 #block-views-slideshow-block {
   background-image: linear-gradient(90deg, #298829 0%, #4E1A74 93%);
 }
