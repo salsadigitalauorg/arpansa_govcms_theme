@@ -85,6 +85,8 @@
         }
         &.menuparent {
           &>a {
+            padding-left: rem(5px);
+            padding-right: rem(5px);
             &:after {
               content: '';
               display: inline-block;
@@ -101,8 +103,14 @@
         &.active-trail {
           &>a {
             background-color: $main_menu_active;
+            &:before {
+              background-color: $main_menu_active;
+            }
             &:hover, &:focus {
               background-color: $main_menu_hover_2;
+              &:before {
+                background-color: $main_menu_hover_2;
+              }
             }
           }
         }
@@ -121,6 +129,9 @@
           font-weight: 600;
           &:hover, &:focus {
             background-color: $main_menu_hover_2;
+            &:before {
+              background-color: $main_menu_hover_2;
+            }
           }
           &:before {
             content: '';

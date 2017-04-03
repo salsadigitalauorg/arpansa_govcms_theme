@@ -454,7 +454,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Not what you\'re looking for?',
     'visibility' => 0,
   );
 
