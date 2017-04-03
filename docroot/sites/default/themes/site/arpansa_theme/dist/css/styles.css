@@ -8245,6 +8245,10 @@ a[rel~='external']::after {
   margin-bottom: 1.375rem;
 }
 
+#content {
+  word-wrap: break-word;
+}
+
 #content button,
 #content .button,
 #content [role='button'],
