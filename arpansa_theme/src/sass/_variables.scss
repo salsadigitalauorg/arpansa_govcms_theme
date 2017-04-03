@@ -40,5 +40,7 @@ $red_1: #E74C3C;
 $blue_1: #2980BA;
 $border-radius: 4px;
 //FONT
-$type-heading-primary: 'Source Sans Pro', sans-serif, Arial;
-$type-menu-footer: 'Open Sans', sans-serif;
+$font_source_sans: 'Source Sans Pro', sans-serif, Arial;
+$font_open_sans: 'Open Sans', sans-serif;
+$type-heading-primary: $font_source_sans;
+$type-menu-footer: $font_open_sans;
