@@ -34,6 +34,12 @@ body.not-front {
         width: 100%;
         >.CaptionCont {
           border-color: $neutral_1;
+          span {
+            max-width: inherit;
+            @include breakpoint(tablet) {
+              max-width: 200px;
+            }
+          }
           >span.placeholder {
             font-style: normal;
           }
@@ -81,6 +87,19 @@ body.not-front {
   }
 }
 
+html.no-flexboxlegacy {
+  body.not-front {
+    #content .view.view-literature-surveys {
+      .view-filters {
+        .views-exposed-widget {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+// =========================================================
 // LITERATURE SURVEY PAGE
 // =========================================================
 .page-node .content-body-inner.no-sidebar .region-content {
