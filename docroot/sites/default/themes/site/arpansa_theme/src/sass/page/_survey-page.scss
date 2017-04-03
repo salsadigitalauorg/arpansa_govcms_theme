@@ -1,0 +1,11 @@
+// =========================================================
+// LITERATURE SURVEY PAGE
+// =========================================================
+.page-node .content-body-inner.no-sidebar .region-content {
+  .node.node-literature-survey {
+    >.content {
+      @include outer-container(100%);
+      @include center-column($desktop_column);
+    }
+  }
+}
