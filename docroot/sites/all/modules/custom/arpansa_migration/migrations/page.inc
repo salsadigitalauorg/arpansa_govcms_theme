@@ -171,7 +171,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       return FALSE;
     }
 
-    foreach ([1, 2, 3, 4] as $index) {
+    foreach ([1, 2, 3, 4, 5] as $index) {
       if (!empty($row->{'tag' . $index})) {
         $row->tags[] = ucfirst($row->{'tag' . $index});
       }

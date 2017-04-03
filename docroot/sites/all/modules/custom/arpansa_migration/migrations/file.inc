@@ -30,15 +30,14 @@ class ArpansaMigrationFile extends ArpansaMigrationBase {
       new ArpansaMigrationFileItem($this->sourceDir, FALSE)
     );
 
-    module_load_include('inc', 'arpansa_migration', '/migrations/destinations/file');
-    $this->destination = new ArpansaMigrationFileDestination('file', 'MigrateFileUri');
+    $this->destination = new MigrateDestinationFile('file', 'MigrateFileUri');
 
     $this->map = new MigrateSQLMap($this->machineName, [
       'path' => [
         'type' => 'varchar',
         'length' => 255,
       ],
-    ], ArpansaMigrationFileDestination::getKeySchema());
+    ], MigrateDestinationFile::getKeySchema());
 
     $this->addFieldMapping('uid')->defaultValue(1);
     $this->addFieldMapping('source_dir')->defaultValue($this->sourceDir);

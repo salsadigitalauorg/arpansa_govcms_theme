@@ -222,4 +222,54 @@ class ArpansaMigrationHelper {
     return $uri;
   }
 
+  /**
+   * Prepare a term.
+   *
+   * @param string $name
+   *   Term name.
+   * @param string $vocabulary_machine_name
+   *   Vocabulary machine name.
+   *
+   * @return int|FALSE
+   *   Term ID.
+   */
+  public static function prepareTerm($name, $vocabulary_machine_name) {
+    $cache = drupal_static(__FUNCTION__, []);
+
+    if (isset($cache[$vocabulary_machine_name][$name])) {
+      return $cache[$vocabulary_machine_name][$name];
+    }
+
+    $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_machine_name);
+
+    // Attempt to load the existing term.
+    $query = new EntityFieldQuery();
+    $result = $query->entityCondition('entity_type', 'taxonomy_term')
+      ->propertyCondition('vid', $vocabulary->vid)
+      ->propertyCondition('name', $name)
+      ->range(0, 1)
+      ->execute();
+
+    if (!empty($result['taxonomy_term']) && count($result['taxonomy_term'])) {
+      $term = reset($result['taxonomy_term']);
+
+      $cache[$vocabulary_machine_name][$name] = $term->tid;
+
+      return $term->tid;
+    }
+
+    // No term found, create a new term.
+    $term = new stdClass();
+    $term->name = $name;
+    $term->vid = $vocabulary->vid;
+    taxonomy_term_save($term);
+
+    if (!empty($term->tid)) {
+      $cache[$vocabulary_machine_name][$name] = $term->tid;
+      return $term->tid;
+    }
+
+    return FALSE;
+  }
+
 }
