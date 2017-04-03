@@ -132,6 +132,9 @@
       a.readmore {
         @include right-arrow-button;
         line-height: em(28px);
+        @include breakpoint(tablet) {
+          display: none;
+        }
       }
     }
   }
@@ -199,7 +202,7 @@
   .banner-description-holder {
     color: white;
     padding: rem(30px) $default_padding;
-    background-color: $primary_1;
+    background-color: $secondary_1;
     @include breakpoint(tablet) {
       @include center-column($desktop_column);
       background-color: transparent;
@@ -211,15 +214,20 @@
       @include link-colours(white, $neutral_4, $neutral_1);
       margin-top: 0;
       font-weight: 400;
+      line-height: 23px;
       @include breakpoint(tablet) {
         margin-bottom: rem(21px);
         font-size: rem(48px);
         font-weight: 300;
+        line-height: rem(55px);
       }
     }
     .field {
       @include link-colours(white, $neutral_4, $neutral_1);
-      @include standard_purple_button;
+      @include standard_white_button;
+      @include breakpoint(tablet) {
+        @include standard_purple_button;
+      }
     }
   }
   .banner-description-panel {

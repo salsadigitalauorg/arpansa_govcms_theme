@@ -111,11 +111,6 @@
           <?php print $breadcrumb; ?>
           <a href="#skip-link" id="skip-content" class="element-invisible" tabindex="-1">Go to top of page</a>
           <a id="main-content"></a>
-          <?php print render($title_prefix); ?>
-          <?php if ($title): ?>
-            <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
         </div>
       </div>
       <div class="content-body">
@@ -125,7 +120,7 @@
         <?php if ($action_links): ?>
           <ul class="action-links"><?php print render($action_links); ?></ul>
         <?php endif; ?>
-        <div class="content-body-inner<?php print $sidebar_first ? ' has-sidebar' : ' no-sidebar'; ?>">
+        <div class="content-body-inner<?php print $sidebar_first ? ' has-sidebar' : ' no-sidebar'; ?> clearfix">
           <?php print render($page['content']); ?>
           <?php print $feed_icons; ?>
           <?php if ($sidebar_first): ?>
@@ -146,6 +141,8 @@
 
   <div id="footer">
     <?php print render($page['footer']); ?>
+    <div class="region-bottom-container">
+      <?php print render($page['bottom']); ?>
+    </div>
   </div>
 </div>
-<?php print render($page['bottom']); ?>

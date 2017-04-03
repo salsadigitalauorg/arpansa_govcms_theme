@@ -275,8 +275,8 @@
 }
 
 @mixin standard_content_link() {
+  @include link-colours($color-link-primary, transparent, $color-link-secondary);
   a {
-    @include link-colours($color-link-primary, transparent, $color-link-secondary);
     border: none;
     text-decoration: underline;
     border-color: $secondary_1;
@@ -295,6 +295,22 @@
 
 @mixin standard_purple_button() {
   @include button-colours($secondary_1, $secondary_2, $color-link-secondary, white, white);
+  button, .button, [role='button'], [type='submit'], [type='reset'], [type='button'] {
+    border: none;
+    &:active {
+      color: white;
+    }
+  }
+}
+
+@mixin standard_white_button() {
+  @include button-colours(white, white, $color-link-secondary, $secondary_1, $secondary_1);
+  button, .button, [role='button'], [type='submit'], [type='reset'], [type='button'] {
+    border: none;
+    &:active {
+      color: white;
+    }
+  }
 }
 
 @mixin show_on_mobile($display:'block') {
