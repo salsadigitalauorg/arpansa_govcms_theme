@@ -58,12 +58,15 @@
           font-size: rem(30px);
         }
       }
-    }
-  }
-  .logo-aus-container {
-    margin-right: 25px;
-    img {
-      max-height: rem(50px);
+      .logo-aus-container {
+        margin-right: 25px;
+        a {
+          display: inline;
+          img {
+            max-height: rem(50px);
+          }
+        }
+      }
     }
   }
   .header__logo {
