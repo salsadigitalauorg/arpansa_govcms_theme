@@ -7650,6 +7650,11 @@ html.no-flexbox .region-navigation .block-superfish ul.sf-menu > li {
   width: auto;
 }
 
+.region-navigation .block-superfish ul.sf-menu > li.menuparent > a {
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
+}
+
 .region-navigation .block-superfish ul.sf-menu > li.menuparent > a:after {
   content: '';
   display: inline-block;
@@ -7666,7 +7671,15 @@ html.no-flexbox .region-navigation .block-superfish ul.sf-menu > li {
   background-color: #268126;
 }
 
+.region-navigation .block-superfish ul.sf-menu > li.active-trail > a:before {
+  background-color: #268126;
+}
+
 .region-navigation .block-superfish ul.sf-menu > li.active-trail > a:hover, .region-navigation .block-superfish ul.sf-menu > li.active-trail > a:focus {
+  background-color: #1C661C;
+}
+
+.region-navigation .block-superfish ul.sf-menu > li.active-trail > a:hover:before, .region-navigation .block-superfish ul.sf-menu > li.active-trail > a:focus:before {
   background-color: #1C661C;
 }
 
@@ -7686,6 +7699,10 @@ html.no-flexbox .region-navigation .block-superfish ul.sf-menu > li {
 }
 
 .region-navigation .block-superfish ul.sf-menu > li > a:hover, .region-navigation .block-superfish ul.sf-menu > li > a:focus {
+  background-color: #1C661C;
+}
+
+.region-navigation .block-superfish ul.sf-menu > li > a:hover:before, .region-navigation .block-superfish ul.sf-menu > li > a:focus:before {
   background-color: #1C661C;
 }
 
@@ -8243,6 +8260,10 @@ a[rel~='external']::after {
 .page-node .region-content .field {
   margin-top: 1.375rem;
   margin-bottom: 1.375rem;
+}
+
+#content {
+  word-wrap: break-word;
 }
 
 #content button,
