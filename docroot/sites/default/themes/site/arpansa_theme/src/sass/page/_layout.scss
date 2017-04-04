@@ -93,20 +93,12 @@ html {
     }
   }
   &.no-sidebar {
-    h1 {
+    .region-content {
       @include center-column($desktop_column);
     }
     .page-node & {
       .region-content {
-        // Node Pages
-        .node {
-          &>.submitted {
-            @include center-column($desktop_content_column);
-          }
-          &>.content {
-            @include center-column($desktop_content_column);
-          }
-        } // Node Webforms
+        // Node Webforms
         .node-webform {
           &>.submitted {
             max-width: $form_width;
