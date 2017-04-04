@@ -8125,30 +8125,8 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
   float: right;
 }
 
-.content-body-inner.no-sidebar h1, .content-body-inner.no-sidebar .hero .site-title, .hero .content-body-inner.no-sidebar .site-title, .content-body-inner.no-sidebar
-.hero-sml .site-title,
-.hero-sml .content-body-inner.no-sidebar .site-title, .content-body-inner.no-sidebar
-.hero-med .site-title,
-.hero-med .content-body-inner.no-sidebar .site-title {
+.content-body-inner.no-sidebar .region-content {
   max-width: 73.125rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  box-sizing: content-box;
-}
-
-.page-node .content-body-inner.no-sidebar .region-content .node > .submitted {
-  max-width: 48.75rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  box-sizing: content-box;
-}
-
-.page-node .content-body-inner.no-sidebar .region-content .node > .content {
-  max-width: 48.75rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -10858,15 +10836,6 @@ html.no-flexboxlegacy body.not-front #content .view.view-literature-surveys .vie
   clear: both;
   content: "";
   display: table;
-}
-
-body.not-front #content .no-sidebar .view {
-  max-width: 73.125rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  box-sizing: content-box;
 }
 
 @media (min-width: 768px) {
