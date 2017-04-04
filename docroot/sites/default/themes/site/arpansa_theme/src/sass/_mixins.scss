@@ -149,6 +149,13 @@
   color: $neutral_1;
 }
 
+@mixin related-content-box() {
+  border-radius: 4px;
+  border: 2px solid $box_purple_border_1;
+  background-color: $box_purple_background_1;
+  padding: 25px;
+}
+
 // =========================================================
 // WYSIWYG MIXIN
 // =========================================================
