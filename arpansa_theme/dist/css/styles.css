@@ -9399,8 +9399,8 @@ ul.tabs.primary {
   position: relative;
   padding: 1.875rem;
   margin-bottom: 1.875rem;
-  height: calc(100% - 1.875rem);
   background-color: white;
+  width: 100%;
   margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -10190,6 +10190,9 @@ ul.tabs.primary {
     display: block;
     margin-right: 2.7461357194%;
     width: 48.6269321403%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
   .view-home-page-blog-articles .view-content .views-row:last-child, .view-latest-news .view-content .views-row:last-child, .view-homepage-what-s-new .view-content .views-row:last-child {
     margin-right: 0;
@@ -10202,6 +10205,9 @@ ul.tabs.primary {
     display: block;
     margin-right: 2.7461357194%;
     width: 31.502576187%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
   .view-home-page-blog-articles .view-content .views-row:last-child, .view-latest-news .view-content .views-row:last-child, .view-homepage-what-s-new .view-content .views-row:last-child {
     margin-right: 0;
@@ -10231,8 +10237,9 @@ ul.tabs.primary {
   position: relative;
   padding: 1.875rem;
   margin-bottom: 1.875rem;
-  height: calc(100% - 1.875rem);
   background-color: white;
+  width: 100%;
+  width: 100%;
 }
 
 .view-home-page-blog-articles .view-content .views-row .node.has-thumbnail, .view-latest-news .view-content .views-row .node.has-thumbnail, .view-homepage-what-s-new .view-content .views-row .node.has-thumbnail {
@@ -10933,8 +10940,8 @@ body.not-front #content .view .view-content .views-row .node {
   position: relative;
   padding: 1.875rem;
   margin-bottom: 1.875rem;
-  height: calc(100% - 1.875rem);
   background-color: white;
+  width: 100%;
   padding-left: 0;
   padding-right: 0;
 }
@@ -11821,8 +11828,8 @@ body.not-front #content .view .pager {
   position: relative;
   padding: 1.875rem;
   margin-bottom: 1.875rem;
-  height: calc(100% - 1.875rem);
   background-color: white;
+  width: 100%;
   padding: 0;
   background-color: transparent;
 }
@@ -12142,8 +12149,8 @@ body.not-front #content .view .pager {
   position: relative;
   padding: 1.875rem;
   margin-bottom: 1.875rem;
-  height: calc(100% - 1.875rem);
   background-color: white;
+  width: 100%;
   padding-top: 17.1875rem;
   padding-left: 0;
   padding-right: 0;
