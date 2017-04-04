@@ -18,7 +18,10 @@
 #block-menu-block-left-nav {
   margin-bottom: $default_padding;
   h2 {
-    margin-bottom: rem(23px);
+    margin-bottom: 0;
+    @include breakpoint(tablet) {
+      margin-bottom: rem(23px);
+    }
     button {
       // Button is only on mobile.
       @include transition-fade;
@@ -33,6 +36,7 @@
       background-color: #F4F4F4;
       color: $neutral_1;
       border-radius: 0;
+      line-height: rem(20px);
       &:hover, &:focus {
         color: $neutral_1;
         background-color: $neutral_3;
@@ -67,7 +71,10 @@
     &.showing {
       display: block;
       background-color: #FAFAFA;
-      padding: rem(26px) rem(15px);
+      padding: 0;
+      @include breakpoint(desktop) {
+        padding: rem(26px) rem(15px);
+      }
     }
   }
   ul.menu {
@@ -91,8 +98,11 @@
         padding-right: rem(35px);
         border-bottom: 0;
         text-decoration: none;
+        background-color: white;
+        line-height: rem(30px);
         &:hover, &:focus {
-          background-color: #def4f9;
+          color: white;
+          background-color: $secondary_1;
         }
       }
       button.sidebar-toggle-menu {
@@ -104,7 +114,7 @@
         width: rem(30px);
         height: rem(56px);
         box-sizing: border-box;
-        background-color: transparent;
+        background-color: white;
         background-repeat: no-repeat;
         background-position: center;
         background-image: url(../images/svg/sidebar-arrow-down.svg);
@@ -115,11 +125,28 @@
         border-radius: 0;
         &:hover, &:focus {
           background-image: url(../images/svg/sidebar-arrow-down-hover.svg);
-          background-color: #def4f9;
+          background-color: $secondary_1;
           box-shadow: none;
         }
         &.menu-closed {
           transform: rotate(0deg);
+        }
+      }
+      &.active {
+        &>a {
+          background: $primary_1;
+          color: white;
+          &:hover, &:focus {
+            color: white;
+            background-color: $secondary_1;
+          }
+        }
+        &>button.sidebar-toggle-menu {
+          background-color: $primary_1;
+          background-image: url(../images/svg/sidebar-arrow-down-hover.svg);
+          &:hover, &:focus {
+            background-color: $secondary_1;
+          }
         }
       }
     }
@@ -127,24 +154,29 @@
   .menu-block-wrapper {
     &>ul {
       &>li {
+        border-bottom: 2px solid $neutral_1;
         &>a {
           color: $color-brand-black;
           font-weight: 600;
-          padding-left: rem(25px);
+          padding-left: $small-spacing;
         }
         &>ul {
           border-top: 2px solid $neutral_1;
           &>li {
             background-color: $grey_3;
             &>a {
-              padding-left: rem(45px);
+              padding-left: $small-spacing * 2;
+              background-color: $grey_3;
+            }
+            &>button.sidebar-toggle-menu {
+              background-color: $grey_3;
             }
             &>ul {
               background-color: white;
               border-top: 2px solid $grey_5;
               &>li {
                 &>a {
-                  padding-left: rem(45px);
+                  padding-left: $small-spacing * 3;
                 }
               }
             }

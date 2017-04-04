@@ -1,16 +1,18 @@
+@mixin heading-style() {
+  color: $primary_1;
+  font-weight: 600;
+  font-size: em(16px);
+  line-height: em(18px);
+  margin: 0 0 20px;
+}
+
 // =========================================================
 // PAGE RELATED CONTENT
 // =========================================================
 #block-views-related-content-block {
-  border-radius: 4px;
-  border: 2px solid $box_purple_border_1;
-  background-color: $box_purple_background_1;
-  padding: 25px;
+  @include related-content-box;
   h2 {
-    color: $primary_1;
-    font-weight: 600;
-    font-size: em(16px);
-    margin: 0 0 20px;
+    @include heading-style;
   }
   .content {
     margin-left: 15px;

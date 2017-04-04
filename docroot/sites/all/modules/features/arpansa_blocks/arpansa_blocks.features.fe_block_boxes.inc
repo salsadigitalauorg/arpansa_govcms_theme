@@ -14,7 +14,7 @@ function arpansa_blocks_default_fe_block_boxes() {
   $fe_block_boxes->info = 'ARPANSA Copyright Footer';
   $fe_block_boxes->format = 'iframe';
   $fe_block_boxes->machine_name = 'arpansa_copyright_footer';
-  $fe_block_boxes->body = '<p><strong>ARPANSA</strong>&nbsp;&copy; 2017. All rights reserved.</p>';
+  $fe_block_boxes->body = '<p><strong>ARPANSA</strong>&nbsp;</p><p>&copy; 2017. All rights reserved.</p>';
 
   $export['arpansa_copyright_footer'] = $fe_block_boxes;
 

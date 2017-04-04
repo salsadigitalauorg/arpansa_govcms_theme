@@ -93,23 +93,12 @@ html {
     }
   }
   &.no-sidebar {
-    h1 {
+    .region-content {
       @include center-column($desktop_column);
     }
     .page-node & {
       .region-content {
-        // Node Pages
-        .node {
-          &>.submitted {
-            @include center-column($desktop_column);
-          }
-          &>.content {
-            @include center-column($desktop_column);
-          }
-          &.view-mode-full {
-            @include center-column($desktop_column);
-          }
-        } // Node Webforms
+        // Node Webforms
         .node-webform {
           &>.submitted {
             max-width: $form_width;
@@ -129,10 +118,10 @@ html {
     }
   }
   #site-map {
-    @include center-column($desktop_column);
+    @include center-column($desktop_content_column);
   }
   .search-api-page-results {
-    @include center-column($desktop_column);
+    @include center-column($desktop_content_column);
   }
   .page-contact & {
     .block-system {
@@ -141,12 +130,12 @@ html {
   }
   .page-search404 & {
     .block-system {
-      @include center-column($desktop_column);
+      @include center-column($desktop_content_column);
     }
   }
   .page-node-done & {
     .block-system {
-      @include center-column($desktop_column);
+      @include center-column($desktop_content_column);
     }
   }
 }
@@ -199,4 +188,5 @@ a[rel~='external']::after {
 
 #content {
   @include standard_purple_button;
+  word-wrap: break-word;
 }

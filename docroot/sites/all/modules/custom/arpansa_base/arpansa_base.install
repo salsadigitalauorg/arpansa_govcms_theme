@@ -1534,3 +1534,97 @@ function arpansa_base_update_7073() {
   // Relock them to avoid accidental revert.
   salsa_helpers_lock_features($govCMSFeatures);
 }
+
+/**
+ * Update main menu config [ARPANSA-41].
+ */
+function arpansa_base_update_7074() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
+ * Label body to summary in survey page [ARPANSA-69].
+ */
+function arpansa_base_update_7075() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  // Unlock the govcms features.
+  $govCMSFeatures = array(
+    'govcms_superfish_configuration',
+  );
+  salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+  salsa_helpers_features_revert('govcms_superfish_configuration');
+
+  // Relock them to avoid accidental revert.
+  salsa_helpers_lock_features($govCMSFeatures);
+}
+
+/**
+ * Modify block title, display suite [ARPANSA-22 38].
+ */
+function arpansa_base_update_7076() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_blocks');
+  salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
+ * Modify menu config [ARPANSA-41].
+ */
+function arpansa_base_update_7077() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  // Unlock the govcms features.
+  $govCMSFeatures = array(
+    'govcms_superfish_configuration',
+  );
+  salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+  salsa_helpers_features_revert('govcms_superfish_configuration');
+
+  // Relock them to avoid accidental revert.
+  salsa_helpers_lock_features($govCMSFeatures);
+}
+
+/**
+ * hide field image in basic page [ARPANSA-50].
+ */
+function arpansa_base_update_7078() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  // Unlock the govcms features.
+  $govCMSFeatures = array(
+    'govcms_basic_page',
+  );
+  salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+  salsa_helpers_features_revert('govcms_basic_page');
+
+  // Relock them to avoid accidental revert.
+  salsa_helpers_lock_features($govCMSFeatures);
+}
+
+/**
+ * Modify display order in basic page [ARPANSA-50].
+ */
+function arpansa_base_update_7079() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
+ * show field attachment [ARPANSA-54].
+ */
+function arpansa_base_update_7080() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('show field attachment');
+}

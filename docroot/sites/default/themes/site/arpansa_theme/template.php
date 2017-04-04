@@ -33,7 +33,7 @@ function arpansa_theme_html_head_alter(&$head_elements) {
  * Implements hook_js_alter().
  */
 function arpansa_theme_js_alter(&$javascript) {
-  $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-3.1.1.min.js';
+  $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-2.2.4.min.js';
 }
 
 /**
@@ -85,6 +85,7 @@ function arpansa_theme_preprocess_field(&$variables) {
         $path = url($path);
       }
       $markup = preg_replace($pattern, $path, $variables['items'][0]['#markup']);
+
       $variables['items'][0]['#markup'] = $markup;
     }
   }
@@ -140,6 +141,9 @@ function arpansa_theme_preprocess_node(&$variables) {
     $variables['display_submitted'] = FALSE;
   }
 
+  if (($variables['view_mode'] === 'teaser') && ($variables['type'] === 'footer_teaser')) {
+    $variables['footer_teaser_path'] = url('node/' . $variables['content']['field_image']['#object']->field_reference[LANGUAGE_NONE]['0']['target_id']);
+  }
   if ($variables['view_mode'] === 'teaser') {
     if ($variables['type'] == 'news_article' || $variables['type'] == 'consultation' || $variables['type'] == 'page') {
       $variables['date'] = date('d F Y', $variables['created']);

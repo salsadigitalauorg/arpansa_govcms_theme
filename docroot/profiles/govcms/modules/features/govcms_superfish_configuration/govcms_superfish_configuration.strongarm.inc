@@ -35,7 +35,7 @@ function govcms_superfish_configuration_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'superfish_depth_1';
-  $strongarm->value = '-1';
+  $strongarm->value = '2';
   $export['superfish_depth_1'] = $strongarm;
 
   $strongarm = new stdClass();
