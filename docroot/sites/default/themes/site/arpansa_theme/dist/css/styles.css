@@ -11137,7 +11137,13 @@ body.not-front #content .view .pager {
 }
 
 #block-menu-block-left-nav h2, #block-menu-block-left-nav .display {
-  margin-bottom: 1.4375rem;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  #block-menu-block-left-nav h2, #block-menu-block-left-nav .display {
+    margin-bottom: 1.4375rem;
+  }
 }
 
 #block-menu-block-left-nav h2 button, #block-menu-block-left-nav .display button {
@@ -11198,7 +11204,7 @@ body.not-front #content .view .pager {
 #block-menu-block-left-nav .content.showing {
   display: block;
   background-color: #FAFAFA;
-  padding: 1.625rem 0.9375rem 0 0;
+  padding: 0;
 }
 
 @media (min-width: 1200px) {

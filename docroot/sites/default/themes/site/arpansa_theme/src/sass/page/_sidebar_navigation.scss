@@ -18,7 +18,10 @@
 #block-menu-block-left-nav {
   margin-bottom: $default_padding;
   h2 {
-    margin-bottom: rem(23px);
+    margin-bottom: 0;
+    @include breakpoint(tablet) {
+      margin-bottom: rem(23px);
+    }
     button {
       // Button is only on mobile.
       @include transition-fade;
@@ -68,7 +71,7 @@
     &.showing {
       display: block;
       background-color: #FAFAFA;
-      padding: rem(26px) rem(15px) 0 0;
+      padding: 0;
       @include breakpoint(desktop) {
         padding: rem(26px) rem(15px);
       }
