@@ -15,12 +15,10 @@
     var was_closed = $button.hasClass('menu-closed');
 
     if (was_closed) {
-      $menu.removeClass('menu-closed').attr('aria-hidden', 'false');
-      $button.removeClass('menu-closed').attr('aria-expanded', 'true').attr('title', 'Collapse menu');
+      expand($menu, $button);
     }
     else {
-      $menu.addClass('menu-closed').attr('aria-hidden', 'true');
-      $button.addClass('menu-closed').attr('aria-expanded', 'false').attr('title', 'Expand menu');
+      collapse($menu, $button);
     }
   }
 
@@ -30,13 +28,31 @@
       var $list_item = $(this);
       var $sub_menu = $list_item.children('ul.menu');
       if ($sub_menu.length > 0) {
+        var is_active_trail = $list_item.hasClass('active-trail');
         var $button = $('<button class="sidebar-toggle-menu" aria-controls="' + $sub_menu.attr('id') + '" aria-expanded="true" title="Collapse menu">Toggle sub menu</button>');
+        if (is_active_trail) {
+          expand($sub_menu, $button);
+        }
+        else {
+          collapse($sub_menu, $button);
+        }
         $sub_menu.attr('id', 'sidebar-submenu-' + idx);
         $list_item.children('a').after($button);
         $button.unbind('click', toggle_button_click).bind('click', toggle_button_click);
       }
     });
   }
+
+  function collapse($menu, $button) {
+    $menu.addClass('menu-closed').attr('aria-hidden', 'true');
+    $button.addClass('menu-closed').attr('aria-expanded', 'false').attr('title', 'Expand menu');
+  }
+
+  function expand($menu, $button) {
+    $menu.removeClass('menu-closed').attr('aria-hidden', 'false');
+    $button.removeClass('menu-closed').attr('aria-expanded', 'true').attr('title', 'Collapse menu');
+  }
+
 
   function remove_toggle_buttons() {
     // Clean up any elements and attributes created.
@@ -102,7 +118,6 @@
         add_toggle_buttons();
         $(window).unbind('resize', side_menu_responsive).bind('resize', side_menu_responsive);
         side_menu_responsive();
-        $('.menu-block-wrapper .sidebar-toggle-menu').click();
       }
     }
   };
