@@ -7422,6 +7422,10 @@ img {
   position: relative;
 }
 
+.header__inner .region-header .search-form-widget > div .form-item input:focus {
+  outline-color: #4E1A74;
+}
+
 .header__inner .region-header .search-form-widget > div input[type="submit"] {
   overflow: hidden;
   text-indent: 101%;
