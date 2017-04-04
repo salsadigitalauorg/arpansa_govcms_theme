@@ -37,4 +37,14 @@ abstract class ArpansaMigrationBase extends Migration {
     return $value;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  protected function currentSourceKey() {
+    if (!empty($this->currentFauxSourceKey)) {
+      return $this->currentFauxSourceKey;
+    }
+    return $this->source->getCurrentKey();
+  }
+
 }

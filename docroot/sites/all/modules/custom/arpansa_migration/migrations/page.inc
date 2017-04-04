@@ -643,14 +643,4 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     }
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  protected function currentSourceKey() {
-    if (!empty($this->currentFauxSourceKey)) {
-      return $this->currentFauxSourceKey;
-    }
-    return $this->source->getCurrentKey();
-  }
-
 }
