@@ -247,9 +247,8 @@ var desktop_column = 1170;
       var $sub_menu = $list_item.children('ul.menu');
       if ($sub_menu.length > 0) {
         var is_active_trail = $list_item.hasClass('active-trail');
-        var is_parent_active_trail = $list_item.parents().hasClass('active-trail');
         var $button = $('<button class="sidebar-toggle-menu" aria-controls="' + $sub_menu.attr('id') + '" aria-expanded="true" title="Collapse menu">Toggle sub menu</button>');
-        if (is_active_trail || is_parent_active_trail) {
+        if (is_active_trail) {
           expand($sub_menu, $button);
         }
         else {
