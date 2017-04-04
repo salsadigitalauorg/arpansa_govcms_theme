@@ -37,9 +37,17 @@
             <?php
               $logo_alt = theme_get_setting('govcms_ui_kit_header_logo_alt');
               $logo_alt = !empty($logo_alt) ? $logo_alt : variable_get('site_name', 'Home');
-              print theme('image', array(
+              $logo_img =  theme('image', array(
                 'path' => $logo,
                 'alt' => $logo_alt,
+              ));
+
+              print l($logo_img, $front_page, array(
+                'html' => TRUE,
+                'attributes' => array(
+                  'title' => $logo_alt,
+                  'rel' => 'home',
+                ),
               ));
             ?>
           <?php endif; ?>

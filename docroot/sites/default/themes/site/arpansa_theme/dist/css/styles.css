@@ -7254,11 +7254,15 @@ img {
   }
 }
 
-.header__inner .logo-aus-container {
+.header__inner .logo-and-search .logo-wrapper .logo-aus-container {
   margin-right: 25px;
 }
 
-.header__inner .logo-aus-container img {
+.header__inner .logo-and-search .logo-wrapper .logo-aus-container a {
+  display: inline;
+}
+
+.header__inner .logo-and-search .logo-wrapper .logo-aus-container a img {
   max-height: 3.125rem;
 }
 
