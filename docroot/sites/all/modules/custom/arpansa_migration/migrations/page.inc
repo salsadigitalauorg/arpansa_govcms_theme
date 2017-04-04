@@ -52,7 +52,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       ['tag2', 'Tag 2'],
       ['tag3', 'Tag 3'],
       ['tag4', 'Tag 4'],
-      ['tag5', 'Tag 5'],
+      ['redirect', 'Redirect'],
     ];
 
     module_load_include('inc', 'arpansa_migration', '/migrations/sources/csv');
@@ -157,10 +157,12 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       case 'news':
         $row->type = 'news_article';
         break;
+
       case 'page':
       case 'landing_page':
       case 'consultation':
         break;
+
       default:
         $row->type = 'page';
         break;
@@ -171,7 +173,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       return FALSE;
     }
 
-    foreach ([1, 2, 3, 4, 5] as $index) {
+    foreach ([1, 2, 3, 4] as $index) {
       if (!empty($row->{'tag' . $index})) {
         $row->tags[] = ucfirst($row->{'tag' . $index});
       }
@@ -191,7 +193,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       $node->path['alias'] = $row->alias;
     }
 
-    if ($node->type =='consultation') {
+    if ($node->type == 'consultation') {
       $node->field_consultation_summary = $node->body;
     }
   }
@@ -263,7 +265,6 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   protected function postImport() {
     if ($this->stubCount) {
       for ($try = 0; $try < 10; $try++) {
-        drush_print('Try:' .$try);
         $mappingRows = $this->map->getRowsNeedingUpdate($this->stubCount);
         if (!$mappingRows || !count($mappingRows)) {
           break;
@@ -461,7 +462,10 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
 
           // Build a media token to replace this image.
           $attributes = [];
-          foreach (['id', 'alt', 'title', 'class', 'width', 'height', 'hspace', 'vspace', 'align', 'border'] as $attribute_name) {
+          foreach ([
+            'id', 'alt', 'title', 'class', 'width', 'height',
+            'hspace', 'vspace', 'align', 'border',
+          ] as $attribute_name) {
             if ($attribute = $image->getAttribute($attribute_name)) {
               $attributes[$attribute_name] = ArpansaMigrationHelper::sanitizeText($attribute);
             }
@@ -509,7 +513,9 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
 
       $extension = pathinfo($href, PATHINFO_EXTENSION);
       // Search for migrated page.
-      if (empty($extension) || in_array(strtolower($extension), ['cfm', 'htm', 'html'])) {
+      if (empty($extension)
+        || in_array(strtolower($extension), ['cfm', 'htm', 'html'])
+      ) {
         if (strpos($href, 'index.cfm') !== FALSE) {
           $href = str_replace('index.cfm', '/', $href);
         }
@@ -646,4 +652,5 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     }
     return $this->source->getCurrentKey();
   }
+
 }

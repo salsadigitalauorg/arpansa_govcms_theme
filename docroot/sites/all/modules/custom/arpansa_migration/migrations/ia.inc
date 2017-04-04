@@ -54,7 +54,6 @@ class ArpansaMigrationIA extends ArpansaMigrationPage {
       'updated',
     ]);
 
-
     $this->pageMigration = Migration::getInstance('Page');
   }
 
@@ -143,7 +142,7 @@ class ArpansaMigrationIA extends ArpansaMigrationPage {
                 'expanded' => 1,
               ];
               $plid = menu_link_save($parent_menu);
-              $this->map->saveIDMapping((object)['source' => $trail], [$plid]);
+              $this->map->saveIDMapping((object) ['source' => $trail], [$plid]);
             }
           }
         }
@@ -198,7 +197,7 @@ class ArpansaMigrationIA extends ArpansaMigrationPage {
    * @param bool $createPageStub
    *   Whether to create a new stub if not found.
    *
-   * @return int|FALSE
+   * @return int|false
    *   Node ID of the stub.
    */
   protected function findNodeIdWithAlias($alias, $createPageStub = TRUE) {

@@ -176,9 +176,9 @@ class ArpansaMigrationHelper {
    * Convert relative URI to absolute.
    *
    * @param string $uri
-   *   Relative URI, eg. ../../images/abc.jpg
+   *   Relative URI, eg. ../../images/abc.jpg.
    * @param string $context_uri
-   *   Current context, eg. /aboutus/collaboration/
+   *   Current context, eg. /aboutus/collaboration/.
    *
    * @return string
    *   Remapped URI, eg. /images/abc.jpg
@@ -230,7 +230,7 @@ class ArpansaMigrationHelper {
    * @param string $vocabulary_machine_name
    *   Vocabulary machine name.
    *
-   * @return int|FALSE
+   * @return int|false
    *   Term ID.
    */
   public static function prepareTerm($name, $vocabulary_machine_name) {
