@@ -11512,25 +11512,6 @@ body.not-front #content .view .pager {
   font-size: 0.875em;
 }
 
-.field-name-field-file {
-  border-radius: 4px;
-  border: 2px solid #E1CBE4;
-  background-color: #FEF8FF;
-  padding: 25px;
-}
-
-.field-name-field-file .field-label {
-  color: #268126;
-  font-weight: 600;
-  font-size: 1em;
-  line-height: 1.125em;
-  margin: 0 0 20px;
-}
-
-.field-name-field-file .field-label .field-item {
-  margin-bottom: 5px;
-}
-
 .block-twitter-block {
   padding-top: 2.75rem;
   padding-bottom: 2.75rem;

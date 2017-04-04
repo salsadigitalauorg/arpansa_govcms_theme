@@ -31,16 +31,3 @@
     }
   }
 }
-
-// =========================================================
-// Attachment Section
-// =========================================================
-.field-name-field-file {
-  @include related-content-box;
-  .field-label {
-    @include heading-style;
-    .field-item {
-      margin-bottom: 5px;
-    }
-  }
-}
