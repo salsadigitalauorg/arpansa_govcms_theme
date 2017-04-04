@@ -164,6 +164,9 @@
           flex: 1;
           input {
             @include search-text-field;
+            &:focus {
+              outline-color: $secondary_1;
+            }
           }
         }
         input[type="submit"] {
