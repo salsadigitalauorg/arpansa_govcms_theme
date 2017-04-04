@@ -1,15 +1,6 @@
 // =========================================================
 // LANDING PAGE
 // =========================================================
-.page-node .content-body-inner.no-sidebar .region-content {
-  .node.node-landing-page {
-    >.content {
-      @include outer-container(100%);
-      @include center-column($desktop_column);
-    }
-  }
-}
-
 #block-menu-block-landing-page-children-listing {
   @include outer-container(100%);
   @include center-column($desktop_column);
