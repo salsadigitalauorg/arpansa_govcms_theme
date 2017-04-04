@@ -58,12 +58,15 @@
           font-size: rem(30px);
         }
       }
-    }
-  }
-  .logo-aus-container {
-    margin-right: 25px;
-    img {
-      max-height: rem(50px);
+      .logo-aus-container {
+        margin-right: 25px;
+        a {
+          display: inline;
+          img {
+            max-height: rem(50px);
+          }
+        }
+      }
     }
   }
   .header__logo {
@@ -161,10 +164,53 @@
           flex: 1;
           input {
             @include search-text-field;
+            &:focus {
+              outline-color: $secondary_1;
+            }
           }
         }
         input[type="submit"] {
           @include search-submit-button;
+        }
+      }
+    }
+  }
+}
+
+.no-flexbox {
+  .header__inner {
+    .logo-and-search {
+      .logo-wrapper {
+        display: inline-block;
+        .logo-aus-container {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .header__logo {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      .region-header {
+        display: inline-block;
+        float: right;
+        margin-top: 5px;
+        width: 500px;
+        #block-govcms-text-resize-text-resize {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .block-search-api-page {
+          display: inline-block;
+          vertical-align: middle;
+          .search-form-widget {
+            .form-item {
+              display: table-cell;
+            }
+            input[type="submit"] {
+              display: table-cell;
+            }
+          }
         }
       }
     }

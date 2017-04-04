@@ -322,9 +322,11 @@
     .views-row {
       @include breakpoint(tablet) {
         @include span-columns(6 of 12);
+        display: flex;
       }
       @include breakpoint(large_tablet) {
         @include span-columns(4 of 12);
+        display: flex;
       }
       &:nth-child(2n) {
         @include breakpoint(tablet) {
@@ -341,6 +343,7 @@
       }
       .node {
         @include listing-component-wrapper;
+        width: 100%;
         &.has-thumbnail {
           .field-type-image {
             @include listing-component-image;

@@ -54,7 +54,7 @@
         // Copy top header menu to main menu and hide on desktop.
         var top_header = $('#secondary-menu li', context);
         top_header.removeClass('first').removeClass('last').addClass('show-on-mobile');
-        $('#mobile-nav ul', context).append(top_header);
+        top_header.clone().appendTo($('#mobile-nav ul'));
       }
     }
   };
