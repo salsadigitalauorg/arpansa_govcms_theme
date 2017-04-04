@@ -101,10 +101,13 @@ html {
         // Node Pages
         .node {
           &>.submitted {
-            @include center-column($desktop_content_column);
+            @include center-column($desktop_column);
           }
           &>.content {
-            @include center-column($desktop_content_column);
+            @include center-column($desktop_column);
+          }
+          &.view-mode-full {
+            @include center-column($desktop_column);
           }
         } // Node Webforms
         .node-webform {
@@ -126,10 +129,10 @@ html {
     }
   }
   #site-map {
-    @include center-column($desktop_content_column);
+    @include center-column($desktop_column);
   }
   .search-api-page-results {
-    @include center-column($desktop_content_column);
+    @include center-column($desktop_column);
   }
   .page-contact & {
     .block-system {
@@ -138,12 +141,12 @@ html {
   }
   .page-search404 & {
     .block-system {
-      @include center-column($desktop_content_column);
+      @include center-column($desktop_column);
     }
   }
   .page-node-done & {
     .block-system {
-      @include center-column($desktop_content_column);
+      @include center-column($desktop_column);
     }
   }
 }

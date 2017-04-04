@@ -7019,6 +7019,168 @@ img {
   height: auto;
 }
 
+#content div.horizontal-tabs {
+  border: 1px solid #C3C3C3;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list {
+  background-color: #F5F5F5;
+  border-color: #C3C3C3;
+  border-bottom: 1px solid #C3C3C3;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #content div.horizontal-tabs .horizontal-tabs-list {
+    display: inline-block;
+  }
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button {
+  background: transparent;
+  padding: 0;
+  border-color: #CACACA;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  transition-property: background-color, border-color, color;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button a {
+  background-color: white;
+  color: #2B992B;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button a * {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button a:hover {
+  color: white;
+  background-color: #268126;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button.selected {
+  background: transparent;
+  padding: 0;
+  border-color: #4E1A74;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button.selected a {
+  background: #4E1A74;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button.selected a * {
+  color: white;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button.selected a:hover {
+  background-color: #268126;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button:hover {
+  border-color: #268126;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #C3C3C3;
+}
+
+@media (min-width: 768px) {
+  #content div.horizontal-tabs .horizontal-tabs-panes fieldset {
+    padding: 0.8125rem 2.1875rem;
+    border-bottom: none;
+  }
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset > legend {
+  display: block;
+  width: 100%;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset > legend button {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0.75rem 0.625rem;
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  border: 0;
+  bottom: 1px solid #C3C3C3;
+  background-color: #4E1A74;
+  color: white;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset > legend button:active {
+  background-color: #268126;
+}
+
+@media (min-width: 768px) {
+  #content div.horizontal-tabs .horizontal-tabs-panes fieldset > legend {
+    display: none;
+  }
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset:last-child {
+  border-bottom: 0;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset .fieldset-wrapper {
+  padding: 0.3125rem 1.5625rem;
+}
+
+@media (min-width: 768px) {
+  #content div.horizontal-tabs .horizontal-tabs-panes fieldset .fieldset-wrapper {
+    padding: 0;
+  }
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset.horizontal-tab-hidden {
+  position: relative;
+  top: 0;
+  margin: 0;
+  padding-bottom: 1px;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset.horizontal-tab-hidden > legend {
+  border-bottom: 0;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset.horizontal-tab-hidden > legend > button {
+  background-color: white;
+  color: #268126;
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset.horizontal-tab-hidden > legend > button:active {
+  background-color: #268126;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  #content div.horizontal-tabs .horizontal-tabs-panes fieldset.horizontal-tab-hidden {
+    position: absolute;
+    top: -100000px;
+  }
+}
+
+#content div.horizontal-tabs .horizontal-tabs-panes fieldset.horizontal-tab-hidden .fieldset-wrapper {
+  display: none;
+  padding: 2.1875rem;
+}
+
+@media (min-width: 768px) {
+  #content div.horizontal-tabs .horizontal-tabs-panes fieldset.horizontal-tab-hidden .fieldset-wrapper {
+    display: block;
+    padding: 0;
+  }
+}
+
 .header__inner {
   max-width: 73.125rem;
   margin-left: auto;
@@ -8075,7 +8237,7 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
 }
 
 .page-node .content-body-inner.no-sidebar .region-content .node > .submitted {
-  max-width: 48.75rem;
+  max-width: 73.125rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -8084,7 +8246,16 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
 }
 
 .page-node .content-body-inner.no-sidebar .region-content .node > .content {
-  max-width: 48.75rem;
+  max-width: 73.125rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-sizing: content-box;
+}
+
+.page-node .content-body-inner.no-sidebar .region-content .node.view-mode-full {
+  max-width: 73.125rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -8120,7 +8291,7 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
 }
 
 .content-body-inner #site-map {
-  max-width: 48.75rem;
+  max-width: 73.125rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -8129,7 +8300,7 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
 }
 
 .content-body-inner .search-api-page-results {
-  max-width: 48.75rem;
+  max-width: 73.125rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -8147,7 +8318,7 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
 }
 
 .page-search404 .content-body-inner .block-system {
-  max-width: 48.75rem;
+  max-width: 73.125rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -8156,7 +8327,7 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
 }
 
 .page-node-done .content-body-inner .block-system {
-  max-width: 48.75rem;
+  max-width: 73.125rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -10376,24 +10547,6 @@ ul.tabs.primary {
     padding-top: 3.125rem;
     padding-bottom: 4.6875rem;
   }
-}
-
-.page-node .content-body-inner.no-sidebar .region-content .node.node-landing-page > .content {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 73.125rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  box-sizing: content-box;
-}
-
-.page-node .content-body-inner.no-sidebar .region-content .node.node-landing-page > .content::after {
-  clear: both;
-  content: "";
-  display: table;
 }
 
 #block-menu-block-landing-page-children-listing {
