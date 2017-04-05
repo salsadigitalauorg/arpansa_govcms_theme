@@ -12372,6 +12372,30 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
   float: left;
 }
 
+.content-body .content #block-service-links-service-links {
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 20px 0;
+}
+
+.content-body .content #block-service-links-service-links h2, .content-body .content #block-service-links-service-links .display {
+  color: #333333;
+  font-family: "Source Sans Pro", sans-serif, Arial;
+  font-size: 0.875em;
+  font-weight: 600;
+  line-height: 1.125em;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.content-body .content #block-service-links-service-links a[rel~='external'] {
+  margin-right: 5px;
+}
+
+.content-body .content #block-service-links-service-links a[rel~='external']::after {
+  display: none;
+}
+
 #content .search-form {
   max-width: 48.75rem;
   margin-left: auto;
