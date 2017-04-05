@@ -117,9 +117,7 @@ html {
       margin-bottom: rem(42px);
     }
   }
-  #site-map {
-    @include center-column($desktop_content_column);
-  }
+  #site-map {}
   .search-api-page-results {
     @include center-column($desktop_content_column);
   }
@@ -174,7 +172,7 @@ ul, ol, dl, p, dt, dd {
 }
 
 a[rel~='external']::after {
-  background-image: ui-kit-icon("external-link--aqua.svg") !important;
+  background-image: url("../images/svg/external-link--green.svg") !important;
 }
 
 .page-node {
