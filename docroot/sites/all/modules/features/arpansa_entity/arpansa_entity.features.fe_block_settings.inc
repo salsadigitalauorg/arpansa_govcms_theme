@@ -23,7 +23,7 @@ function arpansa_entity_default_fe_block_settings() {
       2 => 'page',
       3 => 'webform',
     ),
-    'pages' => '',
+    'pages' => 'whats-new',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(

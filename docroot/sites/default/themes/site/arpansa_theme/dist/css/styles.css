@@ -10865,24 +10865,6 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
   display: none;
 }
 
-.page-node .content-body-inner.no-sidebar .region-content .node.node-career > .content {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 73.125rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  box-sizing: content-box;
-}
-
-.page-node .content-body-inner.no-sidebar .region-content .node.node-career > .content::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
 @media (min-width: 768px) {
   .page-node .content-body-inner.no-sidebar .region-content .node.node-career > .content .field {
     display: table-row;
