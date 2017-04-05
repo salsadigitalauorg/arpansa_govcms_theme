@@ -7421,6 +7421,18 @@ img {
           align-items: center;
 }
 
+@media (min-width: 768px) {
+  .header__inner .logo-and-search .logo-wrapper {
+    margin-right: 1.25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header__inner .logo-and-search .logo-wrapper {
+    margin-right: 0;
+  }
+}
+
 .header__inner .logo-and-search .logo-wrapper a {
   margin-right: 0;
   display: none;
@@ -7470,10 +7482,6 @@ img {
 
 .header__inner .logo-and-search .logo-wrapper .logo-aus-container a {
   display: inline;
-}
-
-.header__inner .logo-and-search .logo-wrapper .logo-aus-container a img {
-  max-height: 3.125rem;
 }
 
 .header__inner .header__logo.no-title {

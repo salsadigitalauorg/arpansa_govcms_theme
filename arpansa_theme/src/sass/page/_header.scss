@@ -27,6 +27,12 @@
     .logo-wrapper {
       display: flex;
       align-items: center;
+      @include breakpoint(tablet) {
+        margin-right: rem(20px);
+      }
+      @include breakpoint(desktop) {
+        margin-right: 0;
+      }
       a {
         margin-right: 0;
         display: none;
@@ -62,9 +68,6 @@
         margin-right: 25px;
         a {
           display: inline;
-          img {
-            max-height: rem(50px);
-          }
         }
       }
     }
