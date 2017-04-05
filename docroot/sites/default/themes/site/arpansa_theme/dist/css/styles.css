@@ -8375,15 +8375,6 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
   }
 }
 
-.content-body-inner #site-map {
-  max-width: 48.75rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  box-sizing: content-box;
-}
-
 .content-body-inner .search-api-page-results {
   max-width: 48.75rem;
   margin-left: auto;
@@ -8450,7 +8441,7 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
 }
 
 a[rel~='external']::after {
-  background-image: url("../../vendor/gov-au-ui-kit/assets/img/icons/external-link--aqua.svg") !important;
+  background-image: url("../images/svg/external-link--green.svg") !important;
 }
 
 .page-node .region-content .field {
@@ -11034,6 +11025,83 @@ html.no-flexboxlegacy body.not-front #content .view.view-literature-surveys .vie
   display: table;
 }
 
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters {
+  margin-bottom: 1.875em;
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .views-exposed-widget {
+  display: block;
+  float: none;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .views-exposed-widget {
+    display: table-cell;
+    width: 33%;
+    vertical-align: bottom;
+  }
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .views-exposed-widget.views-submit-button {
+  display: block;
+  float: none;
+  clear: both;
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters input[type="text"] {
+  border: 1px solid #444449;
+  border-radius: 2px;
+  height: 42px;
+  margin-bottom: 16px;
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters select {
+  display: none;
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .SumoSelect {
+  margin-right: 0;
+  width: 100%;
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .SumoSelect > .CaptionCont {
+  border-color: #444449;
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .SumoSelect > .CaptionCont span {
+  max-width: inherit;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .SumoSelect > .CaptionCont span {
+    max-width: 200px;
+  }
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .SumoSelect > .CaptionCont > span.placeholder {
+  font-style: normal;
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .SumoSelect label {
+  font-weight: normal;
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-filters input[type="submit"] {
+  margin-top: 0;
+}
+
+body.not-front #content #block-views-fact-sheets-filterable-block .view-content .views-row {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 1.25em;
+}
+
+html.no-flexboxlegacy body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .views-exposed-widget {
+  float: left;
+}
+
 @media (min-width: 768px) {
   body.not-front #content .no-sidebar .views-row {
     float: left;
@@ -12375,6 +12443,30 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
 
 #block-govcms-social-links-services .inner-wrapper .content a img {
   float: left;
+}
+
+.content-body .content #block-service-links-service-links {
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 20px 0;
+}
+
+.content-body .content #block-service-links-service-links h2, .content-body .content #block-service-links-service-links .display {
+  color: #333333;
+  font-family: "Source Sans Pro", sans-serif, Arial;
+  font-size: 0.875em;
+  font-weight: 600;
+  line-height: 1.125em;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.content-body .content #block-service-links-service-links a[rel~='external'] {
+  margin-right: 5px;
+}
+
+.content-body .content #block-service-links-service-links a[rel~='external']::after {
+  display: none;
 }
 
 #content .search-form {
