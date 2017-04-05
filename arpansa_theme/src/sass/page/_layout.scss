@@ -117,9 +117,7 @@ html {
       margin-bottom: rem(42px);
     }
   }
-  #site-map {
-    @include center-column($desktop_content_column);
-  }
+  #site-map {}
   .search-api-page-results {
     @include center-column($desktop_content_column);
   }

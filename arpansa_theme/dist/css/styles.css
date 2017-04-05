@@ -8375,15 +8375,6 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
   }
 }
 
-.content-body-inner #site-map {
-  max-width: 48.75rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  box-sizing: content-box;
-}
-
 .content-body-inner .search-api-page-results {
   max-width: 48.75rem;
   margin-left: auto;
