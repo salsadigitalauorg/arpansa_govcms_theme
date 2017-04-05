@@ -1,5 +1,6 @@
 @mixin heading-style() {
   color: $primary_1;
+  font-family: $font_open_sans;
   font-weight: 600;
   font-size: em(16px);
   line-height: em(18px);
@@ -19,6 +20,7 @@
     .view-content {
       .views-row {
         background: transparent url(../images/svg/chevron-right-green.svg) 0 8px no-repeat;
+        line-height: em(24px);
         margin-right: 0;
         margin-bottom: 5px;
         padding-left: 15px;
@@ -28,6 +30,30 @@
           font-size: em(14px);
         }
       }
+    }
+  }
+}
+
+// =========================================================
+// ON THIS PAGE SECTION
+// =========================================================
+div.toc-filter-content {
+  @include related-content-box;
+  h3 {
+    font-size: inherit;
+    @include heading-style;
+  }
+  ol.toc-filter-links {
+    list-style: none;
+    padding-left: 0;
+    li {
+      background: transparent url(../images/svg/chevron-right-green.svg) 0 8px no-repeat;
+      margin-bottom: 5px;
+      padding-left: 15px;
+      min-width: 100%;
+      font-size: em(14px);
+      line-height: em(24px);
+      @include link-colours($secondary_1, $primary_1, white);
     }
   }
 }
