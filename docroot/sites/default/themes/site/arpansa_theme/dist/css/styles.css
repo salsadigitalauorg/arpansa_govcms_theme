@@ -8450,7 +8450,7 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
 }
 
 a[rel~='external']::after {
-  background-image: url("../../vendor/gov-au-ui-kit/assets/img/icons/external-link--aqua.svg") !important;
+  background-image: url("../images/svg/external-link--green.svg") !important;
 }
 
 .page-node .region-content .field {
