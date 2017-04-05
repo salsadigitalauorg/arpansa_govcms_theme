@@ -174,7 +174,7 @@ ul, ol, dl, p, dt, dd {
 }
 
 a[rel~='external']::after {
-  background-image: ui-kit-icon("external-link--aqua.svg") !important;
+  background-image: url("../images/svg/external-link--green.svg") !important;
 }
 
 .page-node {
