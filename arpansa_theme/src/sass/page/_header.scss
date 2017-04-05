@@ -204,6 +204,9 @@
           display: inline-block;
           vertical-align: middle;
           .search-form-widget {
+            &>div {
+              display: table;
+            }
             .form-item {
               display: table-cell;
             }
