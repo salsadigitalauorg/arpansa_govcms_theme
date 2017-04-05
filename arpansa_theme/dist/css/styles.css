@@ -9594,12 +9594,7 @@ ul.tabs.primary {
   background-position: 85% center;
   padding-right: 2.5rem;
   line-height: 1.75em;
-}
-
-@media (min-width: 768px) {
-  .panel-promo .view-content .views-row a.readmore {
-    display: none;
-  }
+  display: none;
 }
 
 #block-views-slideshow-block > h2, #block-views-slideshow-block > .display {
