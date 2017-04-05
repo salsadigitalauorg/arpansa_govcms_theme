@@ -11401,7 +11401,7 @@ body.not-front #content .view .pager {
   margin-bottom: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   #block-menu-block-left-nav h2, #block-menu-block-left-nav .display {
     margin-bottom: 1.4375rem;
   }
@@ -11417,18 +11417,18 @@ body.not-front #content .view .pager {
   margin: 0;
   box-sizing: border-box;
   font-weight: 400;
-  border: 1px solid #bbbbbb;
+  border: 0;
   text-align: left;
-  background-color: #F4F4F4;
-  color: #444449;
+  background-color: #F5F5F5;
+  color: #268126;
   border-radius: 0;
   line-height: 1.25rem;
 }
 
 #block-menu-block-left-nav h2 button:hover, #block-menu-block-left-nav .display button:hover, #block-menu-block-left-nav h2 button:focus, #block-menu-block-left-nav .display button:focus {
-  color: #444449;
-  background-color: #bbbbbb;
   box-shadow: none;
+  background-color: #bbbbbb;
+  color: #268126;
 }
 
 #block-menu-block-left-nav h2 button:after, #block-menu-block-left-nav .display button:after {
@@ -11453,12 +11453,17 @@ body.not-front #content .view .pager {
 
 #block-menu-block-left-nav .content {
   display: none;
-  border-left: 5px solid #268126;
 }
 
 @media (min-width: 1024px) {
   #block-menu-block-left-nav .content {
     display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  #block-menu-block-left-nav .content {
+    border-left: 5px solid #268126;
   }
 }
 
