@@ -127,13 +127,7 @@
 @mixin listing-component-heading() {
   font-size: rem(24px);
   line-height: 1.5em;
-  @include link-colours($primary_1, transparent, $neutral_1);
-  a {
-    border-bottom: 0;
-    &:hover, &:focus {
-      border-bottom: 1px solid $neutral_1;
-    }
-  }
+  @include standard_content_link;
 }
 
 @mixin listing-component-subtext() {
@@ -281,22 +275,7 @@
 }
 
 @mixin standard_content_link() {
-  @include link-colours($color-link-primary, transparent, $color-link-secondary);
-  a {
-    border: none;
-    text-decoration: underline;
-    border-color: $secondary_1;
-    outline: inherit;
-    &:hover, &:focus {
-      background-color: transparent;
-    }
-    &:visited {
-      color: $neutral_6;
-    }
-    &.button {
-      text-decoration: none;
-    }
-  }
+  @include link-colours($primary_1, $primary_1, white);
 }
 
 @mixin standard_purple_button() {

@@ -44,7 +44,7 @@
 .panels-ipe-sort-container .bean-basic-content, .pane-bean-panels .bean-basic-content {
   &>.content {
     @include center-column($desktop_column);
-    @include link-colours($primary_1, $secondary_3, $neutral_1);
+    @include standard_content_link;
     padding-top: $default_padding;
     padding-bottom: $default_padding;
     color: $secondary_1;
@@ -262,11 +262,12 @@
       border-radius: 0;
       box-shadow: none;
       &:hover, &:focus {
-        color: $color-link-secondary;
-        border-bottom-color: $color-link-secondary;
+        color: white;
+        background-color: $primary_1;
       }
       &.active {
-        color: $color-link-secondary;
+        color: white;
+        border-bottom-color: white;
       }
       &.slider-prev {
         @include hide-text;
