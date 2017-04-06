@@ -4,8 +4,6 @@
 .page-node .content-body-inner.no-sidebar .region-content {
   .node.node-career {
     >.content {
-      @include outer-container(100%);
-      @include center-column($desktop_column);
       .field {
         @include breakpoint(tablet) {
           display: table-row;

@@ -36,7 +36,7 @@ The <em>body</em> field is used for the main article content.
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -106,7 +106,7 @@ The <em>body</em> field is used for the main article content.
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -118,7 +118,7 @@ The <em>body</em> field is used for the main article content.
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_file',
-    'label' => 'File',
+    'label' => 'Files',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -131,24 +131,6 @@ The <em>body</em> field is used for the main article content.
       'active' => 1,
       'module' => 'file',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-          'vimeo' => 0,
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'library' => 0,
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
-        ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
@@ -178,7 +160,7 @@ The <em>body</em> field is used for the main article content.
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -238,7 +220,7 @@ The <em>body</em> field is used for the main article content.
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('File');
+  t('Files');
   t('Image');
   t('Provide a feature image that will be associated with this <em>Page</em>.  The image will be rendered above the page body text.');
   t('Provides a file that wil be associated with this <em>page</em> - examples may include a downloadable version of the content.');
