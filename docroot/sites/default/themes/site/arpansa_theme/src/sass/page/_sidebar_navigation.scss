@@ -19,7 +19,7 @@
   margin-bottom: $default_padding;
   h2 {
     margin-bottom: 0;
-    @include breakpoint(tablet) {
+    @include breakpoint(desktop) {
       margin-bottom: rem(23px);
     }
     button {
@@ -31,16 +31,16 @@
       margin: 0;
       box-sizing: border-box;
       font-weight: 400;
-      border: 1px solid $neutral_3;
+      border: 0;
       text-align: left;
-      background-color: #F4F4F4;
-      color: $neutral_1;
+      background-color: $grey_3;
+      color: $primary_1;
       border-radius: 0;
       line-height: rem(20px);
       &:hover, &:focus {
-        color: $neutral_1;
-        background-color: $neutral_3;
         box-shadow: none;
+        background-color: $neutral_3;
+        color: $primary_1;
       }
       &:after {
         content: '';
@@ -64,9 +64,11 @@
   }
   .content {
     display: none;
-    border-left: 5px solid $primary_1;
     @include breakpoint(large_tablet) {
       display: block;
+    }
+    @include breakpoint(desktop) {
+      border-left: 5px solid $primary_1;
     }
     &.showing {
       display: block;

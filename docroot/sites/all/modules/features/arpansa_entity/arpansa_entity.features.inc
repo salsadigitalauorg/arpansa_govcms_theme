@@ -58,8 +58,8 @@ function arpansa_entity_image_default_styles() {
       3 => array(
         'name' => 'focal_point_scale_and_crop',
         'data' => array(
-          'width' => 370,
-          'height' => 275,
+          'width' => 550,
+          'height' => 410,
           'focal_point_advanced' => array(
             'shift_x' => '',
             'shift_y' => '',

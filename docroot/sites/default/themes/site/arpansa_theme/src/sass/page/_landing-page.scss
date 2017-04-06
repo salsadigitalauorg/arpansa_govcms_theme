@@ -1,18 +1,7 @@
 // =========================================================
 // LANDING PAGE
 // =========================================================
-.page-node .content-body-inner.no-sidebar .region-content {
-  .node.node-landing-page {
-    >.content {
-      @include outer-container(100%);
-      @include center-column($desktop_column);
-    }
-  }
-}
-
 #block-menu-block-landing-page-children-listing {
-  @include outer-container(100%);
-  @include center-column($desktop_column);
   .node-teaser {
     @include breakpoint(tablet) {
       @include span-columns(6 of 12);
@@ -25,6 +14,22 @@
       margin-top: 0;
       a {
         border: none;
+      }
+    }
+    .field-name-field-image {
+      display: none;
+      @include breakpoint(tablet) {
+        display: block;
+      }
+      a {
+        background-color: black;
+        display: block;
+        line-height: 0;
+        &:hover {
+          img {
+            opacity: 0.6;
+          }
+        }
       }
     }
     .field-name-node-link {
