@@ -25,7 +25,6 @@
         margin-bottom: 5px;
         padding-left: 15px;
         min-width: 100%;
-        @include link-colours($secondary_1, $primary_1, white);
         a {
           font-size: em(14px);
         }
@@ -53,7 +52,6 @@ div.toc-filter-content {
       min-width: 100%;
       font-size: em(14px);
       line-height: em(24px);
-      @include link-colours($secondary_1, $primary_1, white);
     }
   }
 }
