@@ -1557,12 +1557,10 @@ function arpansa_entity_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'file_entity',
-        'settings' => array(
-          'text' => 'Download [file:name]',
-        ),
-        'type' => 'file_download_link',
-        'weight' => 1,
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1573,7 +1571,7 @@ function arpansa_entity_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_file',
-    'label' => 'Attachments',
+    'label' => 'Files',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -1751,7 +1749,7 @@ function arpansa_entity_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2262,7 +2260,6 @@ function arpansa_entity_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Attachments');
   t('Authored By');
   t('Body');
   t('Branch');
@@ -2271,6 +2268,7 @@ function arpansa_entity_field_default_field_instances() {
   t('Date of Publication');
   t('Documentation');
   t('Feature Image');
+  t('Files');
   t('Hide social links');
   t('Image');
   t('Level');
