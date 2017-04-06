@@ -8415,10 +8415,6 @@ html.no-flexbox .content-body-inner.has-sidebar .region-content {
   box-sizing: content-box;
 }
 
-.region-sidebar-second > .block {
-  border-top: 1px solid #9B9B9B;
-}
-
 .region-sidebar-second > .block:nth-child(3n+1) {
   background-color: white;
 }
