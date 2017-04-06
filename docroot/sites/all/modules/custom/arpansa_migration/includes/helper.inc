@@ -192,6 +192,9 @@ class ArpansaMigrationHelper {
     if (strpos($uri, 'index.cfm') !== FALSE) {
       $uri = str_replace('index.cfm', '/', $uri);
     }
+    if (strpos($uri, 'index.html') !== FALSE) {
+      $uri = str_replace('index.html', '/', $uri);
+    }
     if (strpos($uri, 'index.htm') !== FALSE) {
       $uri = str_replace('index.htm', '/', $uri);
     }
@@ -270,6 +273,27 @@ class ArpansaMigrationHelper {
     }
 
     return FALSE;
+  }
+
+  /**
+   * Follow redirect.
+   *
+   * @param string $source
+   *   Source.
+   *
+   * @return string
+   *   Destination.
+   */
+  public static function followRedirect($source) {
+    $url = redirect_parse_url($source);
+    if (empty($url['query'])) {
+      $url['query'] = array();
+    }
+    if ($redirect = redirect_load_by_source($url['path'], LANGUAGE_NONE, $url['query'])) {
+      return $redirect->redirect;
+    }
+
+    return $source;
   }
 
 }

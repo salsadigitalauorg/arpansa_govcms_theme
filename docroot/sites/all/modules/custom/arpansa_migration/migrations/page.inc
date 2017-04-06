@@ -32,6 +32,20 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
   protected $stubCount = 0;
 
   /**
+   * Imported Node Ids.
+   *
+   * @var array
+   */
+  protected $importedNids = [];
+
+  /**
+   * Remap content flag.
+   *
+   * @var bool
+   */
+  protected $remapContentWhenScraping = FALSE;
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(array $arguments = array()) {
@@ -115,6 +129,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
         $row->source = str_replace('index.cfm', '/', $row->source);
       }
       $row->source = rtrim($row->source, '/');
+      $row->source = preg_replace('/\/+/', '/', $row->source);
     }
     $key = parent::prepareKey($source_key, $row);
 
@@ -135,11 +150,6 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       return FALSE;
     }
 
-    // AC7.1 Items marked with "delete" in column G should not be migrated.
-    if ($row->type == 'delete' || $url == 'delete' || $row->alias == 'delete') {
-      return FALSE;
-    }
-
     return TRUE;
   }
 
@@ -151,6 +161,11 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     $row->source_url = 'http://www.arpansa.gov.au/' . $url;
 
     $row->alias = ArpansaMigrationHelper::sanitizeArpansaSourceUri($row->alias);
+
+    // AC7.1 Items marked with "delete" in column G should not be migrated.
+    if ($row->type == 'delete' || $url == 'delete' || $row->alias == 'delete') {
+      return FALSE;
+    }
 
     // Map content type.
     switch ($row->type) {
@@ -203,6 +218,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
    */
   public function complete($node, $row) {
     $this->lastPage = $node;
+    $this->importedNids[$node->nid] = $node->nid;
 
     // Create redirect from legacy path.
     try {
@@ -263,7 +279,31 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
    * {@inheritdoc}
    */
   protected function postImport() {
+    if (count($this->importedNids)) {
+      foreach ($this->importedNids as $nid) {
+        $mapping = $this->map->getRowByDestination([$nid]);
+        if ($mapping) {
+          $row = (object) ['source' => $mapping['sourceid1']];
+          $this->currentFauxSourceKey = ['source' => $mapping['sourceid1']];
+          if ($node = node_load($nid)) {
+            $field_name = 'body';
+            if ($node->type == 'consultation') {
+              $field_name = 'field_consultation_summary';
+            }
+            if (!empty($node->{$field_name}[LANGUAGE_NONE][0]['value'])) {
+              $text = $node->{$field_name}[LANGUAGE_NONE][0]['value'];
+              $text = $this->remapContent($text, $row);
+              $node->{$field_name}[LANGUAGE_NONE][0]['value'] = $text;
+              $node->revision = FALSE;
+              node_save($node);
+            }
+          }
+        }
+      }
+    }
+
     if ($this->stubCount) {
+      $this->remapContentWhenScraping = TRUE;
       for ($try = 0; $try < 10; $try++) {
         $mappingRows = $this->map->getRowsNeedingUpdate($this->stubCount);
         if (!$mappingRows || !count($mappingRows)) {
@@ -400,8 +440,10 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       }
 
       if ($content) {
-        $this->remapImages($row, $content, $xpath);
-        $this->remapLinks($row, $content, $xpath);
+        if ($this->remapContentWhenScraping) {
+          $this->remapImages($row, $content, $xpath);
+          $this->remapLinks($row, $content, $xpath);
+        }
         $this->sanitizeContent($row, $content, $xpath);
 
         // Scrape remaining children into body.
@@ -426,10 +468,14 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       }
     }
     else {
-      $this->queueMessage(t('Could not scrape content from @url', ['@url' => $row->source_url]));
+      $error = '';
       if (!empty($result->error)) {
-        $this->queueMessage($result->error);
+        $error = 'HTTP Error: ' . $result->error;
       }
+      $this->queueMessage(t('Could not scrape content from @url. @error', [
+        '@url' => $row->source_url,
+        '@error' => $error,
+      ]));
     }
 
     return FALSE;
@@ -463,15 +509,15 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
           // Build a media token to replace this image.
           $attributes = [];
           foreach ([
-            'id', 'alt', 'title', 'class', 'width', 'height',
+            'id', 'title', 'alt', 'class', 'width', 'height',
             'hspace', 'vspace', 'align', 'border',
           ] as $attribute_name) {
             if ($attribute = $image->getAttribute($attribute_name)) {
               $attributes[$attribute_name] = ArpansaMigrationHelper::sanitizeText($attribute);
             }
-            elseif ($attribute_name == 'title' && empty($attributes['alt'])) {
-              $attributes['alt'] = $attributes[$attribute_name];
-            }
+          }
+          if (!empty($attributes['title']) && empty($attributes['alt'])) {
+            $attributes['alt'] = $attributes['title'];
           }
 
           $media_token = ArpansaMigrationHelper::buildMediaJson($fid, $attributes, NULL, 'full');
@@ -501,6 +547,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     /** @var DOMElement $anchor */
     foreach ($anchors as $anchor) {
       $href = $anchor->getAttribute('href');
+      $href = ArpansaMigrationHelper::sanitizeArpansaSourceUri($href);
       $url = parse_url($href);
       if (!empty($url['scheme'])) {
         continue;
@@ -508,8 +555,20 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       if (empty($url['path'])) {
         $url['path'] = '/';
       }
+
       $path = ArpansaMigrationHelper::sanitizeArpansaSourceUri($url['path']);
+
+      // Attempts to fix malformed external URL.
+      if (strpos($url['path'], 'www.') === 0) {
+        $anchor->setAttribute('href', 'http://' . $url['path']);
+        continue;
+      }
+
       $href = ArpansaMigrationHelper::remapRelativeUri($path, $row->source);
+      if (empty($href)) {
+        $anchor->setAttribute('href', '/');
+        continue;
+      }
 
       $extension = pathinfo($href, PATHINFO_EXTENSION);
       // Search for migrated page.
@@ -519,10 +578,24 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
         if (strpos($href, 'index.cfm') !== FALSE) {
           $href = str_replace('index.cfm', '/', $href);
         }
+        if (strpos($href, 'index.html') !== FALSE) {
+          $href = str_replace('index.html', '/', $href);
+        }
         if (strpos($href, 'index.htm') !== FALSE) {
           $href = str_replace('index.htm', '/', $href);
         }
         $href = rtrim(strtolower($href), '/');
+
+        // Follow redirect.
+        $redirect = ArpansaMigrationHelper::followRedirect($href);
+        if ($redirect != $href) {
+          // @code
+          // $this->map->saveMessage([$row->source],'Use redirect ' . $redirect . ' for ' . $href, self::MESSAGE_INFORMATIONAL);
+          // @endcode
+          $anchor->setAttribute('href', $redirect);
+          continue;
+        }
+
         if ($destination = $this->handleSourceMigration(['Page'], [$href])) {
           $nid = is_array($destination) ? reset($destination) : $destination;
           $href = '/node/' . $nid;
@@ -535,6 +608,8 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
           $anchor->setAttribute('href', $href);
           continue;
         }
+
+        $this->map->saveMessage([$row->source], 'No migrated page found for ' . $href, self::MESSAGE_INFORMATIONAL);
       }
       // Search for migrated file.
       else {
@@ -544,17 +619,26 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
           if (!empty($destids['destid1'])) {
             $fid = $destids['destid1'];
 
+            // Do not convert image link to media token.
+            if ($file = file_load($fid)) {
+              if (!empty($file->type) && $file->type == 'image') {
+                $image_url = parse_url(file_create_url($file->uri), PHP_URL_PATH);
+                $anchor->setAttribute('href', $image_url);
+                continue;
+              }
+            }
+
             $link_text = $anchor->nodeValue;
             // Check for nested media token.
             if (preg_match("/\[\[\{(.*)\}\]\]/siU", $link_text)) {
-              $href = '/file/' . $fid;
+              $new_href = '/file/' . $fid;
               if (!empty($url['query'])) {
-                $href .= '?' . $url['query'];
+                $new_href .= '?' . $url['query'];
               }
               if (!empty($url['fragment'])) {
-                $href .= '#' . $url['fragment'];
+                $new_href .= '#' . $url['fragment'];
               }
-              $anchor->setAttribute('href', $href);
+              $anchor->setAttribute('href', $new_href);
               continue;
             }
 
@@ -641,6 +725,47 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       $idlist = implode(',', $idlist);
       $this->options['idlist'] = $idlist;
     }
+  }
+
+  /**
+   * Remap images and link in content.
+   *
+   * @param string $text
+   *   Text to process.
+   * @param object $row
+   *   Row object.
+   *
+   * @return string
+   *   Processed text.
+   */
+  protected function remapContent($text, $row) {
+    $dom = new DOMDocument();
+    $dom->preserveWhiteSpace = FALSE;
+    $html = '<html><body>' . $text . '</body></html>';
+    @$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'),
+      LIBXML_NOERROR | LIBXML_NOWARNING | LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD | LIBXML_NOXMLDECL);
+
+    $xpath = new DOMXPath($dom);
+
+    $content = $xpath->query("/html/body")->item(0);
+    $this->remapImages($row, $content, $xpath);
+    $this->remapLinks($row, $content, $xpath);
+
+    $text = '';
+    foreach ($content->childNodes as $child) {
+      if (!($child instanceof DOMComment)) {
+        $text .= $content->ownerDocument->saveHTML($child);
+      }
+    }
+
+    // Prevent malformed media token.
+    $text = str_replace(
+      ['[[[{', '}]]]'],
+      ['&#91;[[{', '}]]&#93;'],
+      $text
+    );
+
+    return $text;
   }
 
 }

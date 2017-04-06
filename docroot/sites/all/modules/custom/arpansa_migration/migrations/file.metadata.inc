@@ -110,7 +110,7 @@ class ArpansaMigrationFileMetadata extends ArpansaMigrationBase {
       $data_changed = FALSE;
 
       // Set document title.
-      if ($file->type != 'document' && !empty($row->title)) {
+      if ($file->type == 'document' && !empty($row->title)) {
         $file_wrapper->field_document_title->set($row->title);
         $data_changed = TRUE;
       }

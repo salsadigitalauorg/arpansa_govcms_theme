@@ -61,6 +61,11 @@ class ArpansaMigrationIA extends ArpansaMigrationPage {
    * {@inheritdoc}
    */
   public function prepareRow($row) {
+    // AC7.1 Items marked with "delete" in column G should not be migrated.
+    if ($row->type == 'delete' || $row->alias == 'delete') {
+      return FALSE;
+    }
+
     if ($destination = $this->handleSourceMigration([$this->pageMigration->getMachineName()], [$row->source])) {
       $row->source_nid = is_array($destination) ? reset($destination) : $destination;
       $node = node_load($row->source_nid);

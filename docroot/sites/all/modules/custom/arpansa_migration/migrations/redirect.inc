@@ -70,7 +70,6 @@ class ArpansaMigrationRedirect extends ArpansaMigrationPage {
    * Implements prepare().
    */
   public function prepare($redirect, $row) {
-    $redirect;
   }
 
   /**
