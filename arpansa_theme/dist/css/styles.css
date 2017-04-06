@@ -7648,7 +7648,6 @@ img {
   overflow: hidden;
   text-indent: 101%;
   white-space: nowrap;
-  border: 0;
   margin: 0;
   padding: 0;
   width: 3.25rem;
@@ -7661,6 +7660,7 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../images/svg/magnifying_glass.svg);
+  box-shadow: none;
 }
 
 .header__inner .region-header .search-form-widget > div input[type="submit"]:hover, .header__inner .region-header .search-form-widget > div input[type="submit"]:focus {
@@ -12481,7 +12481,6 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
   overflow: hidden;
   text-indent: 101%;
   white-space: nowrap;
-  border: 0;
   margin: 0;
   padding: 0;
   width: 3.25rem;
@@ -12494,6 +12493,7 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../images/svg/magnifying_glass.svg);
+  box-shadow: none;
 }
 
 #content .search-form input.form-submit:hover, #content .search-form input.form-submit:focus {
