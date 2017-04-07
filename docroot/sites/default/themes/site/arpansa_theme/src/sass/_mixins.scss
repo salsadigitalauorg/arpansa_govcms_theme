@@ -201,7 +201,6 @@
 
 @mixin search-submit-button() {
   @include hide-text;
-  border: 0;
   margin: 0;
   padding: 0;
   width: rem(52px);
@@ -214,6 +213,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../images/svg/magnifying_glass.svg);
+  box-shadow: none;
   &:hover, &:focus {
     background-image: url(../images/svg/magnifying_glass_hover.svg);
   }
