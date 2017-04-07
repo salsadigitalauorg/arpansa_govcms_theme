@@ -73,6 +73,7 @@
         width: auto;
         &.menuparent {
           &>a {
+            display: block;
             padding-left: rem(5px);
             padding-right: rem(5px);
             &:after {
