@@ -188,6 +188,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
       return FALSE;
     }
 
+
     foreach ([1, 2, 3, 4] as $index) {
       if (!empty($row->{'tag' . $index})) {
         $row->tags[] = ucfirst($row->{'tag' . $index});
@@ -206,6 +207,12 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     }
     else {
       $node->path['alias'] = $row->alias;
+    }
+
+    if (!empty($row->has_iframe)) {
+      if (!empty($node->body[LANGUAGE_NONE][0]['format'])) {
+        $node->body[LANGUAGE_NONE][0]['format'] = 'iframe';
+      }
     }
 
     if ($node->type == 'consultation') {
@@ -446,6 +453,11 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
         }
         $this->sanitizeContent($row, $content, $xpath);
 
+        // Detect iframes.
+        if ($xpath->query("//iframe", $content)->length) {
+          $row->has_iframe = TRUE;
+        }
+
         // Scrape remaining children into body.
         $row->body = '';
         foreach ($content->childNodes as $child) {
@@ -496,7 +508,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     /** @var DOMElement $image */
     foreach ($images as $image) {
       $src = $image->getAttribute('src');
-      $src = ArpansaMigrationHelper::sanitizeArpansaSourceUri($src);
+      $src = ArpansaMigrationHelper::sanitizeArpansaSourceUri($src, TRUE);
       $src = ArpansaMigrationHelper::remapRelativeUri($src, $row->source);
 
       // Search for migrated file.
@@ -547,7 +559,7 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
     /** @var DOMElement $anchor */
     foreach ($anchors as $anchor) {
       $href = $anchor->getAttribute('href');
-      $href = ArpansaMigrationHelper::sanitizeArpansaSourceUri($href);
+      $href = ArpansaMigrationHelper::sanitizeArpansaSourceUri($href, TRUE);
       $url = parse_url($href);
       if (!empty($url['scheme'])) {
         continue;
@@ -585,6 +597,10 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
           $href = str_replace('index.htm', '/', $href);
         }
         $href = rtrim(strtolower($href), '/');
+        if (empty($href)) {
+          $anchor->setAttribute('href', '/');
+          continue;
+        }
 
         // Follow redirect.
         $redirect = ArpansaMigrationHelper::followRedirect($href);
@@ -656,6 +672,8 @@ class ArpansaMigrationPage extends ArpansaMigrationBase {
             continue;
           }
         }
+
+        $this->map->saveMessage([$row->source], 'No migrated file found for ' . $href, self::MESSAGE_INFORMATIONAL);
       }
 
       // No migrated files/pages found.
