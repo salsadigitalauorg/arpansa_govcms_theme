@@ -1,4 +1,31 @@
 /**
+ * Text Resize.
+ */
+(function($, Drupal, window, document, undefined) {
+  Drupal.behaviors.govcms_ui_kit_accordion = {
+    attach: function(context, settings) {
+      var $accordion_container = $('.view-faq', context),
+        $accordion_header = $('.views-field-title ', context),
+        top = '';
+
+      if ($accordion_container.length) {
+        $accordion_header.on('click', function() {
+          /* if opening accordion, scroll to accordion item's top, if closing, scroll to container's top */
+          top = $(this).parents('li').hasClass('opened') ? $accordion_container.offset().top : $(this).offset().top;
+          $(this).parents('li').toggleClass('opened');
+
+          $('html, body').animate({
+            scrollTop: top
+          }, 200);
+        });
+      }
+    }
+  };
+
+})(jQuery, Drupal, this, this.document);
+
+
+/**
  * External Link detector.
  */
 (function($, Drupal, window, document, undefined) {
@@ -319,12 +346,15 @@ var desktop_column = 1170;
   // MOBILE ACCORDION
   // =========================================================
   function enable_mobile_accordion() {
-    var display_text = $widget.children('h2').html();
-    var $content = $widget.children('.content');
-    $content.attr('id', 'sidebar-menu-content');
-    var $button = $('<button aria-controls="sidebar-menu-content" aria-expanded="false">' + display_text + '</button>');
-    $widget.children('h2').html($button);
-    $button.unbind('click', sidebar_accordion_button_click).bind('click', sidebar_accordion_button_click);
+    $widget.each(function() {
+      var cur_widget = $(this);
+      var display_text = cur_widget.children('h2').html();
+      var $content = cur_widget.children('.content');
+      $content.attr('id', 'sidebar-menu-content');
+      var $button = $('<button aria-controls="sidebar-menu-content" aria-expanded="false">' + display_text + '</button>');
+      cur_widget.children('h2').html($button);
+      $button.unbind('click', sidebar_accordion_button_click).bind('click', sidebar_accordion_button_click);
+    });
   }
 
   function disable_mobile_accordion() {
@@ -336,14 +366,15 @@ var desktop_column = 1170;
   function sidebar_accordion_button_click(e) {
     var $button = $(e.currentTarget);
     var was_showing = $button.hasClass('showing');
+    var $cur_widget = $button.parent().parent();
 
     if (was_showing) {
       $button.removeClass('showing').attr('aria-expanded', 'false');
-      $widget.children('.content').removeClass('showing');
+      $cur_widget.children('.content').removeClass('showing');
     }
     else {
       $button.addClass('showing').attr('aria-expanded', 'true');
-      $widget.children('.content').addClass('showing');
+      $cur_widget.children('.content').addClass('showing');
     }
   }
 
@@ -368,11 +399,13 @@ var desktop_column = 1170;
 
   Drupal.behaviors.govcms_ui_kit_sidebar = {
     attach: function(context, settings) {
-      $widget = $('#block-menu-block-left-nav', context);
+      $widget = $('#block-menu-block-left-nav, .page-search .block-facetapi', context);
       if ($widget.length > 0) {
-        add_toggle_buttons();
-        $(window).unbind('resize', side_menu_responsive).bind('resize', side_menu_responsive);
-        side_menu_responsive();
+        $widget.each(function() {
+          add_toggle_buttons();
+          $(window).unbind('resize', side_menu_responsive).bind('resize', side_menu_responsive);
+          side_menu_responsive();
+        });
       }
     }
   };
