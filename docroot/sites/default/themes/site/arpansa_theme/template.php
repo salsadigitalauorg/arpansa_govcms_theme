@@ -374,3 +374,10 @@ function arpansa_theme_preprocess_region(&$variables) {
     $variables['page_title'] = drupal_get_title();
   }
 }
+
+/**
+ * Implements template_preprocess_page().
+ */
+function arpansa_theme_preprocess_page(&$variables) {
+  $variables['current_abs_url'] = url(current_path(), array('absolute' => TRUE, 'query' => drupal_get_query_parameters()));
+}
