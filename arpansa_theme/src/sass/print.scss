@@ -1,0 +1,43 @@
+@media print {
+  *, *::before, *::after, *::first-letter, *::first-line {
+    color: inherit;
+  }
+  .header__inner {
+    .region-header, .header__secondary-menu {
+      display: none;
+    }
+    .logo-and-search .logo-wrapper {
+      width: 100%;
+      display: block;
+      .header__logo, .logo-aus-container {
+        float: right;
+        display: block;
+      }
+      .logo-aus-container {
+        float: left;
+      }
+      button {
+        display: none;
+      }
+    }
+  }
+  .region-content {
+    padding-top: rem(40px);
+  }
+  .region-navigation, .region-footer, .block-twitter-block, .block-govcms-social-links, #block-menu-menu-footer-sub-menu, .block-menu-block, .block-service-links, .sidebar-first, .content-header .breadcrumbs--inverted, #block-views-related-content-block, #nav, div.toc-filter {
+    display: none;
+  }
+  #footer {
+    background: none;
+    .region-bottom-container {
+      background: none;
+      .region-bottom {
+        color: black;
+      }
+    }
+  }
+  .print-container {
+    display: block;
+    @include center-column($desktop_column);
+  }
+}
