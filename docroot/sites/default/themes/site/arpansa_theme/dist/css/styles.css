@@ -7828,6 +7828,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 }
 
 .region-navigation .block-superfish ul.sf-menu > li.menuparent > a {
+  display: block;
   padding-left: 0.3125rem;
   padding-right: 0.3125rem;
 }
