@@ -7182,51 +7182,15 @@ img {
 }
 
 .consultation__progress-bar .consultation__progress-bar__bar {
-  margin-right: 0.25rem;
   background-color: #F5F5F5;
-}
-
-.consultation__progress-bar .consultation__progress-bar__bar:before {
-  content: " ";
-  display: block;
-  top: -0.25rem;
-  width: 1.4375rem;
-  height: 1.4375rem;
-  border-radius: 50%;
-  background-color: #268126;
-  position: absolute;
-  left: 0;
-}
-
-.consultation__progress-bar .consultation__progress-bar__bar:after {
-  content: " ";
-  display: block;
-  top: -0.25rem;
-  width: 1.4375rem;
-  height: 1.4375rem;
-  border-radius: 50%;
-  background-color: #268126;
-  position: absolute;
-  right: -0.25rem;
-  background-color: #444449;
 }
 
 .consultation__progress-bar .consultation__progress-bar__bar .consultation__progress-bar__progress {
   background-color: #268126;
-  margin-left: 0.25rem;
 }
 
-.consultation__progress-bar .consultation__progress-bar__bar .consultation__progress-bar__progress:after {
-  content: " ";
-  display: block;
-  top: -0.25rem;
-  width: 1.4375rem;
-  height: 1.4375rem;
-  border-radius: 50%;
-  background-color: #268126;
-  float: right;
-  position: relative;
-  margin-right: -0.25rem;
+.consultation__progress-bar__highlighted {
+  color: black;
 }
 
 .header__inner {

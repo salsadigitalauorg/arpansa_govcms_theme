@@ -1,37 +1,12 @@
-@mixin progress-ball-left {
-  content: " ";
-  display: block;
-  top: rem(-4px);
-  width: rem(23px);
-  height: rem(23px);
-  border-radius: 50%;
-  background-color: $primary_1;
-}
-
 .consultation__progress-bar {
   .consultation__progress-bar__bar {
-    margin-right: rem(4px);
     background-color: $grey_3;
-    &:before {
-      @include progress-ball-left;
-      position: absolute;
-      left: 0;
-    }
-    &:after {
-      @include progress-ball-left;
-      position: absolute;
-      right: rem(-4px);
-      background-color: $neutral_1;
-    }
     .consultation__progress-bar__progress {
       background-color: $primary_1;
-      margin-left: rem(4px);
-      &:after {
-        @include progress-ball-left;
-        float: right;
-        position: relative;
-        margin-right: rem(-4px);
-      }
     }
   }
+}
+
+.consultation__progress-bar__highlighted {
+  color: black;
 }
