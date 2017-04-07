@@ -7183,51 +7183,15 @@ img {
 }
 
 .consultation__progress-bar .consultation__progress-bar__bar {
-  margin-right: 0.25rem;
   background-color: #F5F5F5;
-}
-
-.consultation__progress-bar .consultation__progress-bar__bar:before {
-  content: " ";
-  display: block;
-  top: -0.25rem;
-  width: 1.4375rem;
-  height: 1.4375rem;
-  border-radius: 50%;
-  background-color: #268126;
-  position: absolute;
-  left: 0;
-}
-
-.consultation__progress-bar .consultation__progress-bar__bar:after {
-  content: " ";
-  display: block;
-  top: -0.25rem;
-  width: 1.4375rem;
-  height: 1.4375rem;
-  border-radius: 50%;
-  background-color: #268126;
-  position: absolute;
-  right: -0.25rem;
-  background-color: #444449;
 }
 
 .consultation__progress-bar .consultation__progress-bar__bar .consultation__progress-bar__progress {
   background-color: #268126;
-  margin-left: 0.25rem;
 }
 
-.consultation__progress-bar .consultation__progress-bar__bar .consultation__progress-bar__progress:after {
-  content: " ";
-  display: block;
-  top: -0.25rem;
-  width: 1.4375rem;
-  height: 1.4375rem;
-  border-radius: 50%;
-  background-color: #268126;
-  float: right;
-  position: relative;
-  margin-right: -0.25rem;
+.consultation__progress-bar__highlighted {
+  color: black;
 }
 
 .header__inner {
@@ -7846,6 +7810,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 }
 
 .region-navigation .block-superfish ul.sf-menu > li.menuparent > a {
+  display: block;
   padding-left: 0.3125rem;
   padding-right: 0.3125rem;
 }
@@ -8461,8 +8426,9 @@ a[rel~='external']::after {
 
 #footer {
   background-color: #268126;
-  background-image: linear-gradient(90deg, #298829 0%, #4E1A74 93%);
+  background-image: url(../images/png/bg-footer.png);
   background-repeat: repeat-y;
+  background-size: 100% auto;
 }
 
 #footer .block-menu > h2, #footer .block-menu > .display, #footer .block-menu-block > h2, #footer .block-menu-block > .display {
