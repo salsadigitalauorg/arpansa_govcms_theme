@@ -7181,6 +7181,70 @@ img {
   }
 }
 
+.view-faq {
+  padding-top: 15px;
+}
+
+.view-faq div.item-list > ol {
+  padding: 0;
+  list-style: none;
+}
+
+.view-faq div.item-list > ol > li {
+  border-top: 1px solid #CACACA;
+  border-bottom: 1px solid #CACACA;
+}
+
+.view-faq div.item-list > ol > li .views-field-title {
+  background-color: #268126;
+  cursor: pointer;
+  color: white;
+  font-size: 1.125em;
+  font-weight: 600;
+  padding: 15px 35px 15px 10px;
+  position: relative;
+  /* ARROW. DEFAULT IS CLOSED */
+}
+
+.view-faq div.item-list > ol > li .views-field-title:after {
+  background: transparent url(../images/svg/nav_down_arrow_white.svg) right center no-repeat;
+  content: " ";
+  display: block;
+  width: 11px;
+  height: 7px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -4px;
+}
+
+.view-faq div.item-list > ol > li .views-field-body {
+  display: none;
+  padding: 20px;
+}
+
+.view-faq div.item-list > ol > li .views-field-body p:last-child {
+  margin-bottom: 0;
+}
+
+.view-faq div.item-list > ol > li.opened {
+  border-bottom: none;
+}
+
+.view-faq div.item-list > ol > li.opened .views-field-title {
+  border-bottom: 1px solid #CACACA;
+  background-color: #4E1A74;
+}
+
+.view-faq div.item-list > ol > li.opened .views-field-title:after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.view-faq div.item-list > ol > li.opened .views-field-body {
+  display: block;
+}
+
 .consultation__progress-bar .consultation__progress-bar__bar {
   margin-right: 0.25rem;
   background-color: #F5F5F5;
