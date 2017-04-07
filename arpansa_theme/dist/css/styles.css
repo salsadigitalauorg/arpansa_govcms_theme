@@ -259,7 +259,7 @@ Usage:
 main > article .see-more::after, footer[role='contentinfo'] .see-more::after, .list-horizontal .tags .see-more::after, .list-vertical .tags .see-more::after, .list-vertical--thirds .tags .see-more::after, .list-vertical--fourths .tags .see-more::after, .list-small .tags .see-more::after, .list-highlighted .tags .see-more::after, .primary-nav ul .see-more::after,
 .local-nav ul .see-more::after, [class^='breadcrumbs'] .see-more::after, [class^='breadcrumbs'][class$='--inverted'] .see-more::after, .skip-to .see-more::after, [class^='controls'] .see-more::after, .govau--header .see-more::after, .prerelease-govau--header .see-more::after, .hero .see-more::after,
 .hero-sml .see-more::after,
-.hero-med .see-more::after, .header__inner .header__secondary-menu .see-more::after, .content-body .content .see-more::after, #footer .block-menu .content ul.menu > li .see-more::after, #footer .block-menu-block .content ul.menu > li .see-more::after, .panels-ipe-sort-container .bean-basic-content > .content .see-more::after, .pane-bean-panels .bean-basic-content > .content .see-more::after, .panel-promo .view-content .views-row h2 .see-more::after, .panel-promo .view-content .views-row .display .see-more::after, #block-views-slideshow-block .banner-description-holder h3 .see-more::after, #block-views-slideshow-block .banner-description-holder .field .see-more::after, .view-home-page-blog-articles .view-content .views-row h2 .see-more::after, .view-home-page-blog-articles .view-content .views-row .display .see-more::after, .view-latest-news .view-content .views-row h2 .see-more::after, .view-latest-news .view-content .views-row .display .see-more::after, .view-homepage-what-s-new .view-content .views-row h2 .see-more::after, .view-homepage-what-s-new .view-content .views-row .display .see-more::after, #block-menu-block-landing-page-children-listing .node-teaser h2 .see-more::after, #block-menu-block-landing-page-children-listing .node-teaser .display .see-more::after, body.not-front #content .view .view-content .views-row h2 .see-more::after, body.not-front #content .view .view-content .views-row .display .see-more::after, #block-views-related-content-block .content .view-content .views-row .see-more::after, div.toc-filter-content ol.toc-filter-links li .see-more::after, #block-menu-menu-quick-links ul.menu li .see-more::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 .see-more::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display .see-more::after {
+.hero-med .see-more::after, .header__inner .header__secondary-menu .see-more::after, .content-body .content .see-more::after, #footer .block-menu .content ul.menu > li .see-more::after, #footer .block-menu-block .content ul.menu > li .see-more::after, .content-header .breadcrumbs--inverted ul li .see-more::after, .panels-ipe-sort-container .bean-basic-content > .content .see-more::after, .pane-bean-panels .bean-basic-content > .content .see-more::after, .panel-promo .view-content .views-row h2 .see-more::after, .panel-promo .view-content .views-row .display .see-more::after, #block-views-slideshow-block .banner-description-holder h3 .see-more::after, #block-views-slideshow-block .banner-description-holder .field .see-more::after, .view-home-page-blog-articles .view-content .views-row h2 .see-more::after, .view-home-page-blog-articles .view-content .views-row .display .see-more::after, .view-latest-news .view-content .views-row h2 .see-more::after, .view-latest-news .view-content .views-row .display .see-more::after, .view-homepage-what-s-new .view-content .views-row h2 .see-more::after, .view-homepage-what-s-new .view-content .views-row .display .see-more::after, #block-menu-block-landing-page-children-listing .node-teaser h2 .see-more::after, #block-menu-block-landing-page-children-listing .node-teaser .display .see-more::after, body.not-front #content .view .view-content .views-row h2 .see-more::after, body.not-front #content .view .view-content .views-row .display .see-more::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 .see-more::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display .see-more::after {
   background-image: url("../latest/img/icons/arrow-right--aqua.svg");
 }
 
@@ -279,7 +279,7 @@ summary::before, .accordion--controls summary::before, .nav-toggle::before {
 main > article a[rel~='external']::after, footer[role='contentinfo'] a[rel~='external']::after, .list-horizontal .tags a[rel~='external']::after, .list-vertical .tags a[rel~='external']::after, .list-vertical--thirds .tags a[rel~='external']::after, .list-vertical--fourths .tags a[rel~='external']::after, .list-small .tags a[rel~='external']::after, .list-highlighted .tags a[rel~='external']::after, .primary-nav ul a[rel~='external']::after,
 .local-nav ul a[rel~='external']::after, [class^='breadcrumbs'] a[rel~='external']::after, [class^='breadcrumbs'][class$='--inverted'] a[rel~='external']::after, .skip-to a[rel~='external']::after, [class^='controls'] a[rel~='external']::after, .govau--header a[rel~='external']::after, .prerelease-govau--header a[rel~='external']::after, .hero a[rel~='external']::after,
 .hero-sml a[rel~='external']::after,
-.hero-med a[rel~='external']::after, .header__inner .header__secondary-menu a[rel~='external']::after, .content-body .content a[rel~='external']::after, #footer .block-menu .content ul.menu > li a[rel~='external']::after, #footer .block-menu-block .content ul.menu > li a[rel~='external']::after, .panels-ipe-sort-container .bean-basic-content > .content a[rel~='external']::after, .pane-bean-panels .bean-basic-content > .content a[rel~='external']::after, .panel-promo .view-content .views-row h2 a[rel~='external']::after, .panel-promo .view-content .views-row .display a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder h3 a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder .field a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row h2 a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row .display a[rel~='external']::after, .view-latest-news .view-content .views-row h2 a[rel~='external']::after, .view-latest-news .view-content .views-row .display a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row h2 a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row .display a[rel~='external']::after, #block-menu-block-landing-page-children-listing .node-teaser h2 a[rel~='external']::after, #block-menu-block-landing-page-children-listing .node-teaser .display a[rel~='external']::after, body.not-front #content .view .view-content .views-row h2 a[rel~='external']::after, body.not-front #content .view .view-content .views-row .display a[rel~='external']::after, #block-views-related-content-block .content .view-content .views-row a[rel~='external']::after, div.toc-filter-content ol.toc-filter-links li a[rel~='external']::after, #block-menu-menu-quick-links ul.menu li a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a[rel~='external']::after {
+.hero-med a[rel~='external']::after, .header__inner .header__secondary-menu a[rel~='external']::after, .content-body .content a[rel~='external']::after, #footer .block-menu .content ul.menu > li a[rel~='external']::after, #footer .block-menu-block .content ul.menu > li a[rel~='external']::after, .content-header .breadcrumbs--inverted ul li a[rel~='external']::after, .panels-ipe-sort-container .bean-basic-content > .content a[rel~='external']::after, .pane-bean-panels .bean-basic-content > .content a[rel~='external']::after, .panel-promo .view-content .views-row h2 a[rel~='external']::after, .panel-promo .view-content .views-row .display a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder h3 a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder .field a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row h2 a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row .display a[rel~='external']::after, .view-latest-news .view-content .views-row h2 a[rel~='external']::after, .view-latest-news .view-content .views-row .display a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row h2 a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row .display a[rel~='external']::after, #block-menu-block-landing-page-children-listing .node-teaser h2 a[rel~='external']::after, #block-menu-block-landing-page-children-listing .node-teaser .display a[rel~='external']::after, body.not-front #content .view .view-content .views-row h2 a[rel~='external']::after, body.not-front #content .view .view-content .views-row .display a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a[rel~='external']::after {
   background-image: url("../latest/img/icons/external-link--aqua.svg");
 }
 
@@ -2078,7 +2078,7 @@ Style guide: Link styles.1 Hover links
 main > article a[rel~='external']::after, footer[role='contentinfo'] a[rel~='external']::after, .list-horizontal .tags a[rel~='external']::after, .list-vertical .tags a[rel~='external']::after, .list-vertical--thirds .tags a[rel~='external']::after, .list-vertical--fourths .tags a[rel~='external']::after, .list-small .tags a[rel~='external']::after, .list-highlighted .tags a[rel~='external']::after, .primary-nav ul a[rel~='external']::after,
 .local-nav ul a[rel~='external']::after, [class^='breadcrumbs'] a[rel~='external']::after, [class^='breadcrumbs'][class$='--inverted'] a[rel~='external']::after, .skip-to a[rel~='external']::after, [class^='controls'] a[rel~='external']::after, .govau--header a[rel~='external']::after, .prerelease-govau--header a[rel~='external']::after, .hero a[rel~='external']::after,
 .hero-sml a[rel~='external']::after,
-.hero-med a[rel~='external']::after, .header__inner .header__secondary-menu a[rel~='external']::after, .content-body .content a[rel~='external']::after, #footer .block-menu .content ul.menu > li a[rel~='external']::after, #footer .block-menu-block .content ul.menu > li a[rel~='external']::after, .panels-ipe-sort-container .bean-basic-content > .content a[rel~='external']::after, .pane-bean-panels .bean-basic-content > .content a[rel~='external']::after, .panel-promo .view-content .views-row h2 a[rel~='external']::after, .panel-promo .view-content .views-row .display a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder h3 a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder .field a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row h2 a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row .display a[rel~='external']::after, .view-latest-news .view-content .views-row h2 a[rel~='external']::after, .view-latest-news .view-content .views-row .display a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row h2 a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row .display a[rel~='external']::after, #block-menu-block-landing-page-children-listing .node-teaser h2 a[rel~='external']::after, #block-menu-block-landing-page-children-listing .node-teaser .display a[rel~='external']::after, body.not-front #content .view .view-content .views-row h2 a[rel~='external']::after, body.not-front #content .view .view-content .views-row .display a[rel~='external']::after, #block-views-related-content-block .content .view-content .views-row a[rel~='external']::after, div.toc-filter-content ol.toc-filter-links li a[rel~='external']::after, #block-menu-menu-quick-links ul.menu li a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a[rel~='external']::after {
+.hero-med a[rel~='external']::after, .header__inner .header__secondary-menu a[rel~='external']::after, .content-body .content a[rel~='external']::after, #footer .block-menu .content ul.menu > li a[rel~='external']::after, #footer .block-menu-block .content ul.menu > li a[rel~='external']::after, .content-header .breadcrumbs--inverted ul li a[rel~='external']::after, .panels-ipe-sort-container .bean-basic-content > .content a[rel~='external']::after, .pane-bean-panels .bean-basic-content > .content a[rel~='external']::after, .panel-promo .view-content .views-row h2 a[rel~='external']::after, .panel-promo .view-content .views-row .display a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder h3 a[rel~='external']::after, #block-views-slideshow-block .banner-description-holder .field a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row h2 a[rel~='external']::after, .view-home-page-blog-articles .view-content .views-row .display a[rel~='external']::after, .view-latest-news .view-content .views-row h2 a[rel~='external']::after, .view-latest-news .view-content .views-row .display a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row h2 a[rel~='external']::after, .view-homepage-what-s-new .view-content .views-row .display a[rel~='external']::after, #block-menu-block-landing-page-children-listing .node-teaser h2 a[rel~='external']::after, #block-menu-block-landing-page-children-listing .node-teaser .display a[rel~='external']::after, body.not-front #content .view .view-content .views-row h2 a[rel~='external']::after, body.not-front #content .view .view-content .views-row .display a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a[rel~='external']::after, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a[rel~='external']::after {
   content: '';
   position: absolute;
   display: inline;
@@ -7048,6 +7048,7 @@ img {
 #content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button a {
   background-color: white;
   color: #2B992B;
+  border: none;
 }
 
 #content div.horizontal-tabs .horizontal-tabs-list .horizontal-tab-button a * {
@@ -7246,51 +7247,15 @@ img {
 }
 
 .consultation__progress-bar .consultation__progress-bar__bar {
-  margin-right: 0.25rem;
   background-color: #F5F5F5;
-}
-
-.consultation__progress-bar .consultation__progress-bar__bar:before {
-  content: " ";
-  display: block;
-  top: -0.25rem;
-  width: 1.4375rem;
-  height: 1.4375rem;
-  border-radius: 50%;
-  background-color: #268126;
-  position: absolute;
-  left: 0;
-}
-
-.consultation__progress-bar .consultation__progress-bar__bar:after {
-  content: " ";
-  display: block;
-  top: -0.25rem;
-  width: 1.4375rem;
-  height: 1.4375rem;
-  border-radius: 50%;
-  background-color: #268126;
-  position: absolute;
-  right: -0.25rem;
-  background-color: #444449;
 }
 
 .consultation__progress-bar .consultation__progress-bar__bar .consultation__progress-bar__progress {
   background-color: #268126;
-  margin-left: 0.25rem;
 }
 
-.consultation__progress-bar .consultation__progress-bar__bar .consultation__progress-bar__progress:after {
-  content: " ";
-  display: block;
-  top: -0.25rem;
-  width: 1.4375rem;
-  height: 1.4375rem;
-  border-radius: 50%;
-  background-color: #268126;
-  float: right;
-  position: relative;
-  margin-right: -0.25rem;
+.consultation__progress-bar__highlighted {
+  color: black;
 }
 
 .header__inner {
@@ -7306,7 +7271,7 @@ img {
 
 .header__inner .header__secondary-menu {
   display: none;
-  color: #4E1A74;
+  color: #268126;
   /*
   See more link
 
@@ -7366,18 +7331,18 @@ img {
 }
 
 .header__inner .header__secondary-menu a {
-  color: #4E1A74;
+  color: #268126;
   text-decoration: none;
   outline: none;
-  border-bottom: solid 1px transparent;
+  border-bottom: solid 1px #268126;
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
 }
 
 .header__inner .header__secondary-menu a:hover, .header__inner .header__secondary-menu a:focus {
-  background-color: transparent;
-  color: #298829;
+  background-color: #268126;
+  color: white;
 }
 
 .header__inner .header__secondary-menu a[rel~='external'] {
@@ -7416,36 +7381,17 @@ img {
 }
 
 .header__inner .header__secondary-menu .see-more:hover, .header__inner .header__secondary-menu .see-more:focus {
-  color: #298829;
+  color: white;
 }
 
 .header__inner .header__secondary-menu span.placeholder-link {
-  color: rgba(78, 26, 116, 0.7);
+  color: rgba(38, 129, 38, 0.7);
   border-bottom: none;
   cursor: not-allowed;
 }
 
 .header__inner .header__secondary-menu span.placeholder-link:hover {
   cursor: not-allowed;
-}
-
-.header__inner .header__secondary-menu a {
-  border: none;
-  text-decoration: underline;
-  border-color: #4E1A74;
-  outline: inherit;
-}
-
-.header__inner .header__secondary-menu a:hover, .header__inner .header__secondary-menu a:focus {
-  background-color: transparent;
-}
-
-.header__inner .header__secondary-menu a:visited {
-  color: #3B3B3B;
-}
-
-.header__inner .header__secondary-menu a.button {
-  text-decoration: none;
 }
 
 @media (min-width: 768px) {
@@ -7712,7 +7658,6 @@ img {
   overflow: hidden;
   text-indent: 101%;
   white-space: nowrap;
-  border: 0;
   margin: 0;
   padding: 0;
   width: 3.25rem;
@@ -7725,6 +7670,7 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../images/svg/magnifying_glass.svg);
+  box-shadow: none;
 }
 
 .header__inner .region-header .search-form-widget > div input[type="submit"]:hover, .header__inner .region-header .search-form-widget > div input[type="submit"]:focus {
@@ -7928,6 +7874,7 @@ html:not(.no-js) .region-navigation .block-superfish ul.sf-menu:not(.superfish-p
 }
 
 .region-navigation .block-superfish ul.sf-menu > li.menuparent > a {
+  display: block;
   padding-left: 0.3125rem;
   padding-right: 0.3125rem;
 }
@@ -8204,7 +8151,7 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
 }
 
 .content-body .content {
-  color: #4E1A74;
+  color: #268126;
   /*
   See more link
 
@@ -8265,18 +8212,18 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
 }
 
 .content-body .content a {
-  color: #4E1A74;
+  color: #268126;
   text-decoration: none;
   outline: none;
-  border-bottom: solid 1px transparent;
+  border-bottom: solid 1px #268126;
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
 }
 
 .content-body .content a:hover, .content-body .content a:focus {
-  background-color: transparent;
-  color: #298829;
+  background-color: #268126;
+  color: white;
 }
 
 .content-body .content a[rel~='external'] {
@@ -8315,36 +8262,17 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
 }
 
 .content-body .content .see-more:hover, .content-body .content .see-more:focus {
-  color: #298829;
+  color: white;
 }
 
 .content-body .content span.placeholder-link {
-  color: rgba(78, 26, 116, 0.7);
+  color: rgba(38, 129, 38, 0.7);
   border-bottom: none;
   cursor: not-allowed;
 }
 
 .content-body .content span.placeholder-link:hover {
   cursor: not-allowed;
-}
-
-.content-body .content a {
-  border: none;
-  text-decoration: underline;
-  border-color: #4E1A74;
-  outline: inherit;
-}
-
-.content-body .content a:hover, .content-body .content a:focus {
-  background-color: transparent;
-}
-
-.content-body .content a:visited {
-  color: #3B3B3B;
-}
-
-.content-body .content a.button {
-  text-decoration: none;
 }
 
 .content-body-inner.has-sidebar {
@@ -8562,8 +8490,9 @@ a[rel~='external']::after {
 
 #footer {
   background-color: #268126;
-  background-image: linear-gradient(90deg, #298829 0%, #4E1A74 93%);
+  background-image: url(../images/png/bg-footer.png);
   background-repeat: repeat-y;
+  background-size: 100% auto;
 }
 
 #footer .block-menu > h2, #footer .block-menu > .display, #footer .block-menu-block > h2, #footer .block-menu-block > .display {
@@ -8682,7 +8611,6 @@ a[rel~='external']::after {
   Style guide: Link styles.3 Placeholder links
   */
   margin-left: 0;
-  margin-bottom: 1.375rem;
   padding: 0;
   list-style: none;
   margin-bottom: 0.9375rem;
@@ -8757,7 +8685,6 @@ a[rel~='external']::after {
 }
 
 #footer .block-menu .content ul.menu > li > a, #footer .block-menu-block .content ul.menu > li > a {
-  border: none;
   font-weight: 600;
 }
 
@@ -8916,7 +8843,6 @@ a[rel~='external']::after {
 }
 
 .region-bottom-container .region-bottom #block-menu-menu-footer-sub-menu .content ul.menu > li a {
-  border: none;
   font-weight: 400;
 }
 
@@ -9346,17 +9272,133 @@ ul.tabs.primary {
   font-size: 1rem;
   line-height: 1.375rem;
   height: 1.375rem;
-  color: #298829;
   font-weight: 400;
+  color: #268126;
+  /*
+  See more link
+
+  Use see more links at the end of [lists](section-list-styles.html),
+  to take the user to a index page of all items.
+
+  Markup: <a class="see-more" href="#">See more</a>
+
+  <details open data-label="placeholder-link-accessibility" aria-expanded="false">
+    <summary>Accessibility &amp; browser testing</summary>
+    <div class="accordion-panel">
+    <strong>Passed</strong>:
+      <ul>
+        <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
+        <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
+      </ul>
+    <strong>Untested</strong>:
+      <ul>
+        <li>WCAG:AA manual</li>
+        <li>Browser support &mdash; automated and manual</li>
+      </ul>
+    </div>
+  </details>
+
+  Style guide: Link styles.2 See more link
+  */
+  /*
+  Placeholder links (prototyping)
+
+  Use placeholder links (greyed out links) to show actions that users can't currently take.
+
+  Your content should explain why the action isn't available and when it will be.
+
+  <p class="callout">Placeholders only work in `<span>` tags; not `<a>`.</p>
+
+  Markup: <p><span class="placeholder-link">Draft news item</span></p>
+  <p><a href="#">News item</a><p>
+
+  <details open data-label="placeholder-links-accessibility" aria-expanded="false">
+    <summary>Accessibility &amp; browser testing</summary>
+    <div class="accordion-panel">
+    <strong>Passed</strong>:
+      <ul>
+        <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
+        <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
+      </ul>
+    <strong>Untested</strong>:
+      <ul>
+        <li>WCAG:AA manual</li>
+        <li>Browser support &mdash; automated and manual</li>
+      </ul>
+    </div>
+  </details>
+
+  Style guide: Link styles.3 Placeholder links
+  */
+  color: #4E1A74;
+}
+
+.content-header .breadcrumbs--inverted ul li a {
+  color: #268126;
+  text-decoration: none;
+  outline: none;
+  border-bottom: solid 1px #268126;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  transition-property: background-color, border-color, color;
+}
+
+.content-header .breadcrumbs--inverted ul li a:hover, .content-header .breadcrumbs--inverted ul li a:focus {
+  background-color: #268126;
+  color: white;
+}
+
+.content-header .breadcrumbs--inverted ul li a[rel~='external'] {
+  display: inline;
+  position: relative;
+  margin-right: 1.6em;
+}
+
+.content-header .breadcrumbs--inverted ul li a[rel~='external']:hover {
+  border-color: transparent;
+}
+
+.content-header .breadcrumbs--inverted ul li a[rel~='external']::after {
+  background-size: 0.9em auto;
+}
+
+.content-header .breadcrumbs--inverted ul li .see-more {
+  display: inline-block;
+  position: relative;
+  margin-right: 1.6em;
+  font-weight: 700;
+  color: #18788d;
+}
+
+.content-header .breadcrumbs--inverted ul li .see-more::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1.2em;
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  background-repeat: no-repeat;
+  background-position: right 0.4em;
+  background-size: 0.64em auto;
+}
+
+.content-header .breadcrumbs--inverted ul li .see-more:hover, .content-header .breadcrumbs--inverted ul li .see-more:focus {
+  color: white;
+}
+
+.content-header .breadcrumbs--inverted ul li span.placeholder-link {
+  color: rgba(38, 129, 38, 0.7);
+  border-bottom: none;
+  cursor: not-allowed;
+}
+
+.content-header .breadcrumbs--inverted ul li span.placeholder-link:hover {
+  cursor: not-allowed;
 }
 
 .content-header .breadcrumbs--inverted ul li a {
   white-space: nowrap;
-  color: #4E1A74;
-}
-
-.content-header .breadcrumbs--inverted ul li a:hover, .content-header .breadcrumbs--inverted ul li a:focus {
-  color: #298829;
 }
 
 .content-header .breadcrumbs--inverted ul li:not(:last-child) {
@@ -9513,15 +9555,15 @@ ul.tabs.primary {
   color: #268126;
   text-decoration: none;
   outline: none;
-  border-bottom: solid 1px #5bcbe3;
+  border-bottom: solid 1px #268126;
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
 }
 
 .panels-ipe-sort-container .bean-basic-content > .content a:hover, .panels-ipe-sort-container .bean-basic-content > .content a:focus, .pane-bean-panels .bean-basic-content > .content a:hover, .pane-bean-panels .bean-basic-content > .content a:focus {
-  background-color: #5bcbe3;
-  color: #444449;
+  background-color: #268126;
+  color: white;
 }
 
 .panels-ipe-sort-container .bean-basic-content > .content a[rel~='external'], .pane-bean-panels .bean-basic-content > .content a[rel~='external'] {
@@ -9560,7 +9602,7 @@ ul.tabs.primary {
 }
 
 .panels-ipe-sort-container .bean-basic-content > .content .see-more:hover, .panels-ipe-sort-container .bean-basic-content > .content .see-more:focus, .pane-bean-panels .bean-basic-content > .content .see-more:hover, .pane-bean-panels .bean-basic-content > .content .see-more:focus {
-  color: #444449;
+  color: white;
 }
 
 .panels-ipe-sort-container .bean-basic-content > .content span.placeholder-link, .pane-bean-panels .bean-basic-content > .content span.placeholder-link {
@@ -9763,15 +9805,15 @@ ul.tabs.primary {
   color: #268126;
   text-decoration: none;
   outline: none;
-  border-bottom: solid 1px transparent;
+  border-bottom: solid 1px #268126;
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
 }
 
 .panel-promo .view-content .views-row h2 a:hover, .panel-promo .view-content .views-row .display a:hover, .panel-promo .view-content .views-row h2 a:focus, .panel-promo .view-content .views-row .display a:focus {
-  background-color: transparent;
-  color: #444449;
+  background-color: #268126;
+  color: white;
 }
 
 .panel-promo .view-content .views-row h2 a[rel~='external'], .panel-promo .view-content .views-row .display a[rel~='external'] {
@@ -9810,7 +9852,7 @@ ul.tabs.primary {
 }
 
 .panel-promo .view-content .views-row h2 .see-more:hover, .panel-promo .view-content .views-row .display .see-more:hover, .panel-promo .view-content .views-row h2 .see-more:focus, .panel-promo .view-content .views-row .display .see-more:focus {
-  color: #444449;
+  color: white;
 }
 
 .panel-promo .view-content .views-row h2 span.placeholder-link, .panel-promo .view-content .views-row .display span.placeholder-link {
@@ -9821,14 +9863,6 @@ ul.tabs.primary {
 
 .panel-promo .view-content .views-row h2 span.placeholder-link:hover, .panel-promo .view-content .views-row .display span.placeholder-link:hover {
   cursor: not-allowed;
-}
-
-.panel-promo .view-content .views-row h2 a, .panel-promo .view-content .views-row .display a {
-  border-bottom: 0;
-}
-
-.panel-promo .view-content .views-row h2 a:hover, .panel-promo .view-content .views-row .display a:hover, .panel-promo .view-content .views-row h2 a:focus, .panel-promo .view-content .views-row .display a:focus {
-  border-bottom: 1px solid #444449;
 }
 
 .panel-promo .view-content .views-row .field-type-datetime, .panel-promo .view-content .views-row .submitted {
@@ -10347,12 +10381,13 @@ ul.tabs.primary {
 }
 
 #block-views-slideshow-block .slider-controls button:hover, #block-views-slideshow-block .slider-controls button:focus {
-  color: #298829;
-  border-bottom-color: #298829;
+  color: white;
+  background-color: #268126;
 }
 
 #block-views-slideshow-block .slider-controls button.active {
-  color: #298829;
+  color: white;
+  border-bottom-color: white;
 }
 
 #block-views-slideshow-block .slider-controls button.slider-prev {
@@ -10573,15 +10608,15 @@ ul.tabs.primary {
   color: #268126;
   text-decoration: none;
   outline: none;
-  border-bottom: solid 1px transparent;
+  border-bottom: solid 1px #268126;
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
 }
 
 .view-home-page-blog-articles .view-content .views-row h2 a:hover, .view-home-page-blog-articles .view-content .views-row .display a:hover, .view-home-page-blog-articles .view-content .views-row h2 a:focus, .view-home-page-blog-articles .view-content .views-row .display a:focus, .view-latest-news .view-content .views-row h2 a:hover, .view-latest-news .view-content .views-row .display a:hover, .view-latest-news .view-content .views-row h2 a:focus, .view-latest-news .view-content .views-row .display a:focus, .view-homepage-what-s-new .view-content .views-row h2 a:hover, .view-homepage-what-s-new .view-content .views-row .display a:hover, .view-homepage-what-s-new .view-content .views-row h2 a:focus, .view-homepage-what-s-new .view-content .views-row .display a:focus {
-  background-color: transparent;
-  color: #444449;
+  background-color: #268126;
+  color: white;
 }
 
 .view-home-page-blog-articles .view-content .views-row h2 a[rel~='external'], .view-home-page-blog-articles .view-content .views-row .display a[rel~='external'], .view-latest-news .view-content .views-row h2 a[rel~='external'], .view-latest-news .view-content .views-row .display a[rel~='external'], .view-homepage-what-s-new .view-content .views-row h2 a[rel~='external'], .view-homepage-what-s-new .view-content .views-row .display a[rel~='external'] {
@@ -10620,7 +10655,7 @@ ul.tabs.primary {
 }
 
 .view-home-page-blog-articles .view-content .views-row h2 .see-more:hover, .view-home-page-blog-articles .view-content .views-row .display .see-more:hover, .view-home-page-blog-articles .view-content .views-row h2 .see-more:focus, .view-home-page-blog-articles .view-content .views-row .display .see-more:focus, .view-latest-news .view-content .views-row h2 .see-more:hover, .view-latest-news .view-content .views-row .display .see-more:hover, .view-latest-news .view-content .views-row h2 .see-more:focus, .view-latest-news .view-content .views-row .display .see-more:focus, .view-homepage-what-s-new .view-content .views-row h2 .see-more:hover, .view-homepage-what-s-new .view-content .views-row .display .see-more:hover, .view-homepage-what-s-new .view-content .views-row h2 .see-more:focus, .view-homepage-what-s-new .view-content .views-row .display .see-more:focus {
-  color: #444449;
+  color: white;
 }
 
 .view-home-page-blog-articles .view-content .views-row h2 span.placeholder-link, .view-home-page-blog-articles .view-content .views-row .display span.placeholder-link, .view-latest-news .view-content .views-row h2 span.placeholder-link, .view-latest-news .view-content .views-row .display span.placeholder-link, .view-homepage-what-s-new .view-content .views-row h2 span.placeholder-link, .view-homepage-what-s-new .view-content .views-row .display span.placeholder-link {
@@ -10631,14 +10666,6 @@ ul.tabs.primary {
 
 .view-home-page-blog-articles .view-content .views-row h2 span.placeholder-link:hover, .view-home-page-blog-articles .view-content .views-row .display span.placeholder-link:hover, .view-latest-news .view-content .views-row h2 span.placeholder-link:hover, .view-latest-news .view-content .views-row .display span.placeholder-link:hover, .view-homepage-what-s-new .view-content .views-row h2 span.placeholder-link:hover, .view-homepage-what-s-new .view-content .views-row .display span.placeholder-link:hover {
   cursor: not-allowed;
-}
-
-.view-home-page-blog-articles .view-content .views-row h2 a, .view-home-page-blog-articles .view-content .views-row .display a, .view-latest-news .view-content .views-row h2 a, .view-latest-news .view-content .views-row .display a, .view-homepage-what-s-new .view-content .views-row h2 a, .view-homepage-what-s-new .view-content .views-row .display a {
-  border-bottom: 0;
-}
-
-.view-home-page-blog-articles .view-content .views-row h2 a:hover, .view-home-page-blog-articles .view-content .views-row .display a:hover, .view-home-page-blog-articles .view-content .views-row h2 a:focus, .view-home-page-blog-articles .view-content .views-row .display a:focus, .view-latest-news .view-content .views-row h2 a:hover, .view-latest-news .view-content .views-row .display a:hover, .view-latest-news .view-content .views-row h2 a:focus, .view-latest-news .view-content .views-row .display a:focus, .view-homepage-what-s-new .view-content .views-row h2 a:hover, .view-homepage-what-s-new .view-content .views-row .display a:hover, .view-homepage-what-s-new .view-content .views-row h2 a:focus, .view-homepage-what-s-new .view-content .views-row .display a:focus {
-  border-bottom: 1px solid #444449;
 }
 
 .view-home-page-blog-articles .view-content .views-row .field-type-datetime, .view-home-page-blog-articles .view-content .views-row .submitted, .view-latest-news .view-content .views-row .field-type-datetime, .view-latest-news .view-content .views-row .submitted, .view-homepage-what-s-new .view-content .views-row .field-type-datetime, .view-homepage-what-s-new .view-content .views-row .submitted {
@@ -10766,15 +10793,15 @@ ul.tabs.primary {
   color: #268126;
   text-decoration: none;
   outline: none;
-  border-bottom: solid 1px transparent;
+  border-bottom: solid 1px #268126;
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
 }
 
 #block-menu-block-landing-page-children-listing .node-teaser h2 a:hover, #block-menu-block-landing-page-children-listing .node-teaser .display a:hover, #block-menu-block-landing-page-children-listing .node-teaser h2 a:focus, #block-menu-block-landing-page-children-listing .node-teaser .display a:focus {
-  background-color: transparent;
-  color: #444449;
+  background-color: #268126;
+  color: white;
 }
 
 #block-menu-block-landing-page-children-listing .node-teaser h2 a[rel~='external'], #block-menu-block-landing-page-children-listing .node-teaser .display a[rel~='external'] {
@@ -10813,7 +10840,7 @@ ul.tabs.primary {
 }
 
 #block-menu-block-landing-page-children-listing .node-teaser h2 .see-more:hover, #block-menu-block-landing-page-children-listing .node-teaser .display .see-more:hover, #block-menu-block-landing-page-children-listing .node-teaser h2 .see-more:focus, #block-menu-block-landing-page-children-listing .node-teaser .display .see-more:focus {
-  color: #444449;
+  color: white;
 }
 
 #block-menu-block-landing-page-children-listing .node-teaser h2 span.placeholder-link, #block-menu-block-landing-page-children-listing .node-teaser .display span.placeholder-link {
@@ -10824,18 +10851,6 @@ ul.tabs.primary {
 
 #block-menu-block-landing-page-children-listing .node-teaser h2 span.placeholder-link:hover, #block-menu-block-landing-page-children-listing .node-teaser .display span.placeholder-link:hover {
   cursor: not-allowed;
-}
-
-#block-menu-block-landing-page-children-listing .node-teaser h2 a, #block-menu-block-landing-page-children-listing .node-teaser .display a {
-  border-bottom: 0;
-}
-
-#block-menu-block-landing-page-children-listing .node-teaser h2 a:hover, #block-menu-block-landing-page-children-listing .node-teaser .display a:hover, #block-menu-block-landing-page-children-listing .node-teaser h2 a:focus, #block-menu-block-landing-page-children-listing .node-teaser .display a:focus {
-  border-bottom: 1px solid #444449;
-}
-
-#block-menu-block-landing-page-children-listing .node-teaser h2 a, #block-menu-block-landing-page-children-listing .node-teaser .display a {
-  border: none;
 }
 
 #block-menu-block-landing-page-children-listing .node-teaser .field-name-field-image {
@@ -10852,6 +10867,7 @@ ul.tabs.primary {
   background-color: black;
   display: block;
   line-height: 0;
+  border: 0;
 }
 
 #block-menu-block-landing-page-children-listing .node-teaser .field-name-field-image a:hover img {
@@ -11306,15 +11322,15 @@ body.not-front #content .view .view-content .views-row h2 a, body.not-front #con
   color: #268126;
   text-decoration: none;
   outline: none;
-  border-bottom: solid 1px transparent;
+  border-bottom: solid 1px #268126;
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
 }
 
 body.not-front #content .view .view-content .views-row h2 a:hover, body.not-front #content .view .view-content .views-row .display a:hover, body.not-front #content .view .view-content .views-row h2 a:focus, body.not-front #content .view .view-content .views-row .display a:focus {
-  background-color: transparent;
-  color: #444449;
+  background-color: #268126;
+  color: white;
 }
 
 body.not-front #content .view .view-content .views-row h2 a[rel~='external'], body.not-front #content .view .view-content .views-row .display a[rel~='external'] {
@@ -11353,7 +11369,7 @@ body.not-front #content .view .view-content .views-row h2 .see-more::after, body
 }
 
 body.not-front #content .view .view-content .views-row h2 .see-more:hover, body.not-front #content .view .view-content .views-row .display .see-more:hover, body.not-front #content .view .view-content .views-row h2 .see-more:focus, body.not-front #content .view .view-content .views-row .display .see-more:focus {
-  color: #444449;
+  color: white;
 }
 
 body.not-front #content .view .view-content .views-row h2 span.placeholder-link, body.not-front #content .view .view-content .views-row .display span.placeholder-link {
@@ -11364,14 +11380,6 @@ body.not-front #content .view .view-content .views-row h2 span.placeholder-link,
 
 body.not-front #content .view .view-content .views-row h2 span.placeholder-link:hover, body.not-front #content .view .view-content .views-row .display span.placeholder-link:hover {
   cursor: not-allowed;
-}
-
-body.not-front #content .view .view-content .views-row h2 a, body.not-front #content .view .view-content .views-row .display a {
-  border-bottom: 0;
-}
-
-body.not-front #content .view .view-content .views-row h2 a:hover, body.not-front #content .view .view-content .views-row .display a:hover, body.not-front #content .view .view-content .views-row h2 a:focus, body.not-front #content .view .view-content .views-row .display a:focus {
-  border-bottom: 1px solid #444449;
 }
 
 body.not-front #content .view .view-content .views-row .field-name-field-date, body.not-front #content .view .view-content .views-row .submitted, body.not-front #content .view .view-content .views-row .field-type-datetime {
@@ -11651,127 +11659,6 @@ body.not-front #content .view .pager {
   margin-bottom: 5px;
   padding-left: 15px;
   min-width: 100%;
-  color: #4E1A74;
-  /*
-  See more link
-
-  Use see more links at the end of [lists](section-list-styles.html),
-  to take the user to a index page of all items.
-
-  Markup: <a class="see-more" href="#">See more</a>
-
-  <details open data-label="placeholder-link-accessibility" aria-expanded="false">
-    <summary>Accessibility &amp; browser testing</summary>
-    <div class="accordion-panel">
-    <strong>Passed</strong>:
-      <ul>
-        <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
-        <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
-      </ul>
-    <strong>Untested</strong>:
-      <ul>
-        <li>WCAG:AA manual</li>
-        <li>Browser support &mdash; automated and manual</li>
-      </ul>
-    </div>
-  </details>
-
-  Style guide: Link styles.2 See more link
-  */
-  /*
-  Placeholder links (prototyping)
-
-  Use placeholder links (greyed out links) to show actions that users can't currently take.
-
-  Your content should explain why the action isn't available and when it will be.
-
-  <p class="callout">Placeholders only work in `<span>` tags; not `<a>`.</p>
-
-  Markup: <p><span class="placeholder-link">Draft news item</span></p>
-  <p><a href="#">News item</a><p>
-
-  <details open data-label="placeholder-links-accessibility" aria-expanded="false">
-    <summary>Accessibility &amp; browser testing</summary>
-    <div class="accordion-panel">
-    <strong>Passed</strong>:
-      <ul>
-        <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
-        <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
-      </ul>
-    <strong>Untested</strong>:
-      <ul>
-        <li>WCAG:AA manual</li>
-        <li>Browser support &mdash; automated and manual</li>
-      </ul>
-    </div>
-  </details>
-
-  Style guide: Link styles.3 Placeholder links
-  */
-}
-
-#block-views-related-content-block .content .view-content .views-row a {
-  color: #4E1A74;
-  text-decoration: none;
-  outline: none;
-  border-bottom: solid 1px #268126;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.1s;
-  transition-property: background-color, border-color, color;
-}
-
-#block-views-related-content-block .content .view-content .views-row a:hover, #block-views-related-content-block .content .view-content .views-row a:focus {
-  background-color: #268126;
-  color: white;
-}
-
-#block-views-related-content-block .content .view-content .views-row a[rel~='external'] {
-  display: inline;
-  position: relative;
-  margin-right: 1.6em;
-}
-
-#block-views-related-content-block .content .view-content .views-row a[rel~='external']:hover {
-  border-color: transparent;
-}
-
-#block-views-related-content-block .content .view-content .views-row a[rel~='external']::after {
-  background-size: 0.9em auto;
-}
-
-#block-views-related-content-block .content .view-content .views-row .see-more {
-  display: inline-block;
-  position: relative;
-  margin-right: 1.6em;
-  font-weight: 700;
-  color: #18788d;
-}
-
-#block-views-related-content-block .content .view-content .views-row .see-more::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -1.2em;
-  display: block;
-  width: 1.2em;
-  height: 1.2em;
-  background-repeat: no-repeat;
-  background-position: right 0.4em;
-  background-size: 0.64em auto;
-}
-
-#block-views-related-content-block .content .view-content .views-row .see-more:hover, #block-views-related-content-block .content .view-content .views-row .see-more:focus {
-  color: white;
-}
-
-#block-views-related-content-block .content .view-content .views-row span.placeholder-link {
-  color: rgba(78, 26, 116, 0.7);
-  border-bottom: none;
-  cursor: not-allowed;
-}
-
-#block-views-related-content-block .content .view-content .views-row span.placeholder-link:hover {
-  cursor: not-allowed;
 }
 
 #block-views-related-content-block .content .view-content .views-row a {
@@ -11807,127 +11694,6 @@ div.toc-filter-content ol.toc-filter-links li {
   min-width: 100%;
   font-size: 0.875em;
   line-height: 1.5em;
-  color: #4E1A74;
-  /*
-  See more link
-
-  Use see more links at the end of [lists](section-list-styles.html),
-  to take the user to a index page of all items.
-
-  Markup: <a class="see-more" href="#">See more</a>
-
-  <details open data-label="placeholder-link-accessibility" aria-expanded="false">
-    <summary>Accessibility &amp; browser testing</summary>
-    <div class="accordion-panel">
-    <strong>Passed</strong>:
-      <ul>
-        <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
-        <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
-      </ul>
-    <strong>Untested</strong>:
-      <ul>
-        <li>WCAG:AA manual</li>
-        <li>Browser support &mdash; automated and manual</li>
-      </ul>
-    </div>
-  </details>
-
-  Style guide: Link styles.2 See more link
-  */
-  /*
-  Placeholder links (prototyping)
-
-  Use placeholder links (greyed out links) to show actions that users can't currently take.
-
-  Your content should explain why the action isn't available and when it will be.
-
-  <p class="callout">Placeholders only work in `<span>` tags; not `<a>`.</p>
-
-  Markup: <p><span class="placeholder-link">Draft news item</span></p>
-  <p><a href="#">News item</a><p>
-
-  <details open data-label="placeholder-links-accessibility" aria-expanded="false">
-    <summary>Accessibility &amp; browser testing</summary>
-    <div class="accordion-panel">
-    <strong>Passed</strong>:
-      <ul>
-        <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
-        <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
-      </ul>
-    <strong>Untested</strong>:
-      <ul>
-        <li>WCAG:AA manual</li>
-        <li>Browser support &mdash; automated and manual</li>
-      </ul>
-    </div>
-  </details>
-
-  Style guide: Link styles.3 Placeholder links
-  */
-}
-
-div.toc-filter-content ol.toc-filter-links li a {
-  color: #4E1A74;
-  text-decoration: none;
-  outline: none;
-  border-bottom: solid 1px #268126;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.1s;
-  transition-property: background-color, border-color, color;
-}
-
-div.toc-filter-content ol.toc-filter-links li a:hover, div.toc-filter-content ol.toc-filter-links li a:focus {
-  background-color: #268126;
-  color: white;
-}
-
-div.toc-filter-content ol.toc-filter-links li a[rel~='external'] {
-  display: inline;
-  position: relative;
-  margin-right: 1.6em;
-}
-
-div.toc-filter-content ol.toc-filter-links li a[rel~='external']:hover {
-  border-color: transparent;
-}
-
-div.toc-filter-content ol.toc-filter-links li a[rel~='external']::after {
-  background-size: 0.9em auto;
-}
-
-div.toc-filter-content ol.toc-filter-links li .see-more {
-  display: inline-block;
-  position: relative;
-  margin-right: 1.6em;
-  font-weight: 700;
-  color: #18788d;
-}
-
-div.toc-filter-content ol.toc-filter-links li .see-more::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -1.2em;
-  display: block;
-  width: 1.2em;
-  height: 1.2em;
-  background-repeat: no-repeat;
-  background-position: right 0.4em;
-  background-size: 0.64em auto;
-}
-
-div.toc-filter-content ol.toc-filter-links li .see-more:hover, div.toc-filter-content ol.toc-filter-links li .see-more:focus {
-  color: white;
-}
-
-div.toc-filter-content ol.toc-filter-links li span.placeholder-link {
-  color: rgba(78, 26, 116, 0.7);
-  border-bottom: none;
-  cursor: not-allowed;
-}
-
-div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
-  cursor: not-allowed;
 }
 
 .block-twitter-block {
@@ -12019,63 +11785,6 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
   padding: 1.875rem;
   box-sizing: border-box;
   margin-bottom: 1.375rem;
-  color: white;
-  /*
-  See more link
-
-  Use see more links at the end of [lists](section-list-styles.html),
-  to take the user to a index page of all items.
-
-  Markup: <a class="see-more" href="#">See more</a>
-
-  <details open data-label="placeholder-link-accessibility" aria-expanded="false">
-    <summary>Accessibility &amp; browser testing</summary>
-    <div class="accordion-panel">
-    <strong>Passed</strong>:
-      <ul>
-        <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
-        <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
-      </ul>
-    <strong>Untested</strong>:
-      <ul>
-        <li>WCAG:AA manual</li>
-        <li>Browser support &mdash; automated and manual</li>
-      </ul>
-    </div>
-  </details>
-
-  Style guide: Link styles.2 See more link
-  */
-  /*
-  Placeholder links (prototyping)
-
-  Use placeholder links (greyed out links) to show actions that users can't currently take.
-
-  Your content should explain why the action isn't available and when it will be.
-
-  <p class="callout">Placeholders only work in `<span>` tags; not `<a>`.</p>
-
-  Markup: <p><span class="placeholder-link">Draft news item</span></p>
-  <p><a href="#">News item</a><p>
-
-  <details open data-label="placeholder-links-accessibility" aria-expanded="false">
-    <summary>Accessibility &amp; browser testing</summary>
-    <div class="accordion-panel">
-    <strong>Passed</strong>:
-      <ul>
-        <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
-        <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
-      </ul>
-    <strong>Untested</strong>:
-      <ul>
-        <li>WCAG:AA manual</li>
-        <li>Browser support &mdash; automated and manual</li>
-      </ul>
-    </div>
-  </details>
-
-  Style guide: Link styles.3 Placeholder links
-  */
 }
 
 @media (min-width: 768px) {
@@ -12118,70 +11827,6 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
   #block-menu-menu-quick-links ul.menu li:nth-child(4n) {
     margin-right: 0;
   }
-}
-
-#block-menu-menu-quick-links ul.menu li a {
-  color: white;
-  text-decoration: none;
-  outline: none;
-  border-bottom: solid 1px #f0f3f5;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.1s;
-  transition-property: background-color, border-color, color;
-}
-
-#block-menu-menu-quick-links ul.menu li a:hover, #block-menu-menu-quick-links ul.menu li a:focus {
-  background-color: #f0f3f5;
-  color: #444449;
-}
-
-#block-menu-menu-quick-links ul.menu li a[rel~='external'] {
-  display: inline;
-  position: relative;
-  margin-right: 1.6em;
-}
-
-#block-menu-menu-quick-links ul.menu li a[rel~='external']:hover {
-  border-color: transparent;
-}
-
-#block-menu-menu-quick-links ul.menu li a[rel~='external']::after {
-  background-size: 0.9em auto;
-}
-
-#block-menu-menu-quick-links ul.menu li .see-more {
-  display: inline-block;
-  position: relative;
-  margin-right: 1.6em;
-  font-weight: 700;
-  color: #18788d;
-}
-
-#block-menu-menu-quick-links ul.menu li .see-more::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -1.2em;
-  display: block;
-  width: 1.2em;
-  height: 1.2em;
-  background-repeat: no-repeat;
-  background-position: right 0.4em;
-  background-size: 0.64em auto;
-}
-
-#block-menu-menu-quick-links ul.menu li .see-more:hover, #block-menu-menu-quick-links ul.menu li .see-more:focus {
-  color: #444449;
-}
-
-#block-menu-menu-quick-links ul.menu li span.placeholder-link {
-  color: rgba(255, 255, 255, 0.7);
-  border-bottom: none;
-  cursor: not-allowed;
-}
-
-#block-menu-menu-quick-links ul.menu li span.placeholder-link:hover {
-  cursor: not-allowed;
 }
 
 #block-menu-menu-quick-links ul.menu li a[rel~='external']::after {
@@ -12323,15 +11968,15 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
   color: #268126;
   text-decoration: none;
   outline: none;
-  border-bottom: solid 1px transparent;
+  border-bottom: solid 1px #268126;
   transition-timing-function: ease-in-out;
   transition-duration: 0.1s;
   transition-property: background-color, border-color, color;
 }
 
 #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a:hover, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a:hover, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a:focus, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a:focus {
-  background-color: transparent;
-  color: #444449;
+  background-color: #268126;
+  color: white;
 }
 
 #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a[rel~='external'], #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a[rel~='external'] {
@@ -12370,7 +12015,7 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
 }
 
 #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 .see-more:hover, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display .see-more:hover, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 .see-more:focus, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display .see-more:focus {
-  color: #444449;
+  color: white;
 }
 
 #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 span.placeholder-link, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display span.placeholder-link {
@@ -12381,14 +12026,6 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
 
 #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 span.placeholder-link:hover, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display span.placeholder-link:hover {
   cursor: not-allowed;
-}
-
-#block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a {
-  border-bottom: 0;
-}
-
-#block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a:hover, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a:hover, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row h2 a:focus, #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .display a:focus {
-  border-bottom: 1px solid #444449;
 }
 
 #block-views-footer-teaser-block .view-footer-teaser .view-content .views-row .field-name-field-description {
@@ -12545,7 +12182,6 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
   overflow: hidden;
   text-indent: 101%;
   white-space: nowrap;
-  border: 0;
   margin: 0;
   padding: 0;
   width: 3.25rem;
@@ -12558,6 +12194,7 @@ div.toc-filter-content ol.toc-filter-links li span.placeholder-link:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../images/svg/magnifying_glass.svg);
+  box-shadow: none;
 }
 
 #content .search-form input.form-submit:hover, #content .search-form input.form-submit:focus {
