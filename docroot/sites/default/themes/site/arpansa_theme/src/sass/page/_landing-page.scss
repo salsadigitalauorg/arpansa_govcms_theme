@@ -12,9 +12,6 @@
     h2 {
       @include listing-component-heading;
       margin-top: 0;
-      a {
-        border: none;
-      }
     }
     .field-name-field-image {
       display: none;
@@ -25,6 +22,7 @@
         background-color: black;
         display: block;
         line-height: 0;
+        border: 0;
         &:hover {
           img {
             opacity: 0.6;
