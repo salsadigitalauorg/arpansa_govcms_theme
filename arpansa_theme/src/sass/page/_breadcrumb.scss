@@ -9,14 +9,11 @@
         font-size: rem(16px);
         line-height: rem(22px);
         height: rem(22px);
-        color: $color-link-secondary;
         font-weight: 400;
+        @include standard_content_link;
+        color: $secondary_1;
         a {
           white-space: nowrap;
-          color: $secondary_1;
-          &:hover, &:focus {
-            color: $color-link-secondary;
-          }
         }
         &:not(:last-child) {
           // Override previously defined icon with new path.
