@@ -191,3 +191,7 @@ a[rel~='external']::after {
   @include standard_purple_button;
   word-wrap: break-word;
 }
+
+.print-container {
+  display: none;
+}
