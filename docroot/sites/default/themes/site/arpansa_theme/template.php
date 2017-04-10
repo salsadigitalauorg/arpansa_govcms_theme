@@ -448,3 +448,26 @@ function arpansa_theme_preprocess_region(&$variables) {
 function arpansa_theme_preprocess_page(&$variables) {
   $variables['current_abs_url'] = url(current_path(), array('absolute' => TRUE, 'query' => drupal_get_query_parameters()));
 }
+
+/**
+ * Implements hook_search_api_query_alter().
+ *
+ * @see hook_search_api_query_alter()
+ */
+function arpansa_theme_search_api_query_alter(SearchApiQueryInterface $query) {
+  if ($query->getIndex()->machine_name == 'site_search_index') {
+    // Exclude unpublished nodes from search results [ARPANSA-109].
+    $file_filter = $query->createFilter('AND');
+    $file_filter->condition('item_type', 'file');
+
+    $node_filter = $query->createFilter('AND');
+    $node_filter->condition('item_type', 'node');
+    $node_filter->condition('node:status', TRUE);
+
+    $filter = $query->createFilter('OR');
+    $filter->filter($file_filter);
+    $filter->filter($node_filter);
+
+    $query->filter($filter);
+  }
+}
