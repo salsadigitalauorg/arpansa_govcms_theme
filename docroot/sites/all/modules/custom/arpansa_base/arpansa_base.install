@@ -1717,3 +1717,12 @@ function arpansa_base_update_7085() {
     search_api_index_items($search_api_index);
   }
 }
+
+/**
+ * Add submission content type [ARPANSA-92].
+ */
+function arpansa_base_update_7086() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
