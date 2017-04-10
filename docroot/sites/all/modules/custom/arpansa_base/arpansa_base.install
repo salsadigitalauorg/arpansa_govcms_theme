@@ -1703,3 +1703,17 @@ function arpansa_base_update_7084() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Update Search index with to include item type and node status [ARPANSA-109].
+ */
+function arpansa_base_update_7085() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_search');
+
+  if ($search_api_index = search_api_index_load('site_search_index')) {
+    $search_api_index->clear();
+    search_api_index_items($search_api_index);
+  }
+}
