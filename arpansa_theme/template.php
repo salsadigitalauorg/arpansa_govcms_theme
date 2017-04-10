@@ -231,7 +231,7 @@ function arpansa_theme_form_alter(&$form, &$form_state, $form_id) {
  */
 function _arpansa_theme_get_page_type_tags($page_type, $node_type = NULL) {
   if ($page_type || $node_type) {
-    $type = $page_type ?: $node_type;
+    $type = $node_type ?: $page_type;
     $cid = 'arpansa_theme:tags:' . drupal_html_id($type);
     if ($cache = cache_get($cid)) {
       return $cache->data;
@@ -239,17 +239,18 @@ function _arpansa_theme_get_page_type_tags($page_type, $node_type = NULL) {
 
     $tags = [];
     $vocabulary_tags = taxonomy_vocabulary_machine_name_load('tags');
-    $vocabulary_page_type = taxonomy_vocabulary_machine_name_load('page_type');
-    if ($vocabulary_tags && $vocabulary_page_type) {
-      $entityQuery = new EntityFieldQuery();
+    if ($vocabulary_tags) {
       if (!$node_type) {
-        $page_type_terms = $entityQuery->entityCondition('entity_type', 'taxonomy_term')
-          ->propertyCondition('vid', $vocabulary_page_type->vid)
-          ->propertyCondition('name', $page_type)
-          ->range(0, 1)
-          ->execute();
-        if (!empty($page_type_terms['taxonomy_term']) && count($page_type_terms['taxonomy_term'])) {
-          $page_type_term = reset($page_type_terms['taxonomy_term']);
+        if ($vocabulary_page_type = taxonomy_vocabulary_machine_name_load('page_type')) {
+          $entityQuery = new EntityFieldQuery();
+          $page_type_terms = $entityQuery->entityCondition('entity_type', 'taxonomy_term')
+            ->propertyCondition('vid', $vocabulary_page_type->vid)
+            ->propertyCondition('name', $page_type)
+            ->range(0, 1)
+            ->execute();
+          if (!empty($page_type_terms['taxonomy_term']) && count($page_type_terms['taxonomy_term'])) {
+            $page_type_term = reset($page_type_terms['taxonomy_term']);
+          }
         }
       }
       if ($node_type || !empty($page_type_term)) {
