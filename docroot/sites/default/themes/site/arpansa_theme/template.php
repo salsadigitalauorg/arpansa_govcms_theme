@@ -15,7 +15,7 @@ function arpansa_theme_html_head_alter(&$head_elements) {
     '#tag' => 'meta',
     '#attributes' => array(
       'name' => 'viewport',
-      'content' => 'width=device-width, initial-scale=1'
+      'content' => 'width=device-width, initial-scale=1',
     ),
   );
   // IE Latest Browser.
@@ -24,7 +24,7 @@ function arpansa_theme_html_head_alter(&$head_elements) {
     '#tag' => 'meta',
     '#attributes' => array(
       'http-equiv' => 'x-ua-compatible',
-      'content' => 'ie=edge'
+      'content' => 'ie=edge',
     ),
   );
 }
@@ -42,7 +42,7 @@ function arpansa_theme_js_alter(&$javascript) {
 function arpansa_theme_preprocess_html(&$variables) {
   drupal_add_js("(function(h) {h.className = h.className.replace('no-js', '') })(document.documentElement);", array(
     'type' => 'inline',
-    'scope' => 'header'
+    'scope' => 'header',
   ));
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
   // Drupal forms.js does not support new jQuery. Migrate library needed.
@@ -64,7 +64,7 @@ function arpansa_theme_preprocess_field(&$variables) {
   }
   // Rewrite the Promotions links to include the query string for Lit Surveys.
   if ($variables['element']['#bundle'] === 'footer_teaser' && $variables['element']['#view_mode'] == 'teaser') {
-    $path = 'node/' . $variables['element']['#object']->field_reference['und'][0]['target_id'];
+    $path = 'node/' . $variables['element']['#object']->field_reference[LANGUAGE_NONE][0]['target_id'];
     if (isset($variables['element']['#object']->field_literature_survey_date[LANGUAGE_NONE])) {
       $query = array(
         'field_literature_survey_date_tid' => $variables['element']['#object']->field_literature_survey_date[LANGUAGE_NONE][0]['tid'],
@@ -112,7 +112,8 @@ function arpansa_theme_preprocess_node(&$variables) {
   }
 
   if ($variables['view_mode'] === 'full') {
-    // Remove "Hide Social Links" field if checked, or replace with rendered block content.
+    // Remove "Hide Social Links" field if checked,
+    // or replace with rendered block content.
     $hide_social_links = !empty($variables['node']->field_social_links[LANGUAGE_NONE][0]['value']) ? (int) $variables['node']->field_social_links[LANGUAGE_NONE][0]['value'] : 0;
     if ($hide_social_links === 1 || !in_array($variables['type'], $whats_new_content_types)) {
       $variables['content']['field_social_links'] = NULL;
@@ -192,68 +193,96 @@ function arpansa_theme_form_alter(&$form, &$form_state, $form_id) {
     // Search form on page not found (404 page).
     $form['basic']['keys']['#title'] = t('Type search term here');
   }
-  // ARPANSA-78: Only show tags already assigned Fact Sheets on the Fact Sheets view.
-  if ($form_id === 'views_exposed_form' && strpos($form['#id'], 'fact-sheets') !== FALSE) {
-    // Use "Raw SQL Query" mode because it's faster than the Drupal dynamic query.
-    $fact_sheet_tags = get_fact_sheet_assigned_tags();
 
-    if (count($fact_sheet_tags)) {
-      $form['field_tags_tid']['#options'] = array('All' => '- Any -') + $fact_sheet_tags;
+  if ($form_id === 'views_exposed_form') {
+    /** @var \view $view */
+    $view = $form_state['view'];
+    switch ($view->name) {
+      // Only show terms tagged in Fact Sheet pages [ARPANSA-78].
+      case 'fact_sheets_filterable':
+        $tags = _arpansa_theme_get_page_type_tags('Fact Sheet');
+        if (count($tags)) {
+          $form['field_tags_tid']['#options'] = array('All' => '- Any -') + $tags;
+        }
+        break;
+
+      // Only show terms tagged in Literature Surveys [ARPANSA-114].
+      case 'literature_surveys':
+        $tags = _arpansa_theme_get_page_type_tags('', 'literature_survey');
+        if (count($tags)) {
+          $form['field_tags_tid']['#options'] = array('All' => '- Any -') + $tags;
+        }
+        break;
     }
+
   }
 }
 
 /**
- * Helper function to extract distinct set of tags already assigned to Fact Sheet content items.
+ * Retrieve a subset of terms tagged in nodes with a particular Page Type.
  *
- * @param bool $raw_query
- *   Boolean to indicate which query method to use.
+ * @param string $page_type
+ *   Page Type.
+ * @param string $node_type
+ *   Node Type, always take precedent on page type.
  *
  * @return array
- *   An array of tag IDs => tag Names.
+ *   Tags.
  */
-function get_fact_sheet_assigned_tags($raw_query = FALSE) {
-  $tags = array();
-
-  // Obtain vocabulary ID (vid) via its machine name.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('tags');
-
-  if (!empty($vocabulary->vid)) {
-    // "Raw" db_query(...) mode seems faster than dynamic Drupal query builder.
-    if ($raw_query === TRUE) {
-      $fact_sheet_tags = db_query("
-        SELECT DISTINCT ttd.tid, ttd.name
-        FROM taxonomy_term_data ttd
-        JOIN taxonomy_index ti ON ti.tid = ttd.tid
-        JOIN node n ON n.nid = ti.nid AND n.type = 'page' AND n.`status` = 1
-        JOIN field_data_field_page_type pt ON pt.entity_id = n.nid AND pt.revision_id = n.vid
-        JOIN taxonomy_term_data ttd_2 ON ttd_2.tid = pt.field_page_type_tid AND ttd_2.name = 'Fact Sheet'
-        WHERE ttd.vid = " . (int) $vocabulary->vid . "
-        ORDER BY ttd.`name`
-      ");
-    }
-    else {
-      $query = db_select('taxonomy_term_data', 'ttd')
-        ->distinct()
-        ->fields('ttd', array('tid', 'name'))
-        ->condition('ttd.vid', (int) $vocabulary->vid, '=')
-        ->orderBy('ttd.`name`');
-      $query->join('taxonomy_index', 'ti', 'ti.tid = ttd.tid');
-      $query->join('node', 'n', "n.nid = ti.nid AND n.type = 'page' AND n.`status` = 1");
-      $query->join('field_data_field_page_type', 'pt', 'pt.entity_id = n.nid AND pt.revision_id = n.vid');
-      $query->join('taxonomy_term_data', 'ttd_2', "ttd_2.tid = pt.field_page_type_tid AND ttd_2.name = 'Fact Sheet'");
-
-      $fact_sheet_tags = $query->execute();
+function _arpansa_theme_get_page_type_tags($page_type, $node_type = NULL) {
+  if ($page_type || $node_type) {
+    $type = $node_type ?: $page_type;
+    $cid = 'arpansa_theme:tags:' . drupal_html_id($type);
+    if ($cache = cache_get($cid)) {
+      return $cache->data;
     }
 
-    if (count($fact_sheet_tags)) {
-      foreach ($fact_sheet_tags as $tag) {
-        $tags[$tag->tid] = $tag->name;
+    $tags = [];
+    $vocabulary_tags = taxonomy_vocabulary_machine_name_load('tags');
+    if ($vocabulary_tags) {
+      if (!$node_type) {
+        if ($vocabulary_page_type = taxonomy_vocabulary_machine_name_load('page_type')) {
+          $entityQuery = new EntityFieldQuery();
+          $page_type_terms = $entityQuery->entityCondition('entity_type', 'taxonomy_term')
+            ->propertyCondition('vid', $vocabulary_page_type->vid)
+            ->propertyCondition('name', $page_type)
+            ->range(0, 1)
+            ->execute();
+          if (!empty($page_type_terms['taxonomy_term']) && count($page_type_terms['taxonomy_term'])) {
+            $page_type_term = reset($page_type_terms['taxonomy_term']);
+          }
+        }
+      }
+      if ($node_type || !empty($page_type_term)) {
+        /** @var \SelectQuery $query */
+        $query = db_select('taxonomy_term_data', 'term')
+          ->distinct()
+          ->fields('term', array('tid', 'name'));
+        $query->join('taxonomy_index', 'term_index', 'term_index.tid = term.tid');
+        $query->join('node', 'n', 'n.nid = term_index.nid');
+        if ($node_type) {
+          $query->condition('n.type', $node_type);
+        }
+        elseif (!empty($page_type_term)) {
+          $query->join('field_data_field_page_type', 'page_type', 'page_type.entity_id = n.nid AND page_type.revision_id = n.vid');
+          $query->condition('page_type.field_page_type_tid', $page_type_term->tid);
+        }
+        $query->condition('term.vid', $vocabulary_tags->vid);
+        $query->orderBy('term.name', 'ASC');
+        $results = $query->execute();
+        if ($results->rowCount()) {
+          foreach ($results as $result) {
+            $tags[$result->tid] = $result->name;
+          }
+
+          cache_set($cid, $tags, 'cache', REQUEST_TIME + 1800);
+          return $tags;
+        }
       }
     }
   }
 
-  return $tags;
+  return [];
 }
 
 /**
@@ -304,7 +333,26 @@ function arpansa_theme_facetapi_link_inactive($variables) {
     $text = _arpansa_theme_get_file_type($text);
   }
 
-  return theme_facetapi_link_inactive($variables);
+  $accessible_vars = array(
+    'text' => $variables['text'],
+    'active' => FALSE,
+  );
+  $accessible_markup = theme('facetapi_accessible_markup', $accessible_vars);
+
+  // Sanitizes the link text if necessary.
+  $sanitize = empty($variables['options']['html']);
+  $variables['text'] = ($sanitize) ? check_plain($variables['text']) : $variables['text'];
+
+  // Adds count to link if one was passed.
+  if (isset($variables['count'])) {
+    $variables['text'] .= ' ' . theme('facetapi_count', $variables);
+  }
+
+  // Resets link text, sets to options to HTML since we already sanitized the
+  // link text and are providing additional markup for accessibility.
+  $variables['text'] .= $accessible_markup;
+  $variables['options']['html'] = TRUE;
+  return theme('link', $variables);
 }
 
 /**
@@ -318,7 +366,26 @@ function arpansa_theme_facetapi_link_active($variables) {
     $text = _arpansa_theme_get_file_type($text);
   }
 
-  return theme_facetapi_link_active($variables);
+  // Sanitizes the link text if necessary.
+  $sanitize = empty($variables['options']['html']);
+  $link_text = ($sanitize) ? check_plain($variables['text']) : $variables['text'];
+
+  // Theme function variables fro accessible markup.
+  // @see http://drupal.org/node/1316580
+  $accessible_vars = array(
+    'text' => $variables['text'],
+    'active' => TRUE,
+  );
+
+  // Builds link, passes through t() which gives us the ability to change the
+  // position of the widget on a per-language basis.
+  $replacements = array(
+    '!facetapi_deactivate_widget' => theme('facetapi_deactivate_widget', $variables),
+    '!facetapi_accessible_markup' => theme('facetapi_accessible_markup', $accessible_vars),
+  );
+  $variables['text'] = t('!facetapi_deactivate_widget !facetapi_accessible_markup', $replacements);
+  $variables['options']['html'] = TRUE;
+  return theme('link', $variables) . $link_text;
 }
 
 /**

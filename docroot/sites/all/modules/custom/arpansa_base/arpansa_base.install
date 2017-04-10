@@ -1593,7 +1593,7 @@ function arpansa_base_update_7077() {
 }
 
 /**
- * hide field image in basic page [ARPANSA-50].
+ * Hide field image in basic page [ARPANSA-50].
  */
 function arpansa_base_update_7078() {
   module_enable(['salsa_helpers']);
