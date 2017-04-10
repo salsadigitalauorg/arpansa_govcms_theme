@@ -1696,9 +1696,18 @@ function arpansa_base_update_7083() {
 }
 
 /**
- * Update Search index with to include item type and node status [ARPANSA-109].
+ * Modify what's new page [ARPANSA-120].
  */
 function arpansa_base_update_7084() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
+
+/**
+ * Update Search index with to include item type and node status [ARPANSA-109].
+ */
+function arpansa_base_update_7085() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_search');
