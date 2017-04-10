@@ -11,7 +11,7 @@
 function salsa_helpers_drush_command() {
   $items['field-data'] = array(
     'description' => dt('Dump Field data'),
-    'aliases' => array('fd'),
+    'aliases' => array('fdat'),
     'arguments' => array(
       'name' => dt('Field machine name.'),
     ),
@@ -22,7 +22,7 @@ function salsa_helpers_drush_command() {
 
   $items['field-instance'] = array(
     'description' => dt('Dump Field instance'),
-    'aliases' => array('fi'),
+    'aliases' => array('fins'),
     'arguments' => array(
       'name' => dt('Field machine name.'),
       'entity' => dt('Entity type.'),
