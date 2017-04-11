@@ -1,0 +1,14 @@
+// =========================================================
+// CONSULTATION PAGE
+// =========================================================
+.node-type-consultation {
+  form.webform-client-form {
+    .webform-component-file .form-managed-file {
+      display: table;
+      margin-bottom: 15px;
+      input[type="file"] {
+        margin-right: 20px;
+      }
+    }
+  }
+}
