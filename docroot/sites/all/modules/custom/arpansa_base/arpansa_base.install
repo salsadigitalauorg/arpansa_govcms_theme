@@ -1753,3 +1753,12 @@ function arpansa_base_update_7087() {
   salsa_helpers_enable_module('bigmenu');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Add submission content type [ARPANSA-92].
+ */
+function arpansa_base_update_7088() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
