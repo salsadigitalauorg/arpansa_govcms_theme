@@ -1413,6 +1413,78 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'seckit_clickjacking';
+  $strongarm->value = array(
+    'x_frame' => '1',
+    'x_frame_allow_from' => '',
+    'js_css_noscript' => 0,
+    'noscript_message' => 'Sorry, you need to enable JavaScript to visit this website.',
+  );
+  $export['seckit_clickjacking'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'seckit_csrf';
+  $strongarm->value = array(
+    'origin' => 1,
+    'origin_whitelist' => '',
+  );
+  $export['seckit_csrf'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'seckit_ssl';
+  $strongarm->value = array(
+    'hsts' => 0,
+    'hsts_max_age' => 1000,
+    'hsts_subdomains' => 0,
+  );
+  $export['seckit_ssl'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'seckit_various';
+  $strongarm->value = array(
+    'from_origin' => 0,
+    'from_origin_destination' => 'same',
+  );
+  $export['seckit_various'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'seckit_xss';
+  $strongarm->value = array(
+    'csp' => array(
+      'checkbox' => 1,
+      'report-only' => 1,
+      'default-src' => '\'self\' \'unsafe-inline\' *.arpansa.gov.au *.sunsmart.com.au uv-makeup.azurewebsites.net *.google.com *.googleapis.com *.gstatic.com *.google-analytics.com *.youtube.com *.twitter.com *.twimg.com *.doubleclick.net data:;',
+      'script-src' => '',
+      'object-src' => '',
+      'style-src' => '',
+      'img-src' => '',
+      'media-src' => '',
+      'frame-src' => '',
+      'font-src' => '',
+      'connect-src' => '',
+      'report-uri' => 'admin/config/system/seckit/csp-report',
+      'policy-uri' => '',
+    ),
+    'x_xss' => array(
+      'select' => '0',
+    ),
+    'x_content_type' => array(
+      'checkbox' => 1,
+    ),
+  );
+  $export['seckit_xss'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'theme_arpansa_theme_settings';
   $strongarm->value = array(
     'toggle_logo' => 1,

@@ -10952,6 +10952,15 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
   display: block;
 }
 
+.node-type-consultation form.webform-client-form .webform-component-file .form-managed-file {
+  display: table;
+  margin-bottom: 15px;
+}
+
+.node-type-consultation form.webform-client-form .webform-component-file .form-managed-file input[type="file"] {
+  margin-right: 20px;
+}
+
 body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget {
   display: block;
   float: none;

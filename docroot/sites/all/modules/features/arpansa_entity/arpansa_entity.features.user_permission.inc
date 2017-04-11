@@ -2713,6 +2713,20 @@ function arpansa_entity_user_default_permissions() {
     'module' => 'search',
   );
 
+  // Exported permission: 'use bigmenu'.
+  $permissions['use bigmenu'] = array(
+    'name' => 'use bigmenu',
+    'roles' => array(
+      'Content approver' => 'Content approver',
+      'Content editor' => 'Content editor',
+      'Preview user' => 'Preview user',
+      'Site builder' => 'Site builder',
+      'Site editor' => 'Site editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'bigmenu',
+  );
+
   // Exported permission: 'use ccl'.
   $permissions['use ccl'] = array(
     'name' => 'use ccl',
