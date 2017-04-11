@@ -1,7 +1,7 @@
 name = ARPANSA Entity
 core = 7.x
 package = ARPANSA
-version = 7.x-1.31
+version = 7.x-1.32
 dependencies[] = arpansa_taxonomy
 dependencies[] = bean
 dependencies[] = block
