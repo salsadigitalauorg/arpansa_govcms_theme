@@ -7182,6 +7182,15 @@ img {
   }
 }
 
+.field-name-body table.no-zebra tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.field-name-body div.table-container {
+  max-width: 100%;
+  overflow-y: auto;
+}
+
 .view-faq {
   padding-top: 15px;
 }
