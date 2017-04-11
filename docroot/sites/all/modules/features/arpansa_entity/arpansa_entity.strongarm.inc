@@ -1343,7 +1343,7 @@ user/*/*';
     'csp' => array(
       'checkbox' => 1,
       'report-only' => 1,
-      'default-src' => '\'self\' \'unsafe-inline\' *.arpansa.gov.au uv-makeup.azurewebsites.net *.google.com *.googleapis.com *.gstatic.com *.google-analytics.com *.youtube.com *.twitter.com *.twimg.com *.doubleclick.net data:;',
+      'default-src' => '\'self\' \'unsafe-inline\' *.arpansa.gov.au *.sunsmart.com.au uv-makeup.azurewebsites.net *.google.com *.googleapis.com *.gstatic.com *.google-analytics.com *.youtube.com *.twitter.com *.twimg.com *.doubleclick.net data:;',
       'script-src' => '',
       'object-src' => '',
       'style-src' => '',
