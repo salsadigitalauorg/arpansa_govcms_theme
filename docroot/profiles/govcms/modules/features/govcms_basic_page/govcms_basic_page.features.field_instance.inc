@@ -121,7 +121,7 @@ The <em>body</em> field is used for the main article content.
     'label' => 'Files',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => '',
       'file_extensions' => 'txt pdf docx doc xls xlsx ppt pptx',
       'max_filesize' => '',
