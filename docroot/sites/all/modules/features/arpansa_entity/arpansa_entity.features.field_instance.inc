@@ -2212,7 +2212,7 @@ function arpansa_entity_field_default_field_instances() {
     'label' => 'Files',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => '',
       'file_extensions' => 'txt pdf docx doc xls xlsx ppt pptx',
       'max_filesize' => '',
