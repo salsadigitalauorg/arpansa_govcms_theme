@@ -66,6 +66,9 @@
       }
       .logo-aus-container {
         margin-right: 25px;
+        @include breakpoint(tablet) {
+          display: none;
+        }
         a {
           display: inline;
         }
@@ -174,6 +177,9 @@
         }
         input[type="submit"] {
           @include search-submit-button;
+          &:focus {
+            z-index: 1;
+          }
         }
       }
     }
