@@ -9104,6 +9104,16 @@ ul.tabs.primary {
   }
 }
 
+.front .content-body-inner .region-content {
+  width: 100%;
+  max-width: inherit;
+  padding: 0;
+}
+
+html.no-flexbox .front .content-body-inner .region-content {
+  float: right;
+}
+
 .panels-ipe-sort-container .bean-basic-content > .content, .pane-bean-panels .bean-basic-content > .content {
   max-width: 73.125rem;
   margin-left: auto;
