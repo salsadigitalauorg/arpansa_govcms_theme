@@ -8,3 +8,11 @@ button, .button, [role='button'], [type='submit'], [type='reset'], [type='button
     box-shadow: none;
   }
 }
+
+.toc-filter-back-to-top {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
