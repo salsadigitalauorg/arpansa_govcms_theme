@@ -137,14 +137,19 @@ class ArpansaMigrationIA extends ArpansaMigrationPage {
               $plid = $parent_menu['mlid'];
             }
             else {
+              $parent_menu_title = $trail;
+              if ($parent_node = node_load($parent_nid)) {
+                $parent_menu_title = $parent_node->title;
+              }
               // Create one for its parent.
               $parent_menu = [
                 'enabled' => TRUE,
-                'link_title' => $trail,
+                'link_title' => $parent_menu_title,
                 'link_path' => 'node/' . $parent_nid,
                 'plid' => $plid,
                 'menu_name' => 'main-menu',
                 'expanded' => 1,
+                'has_children' => 1,
               ];
               $plid = menu_link_save($parent_menu);
               $this->map->saveIDMapping((object) ['source' => $trail], [$plid]);
