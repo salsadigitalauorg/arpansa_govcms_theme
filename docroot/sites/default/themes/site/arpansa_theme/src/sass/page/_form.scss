@@ -28,6 +28,9 @@ form {
   .CaptionCont>span {
     font-weight: normal;
   }
+  .optWrapper>.options li.opt label {
+    font-weight: normal;
+  }
 }
 
 // =========================================================
@@ -163,6 +166,45 @@ form.webform-client-form {
       }
     }
   } // =========================================================
+  // DATEPICKER
+  // =========================================================
+  .webform-component-date {
+    // Reset govcms' default inline div style.
+    .webform-container-inline div {
+      display: inherit;
+    }
+    .webform-container-inline>div, .webform-container-inline>div.form-item {
+      display: block;
+      margin-bottom: 10px;
+      .SumoSelect {
+        display: block;
+        margin: 0;
+        width: 100%;
+        label {
+          margin-right: 0;
+        }
+        .optWrapper {
+          display: none;
+        }
+        &.open {
+          .optWrapper {
+            display: block;
+          }
+        }
+        li {
+          margin-bottom: 0;
+        }
+      }
+      @include breakpoint(tablet) {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+    input.webform-calendar {
+      vertical-align: middle;
+      margin-bottom: 25px;
+    }
+  } // =========================================================
   // GRID
   // =========================================================
   .webform-component-grid {
@@ -222,9 +264,7 @@ form.webform-client-form {
   .webform-component-file {
     .form-managed-file {
       @include breakpoint(tablet) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: table;
       }
       input[type="file"] {
         width: 100%;
