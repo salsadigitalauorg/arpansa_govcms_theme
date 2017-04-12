@@ -36,6 +36,16 @@
       }
     }
   }
+  .content-body-inner {
+    .region-content {
+      width: 100%;
+      max-width: inherit;
+      padding: 0;
+      html.no-flexbox & {
+        float: right;
+      }
+    }
+  }
 }
 
 // =========================================================
