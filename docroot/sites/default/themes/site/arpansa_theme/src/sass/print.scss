@@ -33,6 +33,12 @@
           display: none;
         }
         a {
+          &.show-on-print {
+            display: block;
+          }
+          &.hide-on-print {
+            display: none;
+          }
           &:after {
             display: none;
           }

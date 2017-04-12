@@ -7065,6 +7065,10 @@ img {
   }
 }
 
+.header__inner .logo-and-search .logo-wrapper a.show-on-print {
+  display: none;
+}
+
 .header__inner .logo-and-search .logo-wrapper .header-title {
   padding-left: 0.3125rem;
   margin-right: auto;
@@ -11901,6 +11905,12 @@ div.toc-filter-content ol.toc-filter-links li {
     float: left;
   }
   .header__inner .logo-and-search .logo-wrapper button {
+    display: none;
+  }
+  .header__inner .logo-and-search .logo-wrapper a.show-on-print {
+    display: block;
+  }
+  .header__inner .logo-and-search .logo-wrapper a.hide-on-print {
     display: none;
   }
   .header__inner .logo-and-search .logo-wrapper a:after {
