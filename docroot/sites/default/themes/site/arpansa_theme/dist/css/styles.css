@@ -1158,12 +1158,7 @@ Markup: templates/buttons-examples.hbs
 
 Style guide: Buttons.1 Creating buttons
 */
-button,
-.button,
-[role='button'],
-[type='submit'],
-[type='reset'],
-[type='button'], .nav-toggle {
+button, .button, [role='button'], [type='submit'], [type='reset'], [type='button'], .nav-toggle {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
@@ -1175,116 +1170,30 @@ button,
   border-width: 1px;
   border-style: solid;
   border-color: inherit;
-  outline: 0;
   text-decoration: none;
   font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {
-  button,
-  .button,
-  [role='button'],
-  [type='submit'],
-  [type='reset'],
-  [type='button'], .nav-toggle {
+  button, .button, [role='button'], [type='submit'], [type='reset'], [type='button'], .nav-toggle {
     height: 2.8em;
     padding: 0.5em 1.2em;
   }
 }
 
-button[disabled], button[disabled]:hover, button[disabled]:active, button[disabled]:focus, button.disabled, button.disabled:hover, button.disabled:active, button.disabled:focus,
-.button[disabled],
-.button[disabled]:hover,
-.button[disabled]:active,
-.button[disabled]:focus,
-.button.disabled,
-.button.disabled:hover,
-.button.disabled:active,
-.button.disabled:focus,
-[role='button'][disabled],
-[role='button'][disabled]:hover,
-[role='button'][disabled]:active,
-[role='button'][disabled]:focus,
-[role='button'].disabled,
-[role='button'].disabled:hover,
-[role='button'].disabled:active,
-[role='button'].disabled:focus,
-[type='submit'][disabled],
-[type='submit'][disabled]:hover,
-[type='submit'][disabled]:active,
-[type='submit'][disabled]:focus,
-[type='submit'].disabled,
-[type='submit'].disabled:hover,
-[type='submit'].disabled:active,
-[type='submit'].disabled:focus,
-[type='reset'][disabled],
-[type='reset'][disabled]:hover,
-[type='reset'][disabled]:active,
-[type='reset'][disabled]:focus,
-[type='reset'].disabled,
-[type='reset'].disabled:hover,
-[type='reset'].disabled:active,
-[type='reset'].disabled:focus,
-[type='button'][disabled],
-[type='button'][disabled]:hover,
-[type='button'][disabled]:active,
-[type='button'][disabled]:focus,
-[type='button'].disabled,
-[type='button'].disabled:hover,
-[type='button'].disabled:active,
-[type='button'].disabled:focus {
+button[disabled], button[disabled]:hover, button[disabled]:active, button[disabled]:focus, button.disabled, button.disabled:hover, button.disabled:active, button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:active, .button[disabled]:focus, .button.disabled, .button.disabled:hover, .button.disabled:active, .button.disabled:focus, [role='button'][disabled], [role='button'][disabled]:hover, [role='button'][disabled]:active, [role='button'][disabled]:focus, [role='button'].disabled, [role='button'].disabled:hover, [role='button'].disabled:active, [role='button'].disabled:focus, [type='submit'][disabled], [type='submit'][disabled]:hover, [type='submit'][disabled]:active, [type='submit'][disabled]:focus, [type='submit'].disabled, [type='submit'].disabled:hover, [type='submit'].disabled:active, [type='submit'].disabled:focus, [type='reset'][disabled], [type='reset'][disabled]:hover, [type='reset'][disabled]:active, [type='reset'][disabled]:focus, [type='reset'].disabled, [type='reset'].disabled:hover, [type='reset'].disabled:active, [type='reset'].disabled:focus, [type='button'][disabled], [type='button'][disabled]:hover, [type='button'][disabled]:active, [type='button'][disabled]:focus, [type='button'].disabled, [type='button'].disabled:hover, [type='button'].disabled:active, [type='button'].disabled:focus {
   cursor: not-allowed;
   border-color: #bbbbbb;
   background-color: #bbbbbb;
   color: #313131;
 }
 
-button.inverted, button.button--feedback,
-.button.inverted,
-.button.button--feedback,
-[role='button'].inverted,
-[role='button'].button--feedback,
-[type='submit'].inverted,
-[type='submit'].button--feedback,
-[type='reset'].inverted,
-[type='reset'].button--feedback,
-[type='button'].inverted,
-[type='button'].button--feedback {
+button.inverted, button.button--feedback, .button.inverted, .button.button--feedback, [role='button'].inverted, [role='button'].button--feedback, [type='submit'].inverted, [type='submit'].button--feedback, [type='reset'].inverted, [type='reset'].button--feedback, [type='button'].inverted, [type='button'].button--feedback {
   border-color: #fff;
   background-color: transparent;
 }
 
-button.inverted:hover, button.button--feedback:hover, button.inverted:active, button.button--feedback:active, button.inverted:focus, button.button--feedback:focus,
-.button.inverted:hover,
-.button.button--feedback:hover,
-.button.inverted:active,
-.button.button--feedback:active,
-.button.inverted:focus,
-.button.button--feedback:focus,
-[role='button'].inverted:hover,
-[role='button'].button--feedback:hover,
-[role='button'].inverted:active,
-[role='button'].button--feedback:active,
-[role='button'].inverted:focus,
-[role='button'].button--feedback:focus,
-[type='submit'].inverted:hover,
-[type='submit'].button--feedback:hover,
-[type='submit'].inverted:active,
-[type='submit'].button--feedback:active,
-[type='submit'].inverted:focus,
-[type='submit'].button--feedback:focus,
-[type='reset'].inverted:hover,
-[type='reset'].button--feedback:hover,
-[type='reset'].inverted:active,
-[type='reset'].button--feedback:active,
-[type='reset'].inverted:focus,
-[type='reset'].button--feedback:focus,
-[type='button'].inverted:hover,
-[type='button'].button--feedback:hover,
-[type='button'].inverted:active,
-[type='button'].button--feedback:active,
-[type='button'].inverted:focus,
-[type='button'].button--feedback:focus {
+button.inverted:hover, button.button--feedback:hover, button.inverted:active, button.button--feedback:active, button.inverted:focus, button.button--feedback:focus, .button.inverted:hover, .button.button--feedback:hover, .button.inverted:active, .button.button--feedback:active, .button.inverted:focus, .button.button--feedback:focus, [role='button'].inverted:hover, [role='button'].button--feedback:hover, [role='button'].inverted:active, [role='button'].button--feedback:active, [role='button'].inverted:focus, [role='button'].button--feedback:focus, [type='submit'].inverted:hover, [type='submit'].button--feedback:hover, [type='submit'].inverted:active, [type='submit'].button--feedback:active, [type='submit'].inverted:focus, [type='submit'].button--feedback:focus, [type='reset'].inverted:hover, [type='reset'].button--feedback:hover, [type='reset'].inverted:active, [type='reset'].button--feedback:active, [type='reset'].inverted:focus, [type='reset'].button--feedback:focus, [type='button'].inverted:hover, [type='button'].button--feedback:hover, [type='button'].inverted:active, [type='button'].button--feedback:active, [type='button'].inverted:focus, [type='button'].button--feedback:focus {
   border-color: #fff;
   background-color: #fff;
   color: #043751;
@@ -2227,38 +2136,18 @@ main > article span.placeholder-link:hover {
   cursor: not-allowed;
 }
 
-main > article button,
-main > article .button,
-main > article [role='button'],
-main > article [type='submit'],
-main > article [type='reset'],
-main > article [type='button'] {
+main > article button, main > article .button, main > article [role='button'], main > article [type='submit'], main > article [type='reset'], main > article [type='button'] {
   background-color: #18788d;
   color: #fff;
   border-color: #115361;
 }
 
-main > article button:hover, main > article button:focus,
-main > article .button:hover,
-main > article .button:focus,
-main > article [role='button']:hover,
-main > article [role='button']:focus,
-main > article [type='submit']:hover,
-main > article [type='submit']:focus,
-main > article [type='reset']:hover,
-main > article [type='reset']:focus,
-main > article [type='button']:hover,
-main > article [type='button']:focus {
+main > article button:hover, main > article button:focus, main > article .button:hover, main > article .button:focus, main > article [role='button']:hover, main > article [role='button']:focus, main > article [type='submit']:hover, main > article [type='submit']:focus, main > article [type='reset']:hover, main > article [type='reset']:focus, main > article [type='button']:hover, main > article [type='button']:focus {
   background-color: #115361;
   color: #fff;
 }
 
-main > article button:active,
-main > article .button:active,
-main > article [role='button']:active,
-main > article [type='submit']:active,
-main > article [type='reset']:active,
-main > article [type='button']:active {
+main > article button:active, main > article .button:active, main > article [role='button']:active, main > article [type='submit']:active, main > article [type='reset']:active, main > article [type='button']:active {
   background-color: #146577;
 }
 
@@ -2386,38 +2275,18 @@ footer[role='contentinfo'] span.placeholder-link:hover {
   cursor: not-allowed;
 }
 
-footer[role='contentinfo'] button,
-footer[role='contentinfo'] .button,
-footer[role='contentinfo'] [role='button'],
-footer[role='contentinfo'] [type='submit'],
-footer[role='contentinfo'] [type='reset'],
-footer[role='contentinfo'] [type='button'] {
+footer[role='contentinfo'] button, footer[role='contentinfo'] .button, footer[role='contentinfo'] [role='button'], footer[role='contentinfo'] [type='submit'], footer[role='contentinfo'] [type='reset'], footer[role='contentinfo'] [type='button'] {
   background-color: transparent;
   color: #115361;
   border-color: #115361;
 }
 
-footer[role='contentinfo'] button:hover, footer[role='contentinfo'] button:focus,
-footer[role='contentinfo'] .button:hover,
-footer[role='contentinfo'] .button:focus,
-footer[role='contentinfo'] [role='button']:hover,
-footer[role='contentinfo'] [role='button']:focus,
-footer[role='contentinfo'] [type='submit']:hover,
-footer[role='contentinfo'] [type='submit']:focus,
-footer[role='contentinfo'] [type='reset']:hover,
-footer[role='contentinfo'] [type='reset']:focus,
-footer[role='contentinfo'] [type='button']:hover,
-footer[role='contentinfo'] [type='button']:focus {
+footer[role='contentinfo'] button:hover, footer[role='contentinfo'] button:focus, footer[role='contentinfo'] .button:hover, footer[role='contentinfo'] .button:focus, footer[role='contentinfo'] [role='button']:hover, footer[role='contentinfo'] [role='button']:focus, footer[role='contentinfo'] [type='submit']:hover, footer[role='contentinfo'] [type='submit']:focus, footer[role='contentinfo'] [type='reset']:hover, footer[role='contentinfo'] [type='reset']:focus, footer[role='contentinfo'] [type='button']:hover, footer[role='contentinfo'] [type='button']:focus {
   background-color: #115361;
   color: #fff;
 }
 
-footer[role='contentinfo'] button:active,
-footer[role='contentinfo'] .button:active,
-footer[role='contentinfo'] [role='button']:active,
-footer[role='contentinfo'] [type='submit']:active,
-footer[role='contentinfo'] [type='reset']:active,
-footer[role='contentinfo'] [type='button']:active {
+footer[role='contentinfo'] button:active, footer[role='contentinfo'] .button:active, footer[role='contentinfo'] [role='button']:active, footer[role='contentinfo'] [type='submit']:active, footer[role='contentinfo'] [type='reset']:active, footer[role='contentinfo'] [type='button']:active {
   background-color: #146577;
 }
 
@@ -4644,38 +4513,18 @@ footer[role='contentinfo'] .footer-top nav li h4 {
   cursor: not-allowed;
 }
 
-[class^='controls'] button,
-[class^='controls'] .button,
-[class^='controls'] [role='button'],
-[class^='controls'] [type='submit'],
-[class^='controls'] [type='reset'],
-[class^='controls'] [type='button'] {
+[class^='controls'] button, [class^='controls'] .button, [class^='controls'] [role='button'], [class^='controls'] [type='submit'], [class^='controls'] [type='reset'], [class^='controls'] [type='button'] {
   background-color: transparent;
   color: #021620;
   border-color: #fff;
 }
 
-[class^='controls'] button:hover, [class^='controls'] button:focus,
-[class^='controls'] .button:hover,
-[class^='controls'] .button:focus,
-[class^='controls'] [role='button']:hover,
-[class^='controls'] [role='button']:focus,
-[class^='controls'] [type='submit']:hover,
-[class^='controls'] [type='submit']:focus,
-[class^='controls'] [type='reset']:hover,
-[class^='controls'] [type='reset']:focus,
-[class^='controls'] [type='button']:hover,
-[class^='controls'] [type='button']:focus {
+[class^='controls'] button:hover, [class^='controls'] button:focus, [class^='controls'] .button:hover, [class^='controls'] .button:focus, [class^='controls'] [role='button']:hover, [class^='controls'] [role='button']:focus, [class^='controls'] [type='submit']:hover, [class^='controls'] [type='submit']:focus, [class^='controls'] [type='reset']:hover, [class^='controls'] [type='reset']:focus, [class^='controls'] [type='button']:hover, [class^='controls'] [type='button']:focus {
   background-color: #fff;
   color: #021620;
 }
 
-[class^='controls'] button:active,
-[class^='controls'] .button:active,
-[class^='controls'] [role='button']:active,
-[class^='controls'] [type='submit']:active,
-[class^='controls'] [type='reset']:active,
-[class^='controls'] [type='button']:active {
+[class^='controls'] button:active, [class^='controls'] .button:active, [class^='controls'] [role='button']:active, [class^='controls'] [type='submit']:active, [class^='controls'] [type='reset']:active, [class^='controls'] [type='button']:active {
   background-color: #fff;
 }
 
@@ -4769,38 +4618,18 @@ footer[role='contentinfo'] .footer-top nav li h4 {
   background-color: #880e48;
 }
 
-[class^='controls'][class$='--contrast'] button,
-[class^='controls'][class$='--contrast'] .button,
-[class^='controls'][class$='--contrast'] [role='button'],
-[class^='controls'][class$='--contrast'] [type='submit'],
-[class^='controls'][class$='--contrast'] [type='reset'],
-[class^='controls'][class$='--contrast'] [type='button'] {
+[class^='controls'][class$='--contrast'] button, [class^='controls'][class$='--contrast'] .button, [class^='controls'][class$='--contrast'] [role='button'], [class^='controls'][class$='--contrast'] [type='submit'], [class^='controls'][class$='--contrast'] [type='reset'], [class^='controls'][class$='--contrast'] [type='button'] {
   background-color: #880e48;
   color: #fff;
   border-color: #fff;
 }
 
-[class^='controls'][class$='--contrast'] button:hover, [class^='controls'][class$='--contrast'] button:focus,
-[class^='controls'][class$='--contrast'] .button:hover,
-[class^='controls'][class$='--contrast'] .button:focus,
-[class^='controls'][class$='--contrast'] [role='button']:hover,
-[class^='controls'][class$='--contrast'] [role='button']:focus,
-[class^='controls'][class$='--contrast'] [type='submit']:hover,
-[class^='controls'][class$='--contrast'] [type='submit']:focus,
-[class^='controls'][class$='--contrast'] [type='reset']:hover,
-[class^='controls'][class$='--contrast'] [type='reset']:focus,
-[class^='controls'][class$='--contrast'] [type='button']:hover,
-[class^='controls'][class$='--contrast'] [type='button']:focus {
+[class^='controls'][class$='--contrast'] button:hover, [class^='controls'][class$='--contrast'] button:focus, [class^='controls'][class$='--contrast'] .button:hover, [class^='controls'][class$='--contrast'] .button:focus, [class^='controls'][class$='--contrast'] [role='button']:hover, [class^='controls'][class$='--contrast'] [role='button']:focus, [class^='controls'][class$='--contrast'] [type='submit']:hover, [class^='controls'][class$='--contrast'] [type='submit']:focus, [class^='controls'][class$='--contrast'] [type='reset']:hover, [class^='controls'][class$='--contrast'] [type='reset']:focus, [class^='controls'][class$='--contrast'] [type='button']:hover, [class^='controls'][class$='--contrast'] [type='button']:focus {
   background-color: #fff;
   color: #880e48;
 }
 
-[class^='controls'][class$='--contrast'] button:active,
-[class^='controls'][class$='--contrast'] .button:active,
-[class^='controls'][class$='--contrast'] [role='button']:active,
-[class^='controls'][class$='--contrast'] [type='submit']:active,
-[class^='controls'][class$='--contrast'] [type='reset']:active,
-[class^='controls'][class$='--contrast'] [type='button']:active {
+[class^='controls'][class$='--contrast'] button:active, [class^='controls'][class$='--contrast'] .button:active, [class^='controls'][class$='--contrast'] [role='button']:active, [class^='controls'][class$='--contrast'] [type='submit']:active, [class^='controls'][class$='--contrast'] [type='reset']:active, [class^='controls'][class$='--contrast'] [type='button']:active {
   background-color: #fff;
 }
 
@@ -4958,38 +4787,18 @@ footer[role='contentinfo'] .footer-top nav li h4 {
   cursor: not-allowed;
 }
 
-.govau--header button,
-.govau--header .button,
-.govau--header [role='button'],
-.govau--header [type='submit'],
-.govau--header [type='reset'],
-.govau--header [type='button'] {
+.govau--header button, .govau--header .button, .govau--header [role='button'], .govau--header [type='submit'], .govau--header [type='reset'], .govau--header [type='button'] {
   background-color: #043751;
   color: #fff;
   border-color: #fff;
 }
 
-.govau--header button:hover, .govau--header button:focus,
-.govau--header .button:hover,
-.govau--header .button:focus,
-.govau--header [role='button']:hover,
-.govau--header [role='button']:focus,
-.govau--header [type='submit']:hover,
-.govau--header [type='submit']:focus,
-.govau--header [type='reset']:hover,
-.govau--header [type='reset']:focus,
-.govau--header [type='button']:hover,
-.govau--header [type='button']:focus {
+.govau--header button:hover, .govau--header button:focus, .govau--header .button:hover, .govau--header .button:focus, .govau--header [role='button']:hover, .govau--header [role='button']:focus, .govau--header [type='submit']:hover, .govau--header [type='submit']:focus, .govau--header [type='reset']:hover, .govau--header [type='reset']:focus, .govau--header [type='button']:hover, .govau--header [type='button']:focus {
   background-color: #fff;
   color: #043751;
 }
 
-.govau--header button:active,
-.govau--header .button:active,
-.govau--header [role='button']:active,
-.govau--header [type='submit']:active,
-.govau--header [type='reset']:active,
-.govau--header [type='button']:active {
+.govau--header button:active, .govau--header .button:active, .govau--header [role='button']:active, .govau--header [type='submit']:active, .govau--header [type='reset']:active, .govau--header [type='button']:active {
   background-color: #fff;
 }
 
@@ -5159,38 +4968,18 @@ footer[role='contentinfo'] .footer-top nav li h4 {
   cursor: not-allowed;
 }
 
-.prerelease-govau--header button,
-.prerelease-govau--header .button,
-.prerelease-govau--header [role='button'],
-.prerelease-govau--header [type='submit'],
-.prerelease-govau--header [type='reset'],
-.prerelease-govau--header [type='button'] {
+.prerelease-govau--header button, .prerelease-govau--header .button, .prerelease-govau--header [role='button'], .prerelease-govau--header [type='submit'], .prerelease-govau--header [type='reset'], .prerelease-govau--header [type='button'] {
   background-color: transparent;
   color: #fff;
   border-color: #fff;
 }
 
-.prerelease-govau--header button:hover, .prerelease-govau--header button:focus,
-.prerelease-govau--header .button:hover,
-.prerelease-govau--header .button:focus,
-.prerelease-govau--header [role='button']:hover,
-.prerelease-govau--header [role='button']:focus,
-.prerelease-govau--header [type='submit']:hover,
-.prerelease-govau--header [type='submit']:focus,
-.prerelease-govau--header [type='reset']:hover,
-.prerelease-govau--header [type='reset']:focus,
-.prerelease-govau--header [type='button']:hover,
-.prerelease-govau--header [type='button']:focus {
+.prerelease-govau--header button:hover, .prerelease-govau--header button:focus, .prerelease-govau--header .button:hover, .prerelease-govau--header .button:focus, .prerelease-govau--header [role='button']:hover, .prerelease-govau--header [role='button']:focus, .prerelease-govau--header [type='submit']:hover, .prerelease-govau--header [type='submit']:focus, .prerelease-govau--header [type='reset']:hover, .prerelease-govau--header [type='reset']:focus, .prerelease-govau--header [type='button']:hover, .prerelease-govau--header [type='button']:focus {
   background-color: #fff;
   color: #043751;
 }
 
-.prerelease-govau--header button:active,
-.prerelease-govau--header .button:active,
-.prerelease-govau--header [role='button']:active,
-.prerelease-govau--header [type='submit']:active,
-.prerelease-govau--header [type='reset']:active,
-.prerelease-govau--header [type='button']:active {
+.prerelease-govau--header button:active, .prerelease-govau--header .button:active, .prerelease-govau--header [role='button']:active, .prerelease-govau--header [type='submit']:active, .prerelease-govau--header [type='reset']:active, .prerelease-govau--header [type='button']:active {
   background-color: #fff;
 }
 
@@ -5766,205 +5555,6 @@ Row and column headers should be set with the <a href="https://www.w3.org/TR/htm
 
 Style guide: Tables.3 Accessibility
 */
-/*
-Accordions
-
-Accordions help users find only the content they need.
-
-The **expand/collapse all** feature will be provided soon &mdash; this will be mandatory if using a series of accordion elements.
-
-***
-
-This guidance is in part adapted from <a href="https://standards.usa.gov/getting-started/" rel="external">18F Draft US Web Design Standards</a> under <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" rel="external">CC0 1.0 Universal</a>.
-
-Style guide: Accordions
-*/
-/*
-Content accordion
-
-Use content accordions if the user only needs a selection of the information on a page.
-
-Don't use an accordion if the user needs to see all of the information.
-
-<details open data-label="accordions-accessibility" aria-expanded="false">
-  <summary>Accessibility &amp; browser testing</summary>
-  <div class="accordion-panel">
-  <strong>Passed</strong>:
-    <ul>
-      <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
-      <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
-    </ul>
-  <strong>Untested</strong>:
-    <ul>
-      <li>WCAG:AA manual</li>
-      <li>Browser support &mdash; automated and manual</li>
-    </ul>
-  </div>
-</details>
-
-Markup: templates/content-accordion.hbs
-
-Style guide: Accordions.1 Content accordion
-*/
-/*
-Controls accordion
-
-Use controls accordions to make page controls easier to use.
-
-<details open data-label="controls-accordions-accessibility" aria-expanded="false">
-  <summary>Accessibility &amp; browser testing</summary>
-  <div class="accordion-panel">
-  <strong>Passed</strong>:
-    <ul>
-      <li>HTML5 validation (<a href="http://validator.github.io/validator/" rel="external">Nu Html Checker</a>)</li>
-      <li>WCAG:AA automated (<a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/" rel="external">HTML_CodeSniffer</a>)</li>
-    </ul>
-  <strong>Untested</strong>:
-    <ul>
-      <li>WCAG:AA manual</li>
-      <li>Browser support &mdash; automated and manual</li>
-    </ul>
-  </div>
-</details>
-
-Markup: templates/controls-accordion.hbs
-
-Style guide: Accordions.2 Controls accordion
-*/
-/*
-Usability
-
-Don't use an accordion if the user needs to see all of the information. Structure and rewrite your content instead.
-
-Use [definition or description lists](section-typography.html#guide-typography-6-lists) for glossaries instead of accordions.
-
-Building accordions
-- Keep accordion headings and labels short but descriptive.
-- Accordions can be set to open or closed initially using `aria-expanded` property set to `true` or `false`.
-- JavaScript behaviour is used to replace the browser default for `<details>`.
-- For multiple accordion elements each `details` element must have its own `data-label` attribute.
-- You can run a text/string search of accordion content, even when collapsed (the string stays hidden until the accordion is opened).
-
-Style guide: Accordions.3 Usability
-*/
-details,
-.accordion, .accordion--controls {
-  display: block;
-  margin: 1.6em 0 0;
-  overflow: hidden;
-}
-
-.accordion-button,
-summary, .accordion--controls summary {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding: 0.8em 3.2em 0.8em 0.8em;
-  border-radius: 1px 1px 0 0;
-  background-color: #f0f3f5;
-  cursor: pointer;
-  text-align: left;
-  font-weight: 700;
-  font-size: 1.25rem;
-  transition: background-color 0.1s ease-in-out;
-}
-
-.accordion-button:last-child,
-summary:last-child {
-  border-bottom-width: 1px;
-}
-
-.accordion-button:hover,
-summary:hover, .accordion-button:focus,
-summary:focus {
-  background-color: #bbbbbb;
-  outline: none;
-}
-
-.accordion-button::-webkit-details-marker,
-summary::-webkit-details-marker, .accordion--controls summary::-webkit-details-marker {
-  display: none;
-}
-
-.accordion-button::before,
-summary::before, .accordion--controls summary::before {
-  content: '';
-  position: absolute;
-  top: .5em;
-  bottom: .5em;
-  right: 0.8em;
-  width: 1.2em;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% auto;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  transition: -webkit-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-}
-
-[aria-expanded='true'] .accordion-button::before, [aria-expanded='true']
-summary::before {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.accordion-panel, .accordion--controls .accordion-panel {
-  display: block;
-  height: auto;
-  overflow: hidden;
-  padding: 1.6em 1.6em 0.8em;
-  border-radius: 1px 1px 0 0;
-}
-
-.accordion-panel :first-child {
-  margin-top: 0;
-}
-
-details,
-.accordion {
-  border-color: #bbbbbb;
-  border-width: 1px 0;
-  border-style: solid;
-}
-
-details + details,
-.accordion + details, details +
-.accordion,
-.accordion +
-.accordion {
-  margin-top: 0;
-  border-top: none;
-}
-
-[aria-expanded='true'] .accordion-button, [aria-expanded='true']
-summary {
-  border-bottom: 1px solid #bbbbbb;
-}
-
-.accordion--controls {
-  margin-top: 0.8em;
-  border: none;
-}
-
-.accordion--controls summary {
-  border: none;
-  background-color: #def4f9;
-  font-size: 87.5%;
-}
-
-.accordion--controls summary:hover, .accordion--controls summary:focus {
-  background-color: #5bcbe3;
-  color: #115361;
-}
-
-.accordion--controls .accordion-panel {
-  border: 0.8em solid #def4f9;
-  border-top: none;
-}
-
 /*
 Typography
 
@@ -7499,6 +7089,12 @@ img {
   margin-right: 25px;
 }
 
+@media (min-width: 768px) {
+  .header__inner .logo-and-search .logo-wrapper .logo-aus-container {
+    display: none;
+  }
+}
+
 .header__inner .logo-and-search .logo-wrapper .logo-aus-container a {
   display: inline;
 }
@@ -7684,6 +7280,10 @@ img {
 
 .header__inner .region-header .search-form-widget > div input[type="submit"]:hover, .header__inner .region-header .search-form-widget > div input[type="submit"]:focus {
   background-image: url(../images/svg/magnifying_glass_hover.svg);
+}
+
+.header__inner .region-header .search-form-widget > div input[type="submit"]:focus {
+  z-index: 1;
 }
 
 .no-flexbox .header__inner .logo-and-search .logo-wrapper {
@@ -8072,38 +7672,18 @@ html.large-fonts {
   font-size: 150%;
 }
 
-#content button,
-#content .button,
-#content [role='button'],
-#content [type='submit'],
-#content [type='reset'],
-#content [type='button'] {
+#content button, #content .button, #content [role='button'], #content [type='submit'], #content [type='reset'], #content [type='button'] {
   background-color: #4E1A74;
   color: black;
   border-color: #160721;
 }
 
-#content button:hover, #content button:focus,
-#content .button:hover,
-#content .button:focus,
-#content [role='button']:hover,
-#content [role='button']:focus,
-#content [type='submit']:hover,
-#content [type='submit']:focus,
-#content [type='reset']:hover,
-#content [type='reset']:focus,
-#content [type='button']:hover,
-#content [type='button']:focus {
+#content button:hover, #content button:focus, #content .button:hover, #content .button:focus, #content [role='button']:hover, #content [role='button']:focus, #content [type='submit']:hover, #content [type='submit']:focus, #content [type='reset']:hover, #content [type='reset']:focus, #content [type='button']:hover, #content [type='button']:focus {
   background-color: #160721;
   color: black;
 }
 
-#content button:active,
-#content .button:active,
-#content [role='button']:active,
-#content [type='submit']:active,
-#content [type='reset']:active,
-#content [type='button']:active {
+#content button:active, #content .button:active, #content [role='button']:active, #content [type='submit']:active, #content [type='reset']:active, #content [type='button']:active {
   background-color: #fff;
 }
 
@@ -8458,38 +8038,18 @@ a[rel~='external']::after {
   word-wrap: break-word;
 }
 
-#content button,
-#content .button,
-#content [role='button'],
-#content [type='submit'],
-#content [type='reset'],
-#content [type='button'] {
+#content button, #content .button, #content [role='button'], #content [type='submit'], #content [type='reset'], #content [type='button'] {
   background-color: #4E1A74;
   color: white;
   border-color: #421661;
 }
 
-#content button:hover, #content button:focus,
-#content .button:hover,
-#content .button:focus,
-#content [role='button']:hover,
-#content [role='button']:focus,
-#content [type='submit']:hover,
-#content [type='submit']:focus,
-#content [type='reset']:hover,
-#content [type='reset']:focus,
-#content [type='button']:hover,
-#content [type='button']:focus {
+#content button:hover, #content button:focus, #content .button:hover, #content .button:focus, #content [role='button']:hover, #content [role='button']:focus, #content [type='submit']:hover, #content [type='submit']:focus, #content [type='reset']:hover, #content [type='reset']:focus, #content [type='button']:hover, #content [type='button']:focus {
   background-color: #421661;
   color: white;
 }
 
-#content button:active,
-#content .button:active,
-#content [role='button']:active,
-#content [type='submit']:active,
-#content [type='reset']:active,
-#content [type='button']:active {
+#content button:active, #content .button:active, #content [role='button']:active, #content [type='submit']:active, #content [type='reset']:active, #content [type='button']:active {
   background-color: #298829;
 }
 
@@ -8909,6 +8469,10 @@ form > div {
   font-weight: normal;
 }
 
+#content .SumoSelect .optWrapper > .options li.opt label {
+  font-weight: normal;
+}
+
 form .form-item {
   margin-top: 1.375rem;
   margin-bottom: 1.375rem;
@@ -9059,6 +8623,49 @@ form.webform-client-form .webform-component-time .form-radios .form-item {
   }
 }
 
+form.webform-client-form .webform-component-date .webform-container-inline div {
+  display: inherit;
+}
+
+form.webform-client-form .webform-component-date .webform-container-inline > div, form.webform-client-form .webform-component-date .webform-container-inline > div.form-item {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form.webform-client-form .webform-component-date .webform-container-inline > div .SumoSelect, form.webform-client-form .webform-component-date .webform-container-inline > div.form-item .SumoSelect {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+form.webform-client-form .webform-component-date .webform-container-inline > div .SumoSelect label, form.webform-client-form .webform-component-date .webform-container-inline > div.form-item .SumoSelect label {
+  margin-right: 0;
+}
+
+form.webform-client-form .webform-component-date .webform-container-inline > div .SumoSelect .optWrapper, form.webform-client-form .webform-component-date .webform-container-inline > div.form-item .SumoSelect .optWrapper {
+  display: none;
+}
+
+form.webform-client-form .webform-component-date .webform-container-inline > div .SumoSelect.open .optWrapper, form.webform-client-form .webform-component-date .webform-container-inline > div.form-item .SumoSelect.open .optWrapper {
+  display: block;
+}
+
+form.webform-client-form .webform-component-date .webform-container-inline > div .SumoSelect li, form.webform-client-form .webform-component-date .webform-container-inline > div.form-item .SumoSelect li {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  form.webform-client-form .webform-component-date .webform-container-inline > div, form.webform-client-form .webform-component-date .webform-container-inline > div.form-item {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+form.webform-client-form .webform-component-date input.webform-calendar {
+  vertical-align: middle;
+  margin-bottom: 25px;
+}
+
 form.webform-client-form .webform-component-grid {
   overflow-x: auto;
 }
@@ -9123,15 +8730,7 @@ form.webform-client-form .webform-component-grid table.webform-grid .form-type-r
 
 @media (min-width: 768px) {
   form.webform-client-form .webform-component-file .form-managed-file {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    display: table;
   }
 }
 
@@ -10275,38 +9874,18 @@ ul.tabs.primary {
   cursor: not-allowed;
 }
 
-#block-views-slideshow-block .banner-description-holder .field button,
-#block-views-slideshow-block .banner-description-holder .field .button,
-#block-views-slideshow-block .banner-description-holder .field [role='button'],
-#block-views-slideshow-block .banner-description-holder .field [type='submit'],
-#block-views-slideshow-block .banner-description-holder .field [type='reset'],
-#block-views-slideshow-block .banner-description-holder .field [type='button'] {
+#block-views-slideshow-block .banner-description-holder .field button, #block-views-slideshow-block .banner-description-holder .field .button, #block-views-slideshow-block .banner-description-holder .field [role='button'], #block-views-slideshow-block .banner-description-holder .field [type='submit'], #block-views-slideshow-block .banner-description-holder .field [type='reset'], #block-views-slideshow-block .banner-description-holder .field [type='button'] {
   background-color: white;
   color: #4E1A74;
   border-color: white;
 }
 
-#block-views-slideshow-block .banner-description-holder .field button:hover, #block-views-slideshow-block .banner-description-holder .field button:focus,
-#block-views-slideshow-block .banner-description-holder .field .button:hover,
-#block-views-slideshow-block .banner-description-holder .field .button:focus,
-#block-views-slideshow-block .banner-description-holder .field [role='button']:hover,
-#block-views-slideshow-block .banner-description-holder .field [role='button']:focus,
-#block-views-slideshow-block .banner-description-holder .field [type='submit']:hover,
-#block-views-slideshow-block .banner-description-holder .field [type='submit']:focus,
-#block-views-slideshow-block .banner-description-holder .field [type='reset']:hover,
-#block-views-slideshow-block .banner-description-holder .field [type='reset']:focus,
-#block-views-slideshow-block .banner-description-holder .field [type='button']:hover,
-#block-views-slideshow-block .banner-description-holder .field [type='button']:focus {
+#block-views-slideshow-block .banner-description-holder .field button:hover, #block-views-slideshow-block .banner-description-holder .field button:focus, #block-views-slideshow-block .banner-description-holder .field .button:hover, #block-views-slideshow-block .banner-description-holder .field .button:focus, #block-views-slideshow-block .banner-description-holder .field [role='button']:hover, #block-views-slideshow-block .banner-description-holder .field [role='button']:focus, #block-views-slideshow-block .banner-description-holder .field [type='submit']:hover, #block-views-slideshow-block .banner-description-holder .field [type='submit']:focus, #block-views-slideshow-block .banner-description-holder .field [type='reset']:hover, #block-views-slideshow-block .banner-description-holder .field [type='reset']:focus, #block-views-slideshow-block .banner-description-holder .field [type='button']:hover, #block-views-slideshow-block .banner-description-holder .field [type='button']:focus {
   background-color: white;
   color: #4E1A74;
 }
 
-#block-views-slideshow-block .banner-description-holder .field button:active,
-#block-views-slideshow-block .banner-description-holder .field .button:active,
-#block-views-slideshow-block .banner-description-holder .field [role='button']:active,
-#block-views-slideshow-block .banner-description-holder .field [type='submit']:active,
-#block-views-slideshow-block .banner-description-holder .field [type='reset']:active,
-#block-views-slideshow-block .banner-description-holder .field [type='button']:active {
+#block-views-slideshow-block .banner-description-holder .field button:active, #block-views-slideshow-block .banner-description-holder .field .button:active, #block-views-slideshow-block .banner-description-holder .field [role='button']:active, #block-views-slideshow-block .banner-description-holder .field [type='submit']:active, #block-views-slideshow-block .banner-description-holder .field [type='reset']:active, #block-views-slideshow-block .banner-description-holder .field [type='button']:active {
   background-color: #298829;
 }
 
@@ -10319,36 +9898,16 @@ ul.tabs.primary {
 }
 
 @media (min-width: 768px) {
-  #block-views-slideshow-block .banner-description-holder .field button,
-  #block-views-slideshow-block .banner-description-holder .field .button,
-  #block-views-slideshow-block .banner-description-holder .field [role='button'],
-  #block-views-slideshow-block .banner-description-holder .field [type='submit'],
-  #block-views-slideshow-block .banner-description-holder .field [type='reset'],
-  #block-views-slideshow-block .banner-description-holder .field [type='button'] {
+  #block-views-slideshow-block .banner-description-holder .field button, #block-views-slideshow-block .banner-description-holder .field .button, #block-views-slideshow-block .banner-description-holder .field [role='button'], #block-views-slideshow-block .banner-description-holder .field [type='submit'], #block-views-slideshow-block .banner-description-holder .field [type='reset'], #block-views-slideshow-block .banner-description-holder .field [type='button'] {
     background-color: #4E1A74;
     color: white;
     border-color: #421661;
   }
-  #block-views-slideshow-block .banner-description-holder .field button:hover, #block-views-slideshow-block .banner-description-holder .field button:focus,
-  #block-views-slideshow-block .banner-description-holder .field .button:hover,
-  #block-views-slideshow-block .banner-description-holder .field .button:focus,
-  #block-views-slideshow-block .banner-description-holder .field [role='button']:hover,
-  #block-views-slideshow-block .banner-description-holder .field [role='button']:focus,
-  #block-views-slideshow-block .banner-description-holder .field [type='submit']:hover,
-  #block-views-slideshow-block .banner-description-holder .field [type='submit']:focus,
-  #block-views-slideshow-block .banner-description-holder .field [type='reset']:hover,
-  #block-views-slideshow-block .banner-description-holder .field [type='reset']:focus,
-  #block-views-slideshow-block .banner-description-holder .field [type='button']:hover,
-  #block-views-slideshow-block .banner-description-holder .field [type='button']:focus {
+  #block-views-slideshow-block .banner-description-holder .field button:hover, #block-views-slideshow-block .banner-description-holder .field button:focus, #block-views-slideshow-block .banner-description-holder .field .button:hover, #block-views-slideshow-block .banner-description-holder .field .button:focus, #block-views-slideshow-block .banner-description-holder .field [role='button']:hover, #block-views-slideshow-block .banner-description-holder .field [role='button']:focus, #block-views-slideshow-block .banner-description-holder .field [type='submit']:hover, #block-views-slideshow-block .banner-description-holder .field [type='submit']:focus, #block-views-slideshow-block .banner-description-holder .field [type='reset']:hover, #block-views-slideshow-block .banner-description-holder .field [type='reset']:focus, #block-views-slideshow-block .banner-description-holder .field [type='button']:hover, #block-views-slideshow-block .banner-description-holder .field [type='button']:focus {
     background-color: #421661;
     color: white;
   }
-  #block-views-slideshow-block .banner-description-holder .field button:active,
-  #block-views-slideshow-block .banner-description-holder .field .button:active,
-  #block-views-slideshow-block .banner-description-holder .field [role='button']:active,
-  #block-views-slideshow-block .banner-description-holder .field [type='submit']:active,
-  #block-views-slideshow-block .banner-description-holder .field [type='reset']:active,
-  #block-views-slideshow-block .banner-description-holder .field [type='button']:active {
+  #block-views-slideshow-block .banner-description-holder .field button:active, #block-views-slideshow-block .banner-description-holder .field .button:active, #block-views-slideshow-block .banner-description-holder .field [role='button']:active, #block-views-slideshow-block .banner-description-holder .field [type='submit']:active, #block-views-slideshow-block .banner-description-holder .field [type='reset']:active, #block-views-slideshow-block .banner-description-holder .field [type='button']:active {
     background-color: #298829;
   }
   #block-views-slideshow-block .banner-description-holder .field button, #block-views-slideshow-block .banner-description-holder .field .button, #block-views-slideshow-block .banner-description-holder .field [role='button'], #block-views-slideshow-block .banner-description-holder .field [type='submit'], #block-views-slideshow-block .banner-description-holder .field [type='reset'], #block-views-slideshow-block .banner-description-holder .field [type='button'] {
@@ -10968,6 +10527,11 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
 
 .node-type-consultation form.webform-client-form .webform-component-file .form-managed-file input[type="file"] {
   margin-right: 20px;
+}
+
+.node-type-consultation .consultation__update .field-name-field-pbundle-image {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
 }
 
 body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget {
