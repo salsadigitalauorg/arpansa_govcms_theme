@@ -7305,9 +7305,19 @@ img {
   vertical-align: middle;
 }
 
+@media (min-width: 768px) {
+  .no-flexbox .header__inner .logo-and-search .logo-wrapper .logo-aus-container {
+    display: none;
+  }
+}
+
 .no-flexbox .header__inner .logo-and-search .logo-wrapper .header__logo {
   display: inline-block;
   vertical-align: middle;
+}
+
+.no-flexbox .header__inner .logo-and-search .logo-wrapper a.show-on-print {
+  display: none;
 }
 
 .no-flexbox .header__inner .logo-and-search .region-header {
