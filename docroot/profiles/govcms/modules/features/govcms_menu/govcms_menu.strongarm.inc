@@ -36,7 +36,7 @@ function govcms_menu_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'site_map_message';
   $strongarm->value = array(
-    'value' => '<p>Hoodie risus gravida donec indie odio in integer hoodie malesuada ornare vulputate skateboard ut lorem vivamus. VHS duis tellus eros PBR ornare adipiscing cursus bahn mi molestie diam auctor +1 auctor rutrum enim vegan. Lectus nulla sit keytar eget sit integer vegan ultricies adipiscing adipiscing Portland maecenas sem quisque skateboard sagittis. Tempus leo vegan quam lectus lorem PBR pellentesque metus proin indie vulputate in adipiscing indie in quam proin fixie. Arcu sapien justo you probably haven\'t heard of them malesuada magna leo bahn mi commodo leo tempus vinyl gravida lectus odio DIY. Pharetra vivamus diam biodiesel at fusce at keytar congue metus fusce brunch porta curabitur fusce PBR.</p>',
+    'value' => '',
     'format' => 'rich_text',
   );
   $export['site_map_message'] = $strongarm;
@@ -73,7 +73,7 @@ function govcms_menu_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_map_show_front';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['site_map_show_front'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -82,13 +82,12 @@ function govcms_menu_strongarm() {
   $strongarm->name = 'site_map_show_menus';
   $strongarm->value = array(
     'main-menu' => 'main-menu',
-    'devel' => 0,
-    'features' => 0,
+    'menu-footer-menu' => 0,
     'menu-footer-sub-menu' => 0,
     'management' => 0,
     'navigation' => 0,
     'menu-quick-links' => 0,
-    'menu-top-menu' => 0,
+    'menu-top-header-menu' => 0,
     'user-menu' => 0,
   );
   $export['site_map_show_menus'] = $strongarm;
@@ -105,7 +104,11 @@ function govcms_menu_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'site_map_show_vocabularies';
   $strongarm->value = array(
-    1 => '1',
+    'file_tags' => 0,
+    'literature_survey_date' => 0,
+    'page_type' => 0,
+    'tags' => 0,
+    'update_type' => 0,
   );
   $export['site_map_show_vocabularies'] = $strongarm;
 
