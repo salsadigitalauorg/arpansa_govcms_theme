@@ -54,11 +54,16 @@ body.not-front {
     }
     .view-content {
       .views-row {
+        border-bottom: 1px solid $grey_6;
         width: 100%;
         margin-right: 0;
+        padding-bottom: em(25px);
         .node {
           margin-bottom: em(20px);
           padding-bottom: 0;
+        }
+        &:last-child {
+          border: none;
         }
       }
       .field-name-title, .field-name-field-link-to {
