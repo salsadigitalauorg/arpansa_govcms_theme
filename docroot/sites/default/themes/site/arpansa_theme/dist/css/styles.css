@@ -10490,6 +10490,11 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
   margin-right: 20px;
 }
 
+.node-type-consultation .consultation__update .field-name-field-pbundle-image {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
 body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget {
   display: block;
   float: none;
