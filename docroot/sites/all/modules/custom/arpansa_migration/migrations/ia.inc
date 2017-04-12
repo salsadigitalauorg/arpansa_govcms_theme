@@ -135,6 +135,9 @@ class ArpansaMigrationIA extends ArpansaMigrationPage {
           if ($parent_nid = $this->findNodeIdWithAlias($trail)) {
             if ($parent_menu = menu_link_get_preferred('node/' . $parent_nid, 'main-menu')) {
               $plid = $parent_menu['mlid'];
+              // Ensure parent has_children set to avoid confusion in Superfish.
+              $parent_menu['has_children'] = 1;
+              menu_link_save($parent_menu);
             }
             else {
               $parent_menu_title = $trail;
