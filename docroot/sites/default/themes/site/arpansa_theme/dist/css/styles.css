@@ -10559,11 +10559,13 @@ body.not-front #content .view.view-literature-surveys .view-filters .views-expos
   float: none;
   margin-top: 0;
   padding-bottom: 0;
+  padding-right: 0;
 }
 
 @media (min-width: 768px) {
   body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget {
     display: table-cell;
+    padding-right: 1em;
     width: 33%;
     vertical-align: bottom;
   }
@@ -10583,7 +10585,13 @@ body.not-front #content .view.view-literature-surveys .view-filters input[type="
 }
 
 body.not-front #content .view.view-literature-surveys .view-filters select {
-  display: none;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content .view.view-literature-surveys .view-filters select {
+    opacity: 0;
+  }
 }
 
 body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect {
@@ -10593,6 +10601,13 @@ body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect 
 
 body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect > .CaptionCont {
   border-color: #444449;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect > .CaptionCont {
+    display: block;
+  }
 }
 
 body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect > .CaptionCont span {
@@ -10611,6 +10626,26 @@ body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect 
 
 body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect label {
   font-weight: normal;
+}
+
+body.not-front #content .view.view-literature-surveys .view-filters .form-item-field-tags-tid .SumoSelect {
+  height: inherit;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content .view.view-literature-surveys .view-filters .form-item-field-tags-tid .SumoSelect {
+    height: 2.8em;
+  }
+}
+
+body.not-front #content .view.view-literature-surveys .view-filters .form-item-field-tags-tid .SumoSelect select {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content .view.view-literature-surveys .view-filters .form-item-field-tags-tid .SumoSelect select {
+    position: absolute;
+  }
 }
 
 body.not-front #content .view.view-literature-surveys .view-filters input[type="submit"] {

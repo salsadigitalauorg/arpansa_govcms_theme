@@ -9,8 +9,10 @@ body.not-front {
         float: none;
         margin-top: 0;
         padding-bottom: 0;
+        padding-right: 0;
         @include breakpoint(tablet) {
           display: table-cell;
+          padding-right: 1em;
           width: 33%;
           vertical-align: bottom;
         }
@@ -27,13 +29,20 @@ body.not-front {
         margin-bottom: 16px;
       }
       select {
-        display: none;
+        opacity: 1;
+        @include breakpoint(tablet) {
+          opacity: 0;
+        }
       }
       .SumoSelect {
         margin-right: 0;
         width: 100%;
         >.CaptionCont {
           border-color: $neutral_1;
+          display: none;
+          @include breakpoint(tablet) {
+            display: block;
+          }
           span {
             max-width: inherit;
             @include breakpoint(tablet) {
@@ -46,6 +55,18 @@ body.not-front {
         }
         label {
           font-weight: normal;
+        }
+      }
+      .form-item-field-tags-tid .SumoSelect {
+        height: inherit;
+        @include breakpoint(tablet) {
+          height: 2.8em;
+        }
+        select {
+          position: relative;
+          @include breakpoint(tablet) {
+            position: absolute;
+          }
         }
       }
       input[type="submit"] {

@@ -41,9 +41,7 @@
       }
 
       // Sumoselect all select
-      $('.form-select', context).SumoSelect({
-        triggerChangeCombined: false
-      });
+      $('.form-select', context).SumoSelect();
     }
   };
 
