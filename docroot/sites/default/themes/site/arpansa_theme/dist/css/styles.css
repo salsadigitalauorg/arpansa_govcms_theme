@@ -10598,13 +10598,19 @@ body.not-front #content .view.view-literature-surveys .view-filters input[type="
 }
 
 body.not-front #content .view.view-literature-surveys .view-content .views-row {
+  border-bottom: 1px solid #C3C3C3;
   width: 100%;
   margin-right: 0;
+  padding-bottom: 1.5625em;
 }
 
 body.not-front #content .view.view-literature-surveys .view-content .views-row .node {
   margin-bottom: 1.25em;
   padding-bottom: 0;
+}
+
+body.not-front #content .view.view-literature-surveys .view-content .views-row:last-child {
+  border: none;
 }
 
 body.not-front #content .view.view-literature-surveys .view-content .field-name-title .field-label, body.not-front #content .view.view-literature-surveys .view-content .field-name-field-link-to .field-label {
