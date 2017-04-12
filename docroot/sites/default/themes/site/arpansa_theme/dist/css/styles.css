@@ -6605,6 +6605,12 @@ button:active, .button:active, [role='button']:active, [type='submit']:active, [
   box-shadow: none;
 }
 
+.toc-filter-back-to-top:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 img {
   height: auto;
 }
