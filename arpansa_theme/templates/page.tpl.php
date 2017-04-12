@@ -69,7 +69,24 @@
               'alt' => $secondary_logo_alt,
               'attributes' => array('class' => array('header__logo-image')),
             ));
-            $secondary_logo_class = array('header__logo');
+            $secondary_logo_class = array('header__logo', 'hide-on-print');
+
+            print l($secondary_logo_img, $front_page, array(
+              'html' => TRUE,
+              'attributes' => array(
+                'id' => 'secondary-logo',
+                'title' => $secondary_logo_alt,
+                'rel' => 'home',
+                'class' => $secondary_logo_class,
+              ),
+            ));
+
+            $secondary_logo_img = theme('image', array(
+              'path' => path_to_theme() . '/logo-arpansa-print.png',
+              'alt' => $secondary_logo_alt,
+              'attributes' => array('class' => array('header__logo-image')),
+            ));
+            $secondary_logo_class = array('header__logo', 'show-on-print');
 
             print l($secondary_logo_img, $front_page, array(
               'html' => TRUE,
