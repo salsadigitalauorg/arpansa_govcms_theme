@@ -153,8 +153,4 @@
       <?php print render($page['bottom']); ?>
     </div>
   </div>
-
-  <div class="print-container">
-    <p><?php print t('Print date: !date', array('!date' => date('d/m/Y')))?><br/><?php print $current_abs_url;?></p>
-  </div>
 </div>
