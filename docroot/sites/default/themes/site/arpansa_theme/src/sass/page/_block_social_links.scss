@@ -29,11 +29,15 @@
         display: inline;
       }
       a {
+        border: none;
         margin-right: rem(10px);
         display: inline-block;
         vertical-align: middle;
         img {
           float: left;
+        }
+        &:hover {
+          background-color: transparent;
         }
       }
     }
@@ -57,10 +61,14 @@
       margin: 0 0 10px;
       text-transform: uppercase;
     }
-    a[rel~='external'] {
+    a {
+      border: none;
       margin-right: 5px;
       &::after {
         display: none;
+      }
+      &:hover {
+        background-color: transparent;
       }
     }
   }

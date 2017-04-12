@@ -11710,6 +11710,7 @@ div.toc-filter-content ol.toc-filter-links li {
 }
 
 #block-govcms-social-links-services .inner-wrapper .content a {
+  border: none;
   margin-right: 0.625rem;
   display: inline-block;
   vertical-align: middle;
@@ -11717,6 +11718,10 @@ div.toc-filter-content ol.toc-filter-links li {
 
 #block-govcms-social-links-services .inner-wrapper .content a img {
   float: left;
+}
+
+#block-govcms-social-links-services .inner-wrapper .content a:hover {
+  background-color: transparent;
 }
 
 .content-body .content #block-service-links-service-links {
@@ -11735,12 +11740,17 @@ div.toc-filter-content ol.toc-filter-links li {
   text-transform: uppercase;
 }
 
-.content-body .content #block-service-links-service-links a[rel~='external'] {
+.content-body .content #block-service-links-service-links a {
+  border: none;
   margin-right: 5px;
 }
 
-.content-body .content #block-service-links-service-links a[rel~='external']::after {
+.content-body .content #block-service-links-service-links a::after {
   display: none;
+}
+
+.content-body .content #block-service-links-service-links a:hover {
+  background-color: transparent;
 }
 
 #content .search-form {
