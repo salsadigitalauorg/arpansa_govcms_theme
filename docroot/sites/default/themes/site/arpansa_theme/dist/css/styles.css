@@ -11339,6 +11339,9 @@ div.toc-filter-content ol.toc-filter-links li {
   font-size: 1.875rem;
   font-weight: 300;
   margin-top: 0;
+  color: #333333;
+  font-family: "Source Sans Pro", sans-serif, Arial;
+  font-size: 2.25em;
 }
 
 .block-twitter-block > .content {
