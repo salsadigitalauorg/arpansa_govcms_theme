@@ -110,6 +110,7 @@
       button.sidebar-toggle-menu {
         @include transition-fade;
         @include hide-text;
+        text-indent: -10000px;
         border: 0;
         margin: 0;
         padding: 0;

@@ -274,6 +274,9 @@ function arpansa_entity_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'wysiwyg' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -290,7 +293,7 @@ function arpansa_entity_strongarm() {
       'display' => array(
         'file' => array(
           'default' => array(
-            'weight' => '2',
+            'weight' => '0',
             'visible' => TRUE,
           ),
         ),
