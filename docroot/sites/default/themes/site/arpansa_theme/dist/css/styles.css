@@ -10721,7 +10721,11 @@ body.not-front #content #block-views-fact-sheets-filterable-block .view-filters 
 }
 
 body.not-front #content #block-views-fact-sheets-filterable-block .view-filters select {
-  display: none;
+  background-color: white;
+  border: 1px solid #444449;
+  height: 42px;
+  margin-bottom: 16px;
+  width: 100%;
 }
 
 body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .SumoSelect {

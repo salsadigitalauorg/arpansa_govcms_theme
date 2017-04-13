@@ -218,7 +218,7 @@ function arpansa_theme_form_alter(&$form, &$form_state, $form_id) {
       case 'literature_surveys':
         $tags = _arpansa_theme_get_page_type_tags('', 'literature_survey');
         if (count($tags)) {
-          $form['field_tags_tid']['#options'] = array('All' => '- Any -') + $tags;
+          $form['field_tags_tid']['#options'] = $tags;
         }
         break;
     }

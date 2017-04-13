@@ -28,7 +28,11 @@ body.not-front {
         margin-bottom: 16px;
       }
       select {
-        display: none;
+        background-color: white;
+        border: 1px solid $neutral_1;
+        height: 42px;
+        margin-bottom: 16px;
+        width: 100%;
       }
       .SumoSelect {
         margin-right: 0;
