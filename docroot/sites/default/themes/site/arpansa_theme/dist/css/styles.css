@@ -10584,6 +10584,14 @@ body.not-front #content .view.view-literature-surveys .view-filters input[type="
   margin-bottom: 16px;
 }
 
+body.not-front #content .view.view-literature-surveys .view-filters select {
+  background-color: white;
+  border: 1px solid #444449;
+  height: 42px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
 body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect {
   margin-right: 0;
   width: 100%;
@@ -10597,42 +10605,12 @@ body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect 
   font-style: normal;
 }
 
+body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect select {
+  opacity: 0;
+}
+
 body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect label {
   font-weight: normal;
-}
-
-body.not-front #content .view.view-literature-surveys .view-filters .views-widget-filter-field_literature_survey_date_tid .SumoSelect > .CaptionCont {
-  border-color: #444449;
-  display: none;
-}
-
-@media (min-width: 768px) {
-  body.not-front #content .view.view-literature-surveys .view-filters .views-widget-filter-field_literature_survey_date_tid .SumoSelect > .CaptionCont {
-    display: block;
-  }
-}
-
-body.not-front #content .view.view-literature-surveys .view-filters .views-widget-filter-field_literature_survey_date_tid .SumoSelect > .CaptionCont span {
-  max-width: inherit;
-}
-
-@media (min-width: 768px) {
-  body.not-front #content .view.view-literature-surveys .view-filters .views-widget-filter-field_literature_survey_date_tid .SumoSelect > .CaptionCont span {
-    max-width: 200px;
-  }
-}
-
-body.not-front #content .view.view-literature-surveys .view-filters .views-widget-filter-field_literature_survey_date_tid .SumoSelect select {
-  background-color: white;
-  border: 1px solid #444449;
-  height: 42px;
-  opacity: 1;
-}
-
-@media (min-width: 768px) {
-  body.not-front #content .view.view-literature-surveys .view-filters .views-widget-filter-field_literature_survey_date_tid .SumoSelect select {
-    opacity: 0;
-  }
 }
 
 body.not-front #content .view.view-literature-surveys .view-filters input[type="submit"] {
