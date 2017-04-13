@@ -72,6 +72,13 @@ function govcms_menu_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'site_map_show_description';
+  $strongarm->value = 1;
+  $export['site_map_show_description'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_map_show_front';
   $strongarm->value = 0;
   $export['site_map_show_front'] = $strongarm;
@@ -95,9 +102,23 @@ function govcms_menu_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'site_map_show_menus_hidden';
+  $strongarm->value = 0;
+  $export['site_map_show_menus_hidden'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_map_show_rss_links';
   $strongarm->value = '1';
   $export['site_map_show_rss_links'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'site_map_show_titles';
+  $strongarm->value = 0;
+  $export['site_map_show_titles'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
