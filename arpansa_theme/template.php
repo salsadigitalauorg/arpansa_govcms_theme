@@ -325,20 +325,6 @@ function arpansa_theme_preprocess_block(&$variables) {
 }
 
 /**
- * Implements hook_block_view_MODULE_DELTA_alter().
- */
-function arpansa_theme_block_view_govcms_social_links_services_alter(&$build, $block) {
-  // Replace default social link icons [ARPANSA-65].
-  $theme_path = drupal_get_path('theme', 'arpansa_theme');
-  foreach ($build['content'] as $service => $content) {
-    $icon = $theme_path . '/dist/images/png/' . $service . '.png';
-    if (file_exists($icon)) {
-      $build['content'][$service]['#icon'] = $icon;
-    }
-  }
-}
-
-/**
  * Implements theme_facetapi_link_inactive().
  *
  * @see theme_facetapi_link_inactive()
@@ -512,31 +498,16 @@ function arpansa_theme_preprocess_file_entity(&$variables) {
 
 /**
  * Implements theme_govcms_social_link().
+ *
+ * @see theme_govcms_social_link()
+ * @see govcms_social_links_block_view()
  */
 function arpansa_theme_govcms_social_link($variables) {
-  switch ($variables['title']) {
-    case 'Facebook':
-      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-facebook.svg';
-      break;
-    case 'Twitter':
-      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-twitter.svg';
-      break;
-    case 'Youtube':
-      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-youtube.svg';
-      break;
-    case 'Vimeo':
-      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-vimeo.svg';
-      break;
-    case 'Flickr':
-      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-flickr.svg';
-      break;
-    case 'RSS Feed':
-      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-rss.svg';
-      break;
-    case 'Email':
-      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-email.svg';
-      break;
+  $service = strtolower($variables['title']);
+  if ($service == 'rss feed') {
+    $service = 'rss';
   }
+  $variables['icon'] = path_to_theme() . '/dist/images/svg/social-' . $service . '.svg';
   $service_image = theme('image', array(
     'path' => $variables['icon'],
     'title' => $variables['title'],
