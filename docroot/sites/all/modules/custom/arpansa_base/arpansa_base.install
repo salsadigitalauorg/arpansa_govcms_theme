@@ -1815,7 +1815,6 @@ function arpansa_base_update_7091() {
   salsa_helpers_lock_features($govCMSFeatures);
 }
 
-
 /**
  * Have your say view [ARPANSA-106].
  */
