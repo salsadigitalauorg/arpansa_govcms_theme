@@ -28,6 +28,13 @@ body.not-front {
         height: 42px;
         margin-bottom: 16px;
       }
+      select {
+        background-color: white;
+        border: 1px solid $neutral_1;
+        height: 42px;
+        margin-bottom: 16px;
+        width: 100%;
+      }
       .SumoSelect {
         margin-right: 0;
         width: 100%;
@@ -37,34 +44,11 @@ body.not-front {
             font-style: normal;
           }
         }
+        select {
+          opacity: 0;
+        }
         label {
           font-weight: normal;
-        }
-      }
-      .views-widget-filter-field_literature_survey_date_tid {
-        .SumoSelect {
-          >.CaptionCont {
-            border-color: $neutral_1;
-            display: none;
-            @include breakpoint(tablet) {
-              display: block;
-            }
-            span {
-              max-width: inherit;
-              @include breakpoint(tablet) {
-                max-width: 200px;
-              }
-            }
-          }
-          select {
-            background-color: white;
-            border: 1px solid $neutral_1;
-            height: 42px;
-            opacity: 1;
-            @include breakpoint(tablet) {
-              opacity: 0;
-            }
-          }
         }
       }
       input[type="submit"] {
