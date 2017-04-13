@@ -11174,6 +11174,7 @@ body.not-front #content .view .pager {
   overflow: hidden;
   text-indent: 101%;
   white-space: nowrap;
+  text-indent: -10000px;
   border: 0;
   margin: 0;
   padding: 0;
@@ -11338,6 +11339,9 @@ div.toc-filter-content ol.toc-filter-links li {
   font-size: 1.875rem;
   font-weight: 300;
   margin-top: 0;
+  color: #333333;
+  font-family: "Source Sans Pro", sans-serif, Arial;
+  font-size: 2.25em;
 }
 
 .block-twitter-block > .content {

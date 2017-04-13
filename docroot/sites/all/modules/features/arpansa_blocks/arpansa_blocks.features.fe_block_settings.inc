@@ -390,7 +390,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'weight' => -29,
       ),
     ),
-    'title' => '',
+    'title' => 'Latest tweets',
     'visibility' => 0,
   );
 
