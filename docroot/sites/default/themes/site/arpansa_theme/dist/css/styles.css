@@ -11174,6 +11174,7 @@ body.not-front #content .view .pager {
   overflow: hidden;
   text-indent: 101%;
   white-space: nowrap;
+  text-indent: -10000px;
   border: 0;
   margin: 0;
   padding: 0;
