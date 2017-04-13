@@ -315,6 +315,8 @@ function arpansa_theme_preprocess_search_result(&$variables) {
 
 /**
  * Implements template_preprocess_block().
+ *
+ * @see template_preprocess_block()
  */
 function arpansa_theme_preprocess_block(&$variables) {
   if ($variables['block_html_id'] == 'block-menu-block-landing-page-children-listing') {
@@ -500,4 +502,32 @@ function arpansa_theme_preprocess_file_entity(&$variables) {
   if (!empty($variables['media_markup'])) {
     $variables['theme_hook_suggestions'][] = 'file_entity__inline_wysiwyg';
   }
+}
+
+/**
+ * Implements theme_govcms_social_link().
+ *
+ * @see theme_govcms_social_link()
+ * @see govcms_social_links_block_view()
+ */
+function arpansa_theme_govcms_social_link($variables) {
+  $service = strtolower($variables['title']);
+  if ($service == 'rss feed') {
+    $service = 'rss';
+  }
+  $variables['icon'] = path_to_theme() . '/dist/images/svg/social-' . $service . '.svg';
+  $service_image = theme('image', array(
+    'path' => $variables['icon'],
+    'title' => $variables['title'],
+    'alt' => $variables['title'],
+  ));
+
+  return theme('link', array(
+    'text' => $service_image,
+    'path' => $variables['url'],
+    'options' => array(
+      'html' => TRUE,
+      'attributes' => array(),
+    ),
+  ));
 }
