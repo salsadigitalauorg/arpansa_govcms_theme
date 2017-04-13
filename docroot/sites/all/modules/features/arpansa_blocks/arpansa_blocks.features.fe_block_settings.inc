@@ -125,7 +125,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'bottom',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -34,
+        'weight' => -33,
       ),
     ),
     'title' => '',
@@ -247,7 +247,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -31,
+        'weight' => -30,
       ),
     ),
     'title' => '<none>',
@@ -327,7 +327,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -34,
+        'weight' => -33,
       ),
     ),
     'title' => '',
@@ -347,7 +347,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -32,
+        'weight' => -31,
       ),
     ),
     'title' => '',
@@ -434,6 +434,26 @@ function arpansa_blocks_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['views-have_your_say-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'have_your_say-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'have-your-say',
+    'roles' => array(),
+    'themes' => array(
+      'arpansa_theme' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'arpansa_theme',
+        'weight' => -24,
+      ),
+    ),
+    'title' => 'Current consultations',
+    'visibility' => 1,
+  );
+
   $export['views-related_content-block'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -471,7 +491,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -33,
+        'weight' => -32,
       ),
     ),
     'title' => '',
