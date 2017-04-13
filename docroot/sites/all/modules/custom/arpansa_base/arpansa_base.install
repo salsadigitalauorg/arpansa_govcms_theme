@@ -1834,7 +1834,7 @@ function arpansa_base_update_7093() {
 
   // Unlock the govcms features.
   $govCMSFeatures = array(
-    'govcms_sharelinks',
+    'govcms_share_links',
   );
   salsa_helpers_lock_features($govCMSFeatures, TRUE);
 
