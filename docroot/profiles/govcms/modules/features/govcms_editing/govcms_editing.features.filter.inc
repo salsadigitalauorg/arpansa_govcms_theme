@@ -135,8 +135,13 @@ function govcms_editing_filter_default_formats() {
     'status' => 1,
     'weight' => -10,
     'filters' => array(
-      'wysiwyg' => array(
+      'filter_autop' => array(
         'weight' => -50,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'wysiwyg' => array(
+        'weight' => -49,
         'status' => 1,
         'settings' => array(
           'valid_elements' => 'a[href|rel|target<_blank|title|class|name|id],
@@ -380,7 +385,7 @@ video',
         ),
       ),
       'video_filter' => array(
-        'weight' => -49,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(
           'video_filter_width' => 400,
@@ -432,26 +437,21 @@ video',
         ),
       ),
       'toc_filter' => array(
-        'weight' => -48,
-        'status' => 1,
-        'settings' => array(),
-      ),
-      'media_filter' => array(
         'weight' => -47,
         'status' => 1,
         'settings' => array(),
       ),
-      'filter_url' => array(
+      'media_filter' => array(
         'weight' => -46,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'filter_url' => array(
+        'weight' => -45,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
-      ),
-      'filter_autop' => array(
-        'weight' => -45,
-        'status' => 1,
-        'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
         'weight' => -44,

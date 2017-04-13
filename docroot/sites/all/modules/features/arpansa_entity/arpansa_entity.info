@@ -1,7 +1,7 @@
 name = ARPANSA Entity
 core = 7.x
 package = ARPANSA
-version = 7.x-1.34
+version = 7.x-1.35
 dependencies[] = arpansa_taxonomy
 dependencies[] = bean
 dependencies[] = bigmenu
@@ -47,6 +47,7 @@ dependencies[] = maintenance_mode_permissions
 dependencies[] = media
 dependencies[] = media_internet
 dependencies[] = media_wysiwyg
+dependencies[] = media_wysiwyg_view_mode
 dependencies[] = menu
 dependencies[] = menu_block
 dependencies[] = metatag
