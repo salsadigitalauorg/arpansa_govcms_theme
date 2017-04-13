@@ -4,6 +4,9 @@
   h2 {
     @include center-column($desktop_column);
     @include medium-title;
+    color: $color-brand-black;
+    font-family: $font_source_sans;
+    font-size: em(36px);
   }
   &>.content {
     @include center-column($mobile_column);

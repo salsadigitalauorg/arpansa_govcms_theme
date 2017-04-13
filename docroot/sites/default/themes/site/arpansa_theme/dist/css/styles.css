@@ -10569,11 +10569,13 @@ body.not-front #content .view.view-literature-surveys .view-filters .views-expos
   float: none;
   margin-top: 0;
   padding-bottom: 0;
+  padding-right: 0;
 }
 
 @media (min-width: 768px) {
   body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget {
     display: table-cell;
+    padding-right: 1em;
     width: 33%;
     vertical-align: bottom;
   }
@@ -10593,7 +10595,11 @@ body.not-front #content .view.view-literature-surveys .view-filters input[type="
 }
 
 body.not-front #content .view.view-literature-surveys .view-filters select {
-  display: none;
+  background-color: white;
+  border: 1px solid #444449;
+  height: 42px;
+  margin-bottom: 16px;
+  width: 100%;
 }
 
 body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect {
@@ -10605,18 +10611,12 @@ body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect 
   border-color: #444449;
 }
 
-body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect > .CaptionCont span {
-  max-width: inherit;
-}
-
-@media (min-width: 768px) {
-  body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect > .CaptionCont span {
-    max-width: 200px;
-  }
-}
-
 body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect > .CaptionCont > span.placeholder {
   font-style: normal;
+}
+
+body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect select {
+  opacity: 0;
 }
 
 body.not-front #content .view.view-literature-surveys .view-filters .SumoSelect label {
@@ -11174,6 +11174,7 @@ body.not-front #content .view .pager {
   overflow: hidden;
   text-indent: 101%;
   white-space: nowrap;
+  text-indent: -10000px;
   border: 0;
   margin: 0;
   padding: 0;
@@ -11338,6 +11339,9 @@ div.toc-filter-content ol.toc-filter-links li {
   font-size: 1.875rem;
   font-weight: 300;
   margin-top: 0;
+  color: #333333;
+  font-family: "Source Sans Pro", sans-serif, Arial;
+  font-size: 2.25em;
 }
 
 .block-twitter-block > .content {

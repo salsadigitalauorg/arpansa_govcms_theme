@@ -1573,11 +1573,9 @@ function arpansa_entity_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'file_entity',
-        'settings' => array(
-          'text' => 'Download [file:name]',
-        ),
-        'type' => 'file_download_link',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
         'weight' => 2,
       ),
       'teaser' => array(
