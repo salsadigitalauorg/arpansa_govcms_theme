@@ -704,10 +704,7 @@ var desktop_column = 1170;
       }
 
       // Sumoselect all select
-      $('.form-select', context).SumoSelect({
-        triggerChangeCombined: false,
-        forceCustomRendering: true
-      });
+      $('select.form-select[multiple=multiple]', context).SumoSelect();
     }
   };
 

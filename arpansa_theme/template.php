@@ -471,3 +471,25 @@ function arpansa_theme_search_api_query_alter(SearchApiQueryInterface $query) {
     $query->filter($filter);
   }
 }
+
+/**
+ * Implements hook_media_wysiwyg_token_to_markup_alter().
+ *
+ * @see media_wysiwyg_token_to_markup()
+ */
+function arpansa_theme_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $settings) {
+  unset($element['content']['#type']);
+  unset($element['content']['#attributes']);
+  $element['content']['#file']->media_markup = TRUE;
+}
+
+/**
+ * Implements template_preprocess_file_entity().
+ *
+ * @see template_preprocess_file_entity()
+ */
+function arpansa_theme_preprocess_file_entity(&$variables) {
+  if (!empty($variables['media_markup'])) {
+    $variables['theme_hook_suggestions'][] = 'file_entity__inline_wysiwyg';
+  }
+}
