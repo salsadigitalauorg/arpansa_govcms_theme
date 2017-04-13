@@ -307,6 +307,8 @@ function arpansa_theme_preprocess_search_result(&$variables) {
 
 /**
  * Implements template_preprocess_block().
+ *
+ * @see template_preprocess_block()
  */
 function arpansa_theme_preprocess_block(&$variables) {
   if ($variables['block_html_id'] == 'block-menu-block-landing-page-children-listing') {
@@ -319,6 +321,20 @@ function arpansa_theme_preprocess_block(&$variables) {
       }
     }
     $variables['children_contents'] = $child_content;
+  }
+}
+
+/**
+ * Implements hook_block_view_MODULE_DELTA_alter().
+ */
+function arpansa_theme_block_view_govcms_social_links_services_alter(&$build, $block) {
+  // Replace default social link icons [ARPANSA-65].
+  $theme_path = drupal_get_path('theme', 'arpansa_theme');
+  foreach ($build['content'] as $service => $content) {
+    $icon = $theme_path . '/dist/images/png/' . $service . '.png';
+    if (file_exists($icon)) {
+      $build['content'][$service]['#icon'] = $icon;
+    }
   }
 }
 

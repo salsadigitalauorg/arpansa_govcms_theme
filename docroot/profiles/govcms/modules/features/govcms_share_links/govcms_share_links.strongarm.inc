@@ -48,7 +48,7 @@ function govcms_share_links_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_check_icons';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['service_links_check_icons'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -82,6 +82,7 @@ function govcms_share_links_strongarm() {
     'rss' => 0,
     'search_index' => 0,
     'search_result' => 0,
+    'diff_standard' => 0,
     'compact' => 0,
     'token' => 0,
     'revision' => 0,
@@ -112,6 +113,7 @@ function govcms_share_links_strongarm() {
     'footer_teaser' => 0,
     'publication' => 0,
     'slide' => 0,
+    'submissions' => 0,
     'webform' => 0,
   );
   $export['service_links_node_types'] = $strongarm;
@@ -126,6 +128,7 @@ function govcms_share_links_strongarm() {
     'rss' => 0,
     'search_index' => 0,
     'search_result' => 0,
+    'diff_standard' => 0,
     'compact' => 0,
     'token' => 0,
     'revision' => 0,
@@ -157,7 +160,7 @@ function govcms_share_links_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_path_icons';
-  $strongarm->value = 'profiles/govcms/modules/features/govcms_share_links/images';
+  $strongarm->value = 'sites/default/themes/site/arpansa_theme/dist/images/png';
   $export['service_links_path_icons'] = $strongarm;
 
   $strongarm = new stdClass();
