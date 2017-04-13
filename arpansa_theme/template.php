@@ -157,6 +157,14 @@ function arpansa_theme_preprocess_node(&$variables) {
       $variables['content']['field_read_more'][0]['#element']['attributes']['class'] = 'button';
     }
   }
+
+  // Load progress bar js and css.
+  if ($variables['view_mode'] === 'compact' && $variables['type'] === 'consultation') {
+    drupal_add_css(drupal_get_path('module', 'govcms_consultation') . '/css/govcms_consultation.css', array('file'));
+
+    // Modify read more link.
+    $variables['content']['read_more_link'][0]['#markup'] = l(t('Have your say'), 'node/' . $variables['nid']);
+  }
 }
 
 /**
