@@ -493,3 +493,46 @@ function arpansa_theme_preprocess_file_entity(&$variables) {
     $variables['theme_hook_suggestions'][] = 'file_entity__inline_wysiwyg';
   }
 }
+
+/**
+ * Implements theme_govcms_social_link().
+ */
+function arpansa_theme_govcms_social_link($variables) {
+  switch ($variables['title']) {
+    case 'Facebook':
+      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-facebook.svg';
+      break;
+    case 'Twitter':
+      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-twitter.svg';
+      break;
+    case 'Youtube':
+      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-youtube.svg';
+      break;
+    case 'Vimeo':
+      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-vimeo.svg';
+      break;
+    case 'Flickr':
+      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-flickr.svg';
+      break;
+    case 'RSS Feed':
+      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-rss.svg';
+      break;
+    case 'Email':
+      $variables['icon'] = path_to_theme() . '/dist/images/svg/social-email.svg';
+      break;
+  }
+  $service_image = theme('image', array(
+    'path' => $variables['icon'],
+    'title' => $variables['title'],
+    'alt' => $variables['title'],
+  ));
+
+  return theme('link', array(
+    'text' => $service_image,
+    'path' => $variables['url'],
+    'options' => array(
+      'html' => TRUE,
+      'attributes' => array(),
+    ),
+  ));
+}
