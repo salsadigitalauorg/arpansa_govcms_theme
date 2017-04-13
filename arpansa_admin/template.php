@@ -22,3 +22,27 @@ function arpansa_admin_preprocess_views_view_row_rss(&$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_media_wysiwyg_token_to_markup_alter().
+ *
+ * @see media_wysiwyg_token_to_markup()
+ */
+function arpansa_admin_media_wysiwyg_token_to_markup_alter(&$element, $tag_info, $settings) {
+  if (!empty($element['content'])) {
+    unset($element['content']['#type']);
+    unset($element['content']['#attributes']);
+    $element['content']['#file']->media_markup = TRUE;
+  }
+}
+
+/**
+ * Implements template_preprocess_file_entity().
+ *
+ * @see template_preprocess_file_entity()
+ */
+function arpansa_admin_preprocess_file_entity(&$variables) {
+  if (!empty($variables['media_markup'])) {
+    $variables['theme_hook_suggestions'][] = 'file_entity__inline_wysiwyg';
+  }
+}

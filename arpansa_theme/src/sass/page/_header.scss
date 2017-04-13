@@ -197,10 +197,18 @@
         .logo-aus-container {
           display: inline-block;
           vertical-align: middle;
+          @include breakpoint(tablet) {
+            display: none;
+          }
         }
         .header__logo {
           display: inline-block;
           vertical-align: middle;
+        }
+        a {
+          &.show-on-print {
+            display: none;
+          }
         }
       }
       .region-header {
