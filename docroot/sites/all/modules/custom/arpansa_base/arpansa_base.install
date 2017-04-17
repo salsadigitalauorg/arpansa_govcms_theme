@@ -1878,9 +1878,9 @@ function arpansa_base_update_7095() {
 }
 
 /**
- * Have your say view [ARPANSA-106].
+ * Submission view [ARPANSA-93].
  */
-function arpansa_base_update_7095() {
+function arpansa_base_update_7096() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
