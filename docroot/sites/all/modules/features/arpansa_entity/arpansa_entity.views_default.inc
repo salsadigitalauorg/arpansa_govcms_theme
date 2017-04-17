@@ -777,6 +777,122 @@ function arpansa_entity_views_default_views() {
   $export['related_content'] = $view;
 
   $view = new view();
+  $view->name = 'submissions';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Submissions on consultation page';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_file' => 'field_file',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_file' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Files */
+  $handler->display->display_options['fields']['field_file']['id'] = 'field_file';
+  $handler->display->display_options['fields']['field_file']['table'] = 'field_data_field_file';
+  $handler->display->display_options['fields']['field_file']['field'] = 'field_file';
+  $handler->display->display_options['fields']['field_file']['label'] = '';
+  $handler->display->display_options['fields']['field_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_file']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_file']['delta_offset'] = '0';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Parent Consultation (field_parent_consultation) */
+  $handler->display->display_options['arguments']['field_parent_consultation_target_id']['id'] = 'field_parent_consultation_target_id';
+  $handler->display->display_options['arguments']['field_parent_consultation_target_id']['table'] = 'field_data_field_parent_consultation';
+  $handler->display->display_options['arguments']['field_parent_consultation_target_id']['field'] = 'field_parent_consultation_target_id';
+  $handler->display->display_options['arguments']['field_parent_consultation_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_parent_consultation_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_parent_consultation_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_parent_consultation_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_parent_consultation_target_id']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'submissions' => 'submissions',
+  );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    16 => 0,
+    11 => 0,
+    21 => 0,
+    26 => 0,
+    31 => 0,
+    36 => 0,
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $export['submissions'] = $view;
+
+  $view = new view();
   $view->name = 'what_s_new';
   $view->description = '';
   $view->tag = 'default';
