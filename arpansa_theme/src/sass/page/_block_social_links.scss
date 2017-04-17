@@ -22,6 +22,9 @@
         display: inline;
         margin-bottom: 0;
       }
+      &:after {
+        content: ": ";
+      }
     }
     .content {
       display: block;

@@ -11717,6 +11717,10 @@ div.toc-filter-content ol.toc-filter-links li {
   }
 }
 
+#block-govcms-social-links-services .inner-wrapper h2:after, #block-govcms-social-links-services .inner-wrapper .display:after {
+  content: ": ";
+}
+
 #block-govcms-social-links-services .inner-wrapper .content {
   display: block;
 }
