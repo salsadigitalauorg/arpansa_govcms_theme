@@ -11849,14 +11849,25 @@ div.toc-filter-content ol.toc-filter-links li {
   padding: 0;
 }
 
-.search-results .search-result h3 {
-  font-size: 1.625rem;
+@media (min-width: 1200px) {
+  .search-results .search-result h3 {
+    font-size: 1.625rem;
+    line-height: 1.75rem;
+  }
 }
 
 .search-results .search-result .search-info {
   font-size: 0.875rem;
   color: #F4F4F4;
   text-transform: uppercase;
+}
+
+.page-search .facetapi-limit-link {
+  display: inline-block;
+  margin-top: 0.8125rem;
+  margin-bottom: 0.8125rem;
+  margin-right: 2.1875rem;
+  margin-left: 0.8rem;
 }
 
 .page-news-media .bean-image-and-text {
