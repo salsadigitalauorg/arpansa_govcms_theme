@@ -6862,7 +6862,7 @@ img {
   padding: 15px 35px 15px 10px;
   position: relative;
   /* ARROW. DEFAULT IS CLOSED */
-  margin--top: 0;
+  margin-top: 0;
 }
 
 .accordion-header:after {
