@@ -8683,7 +8683,7 @@ form.webform-client-form .webform-component-date .webform-container-inline > div
 
 form.webform-client-form .webform-component-date input.webform-calendar {
   vertical-align: middle;
-  margin-bottom: 25px;
+  margin-bottom: 4px;
 }
 
 form.webform-client-form .webform-component-grid {
@@ -11183,7 +11183,7 @@ body.not-front #content .view .pager {
   margin: 0;
   padding: 0;
   width: 1.875rem;
-  height: 3.5rem;
+  height: 100%;
   box-sizing: border-box;
   background-color: white;
   background-repeat: no-repeat;
