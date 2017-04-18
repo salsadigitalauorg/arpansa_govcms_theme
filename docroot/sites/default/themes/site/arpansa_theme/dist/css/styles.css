@@ -11183,7 +11183,7 @@ body.not-front #content .view .pager {
   margin: 0;
   padding: 0;
   width: 1.875rem;
-  height: 3.5rem;
+  height: 100%;
   box-sizing: border-box;
   background-color: white;
   background-repeat: no-repeat;
