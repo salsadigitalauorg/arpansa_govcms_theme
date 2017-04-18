@@ -64,14 +64,19 @@
       margin: 0 0 10px;
       text-transform: uppercase;
     }
-    a {
+    .service-links a {
       border: none;
+      display: inline-block;
+      line-height: 0;
       margin-right: 5px;
       &::after {
         display: none;
       }
       &:hover {
-        background-color: transparent;
+        background-color: black;
+        img {
+          opacity: 0.8;
+        }
       }
     }
   }
