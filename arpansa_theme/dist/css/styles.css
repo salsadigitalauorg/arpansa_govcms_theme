@@ -11762,17 +11762,23 @@ div.toc-filter-content ol.toc-filter-links li {
   text-transform: uppercase;
 }
 
-.content-body .content #block-service-links-service-links a {
+.content-body .content #block-service-links-service-links .service-links a {
   border: none;
+  display: inline-block;
+  line-height: 0;
   margin-right: 5px;
 }
 
-.content-body .content #block-service-links-service-links a::after {
+.content-body .content #block-service-links-service-links .service-links a::after {
   display: none;
 }
 
-.content-body .content #block-service-links-service-links a:hover {
-  background-color: transparent;
+.content-body .content #block-service-links-service-links .service-links a:hover {
+  background-color: black;
+}
+
+.content-body .content #block-service-links-service-links .service-links a:hover img {
+  opacity: 0.8;
 }
 
 #content .search-form {
