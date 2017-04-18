@@ -6807,6 +6807,7 @@ img {
   color: white;
   font-size: 1.125em;
   font-weight: 600;
+  line-height: 1.2em;
   padding: 15px 35px 15px 10px;
   position: relative;
   /* ARROW. DEFAULT IS CLOSED */
@@ -6848,6 +6849,50 @@ img {
 }
 
 .view-faq div.item-list > ol > li.opened .views-field-body {
+  display: block;
+}
+
+.accordion-header {
+  background-color: #268126;
+  cursor: pointer;
+  color: white;
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1.2em;
+  padding: 15px 35px 15px 10px;
+  position: relative;
+  /* ARROW. DEFAULT IS CLOSED */
+}
+
+.accordion-header:after {
+  background: transparent url(../images/svg/nav_down_arrow_white.svg) right center no-repeat;
+  content: " ";
+  display: block;
+  width: 11px;
+  height: 7px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -4px;
+}
+
+.accordion-header.opened {
+  border-bottom: 1px solid #CACACA;
+  background-color: #4E1A74;
+  margin-bottom: 0;
+}
+
+.accordion-header.opened:after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.accordion-body {
+  display: none;
+  padding: 20px;
+}
+
+.accordion-body.opened {
   display: block;
 }
 
