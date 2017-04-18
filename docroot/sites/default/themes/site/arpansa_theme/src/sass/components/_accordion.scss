@@ -64,6 +64,7 @@
 
 .accordion-header {
   @include accordion-header();
+  margin--top: 0;
   &.opened {
     @include accordion-header-opened();
     margin-bottom: 0;
