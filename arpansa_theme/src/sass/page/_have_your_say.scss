@@ -1,0 +1,38 @@
+// =========================================================
+// HAVE YOUR SAY VIEWS
+// =========================================================
+#block-views-have-your-say-block {
+  .views-exposed-form {
+    .views-exposed-widget {
+      display: block;
+      float: none;
+      @include breakpoint(tablet) {
+        display: inline-block;
+        vertical-align: bottom;
+      }
+      .SumoSelect {
+        margin-bottom: 0;
+        height: auto;
+        width: 100%;
+        @include breakpoint(tablet) {
+          width: auto;
+          min-width: 250px;
+          margin-bottom: 0;
+          height: auto;
+          width: 100%;
+        }
+        .CaptionCont {
+          border: 2px solid $border-colour;
+          padding: rem(6.4px);
+          border-radius: 0;
+          span {
+            line-height: normal;
+          }
+        }
+      }
+    }
+  }
+  .view-content {
+    padding-top: rem(50px);
+  }
+}
