@@ -8683,7 +8683,7 @@ form.webform-client-form .webform-component-date .webform-container-inline > div
 
 form.webform-client-form .webform-component-date input.webform-calendar {
   vertical-align: middle;
-  margin-bottom: 25px;
+  margin-bottom: 4px;
 }
 
 form.webform-client-form .webform-component-grid {
@@ -11715,6 +11715,10 @@ div.toc-filter-content ol.toc-filter-links li {
     display: inline;
     margin-bottom: 0;
   }
+}
+
+#block-govcms-social-links-services .inner-wrapper h2:after, #block-govcms-social-links-services .inner-wrapper .display:after {
+  content: ": ";
 }
 
 #block-govcms-social-links-services .inner-wrapper .content {
