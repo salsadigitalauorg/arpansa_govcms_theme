@@ -232,11 +232,11 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['sorts']['promote']['table'] = 'node';
   $handler->display->display_options['sorts']['promote']['field'] = 'promote';
   $handler->display->display_options['sorts']['promote']['order'] = 'DESC';
-  /* Sort criterion: Content: Event Date - end date (field_event_date:value2) */
-  $handler->display->display_options['sorts']['field_event_date_value2']['id'] = 'field_event_date_value2';
-  $handler->display->display_options['sorts']['field_event_date_value2']['table'] = 'field_data_field_event_date';
-  $handler->display->display_options['sorts']['field_event_date_value2']['field'] = 'field_event_date_value2';
-  $handler->display->display_options['sorts']['field_event_date_value2']['order'] = 'DESC';
+  /* Sort criterion: Content: Start/End Date - end date (field_consultation_date:value2) */
+  $handler->display->display_options['sorts']['field_consultation_date_value2']['id'] = 'field_consultation_date_value2';
+  $handler->display->display_options['sorts']['field_consultation_date_value2']['table'] = 'field_data_field_consultation_date';
+  $handler->display->display_options['sorts']['field_consultation_date_value2']['field'] = 'field_consultation_date_value2';
+  $handler->display->display_options['sorts']['field_consultation_date_value2']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
