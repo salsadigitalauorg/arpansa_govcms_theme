@@ -1894,3 +1894,12 @@ function arpansa_base_update_7097() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Change tag to dropdown [ARPANSA-106].
+ */
+function arpansa_base_update_7098() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
