@@ -427,16 +427,9 @@ var desktop_column = 1170;
         });
       }
 
-      // Re-arrange facet active link markup.
+      // Add active class to a list for facet API.
       var $active_markup = $('.facetapi-active');
       $active_markup.each(function() {
-        var $facet_text = $(this).parent().first().contents().filter(function() {
-          return this.nodeType == 3;
-        });
-
-        $(this).find('span').before($facet_text.text());
-        $facet_text.remove();
-
         $(this).parent().addClass('active');
       });
     }
