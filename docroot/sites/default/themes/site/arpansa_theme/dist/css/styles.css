@@ -11152,6 +11152,10 @@ body.not-front #content .view .pager {
   list-style: none;
 }
 
+#block-menu-block-left-nav ul.menu li .sidemenu-item, #block-menu-block-left-nav ul.facetapi-facetapi-links li .sidemenu-item, .page-search #content .block-facetapi ul.menu li .sidemenu-item, .page-search #content .block-facetapi ul.facetapi-facetapi-links li .sidemenu-item {
+  position: relative;
+}
+
 #block-menu-block-left-nav ul.menu li a, #block-menu-block-left-nav ul.facetapi-facetapi-links li a, .page-search #content .block-facetapi ul.menu li a, .page-search #content .block-facetapi ul.facetapi-facetapi-links li a {
   color: #4E1A74;
   width: 100%;
@@ -11208,22 +11212,22 @@ body.not-front #content .view .pager {
           transform: rotate(0deg);
 }
 
-#block-menu-block-left-nav ul.menu li.active > a, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > a, .page-search #content .block-facetapi ul.menu li.active > a, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > a {
+#block-menu-block-left-nav ul.menu li.active > a, #block-menu-block-left-nav ul.menu li.active > .sidemenu-item > a, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > a, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > .sidemenu-item > a, .page-search #content .block-facetapi ul.menu li.active > a, .page-search #content .block-facetapi ul.menu li.active > .sidemenu-item > a, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > a, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > .sidemenu-item > a {
   background: #268126;
   color: white;
 }
 
-#block-menu-block-left-nav ul.menu li.active > a:hover, #block-menu-block-left-nav ul.menu li.active > a:focus, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > a:hover, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > a:focus, .page-search #content .block-facetapi ul.menu li.active > a:hover, .page-search #content .block-facetapi ul.menu li.active > a:focus, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > a:hover, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > a:focus {
+#block-menu-block-left-nav ul.menu li.active > a:hover, #block-menu-block-left-nav ul.menu li.active > a:focus, #block-menu-block-left-nav ul.menu li.active > .sidemenu-item > a:hover, #block-menu-block-left-nav ul.menu li.active > .sidemenu-item > a:focus, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > a:hover, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > a:focus, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > .sidemenu-item > a:hover, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > .sidemenu-item > a:focus, .page-search #content .block-facetapi ul.menu li.active > a:hover, .page-search #content .block-facetapi ul.menu li.active > a:focus, .page-search #content .block-facetapi ul.menu li.active > .sidemenu-item > a:hover, .page-search #content .block-facetapi ul.menu li.active > .sidemenu-item > a:focus, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > a:hover, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > a:focus, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > .sidemenu-item > a:hover, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > .sidemenu-item > a:focus {
   color: white;
   background-color: #4E1A74;
 }
 
-#block-menu-block-left-nav ul.menu li.active > button.sidebar-toggle-menu, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu, .page-search #content .block-facetapi ul.menu li.active > button.sidebar-toggle-menu, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu {
+#block-menu-block-left-nav ul.menu li.active > button.sidebar-toggle-menu, #block-menu-block-left-nav ul.menu li.active > .sidemenu-item > button.sidebar-toggle-menu, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > .sidemenu-item > button.sidebar-toggle-menu, .page-search #content .block-facetapi ul.menu li.active > button.sidebar-toggle-menu, .page-search #content .block-facetapi ul.menu li.active > .sidemenu-item > button.sidebar-toggle-menu, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > .sidemenu-item > button.sidebar-toggle-menu {
   background-color: #268126;
   background-image: url(../images/svg/sidebar-arrow-down-hover.svg);
 }
 
-#block-menu-block-left-nav ul.menu li.active > button.sidebar-toggle-menu:hover, #block-menu-block-left-nav ul.menu li.active > button.sidebar-toggle-menu:focus, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu:hover, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu:focus, .page-search #content .block-facetapi ul.menu li.active > button.sidebar-toggle-menu:hover, .page-search #content .block-facetapi ul.menu li.active > button.sidebar-toggle-menu:focus, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu:hover, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu:focus {
+#block-menu-block-left-nav ul.menu li.active > button.sidebar-toggle-menu:hover, #block-menu-block-left-nav ul.menu li.active > button.sidebar-toggle-menu:focus, #block-menu-block-left-nav ul.menu li.active > .sidemenu-item > button.sidebar-toggle-menu:hover, #block-menu-block-left-nav ul.menu li.active > .sidemenu-item > button.sidebar-toggle-menu:focus, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu:hover, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu:focus, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > .sidemenu-item > button.sidebar-toggle-menu:hover, #block-menu-block-left-nav ul.facetapi-facetapi-links li.active > .sidemenu-item > button.sidebar-toggle-menu:focus, .page-search #content .block-facetapi ul.menu li.active > button.sidebar-toggle-menu:hover, .page-search #content .block-facetapi ul.menu li.active > button.sidebar-toggle-menu:focus, .page-search #content .block-facetapi ul.menu li.active > .sidemenu-item > button.sidebar-toggle-menu:hover, .page-search #content .block-facetapi ul.menu li.active > .sidemenu-item > button.sidebar-toggle-menu:focus, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu:hover, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > button.sidebar-toggle-menu:focus, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > .sidemenu-item > button.sidebar-toggle-menu:hover, .page-search #content .block-facetapi ul.facetapi-facetapi-links li.active > .sidemenu-item > button.sidebar-toggle-menu:focus {
   background-color: #4E1A74;
 }
 
@@ -11231,10 +11235,14 @@ body.not-front #content .view .pager {
   border-bottom: 2px solid #444449;
 }
 
-#block-menu-block-left-nav .menu-block-wrapper > ul > li > a, #block-menu-block-left-nav .item-list > ul > li > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > a, .page-search #content .block-facetapi .item-list > ul > li > a {
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > a, #block-menu-block-left-nav .menu-block-wrapper > ul > li > .sidemenu-item > a, #block-menu-block-left-nav .item-list > ul > li > a, #block-menu-block-left-nav .item-list > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .item-list > ul > li > a, .page-search #content .block-facetapi .item-list > ul > li > .sidemenu-item > a {
   color: #333333;
   font-weight: 600;
   padding-left: 0.8em;
+}
+
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > a:hover, #block-menu-block-left-nav .menu-block-wrapper > ul > li > a:focus, #block-menu-block-left-nav .menu-block-wrapper > ul > li > .sidemenu-item > a:hover, #block-menu-block-left-nav .menu-block-wrapper > ul > li > .sidemenu-item > a:focus, #block-menu-block-left-nav .item-list > ul > li > a:hover, #block-menu-block-left-nav .item-list > ul > li > a:focus, #block-menu-block-left-nav .item-list > ul > li > .sidemenu-item > a:hover, #block-menu-block-left-nav .item-list > ul > li > .sidemenu-item > a:focus, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > a:hover, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > a:focus, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > .sidemenu-item > a:hover, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > .sidemenu-item > a:focus, .page-search #content .block-facetapi .item-list > ul > li > a:hover, .page-search #content .block-facetapi .item-list > ul > li > a:focus, .page-search #content .block-facetapi .item-list > ul > li > .sidemenu-item > a:hover, .page-search #content .block-facetapi .item-list > ul > li > .sidemenu-item > a:focus {
+  color: white;
 }
 
 #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul, #block-menu-block-left-nav .item-list > ul > li > ul, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul, .page-search #content .block-facetapi .item-list > ul > li > ul {
@@ -11245,12 +11253,12 @@ body.not-front #content .view .pager {
   background-color: #F5F5F5;
 }
 
-#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > a, #block-menu-block-left-nav .item-list > ul > li > ul > li > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > a, .page-search #content .block-facetapi .item-list > ul > li > ul > li > a {
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > a, #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a, #block-menu-block-left-nav .item-list > ul > li > ul > li > a, #block-menu-block-left-nav .item-list > ul > li > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .item-list > ul > li > ul > li > a, .page-search #content .block-facetapi .item-list > ul > li > ul > li > .sidemenu-item > a {
   padding-left: 1.6em;
   background-color: #F5F5F5;
 }
 
-#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > button.sidebar-toggle-menu, #block-menu-block-left-nav .item-list > ul > li > ul > li > button.sidebar-toggle-menu, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > button.sidebar-toggle-menu, .page-search #content .block-facetapi .item-list > ul > li > ul > li > button.sidebar-toggle-menu {
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > button.sidebar-toggle-menu, #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu, #block-menu-block-left-nav .item-list > ul > li > ul > li > button.sidebar-toggle-menu, #block-menu-block-left-nav .item-list > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > button.sidebar-toggle-menu, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu, .page-search #content .block-facetapi .item-list > ul > li > ul > li > button.sidebar-toggle-menu, .page-search #content .block-facetapi .item-list > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu {
   background-color: #F5F5F5;
 }
 
@@ -11259,7 +11267,7 @@ body.not-front #content .view .pager {
   border-top: 2px solid #E6E6E6;
 }
 
-#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > ul > li > a, #block-menu-block-left-nav .item-list > ul > li > ul > li > ul > li > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > ul > li > a, .page-search #content .block-facetapi .item-list > ul > li > ul > li > ul > li > a {
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > ul > li > a, #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > ul > li > .sidemenu-item > a, #block-menu-block-left-nav .item-list > ul > li > ul > li > ul > li > a, #block-menu-block-left-nav .item-list > ul > li > ul > li > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > ul > li > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .item-list > ul > li > ul > li > ul > li > a, .page-search #content .block-facetapi .item-list > ul > li > ul > li > ul > li > .sidemenu-item > a {
   padding-left: 2.4em;
 }
 
