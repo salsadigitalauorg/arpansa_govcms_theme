@@ -10564,6 +10564,55 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
   margin-bottom: 0;
 }
 
+.view-submissions .view-filters {
+  margin-bottom: 60px;
+}
+
+.view-submissions .view-filters input.form-text {
+  border-width: 1px;
+}
+
+.view-submissions .view-filters select {
+  height: 37px;
+  padding: 0 15px;
+  min-width: 100px;
+}
+
+.view-submissions .view-filters input[type="submit"] {
+  margin-top: 37px;
+  height: 38px;
+  padding: 0 25px;
+}
+
+.view-submissions .view-content .table-container {
+  width: 100%;
+}
+
+.view-submissions .view-content .views-table {
+  width: 100%;
+}
+
+.view-submissions .view-content .views-table tr {
+  background-color: white;
+}
+
+.view-submissions .view-content .views-table tr td {
+  display: block;
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .view-submissions .view-content .views-table tr td {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 768px) {
+  .view-submissions .view-content .views-field-field-file {
+    text-align: right;
+  }
+}
+
 body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget {
   display: block;
   float: none;
