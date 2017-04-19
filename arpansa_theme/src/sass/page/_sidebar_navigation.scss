@@ -90,6 +90,9 @@
       margin: 0;
       padding: 0;
       list-style: none;
+      .sidemenu-item {
+        position: relative;
+      }
       a {
         color: $secondary_1;
         width: 100%;
@@ -115,7 +118,7 @@
         margin: 0;
         padding: 0;
         width: rem(30px);
-        height: rem(56px);
+        height: 100%;
         box-sizing: border-box;
         background-color: white;
         background-repeat: no-repeat;
@@ -136,7 +139,7 @@
         }
       }
       &.active {
-        &>a {
+        &>a, &>.sidemenu-item>a {
           background: $primary_1;
           color: white;
           &:hover, &:focus {
@@ -144,7 +147,7 @@
             background-color: $secondary_1;
           }
         }
-        &>button.sidebar-toggle-menu {
+        &>button.sidebar-toggle-menu, &>.sidemenu-item>button.sidebar-toggle-menu {
           background-color: $primary_1;
           background-image: url(../images/svg/sidebar-arrow-down-hover.svg);
           &:hover, &:focus {
@@ -158,27 +161,30 @@
     &>ul {
       &>li {
         border-bottom: 2px solid $neutral_1;
-        &>a {
+        &>a, &>.sidemenu-item>a {
           color: $color-brand-black;
           font-weight: 600;
           padding-left: $small-spacing;
+          &:hover, &:focus {
+            color: white;
+          }
         }
         &>ul {
           border-top: 2px solid $neutral_1;
           &>li {
             background-color: $grey_3;
-            &>a {
+            &>a, &>.sidemenu-item>a {
               padding-left: $small-spacing * 2;
               background-color: $grey_3;
             }
-            &>button.sidebar-toggle-menu {
+            &>button.sidebar-toggle-menu, &>.sidemenu-item>a>button.sidebar-toggle-menu {
               background-color: $grey_3;
             }
             &>ul {
               background-color: white;
               border-top: 2px solid $grey_5;
               &>li {
-                &>a {
+                &>a, &>.sidemenu-item>a {
                   padding-left: $small-spacing * 3;
                 }
               }

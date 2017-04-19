@@ -19,6 +19,23 @@
           }, 200);
         });
       }
+
+      // Accordion wysiwyg
+      var $accordion_header_wysiwyg = $('.accordion-header', context);
+
+      if ($accordion_header_wysiwyg.length) {
+        $accordion_header_wysiwyg.on('click', function() {
+          var $accordion_body_wysiwyg = $(this).next();
+          top = $(this).offset().top;
+
+          $(this).toggleClass('opened');
+          $accordion_body_wysiwyg.toggleClass('opened');
+
+          $('html, body').animate({
+            scrollTop: top
+          }, 200);
+        });
+      }
     }
   };
 
@@ -312,7 +329,7 @@ var desktop_column = 1170;
   // =========================================================
   function toggle_button_click(e) {
     var $button = $(e.currentTarget);
-    var $menu = $button.parent().children('ul.menu');
+    var $menu = $button.parents('li').children('ul.menu');
     var was_closed = $button.hasClass('menu-closed');
 
     if (was_closed) {
@@ -338,7 +355,7 @@ var desktop_column = 1170;
           collapse($sub_menu, $button);
         }
         $sub_menu.attr('id', 'sidebar-submenu-' + idx);
-        $list_item.children('a').after($button);
+        $list_item.children('a').wrap('<div class="sidemenu-item"></div>').after($button);
         $button.unbind('click', toggle_button_click).bind('click', toggle_button_click);
       }
     });
@@ -643,24 +660,26 @@ var desktop_column = 1170;
     attach: function(context, settings) {
       // Wait for twitter to load, then apply a custom style.
       var url = settings.basePath + settings.pathToTheme + "/dist/css/custom_twitter_theme.css";
-
-      twttr.ready(function() {
-        twttr.events.bind('loaded', function(event) {
-          // Inject a custom stylesheet into the twitter frame.
-          for (var i = 0; i < frames.length; i++) {
-            var frame = frames[i];
-            try {
-              if (frame.frameElement.id.indexOf('twitter-widget') >= 0) {
-                embedCss(frame, frame.document, url);
+      if ($('.twitter-timeline').length) {
+        twttr.ready(function() {
+          twttr.events.bind('loaded', function(event) {
+            // Inject a custom stylesheet into the twitter frame.
+            for (var i = 0; i < frames.length; i++) {
+              var frame = frames[i];
+              try {
+                if (frame.frameElement.id.indexOf('twitter-widget') >= 0) {
+                  embedCss(frame, frame.document, url);
+                }
+              }
+              catch (e) {
+                console.log("caught an error");
+                console.log(e);
               }
             }
-            catch (e) {
-              console.log("caught an error");
-              console.log(e);
-            }
-          }
+          });
         });
-      });
+      }
+
     }
   };
 

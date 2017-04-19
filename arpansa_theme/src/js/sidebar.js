@@ -11,7 +11,7 @@
   // =========================================================
   function toggle_button_click(e) {
     var $button = $(e.currentTarget);
-    var $menu = $button.parent().children('ul.menu');
+    var $menu = $button.parents('li').children('ul.menu');
     var was_closed = $button.hasClass('menu-closed');
 
     if (was_closed) {
@@ -37,7 +37,7 @@
           collapse($sub_menu, $button);
         }
         $sub_menu.attr('id', 'sidebar-submenu-' + idx);
-        $list_item.children('a').after($button);
+        $list_item.children('a').wrap('<div class="sidemenu-item"></div>').after($button);
         $button.unbind('click', toggle_button_click).bind('click', toggle_button_click);
       }
     });
