@@ -34,9 +34,7 @@
       min-width: 100px;
     }
     input[type="submit"] {
-      margin-top: 37px;
-      height: 38px;
-      padding: 0 25px;
+      @include button-filter();
     }
   }
   .view-content {
