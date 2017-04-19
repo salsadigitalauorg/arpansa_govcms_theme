@@ -11975,6 +11975,67 @@ div.toc-filter-content ol.toc-filter-links li {
   margin-right: auto;
 }
 
+body.not-front #content #block-views-have-your-say-block .field-name-field-image {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-have-your-say-block .field-name-field-image {
+    display: block;
+  }
+}
+
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget {
+  display: block;
+  float: none;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+}
+
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect {
+  margin-bottom: 0;
+  height: auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect {
+    width: auto;
+    min-width: 250px;
+    margin-bottom: 0;
+    height: auto;
+  }
+}
+
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect .CaptionCont {
+  border: 2px solid #bbbbbb;
+  padding: 0.4rem;
+  border-radius: 0;
+}
+
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect .CaptionCont span {
+  line-height: normal;
+}
+
+body.not-front #content #block-views-have-your-say-block .view-content {
+  padding-top: 3.125rem;
+}
+
+body.not-front #content #block-views-have-your-say-block .view-content .node.has-thumbnail {
+  padding-top: 0;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-have-your-say-block .view-content .node.has-thumbnail {
+    padding-top: 17.1875rem;
+  }
+}
+
 @media print {
   *, *::before, *::after, *::first-letter, *::first-line {
     color: inherit;
