@@ -6807,6 +6807,7 @@ img {
   color: white;
   font-size: 1.125em;
   font-weight: 600;
+  line-height: 1.2em;
   padding: 15px 35px 15px 10px;
   position: relative;
   /* ARROW. DEFAULT IS CLOSED */
@@ -6848,6 +6849,51 @@ img {
 }
 
 .view-faq div.item-list > ol > li.opened .views-field-body {
+  display: block;
+}
+
+.accordion-header {
+  background-color: #268126;
+  cursor: pointer;
+  color: white;
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1.2em;
+  padding: 15px 35px 15px 10px;
+  position: relative;
+  /* ARROW. DEFAULT IS CLOSED */
+  margin-top: 0;
+}
+
+.accordion-header:after {
+  background: transparent url(../images/svg/nav_down_arrow_white.svg) right center no-repeat;
+  content: " ";
+  display: block;
+  width: 11px;
+  height: 7px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -4px;
+}
+
+.accordion-header.opened {
+  border-bottom: 1px solid #CACACA;
+  background-color: #4E1A74;
+  margin-bottom: 0;
+}
+
+.accordion-header.opened:after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.accordion-body {
+  display: none;
+  padding: 20px;
+}
+
+.accordion-body.opened {
   display: block;
 }
 
@@ -8579,7 +8625,7 @@ form.webform-client-form .webform-component-date input.webform-calendar {
   background-color: transparent !important;
   color: transparent !important;
   border: 0;
-  background-image: url(../images/svg/icon_calendar.svg);
+  background-image: url(../images/svg/icon_calendar_purple.svg);
   background-repeat: no-repeat;
   background-position: center;
   margin-top: 0.6875rem;
@@ -8592,7 +8638,7 @@ form.webform-client-form .webform-component-date input.webform-calendar {
 }
 
 form.webform-client-form .webform-component-date input.webform-calendar:hover, form.webform-client-form .webform-component-date input.webform-calendar:focus {
-  background-image: url(../images/svg/icon_calendar_hover.svg);
+  background-image: url(../images/svg/icon_calendar_purple.svg);
 }
 
 @media (min-width: 768px) {
@@ -10564,6 +10610,55 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
   margin-bottom: 0;
 }
 
+.view-submissions .view-filters {
+  margin-bottom: 60px;
+}
+
+.view-submissions .view-filters input.form-text {
+  border-width: 1px;
+}
+
+.view-submissions .view-filters select {
+  height: 37px;
+  padding: 0 15px;
+  min-width: 100px;
+}
+
+.view-submissions .view-filters input[type="submit"] {
+  margin-top: 37px;
+  height: 38px;
+  padding: 0 25px;
+}
+
+.view-submissions .view-content .table-container {
+  width: 100%;
+}
+
+.view-submissions .view-content .views-table {
+  width: 100%;
+}
+
+.view-submissions .view-content .views-table tr {
+  background-color: white;
+}
+
+.view-submissions .view-content .views-table tr td {
+  display: block;
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .view-submissions .view-content .views-table tr td {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 768px) {
+  .view-submissions .view-content .views-field-field-file {
+    text-align: right;
+  }
+}
+
 body.not-front #content .view.view-literature-surveys .view-filters .views-exposed-widget {
   display: block;
   float: none;
@@ -11932,6 +12027,67 @@ div.toc-filter-content ol.toc-filter-links li {
   max-width: 33.75rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+body.not-front #content #block-views-have-your-say-block .field-name-field-image {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-have-your-say-block .field-name-field-image {
+    display: block;
+  }
+}
+
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget {
+  display: block;
+  float: none;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+}
+
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect {
+  margin-bottom: 0;
+  height: auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect {
+    width: auto;
+    min-width: 250px;
+    margin-bottom: 0;
+    height: auto;
+  }
+}
+
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect .CaptionCont {
+  border: 2px solid #bbbbbb;
+  padding: 0.4rem;
+  border-radius: 0;
+}
+
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect .CaptionCont span {
+  line-height: normal;
+}
+
+body.not-front #content #block-views-have-your-say-block .view-content {
+  padding-top: 3.125rem;
+}
+
+body.not-front #content #block-views-have-your-say-block .view-content .node.has-thumbnail {
+  padding-top: 0;
+}
+
+@media (min-width: 768px) {
+  body.not-front #content #block-views-have-your-say-block .view-content .node.has-thumbnail {
+    padding-top: 17.1875rem;
+  }
 }
 
 @media print {

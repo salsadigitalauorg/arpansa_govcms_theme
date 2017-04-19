@@ -18,7 +18,7 @@ function arpansa_entity_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'compact';
   $ds_fieldsetting->settings = array(
     'progress_bar' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -29,12 +29,17 @@ function arpansa_entity_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+      ),
     ),
     'read_more_link' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -185,12 +190,14 @@ function arpansa_entity_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
-        1 => 'progress_bar',
-        2 => 'read_more_link',
+        0 => 'field_image',
+        1 => 'title',
+        2 => 'progress_bar',
+        3 => 'read_more_link',
       ),
     ),
     'fields' => array(
+      'field_image' => 'ds_content',
       'title' => 'ds_content',
       'progress_bar' => 'ds_content',
       'read_more_link' => 'ds_content',

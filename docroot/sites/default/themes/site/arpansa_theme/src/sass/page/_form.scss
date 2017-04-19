@@ -121,7 +121,7 @@ form.webform-client-form {
       background-color: transparent !important;
       color: transparent !important;
       border: 0;
-      background-image: url(../images/svg/icon_calendar.svg);
+      background-image: url(../images/svg/icon_calendar_purple.svg);
       background-repeat: no-repeat;
       background-position: center;
       margin-top: $small_padding;
@@ -129,7 +129,7 @@ form.webform-client-form {
         margin-top: auto;
       }
       &:hover, &:focus {
-        background-image: url(../images/svg/icon_calendar_hover.svg);
+        background-image: url(../images/svg/icon_calendar_purple.svg);
       }
     }
   }
