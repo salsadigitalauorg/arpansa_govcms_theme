@@ -8579,7 +8579,7 @@ form.webform-client-form .webform-component-date input.webform-calendar {
   background-color: transparent !important;
   color: transparent !important;
   border: 0;
-  background-image: url(../images/svg/icon_calendar_hover.svg);
+  background-image: url(../images/svg/icon_calendar_purple.svg);
   background-repeat: no-repeat;
   background-position: center;
   margin-top: 0.6875rem;
@@ -8592,7 +8592,7 @@ form.webform-client-form .webform-component-date input.webform-calendar {
 }
 
 form.webform-client-form .webform-component-date input.webform-calendar:hover, form.webform-client-form .webform-component-date input.webform-calendar:focus {
-  background-image: url(../images/svg/icon_calendar_hover.svg);
+  background-image: url(../images/svg/icon_calendar_purple.svg);
 }
 
 @media (min-width: 768px) {
