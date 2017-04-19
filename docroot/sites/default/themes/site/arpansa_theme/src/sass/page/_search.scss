@@ -35,12 +35,25 @@
   padding: 0;
   .search-result {
     h3 {
-      font-size: rem(26px);
+      @include breakpoint(desktop) {
+        font-size: rem(26px);
+        line-height: rem(28px);
+      }
     }
     .search-info {
       font-size: rem(14px);
       color: $neutral_2;
       text-transform: uppercase;
     }
+  }
+}
+
+.page-search {
+  .facetapi-limit-link {
+    display: inline-block;
+    margin-top: rem(13px);
+    margin-bottom: rem(13px);
+    margin-right: rem(35px);
+    margin-left: rem(12.8px);
   }
 }

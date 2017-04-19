@@ -392,10 +392,11 @@ function arpansa_theme_facetapi_link_active($variables) {
   $replacements = array(
     '!facetapi_deactivate_widget' => theme('facetapi_deactivate_widget', $variables),
     '!facetapi_accessible_markup' => theme('facetapi_accessible_markup', $accessible_vars),
+    '!facetapi_text' => $link_text,
   );
-  $variables['text'] = t('!facetapi_deactivate_widget !facetapi_accessible_markup', $replacements);
+  $variables['text'] = t('!facetapi_deactivate_widget !facetapi_text !facetapi_accessible_markup', $replacements);
   $variables['options']['html'] = TRUE;
-  return theme('link', $variables) . $link_text;
+  return theme('link', $variables);
 }
 
 /**
