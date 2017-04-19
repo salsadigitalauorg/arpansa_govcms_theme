@@ -18,3 +18,48 @@
     }
   }
 }
+
+// =========================================================
+// SUBMISSION VIEW SECTION
+// =========================================================
+.view-submissions {
+  .view-filters {
+    margin-bottom: 60px;
+    input.form-text {
+      border-width: 1px;
+    }
+    select {
+      height: 37px;
+      padding: 0 15px;
+      min-width: 100px;
+    }
+    input[type="submit"] {
+      margin-top: 37px;
+      height: 38px;
+      padding: 0 25px;
+    }
+  }
+  .view-content {
+    .table-container {
+      width: 100%;
+    }
+    .views-table {
+      width: 100%;
+      tr {
+        background-color: white;
+        td {
+          display: block;
+          padding: 15px;
+          @include breakpoint(tablet) {
+            display: table-cell;
+          }
+        }
+      }
+    }
+    .views-field-field-file {
+      @include breakpoint(tablet) {
+        text-align: right;
+      }
+    }
+  }
+}
