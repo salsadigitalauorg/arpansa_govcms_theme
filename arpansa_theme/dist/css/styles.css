@@ -12059,7 +12059,6 @@ body.not-front #content #block-views-have-your-say-block .views-exposed-form .vi
 
 @media (min-width: 768px) {
   body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect {
-    width: auto;
     min-width: 250px;
     margin-bottom: 0;
     height: auto;
@@ -12074,6 +12073,12 @@ body.not-front #content #block-views-have-your-say-block .views-exposed-form .vi
 
 body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect .CaptionCont span {
   line-height: normal;
+}
+
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget input[type="submit"] {
+  margin-top: 37px;
+  height: 38px;
+  padding: 0 25px;
 }
 
 body.not-front #content #block-views-have-your-say-block .view-content {
