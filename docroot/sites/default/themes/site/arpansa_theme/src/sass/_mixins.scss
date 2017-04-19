@@ -219,6 +219,13 @@
   }
 }
 
+// SMALLER BUTTON
+@mixin button-filter() {
+  margin-top: 37px;
+  height: 38px;
+  padding: 0 25px;
+}
+
 // =========================================================
 // PANELS
 // Sidebar / No Sidebar content layouts need different

@@ -22,7 +22,6 @@ body.not-front #content {
           height: auto;
           width: 100%;
           @include breakpoint(tablet) {
-            width: auto;
             min-width: 250px;
             margin-bottom: 0;
             height: auto;
@@ -35,6 +34,9 @@ body.not-front #content {
               line-height: normal;
             }
           }
+        }
+        input[type="submit"] {
+          @include button-filter();
         }
       }
     }
