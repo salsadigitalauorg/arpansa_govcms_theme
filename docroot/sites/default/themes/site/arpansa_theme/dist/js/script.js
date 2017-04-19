@@ -443,6 +443,12 @@ var desktop_column = 1170;
           side_menu_responsive();
         });
       }
+
+      // Add active class to a list for facet API.
+      var $active_markup = $('.facetapi-active');
+      $active_markup.each(function() {
+        $(this).parent().addClass('active');
+      });
     }
   };
 
