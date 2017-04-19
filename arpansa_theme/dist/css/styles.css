@@ -8489,6 +8489,15 @@ a[rel~='external']::after {
   font-weight: 400;
 }
 
+.no-flexbox .region-bottom-container .region-bottom {
+  display: block;
+}
+
+.no-flexbox .region-bottom-container .region-bottom #block-menu-menu-footer-sub-menu {
+  float: right;
+  margin-top: 20px;
+}
+
 form > div {
   box-sizing: border-box;
 }
