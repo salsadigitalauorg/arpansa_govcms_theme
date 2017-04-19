@@ -12,7 +12,7 @@
  */
 function arpansa_base_install() {
   module_enable(array('salsa_helpers'));
-  for ($version = 7000; $version <= 7100; $version++) {
+  for ($version = 7000; $version <= 7200; $version++) {
     $hook_update = 'arpansa_base_update_' . $version;
     if (function_exists($hook_update)) {
       $hook_update();
@@ -1896,9 +1896,17 @@ function arpansa_base_update_7097() {
 }
 
 /**
- * Accordion in wysiwyg [ARPANSA-126].
+ * Change tag to dropdown [ARPANSA-106].
  */
 function arpansa_base_update_7098() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+}
+
+/**
+ * Change tag to dropdown [ARPANSA-106].
+ */
+function arpansa_base_update_7099() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
 
