@@ -11,7 +11,7 @@
   // =========================================================
   function toggle_button_click(e) {
     var $button = $(e.currentTarget);
-    var $menu = $button.parents('li').children('ul.menu');
+    var $menu = $button.parent().parent().find('> ul.menu');
     var was_closed = $button.hasClass('menu-closed');
 
     if (was_closed) {
