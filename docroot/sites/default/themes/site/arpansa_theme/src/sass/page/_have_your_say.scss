@@ -17,26 +17,17 @@ body.not-front #content {
           display: inline-block;
           vertical-align: bottom;
         }
+        input[type="text"] {
+          border: 1px solid $grey_8;
+          height: 42px;
+          margin-bottom: 16px;
+        }
         .SumoSelect {
-          margin-bottom: 0;
-          height: auto;
           width: 100%;
-          @include breakpoint(tablet) {
-            min-width: 250px;
-            margin-bottom: 0;
-            height: auto;
-          }
-          .CaptionCont {
-            border: 2px solid $border-colour;
-            padding: rem(6.4px);
-            border-radius: 0;
-            span {
-              line-height: normal;
-            }
-          }
+          min-width: 250px;
         }
         input[type="submit"] {
-          @include button-filter();
+          margin-bottom: 16px;
         }
       }
     }
