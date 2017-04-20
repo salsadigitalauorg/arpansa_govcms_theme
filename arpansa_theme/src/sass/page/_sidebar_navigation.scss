@@ -161,6 +161,7 @@
     &>ul {
       &>li {
         border-bottom: 2px solid $neutral_1;
+        overflow: hidden;
         &>a, &>.sidemenu-item>a {
           color: $color-brand-black;
           font-weight: 600;
@@ -176,8 +177,12 @@
             &>a, &>.sidemenu-item>a {
               padding-left: $small-spacing * 2;
               background-color: $grey_3;
+              &:hover, &:focus {
+                color: white;
+                background-color: $secondary_1;
+              }
             }
-            &>button.sidebar-toggle-menu, &>.sidemenu-item>a>button.sidebar-toggle-menu {
+            button.sidebar-toggle-menu, &>.sidemenu-item>a>button.sidebar-toggle-menu {
               background-color: $grey_3;
             }
             &>ul {
@@ -186,6 +191,9 @@
               &>li {
                 &>a, &>.sidemenu-item>a {
                   padding-left: $small-spacing * 3;
+                }
+                button.sidebar-toggle-menu {
+                  background-color: $grey_3;
                 }
               }
             }

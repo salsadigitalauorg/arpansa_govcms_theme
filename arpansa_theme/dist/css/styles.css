@@ -6778,12 +6778,27 @@ img {
   }
 }
 
+.content table {
+  border-color: transparent;
+  margin-bottom: 0;
+}
+
+.content table tbody {
+  border-color: #CACACA;
+}
+
+.content table td {
+  border-left: 1px solid #CACACA;
+  border-right: 1px solid #CACACA;
+}
+
 .content table.no-zebra tr:nth-child(even) {
   background-color: transparent;
 }
 
 .content div.table-container {
   max-width: 100%;
+  margin-bottom: 25px;
   overflow-y: auto;
 }
 
@@ -8487,6 +8502,15 @@ a[rel~='external']::after {
 
 .region-bottom-container .region-bottom #block-menu-menu-footer-sub-menu .content ul.menu > li a {
   font-weight: 400;
+}
+
+.no-flexbox .region-bottom-container .region-bottom {
+  display: block;
+}
+
+.no-flexbox .region-bottom-container .region-bottom #block-menu-menu-footer-sub-menu {
+  float: right;
+  margin-top: 20px;
 }
 
 form > div {
@@ -10667,6 +10691,7 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
 }
 
 .view-submissions .view-content .views-table tr td {
+  border: none;
   display: block;
   padding: 15px;
 }
@@ -11352,6 +11377,7 @@ body.not-front #content .view .pager {
 
 #block-menu-block-left-nav .menu-block-wrapper > ul > li, #block-menu-block-left-nav .item-list > ul > li, .page-search #content .block-facetapi .menu-block-wrapper > ul > li, .page-search #content .block-facetapi .item-list > ul > li {
   border-bottom: 2px solid #444449;
+  overflow: hidden;
 }
 
 #block-menu-block-left-nav .menu-block-wrapper > ul > li > a, #block-menu-block-left-nav .menu-block-wrapper > ul > li > .sidemenu-item > a, #block-menu-block-left-nav .item-list > ul > li > a, #block-menu-block-left-nav .item-list > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .item-list > ul > li > a, .page-search #content .block-facetapi .item-list > ul > li > .sidemenu-item > a {
@@ -11377,7 +11403,12 @@ body.not-front #content .view .pager {
   background-color: #F5F5F5;
 }
 
-#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > button.sidebar-toggle-menu, #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu, #block-menu-block-left-nav .item-list > ul > li > ul > li > button.sidebar-toggle-menu, #block-menu-block-left-nav .item-list > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > button.sidebar-toggle-menu, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu, .page-search #content .block-facetapi .item-list > ul > li > ul > li > button.sidebar-toggle-menu, .page-search #content .block-facetapi .item-list > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu {
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > a:hover, #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > a:focus, #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a:hover, #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a:focus, #block-menu-block-left-nav .item-list > ul > li > ul > li > a:hover, #block-menu-block-left-nav .item-list > ul > li > ul > li > a:focus, #block-menu-block-left-nav .item-list > ul > li > ul > li > .sidemenu-item > a:hover, #block-menu-block-left-nav .item-list > ul > li > ul > li > .sidemenu-item > a:focus, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > a:hover, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > a:focus, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a:hover, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a:focus, .page-search #content .block-facetapi .item-list > ul > li > ul > li > a:hover, .page-search #content .block-facetapi .item-list > ul > li > ul > li > a:focus, .page-search #content .block-facetapi .item-list > ul > li > ul > li > .sidemenu-item > a:hover, .page-search #content .block-facetapi .item-list > ul > li > ul > li > .sidemenu-item > a:focus {
+  color: white;
+  background-color: #4E1A74;
+}
+
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li button.sidebar-toggle-menu, #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu, #block-menu-block-left-nav .item-list > ul > li > ul > li button.sidebar-toggle-menu, #block-menu-block-left-nav .item-list > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li button.sidebar-toggle-menu, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu, .page-search #content .block-facetapi .item-list > ul > li > ul > li button.sidebar-toggle-menu, .page-search #content .block-facetapi .item-list > ul > li > ul > li > .sidemenu-item > a > button.sidebar-toggle-menu {
   background-color: #F5F5F5;
 }
 
@@ -11388,6 +11419,10 @@ body.not-front #content .view .pager {
 
 #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > ul > li > a, #block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > ul > li > .sidemenu-item > a, #block-menu-block-left-nav .item-list > ul > li > ul > li > ul > li > a, #block-menu-block-left-nav .item-list > ul > li > ul > li > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > ul > li > a, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > ul > li > .sidemenu-item > a, .page-search #content .block-facetapi .item-list > ul > li > ul > li > ul > li > a, .page-search #content .block-facetapi .item-list > ul > li > ul > li > ul > li > .sidemenu-item > a {
   padding-left: 2.4em;
+}
+
+#block-menu-block-left-nav .menu-block-wrapper > ul > li > ul > li > ul > li button.sidebar-toggle-menu, #block-menu-block-left-nav .item-list > ul > li > ul > li > ul > li button.sidebar-toggle-menu, .page-search #content .block-facetapi .menu-block-wrapper > ul > li > ul > li > ul > li button.sidebar-toggle-menu, .page-search #content .block-facetapi .item-list > ul > li > ul > li > ul > li button.sidebar-toggle-menu {
+  background-color: #F5F5F5;
 }
 
 #block-views-related-content-block {
