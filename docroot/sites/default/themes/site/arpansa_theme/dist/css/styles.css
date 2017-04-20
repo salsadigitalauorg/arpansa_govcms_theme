@@ -8555,6 +8555,10 @@ form > div {
   color: inherit;
 }
 
+#content .SumoSelect .CaptionCont {
+  border-color: #444449;
+}
+
 #content .SumoSelect .CaptionCont > span {
   font-weight: normal;
 }
@@ -8752,8 +8756,7 @@ form.webform-client-form .webform-component-date .webform-container-inline > div
 }
 
 form.webform-client-form .webform-component-date input.webform-calendar {
-  vertical-align: middle;
-  margin-bottom: 4px;
+  margin-top: 28px;
 }
 
 form.webform-client-form .webform-component-grid {
@@ -10638,8 +10641,35 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
   margin-bottom: 60px;
 }
 
+.view-submissions .view-filters .views-exposed-form .views-exposed-widget {
+  float: none;
+  display: block;
+  padding-right: 0;
+  vertical-align: bottom;
+}
+
+@media (min-width: 768px) {
+  .view-submissions .view-filters .views-exposed-form .views-exposed-widget {
+    display: inline-block;
+    padding-right: 20px;
+  }
+}
+
+.view-submissions .view-filters .SumoSelect {
+  margin-right: 0;
+  width: 100%;
+}
+
 .view-submissions .view-filters input.form-text {
-  border-width: 1px;
+  border: 1px solid #444449;
+  height: 36px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .view-submissions .view-filters input.form-text {
+    height: 42px;
+  }
 }
 
 .view-submissions .view-filters select {
@@ -10649,9 +10679,7 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
 }
 
 .view-submissions .view-filters input[type="submit"] {
-  margin-top: 37px;
-  height: 38px;
-  padding: 0 25px;
+  margin-bottom: 16px;
 }
 
 .view-submissions .view-content .table-container {
@@ -10667,6 +10695,7 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
 }
 
 .view-submissions .view-content .views-table tr td {
+  border: none;
   display: block;
   padding: 15px;
 }
@@ -12096,34 +12125,19 @@ body.not-front #content #block-views-have-your-say-block .views-exposed-form .vi
   }
 }
 
+body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget input[type="text"] {
+  border: 1px solid #444449;
+  height: 42px;
+  margin-bottom: 16px;
+}
+
 body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect {
-  margin-bottom: 0;
-  height: auto;
   width: 100%;
-}
-
-@media (min-width: 768px) {
-  body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect {
-    min-width: 250px;
-    margin-bottom: 0;
-    height: auto;
-  }
-}
-
-body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect .CaptionCont {
-  border: 2px solid #bbbbbb;
-  padding: 0.4rem;
-  border-radius: 0;
-}
-
-body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget .SumoSelect .CaptionCont span {
-  line-height: normal;
+  min-width: 250px;
 }
 
 body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget input[type="submit"] {
-  margin-top: 37px;
-  height: 38px;
-  padding: 0 25px;
+  margin-bottom: 16px;
 }
 
 body.not-front #content #block-views-have-your-say-block .view-content {
