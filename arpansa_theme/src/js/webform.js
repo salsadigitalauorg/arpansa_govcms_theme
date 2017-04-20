@@ -41,7 +41,7 @@
       }
 
       // Sumoselect all select
-      $('select.form-select[multiple=multiple]', context).SumoSelect();
+      $('select.form-select', context).SumoSelect();
     }
   };
 
