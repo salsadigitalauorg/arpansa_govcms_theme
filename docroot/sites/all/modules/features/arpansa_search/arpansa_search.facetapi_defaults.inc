@@ -219,7 +219,7 @@ function arpansa_search_facetapi_default_facet_settings() {
     'empty_behavior' => 'none',
     'facet_more_text' => 'Show more',
     'facet_fewer_text' => 'Show fewer',
-    'soft_limit' => '20',
+    'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
@@ -744,7 +744,7 @@ function arpansa_search_facetapi_default_facet_settings() {
     'empty_behavior' => 'none',
     'facet_more_text' => 'Show more',
     'facet_fewer_text' => 'Show fewer',
-    'soft_limit' => '20',
+    'soft_limit' => '5',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(

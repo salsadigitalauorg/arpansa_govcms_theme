@@ -27,7 +27,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -292,7 +292,7 @@ function govcms_consultation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -352,7 +352,7 @@ function govcms_consultation_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -415,7 +415,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 26,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -477,7 +477,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 28,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -674,7 +674,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 25,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -736,7 +736,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
       'rss_feed' => array(
         'label' => 'hidden',
@@ -794,7 +794,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -980,7 +980,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1152,7 +1152,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1210,7 +1210,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 27,
       ),
       'rss_feed' => array(
         'label' => 'above',
@@ -1273,7 +1273,7 @@ function govcms_consultation_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1322,7 +1322,7 @@ function govcms_consultation_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 12,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1366,7 +1366,7 @@ function govcms_consultation_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1414,7 +1414,7 @@ function govcms_consultation_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'rss_feed' => array(
         'label' => 'above',

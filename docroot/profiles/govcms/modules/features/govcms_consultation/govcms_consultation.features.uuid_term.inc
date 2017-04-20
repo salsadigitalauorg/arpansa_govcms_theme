@@ -1008,14 +1008,6 @@ function govcms_consultation_uuid_features_default_terms() {
             'dir' => 0,
           ),
         ),
-        'dcterms.modified' => array(
-          'item' => array(
-            'value' => '',
-            'scheme' => '',
-            'lang' => '',
-            'dir' => 0,
-          ),
-        ),
         'dcterms.type' => array(
           'item' => array(
             'scheme' => '',
@@ -1271,14 +1263,6 @@ function govcms_consultation_uuid_features_default_terms() {
         ),
         'dcterms.date' => array(
           'item' => array(
-            'scheme' => '',
-            'lang' => '',
-            'dir' => 0,
-          ),
-        ),
-        'dcterms.modified' => array(
-          'item' => array(
-            'value' => '',
             'scheme' => '',
             'lang' => '',
             'dir' => 0,
@@ -2075,14 +2059,6 @@ function govcms_consultation_uuid_features_default_terms() {
         ),
         'dcterms.date' => array(
           'item' => array(
-            'scheme' => '',
-            'lang' => '',
-            'dir' => 0,
-          ),
-        ),
-        'dcterms.modified' => array(
-          'item' => array(
-            'value' => '',
             'scheme' => '',
             'lang' => '',
             'dir' => 0,

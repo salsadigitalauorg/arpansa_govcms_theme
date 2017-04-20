@@ -150,8 +150,8 @@ have-your-say',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'arpansa_theme',
         'weight' => -24,
       ),
