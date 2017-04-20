@@ -342,7 +342,7 @@ function govcms_consultation_uuid_features_default_content() {
   ),
   'webform' => array(
     'nid' => 1,
-    'next_serial' => 2,
+    'next_serial' => 4,
     'confirmation' => '<p>Your submission has been received. &nbsp;Thank you for your input.</p>',
     'confirmation_format' => 'rich_text',
     'redirect_url' => '[current-page:url]?submitted=[random:number]',

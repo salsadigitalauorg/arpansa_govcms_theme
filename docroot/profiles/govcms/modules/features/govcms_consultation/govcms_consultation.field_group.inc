@@ -21,7 +21,7 @@ function govcms_consultation_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Consultation tabs',
-    'weight' => '4',
+    'weight' => '2',
     'children' => array(
       0 => 'group_issue',
       1 => 'group_outcomes',
@@ -106,7 +106,7 @@ function govcms_consultation_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Participate',
-    'weight' => '5',
+    'weight' => '3',
     'children' => array(
       0 => 'field_formal_submission_cta_1',
       1 => 'field_formal_submission_cta_2',
@@ -316,7 +316,7 @@ function govcms_consultation_field_group_info() {
   $field_group->parent_name = 'group_consultation_htabs';
   $field_group->data = array(
     'label' => 'Updates and Milestones',
-    'weight' => '10',
+    'weight' => '9',
     'children' => array(
       0 => 'field_updates',
     ),
