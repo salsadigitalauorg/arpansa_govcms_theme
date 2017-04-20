@@ -8555,6 +8555,10 @@ form > div {
   color: inherit;
 }
 
+#content .SumoSelect .CaptionCont {
+  border-color: #444449;
+}
+
 #content .SumoSelect .CaptionCont > span {
   font-weight: normal;
 }
@@ -10657,7 +10661,7 @@ body.not-front #content .view.view-what-s-new .view-content .views-row .node.has
 }
 
 .view-submissions .view-filters input.form-text {
-  border: 1px solid #A4A4A4;
+  border: 1px solid #444449;
   height: 36px;
   margin-bottom: 16px;
 }
@@ -12122,7 +12126,7 @@ body.not-front #content #block-views-have-your-say-block .views-exposed-form .vi
 }
 
 body.not-front #content #block-views-have-your-say-block .views-exposed-form .views-exposed-widget input[type="text"] {
-  border: 1px solid #A4A4A4;
+  border: 1px solid #444449;
   height: 42px;
   margin-bottom: 16px;
 }

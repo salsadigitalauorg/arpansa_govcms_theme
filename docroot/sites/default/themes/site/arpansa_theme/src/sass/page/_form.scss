@@ -25,8 +25,11 @@ form {
     box-shadow: none;
     color: inherit;
   }
-  .CaptionCont>span {
-    font-weight: normal;
+  .CaptionCont {
+    border-color: $neutral_1;
+    &>span {
+      font-weight: normal;
+    }
   }
   .optWrapper>.options li.opt label {
     font-weight: normal;
