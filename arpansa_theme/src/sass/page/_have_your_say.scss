@@ -1,6 +1,16 @@
 // =========================================================
 // HAVE YOUR SAY VIEWS
 // =========================================================
+#block-menu-block-landing-page-children-listing {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
 body.not-front #content {
   #block-views-have-your-say-block {
     .field-name-field-image {
