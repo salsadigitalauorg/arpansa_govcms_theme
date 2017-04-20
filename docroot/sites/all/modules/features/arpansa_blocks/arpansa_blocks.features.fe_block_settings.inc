@@ -125,7 +125,7 @@ function arpansa_blocks_default_fe_block_settings() {
         'region' => 'bottom',
         'status' => 1,
         'theme' => 'arpansa_theme',
-        'weight' => -33,
+        'weight' => -34,
       ),
     ),
     'title' => '',
@@ -380,7 +380,7 @@ function arpansa_blocks_default_fe_block_settings() {
     'delta' => 1,
     'module' => 'twitter_block',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => '<front>',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
@@ -391,7 +391,7 @@ function arpansa_blocks_default_fe_block_settings() {
       ),
     ),
     'title' => 'Latest tweets',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['user-login'] = array(
