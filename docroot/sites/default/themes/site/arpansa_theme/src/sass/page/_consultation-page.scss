@@ -65,6 +65,7 @@
       tr {
         background-color: white;
         td {
+          border: none;
           display: block;
           padding: 15px;
           @include breakpoint(tablet) {

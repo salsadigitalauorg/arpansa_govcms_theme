@@ -151,3 +151,15 @@
     }
   }
 }
+
+.no-flexbox {
+  .region-bottom-container {
+    .region-bottom {
+      display: block;
+      #block-menu-menu-footer-sub-menu {
+        float: right;
+        margin-top: 20px;
+      }
+    }
+  }
+}
