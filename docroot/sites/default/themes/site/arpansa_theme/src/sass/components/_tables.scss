@@ -1,5 +1,14 @@
 .content {
   table {
+    border-color: transparent;
+    margin-bottom: 0;
+    tbody {
+      border-color: $grey_7;
+    }
+    td {
+      border-left: 1px solid $grey_7;
+      border-right: 1px solid $grey_7;
+    }
     &.no-zebra {
       tr:nth-child(even) {
         background-color: transparent;
@@ -8,6 +17,7 @@
   }
   div.table-container {
     max-width: 100%;
+    margin-bottom: 25px;
     overflow-y: auto;
   }
 }
