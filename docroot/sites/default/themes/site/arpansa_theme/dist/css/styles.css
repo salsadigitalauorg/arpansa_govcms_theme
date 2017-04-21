@@ -6780,6 +6780,7 @@ img {
 
 .content table {
   border-color: transparent;
+  border-width: 0;
   margin-bottom: 0;
 }
 
