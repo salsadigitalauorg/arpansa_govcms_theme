@@ -6787,9 +6787,8 @@ img {
   border-color: #CACACA;
 }
 
-.content table td {
-  border-left: 1px solid #CACACA;
-  border-right: 1px solid #CACACA;
+.content table td, .content table th {
+  border: 1px solid #CACACA;
 }
 
 .content table.no-zebra tr:nth-child(even) {
