@@ -14,9 +14,9 @@
           top = $(this).parents('li').hasClass('opened') ? $accordion_container.offset().top : $(this).offset().top;
           $(this).parents('li').toggleClass('opened');
 
-          $('html, body').animate({
-            scrollTop: top
-          }, 200);
+          // $('html, body').animate({
+          //   scrollTop: top
+          // }, 200);
         });
       }
 
@@ -31,9 +31,9 @@
           $(this).toggleClass('opened');
           $accordion_body_wysiwyg.toggleClass('opened');
 
-          $('html, body').animate({
-            scrollTop: top
-          }, 200);
+          // $('html, body').animate({
+          //   scrollTop: top
+          // }, 200);
         });
       }
     }
