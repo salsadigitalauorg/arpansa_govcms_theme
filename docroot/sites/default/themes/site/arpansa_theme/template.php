@@ -209,17 +209,19 @@ function arpansa_theme_form_alter(&$form, &$form_state, $form_id) {
       // Only show terms tagged in Fact Sheet pages [ARPANSA-78].
       case 'fact_sheets_filterable':
         $tags = _arpansa_theme_get_page_type_tags('Fact Sheet');
-        if (count($tags)) {
-          $form['field_tags_tid']['#options'] = array('All' => '- Any -') + $tags;
-        }
+        $form['field_tags_tid']['#options'] = array('All' => '- Any -') + $tags;
         break;
 
       // Only show terms tagged in Literature Surveys [ARPANSA-114].
       case 'literature_surveys':
         $tags = _arpansa_theme_get_page_type_tags('', 'literature_survey');
-        if (count($tags)) {
-          $form['field_tags_tid']['#options'] = $tags;
-        }
+        $form['field_tags_tid']['#options'] = $tags;
+        break;
+
+      // Only show terms tagged in Consultation nodes [ARPANSA-106].
+      case 'have_your_say':
+        $tags = _arpansa_theme_get_page_type_tags('', 'consultation');
+        $form['field_tags_tid']['#options'] = $tags;
         break;
     }
 
