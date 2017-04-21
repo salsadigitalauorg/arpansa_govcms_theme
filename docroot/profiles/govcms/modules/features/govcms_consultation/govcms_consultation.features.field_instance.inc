@@ -785,9 +785,13 @@ function govcms_consultation_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'govcms_ui_kit_thumbnail',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
       'default' => array(

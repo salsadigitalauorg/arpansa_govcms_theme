@@ -352,7 +352,7 @@ function govcms_consultation_uuid_features_default_content() {
     'auto_save' => 0,
     'submit_notice' => 0,
     'confidential' => 0,
-    'submit_text' => 'Submit submission',
+    'submit_text' => 'Submit',
     'submit_limit' => -1,
     'submit_interval' => -1,
     'total_submit_limit' => -1,
