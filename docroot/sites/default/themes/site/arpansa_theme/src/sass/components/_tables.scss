@@ -5,9 +5,8 @@
     tbody {
       border-color: $grey_7;
     }
-    td {
-      border-left: 1px solid $grey_7;
-      border-right: 1px solid $grey_7;
+    td, th {
+      border: 1px solid $grey_7;
     }
     &.no-zebra {
       tr:nth-child(even) {
