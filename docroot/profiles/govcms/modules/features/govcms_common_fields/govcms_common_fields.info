@@ -2,15 +2,20 @@ name = govCMS Common Fields
 description = Common fields used in content types.
 core = 7.x
 package = govCMS
-project = govcms_common_fields
-dependencies[] = govcms_tags
+version = 7.x-2.11
+project = govcms
+dependencies[] = arpansa_entity
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = file
+dependencies[] = govcms_tags
 dependencies[] = image
 dependencies[] = media
+dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
+datestamp = 1479789121
+features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_base][] = body
 features[field_base][] = comment_body
@@ -19,10 +24,3 @@ features[field_base][] = field_file_image_alt_text
 features[field_base][] = field_file_image_title_text
 features[field_base][] = field_image
 features[field_base][] = field_tags
-
-; Information added by Drupal.org packaging script on 2016-11-22
-version = "7.x-2.10"
-core = "7.x"
-project = "govcms"
-datestamp = "1479789121"
-

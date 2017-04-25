@@ -10,7 +10,7 @@
 function govcms_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news_article-body'
+  // Exported field_instance: 'node-news_article-body'.
   $field_instances['node-news_article-body'] = array(
     'bundle' => 'news_article',
     'default_value' => NULL,
@@ -54,7 +54,7 @@ The <em>body</em> field is used for the main article content.',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -63,7 +63,7 @@ The <em>body</em> field is used for the main article content.',
           'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
+        'weight' => 3,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -94,7 +94,7 @@ The <em>body</em> field is used for the main article content.',
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_news_date'
+  // Exported field_instance: 'node-news_article-field_news_date'.
   $field_instances['node-news_article-field_news_date'] = array(
     'bundle' => 'news_article',
     'deleted' => 0,
@@ -115,6 +115,7 @@ The <em>body</em> field is used for the main article content.',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -128,6 +129,7 @@ The <em>body</em> field is used for the main article content.',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -147,6 +149,7 @@ The <em>body</em> field is used for the main article content.',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -160,15 +163,16 @@ The <em>body</em> field is used for the main article content.',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_news_date',
-    'label' => 'Date',
+    'label' => 'Date of Publication',
     'required' => 1,
     'settings' => array(
       'default_value' => 'now',
@@ -185,6 +189,7 @@ The <em>body</em> field is used for the main article content.',
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -193,7 +198,7 @@ The <em>body</em> field is used for the main article content.',
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_tags'
+  // Exported field_instance: 'node-news_article-field_tags'.
   $field_instances['node-news_article-field_tags'] = array(
     'bundle' => 'news_article',
     'default_value' => NULL,
@@ -214,9 +219,8 @@ The <em>body</em> field is used for the main article content.',
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'feature' => array(
@@ -230,13 +234,13 @@ The <em>body</em> field is used for the main article content.',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -247,7 +251,7 @@ The <em>body</em> field is used for the main article content.',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
         'autocomplete_path' => 'taxonomy/autocomplete',
@@ -255,15 +259,15 @@ The <em>body</em> field is used for the main article content.',
         'flatten_sort' => 1,
         'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 3,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 4,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Date');
+  t('Date of Publication');
   t('Date that this news content took place.');
   t('Enter a comma-separated list of words to describe your content.');
   t('Tags');

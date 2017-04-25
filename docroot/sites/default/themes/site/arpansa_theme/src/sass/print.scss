@@ -1,0 +1,71 @@
+@media print {
+  *, *::before, *::after, *::first-letter, *::first-line {
+    color: inherit;
+  }
+  body {
+    display: block;
+  }
+  #content {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    padding-bottom: 50px;
+    width: 94%;
+    height: auto;
+  }
+  .header__inner {
+    .region-header, .header__secondary-menu {
+      display: none;
+    }
+    .logo-and-search {
+      display: block;
+      .logo-wrapper {
+        width: 100%;
+        display: block;
+        .header__logo, .logo-aus-container {
+          float: right;
+          display: block;
+        }
+        .logo-aus-container {
+          float: left;
+        }
+        button {
+          display: none;
+        }
+        a {
+          &.show-on-print {
+            display: block;
+          }
+          &.hide-on-print {
+            display: none;
+          }
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .content-body-inner {
+    &.has-sidebar {
+      display: block;
+    }
+  }
+  .region-content {
+    padding-top: rem(40px);
+  }
+  .region-navigation, .region-footer, .block-twitter-block, .block-govcms-social-links, #block-menu-menu-footer-sub-menu, .block-menu-block, .block-service-links, .sidebar-first, body.not-front #content .content-header, #block-views-related-content-block, #nav, div.toc-filter {
+    display: none;
+  }
+  #footer {
+    background: none;
+    .region-bottom-container {
+      background: none;
+      position: fixed;
+      bottom: -40px;
+      .region-bottom {
+        color: black;
+      }
+    }
+  }
+}

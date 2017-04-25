@@ -10,7 +10,7 @@
 function govcms_basic_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -36,7 +36,7 @@ The <em>body</em> field is used for the main article content.
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -49,10 +49,10 @@ The <em>body</em> field is used for the main article content.
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 600,
+          'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -79,11 +79,11 @@ The <em>body</em> field is used for the main article content.
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-page-field_file'
+  // Exported field_instance: 'node-page-field_file'.
   $field_instances['node-page-field_file'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -106,16 +106,22 @@ The <em>body</em> field is used for the main article content.
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 2,
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_file',
-    'label' => 'File',
+    'label' => 'Files',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => '',
       'file_extensions' => 'txt pdf docx doc xls xlsx ppt pptx',
       'max_filesize' => '',
@@ -125,32 +131,14 @@ The <em>body</em> field is used for the main article content.
       'active' => 1,
       'module' => 'file',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-          'vimeo' => 0,
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'library' => 0,
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
-        ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 3,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'node-page-field_image'
+  // Exported field_instance: 'node-page-field_image'.
   $field_instances['node-page-field_image'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -170,10 +158,16 @@ The <em>body</em> field is used for the main article content.
       ),
       'default' => array(
         'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => 'article_page_620x349',
+          'image_link' => 'content',
+          'image_style' => 'govcms_ui_kit_thumbnail',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -219,14 +213,14 @@ The <em>body</em> field is used for the main article content.
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 2,
+      'weight' => 6,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('File');
+  t('Files');
   t('Image');
   t('Provide a feature image that will be associated with this <em>Page</em>.  The image will be rendered above the page body text.');
   t('Provides a file that wil be associated with this <em>page</em> - examples may include a downloadable version of the content.');

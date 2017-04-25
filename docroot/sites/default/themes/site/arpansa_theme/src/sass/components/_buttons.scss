@@ -1,0 +1,18 @@
+button, .button, [role='button'], [type='submit'], [type='reset'], [type='button'] {
+  border-radius: $border-radius;
+  border: none;
+  &:hover, &:focus {
+    box-shadow: 0 5px 10px $neutral_1;
+  }
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.toc-filter-back-to-top {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}

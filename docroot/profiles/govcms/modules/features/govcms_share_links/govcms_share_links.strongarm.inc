@@ -36,10 +36,9 @@ function govcms_share_links_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_category_vocs';
   $strongarm->value = array(
-    3 => 0,
-    2 => 0,
-    5 => 0,
-    4 => 0,
+    21 => 0,
+    11 => 0,
+    16 => 0,
     1 => 0,
     6 => 0,
   );
@@ -49,7 +48,7 @@ function govcms_share_links_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_check_icons';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['service_links_check_icons'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -81,16 +80,12 @@ function govcms_share_links_strongarm() {
     'full' => 0,
     'teaser' => 0,
     'rss' => 0,
-    'blog_teaser' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'diff_standard' => 0,
+    'compact' => 0,
     'token' => 0,
-    'feature' => 0,
     'revision' => 0,
-    'front_page' => 0,
-    'common_topics' => 0,
-    'landing_page' => 0,
-    'topics_landing' => 0,
-    'search_page' => 0,
-    'listing' => 0,
   );
   $export['service_links_link_view_modes'] = $strongarm;
 
@@ -98,7 +93,7 @@ function govcms_share_links_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_new_window';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['service_links_new_window'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -106,17 +101,20 @@ function govcms_share_links_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_node_types';
   $strongarm->value = array(
-    'event' => 'event',
-    'file_manager_file' => 'file_manager_file',
-    'media_release' => 'media_release',
+    'consultation' => 'consultation',
     'news_article' => 'news_article',
-    'footer_teaser' => 'footer_teaser',
-    'publication' => 'publication',
     'page' => 'page',
-    'webform' => 'webform',
     'blog_article' => 0,
+    'career' => 0,
+    'event' => 0,
     'landing_page' => 0,
+    'literature_survey' => 0,
+    'media_release' => 0,
+    'footer_teaser' => 0,
+    'publication' => 0,
     'slide' => 0,
+    'submissions' => 0,
+    'webform' => 0,
   );
   $export['service_links_node_types'] = $strongarm;
 
@@ -128,16 +126,12 @@ function govcms_share_links_strongarm() {
     'full' => 0,
     'teaser' => 0,
     'rss' => 0,
-    'blog_teaser' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'diff_standard' => 0,
+    'compact' => 0,
     'token' => 0,
-    'feature' => 0,
     'revision' => 0,
-    'front_page' => 0,
-    'common_topics' => 0,
-    'landing_page' => 0,
-    'topics_landing' => 0,
-    'search_page' => 0,
-    'listing' => 0,
   );
   $export['service_links_node_view_modes'] = $strongarm;
 
@@ -166,7 +160,7 @@ function govcms_share_links_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_path_icons';
-  $strongarm->value = 'profiles/govcms/modules/features/govcms_share_links/images';
+  $strongarm->value = 'sites/default/themes/site/arpansa_theme/dist/images/png';
   $export['service_links_path_icons'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -193,7 +187,7 @@ function govcms_share_links_strongarm() {
     'facebook' => 1,
     'myspace' => 0,
     'google' => 0,
-    'google_plus' => 0,
+    'google_plus' => 1,
     'yahoo' => 0,
     'linkedin' => 1,
     'technorati' => 0,
@@ -206,6 +200,7 @@ function govcms_share_links_strongarm() {
     'identica' => 0,
     'newskicks' => 0,
     'diigo' => 0,
+    'viadeo' => 0,
     'email' => 1,
   );
   $export['service_links_show'] = $strongarm;
@@ -229,19 +224,19 @@ function govcms_share_links_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'service_links_weight';
   $strongarm->value = array(
-    'delicious' => '-94',
-    'digg' => '-93',
+    'delicious' => '-93',
+    'digg' => '-92',
     'stumbleupon' => '-78',
     'twitter' => '-99',
     'pingthis' => '-81',
     'reddit' => '-80',
     'slashdot' => '-79',
     'newsvine' => '-82',
-    'furl' => '-91',
+    'furl' => '-90',
     'facebook' => '-100',
     'myspace' => '-84',
-    'google' => '-90',
-    'google_plus' => '-89',
+    'google' => '-89',
+    'google_plus' => '-97',
     'yahoo' => '-75',
     'linkedin' => '-98',
     'technorati' => '-76',
@@ -249,12 +244,13 @@ function govcms_share_links_strongarm() {
     'icerocket' => '-88',
     'misterwong' => '-86',
     'mixx' => '-85',
-    'box' => '-95',
-    'blinklist' => '-96',
+    'box' => '-94',
+    'blinklist' => '-95',
     'identica' => '-87',
     'newskicks' => '-83',
-    'diigo' => '-92',
-    'email' => '-97',
+    'diigo' => '-91',
+    'viadeo' => '-74',
+    'email' => '-96',
   );
   $export['service_links_weight'] = $strongarm;
 

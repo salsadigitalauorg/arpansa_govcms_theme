@@ -1,0 +1,15 @@
+name = ARPANSA Migration
+description = Content migration for ARPANSA.
+package = ARPANSA
+version = 7.x-1.0
+core = 7.x
+
+dependencies[] = migrate
+dependencies[] = migrate_ui
+
+files[] = migrations/base.inc
+files[] = migrations/file.inc
+files[] = migrations/file.metadata.inc
+files[] = migrations/ia.inc
+files[] = migrations/page.inc
+files[] = migrations/redirect.inc

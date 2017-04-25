@@ -10,7 +10,7 @@
 function govcms_promotion_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-footer_teaser-field_description'
+  // Exported field_instance: 'node-footer_teaser-field_description'.
   $field_instances['node-footer_teaser-field_description'] = array(
     'bundle' => 'footer_teaser',
     'default_value' => NULL,
@@ -40,10 +40,10 @@ function govcms_promotion_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 150,
+          'trim_length' => 400,
         ),
         'type' => 'text_trimmed',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -65,7 +65,7 @@ function govcms_promotion_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-footer_teaser-field_image'
+  // Exported field_instance: 'node-footer_teaser-field_image'.
   $field_instances['node-footer_teaser-field_image'] = array(
     'bundle' => 'footer_teaser',
     'deleted' => 0,
@@ -97,8 +97,8 @@ function govcms_promotion_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => 'blog_teaser_thumbnail',
+          'image_link' => 'content',
+          'image_style' => 'govcms_ui_kit_thumbnail',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -148,7 +148,7 @@ function govcms_promotion_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-footer_teaser-field_reference'
+  // Exported field_instance: 'node-footer_teaser-field_reference'.
   $field_instances['node-footer_teaser-field_reference'] = array(
     'bundle' => 'footer_teaser',
     'default_value' => NULL,
@@ -180,7 +180,7 @@ function govcms_promotion_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -203,7 +203,7 @@ function govcms_promotion_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-footer_teaser-field_tags'
+  // Exported field_instance: 'node-footer_teaser-field_tags'.
   $field_instances['node-footer_teaser-field_tags'] = array(
     'bundle' => 'footer_teaser',
     'default_value' => NULL,
@@ -233,7 +233,7 @@ function govcms_promotion_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -246,13 +246,15 @@ function govcms_promotion_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'taxonomy',
       'settings' => array(
         'apply_chosen' => 1,
+        'autocomplete_path' => 'taxonomy/autocomplete',
         'flatten_options' => 0,
         'flatten_sort' => 1,
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_autocomplete',
       'weight' => 2,
     ),
   );

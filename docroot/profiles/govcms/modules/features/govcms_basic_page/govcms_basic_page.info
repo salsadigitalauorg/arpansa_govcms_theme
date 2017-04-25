@@ -2,12 +2,14 @@ name = Basic Page
 description = Provides a Basic Page feature.
 core = 7.x
 package = govCMS
-project = govcms_basic_page
-dependencies[] = govcms_common_fields
-dependencies[] = govcms_tags
+version = 7.x-2.12
+project = govcms
+dependencies[] = arpansa_entity
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = file
+dependencies[] = govcms_common_fields
+dependencies[] = govcms_tags
 dependencies[] = image
 dependencies[] = media
 dependencies[] = options
@@ -15,6 +17,7 @@ dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
+datestamp = 1479789121
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_instance][] = node-page-body
@@ -45,10 +48,4 @@ features[variable][] = scheduler_unpublish_enable_page
 features[variable][] = scheduler_unpublish_moderation_state_page
 features[variable][] = scheduler_unpublish_required_page
 features[variable][] = scheduler_unpublish_revision_page
-
-; Information added by Drupal.org packaging script on 2016-11-22
-version = "7.x-2.10"
-core = "7.x"
-project = "govcms"
-datestamp = "1479789121"
-
+features[variable][] = xmlsitemap_settings_node_page

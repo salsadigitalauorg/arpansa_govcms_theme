@@ -17,6 +17,11 @@ function govcms_consultation_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'consultation';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'arpansa_public_submissions' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'formal_submission_form' => array(
       'weight' => '6',
       'label' => 'hidden',
@@ -33,18 +38,33 @@ function govcms_consultation_ds_field_settings_info() {
         'load_terms' => 0,
       ),
     ),
-    'public_submissions' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'comments' => array(
-      'weight' => '7',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
     ),
   );
   $export['node|consultation|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|consultation|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'consultation';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+      ),
+    ),
+  );
+  $export['node|consultation|teaser'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -66,47 +86,53 @@ function govcms_consultation_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_consultation_summary',
-        1 => 'group_consultation_htabs',
-        2 => 'group_formal_submissions',
-        3 => 'public_submissions',
-        4 => 'progress_bar',
-        5 => 'field_twitter_discussion',
-        6 => 'field_formal_submission_cta_1',
-        7 => 'field_discussion_forum_heading',
-        8 => 'formal_submission_form',
-        9 => 'field_discussion_forum_intro',
+        1 => 'field_page_type',
+        2 => 'group_consultation_htabs',
+        3 => 'field_consultation_date',
+        4 => 'group_formal_submissions',
+        5 => 'progress_bar',
+        6 => 'arpansa_public_submissions',
+        7 => 'field_consultation_issue_text',
+        8 => 'field_issue_documentation',
+        9 => 'field_formal_submission_cta_1',
         10 => 'field_updates',
-        11 => 'field_formal_submission_cta_2',
-        12 => 'comments',
-        13 => 'field_consultation_date',
-        14 => 'field_consultation_issue_text',
+        11 => 'formal_submission_form',
+        12 => 'field_twitter_discussion',
+        13 => 'field_discussion_forum_heading',
+        14 => 'field_formal_submission_cta_2',
         15 => 'group_issue',
-        16 => 'field_issue_documentation',
-        17 => 'group_updates',
-        18 => 'group_outcomes',
-        19 => 'field_outcomes_text',
+        16 => 'field_discussion_forum_intro',
+        17 => 'comments',
+        18 => 'group_updates',
+        19 => 'field_show_related_content',
+        20 => 'group_outcomes',
+        21 => 'field_social_links',
+        22 => 'field_outcomes_text',
       ),
     ),
     'fields' => array(
       'field_consultation_summary' => 'ds_content',
+      'field_page_type' => 'ds_content',
       'group_consultation_htabs' => 'ds_content',
-      'group_formal_submissions' => 'ds_content',
-      'public_submissions' => 'ds_content',
-      'progress_bar' => 'ds_content',
-      'field_twitter_discussion' => 'ds_content',
-      'field_formal_submission_cta_1' => 'ds_content',
-      'field_discussion_forum_heading' => 'ds_content',
-      'formal_submission_form' => 'ds_content',
-      'field_discussion_forum_intro' => 'ds_content',
-      'field_updates' => 'ds_content',
-      'field_formal_submission_cta_2' => 'ds_content',
-      'comments' => 'ds_content',
       'field_consultation_date' => 'ds_content',
+      'group_formal_submissions' => 'ds_content',
+      'progress_bar' => 'ds_content',
+      'arpansa_public_submissions' => 'ds_content',
       'field_consultation_issue_text' => 'ds_content',
-      'group_issue' => 'ds_content',
       'field_issue_documentation' => 'ds_content',
+      'field_formal_submission_cta_1' => 'ds_content',
+      'field_updates' => 'ds_content',
+      'formal_submission_form' => 'ds_content',
+      'field_twitter_discussion' => 'ds_content',
+      'field_discussion_forum_heading' => 'ds_content',
+      'field_formal_submission_cta_2' => 'ds_content',
+      'group_issue' => 'ds_content',
+      'field_discussion_forum_intro' => 'ds_content',
+      'comments' => 'ds_content',
       'group_updates' => 'ds_content',
+      'field_show_related_content' => 'ds_content',
       'group_outcomes' => 'ds_content',
+      'field_social_links' => 'ds_content',
       'field_outcomes_text' => 'ds_content',
     ),
     'classes' => array(),

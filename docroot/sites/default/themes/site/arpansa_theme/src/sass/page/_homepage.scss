@@ -1,0 +1,392 @@
+// =========================================================
+// FRONT PAGE PANEL
+// =========================================================
+.front {
+  .page__title {
+    @include visually-hidden;
+  }
+  .gov-front-left {
+    padding-top: rem(40px);
+    padding-bottom: rem(108px);
+    background-color: $neutral_4;
+    .panel-pane {
+      @include center-column($desktop_column);
+    }
+  }
+  .gov-front-right {
+    padding-top: rem(40px);
+    padding-bottom: rem(108px);
+    background-color: $neutral_4;
+    .panel-pane {
+      @include center-column($desktop_column);
+    }
+  }
+  .panel-display {
+    @include center-column(100%);
+    padding-left: 0;
+    padding-right: 0;
+    .pane-content, .pane-title {
+      @include center-column($desktop_column);
+    }
+    .pane-bean-panels {
+      background-color: $neutral_5;
+      margin-bottom: 30px;
+      @include breakpoint(tablet) {
+        margin-bottom: 90px;
+      }
+    }
+  }
+  .content-body-inner {
+    .region-content {
+      width: 100%;
+      max-width: inherit;
+      padding: 0;
+      html.no-flexbox & {
+        float: right;
+      }
+    }
+  }
+}
+
+// =========================================================
+// INTRODUCTION BEAN
+// =========================================================
+.panels-ipe-sort-container .bean-basic-content, .pane-bean-panels .bean-basic-content {
+  &>.content {
+    @include center-column($desktop_column);
+    @include standard_content_link;
+    padding-top: $default_padding;
+    padding-bottom: $default_padding;
+    color: $secondary_1;
+    font-size: em(24px);
+    line-height: em(33px);
+    font-family: $type-heading-primary;
+    text-align: center;
+    @include breakpoint(tablet) {
+      padding-top: $default_padding * 2;
+      padding-bottom: rem(50px);
+    }
+    @include breakpoint(desktop) {
+      text-align: center;
+      padding: 50px 80px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.pane-title {
+  @include large-title;
+}
+
+// =========================================================
+// PANEL PROMO
+// =========================================================
+.panel-promo {
+  .view-content {
+    @include breakpoint(tablet) {
+      @include outer-container(100%);
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .views-row {
+      @include breakpoint(tablet) {
+        @include span-columns(4 of 12);
+      }
+      &:nth-child(2n) {
+        @include breakpoint(tablet) {
+          margin-right: flex-gutter(12);
+        }
+      }
+      &:nth-child(3n) {
+        @include breakpoint(tablet) {
+          @include omega();
+        }
+      }
+      .node {
+        @include listing-component-wrapper;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        @include breakpoint(tablet) {
+          margin-bottom: em(35px);
+          padding-top: em(35px);
+        }
+        &.has-thumbnail {
+          .field-type-image {
+            @include listing-component-image;
+          }
+          @include breakpoint(tablet) {
+            padding-top: $listing_component_image_height;
+          }
+        }
+      }
+      h2 {
+        @include listing-component-heading;
+        margin-top: 10px;
+      }
+      .field-type-datetime, .submitted {
+        @include listing-component-subtext;
+      }
+      .field-name-body {
+        @include listing-component-body;
+      }
+      .field-name-field-image {
+        display: none;
+        @include breakpoint(tablet) {
+          display: block;
+        }
+      }
+      a.readmore {
+        @include right-arrow-button;
+        line-height: em(28px);
+        display: none;
+      }
+    }
+  }
+}
+
+// =========================================================
+// SLIDER
+// =========================================================
+#block-views-slideshow-block {
+  &>h2 {
+    @include visually-hidden;
+  }
+  .view-content {
+    position: relative;
+    background-color: #0B3B46;
+    &>ul {
+      padding: 0;
+      margin-bottom: 0;
+      @include breakpoint(tablet) {
+        height: rem(444px);
+      }
+      &:not(.owl-loaded) {
+        &>li:not(.views-row-first) {
+          @include breakpoint(tablet) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .view-content li.views-row {
+    position: relative;
+    list-style: none;
+    margin-bottom: 0;
+  }
+  .field-name-field-slide-image {
+    @include clearfix;
+    @include breakpoint(tablet) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .field-items {
+      @include breakpoint(tablet) {
+        height: 100%;
+      }
+    }
+    .field-item {
+      @include breakpoint(tablet) {
+        height: 100%;
+      }
+    }
+    img {
+      height: rem(225px);
+      object-fit: cover;
+      float: left;
+      @include breakpoint(tablet) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .banner-description-holder {
+    color: white;
+    padding: rem(30px) $default_padding;
+    background-color: $secondary_1;
+    @include breakpoint(tablet) {
+      @include center-column($desktop_column);
+      background-color: transparent;
+      position: relative;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    h3 {
+      @include link-colours(white, $neutral_4, $neutral_1);
+      margin-top: 0;
+      font-weight: 400;
+      line-height: 23px;
+      @include breakpoint(tablet) {
+        margin-bottom: rem(21px);
+        font-size: rem(48px);
+        font-weight: 300;
+        line-height: rem(55px);
+      }
+    }
+    .field {
+      @include link-colours(white, $neutral_4, $neutral_1);
+      @include standard_white_button;
+      @include breakpoint(tablet) {
+        @include standard_purple_button;
+      }
+    }
+  }
+  .banner-description-panel {
+    @include breakpoint(tablet) {
+      position: relative;
+      box-sizing: border-box;
+      background-color: rgba(black, 0.8);
+      padding: rem(45px);
+      padding-top: rem(85px);
+      max-width: rem(524px);
+      min-height: rem(444px);
+      color: white;
+    }
+  }
+  .slider-controls {
+    position: absolute;
+    top: 0;
+    padding-top: rem(34px);
+    padding-left: rem(37px);
+    button {
+      color: white;
+      border: 0;
+      margin: 0;
+      display: inline;
+      width: rem(36px);
+      height: rem(36px);
+      overflow: hidden;
+      padding: 0;
+      vertical-align: top;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-bottom: 1px solid transparent;
+      border-radius: 0;
+      box-shadow: none;
+      &:hover, &:focus {
+        color: white;
+        background-color: $primary_1;
+      }
+      &.active {
+        color: white;
+        border-bottom-color: white;
+      }
+      &.slider-prev {
+        @include hide-text;
+        background-image: url(../images/svg/slider-prev.svg);
+        &:hover, &:focus {
+          background-image: url(../images/svg/slider-prev-hover.svg);
+        }
+      }
+      &.slider-next {
+        @include hide-text;
+        background-image: url(../images/svg/slider-next.svg);
+        &:hover, &:focus {
+          background-image: url(../images/svg/slider-next-hover.svg);
+        }
+      }
+      &.slider-play {
+        @include hide-text;
+        background-image: url(../images/svg/slider-pause.svg);
+        &:hover, &:focus {
+          background-image: url(../images/svg/slider-pause-hover.svg);
+        }
+        &.paused {
+          background-image: url(../images/svg/slider-play.svg);
+          &:hover, &:focus {
+            background-image: url(../images/svg/slider-play-hover.svg);
+          }
+        }
+      }
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      display: inline;
+      li {
+        display: inline;
+      }
+    }
+  }
+}
+
+// =========================================================
+// HOMEPAGE BLOGS AND NEWS LISTSING
+// =========================================================
+.view-home-page-blog-articles, .view-latest-news, .view-homepage-what-s-new {
+  .view-content {
+    @include breakpoint(tablet) {
+      @include outer-container(100%);
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .views-row {
+      @include breakpoint(tablet) {
+        @include span-columns(4 of 12);
+        display: flex;
+      }
+      &:nth-child(3n) {
+        @include breakpoint(large_tablet) {
+          @include omega();
+        }
+      }
+      .node {
+        @include listing-component-wrapper;
+        width: 100%;
+        &.has-thumbnail {
+          .field-type-image {
+            @include listing-component-image;
+          }
+          padding: rem(30px);
+          @include breakpoint(tablet) {
+            padding-top: $listing_component_image_height;
+          }
+        }
+        .node-readmore {
+          padding: 0;
+          a {
+            @include right-arrow-button;
+          }
+        }
+      }
+      h2 {
+        @include listing-component-heading;
+        margin-top: 0;
+      }
+      .field-type-datetime, .submitted {
+        @include listing-component-subtext;
+      }
+      .field-name-body {
+        @include listing-component-body;
+      }
+      .field-name-field-image {
+        display: none;
+        @include breakpoint(tablet) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.pane-homepage-what-s-new {
+  background-color: $grey_3;
+  padding-top: rem(25px);
+  padding-bottom: rem(30px);
+  @include breakpoint(tablet) {
+    padding-top: rem(30px);
+    padding-bottom: rem(50px);
+  }
+  @include breakpoint(desktop) {
+    padding-top: rem(50px);
+    padding-bottom: rem(75px);
+  }
+}
