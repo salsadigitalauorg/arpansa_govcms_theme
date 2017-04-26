@@ -326,8 +326,10 @@ function salsa_helpers_create_date_format_type($date_format, $date_type, $date_t
  *   Optional argument to specify the visibility setting for $pages.
  * @param string $title
  *   Optional block title.
+ * @param int $cache
+ *   Optional block caching state.
  */
-function salsa_helpers_add_block_to_region($block_name, $module, $region, $weight, $theme, $pages = '', $visibility = 0, $title = '') {
+function salsa_helpers_add_block_to_region($block_name, $module, $region, $weight, $theme, $pages = '', $visibility = 0, $title = '', $cache = DRUPAL_CACHE_PER_ROLE) {
   db_merge('block')
     ->fields(array(
       'module' => $module,
@@ -339,6 +341,7 @@ function salsa_helpers_add_block_to_region($block_name, $module, $region, $weigh
       'pages' => $pages,
       'visibility' => $visibility,
       'title' => $title,
+      'cache' => $cache,
     ))
     ->condition('module', $module)
     ->condition('delta', $block_name)
