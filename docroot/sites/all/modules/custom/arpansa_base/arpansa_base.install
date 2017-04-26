@@ -151,20 +151,9 @@ function arpansa_base_update_7005() {
  * Update Landing page content type and create the menu block [ARPANSA-21].
  */
 function arpansa_base_update_7006() {
-  db_insert('block')
-    ->fields(array(
-      'module' => 'menu_block',
-      'delta' => 'landing_page_children_listing',
-      'theme' => 'arpansa_theme',
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'content',
-      'custom' => 0,
-      'visibility' => 0,
-      'pages' => '',
-      'title' => '<none>',
-      'cache' => -1,
-    ))->execute();
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_add_block_to_region('landing_page_children_listing', 'menu_block', 'content', 0, 'arpansa_theme', '', 0, '<none>', DRUPAL_NO_CACHE);
 
   variable_set('menu_block_landing_page_children_listing_admin_title', 'Landing Page Children Listing');
   variable_set('menu_block_landing_page_children_listing_depth', '1');
@@ -179,7 +168,12 @@ function arpansa_base_update_7006() {
   $menu_blocks[] = 'landing_page_children_listing';
   variable_set('menu_block_ids', $menu_blocks);
 
-  db_insert('block_node_type')
+  db_merge('block_node_type')
+    ->key(array(
+      'module' => 'menu_block',
+      'delta' => 'landing_page_children_listing',
+      'type' => 'landing_page',
+    ))
     ->fields(array(
       'module' => 'menu_block',
       'delta' => 'landing_page_children_listing',
@@ -197,20 +191,9 @@ function arpansa_base_update_7006() {
  * Update Landing page content type and create the menu block [ARPANSA-21].
  */
 function arpansa_base_update_7007() {
-  db_insert('block')
-    ->fields(array(
-      'module' => 'menu_block',
-      'delta' => 'left_nav',
-      'theme' => 'arpansa_theme',
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'sidebar_first',
-      'custom' => 0,
-      'visibility' => 0,
-      'pages' => '',
-      'title' => '<none>',
-      'cache' => -1,
-    ))->execute();
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_add_block_to_region('left_nav', 'menu_block', 'sidebar_first', 0, 'arpansa_theme', '', 0, '<none>', DRUPAL_NO_CACHE);
 
   variable_set('menu_block_left_nav_admin_title', 'Secondary Navigation Menu');
   variable_set('menu_block_left_nav_depth', '3');
@@ -247,15 +230,11 @@ function arpansa_base_update_7007() {
       'type' => 'webform',
     ),
   );
-  $query = db_insert('block_node_type')->fields(array(
-    'module',
-    'delta',
-    'type',
-  ));
   foreach ($values as $record) {
-    $query->values($record);
+    $query = db_merge('block_node_type');
+    $query->key($record)->fields($record);
+    $query->execute();
   }
-  $query->execute();
 }
 
 /**
