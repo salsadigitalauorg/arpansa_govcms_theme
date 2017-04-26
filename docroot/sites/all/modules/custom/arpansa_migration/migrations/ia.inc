@@ -172,6 +172,12 @@ class ArpansaMigrationIA extends ArpansaMigrationPage {
     if (!empty($row->alias)) {
       $this->lastMenuItem = $menu_link;
     }
+    // Ensure parent has_children set to avoid confusion in Superfish.
+    if (!empty($menu_link->plid)) {
+      if ($menu_link_item = menu_link_load($menu_link->mlid)) {
+        _menu_update_parental_status($menu_link_item);
+      }
+    }
   }
 
   /**
