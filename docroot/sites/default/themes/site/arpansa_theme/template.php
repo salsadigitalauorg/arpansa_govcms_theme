@@ -209,6 +209,7 @@ function arpansa_theme_form_alter(&$form, &$form_state, $form_id) {
       // Only show terms tagged in Fact Sheet pages [ARPANSA-78].
       case 'fact_sheets_filterable':
         $tags = _arpansa_theme_get_page_type_tags('Fact Sheet');
+        // Single select must have an All option.
         $form['field_tags_tid']['#options'] = array('All' => '- Any -') + $tags;
         break;
 
@@ -222,6 +223,13 @@ function arpansa_theme_form_alter(&$form, &$form_state, $form_id) {
       case 'have_your_say':
         $tags = _arpansa_theme_get_page_type_tags('', 'consultation');
         $form['field_tags_tid']['#options'] = $tags;
+        break;
+
+      // Only show terms tagged in FAQ pages [ARPANSA-130].
+      case 'faq':
+        $tags = _arpansa_theme_get_page_type_tags('FAQ', '');
+        // Single select must have an All option.
+        $form['field_tags_tid']['#options'] = array('All' => '- Any -') + $tags;
         break;
     }
 

@@ -1,7 +1,7 @@
 name = ARPANSA FAQ
 core = 7.x
 package = ARPANSA
-version = 7.x-1.0
+version = 7.x-1.19
 dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = views
