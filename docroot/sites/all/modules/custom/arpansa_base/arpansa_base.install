@@ -1964,3 +1964,12 @@ function arpansa_base_update_7103() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_faq');
 }
+
+/**
+ * Modify careers landing's view use table [ARPANSA-131].
+ */
+function arpansa_base_update_7104() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
