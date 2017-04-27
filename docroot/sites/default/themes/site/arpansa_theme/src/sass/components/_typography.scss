@@ -5,12 +5,12 @@ h1 {
   font-size: rem(24px);
   line-height: rem(33px);
   @include breakpoint(tablet) {
-    font-size: rem(48px);
-    line-height: rem(55px);
+    font-size: rem(36px);
+    line-height: rem(46px);
   }
   @include breakpoint(desktop) {
-    font-size: rem(64px);
-    line-height: rem(66px);
+    font-size: rem(48px);
+    line-height: rem(56px);
   }
 }
 
@@ -36,7 +36,7 @@ h3 {
     font-size: rem(24px);
   }
   @include breakpoint(desktop) {
-    font-size: rem(36px);
+    font-size: rem(32px);
     line-height: rem(33px);
   }
 }
@@ -52,19 +52,18 @@ h4 {
     font-weight: 400;
   }
   @include breakpoint(desktop) {
-    font-size: rem(24px);
+    font-size: rem(26px);
     line-height: rem(33px);
   }
 }
 
 h5 {
-  color: black;
   font-family: $font_source_sans;
   font-size: rem(16px);
   line-height: rem(22px);
   font-weight: 700;
   @include breakpoint(desktop) {
-    font-size: rem(24px);
+    font-size: rem(20px);
     line-height: rem(33px);
     color: $primary_1;
     font-weight: 600;
