@@ -8,11 +8,19 @@
     }
     td, th {
       border: 1px solid $grey_7;
+      padding: 0.8em;
     }
     &.no-zebra {
       tr:nth-child(even) {
         background-color: transparent;
       }
+    }
+    /* Views table, the default is zebra. */
+    tr.even {
+      background-color: white;
+    }
+    tr.odd {
+      background-color: $zebra-bg;
     }
   }
   div.table-container {
