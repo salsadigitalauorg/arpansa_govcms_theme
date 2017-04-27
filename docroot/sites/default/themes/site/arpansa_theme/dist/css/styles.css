@@ -6781,6 +6781,7 @@ img {
   border-color: transparent;
   border-width: 0;
   margin-bottom: 0;
+  /* Views table, the default is zebra. */
 }
 
 .content table tbody {
@@ -6789,10 +6790,19 @@ img {
 
 .content table td, .content table th {
   border: 1px solid #CACACA;
+  padding: 0.8em;
 }
 
 .content table.no-zebra tr:nth-child(even) {
   background-color: transparent;
+}
+
+.content table tr.even {
+  background-color: white;
+}
+
+.content table tr.odd {
+  background-color: #f0f3f5;
 }
 
 .content div.table-container {
