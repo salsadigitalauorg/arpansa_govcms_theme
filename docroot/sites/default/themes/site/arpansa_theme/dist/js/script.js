@@ -4,7 +4,7 @@
 (function($, Drupal, window, document, undefined) {
   Drupal.behaviors.govcms_ui_kit_accordion = {
     attach: function(context, settings) {
-      var $accordion_container = $('.view-faq', context),
+      var $accordion_container = $('.view-faq'),
         $accordion_header = $('.views-field-title ', context),
         top = '';
 
