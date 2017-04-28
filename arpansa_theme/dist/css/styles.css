@@ -6811,6 +6811,10 @@ img {
   overflow-y: auto;
 }
 
+.item-list {
+  width: 100%;
+}
+
 .view-faq {
   padding-top: 15px;
 }
@@ -10926,21 +10930,6 @@ html.no-flexboxlegacy body.not-front #content #block-views-fact-sheets-filterabl
   float: left;
 }
 
-.item-list {
-  width: 100%;
-}
-
-.view-faq .view-filters .views-exposed-form .views-exposed-widget {
-  float: none;
-  display: inline-block;
-  vertical-align: bottom;
-}
-
-.view-faq .view-filters .views-exposed-form .views-exposed-widget .form-submit {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
 @media (min-width: 768px) {
   body.not-front #content .no-sidebar .views-row {
     float: left;
@@ -12068,6 +12057,17 @@ div.toc-filter-content ol.toc-filter-links li {
   margin-bottom: 0.8125rem;
   margin-right: 2.1875rem;
   margin-left: 0.8rem;
+}
+
+.view-filters .views-exposed-form .views-exposed-widget {
+  float: none;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.view-filters .views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .page-news-media .bean-image-and-text {
