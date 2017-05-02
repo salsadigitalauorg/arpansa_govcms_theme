@@ -1,7 +1,7 @@
 name = Arpansa Entity
 core = 7.x
 package = ARPANSA
-version = 7.x-1.41
+version = 7.x-1.42
 dependencies[] = arpansa_taxonomy
 dependencies[] = bean
 dependencies[] = bigmenu

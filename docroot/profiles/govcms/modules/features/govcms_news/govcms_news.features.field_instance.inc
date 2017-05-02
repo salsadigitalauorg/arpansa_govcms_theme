@@ -90,7 +90,7 @@ The <em>body</em> field is used for the main article content.',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -198,6 +198,62 @@ The <em>body</em> field is used for the main article content.',
     ),
   );
 
+  // Exported field_instance: 'node-news_article-field_show_related_content'.
+  $field_instances['node-news_article-field_show_related_content'] = array(
+    'bundle' => 'news_article',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_show_related_content',
+    'label' => 'Show Related Content',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-news_article-field_tags'.
   $field_instances['node-news_article-field_tags'] = array(
     'bundle' => 'news_article',
@@ -270,6 +326,7 @@ The <em>body</em> field is used for the main article content.',
   t('Date of Publication');
   t('Date that this news content took place.');
   t('Enter a comma-separated list of words to describe your content.');
+  t('Show Related Content');
   t('Tags');
   t('The <em>Summary</em> field above is included in any listings of this page as well as the initial paragraph of the page view.
 The <em>body</em> field is used for the main article content.');
