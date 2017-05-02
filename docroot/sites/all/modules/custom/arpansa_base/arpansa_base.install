@@ -1975,7 +1975,7 @@ function arpansa_base_update_7104() {
 }
 
 /**
- * Add show related content field to news and new date format [ARPANSA-122].
+ * Add show related content field and new date format [ARPANSA-122-115-131].
  */
 function arpansa_base_update_7105() {
   module_enable(['salsa_helpers', 'fe_date']);
