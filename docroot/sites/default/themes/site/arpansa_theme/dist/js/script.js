@@ -729,7 +729,7 @@ var desktop_column = 1170;
       }
 
       // Sumoselect all select
-      $('select.form-select', context).SumoSelect();
+      $('.views-exposed-form select.form-select', context).SumoSelect();
     }
   };
 
