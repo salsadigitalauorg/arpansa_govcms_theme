@@ -6834,6 +6834,12 @@ img {
   overflow-y: auto;
 }
 
+@media (min-width: 1200px) {
+  .content div.table-container {
+    overflow-x: hidden;
+  }
+}
+
 .item-list {
   width: 100%;
 }
