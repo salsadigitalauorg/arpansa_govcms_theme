@@ -173,7 +173,7 @@ function govcms_publications_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'file_directory' => '',
-      'file_extensions' => 'txt pdf doc docx xls xlsx ppt pptx rtf',
+      'file_extensions' => 'txt pdf doc docx xls xlsx ppt pptx rtf zip swf',
       'max_filesize' => '64 MB',
       'user_register_form' => FALSE,
     ),
