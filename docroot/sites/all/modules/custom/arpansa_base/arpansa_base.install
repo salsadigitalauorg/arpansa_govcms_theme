@@ -2060,7 +2060,7 @@ function arpansa_base_update_7107() {
     }
   }
   if ($video = ctools_export_crud_load('file_type', 'video')) {
-    if (!in_array('application/x-shockwave-flash', $document->mimetypes)) {
+    if (!in_array('application/x-shockwave-flash', $video->mimetypes)) {
       $video->mimetypes[] = 'application/x-shockwave-flash';
       ctools_export_crud_save('file_type', $video);
     }
