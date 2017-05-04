@@ -6508,6 +6508,13 @@ h2, .display {
   }
 }
 
+@media (min-width: 1200px) {
+  h2, .display {
+    font-size: 2.5rem;
+    line-height: 3.375rem;
+  }
+}
+
 h3 {
   color: #268126;
   font-family: "Source Sans Pro", sans-serif, Arial;
@@ -6518,7 +6525,7 @@ h3 {
 
 @media (min-width: 768px) {
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
   }
 }
 
@@ -6539,7 +6546,7 @@ h4 {
 
 @media (min-width: 768px) {
   h4 {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     font-weight: 400;
   }
 }
@@ -6554,9 +6561,16 @@ h4 {
 h5 {
   color: #268126;
   font-family: "Source Sans Pro", sans-serif, Arial;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   line-height: 1.375rem;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -6576,9 +6590,17 @@ h6 {
   font-weight: 700;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   h6 {
     font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 1200px) {
+  h6 {
+    font-size: 1.125rem;
+    font-weight: 600;
   }
 }
 
