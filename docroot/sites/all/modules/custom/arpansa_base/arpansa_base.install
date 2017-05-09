@@ -2066,3 +2066,12 @@ function arpansa_base_update_7107() {
     }
   }
 }
+
+/**
+ * Update URL of views blocks to display on [ARPANSA-140].
+ */
+function arpansa_base_update_7108() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
