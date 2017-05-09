@@ -542,3 +542,21 @@ function arpansa_theme_govcms_social_link($variables) {
     ),
   ));
 }
+
+/**
+ * Implements theme_file_icon().
+ */
+function arpansa_theme_file_icon($variables) {
+  $file = $variables['file'];
+  $alt = $variables['alt'];
+  $icon_directory = $variables['icon_directory'];
+
+  $mime = check_plain($file->filemime);
+  if ($mime == 'application/rtf') {
+    $file->filemime = 'application/msword';
+  }
+  $icon_url = file_icon_url($file, $icon_directory);
+
+
+  return '<img class="file-icon" alt="' . check_plain($alt) . '" title="' . $mime . '" src="' . $icon_url . '" />';
+}
