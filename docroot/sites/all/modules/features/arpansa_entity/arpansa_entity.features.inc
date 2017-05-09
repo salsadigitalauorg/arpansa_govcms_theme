@@ -31,6 +31,7 @@ function arpansa_entity_views_api($module = NULL, $api = NULL) {
  */
 function arpansa_entity_fe_date_custom_date_formats() {
   $custom_date_formats = array();
+  $custom_date_formats['l j F Y - H:i'] = 'l j F Y - H:i';
   return $custom_date_formats;
 }
 
@@ -39,6 +40,8 @@ function arpansa_entity_fe_date_custom_date_formats() {
  */
 function arpansa_entity_date_format_types() {
   $format_types = array();
+  // Exported date format type: consultation_date
+  $format_types['consultation_date'] = 'Consultation Date';
   // Exported date format type: progress_bar
   $format_types['progress_bar'] = 'Progress Bar';
   return $format_types;
