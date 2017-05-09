@@ -18,7 +18,7 @@ function arpansa_faq_default_fe_block_settings() {
     'delta' => 'faq-block_faq',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'faq',
+    'pages' => 'understanding-radiation/radiation-sources/frequently-asked-questions',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
