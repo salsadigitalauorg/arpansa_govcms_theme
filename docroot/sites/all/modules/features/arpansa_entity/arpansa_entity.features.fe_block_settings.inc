@@ -44,7 +44,7 @@ have-your-say',
     'delta' => 'careers-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'careers',
+    'pages' => 'about-us/careers',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
@@ -64,7 +64,7 @@ have-your-say',
     'delta' => 'fact_sheets_filterable-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'fact-sheets',
+    'pages' => 'understanding-radiation/radiation-sources/more-radiation-sources',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
@@ -124,7 +124,7 @@ have-your-say',
     'delta' => 'literature_surveys-lit_survey',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'arpansa-radiation-protection/arpansa-emr-literature-survey',
+    'pages' => 'research/surveys/electromagnetic-radiation-literature-survey',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
