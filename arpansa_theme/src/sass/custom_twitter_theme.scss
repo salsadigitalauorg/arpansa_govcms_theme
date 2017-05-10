@@ -1,6 +1,10 @@
 @import '../../vendor/gov-au-ui-kit/assets/sass/vendor/bourbon/bourbon';
 @import '../../vendor/gov-au-ui-kit/assets/sass/vendor/neat/neat';
 @import 'mixins';
+.timeline-Header, .timeline-Footer {
+  display: none !important;
+}
+
 .timeline-Viewport {
   width: 100% !important;
   .timeline-TweetList {

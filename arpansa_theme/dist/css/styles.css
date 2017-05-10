@@ -11523,11 +11523,24 @@ div.toc-filter-content h3 {
 }
 
 div.toc-filter-content ol.toc-filter-links {
+  color: #268126;
+  padding-left: 30px;
+}
+
+div.toc-filter-content ol.toc-filter-links li {
+  margin-bottom: 5px;
+  padding-left: 5px;
+  min-width: 100%;
+  font-size: 0.875em;
+  line-height: 1.5em;
+}
+
+div.toc-filter-content ul.toc-filter-links {
   list-style: none;
   padding-left: 0;
 }
 
-div.toc-filter-content ol.toc-filter-links li {
+div.toc-filter-content ul.toc-filter-links li {
   background: transparent url(../images/svg/chevron-right-green.svg) 0 8px no-repeat;
   margin-bottom: 5px;
   padding-left: 15px;
@@ -11536,12 +11549,16 @@ div.toc-filter-content ol.toc-filter-links li {
   line-height: 1.5em;
 }
 
-.block-twitter-block {
+div.toc-filter-back-to-top {
+  display: none;
+}
+
+.block-twitter-block, #block-bean-twitter-feeds {
   padding-top: 2.75rem;
   padding-bottom: 2.75rem;
 }
 
-.block-twitter-block h2, .block-twitter-block .display {
+.block-twitter-block h2, .block-twitter-block .display, #block-bean-twitter-feeds h2, #block-bean-twitter-feeds .display {
   max-width: 73.125rem;
   margin-left: auto;
   margin-right: auto;
@@ -11557,7 +11574,7 @@ div.toc-filter-content ol.toc-filter-links li {
   font-size: 2.25em;
 }
 
-.block-twitter-block > .content {
+.block-twitter-block > .content, #block-bean-twitter-feeds > .content {
   max-width: 20rem;
   margin-left: auto;
   margin-right: auto;
@@ -11567,12 +11584,12 @@ div.toc-filter-content ol.toc-filter-links li {
 }
 
 @media only screen and (min-width: 1024px) {
-  .block-twitter-block > .content {
+  .block-twitter-block > .content, #block-bean-twitter-feeds > .content {
     max-width: 73.125rem;
   }
 }
 
-.block-twitter-block iframe {
+.block-twitter-block iframe, #block-bean-twitter-feeds iframe {
   width: 100% !important;
 }
 
