@@ -13,22 +13,22 @@
 // =========================================================
 @mixin breakpoint($class) {
   @if $class==desktop {
-    @media (min-width: 1200px) {
+    @media only screen and (min-width: 1200px) {
       @content;
     }
   }
   @else if $class==large_tablet {
-    @media (min-width: 1024px) {
+    @media only screen and (min-width: 1024px) {
       @content;
     }
   }
   @else if $class==tablet {
-    @media (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
       @content;
     }
   }
   @else if $class==mobile {
-    @media (max-width: 420px) {
+    @media only screen and (max-width: 420px) {
       @content;
     }
   }
