@@ -6,6 +6,10 @@ html {
   box-sizing: inherit;
 }
 
+.timeline-Header, .timeline-Footer {
+  display: none !important;
+}
+
 .timeline-Viewport {
   width: 100% !important;
 }

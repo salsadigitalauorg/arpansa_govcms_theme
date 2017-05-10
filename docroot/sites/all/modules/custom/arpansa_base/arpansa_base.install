@@ -2099,9 +2099,24 @@ function arpansa_base_update_7109() {
 }
 
 /**
- * Update have your say date [ARPANSA-137].
+ * Update Twitter feeds [ARPANSA-148].
  */
 function arpansa_base_update_7110() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  $twitter_snippet = <<<HTML
+<a class="twitter-timeline" data-height="200" data-partner="tweetdeck" data-tweet-limit="3" href="https://twitter.com/ARPANSANews">Tweets by ARPANSANews</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+HTML;
+
+  salsa_helpers_create_bean('Twitter Feeds', 'Latest tweets', '', 'twitter-feeds', $twitter_snippet, 'iframe');
+  salsa_helpers_features_revert('arpansa_blocks');
+}
+
+/**
+ * Update have your say date [ARPANSA-137].
+ */
+function arpansa_base_update_7111() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
 
