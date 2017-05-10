@@ -557,6 +557,5 @@ function arpansa_theme_file_icon($variables) {
   }
   $icon_url = file_icon_url($file, $icon_directory);
 
-
   return '<img class="file-icon" alt="' . check_plain($alt) . '" title="' . $mime . '" src="' . $icon_url . '" />';
 }
