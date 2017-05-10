@@ -2112,3 +2112,12 @@ HTML;
   salsa_helpers_create_bean('Twitter Feeds', 'Latest tweets', '', 'twitter-feeds', $twitter_snippet, 'iframe');
   salsa_helpers_features_revert('arpansa_blocks');
 }
+
+/**
+ * Update Favicon[ARPANSA-145].
+ */
+function arpansa_base_update_7111() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+  salsa_helpers_features_revert('arpansa_entity');
+}
