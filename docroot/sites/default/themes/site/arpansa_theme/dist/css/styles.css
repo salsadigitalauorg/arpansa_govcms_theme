@@ -6604,6 +6604,26 @@ h6 {
   }
 }
 
+li > ul {
+  list-style-type: none;
+  /* Third level. */
+}
+
+li > ul > li:before {
+  /* Dash style */
+  content: "–";
+  position: absolute;
+  margin-left: -1.1em;
+}
+
+li > ul > li ul {
+  list-style-type: circle;
+}
+
+li > ul > li ul > li:before {
+  content: "";
+}
+
 .show-on-mobile {
   display: "block";
 }
