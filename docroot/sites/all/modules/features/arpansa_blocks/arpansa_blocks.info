@@ -1,7 +1,7 @@
 name = arpansa_blocks
 core = 7.x
 package = ARPANSA
-version = 7.x-1.6
+version = 7.x-1.7
 dependencies[] = crumbs
 dependencies[] = fe_block
 dependencies[] = features
@@ -36,6 +36,7 @@ features[fe_block_settings][] = system-help
 features[fe_block_settings][] = system-main
 features[fe_block_settings][] = system-main-menu
 features[fe_block_settings][] = twitter_block-1
+features[fe_block_settings][] = twitter-feeds
 features[fe_block_settings][] = user-login
 features[fe_block_settings][] = views-footer_teaser-block
 features[fe_block_settings][] = views-have_your_say-block
