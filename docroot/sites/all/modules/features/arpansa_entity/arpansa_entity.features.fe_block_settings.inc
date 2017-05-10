@@ -19,9 +19,10 @@ function arpansa_entity_default_fe_block_settings() {
     'module' => 'menu_block',
     'node_types' => array(
       0 => 'event',
-      1 => 'news_article',
-      2 => 'page',
-      3 => 'webform',
+      1 => 'landing_page',
+      2 => 'news_article',
+      3 => 'page',
+      4 => 'webform',
     ),
     'pages' => 'whats-new
 have-your-say',
