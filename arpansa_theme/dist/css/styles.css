@@ -11553,12 +11553,12 @@ div.toc-filter-back-to-top {
   display: none;
 }
 
-.block-twitter-block {
+.block-twitter-block, #block-bean-twitter-feeds {
   padding-top: 2.75rem;
   padding-bottom: 2.75rem;
 }
 
-.block-twitter-block h2, .block-twitter-block .display {
+.block-twitter-block h2, .block-twitter-block .display, #block-bean-twitter-feeds h2, #block-bean-twitter-feeds .display {
   max-width: 73.125rem;
   margin-left: auto;
   margin-right: auto;
@@ -11574,7 +11574,7 @@ div.toc-filter-back-to-top {
   font-size: 2.25em;
 }
 
-.block-twitter-block > .content {
+.block-twitter-block > .content, #block-bean-twitter-feeds > .content {
   max-width: 20rem;
   margin-left: auto;
   margin-right: auto;
@@ -11584,12 +11584,12 @@ div.toc-filter-back-to-top {
 }
 
 @media (min-width: 1024px) {
-  .block-twitter-block > .content {
+  .block-twitter-block > .content, #block-bean-twitter-feeds > .content {
     max-width: 73.125rem;
   }
 }
 
-.block-twitter-block iframe {
+.block-twitter-block iframe, #block-bean-twitter-feeds iframe {
   width: 100% !important;
 }
 
