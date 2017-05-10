@@ -2110,5 +2110,5 @@ function arpansa_base_update_7110() {
 HTML;
 
   salsa_helpers_create_bean('Twitter Feeds', 'Latest tweets', '', 'twitter-feeds', $twitter_snippet, 'iframe');
-  salsa_helpers_features_revert('arpansa_block');
+  salsa_helpers_features_revert('arpansa_blocks');
 }
