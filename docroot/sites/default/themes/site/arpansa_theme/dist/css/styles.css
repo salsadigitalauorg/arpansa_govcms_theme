@@ -8265,6 +8265,7 @@ a[rel~='external']::after {
     min-width: 250px;
     margin-right: 50px;
     margin-bottom: 0.9375em;
+    vertical-align: top;
   }
 }
 
