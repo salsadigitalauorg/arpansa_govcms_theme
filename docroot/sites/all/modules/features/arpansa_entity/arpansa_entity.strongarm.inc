@@ -943,7 +943,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_left_nav_follow';
-  $strongarm->value = 0;
+  $strongarm->value = 'active';
   $export['menu_block_left_nav_follow'] = $strongarm;
 
   $strongarm = new stdClass();
