@@ -56,5 +56,6 @@
     <?php foreach ($children_contents as $child_content): ?>
       <?php print drupal_render($child_content) ?>
     <?php endforeach ?>
+    <div class="clearfix"></div>
   </div>
 </div>
