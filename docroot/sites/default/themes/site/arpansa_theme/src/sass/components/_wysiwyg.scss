@@ -1,20 +1,37 @@
-.content .field {
-  li {
-    // Second level
-    >ul {
-      list-style-type: none;
-      >li:before {
-        /* Dash style */
-        content: "–";
-        position: absolute;
-        margin-left: -1.1em;
-      }
-      /* Third level. */
-      >li ul {
-        list-style-type: circle;
+.content-body .content {
+  .field {
+    li {
+      // Second level
+      >ul {
+        list-style-type: none;
         >li:before {
-          content: "";
+          /* Dash style */
+          content: "–";
+          position: absolute;
+          margin-left: -1.1em;
         }
+        /* Third level. */
+        >li ul {
+          list-style-type: circle;
+          >li:before {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+  a.has-image, a[rel~='external'].has-image {
+    background: black;
+    border: none;
+    display: inline-block;
+    color: transparent;
+    line-height: 0;
+    &::after {
+      background: none;
+    }
+    &:hover {
+      img {
+        opacity: 0.6;
       }
     }
   }
