@@ -95,26 +95,6 @@ h6 {
   }
 }
 
-li {
-  // Second level
-  >ul {
-    list-style-type: none;
-    >li:before {
-      /* Dash style */
-      content: "–";
-      position: absolute;
-      margin-left: -1.1em;
-    }
-    /* Third level. */
-    >li ul {
-      list-style-type: circle;
-      >li:before {
-        content: "";
-      }
-    }
-  }
-}
-
 .show-on-mobile {
   @include show_on_mobile();
 }
