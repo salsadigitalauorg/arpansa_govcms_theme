@@ -378,7 +378,7 @@ function arpansa_entity_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'file_directory' => 'careers',
-      'file_extensions' => 'doc docx rtf pdf',
+      'file_extensions' => 'odf doc docx rtf pdf txt xls xlsx zip swf ppt pptx',
       'max_filesize' => '5 MB',
       'user_register_form' => FALSE,
     ),
@@ -1592,7 +1592,7 @@ function arpansa_entity_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'file_directory' => '',
-      'file_extensions' => 'txt pdf doc docx rtf odf',
+      'file_extensions' => 'txt pdf doc docx rtf odf xls xlsx zip swf ppt pptx',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -1603,7 +1603,7 @@ function arpansa_entity_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1629,7 +1629,7 @@ function arpansa_entity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1707,7 +1707,7 @@ function arpansa_entity_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1765,7 +1765,7 @@ function arpansa_entity_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1788,7 +1788,7 @@ function arpansa_entity_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -2228,7 +2228,7 @@ function arpansa_entity_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'file_directory' => '',
-      'file_extensions' => 'txt pdf docx doc xls xlsx ppt pptx',
+      'file_extensions' => 'txt pdf docx doc xls xlsx ppt pptx rtf zip swf',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),

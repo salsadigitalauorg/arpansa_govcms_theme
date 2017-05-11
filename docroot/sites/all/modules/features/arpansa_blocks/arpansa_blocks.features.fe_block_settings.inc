@@ -384,6 +384,26 @@ function arpansa_blocks_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
+        'region' => '',
+        'status' => 1,
+        'theme' => 'arpansa_theme',
+        'weight' => -29,
+      ),
+    ),
+    'title' => 'Latest tweets',
+    'visibility' => 1,
+  );
+
+  $export['twitter-feeds'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'twitter-feeds',
+    'module' => 'bean',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'arpansa_theme' => array(
         'region' => 'sidebar_second',
         'status' => 1,
         'theme' => 'arpansa_theme',

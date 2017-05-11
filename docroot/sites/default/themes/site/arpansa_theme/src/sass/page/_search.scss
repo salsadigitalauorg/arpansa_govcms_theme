@@ -57,3 +57,18 @@
     margin-left: rem(12.8px);
   }
 }
+
+// =========================================================
+// EXPOSED FILTER
+// =========================================================
+.view-filters {
+  .views-exposed-form .views-exposed-widget {
+    float: none;
+    display: inline-block;
+    vertical-align: bottom;
+    .form-submit {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+  }
+}

@@ -6,6 +6,10 @@ html {
   box-sizing: inherit;
 }
 
+.timeline-Header, .timeline-Footer {
+  display: none !important;
+}
+
 .timeline-Viewport {
   width: 100% !important;
 }
@@ -29,7 +33,7 @@ html {
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet {
     float: left;
     display: block;
@@ -42,7 +46,7 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .timeline-Viewport .timeline-TweetList .timeline-TweetList-tweet:nth-child(3n) {
     margin-right: 0;
   }

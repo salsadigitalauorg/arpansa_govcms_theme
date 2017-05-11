@@ -22,7 +22,7 @@ function arpansa_entity_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Careers';
+  $handler->display->display_options['title'] = 'Positions available';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -30,16 +30,67 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-left',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<p>There are no positions available at this time.</p>';
+  $handler->display->display_options['empty']['area']['format'] = 'rich_text';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Position number */
+  $handler->display->display_options['fields']['field_position_number']['id'] = 'field_position_number';
+  $handler->display->display_options['fields']['field_position_number']['table'] = 'field_data_field_position_number';
+  $handler->display->display_options['fields']['field_position_number']['field'] = 'field_position_number';
+  $handler->display->display_options['fields']['field_position_number']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_position_number']['alter']['path'] = 'node/[nid]';
+  /* Field: Content: Level */
+  $handler->display->display_options['fields']['field_level']['id'] = 'field_level';
+  $handler->display->display_options['fields']['field_level']['table'] = 'field_data_field_level';
+  $handler->display->display_options['fields']['field_level']['field'] = 'field_level';
+  /* Field: Content: Role */
+  $handler->display->display_options['fields']['field_role']['id'] = 'field_role';
+  $handler->display->display_options['fields']['field_role']['table'] = 'field_data_field_role';
+  $handler->display->display_options['fields']['field_role']['field'] = 'field_role';
+  /* Field: Content: Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  /* Field: Content: Closing Date */
+  $handler->display->display_options['fields']['field_closing_date']['id'] = 'field_closing_date';
+  $handler->display->display_options['fields']['field_closing_date']['table'] = 'field_data_field_closing_date';
+  $handler->display->display_options['fields']['field_closing_date']['field'] = 'field_closing_date';
+  $handler->display->display_options['fields']['field_closing_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

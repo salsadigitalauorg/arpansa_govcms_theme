@@ -19,9 +19,10 @@ function arpansa_entity_default_fe_block_settings() {
     'module' => 'menu_block',
     'node_types' => array(
       0 => 'event',
-      1 => 'news_article',
-      2 => 'page',
-      3 => 'webform',
+      1 => 'landing_page',
+      2 => 'news_article',
+      3 => 'page',
+      4 => 'webform',
     ),
     'pages' => 'whats-new
 have-your-say',
@@ -44,7 +45,7 @@ have-your-say',
     'delta' => 'careers-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'careers',
+    'pages' => 'about-us/careers',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
@@ -64,7 +65,7 @@ have-your-say',
     'delta' => 'fact_sheets_filterable-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'fact-sheets',
+    'pages' => 'understanding-radiation/radiation-sources/more-radiation-sources',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
@@ -124,7 +125,7 @@ have-your-say',
     'delta' => 'literature_surveys-lit_survey',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'arpansa-radiation-protection/arpansa-emr-literature-survey',
+    'pages' => 'research/surveys/electromagnetic-radiation-literature-survey',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(

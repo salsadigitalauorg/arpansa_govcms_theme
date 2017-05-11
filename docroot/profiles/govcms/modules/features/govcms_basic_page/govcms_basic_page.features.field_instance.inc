@@ -123,7 +123,7 @@ The <em>body</em> field is used for the main article content.
     'settings' => array(
       'description_field' => 1,
       'file_directory' => '',
-      'file_extensions' => 'txt pdf docx doc xls xlsx ppt pptx',
+      'file_extensions' => 'txt pdf docx doc xls xlsx ppt pptx rtf zip swf',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
