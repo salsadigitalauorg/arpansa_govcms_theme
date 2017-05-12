@@ -512,6 +512,19 @@ function arpansa_theme_media_wysiwyg_token_to_markup_alter(&$element, $tag_info,
 function arpansa_theme_preprocess_file_entity(&$variables) {
   if (!empty($variables['media_markup'])) {
     $variables['theme_hook_suggestions'][] = 'file_entity__inline_wysiwyg';
+    if (!empty($variables['field_document_title'][LANGUAGE_NONE][0]['value'])) {
+      $document_title = $variables['field_document_title'][LANGUAGE_NONE][0]['value'];
+      $variables['content']['file']['#file']->description = $document_title;
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function arpansa_theme_entity_view_alter(&$build, $type) {
+  if ($type == 'file') {
+    unset($build['links']);
   }
 }
 

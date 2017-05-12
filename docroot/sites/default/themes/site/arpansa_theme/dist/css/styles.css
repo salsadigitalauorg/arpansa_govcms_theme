@@ -7003,6 +7003,26 @@ img {
   opacity: 0.6;
 }
 
+.content-body .content div.media-element-container {
+  display: inline;
+}
+
+.content-body .content div.media-element-container div.file {
+  display: inline;
+}
+
+.content-body .content div.media-element-container div.file h2, .content-body .content div.media-element-container div.file .display {
+  display: none;
+}
+
+.content-body .content div.media-element-container div.file div.content {
+  display: inline;
+}
+
+.content-body .content div.media-element-container div.file div.content br {
+  display: none;
+}
+
 .header__inner {
   max-width: 73.125rem;
   margin-left: auto;
