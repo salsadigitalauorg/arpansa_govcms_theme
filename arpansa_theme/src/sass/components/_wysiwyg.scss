@@ -35,4 +35,19 @@
       }
     }
   }
+  div.media-element-container {
+    display: inline;
+    div.file {
+      display: inline;
+      h2 {
+        display: none;
+      }
+      div.content {
+        display: inline;
+        br {
+          display: none;
+        }
+      }
+    }
+  }
 }
