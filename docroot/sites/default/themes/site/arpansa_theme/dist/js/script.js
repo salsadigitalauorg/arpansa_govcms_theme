@@ -26,14 +26,18 @@
       if ($accordion_header_wysiwyg.length) {
         $accordion_header_wysiwyg.on('click', function() {
           var $accordion_body_wysiwyg = $(this).next();
-          top = $(this).offset().top;
+          while ($accordion_body_wysiwyg.hasClass('accordion-body')) {
+            top = $(this).offset().top;
 
-          $(this).toggleClass('opened');
-          $accordion_body_wysiwyg.toggleClass('opened');
+            $(this).toggleClass('opened');
+            $accordion_body_wysiwyg.toggleClass('opened');
 
-          // $('html, body').animate({
-          //   scrollTop: top
-          // }, 200);
+            // $('html, body').animate({
+            //   scrollTop: top
+            // }, 200);
+
+            $accordion_body_wysiwyg = $accordion_body_wysiwyg.next();
+          }
         });
       }
     }
@@ -54,6 +58,12 @@
 
       if ($table.length && $table_container.length == 0) {
         $table.wrap('<div class="table-container"></div>');
+      }
+
+      // Wysiwyg link to image
+      var $link = $('a:has(img)');
+      if ($link.length) {
+        $link.addClass('has-image');
       }
     }
   };

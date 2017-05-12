@@ -6967,24 +6967,60 @@ img {
   color: black;
 }
 
-.content .field li > ul {
+.content-body .content .field li > ul {
   list-style-type: none;
   /* Third level. */
 }
 
-.content .field li > ul > li:before {
+.content-body .content .field li > ul > li:before {
   /* Dash style */
   content: "–";
   position: absolute;
   margin-left: -1.1em;
 }
 
-.content .field li > ul > li ul {
+.content-body .content .field li > ul > li ul {
   list-style-type: circle;
 }
 
-.content .field li > ul > li ul > li:before {
+.content-body .content .field li > ul > li ul > li:before {
   content: "";
+}
+
+.content-body .content a.has-image, .content-body .content a[rel~='external'].has-image {
+  background: black;
+  border: none;
+  display: inline-block;
+  color: transparent;
+  line-height: 0;
+}
+
+.content-body .content a.has-image::after, .content-body .content a[rel~='external'].has-image::after {
+  background: none;
+}
+
+.content-body .content a.has-image:hover img, .content-body .content a[rel~='external'].has-image:hover img {
+  opacity: 0.6;
+}
+
+.content-body .content div.media-element-container {
+  display: inline;
+}
+
+.content-body .content div.media-element-container div.file {
+  display: inline;
+}
+
+.content-body .content div.media-element-container div.file h2, .content-body .content div.media-element-container div.file .display {
+  display: none;
+}
+
+.content-body .content div.media-element-container div.file div.content {
+  display: inline;
+}
+
+.content-body .content div.media-element-container div.file div.content br {
+  display: none;
 }
 
 .header__inner {

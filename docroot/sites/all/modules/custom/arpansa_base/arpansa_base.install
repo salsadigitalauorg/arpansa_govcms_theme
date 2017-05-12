@@ -2181,3 +2181,34 @@ function arpansa_base_update_7115() {
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
 }
+
+/**
+ * Recapture iFrame text format [ARPANSA-0].
+ */
+function arpansa_base_update_7116() {
+  module_enable(['salsa_helpers']);
+  module_load_include('module', 'salsa_helpers');
+
+  // Unlock the govcms features.
+  $govCMSFeatures = array(
+    'govcms_editing',
+  );
+  salsa_helpers_lock_features($govCMSFeatures, TRUE);
+
+  foreach ($govCMSFeatures as $govCMSFeature) {
+    salsa_helpers_features_revert($govCMSFeature);
+  }
+
+  // Relock them to avoid accidental revert.
+  salsa_helpers_lock_features($govCMSFeatures);
+}
+
+/**
+ * Save all views to database [ARPANSA-0].
+ */
+function arpansa_base_update_7117() {
+  $views = views_get_all_views();
+  foreach ($views as $view) {
+    views_save_view($view);
+  }
+}

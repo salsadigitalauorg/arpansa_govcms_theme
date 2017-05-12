@@ -18,8 +18,13 @@ function govcms_editing_filter_default_formats() {
     'status' => 1,
     'weight' => -9,
     'filters' => array(
+      'filter_autop' => array(
+        'weight' => -50,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'video_filter' => array(
-        'weight' => -47,
+        'weight' => -49,
         'status' => 1,
         'settings' => array(
           'video_filter_width' => 400,
@@ -71,34 +76,29 @@ function govcms_editing_filter_default_formats() {
         ),
       ),
       'media_filter' => array(
-        'weight' => -46,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_url' => array(
-        'weight' => -45,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
-      'filter_autop' => array(
-        'weight' => -44,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'toc_filter' => array(
-        'weight' => -43,
+        'weight' => -46,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => -41,
+        'weight' => -45,
         'status' => 1,
         'settings' => array(),
       ),
       'spamspan' => array(
-        'weight' => -40,
+        'weight' => -44,
         'status' => 1,
         'settings' => array(
           'spamspan_at' => ' [at] ',
@@ -112,7 +112,7 @@ function govcms_editing_filter_default_formats() {
         ),
       ),
       'pathologic' => array(
-        'weight' => -39,
+        'weight' => -43,
         'status' => 1,
         'settings' => array(
           'settings_source' => 'global',
