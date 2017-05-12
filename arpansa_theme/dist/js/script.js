@@ -26,14 +26,18 @@
       if ($accordion_header_wysiwyg.length) {
         $accordion_header_wysiwyg.on('click', function() {
           var $accordion_body_wysiwyg = $(this).next();
-          top = $(this).offset().top;
+          while ($accordion_body_wysiwyg.hasClass('accordion-body')) {
+            top = $(this).offset().top;
 
-          $(this).toggleClass('opened');
-          $accordion_body_wysiwyg.toggleClass('opened');
+            $(this).toggleClass('opened');
+            $accordion_body_wysiwyg.toggleClass('opened');
 
-          // $('html, body').animate({
-          //   scrollTop: top
-          // }, 200);
+            // $('html, body').animate({
+            //   scrollTop: top
+            // }, 200);
+
+            $accordion_body_wysiwyg = $accordion_body_wysiwyg.next();
+          }
         });
       }
     }
