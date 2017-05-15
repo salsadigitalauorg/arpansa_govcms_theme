@@ -6949,9 +6949,14 @@ img {
 .accordion-body {
   display: none;
   padding: 20px;
+  /* Nested accordion body should always opened. */
 }
 
 .accordion-body.opened {
+  display: block;
+}
+
+.accordion-body .accordion-body {
   display: block;
 }
 
