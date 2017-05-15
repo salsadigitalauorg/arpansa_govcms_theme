@@ -11593,14 +11593,13 @@ div.toc-filter-content ol.toc-filter-links li {
 }
 
 div.toc-filter-content ul.toc-filter-links {
-  list-style: none;
-  padding-left: 0;
+  padding-left: 30px;
 }
 
 div.toc-filter-content ul.toc-filter-links li {
-  background: transparent url(../images/svg/chevron-right-green.svg) 0 8px no-repeat;
   margin-bottom: 5px;
-  padding-left: 15px;
+  margin-left: 0;
+  padding-left: 5px;
   min-width: 100%;
   font-size: 0.875em;
   line-height: 1.5em;
