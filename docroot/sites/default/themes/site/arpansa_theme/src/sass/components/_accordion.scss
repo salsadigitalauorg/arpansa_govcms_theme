@@ -81,4 +81,8 @@
   &.opened {
     display: block;
   }
+  /* Nested accordion body should always opened. */
+  .accordion-body {
+    display: block;
+  }
 }
