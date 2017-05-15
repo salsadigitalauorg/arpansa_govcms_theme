@@ -45,6 +45,8 @@ function arpansa_theme_preprocess_html(&$variables) {
     'scope' => 'header',
   ));
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
+  // Drupal forms.js does not support new jQuery. Migrate library needed.
+  drupal_add_js(drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-migrate-1.2.1.min.js');
 }
 
 /**
