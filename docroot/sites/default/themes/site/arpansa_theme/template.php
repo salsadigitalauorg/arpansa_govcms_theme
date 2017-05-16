@@ -33,7 +33,7 @@ function arpansa_theme_html_head_alter(&$head_elements) {
  * Implements hook_js_alter().
  */
 function arpansa_theme_js_alter(&$javascript) {
-  $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-1.8.3.min.js';
+  $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-3.1.1.min.js';
 }
 
 /**
@@ -46,7 +46,8 @@ function arpansa_theme_preprocess_html(&$variables) {
   ));
   drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
   // Drupal forms.js does not support new jQuery. Migrate library needed.
-  drupal_add_js(drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-migrate-1.2.1.min.js');
+  drupal_add_js(drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery-migrate-1.2.1.min.js', array('weight' => -1));
+  drupal_add_js(drupal_get_path('theme', 'arpansa_theme') . '/vendor/jquery/jquery.polyfills.js', array('group' => 'JS_LIBRARY', 'weight' => -1));
 }
 
 /**
