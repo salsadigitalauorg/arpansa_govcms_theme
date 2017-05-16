@@ -2241,4 +2241,10 @@ function arpansa_base_update_7119() {
   module_enable(['salsa_helpers']);
   module_load_include('module', 'salsa_helpers');
   salsa_helpers_features_revert('arpansa_entity');
+
+  // Save all views to DB.
+  $views = views_get_all_views();
+  foreach ($views as $view) {
+    views_save_view($view);
+  }
 }
