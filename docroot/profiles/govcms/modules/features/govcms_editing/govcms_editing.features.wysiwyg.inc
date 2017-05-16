@@ -78,8 +78,10 @@ function govcms_editing_wysiwyg_default_profiles() {
       'css_setting' => 'theme',
       'css_path' => '',
       'stylesSet' => 'Accordion Header=h3.accordion-header
-Accordion Body=p.accordion-body',
-      'block_formats' => 'p,h2,h3,h4,h5,h6',
+Accordion Body=p.accordion-body
+Accordion Body (unordered list)=ul.accordion-body
+Accordion Body (ordered list)=ol.accordion-body',
+      'block_formats' => 'p,h2,h3,h4,h5,h6,ul,ol',
       'advanced__active_tab' => 'edit-css',
       'forcePasteAsPlainText' => 1,
     ),
@@ -157,8 +159,9 @@ Accordion Body=p.accordion-body',
       'css_path' => '',
       'stylesSet' => 'Accordion Header=h3.accordion-header
 Accordion Body=p.accordion-body
-Plain table=table.no-zebra',
-      'block_formats' => 'p,h2,h3,h4,h5,h6',
+Accordion Body (unordered list)=ul.accordion-body
+Accordion Body (ordered list)=ol.accordion-body',
+      'block_formats' => 'p,h2,h3,h4,h5,h6,ul,ol',
       'advanced__active_tab' => 'edit-css',
       'forcePasteAsPlainText' => 1,
     ),
