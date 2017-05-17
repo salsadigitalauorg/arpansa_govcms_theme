@@ -75,6 +75,11 @@
   }
 }
 
+@mixin accordion-body-list-padding() {
+  padding: 0;
+  padding-left: ($base-spacing + $small-spacing);
+}
+
 .accordion-body {
   display: none;
   padding: 20px;
@@ -87,10 +92,10 @@
   }
   li.accordion-body {
     display: list-item;
+    @include accordion-body-list-padding();
   }
 }
 
 ul.accordion-body, ol.accordion-body {
-  padding: 0;
-  padding-left: ($base-spacing + $small-spacing);
+  @include accordion-body-list-padding();
 }
