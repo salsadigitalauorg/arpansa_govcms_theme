@@ -6962,6 +6962,8 @@ img {
 
 .accordion-body li.accordion-body {
   display: list-item;
+  padding: 0;
+  padding-left: 2.4em;
 }
 
 ul.accordion-body, ol.accordion-body {
