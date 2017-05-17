@@ -125,7 +125,7 @@ have-your-say',
     'delta' => 'literature_surveys-lit_survey',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'research/surveys/electromagnetic-radiation-literature-survey',
+    'pages' => 'research/surveys/radiation-literature-survey',
     'roles' => array(),
     'themes' => array(
       'arpansa_theme' => array(
