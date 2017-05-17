@@ -7003,19 +7003,39 @@ ul.accordion-body, ol.accordion-body {
 }
 
 .content-body .content a.has-image, .content-body .content a[rel~='external'].has-image {
-  background: black;
+  background: transparent;
   border: none;
   display: inline-block;
   color: transparent;
   line-height: 0;
+  position: relative;
+  /* external link's icon hide */
+  /* Make sure internal P tags don't have any margin below */
 }
 
-.content-body .content a.has-image::after, .content-body .content a[rel~='external'].has-image::after {
+.content-body .content a.has-image:before, .content-body .content a[rel~='external'].has-image:before {
   background: none;
+  position: absolute;
 }
 
-.content-body .content a.has-image:hover img, .content-body .content a[rel~='external'].has-image:hover img {
-  opacity: 0.6;
+.content-body .content a.has-image:hover:before, .content-body .content a[rel~='external'].has-image:hover:before {
+  content: '';
+  display: inline-block;
+  background-color: black;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0.2;
+}
+
+.content-body .content a.has-image:after, .content-body .content a[rel~='external'].has-image:after {
+  display: none;
+}
+
+.content-body .content a.has-image p, .content-body .content a[rel~='external'].has-image p {
+  margin-bottom: 0;
 }
 
 .content-body .content div.media-element-container {
