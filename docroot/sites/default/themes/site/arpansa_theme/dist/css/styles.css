@@ -6829,15 +6829,19 @@ img {
   background-color: #f0f3f5;
 }
 
+.content table.table-top-align td {
+  vertical-align: top;
+}
+
 .content div.table-container {
   max-width: 100%;
   margin-bottom: 25px;
-  overflow-y: auto;
+  overflow-x: auto;
 }
 
 @media only screen and (min-width: 1200px) {
   .content div.table-container {
-    overflow-x: hidden;
+    max-width: 99%;
   }
 }
 
@@ -6960,6 +6964,16 @@ img {
   display: block;
 }
 
+.accordion-body li.accordion-body {
+  display: list-item;
+  padding: initial;
+}
+
+ul.accordion-body, ol.accordion-body {
+  padding: 0;
+  padding-left: 2.4em;
+}
+
 .consultation__progress-bar .consultation__progress-bar__bar {
   background-color: #F5F5F5;
 }
@@ -6993,19 +7007,39 @@ img {
 }
 
 .content-body .content a.has-image, .content-body .content a[rel~='external'].has-image {
-  background: black;
+  background: transparent;
   border: none;
   display: inline-block;
   color: transparent;
   line-height: 0;
+  position: relative;
+  /* external link's icon hide */
+  /* Make sure internal P tags don't have any margin below */
 }
 
-.content-body .content a.has-image::after, .content-body .content a[rel~='external'].has-image::after {
+.content-body .content a.has-image:before, .content-body .content a[rel~='external'].has-image:before {
   background: none;
+  position: absolute;
 }
 
-.content-body .content a.has-image:hover img, .content-body .content a[rel~='external'].has-image:hover img {
-  opacity: 0.6;
+.content-body .content a.has-image:hover:before, .content-body .content a[rel~='external'].has-image:hover:before {
+  content: '';
+  display: inline-block;
+  background-color: black;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0.2;
+}
+
+.content-body .content a.has-image:after, .content-body .content a[rel~='external'].has-image:after {
+  display: none;
+}
+
+.content-body .content a.has-image p, .content-body .content a[rel~='external'].has-image p {
+  margin-bottom: 0;
 }
 
 .content-body .content div.media-element-container {

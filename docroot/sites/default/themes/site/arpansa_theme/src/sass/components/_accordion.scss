@@ -85,4 +85,13 @@
   .accordion-body {
     display: block;
   }
+  li.accordion-body {
+    display: list-item;
+    padding: initial;
+  }
+}
+
+ul.accordion-body, ol.accordion-body {
+  padding: 0;
+  padding-left: ($base-spacing + $small-spacing);
 }
