@@ -6829,6 +6829,10 @@ img {
   background-color: #f0f3f5;
 }
 
+.content table.table-top-align td {
+  vertical-align: top;
+}
+
 .content div.table-container {
   max-width: 100%;
   margin-bottom: 25px;
