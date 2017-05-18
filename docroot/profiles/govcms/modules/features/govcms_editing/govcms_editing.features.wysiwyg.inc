@@ -160,7 +160,8 @@ Accordion Body (ordered list)=ol.accordion-body',
       'stylesSet' => 'Accordion Header=h3.accordion-header
 Accordion Body=p.accordion-body
 Accordion Body (unordered list)=ul.accordion-body
-Accordion Body (ordered list)=ol.accordion-body',
+Accordion Body (ordered list)=ol.accordion-body
+Table Top Align=table.table-top-align',
       'block_formats' => 'p,h2,h3,h4,h5,h6,ul,ol',
       'advanced__active_tab' => 'edit-css',
       'forcePasteAsPlainText' => 1,
