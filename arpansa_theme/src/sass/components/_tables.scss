@@ -23,6 +23,11 @@
     tr.odd {
       background-color: $zebra-bg;
     }
+    &.table-top-align {
+      td {
+        vertical-align: top;
+      }
+    }
   }
   div.table-container {
     max-width: 100%;
