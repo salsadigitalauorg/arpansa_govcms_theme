@@ -21,18 +21,34 @@
     }
   }
   a.has-image, a[rel~='external'].has-image {
-    background: black;
+    background: transparent;
     border: none;
     display: inline-block;
     color: transparent;
     line-height: 0;
-    &::after {
+    position: relative;
+    &:before {
       background: none;
+      position: absolute;
     }
-    &:hover {
-      img {
-        opacity: 0.6;
-      }
+    &:hover:before {
+      content: '';
+      display: inline-block;
+      background-color: black;
+      left: 0;
+      right: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      opacity: 0.2;
+    }
+    /* external link's icon hide */
+    &:after {
+      display: none;
+    }
+    /* Make sure internal P tags don't have any margin below */
+    p {
+      margin-bottom: 0;
     }
   }
   div.media-element-container {
