@@ -6832,12 +6832,12 @@ img {
 .content div.table-container {
   max-width: 100%;
   margin-bottom: 25px;
-  overflow-y: auto;
+  overflow-x: auto;
 }
 
 @media only screen and (min-width: 1200px) {
   .content div.table-container {
-    overflow-x: hidden;
+    max-width: 99%;
   }
 }
 
