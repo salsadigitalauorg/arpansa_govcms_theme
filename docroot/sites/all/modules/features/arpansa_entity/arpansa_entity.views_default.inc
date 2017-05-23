@@ -379,7 +379,7 @@ function arpansa_entity_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<div class="more-link">
-  <a href="#">View more</a>
+  <a href="/whats-new">View more</a>
 </div>';
   $handler->display->display_options['footer']['area']['format'] = 'rich_text';
   /* Sort criterion: Content: Sticky */
