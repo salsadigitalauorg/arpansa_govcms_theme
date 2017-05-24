@@ -33,6 +33,15 @@
 	  </div>
 	<?php endif; ?>
 
+  <?php if (!empty($content['field_literature_survey_date'][0]['#markup'])) :?>
+	  <div class="field field-name-field-literature-survey-date field-type-text field-label-inline clearfix">
+	  	<div class="field-label"><?php print render($content['field_literature_survey_date']['#title']) ?>:</div>
+	  	<div class="field-items">
+	  		<div class="field-item even"><h3><?php print render($content['field_literature_survey_date'][0]['#markup']) ?></h3></div>
+	  	</div>
+	  </div>
+	<?php endif; ?>
+
 	<?php if (!empty($content['body'][0]['#markup'])) :?>
   <div class="field field-name-body field-type-text-with-summary field-label-inline clearfix">
   	<div class="field-label">Summary:</div>

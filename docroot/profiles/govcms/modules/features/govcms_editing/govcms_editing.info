@@ -1,7 +1,7 @@
 name = Editing
 core = 7.x
 package = govCMS core
-version = 7.x-2.13
+version = 7.x-2.14
 project = govcms
 dependencies[] = ctools
 dependencies[] = defaultconfig

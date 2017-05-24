@@ -10943,7 +10943,7 @@ body.not-front #content .view.view-literature-surveys .view-content .field-label
   float: none;
 }
 
-body.not-front #content .view.view-literature-surveys .view-content .field-name-field-authored-by h3, body.not-front #content .view.view-literature-surveys .view-content .field-name-field-published-in h3 {
+body.not-front #content .view.view-literature-surveys .view-content .field-name-field-authored-by h3, body.not-front #content .view.view-literature-surveys .view-content .field-name-field-published-in h3, body.not-front #content .view.view-literature-surveys .view-content .field-name-field-literature-survey-date h3 {
   margin: 0;
   font-size: 1.125em;
   line-height: inherit;
