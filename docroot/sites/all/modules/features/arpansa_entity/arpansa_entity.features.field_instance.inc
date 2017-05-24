@@ -1115,7 +1115,7 @@ function arpansa_entity_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'above',
@@ -1394,10 +1394,11 @@ function arpansa_entity_field_default_field_instances() {
     'description' => 'The date this Literature Survey belongs to, this is used to filter Literature Survey\'s on the Literature Survey list page.',
     'display' => array(
       'compact' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'above',
@@ -1452,7 +1453,7 @@ function arpansa_entity_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
