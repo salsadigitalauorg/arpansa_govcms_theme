@@ -94,7 +94,7 @@ function arpansa_entity_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'compact';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'inline',
       'format' => 'default',
     ),
@@ -349,15 +349,17 @@ function arpansa_entity_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_authored_by',
         2 => 'field_published_in',
-        3 => 'body',
-        4 => 'field_link_to',
-        5 => 'field_commentary',
+        3 => 'field_literature_survey_date',
+        4 => 'body',
+        5 => 'field_link_to',
+        6 => 'field_commentary',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_authored_by' => 'ds_content',
       'field_published_in' => 'ds_content',
+      'field_literature_survey_date' => 'ds_content',
       'body' => 'ds_content',
       'field_link_to' => 'ds_content',
       'field_commentary' => 'ds_content',
