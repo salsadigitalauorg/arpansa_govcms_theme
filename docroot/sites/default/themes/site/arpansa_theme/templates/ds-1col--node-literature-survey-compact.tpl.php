@@ -35,7 +35,7 @@
 
   <?php if (!empty($content['field_literature_survey_date'][0]['#markup'])) :?>
 	  <div class="field field-name-field-literature-survey-date field-type-text field-label-inline clearfix">
-	  	<div class="field-label"><?php print render($content['field_literature_survey_date']['#title']) ?>:</div>
+	  	<div class="field-label"><?php print t('Date') ?>:</div>
 	  	<div class="field-items">
 	  		<div class="field-item even"><h3><?php print render($content['field_literature_survey_date'][0]['#markup']) ?></h3></div>
 	  	</div>
