@@ -1,0 +1,243 @@
+// =========================================================
+// SKIP LINK
+// =========================================================
+.skip-to {
+  color: #313131;
+  position: relative;
+  z-index: 200;
+  a {
+    border: 0;
+    height: 1px;
+    line-height: 1em;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    border-radius: 1px;
+    text-decoration: none;
+    &:focus, &:active {
+      background-color: $secondary_1;
+      color: white;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      width: auto;
+      top: 10px;
+      left: 10px;
+      padding: 0.4em 0.8em;
+    }
+  }
+}
+
+// =========================================================
+// TOP NAVIGATION
+// =========================================================
+.region-navigation {
+  background-color: $secondary_1;
+  .block-superfish {
+    @include center-column($desktop_column);
+    display: none;
+    @include breakpoint(tablet) {
+      display: block;
+    }
+    ul.sf-menu {
+      width: 100%;
+      position: relative;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      display: table; // If JS is enabled - hide sub nav menus until superfish finishes loading.
+      &:not(.superfish-processed) {
+        &>li>ul {
+          html:not(.no-js) & {
+            visibility: hidden;
+          }
+        }
+      }
+      li.sfHover {
+        &>a {
+          background-color: $main_menu_hover;
+          &.menuparent {
+            &:after {
+              background-image: url(../images/svg/nav_down_arrow_white.svg);
+            }
+          }
+        }
+      }
+      &>li {
+        position: relative;
+        vertical-align: top;
+        float: none;
+        display: table-cell;
+        width: auto;
+        &.menuparent {
+          &>a {
+            display: block;
+            padding-left: rem(5px);
+            padding-right: rem(5px);
+            &:after {
+              content: '';
+              display: inline-block;
+              background-image: url(../images/svg/nav_down_arrow.svg);
+              background-position: center;
+              background-repeat: no-repeat;
+              width: rem(11px);
+              height: rem(7px);
+              margin-left: rem(5px);
+              vertical-align: middle;
+            }
+          }
+        }
+        &.active-trail {
+          &>a {
+            background-color: $main_menu_active;
+            &:before {
+              background-color: $main_menu_active;
+            }
+            &:hover, &:focus {
+              background-color: $main_menu_hover_2;
+              &:before {
+                background-color: $main_menu_hover_2;
+              }
+            }
+          }
+        }
+        &>a {
+          position: static;
+          display: inline-block;
+          padding-top: $default_padding;
+          padding-bottom: rem(($default_padding_px - 4px));
+          padding-left: 0 rem(2px);
+          padding-right: 0 rem(2px);
+          box-sizing: border-box;
+          width: 100%;
+          height: 100%;
+          color: white;
+          vertical-align: top;
+          text-align: center;
+          text-decoration: none;
+          font-weight: 600;
+          @include breakpoint(desktop) {
+            padding-left: rem(20px);
+            padding-right: rem(20px);
+          }
+          &:hover, &:focus {
+            background-color: $main_menu_hover_2;
+            &:before {
+              background-color: $main_menu_hover_2;
+            }
+          }
+          &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: auto;
+            border-bottom: 4px solid transparent;
+          }
+        }
+        &>ul {
+          top: 100%;
+          padding: 0;
+          margin: 0;
+          li {
+            &.menuparent {
+              &>a {
+                background-image: url(../images/svg/nav_right_arrow.svg);
+                background-repeat: no-repeat;
+                background-position: right rem(22px) center;
+              }
+            }
+            a {
+              background-color: $primary_1;
+              color: white;
+              text-decoration: none;
+              padding-left: rem(30px);
+              padding-right: rem(30px);
+              padding-top: rem(15px);
+              padding-bottom: rem((15px - 1px));
+              border: none;
+              &:hover, &:focus {
+                background-color: $main_menu_hover_2;
+              }
+            }
+            &.active-trail {
+              &>a {
+                background-color: $main_menu_active;
+                &:hover, &:focus {
+                  background-color: $main_menu_hover_2;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-nav {
+  position: relative;
+  @include breakpoint(tablet) {
+    display: none;
+  }
+  .js & {
+    display: none;
+  }
+  &.menu-open {
+    background-color: $primary_1;
+    display: block;
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+  ul.links {
+    border-top: 1px solid $neutral_3;
+    padding-left: 0;
+    padding-top: $default_padding;
+    padding-bottom: $default_padding;
+    text-align: center;
+    li {
+      list-style-type: none;
+      margin: 0;
+      a {
+        outline: 0;
+        display: block;
+        font-weight: 600;
+        font-size: rem(18);
+        text-decoration: none;
+        padding-top: $default_padding / 2;
+        padding-bottom: $default_padding / 2;
+        color: white;
+        background-image: url(../images/svg/white_right_arrow.svg);
+        background-repeat: no-repeat;
+        background-position: right rem(30px) center;
+        &:hover, &:focus {
+          color: white;
+          background-color: $main_menu_hover_2;
+        }
+      }
+      &.active {
+        a {
+          color: white;
+          background-color: $secondary_1;
+          background-image: none;
+          &:hover, &:focus {
+            color: white;
+            background-color: $secondary_1;
+          }
+        }
+      }
+      &.first {
+        a {
+          background-image: none;
+        }
+      }
+    }
+  }
+}
