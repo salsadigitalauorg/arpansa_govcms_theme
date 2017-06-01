@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the govCMS Common Fields feature.
- */
-
-include_once 'govcms_common_fields.features.inc';

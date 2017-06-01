@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the ARPANSA FAQ feature.
- */
-
-include_once 'arpansa_faq.features.inc';

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the ARPANSA Search feature.
- */
-
-include_once 'arpansa_search.features.inc';

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the ARPANSA Review Content feature.
- */
-
-include_once 'arpansa_review_content.features.inc';
