@@ -146,7 +146,7 @@ function govcms_editing_filter_default_formats() {
         'settings' => array(
           'valid_elements' => 'a[href|rel|target<_blank|title|class|name|id],
 div[id|class|align<center?justify?left?right],
-br,hr,em,i,strong,cite,code,blockquote,ul,ol[class],li[class],dl,dt,dd,strike,s,u,
+br,hr,em,i,strong,cite,code,blockquote,ul,ol[class|start|type|style],li[class],dl,dt,dd,strike,s,u,
 span,p[class|align<center?justify?left?right],
 h2[class],h3[class],h4[class],h5[class],h6[class],
 img[!src|title|alt|width|height|class|hspace|vspace],
@@ -249,10 +249,10 @@ video',
             'position' => 0,
           ),
           'style_list' => array(
+            'list-style-type' => 'list-style-type',
             'list-style' => 0,
             'list-style-image' => 0,
             'list-style-position' => 0,
-            'list-style-type' => 0,
           ),
           'style_table' => array(
             'border-collapse' => 0,
