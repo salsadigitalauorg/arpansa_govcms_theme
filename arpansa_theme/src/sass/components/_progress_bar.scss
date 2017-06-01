@@ -1,0 +1,12 @@
+.consultation__progress-bar {
+  .consultation__progress-bar__bar {
+    background-color: $grey_3;
+    .consultation__progress-bar__progress {
+      background-color: $primary_1;
+    }
+  }
+}
+
+.consultation__progress-bar__highlighted {
+  color: black;
+}

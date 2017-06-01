@@ -1,0 +1,69 @@
+.content-body .content {
+  .field {
+    li {
+      // Second level
+      >ul {
+        list-style-type: none;
+        >li:before {
+          /* Dash style */
+          content: "–";
+          position: absolute;
+          margin-left: -1.1em;
+        }
+        /* Third level. */
+        >li ul {
+          list-style-type: circle;
+          >li:before {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+  a.has-image, a[rel~='external'].has-image {
+    background: transparent;
+    border: none;
+    display: inline-block;
+    color: transparent;
+    line-height: 0;
+    position: relative;
+    &:before {
+      background: none;
+      position: absolute;
+    }
+    &:hover:before {
+      content: '';
+      display: inline-block;
+      background-color: black;
+      left: 0;
+      right: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      opacity: 0.2;
+    }
+    /* external link's icon hide */
+    &:after {
+      display: none;
+    }
+    /* Make sure internal P tags don't have any margin below */
+    p {
+      margin-bottom: 0;
+    }
+  }
+  div.media-element-container {
+    display: inline;
+    div.file {
+      display: inline;
+      h2 {
+        display: none;
+      }
+      div.content {
+        display: inline;
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}

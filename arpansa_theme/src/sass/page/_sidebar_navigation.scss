@@ -1,0 +1,205 @@
+// =========================================================
+// GENERIC SIDEBAR BLOCK
+// =========================================================
+.region-sidebar-first {
+  .block {
+    margin-bottom: $default_padding;
+    &>h2 {
+      @include block-heading;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// =========================================================
+// SIDEBAR MENU
+// =========================================================
+#block-menu-block-left-nav, .page-search #content .block-facetapi {
+  margin-bottom: $default_padding;
+  h2 {
+    margin-bottom: 0;
+    @include breakpoint(desktop) {
+      margin-bottom: rem(23px);
+    }
+    button {
+      // Button is only on mobile.
+      @include transition-fade;
+      padding: rem(13px) rem(50px) rem(13px) rem(15px);
+      position: relative;
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+      font-weight: 400;
+      border: 0;
+      text-align: left;
+      background-color: $grey_3;
+      color: $primary_1;
+      border-radius: 0;
+      line-height: rem(20px);
+      &:hover, &:focus {
+        box-shadow: none;
+        background-color: $neutral_3;
+        color: $primary_1;
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: rem(50px);
+        background-image: url(../images/svg/sidebar-mobile-arrow-down.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: rotate(0deg);
+      }
+      &.showing {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .content {
+    display: none;
+    @include breakpoint(large_tablet) {
+      display: block;
+    }
+    @include breakpoint(desktop) {
+      border-left: 5px solid $primary_1;
+    }
+    &.showing {
+      display: block;
+      background-color: #FAFAFA;
+      padding: 0;
+      @include breakpoint(desktop) {
+        padding: rem(26px) rem(15px);
+      }
+    }
+  }
+  ul.menu, ul.facetapi-facetapi-links {
+    margin: 0;
+    padding: 0;
+    &.menu-closed {
+      display: none;
+    }
+    li {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      .sidemenu-item {
+        position: relative;
+      }
+      a {
+        color: $secondary_1;
+        width: 100%;
+        display: inline-block;
+        box-sizing: border-box;
+        padding-top: rem(13px);
+        padding-bottom: rem(13px);
+        padding-right: rem(35px);
+        border-bottom: 0;
+        text-decoration: none;
+        background-color: white;
+        line-height: rem(30px);
+        &:hover, &:focus {
+          color: white;
+          background-color: $secondary_1;
+        }
+      }
+      button.sidebar-toggle-menu {
+        @include transition-fade;
+        @include hide-text;
+        text-indent: -10000px;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        width: rem(30px);
+        height: 100%;
+        box-sizing: border-box;
+        background-color: white;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../images/svg/sidebar-arrow-down.svg);
+        transform: rotate(180deg);
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 0;
+        &:hover, &:focus {
+          background-image: url(../images/svg/sidebar-arrow-down-hover.svg);
+          background-color: $secondary_1;
+          box-shadow: none;
+        }
+        &.menu-closed {
+          transform: rotate(0deg);
+        }
+      }
+      &.active {
+        &>a, &>.sidemenu-item>a {
+          background: $primary_1;
+          color: white;
+          &:hover, &:focus {
+            color: white;
+            background-color: $secondary_1;
+          }
+        }
+        &>button.sidebar-toggle-menu, &>.sidemenu-item>button.sidebar-toggle-menu {
+          background-color: $primary_1;
+          background-image: url(../images/svg/sidebar-arrow-down-hover.svg);
+          &:hover, &:focus {
+            background-color: $secondary_1;
+          }
+        }
+      }
+    }
+  }
+  .menu-block-wrapper, .item-list {
+    &>ul {
+      &>li {
+        border-bottom: 2px solid $neutral_1;
+        overflow: hidden;
+        &>a, &>.sidemenu-item>a {
+          color: $color-brand-black;
+          font-weight: 600;
+          padding-left: $small-spacing;
+          &:hover, &:focus {
+            color: white;
+          }
+        }
+        &>ul {
+          border-top: 2px solid $neutral_1;
+          &>li {
+            background-color: $grey_3;
+            &>a, &>.sidemenu-item>a {
+              padding-left: $small-spacing * 2;
+              background-color: $grey_3;
+              &:hover, &:focus {
+                color: white;
+                background-color: $secondary_1;
+              }
+            }
+            button.sidebar-toggle-menu, &>.sidemenu-item>a>button.sidebar-toggle-menu {
+              background-color: $grey_3;
+            }
+            &>ul {
+              background-color: white;
+              border-top: 2px solid $grey_5;
+              &>li {
+                &>a, &>.sidemenu-item>a {
+                  padding-left: $small-spacing * 3;
+                }
+                button.sidebar-toggle-menu {
+                  background-color: $grey_3;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
