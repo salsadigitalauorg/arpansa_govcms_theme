@@ -1,5 +1,0 @@
-name        = ARPANSA Admin
-description = ARPANSA Admin theme
-
-core        = 7.x
-base theme  = shiny
