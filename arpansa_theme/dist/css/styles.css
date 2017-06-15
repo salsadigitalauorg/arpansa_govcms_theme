@@ -8810,9 +8810,7 @@ form.webform-client-form .webform-component-date input.webform-calendar:hover, f
 
 @media only screen and (min-width: 768px) {
   form.webform-client-form .webform-component-time .webform-container-inline {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: block;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
@@ -8822,9 +8820,12 @@ form.webform-client-form .webform-component-date input.webform-calendar:hover, f
   }
 }
 
+form.webform-client-form .webform-component-time .webform-container-inline > .form-item:nth-child(2) {
+  margin-left: 3px;
+}
+
 @media only screen and (min-width: 768px) {
   form.webform-client-form .webform-component-time .form-item.form-type-select {
-    width: 25%;
     display: inline-block;
   }
 }
@@ -8840,9 +8841,7 @@ form.webform-client-form .webform-component-time select {
 }
 
 form.webform-client-form .webform-component-time .form-radios {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
 }
 
 form.webform-client-form .webform-component-time .form-radios .form-item {
