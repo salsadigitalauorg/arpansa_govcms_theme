@@ -139,14 +139,16 @@ form.webform-client-form {
   .webform-component-time {
     .webform-container-inline {
       @include breakpoint(tablet) {
-        display: flex;
+        display: block;
         align-items: center;
         justify-content: space-between;
+      }
+      &>.form-item:nth-child(2) {
+        margin-left: 3px;
       }
     }
     .form-item.form-type-select {
       @include breakpoint(tablet) {
-        width: 25%;
         display: inline-block;
       }
     }
@@ -157,7 +159,7 @@ form.webform-client-form {
       }
     }
     .form-radios {
-      display: flex;
+      display: inline-block;
       .form-item {
         margin-top: 0;
         margin-bottom: 0;
