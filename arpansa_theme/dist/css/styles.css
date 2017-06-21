@@ -247,6 +247,89 @@ Usage:
   margin-bottom: 0;
 }
 
+/*
+Grid
+
+This framework uses <a href="http://bourbon.io/" rel="external">Bourbon</a> and <a href="http://neat.bourbon.io/" rel="external">Neat</a> to create a consistent 16 column responsive grid layout with good defaults.
+
+Bourbon is a <a href="http://sass-lang.com/" rel="external">SASS</a> mixin library (it provides little styling). Neat is a flexible grid framework.
+
+Avoid mixing this layout with other grid layouts.
+
+<p class="callout"><strong>Grid classes?</strong> There are no non-semantic grid classes with which to set block elements. This is intentional. If you need to add to or customise the grid system see below.</p>
+
+Primary content is always contained in 12 columns. This allows for seamless introduction of a sidebar/side navigation.
+
+The grid unit proportions, gutters and spacing are defined in `_grid-settings.scss`.
+
+If you need an element not defined here you are probably not the only one &mdash; please <a href="https://github.com/AusDTO/gov-au-ui-kit/issues" rel="external">log a GitHub issue</a> so we can provide it for everyone.
+
+***
+
+This guidance is in part adapted from <a href="http://govuk-elements.herokuapp.com" rel="external">GOV.UK elements</a> under <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="external">Open Government Licence v3.0</a>, and <a href="https://standards.usa.gov/getting-started/" rel="external">18F Draft US Web Design Standards</a> under <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode" rel="external">CC0 1.0 Universal</a>.
+
+Style guide: Grid
+*/
+/*
+Responsive breakpoints
+
+This framework has a mobile-first default layout of 4 columns, and adds 3 breakpoints for grid layout on larger screens:
+
+- Default: 4 columns
+- Mobile: 8 columns, 420px minimum
+- Tablet: 12 columns, 768px minimum
+- Desktop: 16 columns, 1200px minimum
+
+If you give an element a modified grid setting consider the implications for all breakpoints. The Digital Service Standard recommends you <a href="https://www.dto.gov.au/standard/6-consistent-and-responsive/" rel="external">build using mobile first design principles</a>.
+
+Please also consider the [font size](section-typography.html#kssref-typography-2-headings-body-copy-1-breakpoints) at different breakpoints.
+
+```
+$mobile: new-breakpoint(min-width 420px 8);
+$tablet: new-breakpoint(min-width 768px 12);
+$desktop: new-breakpoint(min-width $max-width 16);
+```
+
+Style guide: Grid.3 Breakpoints
+*/
+/*
+Helpers
+
+Style guide: Grid.4 Helpers
+*/
+/*
+Omega Reset
+
+When applying grid-columns to responsive layouts you may find yourself needing to reset the [omega properties applied by Neat](http://thoughtbot.github.io/neat-docs/latest/#omega):
+
+```
+.grid-item {
+  @include span-columns(2 of 4);
+  @include omega(2n);
+
+  @include media($desktop) {
+    @include omega-reset(2n);
+    @include span-columns(4 of 12);
+    @include omega(3n);
+  }
+}
+```
+
+Style guide: Grid.4 Helpers.1 Font stacks
+*/
+/*
+Debugging
+
+Turn on the visual grid to help debugging:
+
+```
+$visual-grid: true;
+```
+
+See the example <a href="http://neat.bourbon.io/examples/" rel="external">Bourbon Neat working grid layout</a>.
+
+Style guide: Grid.4 Helpers.2 Debugging
+*/
 .list-small a, .primary-nav ul ul ul ul a,
 .local-nav ul ul ul ul a, [class^='breadcrumbs'] ul li:not(:last-child) {
   background-image: url("../latest/img/icons/arrow-right.svg");
@@ -323,18 +406,13 @@ main > article a[rel~='external']::after, footer[role='contentinfo'] a[rel~='ext
 }
 
 @media print {
-  *,
-  *::before,
-  *::after,
-  *::first-letter,
-  *::first-line {
+  body *, body *::before, body *::after, body *::first-letter, body *::first-line {
     background: transparent;
     color: #000;
     box-shadow: none;
     text-shadow: none;
   }
-  a,
-  a:visited {
+  a, a:visited {
     text-decoration: underline;
   }
   a[href]::after {
@@ -343,34 +421,27 @@ main > article a[rel~='external']::after, footer[role='contentinfo'] a[rel~='ext
   abbr[title]::after {
     content: " (" attr(title) ")";
   }
-  a[href^='#']::after,
-  a[href^='javascript:']::after {
+  a[href^='#']::after, a[href^='javascript:']::after {
     content: '';
   }
-  pre,
-  blockquote {
+  pre, blockquote {
     border: 1px solid #bbbbbb;
     page-break-inside: avoid;
   }
   thead {
     display: table-header-group;
   }
-  tr,
-  img {
+  tr, img {
     page-break-inside: avoid;
   }
   img {
     max-width: 100%;
   }
-  p,
-  h2,
-  .display,
-  h3 {
+  p, h2, .display, h3 {
     orphans: 3;
     widows: 3;
   }
-  h2, .display,
-  h3 {
+  h2, .display, h3 {
     page-break-after: avoid;
   }
 }
@@ -12328,7 +12399,7 @@ body.not-front #content #block-views-have-your-say-block .view-content .node.has
 }
 
 @media print {
-  *, *::before, *::after, *::first-letter, *::first-line {
+  body *, body *::before, body *::after, body *::first-letter, body *::first-line {
     color: inherit;
   }
   body {
