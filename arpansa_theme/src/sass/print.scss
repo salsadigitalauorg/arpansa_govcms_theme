@@ -1,5 +1,5 @@
 @media print {
-  *, *::before, *::after, *::first-letter, *::first-line {
+  body *, body *::before, body *::after, body *::first-letter, body *::first-line {
     color: inherit;
   }
   body {

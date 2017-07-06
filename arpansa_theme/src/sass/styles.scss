@@ -2,7 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 // GOV.AU UI-Kit.
 @import '../../vendor/gov-au-ui-kit/assets/sass/variables';
-@import '../../vendor/gov-au-ui-kit/assets/sass/utils';
+@import '../../vendor/gov-au-ui-kit/assets/sass/utils/colours';
+@import '../../vendor/gov-au-ui-kit/assets/sass/utils/mixins';
+@import '../../vendor/gov-au-ui-kit/assets/sass/utils/accessibility';
+@import '../../vendor/gov-au-ui-kit/assets/sass/utils/functions';
+@import '../../vendor/gov-au-ui-kit/assets/sass/utils/grid-settings';
+@import '../../vendor/gov-au-ui-kit/assets/sass/utils/icons';
+//@import '../../vendor/gov-au-ui-kit/assets/sass/utils/print';
+@import 'gov_au_ui_kit_mods/print';
 @import '../../vendor/gov-au-ui-kit/assets/sass/vendor';
 @import '../../vendor/gov-au-ui-kit/assets/sass/components/accordions';
 @import 'gov_au_ui_kit_mods/buttons';
