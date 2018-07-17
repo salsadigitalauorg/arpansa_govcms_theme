@@ -1,0 +1,29 @@
+// =========================================================
+// FORMAL SUBMISSIONS VIEW BLOCK
+// =========================================================
+body.not-front #content .no-sidebar {
+  .view-formal-submissions {
+    .view-filters {
+      #edit-submission-contains-wrapper {
+        width: 100%;
+        margin-bottom: 16px;
+        @include breakpoint(tablet) {
+          width: auto;
+          padding-right: 2.5em;
+        }
+        input {
+          border: 1px solid #444449;
+          @include breakpoint(tablet) {
+            line-height: 1.7;
+          }
+        }
+      }
+    }
+    .views-row {
+      @include breakpoint(tablet) {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+}
