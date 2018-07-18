@@ -77,11 +77,11 @@
 
 .accordion-body {
   display: none;
-  padding: 20px;
+  padding: 0 20px;
   &.opened {
     display: block;
   }
-  /* Nested accordion body should always opened. */
+  /* Nested accordion body should always be opened. */
   .accordion-body {
     display: block;
   }

@@ -7023,8 +7023,8 @@ img {
 
 .accordion-body {
   display: none;
-  padding: 20px;
-  /* Nested accordion body should always opened. */
+  padding: 0 20px;
+  /* Nested accordion body should always be opened. */
 }
 
 .accordion-body.opened {
@@ -8019,6 +8019,10 @@ body.not-front #content .content-header .content-header-inner h1, body.not-front
   .hero-med body.not-front #content .content-header .content-header-inner .site-title {
     font-size: 3rem;
   }
+}
+
+_:-ms-fullscreen, :root body {
+  display: inline;
 }
 
 .content-body > .messages {
@@ -11124,6 +11128,35 @@ body.not-front #content #block-views-fact-sheets-filterable-block .view-content 
 
 html.no-flexboxlegacy body.not-front #content #block-views-fact-sheets-filterable-block .view-filters .views-exposed-widget {
   float: left;
+}
+
+body.not-front #content .no-sidebar .view-formal-submissions .view-filters #edit-submission-contains-wrapper {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  body.not-front #content .no-sidebar .view-formal-submissions .view-filters #edit-submission-contains-wrapper {
+    width: auto;
+    padding-right: 2.5em;
+  }
+}
+
+body.not-front #content .no-sidebar .view-formal-submissions .view-filters #edit-submission-contains-wrapper input {
+  border: 1px solid #444449;
+}
+
+@media only screen and (min-width: 768px) {
+  body.not-front #content .no-sidebar .view-formal-submissions .view-filters #edit-submission-contains-wrapper input {
+    line-height: 1.7;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body.not-front #content .no-sidebar .view-formal-submissions .views-row {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 @media only screen and (min-width: 768px) {

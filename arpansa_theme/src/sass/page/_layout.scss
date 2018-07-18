@@ -41,6 +41,14 @@ html {
 // =========================================================
 // GENERAL BODY LAYOUT
 // =========================================================
+// Reset the display: flex CSS property defined by the govau UI Kit for the
+// body tag, as it causes a huge white space at the bottom of the page for
+// IE11 (see https://salsadigital.atlassian.net/browse/SUPARP-2).
+// The following selector targets IE11+ only.
+_:-ms-fullscreen, :root body {
+  display: inline;
+}
+
 .content-body {
   &>.messages {
     max-width: $desktop_column;
