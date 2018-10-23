@@ -54,12 +54,10 @@ Style guide: Buttons.1 Creating buttons
     background-color: $bg-colour;
     color: $text-colour;
     border-color: $bg-colour--hover;
-
     &:hover, &:focus {
       background-color: $bg-colour--hover;
       color: $text-colour--hover;
     }
-
     &:active {
       background-color: $bg-colour--active;
     }
@@ -80,7 +78,6 @@ Style guide: Buttons.1 Creating buttons
   border-color: inherit;
   text-decoration: none;
   font-weight: $bold-font-weight;
-
   @include media($tablet) {
     height: $base-spacing * 1.75;
     padding: ($tiny-spacing * 1.25) $medium-spacing;
@@ -90,7 +87,6 @@ Style guide: Buttons.1 Creating buttons
 // Buttons out of the box (colour is specified elsewhere by nesting the button-colours mixin)
 button, .button, [role='button'], [type='submit'], [type='reset'], [type='button'] {
   @extend %base-button;
-
   &[disabled], &.disabled {
     &, &:hover, &:active, &:focus {
       cursor: not-allowed;
@@ -99,11 +95,9 @@ button, .button, [role='button'], [type='submit'], [type='reset'], [type='button
       color: $non-black;
     }
   }
-
   &.inverted {
     border-color: $button-inverted-colour;
     background-color: transparent;
-
     &:hover, &:active, &:focus {
       border-color: $button-inverted-colour;
       background-color: $button-inverted-colour;

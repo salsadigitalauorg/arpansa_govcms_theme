@@ -1,44 +1,24 @@
 // =========================================================
 // FORMAL SUBMISSIONS VIEW BLOCK
 // =========================================================
-// Target IE11 specifically. Do not use SCSS-style wrapping, as this breaks the
-// `_:-ms-fullscreen, :root body...` into `_:-ms-fullscreen ..., :root body ...`
-// in the compiled .css, which breaks things. 
-_:-ms-fullscreen, :root body.not-front #content .no-sidebar .view-formal-submissions .view-filters #edit-submission-contains-wrapper {
-  margin-bottom: 23px;
-}
-
-_:-ms-fullscreen, :root body.not-front #content .no-sidebar .view-formal-submissions .view-filters #edit-submission-contains-wrapper #edit-submission-contains {
-  height: 41px;
-}
-
-_:-ms-fullscreen, :root body.not-front #content .no-sidebar .view-formal-submissions .view-filters .views-submit-button, _:-ms-fullscreen, :root body.not-front #content .no-sidebar .view-formal-submissions .view-filters .views-reset-button {
-  margin-bottom: 8px;
-}
-
-// Non-IE11-specific styles.
 body.not-front #content .no-sidebar {
   .view-formal-submissions {
     .view-filters {
       #edit-submission-contains-wrapper {
         width: 100%;
-        margin-bottom: 15px;
-
+        margin-bottom: 16px;
         @include breakpoint(tablet) {
           width: auto;
           padding-right: 2.5em;
         }
-
         input {
           border: 1px solid #444449;
-
           @include breakpoint(tablet) {
             line-height: 1.7;
           }
         }
       }
     }
-
     .views-row {
       @include breakpoint(tablet) {
         width: 100%;

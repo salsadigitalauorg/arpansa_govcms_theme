@@ -17,25 +17,21 @@
       @content;
     }
   }
-
   @else if $class==large_tablet {
     @media only screen and (min-width: 1024px) {
       @content;
     }
   }
-
   @else if $class==tablet {
     @media only screen and (min-width: 768px) {
       @content;
     }
   }
-
   @else if $class==mobile {
     @media only screen and (max-width: 420px) {
       @content;
     }
   }
-
   @else {
     @warn "Breakpoint mixin supports: desktop, large_tablet, tablet, mobile";
   }
@@ -108,21 +104,17 @@
   top: 0;
   left: 0;
   width: 100%;
-
   a {
     display: block;
     border-bottom: 0;
     transition: none;
-
     &:hover, &:focus {
       background-color: black;
-
       img {
         opacity: 0.6;
       }
     }
   }
-
   img {
     display: table;
     object-fit: cover;
@@ -164,7 +156,6 @@
   table {
     @extend .content-table;
   }
-
   .introduction {
     font-weight: 300;
     font-size: rem(22px);
@@ -190,7 +181,6 @@
   color: $neutral_1;
   font-size: rem(18px);
   font-weight: 400;
-
   @include breakpoint(large_tablet) {
     @include medium-title;
   }
@@ -224,7 +214,6 @@
   background-position: center;
   background-image: url(../images/svg/magnifying_glass.svg);
   box-shadow: none;
-
   &:hover, &:focus {
     background-image: url(../images/svg/magnifying_glass_hover.svg);
   }
@@ -244,48 +233,38 @@
 // different sidebar configurations.
 // =========================================================
 @mixin panel-display-layouts($breakpoint) {
-
   // Common panel styles
   .panel-panel {
     float: none;
     width: 100%;
-
     &>.inside {
       margin: 0;
     }
   }
-
   .panel-col-last {
     @include breakpoint($breakpoint) {
       @include omega();
     }
-  }
-
-  // Two Columns (50 50)
+  } // Two Columns (50 50)
   &.panel-2col, &.panel-2col-bricks, &.panel-2col-stacked {
     .panel-col-first, .panel-col-last {
       @include breakpoint($breakpoint) {
         @include span-columns(6 of 12);
       }
     }
-  }
-
-  // Three Columns (25 50 25)
+  } // Three Columns (25 50 25)
   &.panel-3col, &.panel-3col-stacked {
     .panel-col-first, .panel-col-last {
       @include breakpoint($breakpoint) {
         @include span-columns(3 of 12);
       }
     }
-
     .panel-col {
       @include breakpoint($breakpoint) {
         @include span-columns(6 of 12);
       }
     }
-  }
-
-  // Three Columns (33 33 33)
+  } // Three Columns (33 33 33)
   &.panel-3col-33, &.panel-3col-33-stacked {
     .panel-col-first, .panel-col-last, .panel-col {
       @include breakpoint($breakpoint) {
@@ -308,10 +287,8 @@
 
 @mixin standard_purple_button() {
   @include button-colours($secondary_1, $secondary_2, $color-link-secondary, white, white);
-
   button, .button, [role='button'], [type='submit'], [type='reset'], [type='button'] {
     border: none;
-
     &:active {
       color: white;
     }
@@ -320,10 +297,8 @@
 
 @mixin standard_white_button() {
   @include button-colours(white, white, $color-link-secondary, $secondary_1, $secondary_1);
-
   button, .button, [role='button'], [type='submit'], [type='reset'], [type='button'] {
     border: none;
-
     &:active {
       color: white;
     }
@@ -332,7 +307,6 @@
 
 @mixin show_on_mobile($display:'block') {
   display: $display;
-
   @include breakpoint(tablet) {
     display: none;
   }

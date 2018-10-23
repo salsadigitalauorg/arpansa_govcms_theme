@@ -10,28 +10,24 @@ body.not-front {
         margin-top: 0;
         padding-bottom: 0;
         padding-right: 0;
-
         @include breakpoint(tablet) {
           display: table-cell;
           padding-right: 1em;
           width: 33%;
           vertical-align: bottom;
         }
-
         &.views-submit-button {
           display: block;
           float: none;
           clear: both;
         }
       }
-
       input[type="text"] {
         border: 1px solid $neutral_1;
         border-radius: 2px;
         height: 42px;
         margin-bottom: 16px;
       }
-
       select {
         background-color: white;
         border: 1px solid $neutral_1;
@@ -39,65 +35,52 @@ body.not-front {
         margin-bottom: 16px;
         width: 100%;
       }
-
       .SumoSelect {
         margin-right: 0;
         width: 100%;
-
         >.CaptionCont {
           border-color: $neutral_1;
-
           >span.placeholder {
             font-style: normal;
           }
         }
-
         select {
           opacity: 0;
         }
-
         label {
           font-weight: normal;
         }
       }
-
       input[type="submit"] {
         margin-top: 0;
       }
     }
-
     .view-content {
       .views-row {
         border-bottom: 1px solid $grey_6;
         width: 100%;
         margin-right: 0;
         padding-bottom: em(25px);
-
         .node {
           margin-bottom: em(20px);
           padding-bottom: 0;
         }
-
         &:last-child {
           border: none;
         }
       }
-
       .field-name-title, .field-name-field-link-to {
         .field-label {
           display: none;
         }
-
         h2 {
           margin-bottom: em(10px);
         }
       }
-
       .field-label {
         display: block;
         float: none;
       }
-
       .field-name-field-authored-by, .field-name-field-published-in, .field-name-field-literature-survey-date {
         h3 {
           margin: 0;
@@ -105,7 +88,6 @@ body.not-front {
           line-height: inherit;
         }
       }
-
       .field:last-child {
         margin-bottom: 0;
       }

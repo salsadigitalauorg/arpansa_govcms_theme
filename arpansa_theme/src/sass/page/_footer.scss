@@ -6,34 +6,27 @@
   background-image: url(../images/png/bg-footer.png);
   background-repeat: repeat-y;
   background-size: 100% auto;
-
   .block-menu, .block-menu-block {
     &>h2 {
       @include visually-hidden;
     }
-
     .content {
       @include center-column($desktop_column);
       padding-top: rem(17px);
       padding-bottom: rem(17px);
       color: white;
-
       @include breakpoint(tablet) {
         padding-top: rem(64px);
         padding-bottom: rem(64px);
-      }
-
-      // First level of nav should be horizontal.
+      } // First level of nav should be horizontal.
       &>ul.menu, &>.menu-block-wrapper>ul.menu {
         font-family: $type-menu-footer;
-
         @include breakpoint(tablet) {
           display: table;
           width: 100%;
           table-layout: fixed;
           margin-bottom: 0;
         }
-
         &>li {
           @include breakpoint(tablet) {
             display: inline-block;
@@ -44,47 +37,37 @@
           }
         }
       }
-
       ul.menu {
         padding-left: 0;
         margin-bottom: 0;
-
         &>li {
           @include link-colours(white, $neutral_4, $neutral_1);
           margin-left: 0;
           padding: 0;
           list-style: none;
           margin-bottom: rem(15px);
-
           &.last {
             margin-bottom: 0;
           }
-
           &>a {
             font-weight: 600;
-
             @include breakpoint(tablet) {
               font-weight: 700;
             }
           }
-
           &>ul {
             display: none;
-
             @include breakpoint(tablet) {
               display: block;
               padding-left: 0;
               margin-top: rem(20px);
             }
-
             li {
               line-height: em(22px);
-
               a {
                 font-weight: 400;
               }
             }
-
             ul {
               padding-left: $default_padding;
               margin-top: $default_padding;
@@ -98,7 +81,6 @@
 
 .region-bottom-container {
   background-color: rgba(0, 0, 0, 0.4);
-
   .region-bottom {
     @include center-column($desktop_column);
     display: block;
@@ -106,28 +88,22 @@
     color: white;
     padding-top: rem(38px);
     padding-bottom: rem(38px);
-
     @include breakpoint(desktop) {
       display: flex;
     }
-
     /* Block copyright */
     #block-block-1 {
       font-family: $type-heading-primary;
       order: 2;
-
       @include breakpoint(tablet) {
         order: 1;
       }
-
       p {
         margin: 0;
       }
     }
-
     #block-menu-menu-footer-sub-menu {
       margin-bottom: 15px;
-
       @include breakpoint(tablet) {
         flex: 1;
         order: 2;
@@ -135,14 +111,11 @@
         margin-bottom: 0;
         text-align: right;
       }
-
       h2, .footer-copyright {
         display: none;
       }
-
       .content {
         padding: 0;
-
         @include breakpoint(tablet) {
           padding-top: 0;
           padding-bottom: 0;
@@ -150,32 +123,26 @@
           justify-content: space-between;
           align-content: center;
         }
-
         ul.menu {
           margin-bottom: rem(25px);
-
           @include breakpoint(tablet) {
             text-align: right;
             margin: 0;
             width: auto;
             display: block;
           }
-
           &>li {
             margin-bottom: em(15px);
             min-width: inherit;
             margin-right: 0;
-
             @include breakpoint(tablet) {
               display: inline-block;
               margin-left: rem(15px);
               margin-bottom: 0;
             }
-
             @include breakpoint(desktop) {
               margin-left: rem(30px);
             }
-
             a {
               font-weight: 400;
             }
@@ -190,7 +157,6 @@
   .region-bottom-container {
     .region-bottom {
       display: block;
-
       #block-menu-menu-footer-sub-menu {
         float: right;
         margin-top: 20px;

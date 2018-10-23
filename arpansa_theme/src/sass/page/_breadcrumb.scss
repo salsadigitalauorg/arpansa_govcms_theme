@@ -2,11 +2,9 @@
   .breadcrumbs--inverted {
     display: block;
     background-color: transparent;
-
     ul {
       padding-top: rem(8px);
       padding-bottom: 0;
-
       li {
         font-size: rem(16px);
         line-height: rem(22px);
@@ -14,11 +12,9 @@
         font-weight: 400;
         @include standard_content_link;
         color: $secondary_1;
-
         a {
           white-space: nowrap;
         }
-
         &:not(:last-child) {
           // Override previously defined icon with new path.
           background-image: url(../images/svg/breadcrumb-arrow-right.svg);

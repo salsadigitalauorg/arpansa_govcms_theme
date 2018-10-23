@@ -22,7 +22,6 @@ ul.tabs.primary {
 
 #user-login {
   @include center-column($desktop_column);
-
   &>div {
     max-width: rem(550px);
     box-sizing: border-box;

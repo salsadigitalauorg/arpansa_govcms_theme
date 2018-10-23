@@ -4,12 +4,10 @@ h1 {
   font-weight: normal;
   font-size: rem(24px);
   line-height: rem(33px);
-
   @include breakpoint(tablet) {
     font-size: rem(36px);
     line-height: rem(46px);
   }
-
   @include breakpoint(desktop) {
     font-size: rem(48px);
     line-height: rem(56px);
@@ -22,12 +20,10 @@ h2 {
   font-size: rem(20px);
   line-height: rem(22px);
   font-weight: normal;
-
   @include breakpoint(tablet) {
     font-size: rem(36px);
     line-height: rem(44px);
   }
-
   @include breakpoint(desktop) {
     font-size: rem(40px);
     line-height: rem(54px);
@@ -40,11 +36,9 @@ h3 {
   font-size: rem(18px);
   line-height: rem(22px);
   font-weight: normal;
-
   @include breakpoint(tablet) {
     font-size: rem(30px);
   }
-
   @include breakpoint(desktop) {
     font-size: rem(32px);
     line-height: rem(33px);
@@ -57,12 +51,10 @@ h4 {
   font-size: rem(16px);
   line-height: rem(22px);
   font-weight: 600;
-
   @include breakpoint(tablet) {
     font-size: rem(24px);
     font-weight: 400;
   }
-
   @include breakpoint(desktop) {
     font-size: rem(26px);
     line-height: rem(33px);
@@ -75,12 +67,10 @@ h5 {
   font-size: rem(15px);
   line-height: rem(22px);
   font-weight: 600;
-
   @include breakpoint(tablet) {
     font-size: rem(18px);
     font-weight: 600;
   }
-
   @include breakpoint(desktop) {
     font-size: rem(20px);
     line-height: rem(33px);
@@ -95,12 +85,10 @@ h6 {
   font-size: rem(14px);
   line-height: rem(22px);
   font-weight: 700;
-
   @include breakpoint(tablet) {
     font-size: rem(16px);
     font-weight: 600;
   }
-
   @include breakpoint(desktop) {
     font-size: rem(18px);
     font-weight: 600;
@@ -109,13 +97,4 @@ h6 {
 
 .show-on-mobile {
   @include show_on_mobile();
-}
-
-blockquote {
-  font-family: $base-sans-serif !important;
-
-  &:before, &:after {
-    font-family: $base-sans-serif !important;
-    content: normal !important;
-  }
 }

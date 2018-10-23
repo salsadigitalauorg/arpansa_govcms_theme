@@ -8,7 +8,6 @@
         @include breakpoint(tablet) {
           display: table-row;
         }
-
         &>div {
           @include breakpoint(tablet) {
             display: table-cell;
@@ -16,14 +15,11 @@
             padding-bottom: 20px;
           }
         }
-
         &.field-name-body {
           display: block;
-
           .field-label {
             display: none;
           }
-
           .field-items {
             display: block;
           }

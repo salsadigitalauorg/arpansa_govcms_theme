@@ -12,14 +12,11 @@
 // =========================================================
 #block-views-related-content-block {
   @include related-content-box;
-
   h2 {
     @include heading-style;
   }
-
   .content {
     margin-left: 15px;
-
     .view-content {
       .views-row {
         background: transparent url(../images/svg/chevron-right-green.svg) 0 8px no-repeat;
@@ -28,7 +25,6 @@
         margin-bottom: 5px;
         padding-left: 15px;
         min-width: 100%;
-
         a {
           font-size: em(14px);
         }
@@ -42,16 +38,13 @@
 // =========================================================
 div.toc-filter-content {
   @include related-content-box;
-
   h3 {
     font-size: inherit;
     @include heading-style;
   }
-
   ol.toc-filter-links {
     color: $primary_1;
     padding-left: 30px;
-
     li {
       margin-bottom: 5px;
       padding-left: 5px;
@@ -60,10 +53,8 @@ div.toc-filter-content {
       line-height: em(24px);
     }
   }
-
   ul.toc-filter-links {
     padding-left: 30px;
-
     li {
       margin-bottom: 5px;
       margin-left: 0;

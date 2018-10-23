@@ -2,16 +2,13 @@
   @include center-column($desktop_column);
   padding-top: rem(16px);
   padding-bottom: $default_padding;
-
   .header__secondary-menu {
     display: none;
     @include standard_content_link;
-
     @include breakpoint(tablet) {
       display: block;
       text-align: right;
     }
-
     ul.links {
       li {
         display: inline-block;
@@ -21,49 +18,39 @@
       }
     }
   }
-
   .logo-and-search {
     @include breakpoint(tablet) {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
     .logo-wrapper {
       display: flex;
       align-items: center;
-
       @include breakpoint(tablet) {
         margin-right: rem(20px);
       }
-
       @include breakpoint(desktop) {
         margin-right: 0;
       }
-
       a {
         margin-right: 0;
         display: none;
         vertical-align: middle;
-
         @include breakpoint(tablet) {
           display: inline-block;
         }
-
         img {
           float: left;
           max-height: rem(50px);
-
           @include breakpoint(tablet) {
             max-height: 100%;
           }
         }
-
         &.show-on-print {
           display: none;
         }
       }
-
       .header-title {
         padding-left: rem(5px);
         margin-right: auto;
@@ -72,7 +59,6 @@
         color: $primary_1;
         font-weight: 400;
         visibility: hidden;
-
         @include breakpoint(tablet) {
           margin-left: $default_padding;
           padding-left: 0;
@@ -81,48 +67,39 @@
           font-size: rem(30px);
         }
       }
-
       .logo-aus-container {
         margin-right: 25px;
-
         @include breakpoint(tablet) {
           display: none;
         }
-
         a {
           display: inline;
         }
       }
     }
   }
-
   .header__logo {
     &.no-title {
       margin-right: auto;
     }
   }
-
   .block-govcms-text-resize {
     display: none;
-
     @include breakpoint(desktop) {
       display: block;
       margin-right: $default_padding;
     }
-
     ul.text-resize {
       display: flex;
       padding: 0;
       margin: 0;
       margin-left: rem(5px);
-
       li {
         display: inline-block;
         vertical-align: middle;
         list-style: none;
         margin-bottom: 0;
         height: rem(30px);
-
         a {
           @include hide-text;
           display: inline-block;
@@ -131,26 +108,20 @@
           width: rem(30px);
           height: rem(30px);
         }
-
         .font-small {
           background-image: url(../images/svg/resize_text_small.svg);
-
           &:hover, &:focus {
             background-image: url(../images/svg/resize_text_small_hover.svg);
           }
         }
-
         .font-large {
           background-image: url(../images/svg/resize_text_large.svg);
-
           &:hover, &:focus {
             background-image: url(../images/svg/resize_text_large_hover.svg);
           }
         }
-
         .reset {
           background-image: url(../images/svg/resize_text_reset.svg);
-
           &:hover, &:focus {
             background-image: url(../images/svg/resize_text_reset_hover.svg);
           }
@@ -158,74 +129,57 @@
       }
     }
   }
-
   .region-header {
     display: flex;
     align-items: center;
-
     .block-search-api-page {
       width: 100%;
-
       @include breakpoint(tablet) {
         width: auto;
       }
     }
-
     .search-form-widget {
       margin-right: 0;
       height: rem(52px);
-
       @include breakpoint(tablet) {
         width: rem(250px);
       }
-
       @include breakpoint(desktop) {
         width: rem(370px);
       }
-
       .js & {
         display: none;
-
         @include breakpoint(tablet) {
           display: block;
         }
       }
-
       &.search-toggle {
         display: none;
-
         @include breakpoint(tablet) {
           display: block;
         }
-
         &.search-open {
           display: block;
           margin-top: $default_padding;
         }
       }
-
       &>div {
         display: flex;
         justify-content: flex-start;
-
         .form-item {
           margin: 0;
           width: 100%;
           box-sizing: border-box;
           flex: 1;
-
           input {
             @include search-text-field;
-
             &:focus {
               outline-color: $secondary_1;
             }
           }
         }
-
         input[type="submit"] {
           @include search-submit-button;
-
           &:focus {
             z-index: 1;
           }
@@ -240,52 +194,42 @@
     .logo-and-search {
       .logo-wrapper {
         display: inline-block;
-
         .logo-aus-container {
           display: inline-block;
           vertical-align: middle;
-
           @include breakpoint(tablet) {
             display: none;
           }
         }
-
         .header__logo {
           display: inline-block;
           vertical-align: middle;
         }
-
         a {
           &.show-on-print {
             display: none;
           }
         }
       }
-
       .region-header {
         display: inline-block;
         float: right;
         margin-top: 5px;
         width: 500px;
-
         #block-govcms-text-resize-text-resize {
           display: inline-block;
           vertical-align: middle;
         }
-
         .block-search-api-page {
           display: inline-block;
           vertical-align: middle;
-
           .search-form-widget {
             &>div {
               display: table;
             }
-
             .form-item {
               display: table-cell;
             }
-
             input[type="submit"] {
               display: table-cell;
             }
@@ -315,15 +259,12 @@
   outline: inherit;
   background-image: url(../images/svg/mobile_search_open.svg);
   margin-right: $mobile_expand_search_width;
-
   &:hover, &:focus {
     background-image: url(../images/svg/mobile_search_open_hover.svg);
     box-shadow: none;
   }
-
   &.search-open {
     background-image: url(../images/svg/mobile_search_close.svg);
-
     &:hover, &:focus {
       background-image: url(../images/svg/mobile_search_close_hover.svg);
       box-shadow: none;
@@ -346,15 +287,12 @@
   z-index: 1;
   right: $mobile_column_padding;
   top: rem(16px);
-
   &:hover, &:focus {
     background-image: url(../images/svg/mobile_menu_open_hover.svg);
     box-shadow: none;
   }
-
   &.menu-open {
     background-image: url(../images/svg/mobile_search_close.svg);
-
     &:hover, &:focus {
       background-image: url(../images/svg/mobile_search_close_hover.svg);
       box-shadow: none;

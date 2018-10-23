@@ -1,7 +1,6 @@
 .block-twitter-block, #block-bean-twitter-feeds {
   padding-top: $default_padding * 2;
   padding-bottom: $default_padding * 2;
-
   h2 {
     @include center-column($desktop_column);
     @include medium-title;
@@ -9,15 +8,12 @@
     font-family: $font_source_sans;
     font-size: em(36px);
   }
-
   &>.content {
     @include center-column($mobile_column);
-
     @include breakpoint(large_tablet) {
       max-width: $desktop_column;
     }
   }
-
   iframe {
     width: 100% !important;
   }
