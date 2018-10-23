@@ -1,13 +1,16 @@
 #content div.horizontal-tabs {
   border: 1px solid $grey_6;
+
   .horizontal-tabs-list {
     background-color: $grey_3;
     border-color: $grey_6;
     border-bottom: 1px solid $grey_6;
     display: none;
+
     @include breakpoint(tablet) {
       display: inline-block;
     }
+
     .horizontal-tab-button {
       background: transparent;
       padding: 0;
@@ -15,50 +18,62 @@
       transition-timing-function: $transition-easing;
       transition-duration: $transition-timing-fast;
       transition-property: background-color, border-color, color;
+
       a {
         background-color: white;
         color: $primary_4;
         border: none;
+
         * {
           font-size: rem(18px);
           font-weight: 600;
         }
+
         &:hover {
           color: white;
           background-color: $primary_1;
         }
       }
+
       &.selected {
         background: transparent;
         padding: 0;
         border-color: $secondary_1;
+
         a {
           background: $secondary_1;
+
           * {
             color: white;
           }
+
           &:hover {
             background-color: $primary_1;
           }
         }
       }
+
       &:hover {
         border-color: $primary_1;
       }
     }
   }
+
   .horizontal-tabs-panes {
     fieldset {
       padding: 0;
       margin: 0;
       border-bottom: 1px solid $grey_6;
+
       @include breakpoint(tablet) {
         padding: rem(13px) rem(35px);
         border-bottom: none;
       }
+
       &>legend {
         display: block;
         width: 100%;
+
         button {
           width: 100%;
           margin: 0;
@@ -74,46 +89,58 @@
           color: white;
           border-radius: 0;
           box-shadow: none;
+
           &:active {
             background-color: $primary_1;
           }
         }
+
         @include breakpoint(tablet) {
           display: none;
         }
       }
+
       &:last-child {
         border-bottom: 0;
       }
+
       .fieldset-wrapper {
         padding: rem(5px) rem(25px);
+
         @include breakpoint(tablet) {
           padding: 0;
         }
       }
+
       &.horizontal-tab-hidden {
         position: relative;
         top: 0;
         margin: 0;
         padding-bottom: 1px;
+
         &>legend {
           border-bottom: 0;
+
           &>button {
             background-color: white;
             color: $primary_1;
+
             &:active {
               background-color: $primary_1;
               color: white;
             }
           }
         }
+
         @include breakpoint(tablet) {
           position: absolute;
           top: -100000px;
         }
+
         .fieldset-wrapper {
           display: none;
           padding: rem(35px);
+
           @include breakpoint(tablet) {
             display: block;
             padding: 0;

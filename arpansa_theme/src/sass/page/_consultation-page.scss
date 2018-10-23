@@ -6,11 +6,13 @@
     .webform-component-file .form-managed-file {
       display: table;
       margin-bottom: 15px;
+
       input[type="file"] {
         margin-right: 20px;
       }
     }
   }
+
   .consultation__update {
     .field-name-field-pbundle-image {
       margin-top: rem(12px);
@@ -25,55 +27,68 @@
 .view-submissions {
   .view-filters {
     margin-bottom: 60px;
+
     .views-exposed-form .views-exposed-widget {
       float: none;
       display: block;
       padding-right: 0;
       vertical-align: bottom;
+
       @include breakpoint(tablet) {
         display: inline-block;
         padding-right: 20px;
       }
     }
+
     .SumoSelect {
       margin-right: 0;
       width: 100%;
     }
+
     input.form-text {
       border: 1px solid $neutral_1;
       height: 36px;
       margin-bottom: 16px;
+
       @include breakpoint(tablet) {
         height: 42px;
       }
     }
+
     select {
       height: 37px;
       padding: 0 15px;
       min-width: 100px;
     }
+
     input[type="submit"] {
       margin-bottom: 16px;
     }
   }
+
   .view-content {
     .table-container {
       width: 100%;
     }
+
     .views-table {
       width: 100%;
+
       tr {
         background-color: white;
+
         td {
           border: none;
           display: block;
           padding: 15px;
+
           @include breakpoint(tablet) {
             display: table-cell;
           }
         }
       }
     }
+
     .views-field-field-file {
       @include breakpoint(tablet) {
         text-align: right;

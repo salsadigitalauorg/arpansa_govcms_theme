@@ -6,23 +6,29 @@
     @include breakpoint(tablet) {
       @include span-columns(6 of 12);
     }
+
     img {
       width: 100%;
     }
+
     h2 {
       @include listing-component-heading;
       margin-top: 0;
     }
+
     .field-name-field-image {
       display: none;
+
       @include breakpoint(tablet) {
         display: block;
       }
+
       a {
         background-color: black;
         display: block;
         line-height: 0;
         border: 0;
+
         &:hover {
           img {
             opacity: 0.6;
@@ -30,14 +36,17 @@
         }
       }
     }
+
     .field-name-node-link {
       a {
         @include right-arrow-button;
       }
     }
+
     .field-type-datetime {
       display: none;
     }
+
     &:nth-child(2n) {
       margin-right: 0;
     }
@@ -51,6 +60,7 @@ body.not-front #content .view.view-what-s-new {
   .view-content .views-row .node.has-thumbnail {
     padding-top: 0;
     margin-bottom: 0;
+
     @include breakpoint(tablet) {
       padding-top: $listing_component_image_height;
     }
@@ -62,8 +72,10 @@ body.not-front #content .view.view-what-s-new {
     h2 {
       margin-top: 0;
     }
+
     .field-name-field-image {
       display: none;
+
       @include breakpoint(tablet) {
         display: block;
       }

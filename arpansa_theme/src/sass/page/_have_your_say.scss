@@ -15,36 +15,45 @@ body.not-front #content {
   #block-views-have-your-say-block {
     .field-name-field-image {
       display: none;
+
       @include breakpoint(tablet) {
         display: block;
       }
     }
+
     .views-exposed-form {
       .views-exposed-widget {
         display: block;
         float: none;
+
         @include breakpoint(tablet) {
           display: inline-block;
           vertical-align: bottom;
         }
+
         input[type="text"] {
           border: 1px solid $neutral_1;
           height: 42px;
           margin-bottom: 16px;
         }
+
         .SumoSelect {
           width: 100%;
           min-width: 250px;
         }
+
         input[type="submit"] {
           margin-bottom: 16px;
         }
       }
     }
+
     .view-content {
       padding-top: rem(50px);
+
       .node.has-thumbnail {
         padding-top: 0;
+
         @include breakpoint(tablet) {
           padding-top: $listing_component_image_height;
         }
