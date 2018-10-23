@@ -12,23 +12,28 @@ html {
 // =========================================================
 #content {
   @include button-colours($secondary_1, darken($secondary_1, 20%), #fff, darken($secondary_1, 40%), darken($secondary_1, 40%));
+
   body.not-front & {
     .content-header {
       display: none;
       padding-top: rem(19px);
       padding-bottom: rem(25px);
       margin-bottom: rem(25px);
+
       @include breakpoint(tablet) {
         padding-top: rem(50px);
         padding-bottom: rem(50px);
         display: block;
       }
+
       .content-header-inner {
         @include center-column($desktop_column);
+
         h1 {
           color: white;
           font-weight: 300;
           font-size: rem(32px);
+
           @include breakpoint(tablet) {
             font-size: rem(48px);
           }
@@ -46,7 +51,7 @@ html {
 // IE11 (see https://salsadigital.atlassian.net/browse/SUPARP-2).
 // The following selector targets IE11+ only.
 _:-ms-fullscreen, :root body {
-  display: inline;
+  display: block;
 }
 
 .content-body {
@@ -57,6 +62,7 @@ _:-ms-fullscreen, :root body {
     margin-top: $default_padding;
     margin-bottom: $default_padding;
   }
+
   .content {
     @include standard_content_link;
     color: $neutral_1;
@@ -67,9 +73,11 @@ _:-ms-fullscreen, :root body {
   @include center-column($desktop_column);
   display: flex;
   flex-wrap: wrap;
+
   @include breakpoint(large_tablet) {
     flex-wrap: nowrap;
   }
+
   html.no-flexbox & {
     display: block;
   }
@@ -78,11 +86,13 @@ _:-ms-fullscreen, :root body {
 .sidebar-first {
   order: -1;
   width: 100%;
+
   @include breakpoint(large_tablet) {
     width: rem(330px);
     min-width: rem(330px);
     padding-right: rem(60px);
   }
+
   html.no-flexbox & {
     float: left;
   }
@@ -92,25 +102,31 @@ _:-ms-fullscreen, :root body {
   &.has-sidebar {
     .region-content {
       width: 100%;
+
       @include breakpoint(large_tablet) {
         max-width: $desktop_content_column;
       }
+
       html.no-flexbox & {
         float: right;
       }
     }
   }
+
   &.no-sidebar {
     .region-content {
       @include center-column($desktop_column);
     }
+
     .page-node & {
       .region-content {
+
         // Node Webforms
         .node-webform {
           &>.submitted {
             max-width: $form_width;
           }
+
           &>.content {
             max-width: $form_width;
           }
@@ -118,27 +134,34 @@ _:-ms-fullscreen, :root body {
       }
     }
   }
+
   h1 {
     margin-top: 0;
     margin-bottom: rem(20px);
+
     @include breakpoint(desktop) {
       margin-bottom: rem(42px);
     }
   }
+
   #site-map {}
+
   .search-api-page-results {
     @include center-column($desktop_content_column);
   }
+
   .page-contact & {
     .block-system {
       @include center-column($form_width);
     }
   }
+
   .page-search404 & {
     .block-system {
       @include center-column($desktop_content_column);
     }
   }
+
   .page-node-done & {
     .block-system {
       @include center-column($desktop_content_column);
@@ -158,9 +181,11 @@ _:-ms-fullscreen, :root body {
     &:nth-child(3n+1) {
       background-color: white;
     }
+
     &:nth-child(3n+2) {
       background-color: $non-white;
     }
+
     &:nth-child(3n+3) {
       background-color: #E6E6E6;
     }
@@ -171,6 +196,7 @@ _:-ms-fullscreen, :root body {
 // MISC ELEMENT STYLING
 // =========================================================
 ul, ol, dl, p, dt, dd {
+
   // Global override for 16px font-size on tablet.
   @include breakpoint(tablet) {
     font-size: inherit;
